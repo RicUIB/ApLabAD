@@ -1,0 +1,22 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ApLabAD",
+    "section": "",
+    "text": "Prefacio\nEste libro en la web es una versión de las notas de clase de asignaturas introductorias al análisis de datos.\n\nHa sido elaborado con Quarto\n\nRStudio, PBC. (2022). Quarto (Version 1.0). Hemos utilizado el formato formato book.",
+    "crumbs": [
+      "Prefacio"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introducción",
+    "section": "",
+    "text": "Estas son unas notas de clase introductorias al análisis de datos, probabilidad y estadística.\n\nXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXx\nXXXXXXXX\n\\[x^2+1\\]",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introducción</span>"
+    ]
+  }
+]
