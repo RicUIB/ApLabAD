@@ -4,7 +4,7 @@
   border-left: 6px solid #00563F;
   border-radius: 8px;
   margin: 1em 0;
-  padding: 0;
+  padding: 0.75;
   overflow: hidden;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 }

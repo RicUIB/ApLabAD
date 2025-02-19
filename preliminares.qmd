@@ -172,7 +172,7 @@ $$
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"></i> omplementario
+<i class="bi bi-book"></i> Complementario
 :::
 
 ::: callout-body
