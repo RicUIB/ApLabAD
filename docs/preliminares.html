@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Preliminares: conjuntos y combinatoria – ApLabAD</title>
+<title>1&nbsp; Preliminares: conjuntos y combinatoria – ApLabAD</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -71,6 +105,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="custom.css">
 </head>
@@ -84,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./probabilidad_y_variables_aleatorias.html">Probabilidad y variables aleatorias</a></li><li class="breadcrumb-item"><a href="./preliminares.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preliminares: conjuntos y combinatoria</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./probabilidad_y_variables_aleatorias.html">Parte 1: Probabilidad y variables aleatorias</a></li><li class="breadcrumb-item"><a href="./preliminares.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preliminares: conjuntos y combinatoria</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -118,16 +181,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Prefacio</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./probabilidad_y_variables_aleatorias.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Probabilidad y variables aleatorias</span></a>
+ <span class="menu-text">Parte 1: Probabilidad y variables aleatorias</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -136,31 +193,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./preliminares.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preliminares: conjuntos y combinatoria</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preliminares: conjuntos y combinatoria</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./probabilidad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probabilidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Probabilidad</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./variables_aleatorias.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Variables alestorias</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Variables alestorias</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./distibuciones_notables_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distribuciones notables 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Distribuciones notables 1</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./distibuciones_notables_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Distribuciones notables 2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distribuciones notables 2</span></span></a>
   </div>
 </li>
       </ul>
@@ -170,15 +227,36 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#teoría-de-conjuntos" id="toc-teoría-de-conjuntos" class="nav-link active" data-scroll-target="#teoría-de-conjuntos"><span class="header-section-number">1.1</span> Teoría de conjuntos</a>
+  <ul class="collapse">
+  <li><a href="#conjuntos-básicos" id="toc-conjuntos-básicos" class="nav-link" data-scroll-target="#conjuntos-básicos"><span class="header-section-number">1.1.1</span> Conjuntos básicos</a></li>
+  <li><a href="#características-y-propiedades-básicas-de-los-conjuntos" id="toc-características-y-propiedades-básicas-de-los-conjuntos" class="nav-link" data-scroll-target="#características-y-propiedades-básicas-de-los-conjuntos"><span class="header-section-number">1.1.2</span> Características y propiedades básicas de los conjuntos</a></li>
+  <li><a href="#operaciones-entre-conjuntos" id="toc-operaciones-entre-conjuntos" class="nav-link" data-scroll-target="#operaciones-entre-conjuntos"><span class="header-section-number">1.1.3</span> Operaciones entre conjuntos</a></li>
+  <li><a href="#más-propiedades" id="toc-más-propiedades" class="nav-link" data-scroll-target="#más-propiedades"><span class="header-section-number">1.1.4</span> Más propiedades</a></li>
+  <li><a href="#con-r-ejemplos." id="toc-con-r-ejemplos." class="nav-link" data-scroll-target="#con-r-ejemplos."><span class="header-section-number">1.1.5</span> Con R, ejemplos.</a></li>
+  <li><a href="#con-python" id="toc-con-python" class="nav-link" data-scroll-target="#con-python"><span class="header-section-number">1.1.6</span> Con python</a></li>
+  </ul></li>
+  <li><a href="#combinatoria" id="toc-combinatoria" class="nav-link" data-scroll-target="#combinatoria"><span class="header-section-number">1.2</span> Combinatoria</a>
+  <ul class="collapse">
+  <li><a href="#número-binonial" id="toc-número-binonial" class="nav-link" data-scroll-target="#número-binonial"><span class="header-section-number">1.2.1</span> Número Binonial</a></li>
+  <li><a href="#combinaciones-con-repetición" id="toc-combinaciones-con-repetición" class="nav-link" data-scroll-target="#combinaciones-con-repetición"><span class="header-section-number">1.2.2</span> Combinaciones con repetición</a></li>
+  <li><a href="#variaciones." id="toc-variaciones." class="nav-link" data-scroll-target="#variaciones."><span class="header-section-number">1.2.3</span> Variaciones.</a></li>
+  <li><a href="#variaciones-con-repetición." id="toc-variaciones-con-repetición." class="nav-link" data-scroll-target="#variaciones-con-repetición."><span class="header-section-number">1.2.4</span> Variaciones con repetición.</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./probabilidad_y_variables_aleatorias.html">Probabilidad y variables aleatorias</a></li><li class="breadcrumb-item"><a href="./preliminares.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preliminares: conjuntos y combinatoria</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./probabilidad_y_variables_aleatorias.html">Parte 1: Probabilidad y variables aleatorias</a></li><li class="breadcrumb-item"><a href="./preliminares.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preliminares: conjuntos y combinatoria</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preliminares: conjuntos y combinatoria</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preliminares: conjuntos y combinatoria</span></h1>
 </div>
 
 
@@ -195,8 +273,559 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Para aprender cálculo de probabilidades son necesarios conocimientos de:</p>
+<ol type="1">
+<li>Cálculo: Derivadas, integrales, límites, sumas de series…</li>
+<li>Geometría básica y álgebra lineal : rectas, hiperplanos, volúmenes… Matrices, valores propios…</li>
+<li>Teoría de conjuntos y combinatoria…..</li>
+</ol>
+<p>Por experiencia sabemos que la mayoría de estudiantes tienen más conocimientos de cálculo, geometría y matrices.</p>
+<p>Pero muchos tienen una falta de conocimientos en teoría básica de conjuntos y combinatoria (matemática discreta).</p>
+<section id="teoría-de-conjuntos" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="teoría-de-conjuntos"><span class="header-section-number">1.1</span> Teoría de conjuntos</h2>
+<div class="callout-definicion">
+<div class="callout-title">
+<p>Definición de conjunto</p>
+</div>
+<div class="callout-body">
+<p>La definición de conjunto es una <a href="https://es.wikipedia.org/wiki/Concepto_primitivo">idea o noción primitiva</a>. Es decir es una idea básica del pensamiento humano: un conjunto es una colección de objetos: números, imágenes… cualquier cosa, jugadores de fútbol, palabras, colores ….</p>
+</div>
+</div>
+<p>La definición de conjunto es una <a href="https://es.wikipedia.org/wiki/Concepto_primitivo">idea o noción primitiva</a>. Es decir es una idea básica del pensamiento humano: un conjunto es una colección de objetos: números, imágenes… cualquier cosa, jugadores de fútbol, palabras, colores ….</p>
+<p>La teoría de conjuntos básicas es simple y natural y es la que necesitamos para este curso.</p>
+<p>La teoría de conjuntos matemática es más compleja y presenta varias paradojas como la <a href="https://es.wikipedia.org/wiki/Paradoja_de_Russell">paradoja de Russell</a>.</p>
+<p>La idea o noción práctica de conjunto es la de una colección de objetos de un cierto tipo.</p>
+<p>Estas colecciones o conjuntos se pueden definir por:</p>
+<ul>
+<li>: reuniendo los objetos que cumplen una propiedad <span class="math inline">\(p\)</span></li>
+<li>: dando una lista exhaustiva de los miembros del conjunto</li>
+</ul>
+<section id="conjuntos-básicos" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="conjuntos-básicos"><span class="header-section-number">1.1.1</span> Conjuntos básicos</h3>
+<p>Los conjuntos suelen tener un conjunto madre como por ejemplo</p>
+<ul>
+<li><p><span class="math inline">\(\mathbb{N}=\{0,1,2,\ldots\}\)</span></p></li>
+<li><p><span class="math inline">\(\mathbb{Z}=\{\ldots,-2,-1,0,1,2,\ldots\}\)</span></p></li>
+<li><p><span class="math inline">\(\mathbb{Q}=\left\{\frac{p}{q}\quad\Big|\quad p,q\in \mathbb{Z} \mbox{ y } q \not= 0.\right\}\)</span></p></li>
+<li><p><span class="math inline">\(\mathbb{R}=\{\mbox{Todos los puntos de una recta.}\}\)</span></p></li>
+<li><p><span class="math inline">\(\mathbb{C}= \left\{a+b\cdot i\quad \big|\quad a,b\in \mathbb{R}\right\}\mbox{ los números complejos}\quad a+b\cdot i.\)</span></p></li>
+<li><p>Alfabeto = <span class="math inline">\(\{a,b,c,\ldots, A,B,C,\ldots\}.\)</span></p></li>
+<li><p>Palabras = <span class="math inline">\(\{paz, guerra, amor, probabilidad,\ldots\}.\)</span></p></li>
+</ul>
+<p>Recordemos que <span class="math inline">\(i\)</span> es la unidad imaginaria que cumple que <span class="math inline">\(i=\sqrt{-1}\)</span>.</p>
+</section>
+<section id="características-y-propiedades-básicas-de-los-conjuntos" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="características-y-propiedades-básicas-de-los-conjuntos"><span class="header-section-number">1.1.2</span> Características y propiedades básicas de los conjuntos</h3>
+<p>Si a cada objeto <span class="math inline">\(x\)</span> de <span class="math inline">\(\Omega\)</span> le llamaremos <strong>elemento del conjunto</strong> <span class="math inline">\(\Omega\)</span> y diremos que <span class="math inline">\(x\)</span> pertenece a <span class="math inline">\(\Omega\)</span>. Lo denotaremos por <span class="math inline">\(x\in \Omega\)</span>.</p>
+<p>Un <strong>conjunto de un elemento</strong>, por ejemplo <span class="math inline">\(\{1\}\)</span> recibe el nombre de <strong>conjunto elemental</strong> (o <strong>singleton</strong> del inglés).</p>
+<p>Sea <span class="math inline">\(A\)</span> otro conjunto diremos que <span class="math inline">\(A\)</span> <strong>es igual a</strong> <span class="math inline">\(B\)</span> si todos los elementos <span class="math inline">\(A\)</span> están en <span class="math inline">\(B\)</span> y todos los elementos de <span class="math inline">\(B\)</span> están en <span class="math inline">\(A\)</span>. Por ejemplo <span class="math inline">\(A=\{1,2,3\}\)</span> es igual a <span class="math inline">\(B=\{3,1,2\}\)</span>.</p>
+<p>Si <span class="math inline">\(B\)</span> es otro conjunto, tal que si <span class="math inline">\(x\in A\)</span> entonces <span class="math inline">\(x\in B\)</span> diremos que <span class="math inline">\(A\)</span> es un subconjunto de o que está contenido en <span class="math inline">\(B\)</span>. Lo denotaremos por <span class="math inline">\(A\subseteq B.\)</span></p>
+<p>El conjunto que no tiene elementos se denomina conjunto vacío y se denota por el símbolo <span class="math inline">\(\emptyset\)</span>. Dado <span class="math inline">\(A\)</span> un conjunto cualquiera obviamente <span class="math inline">\(\emptyset\subseteq A.\)</span></p>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-book"></i> Ejemplo</p>
+</div>
+<div class="callout-body">
+<p>Tomemos como conjunto base <span class="math inline">\(\Omega=\{1,2,3\}\)</span></p>
+<ul>
+<li><span class="math inline">\(\Omega\)</span> es un conjunto de cardinal 3, se denota por <span class="math inline">\(\#(\Omega)=3\)</span> o por <span class="math inline">\(|\Omega|=3\)</span></li>
+<li>El conjunto <span class="math inline">\(\Omega\)</span> tiene <span class="math inline">\(2^3=8\)</span> subconjuntos.
+<ul>
+<li>el vacío <span class="math inline">\(\emptyset\)</span> y los elementales <span class="math inline">\(\{1\},\{2\},\{3\}\)</span></li>
+<li>los subconjuntos de dos elementos: <span class="math inline">\(\{1,2\},\{1,3\},\{2,3\}\)</span></li>
+<li>el conjunto total de tres elementos <span class="math inline">\(\Omega=\{1,2,3\}.\)</span></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<p>Dado un conjunto <span class="math inline">\(\Omega\)</span> podemos construir el <strong>conjunto de todas sus partes</strong> (todos sus subconjuntos) al que denotamos por <span class="math inline">\(\mathcal{P}(\Omega)\)</span>. También se denomina de forma directa partes de <span class="math inline">\(\Omega\)</span>.</p>
+<p><l class="prop"> Cardinal de las partes de un conjunto </l></p>
+<div class="callout-proposicion">
+<div class="callout-title">
+<p>Propiedad</p>
+</div>
+<div class="callout-body">
+<p>Por ejemplo <span class="math inline">\(\#\left(\mathcal{P}(\{1,2,3\})\right)=2^{\#(\{1,2,3\})}=2^3=8.\)</span></p>
+</div>
+</div>
+<p>Efectivamente</p>
+<p><span class="math display">\[\mathcal{P}(\{1,2,3\})=\{\emptyset,\{1\},\{2\},\{3\},\{1,2\},\{1,3\},\{2,3\},\{1,2,3\}\}.\]</span></p>
+<p>Dado un subconjunto <span class="math inline">\(A\)</span> de <span class="math inline">\(\Omega\)</span> podemos construir la función característica de <span class="math inline">\(A\)</span> <span class="math display">\[\chi_A:\Omega \to \{0,1\}\]</span></p>
+<p>dado un <span class="math inline">\(\omega\in \Omega\)</span></p>
+<p><span class="math display">\[
+\chi_A(\omega)=
+\left\{
+\begin{array}{ll}
+1 &amp;  \mbox{si }\omega \in A\\
+0 &amp;  \mbox{si }\omega \not\in A
+\end{array}
+\right.
+\]</span></p>
+</section>
+<section id="operaciones-entre-conjuntos" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="operaciones-entre-conjuntos"><span class="header-section-number">1.1.3</span> Operaciones entre conjuntos</h3>
+<div class="callout-definicion">
+<div class="callout-title">
+<p><i class="bi bi-book"></i> <strong>Intersección</strong></p>
+</div>
+<div class="callout-body">
+<p>Sea <span class="math inline">\(\Omega\)</span> un conjunto y <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> dos subconjuntos de <span class="math inline">\(\Omega\)</span>.</p>
+<p>El conjunto <strong>intersección</strong> de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> es el formado por todos los elementos que perteneces a <span class="math inline">\(A\)</span> <strong>Y</strong> <span class="math inline">\(B\)</span>, se denota por <span class="math inline">\(A\cap B\)</span>.</p>
+<p>Más formalmente</p>
+<p><span class="math display">\[
+A\cap B=\left\{x\in\Omega \big| x\in A \mbox{ y } x\in B\right\}.
+\]</span></p>
+</div>
+</div>
+<div class="callout-definicion">
+<div class="callout-title">
+<p><i class="bi bi-book"></i> <strong>Unión</strong></p>
+</div>
+<div class="callout-body">
+<p>El conjunto <strong>unión</strong> de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> es el formado por todos los elementos que perteneces a <span class="math inline">\(A\)</span> <strong>O</strong> pertenecen a <span class="math inline">\(B\)</span>, se denota por <span class="math inline">\(A\cup B\)</span>.</p>
+<p>Más formalmente</p>
+<p><span class="math display">\[
+A\cup B=\left\{x\in\Omega \big| x\in A \mbox{ o } x\in B\right\}.
+\]</span></p>
+</div>
+</div>
+<div class="callout-definicion">
+<div class="callout-title">
+<p><i class="bi bi-book"></i> Diferencia.</p>
+</div>
+<div class="callout-body">
+<p>El conjunto <strong>diferencia</strong> de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> es el formado por todos los elementos que perteneces a <span class="math inline">\(A\)</span> <strong>Y NO</strong> pertenecen a <span class="math inline">\(B\)</span>, se denota por <span class="math inline">\(A-B=A-(A\cap B)\)</span>.</p>
+<p>Más formalmente</p>
+<p><span class="math display">\[
+A- B=\left\{x\in\Omega \big| x\in A \mbox{ y } x\notin B\right\}.
+\]</span></p>
+</div>
+</div>
+<div class="callout-definicion">
+<div class="callout-title">
+<p><i class="bi bi-book"></i> omplementario</p>
+</div>
+<div class="callout-body">
+<p>El <strong>complementario</strong> de un subconjunto <span class="math inline">\(A\)</span> de <span class="math inline">\(\Omega\)</span> es <span class="math inline">\(\Omega-A\)</span> y se denota por <span class="math inline">\(A^c\)</span> o <span class="math inline">\(\overline{A}\)</span>.</p>
+<p>Más formalmente</p>
+<p><span class="math display">\[
+A^c=\left\{x\in\Omega \big| x\not\in A\right\}.
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="más-propiedades" class="level3" data-number="1.1.4">
+<h3 data-number="1.1.4" class="anchored" data-anchor-id="más-propiedades"><span class="header-section-number">1.1.4</span> Más propiedades</h3>
+<p>Sea <span class="math inline">\(\Omega\)</span> un conjunto y <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span> tres subconjuntos de <span class="math inline">\(\Omega\)</span></p>
+<ul>
+<li>Se dice que dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> <strong>son disjuntos</strong> si <span class="math inline">\(A\cap B=\emptyset.\)</span></li>
+<li><span class="math inline">\(\Omega^c=\emptyset\)</span>.</li>
+<li><span class="math inline">\(\emptyset^c=\Omega\)</span>.</li>
+<li><span class="math inline">\(A\cup B=B \cup A\)</span> , <span class="math inline">\(A\cap B=B\cap A\)</span> conmutativas.</li>
+<li><span class="math inline">\((A\cup B) \cup C = A \cup( B \cup C)\)</span> , <span class="math inline">\((A\cap B) \cap C = A \cap( B \cap C)\)</span> asociativas.</li>
+<li><span class="math inline">\(A\cup (B\cap C)=(A\cup B) \cap (A\cup C)\)</span> , <span class="math inline">\(A\cap (B\cup C)=(A\cap B) \cup (A\cap C)\)</span> distributivas.</li>
+<li><span class="math inline">\(\left(A^c\right)^c=A\)</span> doble complementario.</li>
+<li><span class="math inline">\(\left(A\cup B\right)^c=A^c \cap B^c\)</span>, <span class="math inline">\(\left(A\cap B\right)^c=A^c \cup B^c\)</span> <a href="https://es.wikipedia.org/wiki/Leyes_de_De_Morgan">leyes de De Morgan</a>.</li>
+</ul>
+</section>
+<section id="con-r-ejemplos." class="level3" data-number="1.1.5">
+<h3 data-number="1.1.5" class="anchored" data-anchor-id="con-r-ejemplos."><span class="header-section-number">1.1.5</span> Con R, ejemplos.</h3>
+<p>Con R los conjuntos de pueden definir como vectores</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Omega<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>A<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>B<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>C<span class="ot">=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Omega</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>A</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2 3 4 5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>B</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 4 5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>C</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4 6 7 8</code></pre>
+</div>
+</div>
+<p><span class="math inline">\(A\cap B\)</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>A</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2 3 4 5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>B</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 4 5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">intersect</span>(A,B)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 4 5</code></pre>
+</div>
+</div>
+<p><span class="math inline">\(A\cup B\)</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>A</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2 3 4 5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>B</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 4 5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">union</span>(A,B)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2 3 4 5</code></pre>
+</div>
+</div>
+<p><span class="math inline">\(B-C\)</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>B</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 4 5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>C</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4 6 7 8</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setdiff</span>(B,C)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 5</code></pre>
+</div>
+</div>
+<p><span class="math inline">\(A^c=\Omega-A\)</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>Omega</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>A</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2 3 4 5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setdiff</span>(Omega,A)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  6  7  8  9 10</code></pre>
+</div>
+</div>
+</section>
+<section id="con-python" class="level3" data-number="1.1.6">
+<h3 data-number="1.1.6" class="anchored" data-anchor-id="con-python"><span class="header-section-number">1.1.6</span> Con python</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>Omega<span class="op">=</span><span class="bu">set</span>([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>])</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>A<span class="op">=</span><span class="bu">set</span>([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>])</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>B<span class="op">=</span><span class="bu">set</span>([<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">5</span>])</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>C<span class="op">=</span><span class="bu">set</span>([<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>])</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>Omega</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>A</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{1, 2, 3, 4, 5}</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>B</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{1, 4, 5}</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>C</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{8, 4, 6, 7}</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">&amp;</span> B   <span class="co"># intersección (&amp;: and/y)</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{1, 4, 5}</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">|</span> B   <span class="co"># unión (|: or/o)</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{1, 2, 3, 4, 5}</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">-</span> C   <span class="co"># diferencia </span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{1, 2, 3, 5}</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>Omega<span class="op">-</span>C <span class="co"># complementario.</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{1, 2, 3, 5, 9, 10}</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="combinatoria" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="combinatoria"><span class="header-section-number">1.2</span> Combinatoria</h2>
+<p>La combinatoria es una rama de la matemática discreta que entre otras cosas cuenta distintas configuraciones de objetos de un conjunto.</p>
+<p>Por ejemplo si tenemos un equipo de baloncesto con 7 jugadores ¿cuántos equipos de 5 jugadores distintos podemos formar?</p>
+<section id="número-binonial" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="número-binonial"><span class="header-section-number">1.2.1</span> Número Binonial</h3>
+<div class="callout-definicion">
+<div class="callout-title">
+<p><i class="bi bi-book"></i> Número combinatorio o número binomial</p>
+</div>
+<div class="callout-body">
+<p>Nos da el número de subconjuntos de tamaño <span class="math inline">\(k\)</span> de un conjunto de tamaño <span class="math inline">\(n\)</span>. Este número es</p>
+<p><span class="math display">\[
+C_n^k={n\choose k} = \frac{n!}{k!\cdot (n-k)!}.
+\]</span></p>
+<p>Recordemos que <span class="math display">\[
+n!=1\cdot 2\cdot 3\cdots n.
+\]</span></p>
+</div>
+</div>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-book"></i> Ejemplo</p>
+</div>
+<div class="callout-body">
+<p>En nuestro caso con 7 jugadores <span class="math inline">\(n=7\)</span> el número de equipos distintos de <span class="math inline">\(k=5\)</span> es</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+C_7^5&amp;={7\choose 5} = \frac{7!}{5!\cdot (7-5)!}=\frac{7!}{5!\cdot 2!} \\
+&amp;=\frac{1\cdot 2\cdot 3 \cdot 4\cdot 5\cdot 6\cdot 7}{1\cdot 2\cdot 3 \cdot 4\cdot 5\cdot 1\cdot 2}=\frac{6\cdot 7}{2}=\frac{42}{2}=21.
+\end{array}
+\]</span></p>
+<p>Puedo formar 21 equipos distintos.</p>
+</div>
+</div>
+<div class="callout-ejercicio">
+<div class="callout-title">
+<p><i class="bi bi-book"></i> Ejercicio: el paquete <code>gtools</code></p>
+</div>
+<div class="callout-body">
+<p>Carga el paquete <code>gtools</code> de R y investiga la función <code>combinations(n, r, v, set, repeats.allowed)</code> para calcular todas las combinaciones anteriores.</p>
+</div>
+</div>
+</section>
+<section id="combinaciones-con-repetición" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="combinaciones-con-repetición"><span class="header-section-number">1.2.2</span> Combinaciones con repetición</h3>
+<p>En combinatoria, las combinaciones con repetición de un conjunto son las distintas formas en que se puede hacer una selección de elementos de un conjunto dado, permitiendo que las selecciones puedan repetirse.</p>
+<div class="callout-definicion">
+<div class="callout-title">
+<p><i class="bi bi-book"></i> Combinaciones con repetición</p>
+</div>
+<div class="callout-body">
+<p>El número <span class="math inline">\(CR_n^k\)</span> de multiconjuntos con <span class="math inline">\(k\)</span> elementos escogidos de un conjunto con <span class="math inline">\(n\)</span> elementos satisface:</p>
+<ul>
+<li>Es igual al número de combinaciones con repetición de <span class="math inline">\(k\)</span> elementos escogidos de un conjunto con <span class="math inline">\(n\)</span> elementos.</li>
+<li>Es igual al número de formas de repartir <span class="math inline">\(k\)</span> objetos en <span class="math inline">\(n\)</span> grupos.</li>
+</ul>
+<p><span class="math display">\[CR_n^k = \binom{n+k-1}{k} = \frac{(n+k-1)!}{k!(n-1)!}.\]</span></p>
+</div>
+</div>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-list-task"></i> Ejemplo: caramelos</p>
+</div>
+<div class="callout-body">
+<p>Vamos a imaginar que vamos a repartir 12 caramelos entre Antonio, Beatriz, Carlos y Dionisio (que representaremos como A, B, C, D). Una posible forma de repartir los caramelos sería: dar 4 caramelos a Antonio, 3 a Beatriz, 2 a Carlos y 3 a Dionisio. Dado que no importa el orden en que se reparten, podemos representar esta selección como AAAABBBCCDDD.</p>
+<p>Otra forma posible de repartir los caramelos podría ser: dar 1 caramelo a Antonio, ninguno a Beatriz y Carlos, los 11 restantes se los damos a Dionisio. Esta repartición la representamos como ADDDDDDDDDDD</p>
+<p>Recíprocamente, cualquier serie de 12 letras A, B, C, D se corresponde a una forma de repartir los caramelos. Por ejemplo, la serie AAAABBBBBDDD corresponde a: Dar 4 caramelos a Antonio, 5 caramelos a Beatriz, ninguno a Carlos y 3 a Dionisio.</p>
+<p>De esta forma, el número de formas de repartir los caramelos es:</p>
+<p><span class="math display">\[CR_{n=4}^{k=12} = \binom{4+12-1}{12}=455.\]</span></p>
+</div>
+</div>
+</section>
+<section id="variaciones." class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="variaciones."><span class="header-section-number">1.2.3</span> Variaciones.</h3>
+<p>Con los número <span class="math inline">\(\{1,2,3\}\)</span> ¿cuántos números de dos cifras distintas podemos formar sin repetir ninguna cifra?</p>
+<p>La podemos escribir</p>
+<p><span class="math display">\[12,13,21,23,31,32\]</span></p>
+<p>Luego hay seis casos, estas son las variaciones de orden <span class="math inline">\(k=2\)</span> de un conjunto de <span class="math inline">\(n=3\)</span> elementos.</p>
+<div class="callout-definicion">
+<div class="callout-title">
+<p><i class="bi bi-book"></i> Variaciones</p>
+</div>
+<div class="callout-body">
+<p>Denotaremos las variaciones (sin repetición) de <span class="math inline">\(k\)</span> elementos (de orden <span class="math inline">\(k\)</span>) de un conjunto de <span class="math inline">\(n\)</span> elementos por <span class="math inline">\(V_n^k\)</span> su valor es</p>
+<p><span class="math display">\[
+V_n^k=\frac{n!}{(n-k)!}=(n-k+1)\cdot (n-k+2)\cdots n.
+\]</span></p>
+</div>
+</div>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-book"></i> Ejemplo</p>
+</div>
+<div class="callout-body">
+<p>En nuestro ejemplo con <span class="math inline">\(n=3\)</span> dígitos podemos escribir las siguientes variaciones de orden <span class="math inline">\(k=2\)</span></p>
+<p><span class="math display">\[
+V^{k=2}_{n=3}=\frac{3!}{(3-2)!}=\frac{1\cdot 2\cdot 3}{1}=6.
+\]</span></p>
+</div>
+</div>
+<div class="callout-definicion">
+<div class="callout-title">
+<p><i class="bi bi-book"></i> Ejercicio</p>
+</div>
+<div class="callout-body">
+<p>Carga el paquete <code>gtools</code> de R y investiga la función <code>permutations(n, r, v, set, repeats.allowed)</code> para calcular todas las variaciones anteriores.</p>
+</div>
+</div>
+</section>
+<section id="variaciones-con-repetición." class="level3" data-number="1.2.4">
+<h3 data-number="1.2.4" class="anchored"><span class="header-section-number">1.2.4</span> Variaciones con repetición.</h3>
+<p>¿Y si en el caso anterior permitimos que se repita algún dígito?</p>
+<div class="callout-definicion">
+<div class="callout-title">
+<p><i class="bi bi-book"></i> Variaciones on repetición</p>
+</div>
+<div class="callout-body">
+<p>Las variaciones de orden <span class="math inline">\(k\)</span> de un conjunto de <span class="math inline">\(n\)</span> elementos permitiendo que se repitan los elementos. Las denotamos y valen:</p>
+<p><span class="math display">\[VR_n^k=n^k\]</span></p>
+</div>
+</div>
+<div class="callout-definicion">
+<div class="callout-title">
+<p><i class="bi bi-book"></i> Ejemplo</p>
+</div>
+<div class="callout-body">
+<p>Efectivamente en nuestro caso</p>
+<p><span class="math display">\[11,12,13,21,22,23,31,32,33\]</span></p>
+<p><span class="math display">\[
+VR^{k=2}_{n=3}=n^k=3^2=9.
+\]</span></p>
+<section id="permutaciones" class="level3" data-number="1.2.5">
+<h3 data-number="1.2.5" class="anchored" data-anchor-id="permutaciones"><span class="header-section-number">1.2.5</span> Permutaciones</h3>
+<div class="callout-definicion">
+<div class="callout-title">
+<p><i class="bi bi-book"></i> Permutaciones</p>
+</div>
+<div class="callout-body">
+<p>Las permutaciones de un conjunto de cardinal <span class="math inline">\(n\)</span> son todas las variaciones de orden máximo <span class="math inline">\(n\)</span>. Las denotamos y valen:</p>
+<p><span class="math display">\[
+P_n=V_n^n=n!
+\]</span></p>
+</div>
+</div>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-book"></i> Variaciones on repetición</p>
+</div>
+<div class="callout-body">
+<p>Por ejemplo todos los números que se pueden escribir ordenando todos los dígitos <span class="math inline">\(\{1,2,3\}\)</span> sin repetir ninguno</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(combinat)</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(permutacion <span class="cf">in</span> <span class="fu">permn</span>(<span class="dv">3</span>)) <span class="fu">print</span>(permutacion)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2 3
+[1] 1 3 2
+[1] 3 1 2
+[1] 3 2 1
+[1] 2 3 1
+[1] 2 1 3</code></pre>
+</div>
+</div>
+<p>Efectivamente <span class="math inline">\(P_3=3!=1\cdot  2\cdot 3.\)</span></p>
+</div>
+</div>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-book"></i> Ejercicio</p>
+</div>
+<div class="callout-body">
+<p>Carga el paquete <code>combinat</code> de R e investiga la función <code>permn</code> para calcular todas las permutaciones anteriores.</p>
+<p>Investiga también el paquete <code>itertools</code> y la función <code>comb</code> de <code>scipy.misc</code> de Python e investiga sus funciones para todas las formas de contar que hemos visto en este tema.</p>
+</div>
+</div>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-book"></i> Ejercicio</p>
+</div>
+<div class="callout-body">
+<p>La función gamma de Euler, cobrará mucha importancia en el curso de estadística. Comprueba que la función <code>gamma(x+1)</code> da el mismo valor que la función <code>factorial(x)</code> en <code>R</code> para todo <span class="math inline">\(x = \{1,2,3,\ldots,10\}\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="números-multinomiales.-permutaciones-con-repetición." class="level3" data-number="1.2.6">
+<h3 data-number="1.2.6" class="anchored"><span class="header-section-number">1.2.6</span> Números multinomiales. Permutaciones con repetición.</h3>
+<div class="callout-definición">
+<div class="callout-title">
+<p><i class="bi bi-book"></i> Ejercicio</p>
+</div>
+<div class="callout-body">
+<p>Consideremos un conjunto de elementos <span class="math inline">\(\{a_1, a_2, \ldots, a_k\}\)</span>.</p>
+<p>Entonces, si cada uno de los objetos <span class="math inline">\(a_i\)</span> de un conjunto, aparece repetido <span class="math inline">\(n_i\)</span> veces para cada <span class="math inline">\(i\)</span> desde 1 hasta <span class="math inline">\(k\)</span>, entonces el número de permutaciones con elementos repetidos es:</p>
+<p><span class="math display">\[PR_n^{n_1,n_2,\ldots,n_k} = {{n}\choose {n_1\quad n_2 \quad\ldots \quad n_k}}=\frac{n!}{n_1!\cdot n_2!\cdot \ldots \cdot n_k!},\]</span> donde <span class="math inline">\(n=n_1+n_2+\cdots+n_k\)</span>.</p>
+</div>
+</div>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-book"></i> Ejercicio</p>
+</div>
+<div class="callout-body">
+<p>¿Cuantas palabras diferentes se pueden formar con las letras de la palabra <code>PROBABILIDAD</code>?</p>
+<p>El conjunto de letras de la palabra considerada es el siguiente: <span class="math inline">\(\{A, B, D, I, L, O, P, R\}\)</span> con las repeticiones siguientes: las letras A, B, D, e I, aparecen 2 veces cada una; y las letras L, O, P, R una vez cada una de ellas.</p>
+<p>Por tanto, utilizando la fórmula anterior, tenemos que el número de palabras (permutaciones con elementos repetidos) que podemos formar es</p>
+<p><span class="math display">\[PR^{2,2,2,2,1,1,1,1}_{12} = \frac{12!}{(2!)^4(1!)^4} = 29937600.\]</span></p>
+</div>
+<section id="para-acabar" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="para-acabar"><span class="header-section-number">1.3</span> Para acabar</h2>
+<section id="principios-básicos-para-contar-cardinales-de-conjuntos" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="principios-básicos-para-contar-cardinales-de-conjuntos"><span class="header-section-number">1.3.1</span> Principios básicos para contar cardinales de conjuntos</h3>
+<div class="callout-teorema">
+<div class="callout-title">
+<p><i class="bi bi-book"></i> El principio de la suma</p>
+</div>
+<div class="callout-body">
+<p>Sean <span class="math inline">\(A_1, A_2,\ldots, A_n\)</span> conjuntos disjuntos dos a dos, es decir <span class="math inline">\(A_i\cap A_j=\emptyset\)</span> para todo <span class="math inline">\(i\not= j\)</span>, <span class="math inline">\(i,j=1,2,\ldots n\)</span>. Entonces</p>
+<p><span class="math display">\[\#(\cup_{i=1}^n A_i)=\sum_{i=1}^n \#(A_i).\]</span></p>
+</div>
+</div>
+<div class="callout-teorema">
+<div class="callout-title">
+<p><i class="bi bi-book"></i> Principio de unión exclusión</p>
+</div>
+<div class="callout-body">
+<p>Consideremos dos conjuntos cualesquiera <span class="math inline">\(A_1, A_2\)</span> entonces el cardinal de su unión es</p>
+<p><span class="math display">\[\#(A_1\cup A_2)=\#(A_1)+\#(A_2)-\#(A_1\cap A_2).\]</span></p>
+</div>
+</div>
+<div class="callout-teorema">
+<div class="callout-title">
+<p><i class="bi bi-book"></i> El principio del producto</p>
+</div>
+<div class="callout-body">
+<p>Sean <span class="math inline">\(A_1,A_2,\ldots A_n\)</span></p>
+<p><span class="math display">\[
+\begin{array}{ll}
+\#(A_1\times A_2\times \cdots A_n)=&amp;\#\left(\{(a_1,a_2,\ldots a_n)| a_i\in A_i, i=1,2,\ldots n\}\right)\\
+&amp;=\prod_{i=1}^n \#(A_i).
+\end{array}
+\]</span></p>
+<section id="otros-aspectos-a-tener-en-cuenta" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="otros-aspectos-a-tener-en-cuenta"><span class="header-section-number">1.3.2</span> Otros aspectos a tener en cuenta</h3>
+<p>Evidentemente nos hemos dejado muchas otras propiedades básicas de teoría de conjuntos y de combinatoria como:</p>
+<ul>
+<li>Propiedades de los números combinatorios.</li>
+<li>Binomio de Newton.</li>
+<li>Multinomio de Newton.</li>
+</ul>
+<p>Si nos son necesarias las volveremos a repetir a lo largo del curso o bien daremos enlaces para que las podáis estudiar en paralelo.</p>
 
 
+</section>
+</div>
+</div>
+</section>
+</section>
+</div>
+</section>
+</div>
+</div>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -762,13 +1391,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./probabilidad_y_variables_aleatorias.html" class="pagination-link" aria-label="Probabilidad y variables aleatorias">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Probabilidad y variables aleatorias</span>
+      <a href="./probabilidad_y_variables_aleatorias.html" class="pagination-link" aria-label="Parte 1: Probabilidad y variables aleatorias">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Parte 1: Probabilidad y variables aleatorias</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./probabilidad.html" class="pagination-link" aria-label="Probabilidad">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probabilidad</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Probabilidad</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

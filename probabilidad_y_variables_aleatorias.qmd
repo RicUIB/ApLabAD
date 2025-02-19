@@ -1,1 +1,10 @@
-# Probabilidad y variables aleatorias
+
+# Parte 1: Probabilidad y variables aleatorias
+
+En esta sección, veremos la teoría básica de la probabilidad y de las variables aleatorias. Resolveremos problemas prácticos para comprender mejor los conceptos y utilizaremos R para realizar cálculos y gráficos.
+
+También exploraremos los modelos de probabilidad discretos y continuos más conocidos.
+
+En ocasiones, trabajaremos con problemas de cálculo más complejos.
+
+Además, introduciremos problemas sencillos de modelización con probabilidades. Estos consistirán en un enunciado, real o inventado, en el que se pedirá modelizar el problema mediante una variable aleatoria y responder a una serie de preguntas.

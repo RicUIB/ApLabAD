@@ -1,0 +1,57 @@
+/* Estilo base para los callouts */
+.callout {
+  display: flex;
+  border-left: 6px solid #00563F;
+  border-radius: 8px;
+  margin: 1em 0;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Barra lateral con color sólido */
+.callout::before {
+  content: "";
+  width: 8px;
+  background-color: #00563F;
+  flex-shrink: 0;
+}
+
+/* Contenedor del título y contenido */
+.callout-content {
+  padding: 1em;
+  flex-grow: 1;
+}
+
+/* Estilo del título */
+.callout-title {
+  font-weight: bold;
+  color: #00563F;
+  font-size: 1.2em;
+  margin-bottom: 0.1em;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 86, 63, 0.1);
+  padding: 0.5em;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Espaciado para los iconos */
+.callout-title i {
+  margin-right: 8px;
+}
+
+/* Estilo del cuerpo del callout */
+.callout-body {
+  padding: 0.75em;
+}
+
+/* Fondos pastel distintos para cada tipo de callout */
+.callout-definicion { background-color: #e6f4ea; }
+.callout-teorema { background-color: #e3e8fc; }
+.callout-proposicion { background-color: #fdf4e3; }
+.callout-ejemplo { background-color: #f3e8fd; }
+.callout-ejercicio { background-color: #eaf5fc; }
+.callout-nota { background-color: #fff3cd; }
+.callout-advertencia { background-color: #fdecea; }
+.callout-curiosidad { background-color: #f1f8ff; }

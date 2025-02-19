@@ -1,0 +1,1032 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Tabla de contenidos}
+\else
+  \newcommand\contentsname{Tabla de contenidos}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Listado de Figuras}
+\else
+  \newcommand\listfigurename{Listado de Figuras}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Listado de Tablas}
+\else
+  \newcommand\listtablename{Listado de Tablas}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figura}
+\else
+  \newcommand\figurename{Figura}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Tabla}
+\else
+  \newcommand\tablename{Tabla}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listado}
+\newcommand*\listoflistings{\listof{codelisting}{Listado de Listados}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{spanish}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={ApLabAD},
+  pdfauthor={RICUIB},
+  pdflang={es},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{ApLabAD}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Apuntes de Laboratorio de Análisis de Datos}
+\author{RICUIB}
+\date{2025-02-01}
+
+\begin{document}
+\maketitle
+
+\renewcommand*\contentsname{Tabla de contenidos}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+
+\bookmarksetup{startatroot}
+
+\chapter*{Prefacio}\label{prefacio}
+\addcontentsline{toc}{chapter}{Prefacio}
+
+\markboth{Prefacio}{Prefacio}
+
+Este libro en la web es una versión de las notas de clase de asignaturas
+introductorias al análisis de datos.
+
+\begin{description}
+\tightlist
+\item[Ha sido elaborado con \href{https://quarto.org/}{Quarto}]
+RStudio, PBC. (2022). Quarto (Version 1.0). Hemos utilizado el formato
+formato book.
+\end{description}
+
+\bookmarksetup{startatroot}
+
+\chapter{Prerrequisitos}\label{prerrequisitos}
+
+Para aprender cálculo de probabilidades son necesarios conocimientos de:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Cálculo: Derivadas, integrales, límites, sumas de series\ldots{}
+\item
+  Geometría básica y álgebra lineal : rectas, hiperplanos,
+  volúmenes\ldots{} Matrices, valores propios\ldots{}
+\item
+  Teoría de conjuntos y combinatoria\ldots..
+\end{enumerate}
+
+Por experiencia sabemos que la mayoría de estudiantes tienen más
+conocimientos de cálculo, geometría y matrices.
+
+Pero muchos tienen una falta de conocimientos en teoría básica de
+conjuntos y combinatoria (matemática discreta).
+
+\section{Teoría de conjuntos}\label{teoruxeda-de-conjuntos}
+
+\textbf{Definición de conjunto}
+
+La definición de conjunto es una
+\href{https://es.wikipedia.org/wiki/Concepto_primitivo}{idea o noción
+primitiva}. Es decir es una idea básica del pensamiento humano: un
+conjunto es una colección de objetos: números, imágenes\ldots{}
+cualquier cosa, jugadores de fútbol, palabras, colores \ldots.
+
+La teoría de conjuntos básicas es simple y natural y es la que
+necesitamos para este curso.
+
+La teoría de conjuntos matemática es más compleja y presenta varias
+paradojas como la
+\href{https://es.wikipedia.org/wiki/Paradoja_de_Russell}{paradoja de
+Russell}.
+
+La idea o noción práctica de conjunto es la de una colección de objetos
+de un cierto tipo.
+
+Estas colecciones o conjuntos se pueden definir por:
+
+\begin{itemize}
+\tightlist
+\item
+  \green{Comprensión}: reuniendo los objetos que cumplen una propiedad
+  \(p\)
+\item
+  \green{Extensión}: dando una lista exhaustiva de los miembros del
+  conjunto
+\end{itemize}
+
+\subsection{Conjuntos básicos}\label{conjuntos-buxe1sicos}
+
+Los conjuntos suelen tener un conjunto madre como por ejemplo
+
+\begin{itemize}
+\item
+  \(\mathbb{N}=\{0,1,2,\ldots\}\)
+\item
+  \(\mathbb{Z}=\{\ldots,-2,-1,0,1,2,\ldots\}\)
+\item
+  \(\mathbb{Q}=\left\{\frac{p}{q}\quad\Big|\quad p,q\in \mathbb{Z} \mbox{ y } q \not= 0.\right\}\)
+\item
+  \(\mathbb{R}=\{\mbox{Todos los puntos de una recta.}\}\)
+\item
+  \(\mathbb{C}= \left\{a+b\cdot i\quad \big|\quad a,b\in \mathbb{R}\right\}\mbox{ los números complejos}\quad a+b\cdot i.\)
+\item
+  Alfabeto = \(\{a,b,c,\ldots, A,B,C,\ldots\}.\)
+\item
+  Palabras = \(\{paz, guerra, amor, probabilidad,\ldots\}.\)
+\end{itemize}
+
+Recordemos que \(i\) es la unidad imaginaria que cumple que
+\(i=\sqrt{-1}\).
+
+\subsection{Características y propiedades básicas de los
+conjuntos}\label{caracteruxedsticas-y-propiedades-buxe1sicas-de-los-conjuntos}
+
+\begin{itemize}
+\item
+  Si a cada objeto \(x\) de \(\Omega\) le llamaremos \textbf{elemento
+  del conjunto} \(\Omega\) y diremos que \(x\) pertenece a \(\Omega\).
+  Lo denotaremos por \(x\in \Omega\).
+\item
+  Un \textbf{conjunto de un elemento}, por ejemplo \(\{1\}\) recibe el
+  nombre de \textbf{conjunto elemental} (o \textbf{singleton} del
+  inglés).
+\item
+  Sea \(A\) otro conjunto diremos que \(A\) \textbf{es igual a} \(B\) si
+  todos los elementos \(A\) están en \(B\) y todos los elementos de
+  \(B\) están en \(A\). Por ejemplo \(A=\{1,2,3\}\) es igual a
+  \(B=\{3,1,2\}\).
+\item
+  Si \(B\) es otro conjunto, tal que si \(x\in A\) entonces \(x\in B\)
+  diremos que \(A\) es un subconjunto de o que está contenido en \(B\).
+  Lo denotaremos por \(A\subseteq B.\)
+\item
+  El conjunto que no tiene elementos se denomina conjunto vacío y se
+  denota por el símbolo \(\emptyset\).
+\item
+  Dado \(A\) un conjunto cualquiera obviamente \(\emptyset\subseteq A.\)
+\end{itemize}
+
+Tomemos como conjunto base \(\Omega=\{1,2,3\}\)
+
+\begin{itemize}
+\tightlist
+\item
+  \(\Omega\) es un conjunto de cardinal 3, se denota por
+  \(\#(\Omega)=3\) o por \(|\Omega|=3\)
+\item
+  El conjunto \(\Omega\) tiene \(2^3=8\) subconjuntos.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    el vacío \(\emptyset\) y los elementales \(\{1\},\{2\},\{3\}\)
+  \item
+    los subconjuntos de dos elementos: \(\{1,2\},\{1,3\},\{2,3\}\)
+  \item
+    el conjunto total de tres elementos \(\Omega=\{1,2,3\}.\)
+  \end{itemize}
+\end{itemize}
+
+Dado un conjunto \(\Omega\) podemos construir el \textbf{conjunto de
+todas sus partes} (todos sus subconjuntos) al que denotamos por
+\(\mathcal{P}(\Omega)\). También se denomina de forma directa partes de
+\(\Omega\).
+
+Cardinal de las partes de un conjunto
+
+El \textbf{cardinal de la partes de un conjunto} es
+\(\#(\mathcal{P}(\Omega))=2^{\#(\Omega)}.\)
+
+Por ejemplo
+\(\#\left(\mathcal{P}(\{1,2,3\})\right)=2^{\#(\{1,2,3\})}=2^3=8.\)
+
+Efectivamente
+
+\[\mathcal{P}(\{1,2,3\})=\{\emptyset,\{1\},\{2\},\{3\},\{1,2\},\{1,3\},\{2,3\},\{1,2,3\}\}.\]
+
+Dado un subconjunto \(A\) de \(\Omega\) podemos construir la función
+característica de \(A\) \[\chi_A:\Omega \to \{0,1\}\]
+
+dado un \(\omega\in \Omega\)
+
+\[
+\chi_A(\omega)=
+\left\{
+\begin{array}{ll}
+1 &  \mbox{si }\omega \in A\\
+0 &  \mbox{si }\omega \not\in A
+\end{array}
+\right.
+\]
+
+\subsection{Operaciones entre
+conjuntos}\label{operaciones-entre-conjuntos}
+
+\textbf{Intersección}
+
+Sea \(\Omega\) un conjunto y \(A\) y \(B\) dos subconjuntos de
+\(\Omega\).
+
+El conjunto \textbf{intersección} de \(A\) y \(B\) es el formado por
+todos los elementos que perteneces a \(A\) \textbf{Y} \(B\), se denota
+por \(A\cap B\).
+
+Más formalmente
+
+\[
+A\cap B=\left\{x\in\Omega \big| x\in A \mbox{ y } x\in B\right\}.
+\]
+
+\textbf{Unión.}
+
+El conjunto \textbf{unión} de \(A\) y \(B\) es el formado por todos los
+elementos que perteneces a \(A\) \textbf{O} pertenecen a \(B\), se
+denota por \(A\cup B\).
+
+Más formalmente
+
+\[
+A\cup B=\left\{x\in\Omega \big| x\in A \mbox{ o } x\in B\right\}.
+\]
+
+** Diferencia.**
+
+El conjunto \textbf{diferencia} de \(A\) y \(B\) es el formado por todos
+los elementos que perteneces a \(A\) \textbf{Y NO} pertenecen a \(B\),
+se denota por \(A-B=A-(A\cap B)\).
+
+Más formalmente
+
+\[
+A- B=\left\{x\in\Omega \big| x\in A \mbox{ y } x\notin B\right\}.
+\]
+
+** Complementario**
+
+El \textbf{complementario} de un subconjunto \(A\) de \(\Omega\) es
+\(\Omega-A\) y se denota por \(A^c\) o \(\overline{A}\).
+
+Más formalmente
+
+\[
+A^c=\left\{x\in\Omega \big| x\not\in A\right\}.
+\]
+
+\subsection{Más propiedades}\label{muxe1s-propiedades}
+
+Sea \(\Omega\) un conjunto y \(A\), \(B\), \(C\) tres subconjuntos de
+\(\Omega\)
+
+\begin{itemize}
+\tightlist
+\item
+  Se dice que dos conjuntos \(A\) y \(B\) \textbf{son disjuntos} si
+  \(A\cap B=\emptyset.\)
+\item
+  \(\Omega^c=\emptyset\).
+\item
+  \(\emptyset^c=\Omega\).
+\item
+  \(A\cup B=B \cup A\) , \(A\cap B=B\cap A\) conmutativas.
+\item
+  \((A\cup B) \cup C = A \cup( B \cup C)\) ,
+  \((A\cap B) \cap C = A \cap( B \cap C)\) asociativas.
+\item
+  \(A\cup (B\cap C)=(A\cup B) \cap (A\cup C)\) ,
+  \(A\cap (B\cup C)=(A\cap B) \cup (A\cap C)\) distributivas.
+\item
+  \(\left(A^c\right)^c=A\) doble complementario.
+\item
+  \(\left(A\cup B\right)^c=A^c \cap B^c\),
+  \(\left(A\cap B\right)^c=A^c \cup B^c\)
+  \href{https://es.wikipedia.org/wiki/Leyes_de_De_Morgan}{leyes de De
+  Morgan}.
+\end{itemize}
+
+\subsection{Con R, ejemplos.}\label{con-r-ejemplos.}
+
+Con R los conjuntos de pueden definir como vectores
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Omega}\OtherTok{=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{10}\NormalTok{)}
+\NormalTok{A}\OtherTok{=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{)}
+\NormalTok{B}\OtherTok{=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{)}
+\NormalTok{C}\OtherTok{=}\FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{8}\NormalTok{)}
+\NormalTok{Omega}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+ [1]  1  2  3  4  5  6  7  8  9 10
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{A}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 1 2 3 4 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{B}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 1 4 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{C}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 4 6 7 8
+\end{verbatim}
+
+\(A\cap B\)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{A}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 1 2 3 4 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{B}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 1 4 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{intersect}\NormalTok{(A,B)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 1 4 5
+\end{verbatim}
+
+\(A\cup B\)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{A}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 1 2 3 4 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{B}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 1 4 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{union}\NormalTok{(A,B)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 1 2 3 4 5
+\end{verbatim}
+
+\(B-C\)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{B}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 1 4 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{C}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 4 6 7 8
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{setdiff}\NormalTok{(B,C)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 1 5
+\end{verbatim}
+
+\(A^c=\Omega-A\)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Omega}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+ [1]  1  2  3  4  5  6  7  8  9 10
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{A}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 1 2 3 4 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{setdiff}\NormalTok{(Omega,A)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1]  6  7  8  9 10
+\end{verbatim}
+
+\subsection{Con python}\label{con-python}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Omega}\OperatorTok{=}\BuiltInTok{set}\NormalTok{([}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{10}\NormalTok{])}
+\NormalTok{A}\OperatorTok{=}\BuiltInTok{set}\NormalTok{([}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{])}
+\NormalTok{B}\OperatorTok{=}\BuiltInTok{set}\NormalTok{([}\DecValTok{1}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{])}
+\NormalTok{C}\OperatorTok{=}\BuiltInTok{set}\NormalTok{([}\DecValTok{4}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{8}\NormalTok{])}
+\NormalTok{Omega}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{A}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+{1, 2, 3, 4, 5}
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{B}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+{1, 4, 5}
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{C}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+{8, 4, 6, 7}
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{A }\OperatorTok{\&}\NormalTok{ B   }\CommentTok{\# intersección (\&: and/y)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+{1, 4, 5}
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{A }\OperatorTok{|}\NormalTok{ B   }\CommentTok{\# unión (|: or/o)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+{1, 2, 3, 4, 5}
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{A }\OperatorTok{{-}}\NormalTok{ C   }\CommentTok{\# diferencia }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+{1, 2, 3, 5}
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Omega}\OperatorTok{{-}}\NormalTok{C }\CommentTok{\# complementario.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+{1, 2, 3, 5, 9, 10}
+\end{verbatim}
+
+\section{Combinatoria}\label{combinatoria}
+
+La combinatoria es una rama de la matemática discreta que entre otras
+cosas cuenta distintas configuraciones de objetos de un conjunto.
+
+Por ejemplo si tenemos un equipo de baloncesto con 7 jugadores ¿cuántos
+equipos de 5 jugadores distintos podemos formar?
+
+\subsection{Número Binonial}\label{nuxfamero-binonial}
+
+\textbf{Número combinatorio o número binomial}
+
+Nos da el número de subconjuntos de tamaño \(k\) de un conjunto de
+tamaño \(n\). Este número es
+
+\[
+C_n^k={n\choose k} = \frac{n!}{k!\cdot (n-k)!}.
+\]
+
+Recordemos que \[
+n!=1\cdot 2\cdot 3\cdots n.
+\]
+
+En nuestro caso con 7 jugadores \(n=7\) el número de equipos distintos
+de \(k=5\) es
+
+\[
+\begin{array}{rl}
+C_7^5&={7\choose 5} = \frac{7!}{5!\cdot (7-5)!}=\frac{7!}{5!\cdot 2!} \\
+&=\frac{1\cdot 2\cdot 3 \cdot 4\cdot 5\cdot 6\cdot 7}{1\cdot 2\cdot 3 \cdot 4\cdot 5\cdot 1\cdot 2}=\frac{6\cdot 7}{2}=\frac{42}{2}=21.
+\end{array}
+\]
+
+Puedo formar 21 equipos distintos.
+
+\textbf{Ejercicio}
+
+Carga el paquete \texttt{gtools} de R y investiga la función
+\texttt{combinations(n,\ r,\ v,\ set,\ repeats.allowed)} para calcular
+todas las combinaciones anteriores.
+
+\subsection{Combinaciones con
+repetición}\label{combinaciones-con-repeticiuxf3n}
+
+En combinatoria, las combinaciones con repetición de un conjunto son las
+distintas formas en que se puede hacer una selección de elementos de un
+conjunto dado, permitiendo que las selecciones puedan repetirse.
+
+El número \(CR_n^k\) de multiconjuntos con \(k\) elementos escogidos de
+un conjunto con \(n\) elementos satisface:
+
+\begin{itemize}
+\tightlist
+\item
+  Es igual al número de combinaciones con repetición de \(k\) elementos
+  escogidos de un conjunto con \(n\) elementos.
+\item
+  Es igual al número de formas de repartir \(k\) objetos en \(n\)
+  grupos.
+\end{itemize}
+
+\[CR_n^k = \binom{n+k-1}{k} = \frac{(n+k-1)!}{k!(n-1)!}.\]
+
+\textbf{Ejemplo}
+
+Vamos a imaginar que vamos a repartir 12 caramelos entre Antonio,
+Beatriz, Carlos y Dionisio (que representaremos como A, B, C, D). Una
+posible forma de repartir los caramelos sería: dar 4 caramelos a
+Antonio, 3 a Beatriz, 2 a Carlos y 3 a Dionisio. Dado que no importa el
+orden en que se reparten, podemos representar esta selección como
+AAAABBBCCDDD.
+
+Otra forma posible de repartir los caramelos podría ser: dar 1 caramelo
+a Antonio, ninguno a Beatriz y Carlos, los 11 restantes se los damos a
+Dionisio. Esta repartición la representamos como ADDDDDDDDDDD
+
+Recíprocamente, cualquier serie de 12 letras A, B, C, D se corresponde a
+una forma de repartir los caramelos. Por ejemplo, la serie AAAABBBBBDDD
+corresponde a: Dar 4 caramelos a Antonio, 5 caramelos a Beatriz, ninguno
+a Carlos y 3 a Dionisio.
+
+De esta forma, el número de formas de repartir los caramelos es:
+
+\[CR_{n=4}^{k=12} = \binom{4+12-1}{12}=455.\]
+
+\subsection{Variaciones.}\label{variaciones.}
+
+\textbf{Variaciones}
+
+Con los número \(\{1,2,3\}\) ¿cuántos números de dos cifras distintas
+podemos formar sin repetir ninguna cifra?
+
+La podemos escribir
+
+\[12,13,21,23,31,32\]
+
+Luego hay seis casos
+
+Denotaremos las variaciones (sin repetición) de \(k\) elementos (de
+orden \(k\)) de un conjunto de \(n\) elementos por \(V_n^k\) su valor es
+
+\[
+V_n^k=\frac{n!}{(n-k)!}=(n-k+1)\cdot (n-k+2)\cdots n.
+\]
+
+En nuestro ejemplo con \(n=3\) dígitos podemos escribir las siguientes
+variaciones de orden \(k=2\)
+
+\[
+V^{k=2}_{n=3}=\frac{3!}{(3-2)!}=\frac{1\cdot 2\cdot 3}{1}=6.
+\]
+
+\textbf{Ejercicio}
+
+Carga el paquete \texttt{gtools} de R y investiga la función
+\texttt{permutations(n,\ r,\ v,\ set,\ repeats.allowed)} para calcular
+todas las variaciones anteriores.
+
+\subsection{Variaciones con
+repetición.}\label{variaciones-con-repeticiuxf3n.}
+
+\textbf{Variaciones con repetición}
+
+¿Y repitiendo algún dígito?
+
+\[VR_n^k=n^k\]
+
+Efectivamente en nuestro caso
+
+\[11,12,13,21,22,23,31,32,33\]
+
+\[
+VR^{k=2}_{n=3}=n^k.
+\]
+
+\subsection{Permutaciones}\label{permutaciones}
+
+Las permutaciones de un conjunto de cardinal \(n\) son todas las
+variaciones de orden máximo \(n\). Las denotamos y valen:
+
+\[
+P_n=V_n^n=n!
+\]
+
+Por ejemplo todos los números que se pueden escribir ordenando todos los
+dígitos \(\{1,2,3\}\) sin repetir ninguno
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(combinat)}
+\ControlFlowTok{for}\NormalTok{(permutacion }\ControlFlowTok{in} \FunctionTok{permn}\NormalTok{(}\DecValTok{3}\NormalTok{)) }\FunctionTok{print}\NormalTok{(permutacion)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 1 2 3
+[1] 1 3 2
+[1] 3 1 2
+[1] 3 2 1
+[1] 2 3 1
+[1] 2 1 3
+\end{verbatim}
+
+Efectivamente \(P_3=3!=1\cdot  2\cdot 3.\)
+
+\textbf{Ejercicio}
+
+Carga el paquete \texttt{combinat} de R e investiga la función
+\texttt{permn} para calcular todas las permutaciones anteriores.
+
+\textbf{Ejercicio}
+
+Investiga el paquete \texttt{itertools} y la función \texttt{comb} de
+\texttt{scipy.misc} de Python e investiga sus funciones para todas las
+formas de contar que hemos visto en este tema.
+
+\textbf{Ejercicio}
+
+La función gamma de Euler, cobrará mucha importancia en el curso de
+estadística. Comprueba que la función \texttt{gamma(x+1)} da el mismo
+valor que la función \texttt{factorial(x)} en \texttt{R} para todo
+\(x = \{1,2,3,\ldots,10\}\).
+
+\subsection{Números multinomiales. Permutaciones con
+repetición.}\label{nuxfameros-multinomiales.-permutaciones-con-repeticiuxf3n.}
+
+Consideremos un conjunto de elementos \(\{a_1, a_2, \ldots, a_k\}\).
+
+Entonces, si cada uno de los objetos \(a_i\) de un conjunto, aparece
+repetido \(n_i\) veces para cada \(i\) desde 1 hasta \(k\), entonces el
+número de permutaciones con elementos repetidos es:
+
+\[PR_n^{n_1,n_2,\ldots,n_k} = {{n}\choose {n_1\quad n_2 \quad\ldots \quad n_k}}=\frac{n!}{n_1!\cdot n_2!\cdot \ldots \cdot n_k!},\]
+donde \(n=n_1+n_2+\cdots+n_k\).
+
+\textbf{Ejemplo}
+
+¿Cuantas palabras diferentes se pueden formar con las letras de la
+palabra \texttt{PROBABILIDAD}?
+
+El conjunto de letras de la palabra considerada es el siguiente:
+\(\{A, B, D, I, L, O, P, R\}\) con las repeticiones siguientes: las
+letras A, B, D, e I, aparecen 2 veces cada una; y las letras L, O, P, R
+una vez cada una de ellas.
+
+Por tanto, utilizando la fórmula anterior, tenemos que el número de
+palabras (permutaciones con elementos repetidos) que podemos formar es
+
+\[PR^{2,2,2,2,1,1,1,1}_{12} = \frac{12!}{(2!)^4(1!)^4} = 29937600.\]
+
+\bookmarksetup{startatroot}
+
+\chapter{Para acabar}\label{para-acabar}
+
+\section{Principios básicos para contar cardinales de
+conjuntos}\label{principios-buxe1sicos-para-contar-cardinales-de-conjuntos}
+
+\textbf{El principio de la suma}
+
+Sean \(A_1, A_2,\ldots, A_n\) conjuntos disjuntos dos a dos, es decir
+\(A_i\cap A_j=\emptyset\) para todo \(i\not= j\), \(i,j=1,2,\ldots n\).
+Entonces
+
+\[\#(\cup_{i=1}^n A_i)=\sum_{i=1}^n \#(A_i).\]
+
+\textbf{Principio de unión exclusión}
+
+Consideremos dos conjuntos cualesquiera \(A_1, A_2\) entonces el
+cardinal de su unión es
+
+\[\#(A_1\cup A_2)=\#(A_1)+\#(A_2)-\#(A_1\cap A_2).\]
+
+\textbf{El principio del producto}
+
+Sean \(A_1,A_2,\ldots A_n\)
+
+\[
+\begin{array}{ll}
+\#(A_1\times A_2\times \cdots A_n)=&\#\left(\{(a_1,a_2,\ldots a_n)| a_i\in A_i, i=1,2,\ldots n\}\right)\\
+&=\prod_{i=1}^n \#(A_i).
+\end{array}
+\]
+
+\section{Otros aspectos a tener en
+cuenta}\label{otros-aspectos-a-tener-en-cuenta}
+
+Evidentemente nos hemos dejado muchas otras propiedades básicas de
+teoría de conjuntos y de combinatoria como:
+
+\begin{itemize}
+\tightlist
+\item
+  Propiedades de los números combinatorios.
+\item
+  Binomio de Newton.
+\item
+  Multinomio de Newton.
+\end{itemize}
+
+Si nos son necesarias las volveremos a repetir a lo largo del curso o
+bien daremos enlaces para que las podáis estudiar en paralelo.
+
+\part{Probabilidad y variables aleatorias}
+
+\chapter{Preliminares: conjuntos y
+combinatoria}\label{preliminares-conjuntos-y-combinatoria}
+
+\chapter{Probabilidad}\label{probabilidad}
+
+\chapter{Variables alestorias}\label{variables-alestorias}
+
+\chapter{Distribuciones notables 1}\label{distribuciones-notables-1}
+
+\chapter{Distribuciones notables 2}\label{distribuciones-notables-2}
+
+
+
+
+\end{document}

@@ -10,7 +10,6 @@ book:
   
   chapters:
     - index.qmd
-    - intro.qmd
     - part: probabilidad_y_variables_aleatorias.qmd
       chapters: 
         - preliminares.qmd

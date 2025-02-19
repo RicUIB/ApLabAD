@@ -1,0 +1,115 @@
+# Introducción
+
+Este documento muestra distintos tipos de **callouts personalizados** en Quarto con un título separado y una barra lateral.
+
+------------------------------------------------------------------------
+
+## Definición
+
+::::: callout-definicion
+::: callout-title
+<i class="bi bi-book"></i> Definición
+:::
+
+::: callout-body
+Un **callout de definición** se usa para resaltar términos y conceptos importantes en un texto.
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Teorema
+
+::::: callout-teorema
+::: callout-title
+<i class="bi bi-lightbulb"></i> Teorema
+:::
+
+::: callout-body
+El **Teorema de Pitágoras** establece que en un triángulo rectángulo, la suma de los cuadrados de los catetos es igual al cuadrado de la hipotenusa.
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Proposición
+
+::::: callout-proposicion
+::: callout-title
+<i class="bi bi-clipboard-check"></i> Proposición
+:::
+
+::: callout-body
+En lógica, una **proposición** es una afirmación que puede ser verdadera o falsa.
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Ejemplo
+
+::::: callout-ejemplo
+::: callout-title
+<i class="bi bi-list-task"></i> Ejemplo
+:::
+
+::: callout-body
+Un **ejemplo** de número primo es el 7, ya que solo es divisible por 1 y por sí mismo.
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Ejercicio
+
+::::: callout-ejercicio
+::: callout-title
+<i class="bi bi-pencil-square"></i> Ejercicio
+:::
+
+::: callout-body
+Encuentra la derivada de la función ( f(x) = x\^2 + 3x - 5 ).
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Nota
+
+::::: callout-nota
+::: callout-title
+<i class="bi bi-info-circle"></i> Nota
+:::
+
+::: callout-body
+Recuerda que en **Quarto**, puedes personalizar los estilos con CSS.
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Advertencia
+
+::::: callout-advertencia
+::: callout-title
+<i class="bi bi-exclamation-triangle"></i> Advertencia
+:::
+
+::: callout-body
+No olvides guardar tu trabajo antes de cerrar el editor.
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Curiosidad
+
+::::: callout-curiosidad
+::: callout-title
+<i class="bi bi-question-circle"></i> Curiosidad
+:::
+
+::: callout-body
+¿Sabías que el número **1729** es conocido como el **número de Hardy-Ramanujan**?
+:::
+:::::
