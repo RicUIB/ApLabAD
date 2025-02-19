@@ -1,0 +1,11 @@
+# Introducción
+
+Estas son unas notas de clase introductorias al análisis de datos, probabilidad y estadística.
+
+::: {callout-definicion}
+XXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXx
+
+XXXXXXXX
+
+$$x^2+1$$
+:::

@@ -1,0 +1,35 @@
+{
+  "index.qmd": {
+    "index.html": "b2954b9c"
+  },
+  "intro.qmd": {
+    "intro.html": "a0611894"
+  },
+  "summary.qmd": {
+    "summary.html": "df5fd63c"
+  },
+  "references.qmd": {
+    "references.html": "d22fd531"
+  },
+  "referencias.qmd": {
+    "referencias.html": "5075081f"
+  },
+  "probabilidad_y_variables_aleatorias.qmd": {
+    "probabilidad_y_variables_aleatorias.html": "ca085204"
+  },
+  "preliminares.qmd": {
+    "preliminares.html": "687b024b"
+  },
+  "probabilidad.qmd": {
+    "probabilidad.html": "dd610475"
+  },
+  "variables_aleatorias.qmd": {
+    "variables_aleatorias.html": "d0f82149"
+  },
+  "distibuciones_notables_1.qmd": {
+    "distibuciones_notables_1.html": "d0e85d85"
+  },
+  "distibuciones_notables_2.qmd": {
+    "distibuciones_notables_2.html": "9b6a35b6"
+  }
+}

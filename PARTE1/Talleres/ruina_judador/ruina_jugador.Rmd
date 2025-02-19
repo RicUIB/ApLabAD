@@ -1,0 +1,155 @@
+---
+title: "El problema de la ruina del jugador"
+author: "Variables Aleatorias"
+date: "`r Sys.Date()`"
+header-includes:
+   - \usepackage{xcolor,eurosym,libertine}
+output:
+  pdf_document: 
+    toc: true
+urlcolor: blue
+linkcolor: red
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(scipen = 999)
+```
+
+
+# El problema de la ruina del jugador
+
+Supongamos que vamos a  jugar a la ruleta   y apostamos a que sale rojo, 
+supongamos que la probabilidad de rojo es  $p=\frac12$ (en la ruleta francesa
+tiene los números del 1 al 36 números 18 rojos y 19 negros y el 0 que no tiene color). 
+
+En cada jugada apostamos una cantidad fija de dinero en cada jugada. Si ganamos,
+ganamos la cantidad apostada, si perdemos, perdemos la cantidad apostada.
+
+Supongamos que la probabilidad de ganar es $p=\frac12$ y la probabilidad de 
+perder es $q=1-p=1- \frac12=\frac12$. 
+
+Supongamos que empezamos con una cantidad $A$ de dinero y que vamos a jugar 
+hasta que tengamos ganemos algo o lo perdamos todo o $0$.
+ 
+Vamos a utilizar \textcolor{red}{un truco o martingala} que consiste en 
+
+1. En la primera apostamos $2^{1-1}=2^0=1$\texteuro. 
+2. Si ganamos hemos ganado 1\texteuro.
+3. Si perdemos apostamos  el doble 2\texteuro.
+4. Si ganamos dejamos de jugar,  tenemos una premio de  2\texteuro   y hemos 
+perdido 
+un euro así que ganamos 2-1=1\texteuro.
+5. Repetimos  este procedimiento hasta que ganemos.
+6. Así, a largo plazo, siempre nos iremos \textcolor{red}{ganando} 
+un euro en la jugada en la  que nos retiremos.
+
+
+Sea $X$ la variable  que nos da el número de veces que perdemos hasta que 
+ganamos por primera vez.
+
+Esta variable seguirá una ley geométrica de parámetro 
+$p=\frac12$: $X\sim Geom(p=\frac12)$.
+
+Su función de probabilidad es $P(X=x)=p\cdot\left(1-p\right)^{x}=\frac12\cdot \left(1-\frac12\right)^x=\left(\frac12\right)^x$ para $k=0,1,2,3,\ldots$.
+
+
+Por ejemplo la probabilidad de que ganemos en la jugada 10 es 
+
+$$P(X=10-1)=\frac12\cdot \left(1-\frac12\right)^{10-1}=
+\left(\frac12\right)^{10}\approx`r 0.5^10`.$$
+
+
+Pongamos en forma de tabla los "gastos" en varias apuestas:
+
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline 
+Jugada $x$ & Apuesta & Gasto total si pierdo & Ganado\\\hline
+1 & $2^{1-1}=1$ & 1 & -1\\
+2 & $2^{2-1}=2$ & 3 & -3\\
+3 & $2^{3-1}=4$ & 7 & -7 \\
+4 & $2^{4-1}=8$ & 15 & - 15\\
+\vdots & \vdots & \vdots & \\
+$x$ & $2^{x-1}$ & 
+$\displaystyle\sum_{k=0}^{x-1} 2^k=\frac{2^0-2^{k-1}\cdot 2}{1-2}=2^{x}-1$& $-2^x+1$\\\hline
+\end{tabular}
+\end{table}
+
+
+Si hemos perdido en las primeras $k$ jugadas, hemos perdido en  total 
+
+$$
+2^0+2^1+\cdots+2^{k-1}=
+\sum_{k=0}^k 2^k=
+\frac{2^0-2^{k-1}}{1-2}=2^{k-1}-1\texteuro.
+$$
+
+
+Ahora en la jugada $x+1$  apostaré $2^{x}$\texteuro y si gano tengo un premio de  $2^{x}$\texteuro y un gasto de $2^{x}-1$ por lo tanto he ganado 1\texteuro. 
+.
+
+¿Cuál es el valor esperado del dinero que tengo que llevar?
+
+
+Sea $D=$ dinero que tengo que llevar si juego hasta ganar, entonces la apuesta ganadora es $X+1$ y el dinero que tengo que llevar es $D=2^{X}-1$\texteuro así será una transformación de la v.a $X$ de la que tengo que calcular su valor esperado.
+
+El valor esperado de $D$ es 
+$$E(D)=E(2^X-1)=E(2^X)-1$$ 
+
+y ahora hacemos 
+$$E(2^X)=\sum_{x=0}^{\infty} 2^x\cdot P(X=x)=\sum_{x=0}^{\infty} 2^x\cdot \left(\frac12\right)^{x}=\sum_{x=0}^{\infty} \frac12=+\infty.$$
+
+Finalmente tenemos que $E(D)=E(2^x)-1=+\infty-1=+\infty$.
+
+\textcolor{red}{Conclusión:} Aunque a largo plazo siempre ganamos un euro, el valor esperado del dinero que tenemos que llevar es infinito.   
+
+
+
+## Generalicemos el problema a una probabilidad $p$.  
+
+Ahora la probabilidad de ganar es $0<p<1$. Con la misma notación la función de probabilidad del número de veces que perdemos hasta que ganamos por primera vez es
+
+$$P(X=x)=p\cdot\left(1-p\right)^{x}=p\cdot 
+\left(1-p\right)^x\text{ para } x=0,1,2,3,\ldots.$$
+
+
+Las ganancias y pérdidas de cada jugada siguen siendo las mismas.
+EL valor esperado de la cantidad de dinero que tenemos que llevar es:
+
+
+\begin{align*}
+E(2^X-1)=E(2^X)-1& =\sum_{x=0}^{\infty} 2^x\cdot p\cdot \left(1-p\right)^{x}-1=p\cdot \sum_{x=0}^{\infty} 2^x\cdot \left(1-p\right)^{x}-1=p\cdot \sum_{x=0}^{\infty} \left(2\cdot \left(1-p\right)\right)^{x}-1\\
+&= p\cdot \frac{1}{1-2\cdot \left(1-p\right)}-1.    
+\end{align*}
+
+
+
+
+Ahora recordemos que si $0<r<1$ la serie geométrica converge  $\sum_{x=0}^{\infty} r^x=\frac{1}{1-r}$, pero si $r\geq 1$ la serie diverge a $+\infty$.
+
+Así que la serie $\sum_{x=0}^{\infty} \left(2\cdot \left(1-p\right)\right)^{x}$ converge si $2\cdot \left(1-p\right)<1$ es decir si $1-p<\frac12$ o lo que es lo mismo si $p>\frac12$ y diverge si $0<p\leq 1/2$.
+
+
+Así que si $\frac12<p<1$ el valor esperado de la cantidad de dinero que tenemos que llevar es $p\cdot \frac{1}{1-2\cdot \left(1-p\right)}-1$.
+
+```{r}
+p=seq(0.51,0.99,0.05)# probabilidad de ganar
+p
+Gasto_esperado=p*(1/(1-2*(1-p)))-1
+Gasto_esperado
+```
+Simulación de la cantidad de dinero que tenemos que llevar en función de la probabilidad de ganar para $p=0.9$.
+
+```{r}
+set.seed(314)
+x=rgeom(10^6,0.7)
+str(x)
+x[1:100]
+mean(2^x-1)
+p=0.7
+p*(1/(1-2*(1-p)))-1
+
+```

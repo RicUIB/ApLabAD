@@ -1,0 +1,202 @@
+---
+title: "Ejercicios Tema 2 - Variables aleatorias. Soluciones."
+author: "Variables Aleatorias"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  pdf_document: 
+    toc: yes
+    number_sections: yes
+    toc_depth: 4
+    keep_tex: yes
+  html_document: 
+    toc: yes
+    number_sections: yes
+  word_document:
+    toc: yes
+linkcolor: red
+header-includes: \renewcommand{\contentsname}{Contenidos}
+citecolor: blue
+toccolor: blue
+urlcolor: blue 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Variables aleatorias discretas
+
+```{r contador, echo=FALSE}
+num=0
+
+```
+
+
+
+## Problema `r num=num+1;num`.
+
+Hay 10 estudiantes inscritos en una clase de Estadística, de entre los cuales 3
+tienen 19 años, 4 tienen 20 años, 1 tiene 21 años, 1 tiene 24 años y 1 tiene 26 años. De esta
+clase se seleccionan dos estudiantes sin reposición. Sea $X$ la edad media de los
+dos estudiantes seleccionados. Hallar la función de probabilidad para $X$.
+
+
+## Problema `r num=num+1;num`.
+
+Verificar que:
+$$F_W (t)=
+\left\{\begin{array}{ll}
+0, & \mbox{si $t<3$},
+ \\[0.1cm]
+{1\over 3}, & \mbox{si $3\leq t<4$},
+ \\[0.1cm]
+{1\over 2}, & \mbox{si $4\leq t<5$},
+ \\[0.1cm] 
+{2\over 3}, & \mbox{si $5\leq t<6$},
+ \\[0.1cm] 
+1, & \mbox{si $t\geq 6$},
+\end{array}\right.
+$$
+es una función de distribución y especificar
+la función de probabilidad para $W$. Hallar
+también $P(3<W\leq 5)$.
+
+
+## Problema `r num=num+1;num`.
+
+La variable aleatoria $Z$ tiene por función de probabilidad:
+$$f_Z (x)=
+\left\{\begin{array}{ll}
+{1\over 3}, & \mbox{si $x=0,1,2$},\\ 0, & \mbox{en los otros
+casos.}
+\end{array}\right.
+$$
+¿Cuál es la función de distribución para $Z$?
+
+
+## Problema `r num=num+1;num`.
+
+Sea $X_n$ una variable aleatoria dependiendo de un valor natural $n$ cuya función de probabilidad es:
+$$
+f(x)=\begin{cases}
+k\cdot i, & \mbox{si }i=1,2\ldots,n, \\
+0, & \mbox{en caso contrario.}
+\end{cases}
+$$
+
+1. Hallar el valor de $k$ y la función de distribución de $X$.
+2.  Calcular la probabilidad de que $X$ tome un valor par.
+    
+    
+
+## Problema `r num=num+1;num`.
+
+Un examen tipo test consta de cinco preguntas con tres posibles opciones cada una. Un alumno contesta al azar las cinco cuestiones.
+Suponiendo que cada respuesta acertada vale dos puntos, hallar la distribución de número de puntos obtenidos por el alumno.
+
+
+
+
+# Variables aleatorias continuas
+
+## Problema `r num=num+1;num`.
+
+Verificar que:
+$$
+F_X (t)=
+\left\{\begin{array}{ll}
+0, & \mbox{si $t<-1$},
+ \\[0.1cm]
+{t+1\over 2}, & \mbox{si $-1\leq
+t\leq 1$},
+ \\[0.1cm]
+1, & \mbox{si $t> 1$},
+\end{array}\right.
+$$
+es una función de distribución y hallar la función de densidad para $X$. Calcular también $P\left(-{1\over 2}\leq X\leq {1\over 2}\right)$.
+
+
+
+## Problema `r num=num+1;num`.
+
+ Sea $Y$ una variable continua con función de densidad:
+
+$$
+f_Y(y)=
+\left\{\begin{array}{ll}
+2(1-y), & \mbox{si $0<y<1$},\\ 0, & \mbox{en los otros casos}.
+\end{array}\right.
+$$
+Hallar la función de distribución $F_Y(t)$.
+
+
+## Problema `r num=num+1;num`.
+
+Verificar que:
+$$
+F_Y(t)=
+\left\{\begin{array}{ll}
+0, & \mbox{si $t<0$},\\
+\sqrt{t}, & \mbox{si $0\leq t\leq 1$},\\ 1, &
+\mbox{si $t>1$},
+\end{array}\right.
+$$
+
+es una función de distribución y especificar la función de densidad
+para $Y$. Usar este resultado para hallar $P\left(-{1\over 2}<Y<{3\over 4}\right)$.
+
+
+
+## Problema `r num=num+1;num`.
+
+Sea $X$ una variable aleatoria con función de densidad:
+$$
+f(x)=\begin{cases}
+1-|x|, & \mbox{si }|x|\leq 1,\\
+0, & \mbox{en caso contrario.}
+\end{cases}
+$$
+
+1. Representar gráficamente dicha función.
+2. Hallar y dibujar la función de distribución.
+3. Calcular las siguientes probabilidades: $P(X\geq 0)$ y $P\left(|X|<\frac{1}{2}\right).$
+    
+
+
+## Problema `r num=num+1;num`.
+
+Hallar la esperanza y la varianza de las variables de los ejercicios anteriores.
+
+
+
+
+# Transformación de variables aleatorias
+
+## Problema `r num=num+1;num`.
+
+A partir de 
+$$
+F_X(t)=
+\left\{\begin{array}{ll}
+0, & \mbox{si $t<-1$},
+\\[0.1cm]
+{t+1\over 2}, & \mbox{si $-1\leq t\leq
+1$},
+ \\[0.1cm]
+1, & \mbox{si $t>1$},
+\end{array}\right.
+$$
+
+hallar la función de distribución para $Y=15+2X$ y la función de densidad para $Y$.
+
+
+
+
+## Problema `r num=num+1;num`.
+
+
+Sea $X$ una variable aleatoria continua con función de densidad
+$f_X(x)$.
+Consideramos la variable aleatoria $Y=\mathrm{e}^X$. Hallar la función de densidad
+de la variable aleatoria $Y$, $f_Y(y)$.
+

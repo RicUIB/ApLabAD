@@ -1,0 +1,9 @@
+# Prefacio {.unnumbered}
+
+Este libro en la web  es una versión 
+de las notas de clase de asignaturas introductorias al análisis de datos.
+
+Ha sido elaborado con [Quarto](https://quarto.org/)
+: RStudio, PBC. (2022). Quarto (Version 1.0). Hemos utilizado el formato formato book.
+
+

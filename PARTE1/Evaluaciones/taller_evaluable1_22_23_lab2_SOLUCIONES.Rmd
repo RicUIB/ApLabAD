@@ -1,0 +1,324 @@
+---
+title: "SOLUCIONES: Taller Evaluable 1. Entrega problemas. Probabilidades básico"
+output:
+  pdf_document:
+    includes:
+      in_header: header_pagenrs_complet_ver3_s__problemas.tex
+    keep_tex: no
+    toc: no
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,cache=FALSE)
+options(scipen = 999)
+```
+
+
+#  Problemas 
+
+```{r echo=FALSE}
+r=0
+```
+
+
+## Problema `r r=r+1; r` (\textbf{1 punto.})
+
+En una urna, hay 5 bolas del mismo tamaño y peso, de los cuales, 3 son rojas y 2 son azules. ¿De cuántas maneras se pueden extraer  los colores sacando de una en una a una las bolas de la urna?
+
+### Solución 
+
+
+Podemos calcular con permutaciones de dos elementos con repeticiones 3,2  de longitud 5.
+
+$$
+PR_5^{3,2}=\binom{5}{3,2}=\frac{5!}{3!\cdot 2!}.
+$$
+
+También se puede hacer con combinaciones.
+
+```{r}
+choose(5,3)
+```
+
+
+
+## Problema `r r=r+1; r` (\textbf{2 puntos.})
+
+a. Cuantos resultados posibles tiene el euromillones: son 5 números enteros del 1 al 50 y dos estrellas  números enteros del  1 al 12 \footnote{Sin orden en ambos casos.}.
+
+b. Dado un sorteo del euromillones hemos obtenido  de números: 46,47,48,49,50 y de estrellas 1,2. De todos los resultados posibles ¿cuántos tienen n=1,2,3,4 aciertos en los números y un acierto en la estrella?
+
+### Solución 
+
+**Apartado a.**
+
+$$
+\binom{50}{5}\cdot \binom{12}{2} =
+\frac{50!}{(50-5)!\cdot 5!}\cdot 
+\frac{12!}{(12-2)!\cdot 2!}=
+`r choose(50,5)`\cdot `r choose(12,2)`=
+`r choose(50,5)* choose(12,2)`.
+$$
+
+```{r}
+choose(50,5)
+choose(12,2)
+choose(50,5)*choose(12,2)
+```
+
+
+**Apartado b.**
+
+Tenemos $n=1,2,3,4,5$ aciertos estrelas 50 bolas y 1 acierto en la estrella
+
+La idea es de los 5 números que han salido elijo $n$ para acertar son $\binom{5}{n}$, para cada elección de $n$ multiplico por los casos de los  $5-n$ restantes los tengo que elegir de los que no han salido que son $50-5$ que son $\binom{50-5}{5-n}$.  De forma similar la para las estrellas  tengo $\binom{2}{1}\cdot \binom{11}{1}$ casos. El producto de estas cantidades me dará en e resultado para $n=1,2,3,4,5$ aciertos en  las bolas y 1 en las estrellas
+
+$$
+\binom{5}{n}\cdot \binom{50-5}{5-n}\cdot \binom{2}{1}\cdot \binom{11}{1}.
+$$
+
+Lo podemos calcular manualmente (con calculadora es pesado) o con la siguiente función de R
+
+
+```{r results="asis"}
+loteria=function(n){
+choose(5,n)*choose(45,5-n)*choose(2,1)*choose(10,1)
+}
+Casos=loteria(c(1,2,3,4,5))
+Casos
+Aciertos=paste("Aciertos ",c(1,2,3,4,5),"bolas y  1 estrella = ")
+casos=data.frame(Aciertos,Casos)
+
+library(kableExtra)
+knitr::kable(casos,format="latex") %>% kable_styling(position="center", latex_options = ) 
+```
+
+
+
+
+
+
+
+## Problema `r r=r+1; r` (\textbf{1 punto.})
+
+ Lanzamos un dado de 12 caras numeradas  con enteros del 1 al 12 sobre una mesa plana. Observamos el número superior del dado. Calcular la probabilidad de que salga mayor que 8  si el resultado es par.
+
+### Solución
+
+
+La probabilidad de obtener un valor e de este dado es 
+$P(\mbox{Salir } k ,\mbox{ en el dado})=\frac{1}{12}.$ para $k=1,2,3,\ldots,12.$
+
+Nos piden $A_{> 8}=\{9,10,11,12\}$ condicionado a $A_{\mbox{par}}={2,4,6,8,10,12}$.
+
+Por un lado tenemos que $P(A_{> 8})=\frac{4}{12}$ y $P(A_{\mbox{par}})=\frac{6}{12}$
+
+Calculemos lo que se pide
+
+
+
+$$
+P\left(A_{> 8}| A_{\mbox{par}}\right)=
+\frac{ P\left(A_{> 8}\cap A_{\mbox{par}}\right)}{P\left(A_{\mbox{par}}\right)}=
+\frac{\frac{4}{12}}{\frac{6}{12}}=\frac{4}{6}=\frac{2}{3}.
+$$
+
+
+
+
+
+
+## Problema `r r=r+1; r` (\textbf{2 puntos.})
+
+Lanzamos una moneda con probabilidad de cara $p=\frac{1}{2}$ hasta que sale cara dos veces  o bien la hemos lanzamos 5 veces, lo primero que ocurra.
+
+Consideremos el experimento con resultados experimentales contar el número de tiradas
+
+Se pide: 
+
+a.  Describir adecuadamente\footnote{Elegir alguna codificación para definir con una lista /tabla el espacio muestral de sucesos $\Omega$.} el espacio muestral de todos los sucesos posibles del experimento.
+b. Si $A_k$ es el suceso hemos tirado la moneda $k$ veces calcular $P(A_k)$ para todos  casos posibles.
+
+
+### Solución
+
+
+
+**Apartado a.**
+Denotemos por $C$ el suceso cara y por $+$ el suceso cruz. Representemos cada sucesos del experimento por una cadena ordenada de  caras y cruces hasta  que  se obtengan dos $C$ o lleguemos a 5 intentos. Los resultados posibles son (16 casos):
+
+
+$\Omega=\{
+CC,
++CC,C+C,
+++CC,+C+C,C++C,
++++CC,++C+C,+C++C,C+++C,
+++++C,+++C+,++C++,+C+++,C++++
++++++\}$
+
+
+
+
+
+
+**Apartado b.**
+
+$$
+\begin{aligned}
+P(A_2) & = P(\{CC\}= \left(\frac{1}{2}\right)^2=\frac{1}{4} \\
+P(A_3) & = P(\{+CC,C+C\})=\left(\frac{1}{2}\right)^3+\left(\frac{1}{2}\right)^3=2\cdot \frac{1}{8}=\frac{1}{4} \\
+P(A_4) & = P(\{++CC,+C+C,C++C,\})=\cdots=3\cdot \left(\frac{1}{2}\right)^4= \frac{3}{16}. \\
+P(A_5) = P(
+(
+\left\{\right.  & 
++++CC,++C+C,+C++C,C+++C,\\
+& \left.  ++++C,+++C+,++C++,+C+++,C++++,
++++++
+\right\})\\
+  & =  10\cdot \left(\frac{1}{2}\right)^5=\frac{10}{32} \\
+\end{aligned}
+$$
+
+
+No se pedía  pero efectivamente  la suma de las probabilidades es 1:
+
+
+```{r}
+sum(c(1/4,1/4,3/16,10/32))
+```
+
+
+## Problema `r r=r+1; r` (\textbf{2 puntos.})
+
+Tres jugadores $A,B$ y $C$ juegan rondas de un juego de cartas. En cada ronda puede ganar con igual probabilidad cualquiera de los tres jugadores y el ganador de cada ronda es independientes del anterior. Gana el juego el primero que consiga ganar tres rondas. Si resulta que $A$ gana la primera y la tercera ronda y $B$ gana la segunda. ¿Cual es la probabilidad de que $C$ gane el juego
+
+
+
+### Soluciones
+
+
+
+Representemos por $A$, $B$ y $C$  que gana una  ronda  el  jugado $A$, $B$ o $C$, representemos las partidas ya jugadas en la siguiente tabla en las siguiente tabla:
+
+\begin{tabular}{|l||l|l|l|}
+\hline
+Ronda & 1 & 2 & 3\\\hline\hline
+Gana A & A & B & A\\ \hline
+\end{tabular}
+
+
+Para que gane $C$ se tiene que dar alguno  de los resultados  siguientes:
+
+\begin{table*}
+\centering
+\begin{tabular}{|l||l|l|l|l|l|}
+\hline
+Ronda & 4 & 5 & 6 & 7 & probabilidad \\\hline\hline
+Caso 1 Gana C & C & C & C & -  & $\left(\frac{1}{3}\right)^3$\\ \hline
+Caso 2 Gana C & B & C & C & C  & $\left(\frac{1}{3}\right)^4$\\ \hline
+Caso 3 Gana C & C & B & C & C  & $\left(\frac{1}{3}\right)^4$\\ \hline
+Caso 4 Gana C & C & C & B & C  & $\left(\frac{1}{3}\right)^4$\\ \hline
+\end{tabular}
+\end{table*}
+
+$$P(\mbox{Gana C})= P(\{CCC,BCCC,CBCC,CCBC\})=
+\left(\frac{1}{3}\right)^3 + 3\cdot \left(\frac{1}{3}\right)^4=\frac{2}{3^3}=\frac{2}{27}.$$
+
+
+## Problema `r r=r+1; r` (\textbf{1 punto.})
+
+Sean $A$ y $B$ dos sucesos disjuntos e independientes. 
+Demostrar o justificar si cada una de las siguientes afirmaciones son correctas:
+
+
+a. $P(B)\neq 0 \Rightarrow P(A|B)> P(B)$.
+b. $P(A)\neq 0 \Rightarrow P(B|A)=0$.
+c. $P(A\cup B)< P(A)+P(B)$.
+d. $P(A)=P(B)=0$.
+
+### Solución
+
+La afirmación a. es falsa ya que al ser disjuntos $P(A\cap B)=0$ por lo que $P(A|B)=\frac{P(A\cap B)}{P(B)}=0>P(B)\neq 0$ ¡Contradicción!.
+La afirmación b. es cierta  siempre independientemente del valor de $P(A)$  ya que al ser disjuntos $P(B\cap A)=0$ por lo que $P(B|A)=\frac{P(B\cap A)}{P(A)}=0$.
+La afirmación c. es falsa   ya que $P(A\cup B)=P(A)+P(B)-P(A\cap B)=P(A)+P(B)-P(\emptyset)=P(A)+P(B)$  ¡Contradicción! con $P(A\cup B)< P(A)+P(B)$.
+La afirmación d. es falsa   ya que  si $A=\Omega$ suceso seguro  y $B=\emptyset$ suceso imposibles se cumple que son disjuntos $A\cap B=\emptyset$ y que $P(A\cap B)=P(\emptyset)=P(A)\cdot P(B)=1\cdot 0=0$ !Contraejemplo¡
+
+
+## Problema `r r=r+1; r` (\textbf{1 punto.})
+
+Sean $A$, $B$ y $C$ tres  sucesos tales que $A$ es independiente de $B^c\cap C$ y de $B\cap C$. 
+Demostrar o justificar si cada una de las siguientes afirmaciones son correctas:
+
+
+a. $A,B$ y $C$ son independientes.
+b. $A$ es independiente de $C$.
+c. $A$ es independiente de $B$
+
+
+### Solución
+
+Aquí partimos de que si la afirmación (a.) es cierta entonces lo son (b.) y (c.) pues la independencia de una familia de tres sucesos  es equivalente  que la probabilidad de la intersección de los tres es igual al producto de las probabilidades así como todas las intersecciones dos a dos.
+
+
+La afirmación (b.) es cierta
+
+$$
+\begin{aligned}
+P(A\cap B)&=P((A\cap(C\cap B^c))\cup (A\cap (C\cap B))\\
+ &=P((A\cap(C\cap B^c))+P(A\cap (C\cap B))-P((A\cap(C\cap B^c))\cap (A\cap (C\cap B))\\
+ &=P(a)\cdot P(C\cap B^c)+P(A)\cdot  P(C\cap B))-P(\emptyset)\\
+ &=P(A)\cdot (P(C\cap B^c)+P(C\cap B))\\
+ &  =  P(A)\cdot P(C).
+\end{aligned}
+$$
+
+
+
+
+Luego vamos a ver que (c). es falsa así (a) también será falsa:
+
+
+Vamos a buscar tres sucesos  tales que 
+
+$P(A\cap (B^c\cap C)=P(A)\cdot P(B^c\cap C)$ y $P(A\cap (B\cap C)=P(A)\cdot P(B\cap C)$.
+
+
+
+Consideremos $\Omega=\{k\in \mathbb{N}| 1 \leq k\leq 40\}$ un espacio muestral tal que  todos los valores sean equiprobables
+
+Consideremos los siguientes sucesos
+
+$$
+\begin{aligned}
+A & = \{1,2,3,4,5,6,7,8,9,10,21,22,23,24,25,26,27,28,29,30\}\\
+B & = \{6,7,8,9,10,11,12,13,14,15,31,32,33,34,35\},\\
+C & = \{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20\}.
+\end{aligned}
+$$
+
+
+
+Entonces
+
+$$
+\begin{aligned}
+P(A) & =& \frac{20}{40}=\frac12\\
+P(B) & =& \frac{15}{40}=\frac38\\
+P(B^c\cap C) & =& \frac{10}{40}=\frac14\\
+P(A\cap B) & =& \frac{5}{40}=\frac18\\
+P(A\cap B^c\cap C) & =& \frac{5}{40}=\frac18\\
+P(A\cap B\cap C) & =& \frac{5}{40}=\frac18
+\end{aligned}
+$$
+luego 
+
+$$P(A) \cdot P(B^c\cap C)=\frac12\cdot\frac14=\frac18=P(A\cap B^c\cap C).$$
+$$P(A) \cdot P(B\cap C)=\frac12\cdot\frac14=\frac18=P(A\cap B\cap C).$$
+
+
+... pero 
+
+$$P(A\cap C)=\frac{15}{40}=\frac38\neq P(A)\cdot P(C)=\frac12\cdot \frac12=\frac14.$$
+
+En definitiva hemos obtenido un contraejemplo para la opción (c).

@@ -1,0 +1,107 @@
+---
+title: "Tema 1: Probabilidad"
+lang: es
+author: "Parte 1: Probabilidad con R y python"
+date: "`r Sys.time()`"
+date-format: "MMMM YYYY"
+format: 
+  beamer:
+    theme: CambridgeUS
+    include-in-header:
+      - file: header_pagenrs_complet_ver2_1.tex
+      - text: |
+           \AtBeginDocument{\title[Tema 1: Probabilidad]{Tema 1: Probabilidad}}
+linkcolor: blue
+classoption: aspectratio=169 
+editor: visual
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,out.width = "65%",cache=TRUE)
+```
+
+# Probabilidades Básicas
+
+## Definiciones básicas
+
+<l class="definition">Experimento aleatorio</l>: experimento 
+que repetido en las mismas condiciones puede dar resultados 
+diferentes, pero que a largo plazo son predecibles
+
+
+**Ejemplo**
+
+Tirar un dado de 6 caras y anotar el número de puntos de 
+la cara superior.
+
+
+
+## Definiciones básicas
+
+<l class="definition">Suceso elemental</l>: cada uno de los 
+posibles resultados del experimento aleatorio
+
+**Ejemplo**
+
+Los sucesos elementales del ejemplo anterior son:
+
+```{r, echo=FALSE,out.width = "5%"}
+knitr::include_graphics(c("Images/proba1dibujos/dice/1.png",
+                          "Images/proba1dibujos/dice/2.png",
+                          "Images/proba1dibujos/dice/3.png",
+                          "Images/proba1dibujos/dice/4.png",
+                          "Images/proba1dibujos/dice/5.png",
+                          "Images/proba1dibujos/dice/6.png"))
+```
+## Definiciones básicas
+
+![](Images/proba1dibujos/dice/1.png){height="50px"} ![](Images/proba1dibujos/dice/2.png){height="50px"} ![](Images/proba1dibujos/dice/3.png){height="50px"} ![](Images/proba1dibujos/dice/4.png){height="50px"} ![](Images/proba1dibujos/dice/5.png){height="50px"} ![](Images/proba1dibujos/dice/6.png){height="50px"}
+
+
+
+## Definiciones básicas
+
+<l class="definition"> Espacio muestral</l>: el conjunto $\Omega$ formado por todos los sucesos elementales del experimento aleatorio
+
+<div class="example">
+**Ejemplo**
+
+El espacio muestral del ejemplo anterior del dado es $\Omega=$ las figuras de la caras anteriores
+
+
+
+
+pero por comodidad, y en general pondremos $$\Omega = \{1,2,3,4,5,6\}$$
+</div>
+
+## Definiciones básicas
+
+<l class="definition"> Suceso </l> : Cualquier subconjunto del espacio muestral.
+
+Alguno sucesos notables que merece la pena nombrar son:
+
+-   <l class="definition">Suceso seguro o cierto</l>: $\Omega$
+-   <l class="definition">Suceso imposible o vacio</l>: $\emptyset$
+-   <l class="definition">Partes de un conjunto</l>: $\mathcal{P}(\Omega)$: conjunto de todos los sucesos del experimento aleatorio (es decir, el conjunto de todos los subconjuntos de $\Omega$)
+
+<div class="exercice">
+**Ejercicio**
+
+¿Cuantos elementos contiene el conjunto de partes de $\Omega$ del experimento anterior?
+</div>
+
+## Ejemplo $n$-grama
+
+Se define un $n$-grama de una palabra como el conjunto de $n$ letras consecutivas de la misma (contando los blancos de inicio y final de palabra que marcamos como "\_").
+
+<div class="example">
+**Ejemplo**
+
+Consideremos el experimento aleatorio que consiste en escoger al azar un 3-grama de la palabra "\_Baleares\_". Vamos a escribir el espacio muestral y algunos sucesos elementales del mismo.
+</div>
+
+<div class="example">-sol
+En este caso, si consideramos la palabra "\_Baleares\_", el espacio muestral del experimento sería:
+
+$$\Omega=\{\_Ba, Bal, ale, lea, ear, are, res, es\_\}$$
+</div>

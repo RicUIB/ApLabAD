@@ -1,0 +1,26 @@
+---
+title: "Untitled"
+format: revealjs
+editor: visual
+---
+
+## Quarto
+
+<l class="definition"> Complementario del complementario </l> $$(A^c)^c=A$$
+
+|                        $A$                        |                       $A^c$                       |                     $(A^c)^c$                     |
+|:----------------------:|:----------------------:|:----------------------:|
+| ![](Images/proba1dibujos/dd2.jpg){height="150px"} | ![](Images/proba1dibujos/dd1.jpg){height="150px"} | ![](Images/proba1dibujos/dd3.jpg){height="150px"} |
+
+When you click the **Render** button a document will be generated that includes:
+
+-   Content authored with markdown
+-   Output from executable code
+
+## Code
+
+When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
