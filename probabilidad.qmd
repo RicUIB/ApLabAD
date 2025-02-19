@@ -1,22 +1,20 @@
-# Probabilidad
+# Teoría elemental de la probabilidad
+
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE,out.width = "65%",cache=TRUE
+knitr::opts_chunk$set(echo = TRUE,out.width = "65%",cache=FALSE,message=FALSE,warning=FALSE,fig.align='center')
 ```
-
-# Probabilidades Básicas
-
 ## Definiciones básicas
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"></i> Definición
+<i class="bi bi-book"></i> Definición experimento aleatorio
 :::
 ::: callout-body
-Experimento aleatorio</l>: experimento que repetido en las mismas condiciones puede dar resultados diferentes, pero que a largo plazo son predecibles
+Un experimento que repetido en las mismas condiciones puede dar resultados diferentes, pero que a largo plazo son predecibles recibe el nombre de **experimento aleatorio**.
 
 :::
-::::
+:::::
 
 ::::: callout-ejemplo
 ::: callout-title
@@ -27,7 +25,7 @@ Experimento aleatorio</l>: experimento que repetido en las mismas condiciones pu
 
 Tirar un dado de 6 caras y anotar el número de puntos de la cara superior.
 :::
-::::
+:::::
 
 ## Definiciones básicas
 
@@ -39,7 +37,7 @@ Tirar un dado de 6 caras y anotar el número de puntos de la cara superior.
 ::: callout-body
 Cada uno de los posibles resultados del experimento aleatorio
 :::
-::::
+:::::
 
 ::::: callout-ejemplo
 ::: callout-title
@@ -84,7 +82,8 @@ ggarrange_plot
 
 ::: callout-body
 Es el conjunto $\Omega$ formado por todos los sucesos elementales del experimento aleatorio
-
+:::
+:::::
 
 ::::: callout-ejemplo
 ::: callout-title
@@ -101,6 +100,8 @@ ggarrange_plot
 
 pero por comodidad, y en general pondremos $$\Omega = \{1,2,3,4,5,6\}$$
 :::
+:::::
+
 
 ## Definiciones básicas
 
@@ -113,7 +114,7 @@ pero por comodidad, y en general pondremos $$\Omega = \{1,2,3,4,5,6\}$$
 
 Cualquier subconjunto del espacio muestral.
 :::
-::::
+:::::
 
 
 
@@ -157,7 +158,7 @@ Algunos sucesos serían:
 -   3-gramas de inicio y final de palabra: $\{\_Ba,es\_\}.$
 -   3-gramas que contengan una $l$: $\{Bal,ale,lea\}.$
 :::
-::::
+:::::
 
 ## Operaciones con sucesos
 
@@ -178,6 +179,9 @@ Si tenemos dos sucesos $A,B\subseteq \Omega$, podemos definir:
 
 ::: callout-body
 Dos sucesos cualesquiera $A$ y $B$ son *incompatibles* (o *disjuntos*) cuando $A\cap B=\emptyset$.
+:::
+:::::
+
 
 ## Ejemplo género
 
@@ -223,7 +227,7 @@ $$A\cup(B\cup C)=(A\cup B)\cup C, \quad A\cap(B\cap C)=(A\cap B)\cap C$$
 
 $$A\cap(B\cup C)=(A\cap B)\cup (A\cap C), \quad A\cup(B\cap C)=(A\cup B)\cap (A\cup C)$$
 :::
-::::
+:::::   
 
 ## Propiedades
 
@@ -293,6 +297,10 @@ $$(A\cap B)^c=A^c\cup B^c$$
 |:----------------------:|:----------------------:|:----------------------:|
 | ![](Images/proba1dibujos/demorgan3.jpg){height="150px"} | ![](Images/proba1dibujos/demorgan5.jpg){height="150px"} | ![](Images/proba1dibujos/demorgan4.jpg){height="150px"} |
 
+:::
+:::::
+
+
 ## Definición de probabilidad
 
 La probabilidad de un suceso es una puntuación (*score*) numérico entre 0 y 1 que mide la verosimilitud de que este evento se produzca.
@@ -329,7 +337,8 @@ P(A_1\cup A_2\cup \cdots \cup A_n)=P(A_1)+P(A_2)+\cdots +P(A_n)
 $$
 
 Si $a\in \Omega$ es un suceso elemental cometeremos el abuso de notación de poner $P(a)$ en lugar de $P(\{a\})$.
-
+:::
+:::::
 
 
 ## Ejemplo: grupos sanguíneos
@@ -378,7 +387,7 @@ knitr::include_graphics("Images/proba1dibujos/A-B.jpg")
 
 -   $P(A^c)=1-P(A)$.
 :::
-::::
+:::::
 
 ::::: callout-proposicion
 ::: callout-title
@@ -420,6 +429,8 @@ Para la unión de tres conjuntos
 ```{r probunion_3,fig.align='center',echo=FALSE,out.width="30%"}
 knitr::include_graphics("Images/proba1dibujos/tresconjunts.jpg")
 ```
+:::
+:::::
 
 ## Propiedades
 
@@ -545,7 +556,14 @@ $$P(A-B) =P(A)-P(A\cap B) =0.001-0.0005=0.0005.$$
 
 ## Probabilidad condicionada
 
-<l class="definition">Probabilidad condicionada</l>: Dados dos sucesos $A$ y $B$, con $P(A)>0$, la probabilidad $P(B|A)$ de $B$ condicionado a $A$ es la probabilidad
+
+::::: callout-definicion
+::: callout-title
+<i class="bi bi-list-task"></i> Probabilidad condicionada
+:::
+
+::: callout-body
+ Dados dos sucesos $A$ y $B$, con $P(A)>0$, la probabilidad $P(B|A)$ de $B$ condicionado a $A$ es la probabilidad
 
 -   de que suceda $B$ suponiendo que pasa $A$,
 -   de que si pasa $A$, entonces suceda $B$,
@@ -556,6 +574,8 @@ Se calcula a través de la definición:
 $$
 P(B|A)=\frac{P(A\cap B)}{P(A)}.
 $$
+:::
+:::::
 
 ## Ejemplo: frecuencia género y gafas
 
