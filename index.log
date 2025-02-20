@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.18)  19 FEB 2025 22:21
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.18)  21 FEB 2025 00:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -864,19 +864,170 @@ No file index.toc.
 [3
 
 ]
-chapter 1.
-! Undefined control sequence.
-<recently read> \green 
-                       
-l.296   \green
-              {Comprensión}: reuniendo los objetos que cumplen una propiedad 
-Here is how much of TeX's memory you used:
- 23279 strings out of 475832
- 449567 string characters out of 5772471
- 1150712 words of memory out of 5000000
- 45971 multiletter control sequences out of 15000+600000
- 562417 words of font info for 67 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 108i,7n,114p,10900b,402s stack positions out of 10000i,1000n,20000p,200000b,200000s
+part I.
+Package scrkbase Info: You've told me to use the font selection of the element
+(scrkbase)             `partprefix' that is an alias of element `partnumber'
+(scrkbase)              on input line 245.
 
-Output written on index.pdf (3 pages).
+
+[4
+
+]
+
+[5]
+chapter 1.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 7.665pt on input line 317.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 5.475pt on input line 317.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 10.95099pt on input line 317.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 7.66568pt on input line 317.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.4755pt on input line 317.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 10.94882pt on input line 317.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 7.66417pt on input line 317.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 5.47441pt on input line 317.
+
+
+[6
+
+]
+
+[7]
+
+[8]
+
+[9]
+
+[10]
+
+[11]
+
+[12]
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 785.
+
+
+Underfull \hbox (badness 1253) in paragraph at lines 808--811
+[]\TU/lmr/m/n/10.95 Carga el paquete \TU/lmtt/m/n/10.95 gtools \TU/lmr/m/n/10.95 de R y investiga la función \TU/lmtt/m/n/10.95 combinations(n, r, v, set,
+ []
+
+
+
+[13]
+
+[14]
+Underfull \hbox (badness 1253) in paragraph at lines 890--893
+[]\TU/lmr/m/n/10.95 Carga el paquete \TU/lmtt/m/n/10.95 gtools \TU/lmr/m/n/10.95 de R y investiga la función \TU/lmtt/m/n/10.95 permutations(n, r, v, set,
+ []
+
+
+
+[15]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 935.
+
+
+[16]
+
+[17]
+
+[18]
+chapter 2.
+File: probabilidad_files/figure-pdf/unnamed-chunk-1-1.pdf Graphic file (type pdf)
+<use probabilidad_files/figure-pdf/unnamed-chunk-1-1.pdf>
+
+
+[19
+
+]
+
+[20]
+
+[21]
+File: Images/venn1A.jpeg Graphic file (type bmp)
+<Images/venn1A.jpeg>
+File: Images/venn1ByC.jpeg Graphic file (type bmp)
+<Images/venn1ByC.jpeg>
+File: Images/venn1AUByC.jpeg Graphic file (type bmp)
+<Images/venn1AUByC.jpeg>
+File: Images/venn1AoB.jpeg Graphic file (type bmp)
+<Images/venn1AoB.jpeg>
+File: Images/venn1AoC.jpeg Graphic file (type bmp)
+<Images/venn1AoC.jpeg>
+File: Images/venn1AUByC.jpeg Graphic file (type bmp)
+<Images/venn1AUByC.jpeg>
+
+
+[22]
+File: Images/venn1A_solo.jpeg Graphic file (type bmp)
+<Images/venn1A_solo.jpeg>
+File: Images/venn1solo_Ac.jpeg Graphic file (type bmp)
+<Images/venn1solo_Ac.jpeg>
+File: Images/venn1A_solo.jpeg Graphic file (type bmp)
+<Images/venn1A_solo.jpeg>
+File: Images/proba1dibujos/demorgan6.jpg Graphic file (type bmp)
+<Images/proba1dibujos/demorgan6.jpg>
+File: Images/proba1dibujos/demorgan7.jpg Graphic file (type bmp)
+<Images/proba1dibujos/demorgan7.jpg>
+
+
+[23]
+File: Images/venn1Ac_conB.jpeg Graphic file (type bmp)
+<Images/venn1Ac_conB.jpeg>
+File: Images/venn1Bc_conA.jpeg Graphic file (type bmp)
+<Images/venn1Bc_conA.jpeg>
+File: Images/venn1interseccioncomplementarios.jpeg Graphic file (type bmp)
+<Images/venn1interseccioncomplementarios.jpeg>
+File: Images/venn1AyB.jpeg Graphic file (type bmp)
+<Images/venn1AyB.jpeg>
+File: Images/venn1ComplementarioInterseccion.jpeg Graphic file (type bmp)
+<Images/venn1ComplementarioInterseccion.jpeg>
+
+
+[24]
+File: Images/venn1Ac_conB.jpeg Graphic file (type bmp)
+<Images/venn1Ac_conB.jpeg>
+File: Images/venn1Bc_conA.jpeg Graphic file (type bmp)
+<Images/venn1Bc_conA.jpeg>
+File: Images/venn1ComplementarioInterseccion.jpeg Graphic file (type bmp)
+<Images/venn1ComplementarioInterseccion.jpeg>
+
+
+[25]
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1480.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1481.
+
+File: Images/proba1dibujos/A-B.jpg Graphic file (type bmp)
+<Images/proba1dibujos/A-B.jpg>
+
+
+[26]
+File: Images/proba1dibujos/A-B.jpg Graphic file (type bmp)
+<Images/proba1dibujos/A-B.jpg>
+
+
+[27]
+! Misplaced alignment tab character &.
+l.1533 P(A\cup B\cup C)= &
+                           P(A)+P(B)+P(C)-P(A\cap B)-P(A\cap C) 
+Here is how much of TeX's memory you used:
+ 23557 strings out of 475832
+ 457383 string characters out of 5772471
+ 1161712 words of memory out of 5000000
+ 46203 multiletter control sequences out of 15000+600000
+ 565308 words of font info for 91 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 108i,8n,114p,10900b,483s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on index.pdf (27 pages).

@@ -35,7 +35,7 @@
     "href": "preliminares.html#teoría-de-conjuntos",
     "title": "1  Preliminares: conjuntos y combinatoria",
     "section": "",
-    "text": "Definición de conjunto\n\n\nLa definición de conjunto es una idea o noción primitiva. Es decir es una idea básica del pensamiento humano: un conjunto es una colección de objetos: números, imágenes… cualquier cosa, jugadores de fútbol, palabras, colores ….\n\n\n\n\n\n\n\n\n: reuniendo los objetos que cumplen una propiedad \\(p\\)\n: dando una lista exhaustiva de los miembros del conjunto\n\n\n1.1.1 Conjuntos básicos\nLos conjuntos suelen tener un conjunto madre como por ejemplo\n\n\\(\\mathbb{N}=\\{0,1,2,\\ldots\\}\\)\n\\(\\mathbb{Z}=\\{\\ldots,-2,-1,0,1,2,\\ldots\\}\\)\n\\(\\mathbb{Q}=\\left\\{\\frac{p}{q}\\quad\\Big|\\quad p,q\\in \\mathbb{Z} \\mbox{ y } q \\not= 0.\\right\\}\\)\n\\(\\mathbb{R}=\\{\\mbox{Todos los puntos de una recta.}\\}\\)\n\\(\\mathbb{C}= \\left\\{a+b\\cdot i\\quad \\big|\\quad a,b\\in \\mathbb{R}\\right\\}\\mbox{ los números complejos}\\quad a+b\\cdot i.\\)\nAlfabeto = \\(\\{a,b,c,\\ldots, A,B,C,\\ldots\\}.\\)\nPalabras = \\(\\{paz, guerra, amor, probabilidad,\\ldots\\}.\\)\n\nRecordemos que \\(i\\) es la unidad imaginaria que cumple que \\(i=\\sqrt{-1}\\).\n\n\n1.1.2 Características y propiedades básicas de los conjuntos\nSi a cada objeto \\(x\\) de \\(\\Omega\\) le llamaremos elemento del conjunto \\(\\Omega\\) y diremos que \\(x\\) pertenece a \\(\\Omega\\). Lo denotaremos por \\(x\\in \\Omega\\).\nUn conjunto de un elemento, por ejemplo \\(\\{1\\}\\) recibe el nombre de conjunto elemental (o singleton del inglés).\nSea \\(A\\) otro conjunto diremos que \\(A\\) es igual a \\(B\\) si todos los elementos \\(A\\) están en \\(B\\) y todos los elementos de \\(B\\) están en \\(A\\). Por ejemplo \\(A=\\{1,2,3\\}\\) es igual a \\(B=\\{3,1,2\\}\\).\nSi \\(B\\) es otro conjunto, tal que si \\(x\\in A\\) entonces \\(x\\in B\\) diremos que \\(A\\) es un subconjunto de o que está contenido en \\(B\\). Lo denotaremos por \\(A\\subseteq B.\\)\nEl conjunto que no tiene elementos se denomina conjunto vacío y se denota por el símbolo \\(\\emptyset\\). Dado \\(A\\) un conjunto cualquiera obviamente \\(\\emptyset\\subseteq A.\\)\n\n\n Ejemplo\n\n\nTomemos como conjunto base \\(\\Omega=\\{1,2,3\\}\\)\n\n\\(\\Omega\\) es un conjunto de cardinal 3, se denota por \\(\\#(\\Omega)=3\\) o por \\(|\\Omega|=3\\)\nEl conjunto \\(\\Omega\\) tiene \\(2^3=8\\) subconjuntos.\n\nel vacío \\(\\emptyset\\) y los elementales \\(\\{1\\},\\{2\\},\\{3\\}\\)\nlos subconjuntos de dos elementos: \\(\\{1,2\\},\\{1,3\\},\\{2,3\\}\\)\nel conjunto total de tres elementos \\(\\Omega=\\{1,2,3\\}.\\)\n\n\n\n\nDado un conjunto \\(\\Omega\\) podemos construir el conjunto de todas sus partes (todos sus subconjuntos) al que denotamos por \\(\\mathcal{P}(\\Omega)\\). También se denomina de forma directa partes de \\(\\Omega\\).\n Cardinal de las partes de un conjunto \n\n\nPropiedad\n\n\nPor ejemplo \\(\\#\\left(\\mathcal{P}(\\{1,2,3\\})\\right)=2^{\\#(\\{1,2,3\\})}=2^3=8.\\)\n\n\nEfectivamente\n\\[\\mathcal{P}(\\{1,2,3\\})=\\{\\emptyset,\\{1\\},\\{2\\},\\{3\\},\\{1,2\\},\\{1,3\\},\\{2,3\\},\\{1,2,3\\}\\}.\\]\nDado un subconjunto \\(A\\) de \\(\\Omega\\) podemos construir la función característica de \\(A\\) \\[\\chi_A:\\Omega \\to \\{0,1\\}\\]\ndado un \\(\\omega\\in \\Omega\\)\n\\[\n\\chi_A(\\omega)=\n\\left\\{\n\\begin{array}{ll}\n1 &  \\mbox{si }\\omega \\in A\\\\\n0 &  \\mbox{si }\\omega \\not\\in A\n\\end{array}\n\\right.\n\\]\n\n\n1.1.3 Operaciones entre conjuntos\n\n\n Intersección\n\n\nSea \\(\\Omega\\) un conjunto y \\(A\\) y \\(B\\) dos subconjuntos de \\(\\Omega\\).\nEl conjunto intersección de \\(A\\) y \\(B\\) es el formado por todos los elementos que perteneces a \\(A\\) Y \\(B\\), se denota por \\(A\\cap B\\).\nMás formalmente\n\\[\nA\\cap B=\\left\\{x\\in\\Omega \\big| x\\in A \\mbox{ y } x\\in B\\right\\}.\n\\]\n\n\n\n\n Unión\n\n\nEl conjunto unión de \\(A\\) y \\(B\\) es el formado por todos los elementos que perteneces a \\(A\\) O pertenecen a \\(B\\), se denota por \\(A\\cup B\\).\nMás formalmente\n\\[\nA\\cup B=\\left\\{x\\in\\Omega \\big| x\\in A \\mbox{ o } x\\in B\\right\\}.\n\\]\n\n\n\n\n Diferencia.\n\n\nEl conjunto diferencia de \\(A\\) y \\(B\\) es el formado por todos los elementos que perteneces a \\(A\\) Y NO pertenecen a \\(B\\), se denota por \\(A-B=A-(A\\cap B)\\).\nMás formalmente\n\\[\nA- B=\\left\\{x\\in\\Omega \\big| x\\in A \\mbox{ y } x\\notin B\\right\\}.\n\\]\n\n\n\n\n Complementario\n\n\nEl complementario de un subconjunto \\(A\\) de \\(\\Omega\\) es \\(\\Omega-A\\) y se denota por \\(A^c\\) o \\(\\overline{A}\\).\nMás formalmente\n\\[\nA^c=\\left\\{x\\in\\Omega \\big| x\\not\\in A\\right\\}.\n\\]\n\n\n\n\n1.1.4 Más propiedades\nSea \\(\\Omega\\) un conjunto y \\(A\\), \\(B\\), \\(C\\) tres subconjuntos de \\(\\Omega\\)\n\nSe dice que dos conjuntos \\(A\\) y \\(B\\) son disjuntos si \\(A\\cap B=\\emptyset.\\)\n\\(\\Omega^c=\\emptyset\\).\n\\(\\emptyset^c=\\Omega\\).\n\\(A\\cup B=B \\cup A\\) , \\(A\\cap B=B\\cap A\\) conmutativas.\n\\((A\\cup B) \\cup C = A \\cup( B \\cup C)\\) , \\((A\\cap B) \\cap C = A \\cap( B \\cap C)\\) asociativas.\n\\(A\\cup (B\\cap C)=(A\\cup B) \\cap (A\\cup C)\\) , \\(A\\cap (B\\cup C)=(A\\cap B) \\cup (A\\cap C)\\) distributivas.\n\\(\\left(A^c\\right)^c=A\\) doble complementario.\n\\(\\left(A\\cup B\\right)^c=A^c \\cap B^c\\), \\(\\left(A\\cap B\\right)^c=A^c \\cup B^c\\) leyes de De Morgan.\n\n\n\n1.1.5 Con R, ejemplos.\nCon R los conjuntos de pueden definir como vectores\n\nOmega=c(1,2,3,4,5,6,7,8,9,10)\nA=c(1,2,3,4,5)\nB=c(1,4,5)\nC=c(4,6,7,8)\nOmega\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\n\nA\n\n[1] 1 2 3 4 5\n\nB\n\n[1] 1 4 5\n\nC\n\n[1] 4 6 7 8\n\n\n\\(A\\cap B\\)\n\nA\n\n[1] 1 2 3 4 5\n\nB\n\n[1] 1 4 5\n\nintersect(A,B)\n\n[1] 1 4 5\n\n\n\\(A\\cup B\\)\n\nA\n\n[1] 1 2 3 4 5\n\nB\n\n[1] 1 4 5\n\nunion(A,B)\n\n[1] 1 2 3 4 5\n\n\n\\(B-C\\)\n\nB\n\n[1] 1 4 5\n\nC\n\n[1] 4 6 7 8\n\nsetdiff(B,C)\n\n[1] 1 5\n\n\n\\(A^c=\\Omega-A\\)\n\nOmega\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\nA\n\n[1] 1 2 3 4 5\n\nsetdiff(Omega,A)\n\n[1]  6  7  8  9 10\n\n\n\n\n1.1.6 Con python\n\nOmega=set([1,2,3,4,5,6,7,8,9,10])\nA=set([1,2,3,4,5])\nB=set([1,4,5])\nC=set([4,6,7,8])\nOmega\n\n{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}\n\n\n\nA\n\n{1, 2, 3, 4, 5}\n\nB\n\n{1, 4, 5}\n\nC\n\n{8, 4, 6, 7}\n\n\n\nA & B   # intersección (&: and/y)\n\n{1, 4, 5}\n\nA | B   # unión (|: or/o)\n\n{1, 2, 3, 4, 5}\n\n\n\nA - C   # diferencia \n\n{1, 2, 3, 5}\n\nOmega-C # complementario.\n\n{1, 2, 3, 5, 9, 10}",
+    "text": "Definición de conjunto\n\n\nLa definición de conjunto es una idea o noción primitiva. Es decir es una idea básica del pensamiento humano: un conjunto es una colección de objetos: números, imágenes… cualquier cosa, jugadores de fútbol, palabras, colores ….\n\n\n\n\n\n\n\n\nComprensión: reuniendo los objetos que cumplen una propiedad \\(p\\)\nExtensión: dando una lista exhaustiva de los miembros del conjunto\n\n\n1.1.1 Conjuntos básicos\nLos conjuntos suelen tener un conjunto madre como por ejemplo\n\n\\(\\mathbb{N}=\\{0,1,2,\\ldots\\}\\)\n\\(\\mathbb{Z}=\\{\\ldots,-2,-1,0,1,2,\\ldots\\}\\)\n\\(\\mathbb{Q}=\\left\\{\\frac{p}{q}\\quad\\Big|\\quad p,q\\in \\mathbb{Z} \\mbox{ y } q \\not= 0.\\right\\}\\)\n\\(\\mathbb{R}=\\{\\mbox{Todos los puntos de una recta.}\\}\\)\n\\(\\mathbb{C}= \\left\\{a+b\\cdot i\\quad \\big|\\quad a,b\\in \\mathbb{R}\\right\\}\\mbox{ los números complejos}\\quad a+b\\cdot i.\\)\nAlfabeto = \\(\\{a,b,c,\\ldots, A,B,C,\\ldots\\}.\\)\nPalabras = \\(\\{paz, guerra, amor, probabilidad,\\ldots\\}.\\)\n\nRecordemos que \\(i\\) es la unidad imaginaria que cumple que \\(i=\\sqrt{-1}\\).\n\n\n1.1.2 Características y propiedades básicas de los conjuntos\nSi a cada objeto \\(x\\) de \\(\\Omega\\) le llamaremos elemento del conjunto \\(\\Omega\\) y diremos que \\(x\\) pertenece a \\(\\Omega\\). Lo denotaremos por \\(x\\in \\Omega\\).\nUn conjunto de un elemento, por ejemplo \\(\\{1\\}\\) recibe el nombre de conjunto elemental (o singleton del inglés).\nSea \\(A\\) otro conjunto diremos que \\(A\\) es igual a \\(B\\) si todos los elementos \\(A\\) están en \\(B\\) y todos los elementos de \\(B\\) están en \\(A\\). Por ejemplo \\(A=\\{1,2,3\\}\\) es igual a \\(B=\\{3,1,2\\}\\).\nSi \\(B\\) es otro conjunto, tal que si \\(x\\in A\\) entonces \\(x\\in B\\) diremos que \\(A\\) es un subconjunto de o que está contenido en \\(B\\). Lo denotaremos por \\(A\\subseteq B.\\)\nEl conjunto que no tiene elementos se denomina conjunto vacío y se denota por el símbolo \\(\\emptyset\\). Dado \\(A\\) un conjunto cualquiera obviamente \\(\\emptyset\\subseteq A.\\)\n\n\n Ejemplo\n\n\nTomemos como conjunto base \\(\\Omega=\\{1,2,3\\}\\)\n\n\\(\\Omega\\) es un conjunto de cardinal 3, se denota por \\(\\#(\\Omega)=3\\) o por \\(|\\Omega|=3\\)\nEl conjunto \\(\\Omega\\) tiene \\(2^3=8\\) subconjuntos.\n\nel vacío \\(\\emptyset\\) y los elementales \\(\\{1\\},\\{2\\},\\{3\\}\\)\nlos subconjuntos de dos elementos: \\(\\{1,2\\},\\{1,3\\},\\{2,3\\}\\)\nel conjunto total de tres elementos \\(\\Omega=\\{1,2,3\\}.\\)\n\n\n\n\nDado un conjunto \\(\\Omega\\) podemos construir el conjunto de todas sus partes (todos sus subconjuntos) al que denotamos por \\(\\mathcal{P}(\\Omega)\\). También se denomina de forma directa partes de \\(\\Omega\\).\n Cardinal de las partes de un conjunto \n\n\nPropiedad\n\n\nPor ejemplo \\(\\#\\left(\\mathcal{P}(\\{1,2,3\\})\\right)=2^{\\#(\\{1,2,3\\})}=2^3=8.\\)\n\n\nEfectivamente\n\\[\\mathcal{P}(\\{1,2,3\\})=\\{\\emptyset,\\{1\\},\\{2\\},\\{3\\},\\{1,2\\},\\{1,3\\},\\{2,3\\},\\{1,2,3\\}\\}.\\]\nDado un subconjunto \\(A\\) de \\(\\Omega\\) podemos construir la función característica de \\(A\\) \\[\\chi_A:\\Omega \\to \\{0,1\\}\\]\ndado un \\(\\omega\\in \\Omega\\)\n\\[\n\\chi_A(\\omega)=\n\\left\\{\n\\begin{array}{ll}\n1 &  \\mbox{si }\\omega \\in A\\\\\n0 &  \\mbox{si }\\omega \\not\\in A\n\\end{array}\n\\right.\n\\]\n\n\n1.1.3 Operaciones entre conjuntos\n\n\n Intersección\n\n\nSea \\(\\Omega\\) un conjunto y \\(A\\) y \\(B\\) dos subconjuntos de \\(\\Omega\\).\nEl conjunto intersección de \\(A\\) y \\(B\\) es el formado por todos los elementos que perteneces a \\(A\\) Y \\(B\\), se denota por \\(A\\cap B\\).\nMás formalmente\n\\[\nA\\cap B=\\left\\{x\\in\\Omega \\big| x\\in A \\mbox{ y } x\\in B\\right\\}.\n\\]\n\n\n \n\n\n Unión\n\n\nEl conjunto unión de \\(A\\) y \\(B\\) es el formado por todos los elementos que perteneces a \\(A\\) O pertenecen a \\(B\\), se denota por \\(A\\cup B\\).\nMás formalmente\n\\[\nA\\cup B=\\left\\{x\\in\\Omega \\big| x\\in A \\mbox{ o } x\\in B\\right\\}.\n\\]\n\n\n \n\n\n Diferencia.\n\n\nEl conjunto diferencia de \\(A\\) y \\(B\\) es el formado por todos los elementos que perteneces a \\(A\\) Y NO pertenecen a \\(B\\), se denota por \\(A-B=A-(A\\cap B)\\).\nMás formalmente\n\\[\nA- B=\\left\\{x\\in\\Omega \\big| x\\in A \\mbox{ y } x\\notin B\\right\\}.\n\\]\n\n\n \n\n\n Complementario\n\n\nEl complementario de un subconjunto \\(A\\) de \\(\\Omega\\) es \\(\\Omega-A\\) y se denota por \\(A^c\\) o \\(\\overline{A}\\).\nMás formalmente\n\\[\nA^c=\\left\\{x\\in\\Omega \\big| x\\not\\in A\\right\\}.\n\\]\n\n\n\n\n1.1.4 Más propiedades\nSea \\(\\Omega\\) un conjunto y \\(A\\), \\(B\\), \\(C\\) tres subconjuntos de \\(\\Omega\\)\n\nSe dice que dos conjuntos \\(A\\) y \\(B\\) son disjuntos si \\(A\\cap B=\\emptyset.\\)\n\\(\\Omega^c=\\emptyset\\).\n\\(\\emptyset^c=\\Omega\\).\n\\(A\\cup B=B \\cup A\\) , \\(A\\cap B=B\\cap A\\) conmutativas.\n\\((A\\cup B) \\cup C = A \\cup( B \\cup C)\\), \\((A\\cap B) \\cap C = A \\cap( B \\cap C)\\) asociativas.\n\\(A\\cup (B\\cap C)=(A\\cup B) \\cap (A\\cup C)\\), \\(A\\cap (B\\cup C)=(A\\cap B) \\cup (A\\cap C)\\) distributivas.\n\\(\\left(A^c\\right)^c=A\\) doble complementario.\n\\(\\left(A\\cup B\\right)^c=A^c \\cap B^c\\), \\(\\left(A\\cap B\\right)^c=A^c \\cup B^c\\) leyes de De Morgan.\n\n\n\n1.1.5 Con R, ejemplos.\nCon R los conjuntos de pueden definir como vectores\n\nOmega=c(1,2,3,4,5,6,7,8,9,10)\nA=c(1,2,3,4,5)\nB=c(1,4,5)\nC=c(4,6,7,8)\nOmega\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\n\nA\n\n[1] 1 2 3 4 5\n\nB\n\n[1] 1 4 5\n\nC\n\n[1] 4 6 7 8\n\n\n\\(A\\cap B\\)\n\nA\n\n[1] 1 2 3 4 5\n\nB\n\n[1] 1 4 5\n\nintersect(A,B)\n\n[1] 1 4 5\n\n\n\\(A\\cup B\\)\n\nA\n\n[1] 1 2 3 4 5\n\nB\n\n[1] 1 4 5\n\nunion(A,B)\n\n[1] 1 2 3 4 5\n\n\n\\(B-C\\)\n\nB\n\n[1] 1 4 5\n\nC\n\n[1] 4 6 7 8\n\nsetdiff(B,C)\n\n[1] 1 5\n\n\n\\(A^c=\\Omega-A\\)\n\nOmega\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\nA\n\n[1] 1 2 3 4 5\n\nsetdiff(Omega,A)\n\n[1]  6  7  8  9 10\n\n\n\n\n1.1.6 Con python\n\nOmega=set([1,2,3,4,5,6,7,8,9,10])\nA=set([1,2,3,4,5])\nB=set([1,4,5])\nC=set([4,6,7,8])\nOmega\n\n{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}\n\n\n\nA\n\n{1, 2, 3, 4, 5}\n\nB\n\n{1, 4, 5}\n\nC\n\n{8, 4, 6, 7}\n\n\n\nA & B   # intersección (&: and/y)\n\n{1, 4, 5}\n\nA | B   # unión (|: or/o)\n\n{1, 2, 3, 4, 5}\n\n\n\nA - C   # diferencia \n\n{1, 2, 3, 5}\n\nOmega-C # complementario.\n\n{1, 2, 3, 5, 9, 10}",
     "crumbs": [
       "Parte 1: Probabilidad y variables aleatorias",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Preliminares: conjuntos y combinatoria</span>"
@@ -46,7 +46,7 @@
     "href": "preliminares.html#combinatoria",
     "title": "1  Preliminares: conjuntos y combinatoria",
     "section": "1.2 Combinatoria",
-    "text": "1.2 Combinatoria\nLa combinatoria es una rama de la matemática discreta que entre otras cosas cuenta distintas configuraciones de objetos de un conjunto.\nPor ejemplo si tenemos un equipo de baloncesto con 7 jugadores ¿cuántos equipos de 5 jugadores distintos podemos formar?\n\n1.2.1 Número Binonial\n\n\n Número combinatorio o número binomial\n\n\nNos da el número de subconjuntos de tamaño \\(k\\) de un conjunto de tamaño \\(n\\). Este número es\n\\[\nC_n^k={n\\choose k} = \\frac{n!}{k!\\cdot (n-k)!}.\n\\]\nRecordemos que \\[\nn!=1\\cdot 2\\cdot 3\\cdots n.\n\\]\n\n\n\n\n Ejemplo\n\n\nEn nuestro caso con 7 jugadores \\(n=7\\) el número de equipos distintos de \\(k=5\\) es\n\\[\n\\begin{array}{rl}\nC_7^5&={7\\choose 5} = \\frac{7!}{5!\\cdot (7-5)!}=\\frac{7!}{5!\\cdot 2!} \\\\\n&=\\frac{1\\cdot 2\\cdot 3 \\cdot 4\\cdot 5\\cdot 6\\cdot 7}{1\\cdot 2\\cdot 3 \\cdot 4\\cdot 5\\cdot 1\\cdot 2}=\\frac{6\\cdot 7}{2}=\\frac{42}{2}=21.\n\\end{array}\n\\]\nPuedo formar 21 equipos distintos.\n\n\n\n\n Ejercicio: el paquete gtools\n\n\nCarga el paquete gtools de R y investiga la función combinations(n, r, v, set, repeats.allowed) para calcular todas las combinaciones anteriores.\n\n\n\n\n1.2.2 Combinaciones con repetición\nEn combinatoria, las combinaciones con repetición de un conjunto son las distintas formas en que se puede hacer una selección de elementos de un conjunto dado, permitiendo que las selecciones puedan repetirse.\n\n\n Combinaciones con repetición\n\n\nEl número \\(CR_n^k\\) de multiconjuntos con \\(k\\) elementos escogidos de un conjunto con \\(n\\) elementos satisface:\n\nEs igual al número de combinaciones con repetición de \\(k\\) elementos escogidos de un conjunto con \\(n\\) elementos.\nEs igual al número de formas de repartir \\(k\\) objetos en \\(n\\) grupos.\n\n\\[CR_n^k = \\binom{n+k-1}{k} = \\frac{(n+k-1)!}{k!(n-1)!}.\\]\n\n\n\n\n Ejemplo: caramelos\n\n\nVamos a imaginar que vamos a repartir 12 caramelos entre Antonio, Beatriz, Carlos y Dionisio (que representaremos como A, B, C, D). Una posible forma de repartir los caramelos sería: dar 4 caramelos a Antonio, 3 a Beatriz, 2 a Carlos y 3 a Dionisio. Dado que no importa el orden en que se reparten, podemos representar esta selección como AAAABBBCCDDD.\nOtra forma posible de repartir los caramelos podría ser: dar 1 caramelo a Antonio, ninguno a Beatriz y Carlos, los 11 restantes se los damos a Dionisio. Esta repartición la representamos como ADDDDDDDDDDD\nRecíprocamente, cualquier serie de 12 letras A, B, C, D se corresponde a una forma de repartir los caramelos. Por ejemplo, la serie AAAABBBBBDDD corresponde a: Dar 4 caramelos a Antonio, 5 caramelos a Beatriz, ninguno a Carlos y 3 a Dionisio.\nDe esta forma, el número de formas de repartir los caramelos es:\n\\[CR_{n=4}^{k=12} = \\binom{4+12-1}{12}=455.\\]\n\n\n\n\n1.2.3 Variaciones.\nCon los número \\(\\{1,2,3\\}\\) ¿cuántos números de dos cifras distintas podemos formar sin repetir ninguna cifra?\nLa podemos escribir\n\\[12,13,21,23,31,32\\]\nLuego hay seis casos, estas son las variaciones de orden \\(k=2\\) de un conjunto de \\(n=3\\) elementos.\n\n\n Variaciones\n\n\nDenotaremos las variaciones (sin repetición) de \\(k\\) elementos (de orden \\(k\\)) de un conjunto de \\(n\\) elementos por \\(V_n^k\\) su valor es\n\\[\nV_n^k=\\frac{n!}{(n-k)!}=(n-k+1)\\cdot (n-k+2)\\cdots n.\n\\]\n\n\n\n\n Ejemplo\n\n\nEn nuestro ejemplo con \\(n=3\\) dígitos podemos escribir las siguientes variaciones de orden \\(k=2\\)\n\\[\nV^{k=2}_{n=3}=\\frac{3!}{(3-2)!}=\\frac{1\\cdot 2\\cdot 3}{1}=6.\n\\]\n\n\n\n\n Ejercicio\n\n\nCarga el paquete gtools de R y investiga la función permutations(n, r, v, set, repeats.allowed) para calcular todas las variaciones anteriores.\n\n\n\n\n1.2.4 Variaciones con repetición.\n¿Y si en el caso anterior permitimos que se repita algún dígito?\n\n\n Variaciones on repetición\n\n\nLas variaciones de orden \\(k\\) de un conjunto de \\(n\\) elementos permitiendo que se repitan los elementos. Las denotamos y valen:\n\\[VR_n^k=n^k\\]\n\n\n\n\n Ejemplo\n\n\nEfectivamente en nuestro caso\n\\[11,12,13,21,22,23,31,32,33\\]\n\\[\nVR^{k=2}_{n=3}=n^k=3^2=9.\n\\]\n\n1.2.5 Permutaciones\n\n\n Permutaciones\n\n\nLas permutaciones de un conjunto de cardinal \\(n\\) son todas las variaciones de orden máximo \\(n\\). Las denotamos y valen:\n\\[\nP_n=V_n^n=n!\n\\]\n\n\n\n\n Variaciones on repetición\n\n\nPor ejemplo todos los números que se pueden escribir ordenando todos los dígitos \\(\\{1,2,3\\}\\) sin repetir ninguno\n\nlibrary(combinat)\nfor(permutacion in permn(3)) print(permutacion)\n\n[1] 1 2 3\n[1] 1 3 2\n[1] 3 1 2\n[1] 3 2 1\n[1] 2 3 1\n[1] 2 1 3\n\n\nEfectivamente \\(P_3=3!=1\\cdot  2\\cdot 3.\\)\n\n\n\n\n Ejercicio\n\n\nCarga el paquete combinat de R e investiga la función permn para calcular todas las permutaciones anteriores.\nInvestiga también el paquete itertools y la función comb de scipy.misc de Python e investiga sus funciones para todas las formas de contar que hemos visto en este tema.\n\n\n\n\n Ejercicio\n\n\nLa función gamma de Euler, cobrará mucha importancia en el curso de estadística. Comprueba que la función gamma(x+1) da el mismo valor que la función factorial(x) en R para todo \\(x = \\{1,2,3,\\ldots,10\\}\\).\n\n\n\n\n1.2.6 Números multinomiales. Permutaciones con repetición.\n\n\n Ejercicio\n\n\nConsideremos un conjunto de elementos \\(\\{a_1, a_2, \\ldots, a_k\\}\\).\nEntonces, si cada uno de los objetos \\(a_i\\) de un conjunto, aparece repetido \\(n_i\\) veces para cada \\(i\\) desde 1 hasta \\(k\\), entonces el número de permutaciones con elementos repetidos es:\n\\[PR_n^{n_1,n_2,\\ldots,n_k} = {{n}\\choose {n_1\\quad n_2 \\quad\\ldots \\quad n_k}}=\\frac{n!}{n_1!\\cdot n_2!\\cdot \\ldots \\cdot n_k!},\\] donde \\(n=n_1+n_2+\\cdots+n_k\\).\n\n\n\n\n Ejercicio\n\n\n¿Cuantas palabras diferentes se pueden formar con las letras de la palabra PROBABILIDAD?\nEl conjunto de letras de la palabra considerada es el siguiente: \\(\\{A, B, D, I, L, O, P, R\\}\\) con las repeticiones siguientes: las letras A, B, D, e I, aparecen 2 veces cada una; y las letras L, O, P, R una vez cada una de ellas.\nPor tanto, utilizando la fórmula anterior, tenemos que el número de palabras (permutaciones con elementos repetidos) que podemos formar es\n\\[PR^{2,2,2,2,1,1,1,1}_{12} = \\frac{12!}{(2!)^4(1!)^4} = 29937600.\\]\n\n\n1.3 Para acabar\n\n1.3.1 Principios básicos para contar cardinales de conjuntos\n\n\n El principio de la suma\n\n\nSean \\(A_1, A_2,\\ldots, A_n\\) conjuntos disjuntos dos a dos, es decir \\(A_i\\cap A_j=\\emptyset\\) para todo \\(i\\not= j\\), \\(i,j=1,2,\\ldots n\\). Entonces\n\\[\\#(\\cup_{i=1}^n A_i)=\\sum_{i=1}^n \\#(A_i).\\]\n\n\n\n\n Principio de unión exclusión\n\n\nConsideremos dos conjuntos cualesquiera \\(A_1, A_2\\) entonces el cardinal de su unión es\n\\[\\#(A_1\\cup A_2)=\\#(A_1)+\\#(A_2)-\\#(A_1\\cap A_2).\\]\n\n\n\n\n El principio del producto\n\n\nSean \\(A_1,A_2,\\ldots A_n\\)\n\\[\n\\begin{array}{ll}\n\\#(A_1\\times A_2\\times \\cdots A_n)=&\\#\\left(\\{(a_1,a_2,\\ldots a_n)| a_i\\in A_i, i=1,2,\\ldots n\\}\\right)\\\\\n&=\\prod_{i=1}^n \\#(A_i).\n\\end{array}\n\\]\n\n1.3.2 Otros aspectos a tener en cuenta\nEvidentemente nos hemos dejado muchas otras propiedades básicas de teoría de conjuntos y de combinatoria como:\n\nPropiedades de los números combinatorios.\nBinomio de Newton.\nMultinomio de Newton.\n\nSi nos son necesarias las volveremos a repetir a lo largo del curso o bien daremos enlaces para que las podáis estudiar en paralelo.",
+    "text": "1.2 Combinatoria\nLa combinatoria es una rama de la matemática discreta que entre otras cosas cuenta distintas configuraciones de objetos de un conjunto.\nPor ejemplo si tenemos un equipo de baloncesto con 7 jugadores ¿cuántos equipos de 5 jugadores distintos podemos formar?\n\n1.2.1 Número Binonial\n\n\n Número combinatorio o número binomial\n\n\nNos da el número de subconjuntos de tamaño \\(k\\) de un conjunto de tamaño \\(n\\). Este número es\n\\[\nC_n^k={n\\choose k} = \\frac{n!}{k!\\cdot (n-k)!}.\n\\]\nRecordemos que \\[\nn!=1\\cdot 2\\cdot 3\\cdots n.\n\\]\n\n\n  ::::: callout-ejemplo ::: callout-title  Ejemplo ::: ::: callout-body En nuestro caso con 7 jugadores \\(n=7\\) el número de equipos distintos de \\(k=5\\) es\n\\[\n\\begin{array}{rl}\nC_7^5&={7\\choose 5} = \\frac{7!}{5!\\cdot (7-5)!}=\\frac{7!}{5!\\cdot 2!} \\\\\n&=\\frac{1\\cdot 2\\cdot 3 \\cdot 4\\cdot 5\\cdot 6\\cdot 7}{1\\cdot 2\\cdot 3 \\cdot 4\\cdot 5\\cdot 1\\cdot 2}=\\frac{6\\cdot 7}{2}=\\frac{42}{2}=21.\n\\end{array}\n\\]\nPuedo formar 21 equipos distintos. ::: :::::\n \n\n\n Ejercicio: el paquete gtools\n\n\nCarga el paquete gtools de R y investiga la función combinations(n, r, v, set, repeats.allowed) para calcular todas las combinaciones anteriores.\n\n\n\n\n1.2.2 Combinaciones con repetición\nEn combinatoria, las combinaciones con repetición de un conjunto son las distintas formas en que se puede hacer una selección de elementos de un conjunto dado, permitiendo que las selecciones puedan repetirse.\n\n\n Combinaciones con repetición\n\n\nEl número \\(CR_n^k\\) de multiconjuntos con \\(k\\) elementos escogidos de un conjunto con \\(n\\) elementos satisface:\n\nEs igual al número de combinaciones con repetición de \\(k\\) elementos escogidos de un conjunto con \\(n\\) elementos.\nEs igual al número de formas de repartir \\(k\\) objetos en \\(n\\) grupos.\n\n\\[CR_n^k = \\binom{n+k-1}{k} = \\frac{(n+k-1)!}{k!(n-1)!}.\\]\n\n\n \n\n\n Ejemplo: caramelos\n\n\nVamos a imaginar que vamos a repartir 12 caramelos entre Antonio, Beatriz, Carlos y Dionisio (que representaremos como A, B, C, D). Una posible forma de repartir los caramelos sería: dar 4 caramelos a Antonio, 3 a Beatriz, 2 a Carlos y 3 a Dionisio. Dado que no importa el orden en que se reparten, podemos representar esta selección como AAAABBBCCDDD.\nOtra forma posible de repartir los caramelos podría ser: dar 1 caramelo a Antonio, ninguno a Beatriz y Carlos, los 11 restantes se los damos a Dionisio. Esta repartición la representamos como ADDDDDDDDDDD\nRecíprocamente, cualquier serie de 12 letras A, B, C, D se corresponde a una forma de repartir los caramelos. Por ejemplo, la serie AAAABBBBBDDD corresponde a: Dar 4 caramelos a Antonio, 5 caramelos a Beatriz, ninguno a Carlos y 3 a Dionisio.\nDe esta forma, el número de formas de repartir los caramelos es:\n\\[CR_{n=4}^{k=12} = \\binom{4+12-1}{12}=455.\\]\n\n\n\n\n1.2.3 Variaciones.\nCon los número \\(\\{1,2,3\\}\\) ¿cuántos números de dos cifras distintas podemos formar sin repetir ninguna cifra?\nLa podemos escribir\n\\[12,13,21,23,31,32\\]\nLuego hay seis casos, estas son las variaciones de orden \\(k=2\\) de un conjunto de \\(n=3\\) elementos.\n\n\n Variaciones\n\n\nDenotaremos las variaciones (sin repetición) de \\(k\\) elementos (de orden \\(k\\)) de un conjunto de \\(n\\) elementos por \\(V_n^k\\) su valor es\n\\[\nV_n^k=\\frac{n!}{(n-k)!}=(n-k+1)\\cdot (n-k+2)\\cdots n.\n\\]\n\n\n \n\n\n Ejemplo\n\n\nEn nuestro ejemplo con \\(n=3\\) dígitos podemos escribir las siguientes variaciones de orden \\(k=2\\)\n\\[\nV^{k=2}_{n=3}=\\frac{3!}{(3-2)!}=\\frac{1\\cdot 2\\cdot 3}{1}=6.\n\\]\n\n\n \n\n\n Ejercicio\n\n\nCarga el paquete gtools de R y investiga la función permutations(n, r, v, set, repeats.allowed) para calcular todas las variaciones anteriores.\n\n\n\n\n1.2.4 Variaciones con repetición.\n¿Y si en el caso anterior permitimos que se repita algún dígito?\n\n\n Variaciones on repetición\n\n\nLas variaciones de orden \\(k\\) de un conjunto de \\(n\\) elementos permitiendo que se repitan los elementos. Las denotamos y valen:\n\\[VR_n^k=n^k\\]\n\n\n \n\n\n Ejemplo\n\n\nEfectivamente en nuestro caso\n\\[11,12,13,21,22,23,31,32,33\\]\n\\[\nVR^{k=2}_{n=3}=n^k=3^2=9.\n\\]\n\n\n\n\n1.2.5 Permutaciones\n\n\n Permutaciones\n\n\nLas permutaciones de un conjunto de cardinal \\(n\\) son todas las variaciones de orden máximo \\(n\\). Las denotamos y valen:\n\\[\nP_n=V_n^n=n!\n\\]\n\n\n \n\n\n Variaciones on repetición\n\n\nPor ejemplo todos los números que se pueden escribir ordenando todos los dígitos \\(\\{1,2,3\\}\\) sin repetir ninguno\n\nlibrary(combinat)\nfor(permutacion in permn(3)) print(permutacion)\n\n[1] 1 2 3\n[1] 1 3 2\n[1] 3 1 2\n[1] 3 2 1\n[1] 2 3 1\n[1] 2 1 3\n\n\nEfectivamente \\(P_3=3!=1\\cdot  2\\cdot 3.\\)\n\n\n \n\n\n Ejercicio\n\n\nCarga el paquete combinat de R e investiga la función permn para calcular todas las permutaciones anteriores.\nInvestiga también el paquete itertools y la función comb de scipy.misc de Python e investiga sus funciones para todas las formas de contar que hemos visto en este tema.\n\n\n \n\n\n Ejercicio\n\n\nLa función gamma de Euler, cobrará mucha importancia en el curso de estadística. Comprueba que la función gamma(x+1) da el mismo valor que la función factorial(x) en R para todo \\(x = \\{1,2,3,\\ldots,10\\}\\).\n\n\n\n\n1.2.6 Números multinomiales. Permutaciones con repetición.\n\n\n Ejercicio\n\n\nConsideremos un conjunto de elementos \\(\\{a_1, a_2, \\ldots, a_k\\}\\).\nEntonces, si cada uno de los objetos \\(a_i\\) de un conjunto, aparece repetido \\(n_i\\) veces para cada \\(i\\) desde 1 hasta \\(k\\), entonces el número de permutaciones con elementos repetidos es:\n\\[PR_n^{n_1,n_2,\\ldots,n_k} = {{n}\\choose {n_1\\quad n_2 \\quad\\ldots \\quad n_k}}=\\frac{n!}{n_1!\\cdot n_2!\\cdot \\ldots \\cdot n_k!},\\] donde \\(n=n_1+n_2+\\cdots+n_k\\).\n\n\n \n\n\n Ejercicio\n\n\n¿Cuantas palabras diferentes se pueden formar con las letras de la palabra PROBABILIDAD?\nEl conjunto de letras de la palabra considerada es el siguiente: \\(\\{A, B, D, I, L, O, P, R\\}\\) con las repeticiones siguientes: las letras A, B, D, e I, aparecen 2 veces cada una; y las letras L, O, P, R una vez cada una de ellas.\nPor tanto, utilizando la fórmula anterior, tenemos que el número de palabras (permutaciones con elementos repetidos) que podemos formar es\n\\[PR^{2,2,2,2,1,1,1,1}_{12} = \\frac{12!}{(2!)^4(1!)^4} = 29937600.\\]",
     "crumbs": [
       "Parte 1: Probabilidad y variables aleatorias",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Preliminares: conjuntos y combinatoria</span>"
@@ -57,7 +57,7 @@
     "href": "preliminares.html#para-acabar",
     "title": "1  Preliminares: conjuntos y combinatoria",
     "section": "1.3 Para acabar",
-    "text": "1.3 Para acabar\n\n1.3.1 Principios básicos para contar cardinales de conjuntos\n\n\n El principio de la suma\n\n\nSean \\(A_1, A_2,\\ldots, A_n\\) conjuntos disjuntos dos a dos, es decir \\(A_i\\cap A_j=\\emptyset\\) para todo \\(i\\not= j\\), \\(i,j=1,2,\\ldots n\\). Entonces\n\\[\\#(\\cup_{i=1}^n A_i)=\\sum_{i=1}^n \\#(A_i).\\]\n\n\n\n\n Principio de unión exclusión\n\n\nConsideremos dos conjuntos cualesquiera \\(A_1, A_2\\) entonces el cardinal de su unión es\n\\[\\#(A_1\\cup A_2)=\\#(A_1)+\\#(A_2)-\\#(A_1\\cap A_2).\\]\n\n\n\n\n El principio del producto\n\n\nSean \\(A_1,A_2,\\ldots A_n\\)\n\\[\n\\begin{array}{ll}\n\\#(A_1\\times A_2\\times \\cdots A_n)=&\\#\\left(\\{(a_1,a_2,\\ldots a_n)| a_i\\in A_i, i=1,2,\\ldots n\\}\\right)\\\\\n&=\\prod_{i=1}^n \\#(A_i).\n\\end{array}\n\\]\n\n1.3.2 Otros aspectos a tener en cuenta\nEvidentemente nos hemos dejado muchas otras propiedades básicas de teoría de conjuntos y de combinatoria como:\n\nPropiedades de los números combinatorios.\nBinomio de Newton.\nMultinomio de Newton.\n\nSi nos son necesarias las volveremos a repetir a lo largo del curso o bien daremos enlaces para que las podáis estudiar en paralelo.",
+    "text": "1.3 Para acabar\n\n1.3.1 Principios básicos para contar cardinales de conjuntos\n\n\n El principio de la suma\n\n\nSean \\(A_1, A_2,\\ldots, A_n\\) conjuntos disjuntos dos a dos, es decir \\(A_i\\cap A_j=\\emptyset\\) para todo \\(i\\not= j\\), \\(i,j=1,2,\\ldots n\\). Entonces\n\\[\\#(\\cup_{i=1}^n A_i)=\\sum_{i=1}^n \\#(A_i).\\]\n\n\n \n\n\n Principio de unión exclusión\n\n\nConsideremos dos conjuntos cualesquiera \\(A_1, A_2\\) entonces el cardinal de su unión es\n\\[\\#(A_1\\cup A_2)=\\#(A_1)+\\#(A_2)-\\#(A_1\\cap A_2).\\]\n\n\n \n\n\n El principio del producto\n\n\nSean \\(A_1,A_2,\\ldots A_n\\)\n\\[\n\\begin{array}{ll}\n\\#(A_1\\times A_2\\times \\cdots A_n)=&\\#\\left(\\{(a_1,a_2,\\ldots a_n)| a_i\\in A_i, i=1,2,\\ldots n\\}\\right)\\\\\n&=\\prod_{i=1}^n \\#(A_i).\n\\end{array}\n\\]\n\n\n\n\n1.3.2 Otros aspectos a tener en cuenta\nEvidentemente nos hemos dejado muchas otras propiedades básicas de teoría de conjuntos y de combinatoria como:\n\nPropiedades de los números combinatorios.\nBinomio de Newton.\nMultinomio de Newton.\n\nSi nos son necesarias las volveremos a repetir a lo largo del curso o bien daremos enlaces para que las podáis estudiar en paralelo.",
     "crumbs": [
       "Parte 1: Probabilidad y variables aleatorias",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Preliminares: conjuntos y combinatoria</span>"
@@ -68,7 +68,7 @@
     "href": "probabilidad.html",
     "title": "2  Teoría elemental de la probabilidad",
     "section": "",
-    "text": "2.1 Definiciones básicas",
+    "text": "2.1 Definiciones básicas\nDaremos nombres a distintos tipos de sucesos:\nA continuación describimos el clásico experimento del lanzamiento de un dado.\nRecordemos la notación \\(\\mathcal{P}(\\Omega)\\) que usamos para referirnos al conjunto de todos los subconjuntos de \\(\\Omega\\). Este conjunto se llama conjunto de partes de \\(\\Omega\\).\nVeamos algún ejemplo menos clásico. Podemos considerar el experimento aleatorio que consiste en calcular los \\(n\\) gramas de una palabra escogida al azar.",
     "crumbs": [
       "Parte 1: Probabilidad y variables aleatorias",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
@@ -79,106 +79,7 @@
     "href": "probabilidad.html#definiciones-básicas",
     "title": "2  Teoría elemental de la probabilidad",
     "section": "",
-    "text": "Definición experimento aleatorio\n\n\nUn experimento que repetido en las mismas condiciones puede dar resultados diferentes, pero que a largo plazo son predecibles recibe el nombre de experimento aleatorio.\n\n\n\n\n Ejemplo\n\n\nTirar un dado de 6 caras y anotar el número de puntos de la cara superior.",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#definiciones-básicas-1",
-    "href": "probabilidad.html#definiciones-básicas-1",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.2 Definiciones básicas",
-    "text": "2.2 Definiciones básicas\n\n\n Suceso elemental\n\n\nCada uno de los posibles resultados del experimento aleatorio\n\n\n\n\n Ejemplo\n\n\nLos sucesos elementales del ejemplo anterior son:",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#definiciones-básicas-2",
-    "href": "probabilidad.html#definiciones-básicas-2",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.3 Definiciones básicas",
-    "text": "2.3 Definiciones básicas\n\n\n Espacio Muestral\n\n\nEs el conjunto \\(\\Omega\\) formado por todos los sucesos elementales del experimento aleatorio\n\n\n\n\n Ejemplo\n\n\nEl espacio muestral del ejemplo anterior del dado es \\(\\Omega=\\) las figuras de la caras anteriores\n\n\n\n\n\n\n\n\n\npero por comodidad, y en general pondremos \\[\\Omega = \\{1,2,3,4,5,6\\}\\]",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#definiciones-básicas-3",
-    "href": "probabilidad.html#definiciones-básicas-3",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.4 Definiciones básicas",
-    "text": "2.4 Definiciones básicas\n\n\n Suceso\n\n\nCualquier subconjunto del espacio muestral.\n\n\nAlguno sucesos notables que merece la pena nombrar son:\n\nSuceso seguro o cierto: \\(\\Omega\\)\nSuceso imposible o vacio: \\(\\emptyset\\)\nPartes de un conjunto: \\(\\mathcal{P}(\\Omega)\\): conjunto de todos los sucesos del experimento aleatorio (es decir, el conjunto de todos los subconjuntos de \\(\\Omega\\))\n\n\n\n Ejercicio\n\n\n¿Cuantos elementos contiene el conjunto de partes de \\(\\Omega\\) del experimento anterior?\n\n\n\n\n Ejemplo \\(n\\)-grama\n\n\nSe define un \\(n\\)-grama de una palabra como el conjunto de \\(n\\) letras consecutivas de la misma (contando los blancos de inicio y final de palabra que marcamos como “_”).\nConsideremos el experimento aleatorio que consiste en escoger al azar un 3-grama de la palabra “_Baleares_”. Vamos a escribir el espacio muestral y algunos sucesos elementales del mismo.\nEn este caso, si consideramos la palabra “_Baleares_”, el espacio muestral del experimento sería:\n\\[\\Omega=\\{\\_Ba, Bal, ale, lea, ear, are, res, es\\_\\}\\]\nAlgunos sucesos serían:\n\n3-gramas que empiezan por \\(a\\): \\(\\{ale,are\\}.\\)\n3-gramas de inicio y final de palabra: \\(\\{\\_Ba,es\\_\\}.\\)\n3-gramas que contengan una \\(l\\): \\(\\{Bal,ale,lea\\}.\\)",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#operaciones-con-sucesos",
-    "href": "probabilidad.html#operaciones-con-sucesos",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.5 Operaciones con sucesos",
-    "text": "2.5 Operaciones con sucesos\nSi tenemos dos sucesos \\(A,B\\subseteq \\Omega\\), podemos definir:\n\n\\(\\Omega\\): suceso total o seguro.\n\\(\\emptyset\\): suceso vacío o imposible.\n\\(A\\cup B\\): suceso unión; el que ocurre si sucede \\(A\\) o \\(B\\).\n\\(A\\cap B\\): suceso intersección; el que ocurre si sucede \\(A\\) y \\(B\\).\n\\(A^c\\): suceso complementario el que sucede si NO sucede \\(A\\).\n\\(A- B=A\\cap B^c\\): suceso diferencia, que acontece si sucede \\(A\\) y NO sucede \\(B\\).\n\n\n\n Sucesos incompatibles\n\n\nDos sucesos cualesquiera \\(A\\) y \\(B\\) son incompatibles (o disjuntos) cuando \\(A\\cap B=\\emptyset\\).",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#ejemplo-género",
-    "href": "probabilidad.html#ejemplo-género",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.6 Ejemplo género",
-    "text": "2.6 Ejemplo género\n\n\n Ejemplo\n\n\nSupongamos que el sexo se divide entre Mujeres y Hombres. Vamos a definir el espacio muestral, los sucesos elementales y a realizar algunas operaciones entre ellos.\nEstudiantes de esta clase: \\(\\Omega\\). - Mujeres de esta clase: \\(A\\). - Estudiantes que son zurdos \\(B\\).\n\n\nAlgunas operaciones entre los conjuntos:\n\n\\(A\\cup B\\): Est. que son mujeres o que son zurdos.\n\\(A\\cap B\\): Mujeres de esta clase que son zurdas.\n\\(A^c\\): Hombres de esta clase.\n\\(A-B\\): Mujeres de la clases que NO son zurdas.\n\\(B-A\\): Hombres de la clase que son zurdos.\n No son incompatibles.",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#propiedades",
-    "href": "probabilidad.html#propiedades",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.7 Propiedades",
-    "text": "2.7 Propiedades\n\n\n Propiedades\n\n\nConmutativas:\n\\[A\\cup B=B\\cup A, \\quad A\\cap B=B\\cap A\\]\nAsociativas:\n\\[A\\cup(B\\cup C)=(A\\cup B)\\cup C, \\quad A\\cap(B\\cap C)=(A\\cap B)\\cap C\\] Distributivas\n\\[A\\cap(B\\cup C)=(A\\cap B)\\cup (A\\cap C), \\quad A\\cup(B\\cap C)=(A\\cup B)\\cap (A\\cup C)\\]",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#propiedades-1",
-    "href": "probabilidad.html#propiedades-1",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.8 Propiedades",
-    "text": "2.8 Propiedades\nVeamos algunos diagramas que nos ayuda a demostrar las propiedades anteriores.\n\n\n\n\n\n\n\n\n\\(A\\)\n\\(B\\cap C\\)\n\\(A\\cup (B\\cap C)\\)",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#propiedades-2",
-    "href": "probabilidad.html#propiedades-2",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.9 Propiedades",
-    "text": "2.9 Propiedades\n\n\n\n\n\n\n\n\n\\(A\\cup B\\)\n\\(A\\cup C\\)\n\\((A\\cup B)\\cap (A\\cup C)\\)",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#más-propiedades",
-    "href": "probabilidad.html#más-propiedades",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.10 Más propiedades",
-    "text": "2.10 Más propiedades\n\n\n Complementario del complementario\n\n\n\\[(A^c)^c=A\\]\n\n\n\n\n\n\n\n\n\n\n\\(A\\)\n\\(A^c\\)\n\\((A^c)^c\\)\n\n\n\n\n\n\n\n\n\n\n\n\n Leyes de De Morgan\n\n\n\\[(A\\cup B)^c=A^c\\cap B^c\\]\n\n\n\n\n\n\n\n\\(A\\cup B\\)\n\\((A\\cup B)^c\\)\n\n\n\n\n\n\n\n\n\n\\[(A\\cup B)^c=A^c\\cap B^c\\]\n\n\n\n\n\n\n\n\n\\(A^c\\)\n\\(B^c\\)\n\\(A^c\\cap B^c\\)\n\n\n\n\n\n\n\n\n\n\n\\[(A\\cap B)^c=A^c\\cup B^c\\]\n\n\n\n\n\n\n\n\\(A\\cap B\\)\n\\((A\\cap B)^c\\)\n\n\n\n\n\n\n\n\n\n\\[(A\\cap B)^c=A^c\\cup B^c\\]\n\n\n\n\n\n\n\n\n\\(A^c\\)\n\\(B^c\\)\n\\(A^c\\cup B^c\\)",
+    "text": "Definición experimento aleatorio\n\n\nUn experimento que repetido en las mismas condiciones puede dar resultados diferentes, pero que a largo plazo son predecibles recibe el nombre de experimento aleatorio.\n\n\n\n\n\n Espacio muestral y tipos de sucesos\n\n\n\nLlamaremos suceso elemental a cada uno de los posibles resultados del experimento aleatorio.\nLlamaremos espacio muestral (\\(\\Omega\\),\\(E\\)) al conjunto formado por todos los sucesos elementales del experimento aleatorio.\nLlamaremos suceso a cualquier subconjunto del espacio muestral.\nSuceso seguro o cierto \\(A\\subseteq \\Omega\\)\nSuceso imposible o vacio: \\(\\emptyset\\)\nPartes de un conjunto: \\(\\mathcal{P}(\\Omega)\\): conjunto de todos los sucesos del experimento aleatorio (es decir, el conjunto de todos los subconjuntos de \\(\\Omega\\))\n\n\n\n\n\n\n Ejemplo\n\n\nConsideremos el experimento aleatorio que consiste en lanzar un dado. El espacio muestral de este experimento es \\(\\Omega=\\{1,2,3,4,5,6\\}\\) o las figuras de las caras del dado.\nSi lo representamos gráficamente, tendríamos:\n\n\n\n\n\n\n\n\n\nPor comodidad y conveniencia se opta por representar el espacio muestral por \\[\\Omega = \\{1,2,3,4,5,6\\}.\\]\n\n\n\n\n\n Ejercicio\n\n\n¿Cuantos elementos contiene el conjunto de partes de \\(\\Omega\\) del experimento anterior?\n\n\n\n\n\n Ejemplo \\(n\\)-gramas\n\n\nSe define un \\(n\\)-grama de una palabra como el conjunto de \\(n\\) letras consecutivas de la misma (contando los blancos de inicio y final de palabra que marcamos como “_”).\nConsideremos el experimento aleatorio que consiste en escoger al azar un 3-grama de la palabra “_Baleares_”. Vamos a escribir el espacio muestral y algunos sucesos elementales del mismo.\nEn este caso, si consideramos la palabra “_Baleares_”, el espacio muestral del experimento sería:\n\\[\\Omega=\\{\\_Ba, Bal, ale, lea, ear, are, res, es\\_\\}\\]\nAlgunos sucesos serían:\n\n3-gramas que empiezan por \\(a\\): \\(\\{ale,are\\}.\\)\n3-gramas de inicio y final de palabra: \\(\\{\\_Ba,es\\_\\}.\\)\n3-gramas que contengan una \\(l\\): \\(\\{Bal,ale,lea\\}.\\)\n\nEsiten bases de datos que estudián la frecuencias de \\(n\\)-grams de caracteres en textos en diferentes idiomas; generalmente de palabras. Por ejemplo, en español, los bigramas de sílabas más frecuentes son “EN” (3.01%) y “DE” (2.77%) y los trigramas de sílabas son “QUE” (1.66%) y “ENT” (1.38%). Podéis consultar más estadísticas en por ejemplo en Stefan Trost Media frecuencias de sílabas en español.\n\n\n\n2.1.1 Operaciones con sucesos\nSi tenemos dos sucesos \\(A,B\\subseteq \\Omega\\), podemos definir:\n\n\\(\\Omega\\): suceso total o seguro.\n\\(\\emptyset\\): suceso vacío o imposible.\n\\(A\\cup B\\): suceso unión; el que ocurre si sucede \\(A\\) o \\(B\\).\n\\(A\\cap B\\): suceso intersección; el que ocurre si sucede \\(A\\) y \\(B\\).\n\\(A^c\\): suceso complementario el que sucede si NO sucede \\(A\\).\n\\(A- B=A\\cap B^c\\): suceso diferencia, que acontece si sucede \\(A\\) y NO sucede \\(B\\).\n\n\n\n Sucesos incompatibles\n\n\nDos sucesos cualesquiera \\(A\\) y \\(B\\) son incompatibles (o disjuntos) cuando \\(A\\cap B=\\emptyset\\).\n\n\nOtro ejemplo se observa el sexo y la lateralidad de los estudiantes de una clase.\n\n\n Ejemplo\n\n\nSupongamos que el sexo se divide entre Mujeres y Hombres y la lateralirad en diestros y zurdos. Vamos a definir el espacio muestral, los sucesos elementales y a realizar algunas operaciones entre ellos.\nEstudiantes de esta clase: \\(\\Omega\\). - Mujeres de esta clase: \\(A\\). - Estudiantes que son zurdos \\(B\\).\n\n\nAlgunas operaciones entre los sucesos anteriores serían:\n\n\\(A\\cup B\\): Est. que son mujeres o que son zurdos.\n\\(A\\cap B\\): Mujeres de esta clase que son zurdas.\n\\(A^c\\): Hombres de esta clase.\n\\(A-B\\): Mujeres de la clases que NO son zurdas.\n\\(B-A\\): Hombres de la clase que son zurdos.\n ¡Cuidado!  No son incompatibles.\n\n\n\n2.1.2 Propiedades\n\n\n Propiedades\n\n\nConmutativas:\n\\[A\\cup B=B\\cup A, \\quad A\\cap B=B\\cap A\\]\nAsociativas:\n\\[\\begin{align*}\nA\\cup(B\\cup C)=(A\\cup B)\\cup C, \\\\\nA\\cap(B\\cap C)=(A\\cap B)\\cap C.\n\\end{align*}\\]\nDistributivas\n\\[\\begin{align*}\nA\\cap & (B\\cup C)=(A\\cap B)\\cup (A\\cap C),\\\\\nA\\cup & (B\\cap C)=(A\\cup B)\\cap (A\\cup C).\n\\end{align*}\\]\n\n\nVeamos algunos diagramas que nos ayuda a demostrar las propiedades anteriores.\n\n\n\n\n\n\n\n\n\\(A\\)\n\\(B\\cap C\\)\n\\(A\\cup (B\\cap C)\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\(A\\cup B\\)\n\\(A\\cup C\\)\n\\((A\\cup B)\\cap (A\\cup C)\\)\n\n\n\n\n\n\n\n\n\n\n\n\n Complementario del complementario\n\n\n\\[(A^c)^c=A\\]\n\n\n\n\n\n\n\n\n\n\n\\(A\\)\n\\(A^c\\)\n\\((A^c)^c\\)\n\n\n\n\n\n\n\n\n\n\n\n\n Leyes de De Morgan\n\n\n\\[(A\\cup B)^c=A^c\\cap B^c\\]\n\n\n\n\n\n\n\n\\(A\\cup B\\)\n\\((A\\cup B)^c\\)\n\n\n\n\n\n\n\n\n\n\\[(A\\cup B)^c=A^c\\cap B^c\\]\n\n\n\n\n\n\n\n\n\\(A^c\\)\n\\(B^c\\)\n\\(A^c\\cap B^c\\)\n\n\n\n\n\n\n\n\n\n\n\\[(A\\cap B)^c=A^c\\cup B^c\\]\n\n\n\n\n\n\n\n\\(A\\cap B\\)\n\\((A\\cap B)^c\\)\n\n\n\n\n\n\n\n\n\n\\[(A\\cap B)^c=A^c\\cup B^c\\]\n\n\n\n\n\n\n\n\n\\(A^c\\)\n\\(B^c\\)\n\\(A^c\\cup B^c\\)",
     "crumbs": [
       "Parte 1: Probabilidad y variables aleatorias",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
@@ -188,41 +89,8 @@
     "objectID": "probabilidad.html#definición-de-probabilidad",
     "href": "probabilidad.html#definición-de-probabilidad",
     "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.11 Definición de probabilidad",
-    "text": "2.11 Definición de probabilidad\nLa probabilidad de un suceso es una puntuación (score) numérico entre 0 y 1 que mide la verosimilitud de que este evento se produzca.\nEsta verosimilitud puede estar justificada por:\n\nEstimación personal\nEstimación de expertos\nLa frecuencia con la que se da\nCálculo formal",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#definición-de-probabilidad-1",
-    "href": "probabilidad.html#definición-de-probabilidad-1",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.12 Definición de probabilidad",
-    "text": "2.12 Definición de probabilidad\n\n\n Definición formal de probabilidad\n\n\nSea \\(\\Omega\\) el espacio muestral de un experimento aleatorio. Supongamos que el número de posibles resultados, por el momento, es finito.\nUna probabilidad sobre \\(\\Omega\\) es una aplicación \\(P:\\mathcal{P}(\\Omega)\\to [0,1]\\) con las siguientes propiedades:\n\n\\(0\\leq P(A)\\leq 1\\), para todo suceso \\(A\\).\n\\(P(\\Omega)=1\\).\nSi \\(\\{A_1,A_2,\\ldots,A_n\\}\\) son sucesos disjuntos dos a dos, entonces\n\n\\[\nP(A_1\\cup A_2\\cup \\cdots \\cup A_n)=P(A_1)+P(A_2)+\\cdots +P(A_n)\n\\]\nSi \\(a\\in \\Omega\\) es un suceso elemental cometeremos el abuso de notación de poner \\(P(a)\\) en lugar de \\(P(\\{a\\})\\).",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#ejemplo-grupos-sanguíneos",
-    "href": "probabilidad.html#ejemplo-grupos-sanguíneos",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.13 Ejemplo: grupos sanguíneos",
-    "text": "2.13 Ejemplo: grupos sanguíneos\n\n\n Ejemplo\n\n\nEn la página de la Fundación Banco de Sangre y Tejidos de las Islas Baleares (17-08-2023) podemos encontrar información sobre los porcentajes de tipos de sangre de los donantes de las Islas Baleares:\n\\[A: 46\\%;\\  B: 7.5\\%;\\  AB: 3.5\\%;\\  O: 43\\%.\\]\n¿Cuál es la probabilidad de que un balear donante de sangre no sea del tipo O?\nExperimento aleatorio: tipo de sangre de un paciente humano:\n\\[\\Omega=\\{\\mbox{A,B,AB,O}\\}\\]\nProbabilidad de un suceso: se asimila al porcentaje observado de individuos.\nSuceso: \\(\\{\\mbox{O}\\}^c=\\{\\mbox{A,B,AB}\\}\\).\n\\[P(\\{\\mbox{O}\\}^c)\\!=\\!P(\\{\\mbox{A,B,AB}\\})\\!=\\!\nP(\\mbox{A})+P (\\mbox{B})+P(\\mbox{AB})\\!=\\!0.57.\\]\n\n\n\n\n Propiedades básicas de la probabilidad\n\n\n\n\\(P(\\emptyset)=0\\).\n\\(\\scriptsize{P(A-B)=P(A)-P(A\\cap B)}\\) porque \\(\\scriptsize{P(A)=P(A-B)+P(A\\cap B)}\\).\n\n\n\n\n\n\n\n\n\n\n\nSi \\(B\\subseteq A\\), entonces \\(0\\leq P(B)\\leq P(A)\\).\n\\(P(A^c)=1-P(A)\\).\n\n\n\n\n\n Proposición\n\n\n\\(P(A\\cup B)=P(A)+P(B)-P(A\\cap B)\\)\n\n\n\n\n\n\n\n\n\n\n\nLa demostración analítica de esta propiedad es la siguiente:\n\\[\\begin{eqnarray*}\nP(A)+P(B)-P(A\\cap B) &=& P(A-B)+P(A\\cap B)\\\\\n& & +P(B-A)+ P(A\\cap  B)-P(A\\cap  B)\\\\\n&=& P(A-B)+P(A\\cap B)+ P(B-A) \\\\\n&=& P(A\\cup B).\\\\\n\\end{eqnarray*}\\]\n\n\n Para la unión de tres conjuntos\n\n\nPara la unión de tres conjuntos\n¡ \\[P(A\\cup B\\cup C)\\]",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#propiedades-3",
-    "href": "probabilidad.html#propiedades-3",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.14 Propiedades",
-    "text": "2.14 Propiedades\nDe forma analítica la demostración es la siguiente:\n\\[\\begin{eqnarray*}\nP(A\\cup B\\cup C)&=&P(A)+P(B)+P(C)-P(A\\cap B) \\\\\n  & & - P(A\\cap C)-P(B\\cap C)+P(A\\cap B\\cap C).\\\\\n  \\end{eqnarray*}\\]\nEfectivamente tenemos que:\n\\[P(A\\cup B\\cup C)=P(1)+P(2)+P(3)+P(4)+P(5)+P(6)+P(7).\\]\nPara la unión de tres conjuntos\n\n\n Propiedad\n\n\n\nSi \\(A=\\{a_1,a_2,\\ldots,a_k\\}\\), entonces \\[\nP(A)=P(a_1)+P(a_2)+\\cdots+P(a_k).\n\\]\nSi todos los sucesos elementales tienen la misma probabilidad, \\[\nP(A)=\\frac{|A|}{|\\Omega|}\\Big(=\\frac{\\mbox{casos favorables}}{\\mbox{casos posibles}}\\Big).\n\\]\n\n\n\n\n\n Ejemplo: Frecuencia de vocales\n\n\nLos porcentajes de vocales de un determinado idioma (de alfabeto latino) según la Wikipedia son:\n\\[A: 18.7\\%;\\ E: 26.1\\%;\\ I: 25.7\\%;\\ O: 24.4\\%;\\ U: 5.1\\%.\\]\n¿Cuál es la probabilidad que una vocal escogida al azar de este idioma sea una E o una O?\nEl espacio muestral del experimento es \\(\\Omega=\\{A,E,I,O,U\\}\\).\nEl suceso que deseamos analizar es \\(\\{E,0\\}\\).\nY su probabilidad es\n\\[P(\\{E,O\\})=P(E)+P(O)=0.261+0.244=0.505.\\]\n\n\n\n\n Ejemplo: Consumo de drogas\n\n\nSegun un árticulo de El País, en un control especial de la policía el \\(0.1\\%\\) de todos los conductores analizados en un control de tráfico dan positivo en un el test en cocaína, y el \\(1\\%\\) da positivo en cannabis. Un \\(1.05\\%\\) da positivo en alguno de los dos test.\n¿Cuál es la probabilidad que un individuo analizado en el control de drogas escogido al azar no de positivo en ninguno de lo dos test?\nLos sucesos elementales del enunciado del problema son:\n\n\\(A\\): dar positivo en cocaína; \\(P(A)=0.001.\\)\n\\(B\\): dar positivo en cannabis; \\(P(B)=0.01.\\)\n\nEn este caso nos interesa estudiar los sucesos:\n\n\\(A\\cup B\\): dar positivo en alguno de los dos test; \\(P(A\\cup B)=0.0105.\\)\n\\((A\\cup B)^c\\): no dar positivo en ninguno de los test,por tanto:\n\n\\(\\hfill P((A\\cup B)^c)=1-P(A\\cup B)=1-0.0105=0.9895.\\hfill\\)\nEn un control especial de la policía el \\(0.1\\%\\) de todos los conductores analizados en un control de tráfico dan positivo en un el test en cocaína, y el \\(1\\%\\) da positivo en cannabis. Un \\(1.05\\%\\) da positivo en alguno de los dos test.\n¿Cuál es la probabilidad que un analizado al azar de positivo en los dos test en cocaína y cannabis?\nLos sucesos elementales son:\n\n\\(A\\): dar positivo en cocaína; \\(P(A)=0.001.\\)\n\\(B\\): dar positivo en cannabis; \\(P(B)=0.01.\\)\n\nEn este caso nos interesa estudiar los sucesos:\n\n\\(A\\cup B\\): dar positivo en algún de los dos test; \\(P(A\\cup B)=0.0105.\\)\n\\(A\\cap B\\): dar positivo en los dos test\n\nde donde, por tanto:\n\\[\\begin{array}{rl}\n{P(A\\cap B)} &{=P(A)+P(B)-P(A\\cup B)}\\\\ &{=0.001+0.01-0.0105=0.0005}.\n\\end{array}\\]\nEn un control especial de la policía el \\(0.1\\%\\) de todos los conductores analizados en un control de tráfico dan positivo en un el test en cocaína, y el \\(1\\%\\) da positivo en cannabis. Un \\(1.05\\%\\) da positivo en alguno de los dos test.\n¿Cuál es la probabilidad de que un conductor analizado de positivo en cocaína pero no en cannabis?\nLos sucesos elementales son:\n\n\\(A\\): dar positivo en cocaína; \\(P(A)=0.001.\\)\n\\(B\\): dar positivo en cannabis; \\(P(B)=0.01.\\)\n\nEn este caso nos interesa estudiar los sucesos:\n\n\\(A\\cap B\\): dar positivo en los dos test; \\(P(A\\cap B)=0.0005.\\)\n\\(A-B\\): dar positivo en cocaína pero no en cannabis, por lo tanto tenemos que :\n\n\\[P(A-B) =P(A)-P(A\\cap B) =0.001-0.0005=0.0005.\\]",
+    "section": "2.2 Definición de probabilidad",
+    "text": "2.2 Definición de probabilidad\nLa probabilidad de un suceso es una puntuación (score) numérico entre 0 y 1 que mide la verosimilitud de que este evento se produzca.\nEsta verosimilitud puede estar justificada por:\n\nEstimación personal\nEstimación de expertos\nLa frecuencia con la que se da\nCálculo formal\n\n\n\n Definición formal de probabilidad\n\n\nSea \\(\\Omega\\) el espacio muestral de un experimento aleatorio. Supongamos que el número de posibles resultados, por el momento, es finito.\nUna probabilidad sobre \\(\\Omega\\) es una aplicación \\(P:\\mathcal{P}(\\Omega)\\to [0,1]\\) con las siguientes propiedades:\n\n\\(0\\leq P(A)\\leq 1\\), para todo suceso \\(A\\).\n\\(P(\\Omega)=1\\).\nSi \\(\\{A_1,A_2,\\ldots,A_n\\}\\) son sucesos disjuntos dos a dos, entonces\n\n\\[\nP(A_1\\cup A_2\\cup \\cdots \\cup A_n)=P(A_1)+P(A_2)+\\cdots +P(A_n)\n\\]\nSi \\(a\\in \\Omega\\) es un suceso elemental cometeremos el abuso de notación de poner \\(P(a)\\) en lugar de \\(P(\\{a\\})\\).\n\n\nVeamos un ejemplo real de cómo se calcula la probabilidad de un suceso.\n\n\n Ejemplo\n\n\nEn la página de la Fundación Banco de Sangre y Tejidos de las Islas Baleares (17-08-2023) podemos encontrar información sobre los porcentajes de tipos de sangre de los donantes de las Islas Baleares:\n\\[A: 46\\%;\\  B: 7.5\\%;\\  AB: 3.5\\%;\\  O: 43\\%.\\]\n¿Cuál es la probabilidad de que un balear donante de sangre no sea del tipo O?\nExperimento aleatorio: tipo de sangre de un paciente humano:\n\\[\\Omega=\\{\\mbox{A,B,AB,O}\\}\\]\nProbabilidad de un suceso: se asimila al porcentaje observado de individuos.\nSuceso: \\(\\{\\mbox{O}\\}^c=\\{\\mbox{A,B,AB}\\}\\).\n\\[P(\\{\\mbox{O}\\}^c)\\!=\\!P(\\{\\mbox{A,B,AB}\\})\\!=\\!\nP(\\mbox{A})+P (\\mbox{B})+P(\\mbox{AB})\\!=\\!0.57.\\]\n\n\nNecesitaremos tener propiedades y fórmulas prácticas para poder calcular probabilidades de sucesos más complejos. Veamos algunas de ellas.\n\n\n Propiedades básicas de la probabilidad\n\n\n\n\\(P(\\emptyset)=0\\).\n\\(\\scriptsize{P(A-B)=P(A)-P(A\\cap B)}\\) porque \\(\\scriptsize{P(A)=P(A-B)+P(A\\cap B)}\\).\n\n\n\n\n\n\n\n\n\n\n\nSi \\(B\\subseteq A\\), entonces \\(0\\leq P(B)\\leq P(A)\\).\n\\(P(A^c)=1-P(A)\\).\n\n\n\nUna identidad muy utilizada es la de la probabilidad de la unión de dos sucesos cualesquiera.\n\n\n La Probabilidad de la unión de dos sucesos\n\n\n\\(P(A\\cup B)=P(A)+P(B)-P(A\\cap B)\\)\n\n\n\n\n\n\n\n\n\n\n\nLa demostración analítica de esta propiedad es la siguiente:\n\\[\\begin{eqnarray*}\nP(A)+P(B)-P(A\\cap B) &=& P(A-B)+P(A\\cap B)\\\\\n& & +P(B-A)+ P(A\\cap  B)-P(A\\cap  B)\\\\\n&=& P(A-B)+P(A\\cap B)+ P(B-A) \\\\\n&=& P(A\\cup B).\\\\\n\\end{eqnarray*}\\]\n\n\n Probabilidad de la unión de \\(n\\) conjuntos\n\n\nSean \\(A_1, A_2,\\ldots A_n\\) sucesos. Entonces:\n\\[\nP(\\cup_{i=1}^n A_i)=\\sum_{i=1}^n P(A_i)-\\sum_{1\\leq i&lt;j\\leq n}P(A_i\\cap A_j)+\\cdots +(-1)^{n-1}P(A_1\\cap A_2\\cap \\cdots \\cap A_n).\n\\]\n\n\nLa demostración es sncilla por inducción, ya tenemos el caso de dos sucesos, suponemos que es cierta para \\(n\\) y la extendemos a \\(n+1\\) sucesos.\nA modo de comprobación veamos un ejemplo genérico con tres sucesos\n\\(A=\\{1,4,5,6\\}\\), \\(B=\\{2,4,6,7\\}\\) y \\(C=\\{3,5,6,7\\}\\). En este caso la fórmula nos da\n\\[\nP(A\\cup B\\cup C)= & P(A)+P(B)+P(C)-P(A\\cap B)-P(A\\cap C)\n-P(B\\cap C)+P(A\\cap B\\cap C).\n\\]\nGráficamente tenemos esta situación:\n\n\n\n\n\n\n\n\n\nAhora podemos comprobar la fórmula para este caso.\n\\[\\begin{eqnarray*}\nP(A\\cup B\\cup C)&=&P(A)+P(B)+P(C)-P(A\\cap B) \\\\\n  & & - P(A\\cap C)-P(B\\cap C)+P(A\\cap B\\cap C).\\\\\n\\end{eqnarray*}\\]\nEfectivamente tenemos que:\n\\[P(A\\cup B\\cup C)=P(1)+P(2)+P(3)+P(4)+P(5)+P(6)+P(7).\\]\nUna de las formas más intuitiva de asignación de probabilidades es hacer el cociente entre los casos favorables a que acontezca el vento y los casos posibles del experimento; la llmadad fórmula de Laplace.\n\n\n Propiedad\n\n\n\nEn general dado un suceso \\(A=\\{a_1,a_2,\\ldots,a_k\\}\\), entonces \\[\nP(A)=P(a_1)+P(a_2)+\\cdots+P(a_k).\n\\]\nFórmula de Laplace: Si todos los sucesos elementales tienen la misma probabilidad, \\[\nP(A)=\\frac{|A|}{|\\Omega|}\\Big(=\\frac{\\mbox{casos favorables}}{\\mbox{casos posibles}}\\Big).\n\\]\n\n\n\nEn el procesamiento del lenguaje se suelen estudiar las frecucias de plabaras o letras de un determinado idioma. Veamos un ejemplo sobre las frecuencias de las vocales en castellano.\n\n\n Ejemplo: Frecuencia de vocales\n\n\nLos porcentajes de vocales de un determinado idioma (de alfabeto latino) según la Wikipedia son:\n\\[A: 18.7\\%;\\ E: 26.1\\%;\\ I: 25.7\\%;\\ O: 24.4\\%;\\ U: 5.1\\%.\\]\n¿Cuál es la probabilidad que una vocal escogida al azar de este idioma sea una E o una O?\nEl espacio muestral del experimento es \\(\\Omega=\\{A,E,I,O,U\\}\\).\nEl suceso que deseamos analizar es \\(\\{E,0\\}\\).\nY su probabilidad es\n\\[P(\\{E,O\\})=P(E)+P(O)=0.261+0.244=0.505.\\]\n\n\nOtro ejemplo en este caso es sobre un test de drogas en el que se analiza la presencia de cocaína y cannabis en la sangre de los conductores, inspirado en un caso real.\n\n\n Ejemplo: Consumo de drogas\n\n\nSegun un árticulo de El País, en un control especial de la policía el \\(0.1\\%\\) de todos los conductores analizados en un control de tráfico dan positivo en un el test en cocaína, y el \\(1\\%\\) da positivo en cannabis. Un \\(1.05\\%\\) da positivo en alguno de los dos test.\n¿Cuál es la probabilidad que un individuo analizado en el control de drogas escogido al azar no de positivo en ninguno de lo dos test?\nLos sucesos elementales del enunciado del problema son:\n\n\\(A\\): dar positivo en cocaína; \\(P(A)=0.001.\\)\n\\(B\\): dar positivo en cannabis; \\(P(B)=0.01.\\)\n\nEn este caso nos interesa estudiar los sucesos:\n\n\\(A\\cup B\\): dar positivo en alguno de los dos test; \\(P(A\\cup B)=0.0105.\\)\n\\((A\\cup B)^c\\): no dar positivo en ninguno de los test,por tanto:\n\n\\[P((A\\cup B)^c)=1-P(A\\cup B)=1-0.0105=0.9895.\\]\nEn un control especial de la policía el \\(0.1\\%\\) de todos los conductores analizados en un control de tráfico dan positivo en un el test en cocaína, y el \\(1\\%\\) da positivo en cannabis. Un \\(1.05\\%\\) da positivo en alguno de los dos test.\n¿Cuál es la probabilidad que un analizado al azar de positivo en los dos test en cocaína y cannabis?\nLos sucesos elementales son:\n\n\\(A\\): dar positivo en cocaína; \\(P(A)=0.001.\\)\n\\(B\\): dar positivo en cannabis; \\(P(B)=0.01.\\)\n\nEn este caso nos interesa estudiar los sucesos:\n\n\\(A\\cup B\\): dar positivo en algún de los dos test; \\(P(A\\cup B)=0.0105.\\)\n\\(A\\cap B\\): dar positivo en los dos test\n\nde donde, por tanto:\n\\[\\begin{array}{rl}\n{P(A\\cap B)} &{=P(A)+P(B)-P(A\\cup B)}\\\\ &{=0.001+0.01-0.0105=0.0005}.\n\\end{array}\\]\nEn un control especial de la policía el \\(0.1\\%\\) de todos los conductores analizados en un control de tráfico dan positivo en un el test en cocaína, y el \\(1\\%\\) da positivo en cannabis. Un \\(1.05\\%\\) da positivo en alguno de los dos test.\n¿Cuál es la probabilidad de que un conductor analizado de positivo en cocaína pero no en cannabis?\nLos sucesos elementales son:\n\n\\(A\\): dar positivo en cocaína; \\(P(A)=0.001.\\)\n\\(B\\): dar positivo en cannabis; \\(P(B)=0.01.\\)\n\nEn este caso nos interesa estudiar los sucesos:\n\n\\(A\\cap B\\): dar positivo en los dos test; \\(P(A\\cap B)=0.0005.\\)\n\\(A-B\\): dar positivo en cocaína pero no en cannabis, por lo tanto tenemos que :\n\n\\[P(A-B) =P(A)-P(A\\cap B) =0.001-0.0005=0.0005.\\]",
     "crumbs": [
       "Parte 1: Probabilidad y variables aleatorias",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
@@ -232,162 +100,8 @@
     "objectID": "probabilidad.html#probabilidad-condicionada",
     "href": "probabilidad.html#probabilidad-condicionada",
     "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.15 Probabilidad condicionada",
-    "text": "2.15 Probabilidad condicionada\n\n\n Probabilidad condicionada\n\n\nDados dos sucesos \\(A\\) y \\(B\\), con \\(P(A)&gt;0\\), la probabilidad \\(P(B|A)\\) de \\(B\\) condicionado a \\(A\\) es la probabilidad\n\nde que suceda \\(B\\) suponiendo que pasa \\(A\\),\nde que si pasa \\(A\\), entonces suceda \\(B\\),\nde que un resultado de \\(A\\) también pertenezca a \\(B\\).\n\nSe calcula a través de la definición:\n\\[\nP(B|A)=\\frac{P(A\\cap B)}{P(A)}.\n\\]",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#ejemplo-frecuencia-género-y-gafas",
-    "href": "probabilidad.html#ejemplo-frecuencia-género-y-gafas",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.16 Ejemplo: frecuencia género y gafas",
-    "text": "2.16 Ejemplo: frecuencia género y gafas\n\nEjemplo\nEn una clase de 20 hombres y 30 mujeres, 15 hombres y 18 mujeres llevan gafas. Contestemos las siguientes preguntas:\n\n\n-sol - ¿Cuál es la probabilidad de que un alumno lleve gafas?\n\\[\n\\frac{33}{50}\n\\]\n\n¿Cuál es la probabilidad de que un alumno sea mujer y lleve gafas?\n\n\\[\n\\frac{18}{50}\n\\]",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#ejemplo-sexo-y-gafas",
-    "href": "probabilidad.html#ejemplo-sexo-y-gafas",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.17 Ejemplo: sexo y gafas",
-    "text": "2.17 Ejemplo: sexo y gafas\n\nEjemplo\nEn una clase de 20 hombres y 30 mujeres, 15 hombres y 18 mujeres llevan gafas. Contestemos las siguientes preguntas:\n\n\n-sol - ¿Cuál es la probabilidad de que un chica lleve gafas?\n\\[\n\\frac{18}{30}=\\frac{18/50}{30/50}=\\frac{P(\\mbox{mujer  y gafas})}{P(\\mbox{mujer})}.\n\\]\n\nSi escogemos un estudiante al azar ¿Cuál es la probabilidad que si es mujer, entonces lleve gafas?\n\n\\[\n\\frac{18}{30}.\n\\]",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#ejemplo",
-    "href": "probabilidad.html#ejemplo",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.18 Ejemplo",
-    "text": "2.18 Ejemplo\n\nEjemplo\nEn una clase de 20 hombres y 30 mujeres, 15 hombres y 18 mujeres llevan gafas. Contestemos las siguientes preguntas:\n\n\n-sol - ¿Cuál es la probabilidad de que un alumno que lleve gafas sea mujer?\n\\[\n\\frac{18}{33}=\\frac{18/50}{33/50}=\\frac{P(\\mbox{mujer y gafas})}{P(\\mbox{gafas})}.\n\\]\n\nSi escogemos un estudiante al azar ¿Cuál es la probabilidad de que si lleva gafas, entonces sea mujer? \\[\n\\frac{18}{33}\n\\]",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#atención",
-    "href": "probabilidad.html#atención",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.19 ¡Atención!",
-    "text": "2.19 ¡Atención!\nHay que distinguir bien entre\n\n\\(P(A\\cap B)\\): probabilidad de \\(A\\) \\(\\color{red}{\\text{y}}\\) \\(B\\).\n\nProbabilidad de que sea mujer y lleve gafas.\n\n\\(P(A|B)\\): probabilidad de que \\(\\color{red}{\\text{si}}\\) pasa \\(B\\), \\(\\color{red}{\\text{entonces}}\\) pase \\(A\\).\n\nProbabilidad de que, si es mujer, lleve gafas.\nCuando utilizamos probabilidad condicional \\(P(A|B)\\) estamos restringiendo el espacio muestral a \\(B\\).",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#probabilidad-condicionada.-propiedades",
-    "href": "probabilidad.html#probabilidad-condicionada.-propiedades",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.20 Probabilidad condicionada. Propiedades",
-    "text": "2.20 Probabilidad condicionada. Propiedades\nLa probabilidad condicionada es una probabilidad\n\nProposición\n\nSea \\(A\\subseteq \\Omega\\) un suceso tal que \\(P(A)&gt;0\\), entonces\n\\[\n\\begin{array}{rccl}\nP(-|A):& \\mathcal{P}(\\Omega) & \\to & [0,1]\\\\\n&B & \\mapsto & P(B|A).\n\\end{array}\n\\] satisface las propiedades de las probabilidades, como por ejemplo:\n\\[\n\\begin{array}{l}\nP(B^c|A)=1-P(B|A),\\\\\nP(B_1\\cup B_2|A)=P(B_1|A)+P(B_2|A)-P(B_1\\cap B_2|A).\n\\end{array}\n\\]\n\nEjercicio\nEscribid el resto de propiedades que cumpliría una probabilidad condicionada al evento \\(A\\).",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#ejemplo-1",
-    "href": "probabilidad.html#ejemplo-1",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.21 Ejemplo",
-    "text": "2.21 Ejemplo\n\nEjemplo\nUn 15% de los adultos son hipertensos, un 25% de los adultos creen que son hipertensos, y un 9% de los adultos son hipertensos y creen que lo son.\nSi un adulto cree que es hipertenso, ¿cuál es la probabilidad que lo sea?",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#ejemplo-2",
-    "href": "probabilidad.html#ejemplo-2",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.22 Ejemplo",
-    "text": "2.22 Ejemplo\n\n-sol Sean los sucesos\n\n\\(A\\): ser hipertenso, \\(P(A)=0.15\\) ,\n\\(B\\): creer ser hipertenso, \\(P(B)=0.25\\),\n\n\n\n-sol entonces podemos definir el suceso:\n\n\\(A\\cap B\\): ser hipertenso y creerlo, \\(P(A\\cap B)=0.09\\).",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#ejemplo-3",
-    "href": "probabilidad.html#ejemplo-3",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.23 Ejemplo",
-    "text": "2.23 Ejemplo\n\n-sol de donde, la probabilidad condicionada de ser hipertenso creyéndonos que lo somos es:\n\\[\\scriptsize P(A|B)=\\dfrac{P(A\\cap B)}{P(B)}=\\dfrac{0.09}{0.25}=0.36.\\]",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#ejemplo-4",
-    "href": "probabilidad.html#ejemplo-4",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.24 Ejemplo",
-    "text": "2.24 Ejemplo\n\nEjemplo\nUn 15% de los adultos son hipertensos, un 25% de los adultos creen que son hipertensos, y un 9% de los adultos son hipertensos y creen que lo son.\nSi un adulto es hipertenso, ¿cuál es la probabilidad que crea que lo es?\n\n\n-sol Si tenemos los sucesos:\n\n\\(A\\): ser hipertenso,\n\\(B\\): creer ser hipertenso\n\nentonces buscamos la probabilidad \\(P(B|A)\\):\n\\[\n\\begin{array}{rl}\nP(B|A) & =\\dfrac{P(A\\cap B)}{P(A)}=\\dfrac{0.09}{0.15}=\n0.6\n\\end{array}\n\\]",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#ejemplos-dígitos-de-control",
-    "href": "probabilidad.html#ejemplos-dígitos-de-control",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.25 Ejemplos: dígitos de control",
-    "text": "2.25 Ejemplos: dígitos de control\n\nEjemplo\nUn dígito de control de error toma el valor 0 en el 99% de los casos en que hay un error. Si la probabilidad de error en un mensaje es del \\(0.5\\%\\). ¿cuál es la probabilidad de que el mensaje sea erróneo y el código de error tenga valor 0?\n\n\n-sol\n\n\\(B\\): mensaje con error; \\(P(B)=0.005\\),\n\\(A\\): código de error vale 0,\n\\(P(A|B)=0.99\\),\n\nentonces: \\[P(A\\cap B)=P(B)\\cdot P(A|B)=0.005\\cdot 0.99=0.00495.\\]",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#ejemplos",
-    "href": "probabilidad.html#ejemplos",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.26 Ejemplos",
-    "text": "2.26 Ejemplos\n\nEjemplo: SPAM\nUn 50% de correos recibidos en un servidor llevan adjuntos y un 65% son publicidad no deseada (SPAM). Sólo un 15% de estos correos no llevan adjuntos y no son SPAM.\n\n¿Cuál es la probabilidad que un correo lleve adjunto si es SPAM?\n¿Cuál es la probabilidad que un correo no tenga adjuntos si no es SPAM?",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#ejemplos-1",
-    "href": "probabilidad.html#ejemplos-1",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.27 Ejemplos",
-    "text": "2.27 Ejemplos\n\nEjemplo\nUn 50% de correos recibidos en un servidor llevan adjuntos y un 65% son publicidad no deseada (SPAM). Sólo un 15% de estos correos no llevan adjuntos y no son SPAM.\n\n¿Cuál es la probabilidad que un correo lleve adjunto si es SPAM?\n\n\n\n-sol - \\(A\\): llevar adjuntos; \\(P(A)=0.5\\), - \\(S\\): SPAM; \\(P(S)=0.65\\), - \\(A^c\\cap S^c=(A\\cup S)^c\\): no llevar adjunto y no ser SPAM; \\(P((A\\cup S)^c)=0.15\\),\n\\[P(A|S)=\\dfrac{P(A\\cap S)}{P(S)}=?\\]",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#ejemplos-2",
-    "href": "probabilidad.html#ejemplos-2",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.28 Ejemplos",
-    "text": "2.28 Ejemplos\n\nEjemplo\nUn 50% de correos recibidos en un servidor llevan adjuntos y un 65% son publicidad no deseada (SPAM). Sólo un 15% de estos correos no llevan adjuntos y no son SPAM.\n\n¿Cuál es la probabilidad que un correo lleve adjunto si es SPAM?\n\n\n\n-sol - \\(P(A)=0.5, P(S)=0.65, P(A^c\\cap S^c)=P((A\\cup S)^c)=0.15\\),\n\n\\(P(A\\cup S)=1-P((A\\cup S)^c)=0.85\\),\n\\(P(A\\cap S)=P(A)+P(S)-P(A\\cup S)=0.3\\),\n\n\\[P(A|S)=\\dfrac{P(A\\cap S)}{P(S)}=\\dfrac{0.3}{0.65}\\approx 0.46.\\]",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#ejemplos-spam-continuación",
-    "href": "probabilidad.html#ejemplos-spam-continuación",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.29 Ejemplos SPAM continuación",
-    "text": "2.29 Ejemplos SPAM continuación\n\nEjemplo\nUn 50% de correos recibidos en un servidor llevan adjuntos y un 65% son publicidad no deseada (SPAM). Sólo un 15% de estos correos no llevan adjuntos y no son SPAM.\n\n¿Cuál es la probabilidad de que un correo no lleve adjuntos si no es SPAM?\n\n\n\n-sol - \\(P(A)=0.5, P(S)=0.65, P(A^c\\cap S^c)=P((A\\cup S)^c)=0.15.\\)\n\\[P(A^c|S^c)=\\dfrac{P(A^c\\cap S^c)}{P(S^c)}=\\dfrac{P(A^c\\cap S^c)}{1-P(S)}=\\dfrac{0.15}{0.35}\\approx 0.43.\\]",
+    "section": "2.3 Probabilidad condicionada",
+    "text": "2.3 Probabilidad condicionada\n\n\n Probabilidad condicionada\n\n\nDados dos sucesos \\(A\\) y \\(B\\), con \\(P(A)&gt;0\\), la probabilidad \\(P(B|A)\\) de \\(B\\) condicionado a \\(A\\) es la probabilidad\n\nde que suceda \\(B\\) suponiendo que pasa \\(A\\),\nde que si pasa \\(A\\), entonces suceda \\(B\\),\nde que un resultado de \\(A\\) también pertenezca a \\(B\\).\n\nSe calcula a través de la definición:\n\\[\nP(B|A)=\\frac{P(A\\cap B)}{P(A)}.\n\\]\n\n\n\n\n Ejemplo\n\n\nEn una clase de 20 hombres y 30 mujeres, 15 hombres y 18 mujeres llevan gafas. Contestemos las siguientes preguntas:\n\n\n-sol - ¿Cuál es la probabilidad de que un alumno lleve gafas?\n\\[\n\\frac{33}{50}\n\\]\n¿Cuál es la probabilidad de que un alumno sea mujer y lleve gafas?\n\\[\n\\frac{18}{50}\n\\]\n¿Cuál es la probabilidad de que un chica lleve gafas?\n\\[\n\\frac{18}{30}=\\frac{18/50}{30/50}=\\frac{P(\\mbox{mujer  y gafas})}{P(\\mbox{mujer})}.\n\\]\nSi escogemos un estudiante al azar ¿Cuál es la probabilidad que si es mujer, entonces lleve gafas?\n\\[\n\\frac{18}{30}.\n\\]\n¿Cuál es la probabilidad de que un alumno que lleve gafas sea mujer?\n\\[\n\\frac{18}{33}=\\frac{18/50}{33/50}=\\frac{P(\\mbox{mujer y gafas})}{P(\\mbox{gafas})}.\n\\]\nSi escogemos un estudiante al azar ¿Cuál es la probabilidad de que si lleva gafas, entonces sea mujer? \\[\n    \\frac{18}{33}\n    \\]\n\n\n\n\n ¡Atención!\n\n\nHay que distinguir bien entre\n\n\\(P(A\\cap B)\\): probabilidad de \\(A\\) \\(\\color{red}{\\text{y}}\\) \\(B\\).\n\nProbabilidad de que sea mujer y lleve gafas.\n\n\\(P(A|B)\\): probabilidad de que \\(\\color{red}{\\text{si}}\\) pasa \\(B\\), \\(\\color{red}{\\text{entonces}}\\) pase \\(A\\).\n\nProbabilidad de que, si es mujer, lleve gafas.\nCuando utilizamos probabilidad condicional \\(P(A|B)\\) estamos restringiendo el espacio muestral a \\(B\\).\n\n\n\n2.3.1 Probabilidad condicionada. Propiedades\nLa probabilidad condicionada es una probabilidad, en el setido de la siguiente propiedad.\n\n\n Propiedad\n\n\nSea \\(A\\subseteq \\Omega\\) un suceso tal que \\(P(A)&gt;0\\), entonces\n\\[\n\\begin{array}{rccl}\nP(-|A):& \\mathcal{P}(\\Omega) & \\to & [0,1]\\\\\n&B & \\mapsto & P(B|A).\n\\end{array}\n\\] satisface las propiedades de las probabilidades, como por ejemplo:\n\\[\n\\begin{array}{l}\nP(B^c|A)=1-P(B|A),\\\\\nP(B_1\\cup B_2|A)=P(B_1|A)+P(B_2|A)-P(B_1\\cap B_2|A).\n\\end{array}\n\\]\n\n\nTambién se cumpliran el resto de propiedades miestras condiciones todas ellas al mismo suceso \\(A\\).\n\n\n Ejercicio\n\n\nEscribid el resto de propiedades que cumpliría una probabilidad condicionada al evento \\(A\\).\n\n\nVeamos un ejemplo donde se aplica la probabilidad condicionada, en este caso, para calcular la probabilidad de que un adulto sea hipertenso, dado que cree que lo es.\n\n\n Ejemplo\n\n\nUn 15% de los adultos son hipertensos, un 25% de los adultos creen que son hipertensos, y un 9% de los adultos son hipertensos y creen que lo son.\nSi un adulto cree que es hipertenso, ¿cuál es la probabilidad que lo sea?\nSean los sucesos\n\n\\(A\\): ser hipertenso, \\(P(A)=0.15\\) ,\n\\(B\\): creer ser hipertenso, \\(P(B)=0.25\\),\n\nAhora podemos definir el suceso:\n\n\\(A\\cap B\\): ser hipertenso y creerlo, \\(P(A\\cap B)=0.09\\).\n\nde donde, la probabilidad condicionada de ser hipertenso creyéndonos que lo somos es:\n\\[\\scriptsize P(A|B)=\\dfrac{P(A\\cap B)}{P(B)}=\\dfrac{0.09}{0.25}=0.36.\\]\nOtra pregunta es, si un adulto es hipertenso, ¿cuál es la probabilidad que crea que lo es?\nSi tenemos los sucesos:\n\n\\(A\\): ser hipertenso,\n\\(B\\): creer ser hipertenso\n\nentonces buscamos la probabilidad \\(P(B|A)\\):\n\\[\n\\begin{array}{rl}\nP(B|A) & =\\dfrac{P(A\\cap B)}{P(A)}=\\dfrac{0.09}{0.15}=\n0.6\n\\end{array}\n\\]\n\n\n\n\n Ejemplo\n\n\nOtro ejemplo de probabilidad condicionada en este caso un ejemplo simple de dígito de control de error.\nUn dígito de control de error toma el valor 0 en el 99% de los casos en que hay un error. Si la probabilidad de error en un mensaje es del \\(0.5\\%\\). ¿cuál es la probabilidad de que el mensaje sea erróneo y el código de error tenga valor 0?\n\n\\(B\\): mensaje con error; \\(P(B)=0.005\\),\n\\(A\\): código de error vale 0,\n\\(P(A|B)=0.99\\),\n\nentonces: \\[P(A\\cap B)=P(B)\\cdot P(A|B)=0.005\\cdot 0.99=0.00495.\\]\n\n\nLa probabilidad condicional también es útil en la resolución de problemas de clasificación, como el siguiente ejemplo.\n\n\n Ejemplo: SPAM\n\n\nUn 50% de correos recibidos en un servidor llevan adjuntos y un 65% son publicidad no deseada (SPAM). Sólo un 15% de estos correos no llevan adjuntos y no son SPAM.\n\n¿Cuál es la probabilidad que un correo lleve adjunto si es SPAM?\n¿Cuál es la probabilidad que un correo no tenga adjuntos si no es SPAM?\n¿Cuál es la probabilidad que un correo lleve adjunto si es SPAM?\n\nAsignemos sucesos y probabilidades\n\n\\(A\\): llevar adjuntos; \\(P(A)=0.5\\), - \\(S\\): SPAM; \\(P(S)=0.65\\), - \\(A^c\\cap S^c=(A\\cup S)^c\\): no llevar adjunto y no ser SPAM; \\(P((A\\cup S)^c)=0.15\\),\n\n\\[P(A|S)=\\dfrac{P(A\\cap S)}{P(S)}=?\\]\n\n¿Cuál es la probabilidad que un correo lleve adjunto si es SPAM?\n\\(P(A)=0.5, P(S)=0.65, P(A^c\\cap S^c)=P((A\\cup S)^c)=0.15\\),\n\\(P(A\\cup S)=1-P((A\\cup S)^c)=0.85\\),\n\\(P(A\\cap S)=P(A)+P(S)-P(A\\cup S)=0.3\\),\n\n\\[P(A|S)=\\dfrac{P(A\\cap S)}{P(S)}=\\dfrac{0.3}{0.65}\\approx 0.46.\\]\n\nOtra pregunta es ¿Cuál es la probabilidad de que un correo no lleve adjuntos si no es SPAM?\n\\(P(A)=0.5, P(S)=0.65, P(A^c\\cap S^c)=P((A\\cup S)^c)=0.15.\\)\n\n\\[P(A^c|S^c)=\\dfrac{P(A^c\\cap S^c)}{P(S^c)}=\\dfrac{P(A^c\\cap S^c)}{1-P(S)}=\\dfrac{0.15}{0.35}\\approx 0.43.\\]",
     "crumbs": [
       "Parte 1: Probabilidad y variables aleatorias",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
@@ -397,272 +111,19 @@
     "objectID": "probabilidad.html#teorema-de-la-probabilidad-total",
     "href": "probabilidad.html#teorema-de-la-probabilidad-total",
     "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.30 Teorema de la probabilidad total",
-    "text": "2.30 Teorema de la probabilidad total\nTeorema de la probabilidad total\nDados dos sucesos \\(A\\) y \\(B\\) se tiene que\n\\[\n\\begin{array}{rl}\nP(B)&= P(B\\cap A) +P(B\\cap A^c)\\\\\n& =P(A)\\cdot P(B|A)+ P(A^c)\\cdot P(B|A^c).\n\\end{array}\n\\]",
+    "section": "2.4 Teorema de la probabilidad total",
+    "text": "2.4 Teorema de la probabilidad total\n\n\n Teorema de la probabilidad total\n\n\nDados dos sucesos \\(A\\) y \\(B\\) se tiene que\n\\[\n\\begin{array}{rl}\nP(B)&= P(B\\cap A) +P(B\\cap A^c)\\\\\n& =P(A)\\cdot P(B|A)+ P(A^c)\\cdot P(B|A^c).\n\\end{array}\n\\]\n\n\nVamos a generalizar el resultado anterior a una colección de sucesos \\(A_1,A_2,\\ldots,A_n\\) que forman una partición del espacio muestral \\(\\Omega\\).\n\n\n Partición del espacio espacio muestral\n\n\nLos sucesos \\(A_1,A_2,\\ldots, A_n\\) son una partición del espacio muestral \\(\\Omega\\) de un determinado experimento aleatorio, si cumplen las condiciones siguientes:\n\n\\(A_1\\cup A_2\\cup\\ldots\\cup A_n=\\Omega\\),\n\\(A_1,A_2,\\ldots,A_n\\) son incompatibles dos a dos (\\(A_i\\cap A_j=\\emptyset\\)).\n\n\n\nAhora podemos volver a enunciar el teorema anterior pero en esta ocasión para particiones arbitrarias.\n\n\n Teorema de la probabilidad total generalizado\n\n\nSea \\(A_1,A_2,\\ldots,A_n\\) una partición de \\(\\Omega\\). Sea \\(B\\) un suceso cualquiera. Entonces\n\\[\n\\begin{array}{rl}\nP(B)&= P(B\\cap A_1)+\\cdots +P(B\\cap A_n)\\\\\n& =P(A_1)\\cdot P(B|A_1)+\\ldots+P(A_n)\\cdot P(B|A_n).\n\\end{array}\n\\]\n\n\nRevisitemos el ejemplo de los mensajes con dígitos de control de error.\n\n\n Ejemplo\n\n\nUn dígito de control de error toma el valor 0 en un \\(99\\%\\) de los casos en que hay un error y en un \\(5\\%\\) de los mensajes sin error. La probabilidad de error en un mensaje es del \\(0.5\\%\\).\n¿Cuál es la probabilidad de que un mensaje escogido al azar tenga el dígito de control a 0?\nSean los sucesos del enunciado:\n\n\\(B\\): mensaje con error; \\(P(B)=0.005\\),\n\\(A\\): código de error vale 0,\n\nentonces obtenemos las probabilidades a partir del enunciado:\n\n\\(P(A|B)=0.99,\\)\n\\(P(A|B^c)= 0.05\\)\n\ny por tanto,\n\\[\n\\begin{array}{rl}\nP(A)=& P(B)\\cdot P(A|B)+P(B^c)\\cdot P(A|B^c)\\\\\n& =0.005\\cdot 0.99+0.995\\cdot 0.05=0.0547.\n\\end{array}\n\\]",
     "crumbs": [
       "Parte 1: Probabilidad y variables aleatorias",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
     ]
   },
   {
-    "objectID": "probabilidad.html#teorema-de-la-probabilidad-total-1",
-    "href": "probabilidad.html#teorema-de-la-probabilidad-total-1",
+    "objectID": "probabilidad.html#clasificación-o-diagnostico-caso-binario",
+    "href": "probabilidad.html#clasificación-o-diagnostico-caso-binario",
     "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.31 Teorema de la probabilidad total",
-    "text": "2.31 Teorema de la probabilidad total\nPartición del espacio espacio muestral\nLos sucesos \\(A_1,A_2,\\ldots, A_n\\) son una partición del espacio muestral \\(\\Omega\\) de un determinado experimento aleatorio, si cumplen las condiciones siguientes:\n\n\\(A_1\\cup A_2\\cup\\ldots\\cup A_n=\\Omega\\),\n\\(A_1,A_2,\\ldots,A_n\\) son incompatibles dos a dos (\\(A_i\\cap A_j=\\emptyset\\)).\n\n\nTeorema de la probabilidad total\n\nSea \\(A_1,A_2,\\ldots,A_n\\) una partición de \\(\\Omega\\). Sea \\(B\\) un suceso cualquiera. Entonces\n\\[\n\\begin{array}{rl}\nP(B)&= P(B\\cap A_1)+\\cdots +P(B\\cap A_n)\\\\\n& =P(A_1)\\cdot P(B|A_1)+\\ldots+P(A_n)\\cdot P(B|A_n).\n\\end{array}\n\\]",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#ejemplos-3",
-    "href": "probabilidad.html#ejemplos-3",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.32 Ejemplos",
-    "text": "2.32 Ejemplos\nEjemplo\nUn dígito de control de error toma el valor 0 en un \\(99\\%\\) de los casos en que hay un error y en un \\(5\\%\\) de los mensajes sin error. La probabilidad de error en un mensaje es del \\(0.5\\%\\).\n¿Cuál es la probabilidad de que un mensaje escogido al azar tenga el dígito de control a 0?",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#ejemplo-solución",
-    "href": "probabilidad.html#ejemplo-solución",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.33 Ejemplo solución",
-    "text": "2.33 Ejemplo solución\nSean los sucesos del enunciado:\n\n\\(B\\): mensaje con error; \\(P(B)=0.005\\),\n\\(A\\): código de error vale 0,\n\nentonces obtenemos las probabilidades a partir del enunciado:\n\n\\(P(A|B)=0.99,\\)\n\\(P(A|B^c)= 0.05\\)",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#ejemplo-5",
-    "href": "probabilidad.html#ejemplo-5",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.34 Ejemplo",
-    "text": "2.34 Ejemplo\ny por tanto,\n\\[\n\\begin{array}{rl}\nP(A)=& P(B)\\cdot P(A|B)+P(B^c)\\cdot P(A|B^c)\\\\\n& =0.005\\cdot 0.99+0.995\\cdot 0.05=0.0547.\n\\end{array}\n\\]",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#clasificación-o-diagnósticos",
-    "href": "probabilidad.html#clasificación-o-diagnósticos",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.35 Clasificación o Diagnósticos",
-    "text": "2.35 Clasificación o Diagnósticos\nConsideremos alguna de las siguientes situaciones:\n\nUn algoritmo detecta si una transacción con tarjeta de crédito es fraude o no.\nUn algoritmo detecta si tiene o no que mostrar un anuncio en una web.\nUn prueba de embarazo.\nUna prueba médica para una enfermedad concreta.\n\nNos ceñiremos a la casuística más elemental el algoritmo de clasificación o la diagnosis solo da dos resultado Positivo (sí tienes la enfermedad, sí es un fraude) o Negativo (en caso contrario).",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#clasificación-o-diagnósticos-1",
-    "href": "probabilidad.html#clasificación-o-diagnósticos-1",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.36 Clasificación o Diagnósticos",
-    "text": "2.36 Clasificación o Diagnósticos\nEn todas estas situaciones podemos calcular lo que se llama matriz de confusión que representa todas las situaciones posibles. En el caso de estudiar una condición de tipo binario,\n\n\n\n\nEl Test da Positivo\nEl Test da Negativo\n\n\n\n\nCondición Positiva\nCorrecto\nError\n\n\nCondición Negativa\nError\nCorrecto",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#clasificación-o-diagnósticos-2",
-    "href": "probabilidad.html#clasificación-o-diagnósticos-2",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.37 Clasificación o Diagnósticos",
-    "text": "2.37 Clasificación o Diagnósticos\nEn general los modelos y algoritmos de clasificación suelen aportar puntuaciones (scores) que determinan el grado de pertenencia a una clase, o que miden si dos objetos están en la misma clase.\nAsí el resultado del clasificador o del diagnóstico puede ser:\n\nun número real, en cuyo caso debe clasificador entre cada clase debe determinarse por un valor umbral (threshold) por ejemplo para determinar si una persona está estresado podemos dar un scores entre 0 y 1 (1 máximo estrés 0 estrés nulo),\nun resultado discreto que indica directamente una de las clases (esto es necesario si es un algoritmo que debe decidir qué hacer con el objeto.",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#clasificación-o-diagnósticos-3",
-    "href": "probabilidad.html#clasificación-o-diagnósticos-3",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.38 Clasificación o Diagnósticos",
-    "text": "2.38 Clasificación o Diagnósticos\n Positivos y Negativos Consideremos un problema de predicción de clases binario, en la que los resultados se etiquetan positivos (P) o negativos (N). Hay cuatro posibles resultados a partir de un clasificador binario como el propuesto.\n\nSi el resultado de una exploración es P y el valor dado es también P, entonces se conoce como un Verdadero Positivo (VP).\nSin embargo si el valor real es N entonces se conoce como un Falso Positivo (FP).\nDe igual modo, tenemos un Verdadero Negativo (VN) cuando tanto la exploración como el valor dado son N.\nUn Falso Negativo (FN) cuando el resultado de la predicción es N pero el valor real es P.",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#clasificación-o-diagnósticos-4",
-    "href": "probabilidad.html#clasificación-o-diagnósticos-4",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.39 Clasificación o Diagnósticos",
-    "text": "2.39 Clasificación o Diagnósticos\nUn ejemplo aproximado de un problema real es el siguiente: consideremos una prueba diagnóstica que persiga determinar si una persona tiene una cierta enfermedad.\n\nUn falso positivo en este caso ocurre cuando la prueba predice que el resultado es positivo, cuando la persona no tiene realmente la enfermedad.\nUn falso negativo, por el contrario, ocurre cuando el resultado de la prueba es negativo, sugiriendo que no tiene la enfermedad cuando realmente sí la tiene.",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#clasificación-o-diagnósticos-5",
-    "href": "probabilidad.html#clasificación-o-diagnósticos-5",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.40 Clasificación o Diagnósticos",
-    "text": "2.40 Clasificación o Diagnósticos\nEn un diagnósticos de una cierta condición (por ejemplo, test embarazo, test de enfermedad), tenemos dos tipos de sucesos:\n\n\\(T\\): el test da positivo,\n\\(M\\): el sujeto satisface la condición.\n\n Falsos Positivos y Falsos Negativos\n\nFalsos positivos \\(T\\cap M^c\\): El test da positivo, pero la condición no se da,\nCoeficiente de falsos positivos \\(P(T|M^c)\\),\nFalsos negativos \\(T^c\\cap M\\): El test da negativo, pero la condición sí que se da,\nCoeficiente de falsos negativos: \\(P(T^c|M)\\).",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#clasificación-o-diagnósticos-6",
-    "href": "probabilidad.html#clasificación-o-diagnósticos-6",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.41 Clasificación o Diagnósticos",
-    "text": "2.41 Clasificación o Diagnósticos\n\nEjemplo\nUn test diseñado para diagnosticar una determinada enfermedad tiene un coeficiente de falsos negativos de 0.06, y un coeficiente de falsos positivos de 0.04. En un estudio masivo se observa que un 15% de la población da positivo al test.\n¿Cuál es la probabilidad que una persona escogida aleatoriamente tenga esta enfermedad?\n\n\n-sol Los datos del problema son:\n\n\\(T\\): dar positivo al test; \\(P(T)=0.15\\),\n\\(M\\): tener la enfermedad,\n\\(P(T)=0.15\\), \\(P(T^c|M)=0.06\\), \\(P(T|M^c)=0.04\\),\n¿\\(P(M)\\)?",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#ejemplos-4",
-    "href": "probabilidad.html#ejemplos-4",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "2.42 Ejemplos",
-    "text": "2.42 Ejemplos\n\n-sol - \\(P(T)=0.15\\), \\(P(T^c|M)=0.06\\), \\(P(T|M^c)=0.04.\\)\n\\[\nP(T) =P(M)\\cdot P(T|M)+P(M^c)\\cdot P(T|M^c).\n\\]\ndonde\n\\[\n\\begin{array}{l}\nP(T|M)=1-P(T^c|M)=0.94 \\\\\nP(M^c)=1-P(M).\n\\end{array}\n\\]\nPor lo tanto\n\\[\n\\begin{array}{rl}\n0.15 & = P(M)\\cdot 0.94+(1-P(M))\\cdot 0.04\\\\\n& =0.04+0.9\\cdot P(M)\\\\\nP(M) & =\\dfrac{0.11}{0.9}\\approx 0.1222.\n\\end{array}\n\\]",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#fórmula-de-bayes",
-    "href": "probabilidad.html#fórmula-de-bayes",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "3.1 Fórmula de Bayes",
-    "text": "3.1 Fórmula de Bayes\n\nTeorema de Bayes\n\nSean \\(A\\) y \\(B\\) dos sucesos. Si \\(P(B)&gt;0\\), entonces\n\\[\nP(A|B) =\\dfrac{P(A)\\cdot P(B|A)}{P(B)}=\\dfrac{P(A)\\cdot P(B|A)}{P(A)\\cdot P(B|A)+P(A^c)\\cdot P(B|A^c)}.\n\\]\n\nEjercicio\nDemostrar el teorema de Bayes utilizando que\n\\[P(A|B) =\\dfrac{P(A\\cap B)}{P(B)}=\\cdots\\]",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#fórmula-de-bayes-1",
-    "href": "probabilidad.html#fórmula-de-bayes-1",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "3.2 Fórmula de Bayes",
-    "text": "3.2 Fórmula de Bayes\n Teorema de Bayes \nSea \\(A_1,A_2,\\ldots,A_n\\) una partición de \\(\\Omega\\). Sea \\(B\\) un suceso tal que \\(P(B)&gt;0\\). entonces(para cualquier \\(i=1,2,\\ldots,n\\)):\n\\[\n\\begin{array}{rl}\nP(A_i|B) & =\\dfrac{P(A_i)\\cdot P(B|A_i)}{P(B)}\\\\\n& =\\dfrac{P(A_i)\\cdot P(B|A_i)}{P(A_1)\\cdot P(B|A_1)+\\cdots+P(A_n)\\cdot P(B|A_n)},\n\\end{array}\n\\]",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#ejemplos-5",
-    "href": "probabilidad.html#ejemplos-5",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "3.3 Ejemplos",
-    "text": "3.3 Ejemplos\n\nEjemplo\nUn test para detección de VIH da positivo un 99% de los casos en los que está presente y en un 5% de los casos en los que el virus está ausente. En una población con un \\(0.5\\%\\) de infectados por VIH, ¿cuál es la probabilidad que un individuo que haya dado positivo en el test esté infectado?\n\n\n-sol Los sucesos del ejemplo son:\n\n\\(A\\): individuo infectado,\n\\(B\\): el test da positivo,\n\nde donde podemos calcular:\n\\[\\scriptsize{\nP(A|B) =\\dfrac{P(B|A)\\cdot P(A)}{P(B|A)\\cdot P(A)+P(B|A^c)\\cdot P(A^c)}=\\dfrac{0.99\\cdot 0.005}{0.005\\cdot 0.99+0.995\\cdot 0.05}=0.09.}\n\\]",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#ejemplos-6",
-    "href": "probabilidad.html#ejemplos-6",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "3.4 Ejemplos",
-    "text": "3.4 Ejemplos\n\nEjemplo\nUn test para detección de VIH da positivo un 99% de los casos en los que está presente y en un 5% de los casos en los que el virus está ausente. En una población con un \\(0.5\\%\\) de infectados por VIH, ¿cuál es la probabilidad de que un individuo que haya dado negativo en el test no esté infectado?\n\n\n-sol Los sucesos del ejemplo son:\n\n\\(A\\): individuo infectado,\n\\(B\\): el test da positivo,\n\nde donde podemos calcular:\n\\[\n\\scriptsize{P(A^c|B^c) =\\dfrac{P(B^c|A^c)\\cdot P(A^c)}{P(B^c|A)\\cdot P(A)+P(B^c|A^c)\\cdot P(A^c)}=\\dfrac{0.95\\cdot 0.995}{0.01\\cdot 0.005+0.95\\cdot 0.995}=0.999947.}\n\\]",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#ejemplos-7",
-    "href": "probabilidad.html#ejemplos-7",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "3.5 Ejemplos",
-    "text": "3.5 Ejemplos\n\nEjercicio\nSe ha observado que los cientes de una empresa de ventas por internet son de tres tipos, A, B y C, disjuntos dos a dos. La probabilidad que ser de cualquiera de cada uno de los tipos es \\(1/3\\), pero la probabilidad de compra de cada tipo es diferente: si es de tipo A compra un 50% de las veces, si de tipo B, un 75% de las veces, y de tipo C, un 60%.\nSupongamos que llega un cliente ¿cuál es la probabilidad de que si ha comprado sea del tipo B?\n\n\n-sol - Los sucesos del ejercicio son \\(A\\): el cliente es de tipo A, \\(B\\): el cliente es de tipo B, \\(C\\): el cliente es de tipo C y\n\\[P(A)=P(B)=P(C)=1/3.\\]\nBuscamos estudiar el suceso \\(E\\): el cliente compra, se tiene que:\n\\[P(E|A)=0.5, P(E|B)=0.75, P(E|C)=0.6.\\]\n\\[P(B|E)\\!=\\!\\dfrac{P(E|B)\\cdot P(B)}{P(E|A)\\!\\cdot\\! P(A)\\!+\\!P(E|B)\\!\\cdot\\! P(B)\\!+\\!P(E|C)\\!\\cdot\\! P(C)}\\!=\\!\\ldots\\]",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#ejemplos-8",
-    "href": "probabilidad.html#ejemplos-8",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "3.6 Ejemplos",
-    "text": "3.6 Ejemplos\n\nEjercicio\nUn test de detección precoz de abandono de clientes de una empresa de telefonía da positivo el 97.5% de las ocasiones en las que, posteriormente, el cliente se da de baja, y un 12% de las veces en que no se dio de baja. La probabilidad que un cliente escogido al azar se dé de baja es de un 2%.\n\n¿Cuál es la probabilidad que un individuo escogido al azar de positivo en el test?\n¿Cuál es la probabilidad que un individuo escogido al azar se de de baja y dé positivo en el test?\n¿Cuál es la probabilidad que un individuo que dé negativo en el test se dé de baja?\n\n\n\n-sol Definimos los sucesos y datos del ejercicio:\n\n\\(T\\): Dar positivo al test,\n\\(B\\): darse de baja; \\(P(B)=0.02\\),\n\\(P(T|B)=0.975, P(T|B^c)=0.12\\).",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#ejemplos-9",
-    "href": "probabilidad.html#ejemplos-9",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "3.7 Ejemplos",
-    "text": "3.7 Ejemplos\n\n-sol \\[P(B)=0.02, P(T|B)=0.975, P(T|B^c)=0.12.\\]\n\n¿Cuál es la probabilidad que un individuo escogido al azar de positivo en el test?\n\n\\[\n\\begin{array}{rl}\nP(T) = & P(B)\\cdot P(T|B)+P(B^c)\\cdot P(T|B^c)\\\\[1ex]\n& =0.02\\cdot 0.975+0.98\\cdot 0.12=0.1371.\n\\end{array}\n\\]\n\n¿Cuál es la probabilidad que un individuo escogido al azar se de de baja y dé positivo en el test?\n\n\\[P(B\\cap T)= P(B)\\cdot P(T|B)=0.02\\cdot 0.975=0.0195.\\]",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#ejemplos-10",
-    "href": "probabilidad.html#ejemplos-10",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "3.8 Ejemplos",
-    "text": "3.8 Ejemplos\n\n-sol \\[P(B)=0.02, P(T|B)=0.975, P(T|B^c)=0.12.\\]\n\n¿Cuál es la probabilidad que un individuo que dé negativo en el test se dé de baja?\n\n\\[\n\\begin{array}{rl}\nP(B|T^c)= &\\displaystyle \\frac{P(B\\cap T^c)}{P(T^c)}=\n\\frac{P(B)-P(B\\cap T)}{1-P(T)}\\\\[2ex] & \\displaystyle =\n\\frac{0.02-0.0195}{1-0.1371}\\approx 0.00058\n\\end{array}\n\\]\n\nO también se obtiene así \\[\nP(B|T^c)=\\frac{P(T^c|B)\\cdot P(B)}{P(T^c|B)\\cdot P(B)+P(T^c|B^c)\\cdot P(B^c)},\n\\]\n\ndonde \\(P(T^c|B)=1-P(T|B)=0.025\\) y \\(P(T^c|B^c)=1-P(T|B^c)=0.88.\\)",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#sucesos-independientes",
-    "href": "probabilidad.html#sucesos-independientes",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "4.1 Sucesos independientes",
-    "text": "4.1 Sucesos independientes\n Sucesos Independientes \nDiremos que los sucesos \\(A\\) y \\(B\\) son independientes si \\(P(A\\cap B)=P(A)\\cdot P(B)\\).\n\\(A_1,\\ldots, A_n\\) son sucesos independientes cuando, para toda subfamilia \\(A_{i_1},\\ldots,A_{i_k}\\), \\[\nP(A_{i_1}\\cap \\cdots\\cap A_{i_k})=P(A_{i_1})\\cdots P(A_{i_k}).\n\\]",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#sucesos-independientes-1",
-    "href": "probabilidad.html#sucesos-independientes-1",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "4.2 Sucesos independientes",
-    "text": "4.2 Sucesos independientes\n Proposición \nDados dos sucesos \\(A\\) y \\(B\\) con \\(P(A),P(B)&gt;0\\), las siguientes afirmaciones son equivalentes:\n\n\\(A\\) y \\(B\\) son independientes.\n\\(P(A|B)=P(A)\\).\n\\(P(B|A)=P(B)\\).",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#sucesos-independientes-2",
-    "href": "probabilidad.html#sucesos-independientes-2",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "4.3 Sucesos independientes",
-    "text": "4.3 Sucesos independientes\n Proposición \nLas siguientes afirmaciones son equivalentes:\n\n\\(A\\) y \\(B\\) son independientes\n\\(A^c\\) y \\(B\\) son independientes.\n\\(A\\) y \\(B^c\\) son independientes.\n\\(A^c\\) y \\(B^c\\) son independientes.",
-    "crumbs": [
-      "Parte 1: Probabilidad y variables aleatorias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "probabilidad.html#ejemplo-billete-avión",
-    "href": "probabilidad.html#ejemplo-billete-avión",
-    "title": "2  Teoría elemental de la probabilidad",
-    "section": "4.4 Ejemplo billete avión",
-    "text": "4.4 Ejemplo billete avión\n\nEjemplo\nEn la web de viajes WEBTravel, el 55% de los clientes compra billete de avión, el \\(20\\%\\) alojamiento en hotel, y el \\(60\\%\\) billete de avión o alojamiento en hotel. ¿Son los sucesos comprar billete de avión y comprar alojamiento en hotel independientes?\n\n\n-sol Los sucesos y datos del ejemplo son:\n\n\\(A\\): comprar billete de avión; \\(P(A)=0.55\\),\n\\(B\\): comprar alojamiento; \\(P(B)=0.2\\),\n\npor tanto, podemos calcular las probabilidades siguientes\n\\(P(A\\cap B)=P(A)+P(B)-P(A\\cup B)=0.55+0.2-0.6=0.15\\) \\(P(A)\\cdot P(B) = 0.55\\cdot 0.2=0.11.\\)\nConcluimos que son dependientes, ya que \\(P(A\\cap B)\\neq P(A)\\cdot P(B)\\).",
+    "section": "2.5 Clasificación o diagnostico caso binario",
+    "text": "2.5 Clasificación o diagnostico caso binario\nConsideremos alguna de las siguientes situaciones:\n\nUn algoritmo detecta si una transacción con tarjeta de crédito es fraude o no.\nUn algoritmo detecta si tiene o no que mostrar un anuncio en una web.\nUn prueba de embarazo.\nUna prueba médica para una enfermedad concreta.\n\nNos ceñiremos a la casuística más elemental el algoritmo de clasificación o la diagnosis solo da dos resultado Positivo (sí tienes la enfermedad, sí es un fraude) o Negativo (en caso contrario).\nSPAM continuación\nEn todas estas situaciones podemos calcular lo que se llama matriz de confusión que representa todas las situaciones posibles. En el caso de estudiar una condición de tipo binario,\n\n\n\n\nEl Test da Positivo\nEl Test da Negativo\n\n\n\n\nCondición Positiva\nCorrecto\nError\n\n\nCondición Negativa\nError\nCorrecto\n\n\n\nEn general los modelos y algoritmos de clasificación suelen aportar puntuaciones (scores) que determinan el grado de pertenencia a una clase, o que miden si dos objetos están en la misma clase.\nAsí el resultado del clasificador o del diagnóstico puede ser:\n\nun número real, en cuyo caso debe clasificador entre cada clase debe determinarse por un valor umbral (threshold) por ejemplo para determinar si una persona está estresado podemos dar un scores entre 0 y 1 (1 máximo estrés 0 estrés nulo),\nun resultado discreto que indica directamente una de las clases (esto es necesario si es un algoritmo que debe decidir qué hacer con el objeto.\n\n\n\n Falsos Positivos y Negativos\n\n\nConsideremos un problema de predicción de clases binario, en la que los resultados se etiquetan positivos (P) o negativos (N). Hay cuatro posibles resultados a partir de un clasificador binario como el propuesto.\n\nSi el resultado de una exploración es P y el valor dado es también P, entonces se conoce como un Verdadero Positivo (VP).\nSin embargo si el valor real es N entonces se conoce como un Falso Positivo (FP).\nDe igual modo, tenemos un Verdadero Negativo (VN) cuando tanto la exploración como el valor dado son N.\nUn Falso Negativo (FN) cuando el resultado de la predicción es N pero el valor real es P.\n\n\n\nVeamos el siguiente ejemplo:\n\n\n Falsos Positivos y Negativos\n\n\nUn ejemplo aproximado de un problema real es el siguiente: consideremos una prueba diagnóstica que persiga determinar si una persona tiene una cierta enfermedad.\n\nUn falso positivo en este caso ocurre cuando la prueba predice que el resultado es positivo, cuando la persona no tiene realmente la enfermedad.\nUn falso negativo, por el contrario, ocurre cuando el resultado de la prueba es negativo, sugiriendo que no tiene la enfermedad cuando realmente sí la tiene.\n\nEn un diagnósticos de una cierta condición (por ejemplo, test embarazo, test de enfermedad), tenemos dos tipos de sucesos:\n\n\\(T\\): el test da positivo,\n\\(M\\): el sujeto satisface la condición.\n\n\n\nveamos algunas denominaciones:\n\n\n Falsos Positivos y Negativos\n\n\n\nFalsos positivos \\(T\\cap M^c\\): El test da positivo, pero la condición no se da,\nCoeficiente de falsos positivos \\(P(T|M^c)\\),\nFalsos negativos \\(T^c\\cap M\\): El test da negativo, pero la condición sí que se da,\nCoeficiente de falsos negativos: \\(P(T^c|M)\\).\n\n\n\n\n\n Falsos Positivos y Negativos\n\n\nUn test diseñado para diagnosticar una determinada enfermedad tiene un coeficiente de falsos negativos de 0.06, y un coeficiente de falsos positivos de 0.04. En un estudio masivo se observa que un 15% de la población da positivo al test.\n¿Cuál es la probabilidad que una persona escogida aleatoriamente tenga esta enfermedad?\nLos datos del problema son:\n\n\\(T\\): dar positivo al test; \\(P(T)=0.15\\),\n\\(M\\): tener la enfermedad,\n\\(P(T)=0.15\\), \\(P(T^c|M)=0.06\\), \\(P(T|M^c)=0.04\\),\n¿\\(P(M)\\)?\n\n\\[\nP(T) =P(M)\\cdot P(T|M)+P(M^c)\\cdot P(T|M^c).\n\\]\ndonde\n\\[\n\\begin{array}{l}\nP(T|M)=1-P(T^c|M)=0.94 \\\\\nP(M^c)=1-P(M).\n\\end{array}\n\\]\nPor lo tanto\n\\[\n\\begin{array}{rl}\n0.15 & = P(M)\\cdot 0.94+(1-P(M))\\cdot 0.04\\\\\n& =0.04+0.9\\cdot P(M)\\\\\nP(M) & =\\dfrac{0.11}{0.9}\\approx 0.1222.\n\\end{array}\n\\]",
     "crumbs": [
       "Parte 1: Probabilidad y variables aleatorias",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"
@@ -672,8 +133,8 @@
     "objectID": "probabilidad.html#sucesos-independientes-vs-disjuntos",
     "href": "probabilidad.html#sucesos-independientes-vs-disjuntos",
     "title": "2  Teoría elemental de la probabilidad",
-    "section": "4.5 Sucesos independientes vs disjuntos",
-    "text": "4.5 Sucesos independientes vs disjuntos\n\nEjercicio\n\nDos sucesos \\(A\\) y \\(B\\) disjuntos, ¿son necesariamente independientes?\nDos sucesos \\(A\\) y \\(B\\) independientes, ¿son necesariamente disjuntos?\n\\(\\emptyset\\) y un suceso cualquiera \\(A\\), ¿son necesariamente independientes?\n\\(\\Omega\\) y un suceso cualquiera \\(A\\), ¿son necesariamente independientes?\n¿Qué condiciones se tienen que dar para que un suceso \\(A\\) sea independiente de si mismo?",
+    "section": "4.1 Sucesos independientes vs disjuntos",
+    "text": "4.1 Sucesos independientes vs disjuntos\n\n\n sucesos disjuntos e independencia\n\n\n\nDos sucesos \\(A\\) y \\(B\\) disjuntos, ¿son necesariamente independientes?\nDos sucesos \\(A\\) y \\(B\\) independientes, ¿son necesariamente disjuntos?\n\\(\\emptyset\\) y un suceso cualquiera \\(A\\), ¿son necesariamente independientes?\n\\(\\Omega\\) y un suceso cualquiera \\(A\\), ¿son necesariamente independientes?\n¿Qué condiciones se tienen que dar para que un suceso \\(A\\) sea independiente de si mismo?",
     "crumbs": [
       "Parte 1: Probabilidad y variables aleatorias",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teoría elemental de la probabilidad</span>"

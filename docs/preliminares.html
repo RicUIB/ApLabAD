@@ -247,6 +247,13 @@ window.Quarto = {
   <li><a href="#combinaciones-con-repetición" id="toc-combinaciones-con-repetición" class="nav-link" data-scroll-target="#combinaciones-con-repetición"><span class="header-section-number">1.2.2</span> Combinaciones con repetición</a></li>
   <li><a href="#variaciones." id="toc-variaciones." class="nav-link" data-scroll-target="#variaciones."><span class="header-section-number">1.2.3</span> Variaciones.</a></li>
   <li><a href="#variaciones-con-repetición." id="toc-variaciones-con-repetición." class="nav-link" data-scroll-target="#variaciones-con-repetición."><span class="header-section-number">1.2.4</span> Variaciones con repetición.</a></li>
+  <li><a href="#permutaciones" id="toc-permutaciones" class="nav-link" data-scroll-target="#permutaciones"><span class="header-section-number">1.2.5</span> Permutaciones</a></li>
+  <li><a href="#números-multinomiales.-permutaciones-con-repetición." id="toc-números-multinomiales.-permutaciones-con-repetición." class="nav-link" data-scroll-target="#números-multinomiales.-permutaciones-con-repetición."><span class="header-section-number">1.2.6</span> Números multinomiales. Permutaciones con repetición.</a></li>
+  </ul></li>
+  <li><a href="#para-acabar" id="toc-para-acabar" class="nav-link" data-scroll-target="#para-acabar"><span class="header-section-number">1.3</span> Para acabar</a>
+  <ul class="collapse">
+  <li><a href="#principios-básicos-para-contar-cardinales-de-conjuntos" id="toc-principios-básicos-para-contar-cardinales-de-conjuntos" class="nav-link" data-scroll-target="#principios-básicos-para-contar-cardinales-de-conjuntos"><span class="header-section-number">1.3.1</span> Principios básicos para contar cardinales de conjuntos</a></li>
+  <li><a href="#otros-aspectos-a-tener-en-cuenta" id="toc-otros-aspectos-a-tener-en-cuenta" class="nav-link" data-scroll-target="#otros-aspectos-a-tener-en-cuenta"><span class="header-section-number">1.3.2</span> Otros aspectos a tener en cuenta</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -297,8 +304,8 @@ window.Quarto = {
 <p>La idea o noción práctica de conjunto es la de una colección de objetos de un cierto tipo.</p>
 <p>Estas colecciones o conjuntos se pueden definir por:</p>
 <ul>
-<li>: reuniendo los objetos que cumplen una propiedad <span class="math inline">\(p\)</span></li>
-<li>: dando una lista exhaustiva de los miembros del conjunto</li>
+<li><strong>Comprensión</strong>: reuniendo los objetos que cumplen una propiedad <span class="math inline">\(p\)</span></li>
+<li><strong>Extensión</strong>: dando una lista exhaustiva de los miembros del conjunto</li>
 </ul>
 <section id="conjuntos-básicos" class="level3" data-number="1.1.1">
 <h3 data-number="1.1.1" class="anchored" data-anchor-id="conjuntos-básicos"><span class="header-section-number">1.1.1</span> Conjuntos básicos</h3>
@@ -377,6 +384,7 @@ A\cap B=\left\{x\in\Omega \big| x\in A \mbox{ y } x\in B\right\}.
 \]</span></p>
 </div>
 </div>
+<p><br> <br></p>
 <div class="callout-definicion">
 <div class="callout-title">
 <p><i class="bi bi-book"></i> <strong>Unión</strong></p>
@@ -389,6 +397,7 @@ A\cup B=\left\{x\in\Omega \big| x\in A \mbox{ o } x\in B\right\}.
 \]</span></p>
 </div>
 </div>
+<p><br> <br></p>
 <div class="callout-definicion">
 <div class="callout-title">
 <p><i class="bi bi-book"></i> Diferencia.</p>
@@ -401,6 +410,7 @@ A- B=\left\{x\in\Omega \big| x\in A \mbox{ y } x\notin B\right\}.
 \]</span></p>
 </div>
 </div>
+<p><br> <br></p>
 <div class="callout-definicion">
 <div class="callout-title">
 <p><i class="bi bi-book"></i> Complementario</p>
@@ -422,8 +432,8 @@ A^c=\left\{x\in\Omega \big| x\not\in A\right\}.
 <li><span class="math inline">\(\Omega^c=\emptyset\)</span>.</li>
 <li><span class="math inline">\(\emptyset^c=\Omega\)</span>.</li>
 <li><span class="math inline">\(A\cup B=B \cup A\)</span> , <span class="math inline">\(A\cap B=B\cap A\)</span> conmutativas.</li>
-<li><span class="math inline">\((A\cup B) \cup C = A \cup( B \cup C)\)</span> , <span class="math inline">\((A\cap B) \cap C = A \cap( B \cap C)\)</span> asociativas.</li>
-<li><span class="math inline">\(A\cup (B\cap C)=(A\cup B) \cap (A\cup C)\)</span> , <span class="math inline">\(A\cap (B\cup C)=(A\cap B) \cup (A\cap C)\)</span> distributivas.</li>
+<li><span class="math inline">\((A\cup B) \cup C = A \cup( B \cup C)\)</span>, <span class="math inline">\((A\cap B) \cap C = A \cap( B \cap C)\)</span> asociativas.</li>
+<li><span class="math inline">\(A\cup (B\cap C)=(A\cup B) \cap (A\cup C)\)</span>, <span class="math inline">\(A\cap (B\cup C)=(A\cap B) \cup (A\cap C)\)</span> distributivas.</li>
 <li><span class="math inline">\(\left(A^c\right)^c=A\)</span> doble complementario.</li>
 <li><span class="math inline">\(\left(A\cup B\right)^c=A^c \cap B^c\)</span>, <span class="math inline">\(\left(A\cap B\right)^c=A^c \cup B^c\)</span> <a href="https://es.wikipedia.org/wiki/Leyes_de_De_Morgan">leyes de De Morgan</a>.</li>
 </ul>
@@ -584,21 +594,15 @@ n!=1\cdot 2\cdot 3\cdots n.
 \]</span></p>
 </div>
 </div>
-<div class="callout-ejemplo">
-<div class="callout-title">
-<p><i class="bi bi-book"></i> Ejemplo</p>
-</div>
-<div class="callout-body">
-<p>En nuestro caso con 7 jugadores <span class="math inline">\(n=7\)</span> el número de equipos distintos de <span class="math inline">\(k=5\)</span> es</p>
+<p><br> <br> ::::: callout-ejemplo ::: callout-title <i class="bi bi-book"></i> Ejemplo ::: ::: callout-body En nuestro caso con 7 jugadores <span class="math inline">\(n=7\)</span> el número de equipos distintos de <span class="math inline">\(k=5\)</span> es</p>
 <p><span class="math display">\[
 \begin{array}{rl}
 C_7^5&amp;={7\choose 5} = \frac{7!}{5!\cdot (7-5)!}=\frac{7!}{5!\cdot 2!} \\
 &amp;=\frac{1\cdot 2\cdot 3 \cdot 4\cdot 5\cdot 6\cdot 7}{1\cdot 2\cdot 3 \cdot 4\cdot 5\cdot 1\cdot 2}=\frac{6\cdot 7}{2}=\frac{42}{2}=21.
 \end{array}
 \]</span></p>
-<p>Puedo formar 21 equipos distintos.</p>
-</div>
-</div>
+<p>Puedo formar 21 equipos distintos. ::: :::::</p>
+<p><br> <br></p>
 <div class="callout-ejercicio">
 <div class="callout-title">
 <p><i class="bi bi-book"></i> Ejercicio: el paquete <code>gtools</code></p>
@@ -624,6 +628,7 @@ C_7^5&amp;={7\choose 5} = \frac{7!}{5!\cdot (7-5)!}=\frac{7!}{5!\cdot 2!} \\
 <p><span class="math display">\[CR_n^k = \binom{n+k-1}{k} = \frac{(n+k-1)!}{k!(n-1)!}.\]</span></p>
 </div>
 </div>
+<p><br> <br></p>
 <div class="callout-ejemplo">
 <div class="callout-title">
 <p><i class="bi bi-list-task"></i> Ejemplo: caramelos</p>
@@ -654,6 +659,7 @@ V_n^k=\frac{n!}{(n-k)!}=(n-k+1)\cdot (n-k+2)\cdots n.
 \]</span></p>
 </div>
 </div>
+<p><br> <br></p>
 <div class="callout-ejemplo">
 <div class="callout-title">
 <p><i class="bi bi-book"></i> Ejemplo</p>
@@ -665,6 +671,7 @@ V^{k=2}_{n=3}=\frac{3!}{(3-2)!}=\frac{1\cdot 2\cdot 3}{1}=6.
 \]</span></p>
 </div>
 </div>
+<p><br> <br></p>
 <div class="callout-definicion">
 <div class="callout-title">
 <p><i class="bi bi-book"></i> Ejercicio</p>
@@ -675,7 +682,7 @@ V^{k=2}_{n=3}=\frac{3!}{(3-2)!}=\frac{1\cdot 2\cdot 3}{1}=6.
 </div>
 </section>
 <section id="variaciones-con-repetición." class="level3" data-number="1.2.4">
-<h3 data-number="1.2.4" class="anchored"><span class="header-section-number">1.2.4</span> Variaciones con repetición.</h3>
+<h3 data-number="1.2.4" class="anchored" data-anchor-id="variaciones-con-repetición."><span class="header-section-number">1.2.4</span> Variaciones con repetición.</h3>
 <p>¿Y si en el caso anterior permitimos que se repita algún dígito?</p>
 <div class="callout-definicion">
 <div class="callout-title">
@@ -686,6 +693,7 @@ V^{k=2}_{n=3}=\frac{3!}{(3-2)!}=\frac{1\cdot 2\cdot 3}{1}=6.
 <p><span class="math display">\[VR_n^k=n^k\]</span></p>
 </div>
 </div>
+<p><br> <br></p>
 <div class="callout-definicion">
 <div class="callout-title">
 <p><i class="bi bi-book"></i> Ejemplo</p>
@@ -696,6 +704,9 @@ V^{k=2}_{n=3}=\frac{3!}{(3-2)!}=\frac{1\cdot 2\cdot 3}{1}=6.
 <p><span class="math display">\[
 VR^{k=2}_{n=3}=n^k=3^2=9.
 \]</span></p>
+</div>
+</div>
+</section>
 <section id="permutaciones" class="level3" data-number="1.2.5">
 <h3 data-number="1.2.5" class="anchored" data-anchor-id="permutaciones"><span class="header-section-number">1.2.5</span> Permutaciones</h3>
 <div class="callout-definicion">
@@ -709,6 +720,7 @@ P_n=V_n^n=n!
 \]</span></p>
 </div>
 </div>
+<p><br> <br></p>
 <div class="callout-ejemplo">
 <div class="callout-title">
 <p><i class="bi bi-book"></i> Variaciones on repetición</p>
@@ -730,6 +742,7 @@ P_n=V_n^n=n!
 <p>Efectivamente <span class="math inline">\(P_3=3!=1\cdot  2\cdot 3.\)</span></p>
 </div>
 </div>
+<p><br> <br></p>
 <div class="callout-ejemplo">
 <div class="callout-title">
 <p><i class="bi bi-book"></i> Ejercicio</p>
@@ -739,6 +752,7 @@ P_n=V_n^n=n!
 <p>Investiga también el paquete <code>itertools</code> y la función <code>comb</code> de <code>scipy.misc</code> de Python e investiga sus funciones para todas las formas de contar que hemos visto en este tema.</p>
 </div>
 </div>
+<p><br> <br></p>
 <div class="callout-ejemplo">
 <div class="callout-title">
 <p><i class="bi bi-book"></i> Ejercicio</p>
@@ -749,7 +763,7 @@ P_n=V_n^n=n!
 </div>
 </section>
 <section id="números-multinomiales.-permutaciones-con-repetición." class="level3" data-number="1.2.6">
-<h3 data-number="1.2.6" class="anchored"><span class="header-section-number">1.2.6</span> Números multinomiales. Permutaciones con repetición.</h3>
+<h3 data-number="1.2.6" class="anchored" data-anchor-id="números-multinomiales.-permutaciones-con-repetición."><span class="header-section-number">1.2.6</span> Números multinomiales. Permutaciones con repetición.</h3>
 <div class="callout-definición">
 <div class="callout-title">
 <p><i class="bi bi-book"></i> Ejercicio</p>
@@ -760,6 +774,7 @@ P_n=V_n^n=n!
 <p><span class="math display">\[PR_n^{n_1,n_2,\ldots,n_k} = {{n}\choose {n_1\quad n_2 \quad\ldots \quad n_k}}=\frac{n!}{n_1!\cdot n_2!\cdot \ldots \cdot n_k!},\]</span> donde <span class="math inline">\(n=n_1+n_2+\cdots+n_k\)</span>.</p>
 </div>
 </div>
+<p><br> <br></p>
 <div class="callout-ejemplo">
 <div class="callout-title">
 <p><i class="bi bi-book"></i> Ejercicio</p>
@@ -770,6 +785,9 @@ P_n=V_n^n=n!
 <p>Por tanto, utilizando la fórmula anterior, tenemos que el número de palabras (permutaciones con elementos repetidos) que podemos formar es</p>
 <p><span class="math display">\[PR^{2,2,2,2,1,1,1,1}_{12} = \frac{12!}{(2!)^4(1!)^4} = 29937600.\]</span></p>
 </div>
+</div>
+</section>
+</section>
 <section id="para-acabar" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="para-acabar"><span class="header-section-number">1.3</span> Para acabar</h2>
 <section id="principios-básicos-para-contar-cardinales-de-conjuntos" class="level3" data-number="1.3.1">
@@ -783,6 +801,7 @@ P_n=V_n^n=n!
 <p><span class="math display">\[\#(\cup_{i=1}^n A_i)=\sum_{i=1}^n \#(A_i).\]</span></p>
 </div>
 </div>
+<p><br> <br></p>
 <div class="callout-teorema">
 <div class="callout-title">
 <p><i class="bi bi-book"></i> Principio de unión exclusión</p>
@@ -792,6 +811,7 @@ P_n=V_n^n=n!
 <p><span class="math display">\[\#(A_1\cup A_2)=\#(A_1)+\#(A_2)-\#(A_1\cap A_2).\]</span></p>
 </div>
 </div>
+<p><br> <br></p>
 <div class="callout-teorema">
 <div class="callout-title">
 <p><i class="bi bi-book"></i> El principio del producto</p>
@@ -804,6 +824,9 @@ P_n=V_n^n=n!
 &amp;=\prod_{i=1}^n \#(A_i).
 \end{array}
 \]</span></p>
+</div>
+</div>
+</section>
 <section id="otros-aspectos-a-tener-en-cuenta" class="level3" data-number="1.3.2">
 <h3 data-number="1.3.2" class="anchored" data-anchor-id="otros-aspectos-a-tener-en-cuenta"><span class="header-section-number">1.3.2</span> Otros aspectos a tener en cuenta</h3>
 <p>Evidentemente nos hemos dejado muchas otras propiedades básicas de teoría de conjuntos y de combinatoria como:</p>
@@ -815,15 +838,6 @@ P_n=V_n^n=n!
 <p>Si nos son necesarias las volveremos a repetir a lo largo del curso o bien daremos enlaces para que las podáis estudiar en paralelo.</p>
 
 
-</section>
-</div>
-</div>
-</section>
-</section>
-</div>
-</section>
-</div>
-</div>
 </section>
 </section>
 
