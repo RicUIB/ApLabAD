@@ -5,3 +5,5 @@ Este libro en la web es una versión de las notas de clase de asignaturas introd
 Ha sido elaborado con [Quarto](https://quarto.org/)
 
 :   RStudio, PBC. (2022). Quarto (Version 1.0). Hemos utilizado el formato formato book.
+
+¿Quarto book o bookdown? <https://yihui.org/en/2022/04/quarto-r-markdown/>

@@ -171,7 +171,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./variables_aleatorias.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Variables alestorias</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Variables aleatorias</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -643,11 +643,11 @@ P(\cup_{i=1}^n A_i)=\sum_{i=1}^n P(A_i)-\sum_{1\leq i&lt;j\leq n}P(A_i\cap A_j)+
 \]</span></p>
 </div>
 </div>
-<p>La demostración es sncilla por inducción, ya tenemos el caso de dos sucesos, suponemos que es cierta para <span class="math inline">\(n\)</span> y la extendemos a <span class="math inline">\(n+1\)</span> sucesos.</p>
-<p>A modo de comprobación veamos un ejemplo genérico con tres sucesos</p>
+<p>La demostración es sencilla mediante inducción: partimos del caso base de dos sucesos, suponemos que es cierta para <span class="math inline">\(n\)</span> sucesos y luego la extendemos al caso de <span class="math inline">\(n+1\)</span> sucesos.</p>
+<p>Como comprobación, consideremos un ejemplo genérico con tres sucesos.</p>
 <p><span class="math inline">\(A=\{1,4,5,6\}\)</span>, <span class="math inline">\(B=\{2,4,6,7\}\)</span> y <span class="math inline">\(C=\{3,5,6,7\}\)</span>. En este caso la fórmula nos da</p>
 <p><span class="math display">\[
-P(A\cup B\cup C)= &amp; P(A)+P(B)+P(C)-P(A\cap B)-P(A\cap C)
+P(A\cup B\cup C)=  P(A)+P(B)+P(C)-P(A\cap B)-P(A\cap C)
 -P(B\cap C)+P(A\cap B\cap C).
 \]</span></p>
 <p>Gráficamente tenemos esta situación:</p>
@@ -705,7 +705,7 @@ P(A)=\frac{|A|}{|\Omega|}\Big(=\frac{\mbox{casos favorables}}{\mbox{casos posibl
 </div>
 <div class="callout-body">
 <p>Segun un árticulo de <a href="https://elpais.com/politica/2019/01/02/actualidad/1546426491_623324.html">El País</a>, en un control especial de la policía el <span class="math inline">\(0.1\%\)</span> de todos los conductores analizados en un control de tráfico dan positivo en un el test en cocaína, y el <span class="math inline">\(1\%\)</span> da positivo en cannabis. Un <span class="math inline">\(1.05\%\)</span> da positivo en alguno de los dos test.</p>
-<p>¿Cuál es la probabilidad que un individuo analizado en el control de drogas escogido al azar no de positivo en ninguno de lo dos test?</p>
+<p><strong>Pregunta</strong>: ¿Cuál es la probabilidad que un individuo analizado en el control de drogas escogido al azar no de positivo en ninguno de lo dos test?</p>
 <p>Los sucesos elementales del enunciado del problema son:</p>
 <ul>
 <li><span class="math inline">\(A\)</span>: dar positivo en cocaína; <span class="math inline">\(P(A)=0.001.\)</span></li>
@@ -717,8 +717,7 @@ P(A)=\frac{|A|}{|\Omega|}\Big(=\frac{\mbox{casos favorables}}{\mbox{casos posibl
 <li><span class="math inline">\((A\cup B)^c\)</span>: no dar positivo en ninguno de los test,por tanto:</li>
 </ul>
 <p><span class="math display">\[P((A\cup B)^c)=1-P(A\cup B)=1-0.0105=0.9895.\]</span></p>
-<p>En un control especial de la policía el <span class="math inline">\(0.1\%\)</span> de todos los conductores analizados en un control de tráfico dan positivo en un el test en cocaína, y el <span class="math inline">\(1\%\)</span> da positivo en cannabis. Un <span class="math inline">\(1.05\%\)</span> da positivo en alguno de los dos test.</p>
-<p>¿Cuál es la probabilidad que un analizado al azar de positivo en los dos test en cocaína y cannabis?</p>
+<p><strong>Pregunta</strong>: ¿Cuál es la probabilidad que un analizado al azar de positivo en los dos test en cocaína y cannabis?</p>
 <p>Los sucesos elementales son:</p>
 <ul>
 <li><span class="math inline">\(A\)</span>: dar positivo en cocaína; <span class="math inline">\(P(A)=0.001.\)</span></li>
@@ -733,8 +732,7 @@ P(A)=\frac{|A|}{|\Omega|}\Big(=\frac{\mbox{casos favorables}}{\mbox{casos posibl
 <p><span class="math display">\[\begin{array}{rl}
 {P(A\cap B)} &amp;{=P(A)+P(B)-P(A\cup B)}\\ &amp;{=0.001+0.01-0.0105=0.0005}.
 \end{array}\]</span></p>
-<p>En un control especial de la policía el <span class="math inline">\(0.1\%\)</span> de todos los conductores analizados en un control de tráfico dan positivo en un el test en cocaína, y el <span class="math inline">\(1\%\)</span> da positivo en cannabis. Un <span class="math inline">\(1.05\%\)</span> da positivo en alguno de los dos test.</p>
-<p>¿Cuál es la probabilidad de que un conductor analizado de positivo en cocaína pero no en cannabis?</p>
+<p><strong>Pregunta</strong>: ¿Cuál es la probabilidad de que un conductor analizado de positivo en cocaína pero no en cannabis?</p>
 <p>Los sucesos elementales son:</p>
 <ul>
 <li><span class="math inline">\(A\)</span>: dar positivo en cocaína; <span class="math inline">\(P(A)=0.001.\)</span></li>
@@ -774,9 +772,7 @@ P(B|A)=\frac{P(A\cap B)}{P(A)}.
 </div>
 <div class="callout-body">
 <p>En una clase de 20 hombres y 30 mujeres, 15 hombres y 18 mujeres llevan gafas. Contestemos las siguientes preguntas:</p>
-</div>
-<div class="example">
-<p>-sol - ¿Cuál es la probabilidad de que un alumno lleve gafas?</p>
+<p>¿Cuál es la probabilidad de que un alumno lleve gafas?</p>
 <p><span class="math display">\[
 \frac{33}{50}
 \]</span></p>
@@ -1075,7 +1071,7 @@ P(A)=&amp; P(B)\cdot P(A|B)+P(B^c)\cdot P(A|B^c)\\
 </ul>
 </div>
 </div>
-<p>veamos algunas denominaciones:</p>
+<p>Necesitamos algunas denominaciones adicionales:</p>
 <div class="callout-definicion">
 <div class="callout-title">
 <p><i class="bi bi-list-task"></i> Falsos Positivos y Negativos</p>
@@ -1089,6 +1085,7 @@ P(A)=&amp; P(B)\cdot P(A|B)+P(B^c)\cdot P(A|B^c)\\
 </ul>
 </div>
 </div>
+<p><br> <br></p>
 <div class="callout-ejemplo">
 <div class="callout-title">
 <p><i class="bi bi-list-task"></i> Falsos Positivos y Negativos</p>
@@ -1137,6 +1134,7 @@ P(A|B) =\dfrac{P(A)\cdot P(B|A)}{P(B)}=\dfrac{P(A)\cdot P(B|A)}{P(A)\cdot P(B|A)
 \]</span></p>
 </div>
 </div>
+<p><br> <br></p>
 <div class="callout-ejemplo">
 <div class="callout-title">
 <p><i class="bi bi-list-task"></i> Ejemplo</p>
@@ -1190,9 +1188,10 @@ P(A|B) =\dfrac{P(B|A)\cdot P(A)}{P(B|A)\cdot P(A)+P(B|A^c)\cdot P(A^c)}=\dfrac{0
 \]</span></p>
 </div>
 </div>
+<p><br> <br></p>
 <div class="callout-ejemplo">
 <div class="callout-title">
-<p><i class="bi bi-list-task"></i> Ejemplo</p>
+<p><i class="bi bi-list-task"></i> Ejemplo: Tipos de clientes</p>
 </div>
 <div class="callout-body">
 <p>Se ha observado que los cientes de una empresa de ventas por internet son de tres tipos, A, B y C, disjuntos dos a dos. La probabilidad que ser de cualquiera de cada uno de los tipos es <span class="math inline">\(1/3\)</span>, pero la probabilidad de compra de cada tipo es diferente: si es de tipo A compra un 50% de las veces, si de tipo B, un 75% de las veces, y de tipo C, un 60%.</p>
@@ -1204,9 +1203,10 @@ P(A|B) =\dfrac{P(B|A)\cdot P(A)}{P(B|A)\cdot P(A)+P(B|A^c)\cdot P(A^c)}=\dfrac{0
 <p><span class="math display">\[P(B|E)\!=\!\dfrac{P(E|B)\cdot P(B)}{P(E|A)\!\cdot\! P(A)\!+\!P(E|B)\!\cdot\! P(B)\!+\!P(E|C)\!\cdot\! P(C)}\!=\!\ldots\]</span></p>
 </div>
 </div>
+<p><br> <br></p>
 <div class="callout-ejemplo">
 <div class="callout-title">
-<p><i class="bi bi-list-task"></i> Fidelización de clientes</p>
+<p><i class="bi bi-list-task"></i> Ejemplo: Fidelización de clientes</p>
 </div>
 <div class="callout-body">
 <p>Para fidelizar a sus clientes una empresa implementa un test de detección precoz de abandono de clientes de una empresa de telefonía da positivo el 97.5% de las ocasiones en las que, posteriormente, el cliente se da de baja, y un 12% de las veces en que no se dio de baja. La probabilidad que un cliente escogido al azar se dé de baja es de un 2%.</p>
@@ -1310,9 +1310,9 @@ P(A_{i_1}\cap \cdots\cap A_{i_k})=P(A_{i_1})\cdots P(A_{i_k}).
 <li>¿Qué condiciones se tienen que dar para que un suceso <span class="math inline">\(A\)</span> sea independiente de si mismo?</li>
 </ol>
 </div>
-
-
 </div>
+
+
 </section>
 </section>
 
@@ -1885,8 +1885,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./variables_aleatorias.html" class="pagination-link" aria-label="Variables alestorias">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Variables alestorias</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./variables_aleatorias.html" class="pagination-link" aria-label="Variables aleatorias">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Variables aleatorias</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

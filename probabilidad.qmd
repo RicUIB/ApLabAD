@@ -10,7 +10,6 @@ knitr::opts_chunk$set(echo = TRUE,out.width = "65%",cache=FALSE,message=FALSE,wa
 ::: callout-title
 <i class="bi bi-book"></i> Definición experimento aleatorio
 :::
-
 ::: callout-body
 Un experimento que repetido en las mismas condiciones puede dar resultados diferentes, pero que a largo plazo son predecibles recibe el nombre de **experimento aleatorio**.
 :::
@@ -22,7 +21,6 @@ Daremos nombres a distintos tipos de sucesos:
 ::: callout-title
 <i class="bi bi-book"></i> Espacio muestral y tipos de sucesos
 :::
-
 ::: callout-body
 -   Llamaremos **suceso elemental** a cada uno de los posibles resultados del experimento aleatorio.
 -   Llamaremos **espacio muestral** ($\Omega$,$E$) al conjunto formado por todos los sucesos elementales del experimento aleatorio.
@@ -39,7 +37,6 @@ A continuación describimos el clásico experimento del lanzamiento de un dado.
 ::: callout-title
 <i class="bi bi-book"></i> Ejemplo
 :::
-
 ::: callout-body
 Consideremos el experimento aleatorio que consiste en lanzar un dado. El espacio muestral de este experimento es $\Omega=\{1,2,3,4,5,6\}$ o las figuras de las caras del dado.
 
@@ -78,7 +75,6 @@ Recordemos la notación $\mathcal{P}(\Omega)$ que usamos para referirnos al conj
 ::: callout-title
 <i class="bi bi-pencil-square"></i> Ejercicio
 :::
-
 ::: callout-body
 ¿Cuantos elementos contiene el conjunto de partes de $\Omega$ del experimento anterior?
 :::
@@ -90,7 +86,6 @@ Veamos algún ejemplo menos clásico. Podemos considerar el experimento aleatori
 ::: callout-title
 <i class="bi bi-pencil-square"></i> Ejemplo $n$-gramas
 :::
-
 ::: callout-body
 Se define un $n$-grama de una palabra como el conjunto de $n$ letras consecutivas de la misma (contando los blancos de inicio y final de palabra que marcamos como "\_").
 
@@ -125,7 +120,6 @@ Si tenemos dos sucesos $A,B\subseteq \Omega$, podemos definir:
 ::: callout-title
 <i class="bi bi-book"></i> Sucesos incompatibles
 :::
-
 ::: callout-body
 Dos sucesos cualesquiera $A$ y $B$ son *incompatibles* (o *disjuntos*) cuando $A\cap B=\emptyset$.
 :::
@@ -137,7 +131,6 @@ Otro ejemplo se observa el sexo y la lateralidad de los estudiantes de una clase
 ::: callout-title
 <i class="bi bi-list-task"></i> Ejemplo
 :::
-
 ::: callout-body
 Supongamos que el sexo se divide entre Mujeres y Hombres y la lateralirad en diestros y zurdos. Vamos a definir el espacio muestral, los sucesos elementales y a realizar algunas operaciones entre ellos.
 
@@ -160,7 +153,6 @@ Algunas operaciones entre los sucesos anteriores serían:
 ::: callout-title
 <i class="bi bi-clipboard-check"></i> Propiedades
 :::
-
 ::: callout-body
 **Conmutativas**:
 
@@ -196,7 +188,6 @@ Veamos algunos diagramas que nos ayuda a demostrar las propiedades anteriores.
 ::: callout-title
 <i class="bi bi-clipboard-check"></i> Complementario del complementario
 :::
-
 ::: callout-body
 $$(A^c)^c=A$$
 :::
@@ -210,7 +201,6 @@ $$(A^c)^c=A$$
 ::: callout-title
 <i class="bi bi-clipboard-check"></i> Leyes de De Morgan
 :::
-
 ::: callout-body
 $$(A\cup B)^c=A^c\cap B^c$$
 
@@ -235,6 +225,7 @@ $$(A\cap B)^c=A^c\cup B^c$$
 | $A^c$ | $B^c$ | $A^c\cup B^c$ |
 |:----------------------:|:----------------------:|:----------------------:|
 | ![](Images/venn1Ac_conB.jpeg){height="150px"} | ![](Images/venn1Bc_conA.jpeg){height="150px"} | ![](Images/venn1ComplementarioInterseccion.jpeg){height="145px"} |
+
 :::
 :::::
 
@@ -256,7 +247,6 @@ Esta verosimilitud puede estar justificada por:
 ::: callout-title
 <i class="bi bi-book"></i> Definición formal de probabilidad
 :::
-
 ::: callout-body
 Sea $\Omega$ el espacio muestral de un experimento aleatorio. Supongamos que el número de posibles resultados, por el momento, es finito.
 
@@ -280,7 +270,6 @@ Veamos un ejemplo real de cómo se calcula la probabilidad de un suceso.
 ::: callout-title
 <i class="bi bi-list-task"></i> Ejemplo
 :::
-
 ::: callout-body
 En la página de la [Fundación Banco de Sangre y Tejidos de las Islas Baleares (17-08-2023)](http://www.donasang.org/que-es-la-sang/es_frequencies-dels-diferents-grups.html) podemos encontrar información sobre los porcentajes de tipos de sangre de los donantes de las Islas Baleares:
 
@@ -307,7 +296,6 @@ Necesitaremos tener propiedades y fórmulas prácticas para poder calcular proba
 ::: callout-title
 <i class="bi bi-clipboard-check"></i> Propiedades básicas de la probabilidad
 :::
-
 ::: callout-body
 -   $P(\emptyset)=0$.
 
@@ -329,7 +317,6 @@ Una identidad muy utilizada es la   de la probabilidad de la unión de dos suces
 ::: callout-title
 <i class="bi bi-clipboard-check"></i> La Probabilidad de la unión de dos sucesos
 :::
-
 ::: callout-body
 $P(A\cup B)=P(A)+P(B)-P(A\cap B)$
 
@@ -353,7 +340,6 @@ P(A)+P(B)-P(A\cap B) &=& P(A-B)+P(A\cap B)\\
 <i class="bi bi-list-task"></i> Probabilidad de la unión de 
 $n$ conjuntos
 :::
-
 ::: callout-body
 
 Sean $A_1, A_2,\ldots A_n$ sucesos. Entonces:
@@ -362,17 +348,17 @@ $$
 P(\cup_{i=1}^n A_i)=\sum_{i=1}^n P(A_i)-\sum_{1\leq i<j\leq n}P(A_i\cap A_j)+\cdots +(-1)^{n-1}P(A_1\cap A_2\cap \cdots \cap A_n).
 $$
 :::
-::::
+:::::
 
+La demostración es sencilla mediante inducción: partimos del caso base de dos sucesos, suponemos que es cierta  para  $n$ sucesos y luego la extendemos al caso de 
+$n+1$ sucesos.
 
-La demostración es sncilla por inducción, ya tenemos el caso de  dos sucesos, suponemos que es cierta para $n$ y la extendemos a $n+1$ sucesos.
-
-A modo de comprobación  veamos un ejemplo genérico con  tres sucesos
+Como comprobación, consideremos un ejemplo genérico con tres sucesos.
 
 $A=\{1,4,5,6\}$, $B=\{2,4,6,7\}$ y $C=\{3,5,6,7\}$. En este caso la  fórmula nos da 
 
 $$
-P(A\cup B\cup C)= & P(A)+P(B)+P(C)-P(A\cap B)-P(A\cap C)
+P(A\cup B\cup C)=  P(A)+P(B)+P(C)-P(A\cap B)-P(A\cap C)
 -P(B\cap C)+P(A\cap B\cap C).
 $$
 
@@ -401,7 +387,6 @@ Una de  las formas más intuitiva de asignación de probabilidades  es hacer el 
 ::: callout-title
 <i class="bi bi-clipboard-check"></i> Propiedad
 :::
-
 ::: callout-body
 -   En general dado un suceso  $A=\{a_1,a_2,\ldots,a_k\}$, entonces $$
     P(A)=P(a_1)+P(a_2)+\cdots+P(a_k).
@@ -455,7 +440,6 @@ en un caso real.
 ::: callout-title
 <i class="bi bi-list-task"></i> Ejemplo: Consumo de drogas
 :::
-
 ::: callout-body
 Segun un árticulo de 
 [El País](https://elpais.com/politica/2019/01/02/actualidad/1546426491_623324.html), 
@@ -464,7 +448,7 @@ analizados en un control de tráfico dan positivo en un el test en cocaína,
 y el $1\%$ da positivo en cannabis. Un $1.05\%$ da positivo en alguno de 
 los dos test.
 
-¿Cuál es la probabilidad que un individuo analizado en el control de drogas 
+**Pregunta**: ¿Cuál es la probabilidad que un individuo analizado en el control de drogas 
 escogido al azar no de positivo en ninguno de lo dos test?
 
 Los sucesos elementales del enunciado del problema son:
@@ -479,12 +463,7 @@ En este caso nos interesa estudiar los sucesos:
 
 $$P((A\cup B)^c)=1-P(A\cup B)=1-0.0105=0.9895.$$
 
-En un control especial de la policía el $0.1\%$ de todos los conductores 
-analizados en un control de tráfico dan positivo en un el test en cocaína, 
-y el $1\%$ da positivo en cannabis. Un $1.05\%$ da positivo en alguno de los 
-dos test.
-
-¿Cuál es la probabilidad que un analizado al azar de positivo en los dos test 
+**Pregunta**: ¿Cuál es la probabilidad que un analizado al azar de positivo en los dos test 
 en cocaína y cannabis?
 
 Los sucesos elementales son:
@@ -503,12 +482,8 @@ $$\begin{array}{rl}
 {P(A\cap B)} &{=P(A)+P(B)-P(A\cup B)}\\ &{=0.001+0.01-0.0105=0.0005}.
 \end{array}$$
 
-En un control especial de la policía el $0.1\%$ de todos los conductores 
-analizados en un control de tráfico dan positivo en un el test en cocaína, y 
-el $1\%$ da positivo en cannabis. Un $1.05\%$ da positivo en alguno de los dos test.
-
-¿Cuál es la probabilidad de que un conductor analizado de positivo en cocaína 
-pero no en cannabis?
+**Pregunta**: ¿Cuál es la probabilidad de que un conductor analizado 
+de positivo en cocaína pero no en cannabis?
 
 Los sucesos elementales son:
 
@@ -531,7 +506,6 @@ $$P(A-B) =P(A)-P(A\cap B) =0.001-0.0005=0.0005.$$
 ::: callout-title
 <i class="bi bi-list-task"></i> Probabilidad condicionada
 :::
-
 ::: callout-body
 Dados dos sucesos $A$ y $B$, con $P(A)>0$, la probabilidad $P(B|A)$ de $B$
 condicionado a $A$ es la probabilidad
@@ -552,15 +526,12 @@ $$
 ::: callout-title
 <i class="bi bi-book"></i> Ejemplo
 :::
-
 ::: callout-body
 
 En una clase de 20 hombres y 30 mujeres, 15 hombres y 18 mujeres llevan gafas.
 Contestemos las siguientes preguntas:
-:::
 
-::: example
--sol - ¿Cuál es la probabilidad de que un alumno lleve gafas?
+ ¿Cuál es la probabilidad de que un alumno lleve gafas?
 
 $$
 \frac{33}{50}
@@ -605,7 +576,6 @@ lleva gafas, entonces sea mujer? $$
 ::: callout-title
 <i class="bi bi-book"></i>  ¡Atención!
 :::
-
 ::: callout-body
 Hay que distinguir bien entre
 
@@ -928,8 +898,6 @@ Veamos el siguiente ejemplo:
 <i class="bi bi-list-task"></i> Falsos Positivos y Negativos
 :::
 ::: callout-body
-
-
 Un ejemplo aproximado de un problema real es el siguiente: consideremos una prueba diagnóstica que persiga determinar si una persona tiene una cierta enfermedad.
 
 -   Un falso positivo en este caso ocurre cuando la prueba predice que el resultado es positivo, cuando la persona no tiene realmente la enfermedad.
@@ -939,13 +907,11 @@ En un diagnósticos de una cierta condición (por ejemplo, test embarazo, test d
 
 -   $T$: el test da positivo,
 -   $M$: el sujeto satisface la condición.
-
-
 :::
 :::::
 
 
-veamos algunas denominaciones:
+Necesitamos  algunas denominaciones adicionales:
 
 
 
@@ -960,6 +926,9 @@ veamos algunas denominaciones:
 -   **Coeficiente de falsos negativos**: $P(T^c|M)$.
 :::
 :::::
+
+<br>
+<br>
 
 
 
@@ -1027,7 +996,8 @@ $$
 :::
 :::::
 
-
+<br>
+<br>
 
 ::::: callout-ejemplo
 ::: callout-title
@@ -1112,11 +1082,12 @@ $$
 
 
 
-
+<br>
+<br>
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"></i>  Ejemplo
+<i class="bi bi-list-task"></i>  Ejemplo: Tipos de clientes
 :::
 ::: callout-body
 
@@ -1137,11 +1108,12 @@ $$P(B|E)\!=\!\dfrac{P(E|B)\cdot P(B)}{P(E|A)\!\cdot\! P(A)\!+\!P(E|B)\!\cdot\! P
 :::::
 
 
-
+<br>
+<br>
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"></i>  Fidelización de clientes
+<i class="bi bi-list-task"></i>  Ejemplo: Fidelización de clientes
 :::
 ::: callout-body
 Para fidelizar a sus clientes una empresa  implementa un test de detección precoz de abandono de clientes de una empresa de telefonía da positivo el 97.5% de las ocasiones en las que, posteriormente, el cliente se da de baja, y un 12% de las veces en que no se dio de baja. La probabilidad que un cliente escogido al azar se dé de baja es de un 2%.
@@ -1270,3 +1242,5 @@ Concluimos que son dependientes, ya que $P(A\cap B)\neq P(A)\cdot P(B)$.
 4.  $\Omega$ y un suceso cualquiera $A$, ¿son necesariamente independientes?
 5.  ¿Qué condiciones se tienen que dar para que un suceso $A$ sea independiente de si mismo?
 :::
+:::::
+
