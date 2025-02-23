@@ -16,8 +16,8 @@ book:
         - probabilidad.qmd
         - variables_aleatorias.qmd
         - teoria_probabilidad.qmd
-        - distibuciones_notables_1.qmd
-        - distibuciones_notables_2.qmd
+        - distribuciones_notables_1.qmd
+        - distribuciones_notables_2.qmd
 
 bibliography: references.bib
 
@@ -41,6 +41,11 @@ format:
     toc-depth: 3
     fig-width: 6
     fig-height: 4
+    colorlinks: true
+    include-in-header:
+      - text: |
+          \usepackage{xcolor,eurosym,libertine,colortbl}
+
     code:
       linenums: true
       highlight: tango

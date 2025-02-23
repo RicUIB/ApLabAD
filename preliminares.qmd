@@ -14,9 +14,8 @@ Pero muchos tienen una falta de conocimientos en teoría básica de conjuntos y 
 
 ::::: callout-definicion
 ::: callout-title
-Definición de conjunto
+<i class="bi bi-book"> Definición de conjunto</i>
 :::
-
 ::: callout-body
 La definición de conjunto es una [idea o noción primitiva](https://es.wikipedia.org/wiki/Concepto_primitivo). Es decir es una idea básica del pensamiento humano: un conjunto es una colección de objetos: números, imágenes... cualquier cosa, jugadores de fútbol, palabras, colores ....
 :::
@@ -69,8 +68,9 @@ El conjunto que no tiene elementos se denomina conjunto vacío y se denota por e
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-book"></i> Ejemplo
+<i class="bi bi-list-task"> Ejemplo</i>
 :::
+
 ::: callout-body
 Tomemos como conjunto base $\Omega=\{1,2,3\}$
 
@@ -88,7 +88,7 @@ Dado un conjunto $\Omega$ podemos construir el **conjunto de todas sus partes** 
 
 ::::: callout-proposicion
 ::: callout-title
-Propiedad
+<i class="bi bi-clipboard-check"> Propiedad</i>
 :::
 
 ::: callout-body
@@ -118,8 +118,9 @@ $$
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"></i> **Intersección**
+<i class="bi bi-book"> Intersección de conjuntos</i>
 :::
+
 ::: callout-body
 Sea $\Omega$ un conjunto y $A$ y $B$ dos subconjuntos de $\Omega$.
 
@@ -137,7 +138,7 @@ $$
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"></i> **Unión**
+<i class="bi bi-book"> Unión de conjuntos</i>
 :::
 
 ::: callout-body
@@ -155,7 +156,7 @@ $$
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"></i> Diferencia.
+<i class="bi bi-book"> Diferencia de conjuntos</i>
 :::
 
 ::: callout-body
@@ -173,7 +174,7 @@ $$
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"></i> Complementario
+<i class="bi bi-book"> Complementario</i> 
 :::
 
 ::: callout-body
@@ -286,7 +287,7 @@ Por ejemplo si tenemos un equipo de baloncesto con 7 jugadores ¿cuántos equipo
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"></i> Número combinatorio o número binomial
+<i class="bi bi-book"> Número combinatorio o número binomial</i>
 :::
 
 ::: callout-body
@@ -302,14 +303,13 @@ $$
 :::
 :::::
 
-
 <br> <br>
-
 
 ::::: callout-ejercicio
 ::: callout-title
-<i class="bi bi-book"></i> Ejercicio: el paquete `gtools`
+<i class="bi bi-pencil-square">Ejercicio: el paquete `gtools`</i>
 :::
+
 ::: callout-body
 Carga el paquete `gtools` de R y investiga la función `combinations(n, r, v, set, repeats.allowed)` para calcular todas las combinaciones anteriores.
 :::
@@ -321,7 +321,7 @@ En combinatoria, las combinaciones con repetición de un conjunto son las distin
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"></i> Combinaciones con repetición
+<i class="bi bi-book"> Combinaciones con repetición</i>
 :::
 
 ::: callout-body
@@ -338,8 +338,9 @@ $$CR_n^k = \binom{n+k-1}{k} = \frac{(n+k-1)!}{k!(n-1)!}.$$
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"></i> Ejemplo: caramelos
+<i class="bi bi-list-task"> Ejemplo: caramelos</i> 
 :::
+
 ::: callout-body
 Vamos a imaginar que vamos a repartir 12 caramelos entre Antonio, Beatriz, Carlos y Dionisio (que representaremos como A, B, C, D). Una posible forma de repartir los caramelos sería: dar 4 caramelos a Antonio, 3 a Beatriz, 2 a Carlos y 3 a Dionisio. Dado que no importa el orden en que se reparten, podemos representar esta selección como AAAABBBCCDDD.
 
@@ -365,7 +366,7 @@ Luego hay seis casos, estas son las variaciones de orden $k=2$ de un conjunto de
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"></i> Variaciones
+<i class="bi bi-book"> Variaciones</i>
 :::
 
 ::: callout-body
@@ -381,7 +382,7 @@ $$
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-book"></i> Ejemplo
+<i class="bi bi-list-task"> Ejemplo</i> 
 :::
 
 ::: callout-body
@@ -395,9 +396,9 @@ $$
 
 <br> <br>
 
-::::: callout-definicion
+::::: callout-ejercicio
 ::: callout-title
-<i class="bi bi-book"></i> Ejercicio
+<i class="bi bi-pencil-square"> Ejercicio</i>
 :::
 
 ::: callout-body
@@ -411,7 +412,7 @@ Carga el paquete `gtools` de R y investiga la función `permutations(n, r, v, se
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"></i> Variaciones on repetición
+<i class="bi bi-book"> Variaciones con repetición</i>
 :::
 
 ::: callout-body
@@ -423,9 +424,9 @@ $$VR_n^k=n^k$$
 
 <br> <br>
 
-::::: callout-definicion
+::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-book"></i> Ejemplo
+<i class="bi bi-list-task"> Ejemplo</i>
 :::
 
 ::: callout-body
@@ -443,7 +444,7 @@ $$
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"></i> Permutaciones
+<i class="bi bi-book"> Permutaciones</i> 
 :::
 
 ::: callout-body
@@ -459,7 +460,7 @@ $$
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-book"></i> Variaciones on repetición
+<i class="bi bi-list-task"> Ejemplo: dígitos</i> 
 :::
 
 ::: callout-body
@@ -478,7 +479,7 @@ Efectivamente $P_3=3!=1\cdot  2\cdot 3.$
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-book"></i> Ejercicio
+<i class="bi bi-pencil-square"> Ejercicio</i>
 :::
 
 ::: callout-body
@@ -492,7 +493,7 @@ Investiga también el paquete `itertools` y la función `comb` de `scipy.misc` d
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-book"></i> Ejercicio
+<i class="bi bi-list-task"> Ejercicio</i>
 :::
 
 ::: callout-body
@@ -502,9 +503,9 @@ La función gamma de Euler, cobrará mucha importancia en el curso de estadísti
 
 ### Números multinomiales. Permutaciones con repetición.
 
-::::: callout-definición
+::::: callout-ejercicio
 ::: callout-title
-<i class="bi bi-book"></i> Ejercicio
+<i class="bi bi-pencil-square"> Ejercicio</i> 
 :::
 
 ::: callout-body
@@ -520,7 +521,7 @@ $$PR_n^{n_1,n_2,\ldots,n_k} = {{n}\choose {n_1\quad n_2 \quad\ldots \quad n_k}}=
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-book"></i> Ejercicio
+<i class="bi bi-list-task"> Ejercicio</i>
 :::
 
 ::: callout-body
@@ -540,7 +541,7 @@ $$PR^{2,2,2,2,1,1,1,1}_{12} = \frac{12!}{(2!)^4(1!)^4} = 29937600.$$
 
 ::::: callout-teorema
 ::: callout-title
-<i class="bi bi-book"></i> El principio de la suma
+<i class="bi bi-lightbulb"> El principio de la suma</i>
 :::
 
 ::: callout-body
@@ -554,7 +555,7 @@ $$\#(\cup_{i=1}^n A_i)=\sum_{i=1}^n \#(A_i).$$
 
 ::::: callout-teorema
 ::: callout-title
-<i class="bi bi-book"></i> Principio de unión exclusión
+<i class="bi bi-lightbulb"> Principio de unión exclusión</i>
 :::
 
 ::: callout-body
@@ -568,7 +569,7 @@ $$\#(A_1\cup A_2)=\#(A_1)+\#(A_2)-\#(A_1\cap A_2).$$
 
 ::::: callout-teorema
 ::: callout-title
-<i class="bi bi-book"></i> El principio del producto
+<i class="bi bi-lightbulb"> El principio del producto</i>
 :::
 
 ::: callout-body

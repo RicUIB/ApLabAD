@@ -8,7 +8,7 @@ knitr::opts_chunk$set(echo = TRUE,out.width = "65%",cache=FALSE,message=FALSE,wa
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"></i> Definición experimento aleatorio
+<i class="bi bi-book"> Definición: experimento aleatorio</i>
 :::
 ::: callout-body
 Un experimento que repetido en las mismas condiciones puede dar resultados diferentes, pero que a largo plazo son predecibles recibe el nombre de **experimento aleatorio**.
@@ -19,14 +19,14 @@ Daremos nombres a distintos tipos de sucesos:
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"></i> Espacio muestral y tipos de sucesos
+<i class="bi bi-book"> Definición: espacio muestral y tipos de sucesos</i> 
 :::
 ::: callout-body
 -   Llamaremos **suceso elemental** a cada uno de los posibles resultados del experimento aleatorio.
 -   Llamaremos **espacio muestral** ($\Omega$,$E$) al conjunto formado por todos los sucesos elementales del experimento aleatorio.
 -   Llamaremos **suceso** a cualquier subconjunto del espacio muestral.
 -   **Suceso seguro o cierto** $A\subseteq \Omega$
--   **Suceso imposible o vacio**: $\emptyset$
+-   **Suceso imposible o vació**: $\emptyset$
 -   **Partes de un conjunto**: $\mathcal{P}(\Omega)$: conjunto de todos los sucesos del experimento aleatorio (es decir, el conjunto de todos los subconjuntos de $\Omega$)
 :::
 :::::
@@ -35,7 +35,7 @@ A continuación describimos el clásico experimento del lanzamiento de un dado.
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-book"></i> Ejemplo
+<i class="bi bi-list-task"> Ejemplo</i>      
 :::
 ::: callout-body
 Consideremos el experimento aleatorio que consiste en lanzar un dado. El espacio muestral de este experimento es $\Omega=\{1,2,3,4,5,6\}$ o las figuras de las caras del dado.
@@ -73,7 +73,7 @@ Recordemos la notación $\mathcal{P}(\Omega)$ que usamos para referirnos al conj
 
 ::::: callout-ejercicio
 ::: callout-title
-<i class="bi bi-pencil-square"></i> Ejercicio
+<i class="bi bi-pencil-square"> Ejercicio</i>
 :::
 ::: callout-body
 ¿Cuantos elementos contiene el conjunto de partes de $\Omega$ del experimento anterior?
@@ -84,7 +84,7 @@ Veamos algún ejemplo menos clásico. Podemos considerar el experimento aleatori
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-pencil-square"></i> Ejemplo $n$-gramas
+<i class="bi bi-list-task"></i> Ejemplo $n$-gramas
 :::
 ::: callout-body
 Se define un $n$-grama de una palabra como el conjunto de $n$ letras consecutivas de la misma (contando los blancos de inicio y final de palabra que marcamos como "\_").
@@ -101,7 +101,7 @@ Algunos sucesos serían:
 -   3-gramas de inicio y final de palabra: $\{\_Ba,es\_\}.$
 -   3-gramas que contengan una $l$: $\{Bal,ale,lea\}.$
 
-Esiten bases de datos que estudián la frecuencias de $n$-grams de caracteres en textos en diferentes idiomas; generalmente de palabras. Por ejemplo, en español, los bigramas de sílabas más frecuentes son "EN" (3.01%) y "DE" (2.77%) y los trigramas de sílabas son "QUE" (1.66%) y "ENT" (1.38%). Podéis consultar más estadísticas en por ejemplo en [Stefan Trost Media frecuencias de sílabas en español](https://es.sttmedia.com/frecuencias-de-silabas-espanol).
+Existen  bases de datos que estudian la frecuencias de $n$-gramas de caracteres en textos en diferentes idiomas; generalmente de palabras. Por ejemplo, en español, los bi-gramas de sílabas más frecuentes son "EN" (3.01%) y "DE" (2.77%) y los tri-gramas de sílabas son "QUE" (1.66%) y "ENT" (1.38%). Podéis consultar más estadísticas, por ejemplo, en [Stefan Trost Media frecuencias de sílabas en español](https://es.sttmedia.com/frecuencias-de-silabas-espanol).
 :::
 :::::
 
@@ -118,7 +118,7 @@ Si tenemos dos sucesos $A,B\subseteq \Omega$, podemos definir:
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"></i> Sucesos incompatibles
+<i class="bi bi-book"> Sucesos incompatibles</i>
 :::
 ::: callout-body
 Dos sucesos cualesquiera $A$ y $B$ son *incompatibles* (o *disjuntos*) cuando $A\cap B=\emptyset$.
@@ -129,7 +129,7 @@ Otro ejemplo se observa el sexo y la lateralidad de los estudiantes de una clase
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"></i> Ejemplo
+<i class="bi bi-list-task"> Ejemplo</i> 
 :::
 ::: callout-body
 Supongamos que el sexo se divide entre Mujeres y Hombres y la lateralirad en diestros y zurdos. Vamos a definir el espacio muestral, los sucesos elementales y a realizar algunas operaciones entre ellos.
@@ -140,7 +140,7 @@ Estudiantes de esta clase: $\Omega$. - Mujeres de esta clase: $A$. - Estudiantes
 
 Algunas operaciones entre los sucesos anteriores serían:
 
--   $A\cup B$: Est. que son mujeres o que son zurdos.
+-   $A\cup B$: Estudiantes . que son mujeres o que son zurdos.
 -   $A\cap B$: Mujeres de esta clase que son zurdas.
 -   $A^c$: Hombres de esta clase.
 -   $A-B$: Mujeres de la clases que NO son zurdas.
@@ -186,7 +186,7 @@ Veamos algunos diagramas que nos ayuda a demostrar las propiedades anteriores.
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"></i> Complementario del complementario
+<i class="bi bi-clipboard-check"> Complementario del complementario</i> 
 :::
 ::: callout-body
 $$(A^c)^c=A$$
@@ -199,7 +199,7 @@ $$(A^c)^c=A$$
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"></i> Leyes de De Morgan
+<i class="bi bi-clipboard-check"> Leyes de De Morgan</i>
 :::
 ::: callout-body
 $$(A\cup B)^c=A^c\cap B^c$$
@@ -245,7 +245,7 @@ Esta verosimilitud puede estar justificada por:
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"></i> Definición formal de probabilidad
+<i class="bi bi-book">Definición formal de probabilidad</i> 
 :::
 ::: callout-body
 Sea $\Omega$ el espacio muestral de un experimento aleatorio. Supongamos que el número de posibles resultados, por el momento, es finito.
@@ -268,7 +268,7 @@ Veamos un ejemplo real de cómo se calcula la probabilidad de un suceso.
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"></i> Ejemplo
+<i class="bi bi-list-task"> Ejemplo</i>
 :::
 ::: callout-body
 En la página de la [Fundación Banco de Sangre y Tejidos de las Islas Baleares (17-08-2023)](http://www.donasang.org/que-es-la-sang/es_frequencies-dels-diferents-grups.html) podemos encontrar información sobre los porcentajes de tipos de sangre de los donantes de las Islas Baleares:
@@ -294,7 +294,7 @@ Necesitaremos tener propiedades y fórmulas prácticas para poder calcular proba
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"></i> Propiedades básicas de la probabilidad
+<i class="bi bi-clipboard-check"> Propiedades básicas de la probabilidad</i>
 :::
 ::: callout-body
 -   $P(\emptyset)=0$.
@@ -315,7 +315,7 @@ Una identidad muy utilizada es la   de la probabilidad de la unión de dos suces
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"></i> La Probabilidad de la unión de dos sucesos
+<i class="bi bi-clipboard-check">La Probabilidad de la unión de dos sucesos</i> 
 :::
 ::: callout-body
 $P(A\cup B)=P(A)+P(B)-P(A\cap B)$
@@ -337,7 +337,7 @@ P(A)+P(B)-P(A\cap B) &=& P(A-B)+P(A\cap B)\\
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-list-task"></i> Probabilidad de la unión de 
+<i class="bi bi-clipboard-check"> Probabilidad de la unión de </i>
 $n$ conjuntos
 :::
 ::: callout-body
@@ -381,11 +381,11 @@ Efectivamente tenemos que:
 
 $$P(A\cup B\cup C)=P(1)+P(2)+P(3)+P(4)+P(5)+P(6)+P(7).$$
 
-Una de  las formas más intuitiva de asignación de probabilidades  es hacer el cociente entre los casos favorables a que acontezca el vento  y los casos posibles del experimento; la llmadad fórmula de Laplace.
+Una de  las formas más intuitiva de asignación de probabilidades  es hacer el cociente entre los casos favorables a que acontezca el evento  y los casos posibles del experimento; la llamada fórmula de Laplace.
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"></i> Propiedad
+<i class="bi bi-clipboard-check"> Propiedad</i>
 :::
 ::: callout-body
 -   En general dado un suceso  $A=\{a_1,a_2,\ldots,a_k\}$, entonces $$
@@ -399,7 +399,7 @@ Una de  las formas más intuitiva de asignación de probabilidades  es hacer el 
 :::::
 
 
-En el procesamiento del lenguaje se suelen estudiar las frecucias de plabaras 
+En el procesamiento del lenguaje se suelen estudiar las frecuencias de palabras 
 o letras de un determinado idioma. 
 Veamos un ejemplo sobre las frecuencias de las vocales en castellano.
 
@@ -407,7 +407,7 @@ Veamos un ejemplo sobre las frecuencias de las vocales en castellano.
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"></i> Ejemplo: Frecuencia de vocales
+<i class="bi bi-list-task">< Ejemplo: Frecuencia de vocales/i>
 :::
 
 ::: callout-body
@@ -438,10 +438,10 @@ en un caso real.
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"></i> Ejemplo: Consumo de drogas
+<i class="bi bi-list-task"> Ejemplo: Consumo de drogas</i>
 :::
 ::: callout-body
-Segun un árticulo de 
+Según un artículo de 
 [El País](https://elpais.com/politica/2019/01/02/actualidad/1546426491_623324.html), 
 en un control especial de la policía el $0.1\%$ de todos los conductores 
 analizados en un control de tráfico dan positivo en un el test en cocaína, 
@@ -504,7 +504,7 @@ $$P(A-B) =P(A)-P(A\cap B) =0.001-0.0005=0.0005.$$
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-list-task"></i> Probabilidad condicionada
+<i class="bi bi-book"> Probabilidad condicionada</i>
 :::
 ::: callout-body
 Dados dos sucesos $A$ y $B$, con $P(A)>0$, la probabilidad $P(B|A)$ de $B$
@@ -524,7 +524,7 @@ $$
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-book"></i> Ejemplo
+<i class="bi bi-list-task"> Ejemplo: Probabilidad condicionada</i>
 :::
 ::: callout-body
 
@@ -574,7 +574,7 @@ lleva gafas, entonces sea mujer? $$
 
 ::::: callout-advertencia
 ::: callout-title
-<i class="bi bi-book"></i>  ¡Atención!
+<i class="bi bi-exclamation-triangle"> ¡Atención!</i>
 :::
 ::: callout-body
 Hay que distinguir bien entre
@@ -600,16 +600,15 @@ espacio muestral a $B$.
 ### Probabilidad condicionada. Propiedades
 
 
-La probabilidad condicionada es una probabilidad, en el setido de la siguiente 
+La probabilidad condicionada es una probabilidad, en el sentido de la siguiente 
 propiedad.
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-list-task"></i> Propiedad
+<i class="bi bi-clipboard-check"> Propiedad</i>
 :::
 
 ::: callout-body
-
 Sea $A\subseteq \Omega$ un suceso tal que $P(A)>0$, entonces
 
 $$
@@ -628,12 +627,12 @@ $$
 ::::
 :::::
 
-También se cumpliran el resto de propiedades miestras condiciones todas ellas al mismo suceso $A$.
+También se cumplirán el resto de propiedades mientras se condicionen cada una de las probabilidades al mismo suceso $A$.
 
 
 ::::: callout-ejercicio
 ::: callout-title
-<i class="bi bi-list-task"></i> Ejercicio
+<i class="bi bi-list-task"> Ejercicio</i>
 :::
 ::: callout-body
 Escribid el resto de propiedades que cumpliría una probabilidad condicionada al evento $A$.
@@ -647,7 +646,7 @@ Veamos un ejemplo donde se aplica la probabilidad condicionada, en este caso, pa
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"></i> Ejemplo
+<i class="bi bi-list-task"> Ejemplo</i>
 :::
 ::: callout-body
 Un 15% de los adultos son hipertensos, un 25% de los adultos creen que son hipertensos, y un 9% de los adultos son hipertensos y creen que lo son.
@@ -687,9 +686,9 @@ $$
 :::::
 
 
-::::: callout-definicion
+::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"></i> Ejemplo
+<i class="bi bi-list-task"> Ejemplo</i>
 :::
 ::: callout-body
 Otro ejemplo de probabilidad condicionada en este caso un ejemplo simple de dígito de control de error.
@@ -750,7 +749,7 @@ $$P(A^c|S^c)=\dfrac{P(A^c\cap S^c)}{P(S^c)}=\dfrac{P(A^c\cap S^c)}{1-P(S)}=\dfra
 
 ::::: callout-teorema
 ::: callout-title
-<i class="bi bi-list-task"></i> Teorema de la probabilidad total
+<i class="bi bi-lightbulb"> Teorema de la probabilidad total</i> 
 :::
 ::: callout-body
 
@@ -770,10 +769,9 @@ Vamos a generalizar el resultado anterior a  una colección de sucesos $A_1,A_2,
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-list-task"></i> Partición del espacio espacio muestral
+<i class="bi bi-book"> Partición del espacio espacio muestral</i>
 :::
 ::: callout-body
-
 Los sucesos $A_1,A_2,\ldots, A_n$ son una **partición** del espacio muestral $\Omega$ de un determinado experimento aleatorio, si cumplen las condiciones siguientes:
 
 1.  $A_1\cup A_2\cup\ldots\cup A_n=\Omega$,
@@ -786,7 +784,7 @@ Ahora podemos volver a enunciar el teorema anterior pero en esta ocasión  para 
 
 ::::: callout-teorema
 ::: callout-title
-<i class="bi bi-list-task"></i> Teorema de la probabilidad total generalizado
+<i class="bi bi-lightbulb"> Teorema de la probabilidad total generalizado</i>
 :::
 ::: callout-body
 Sea $A_1,A_2,\ldots,A_n$ una partición de $\Omega$. Sea $B$ un suceso cualquiera. Entonces
@@ -805,7 +803,7 @@ Revisitemos el ejemplo de los mensajes con dígitos de control de error.
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"></i> Ejemplo
+<i class="bi bi-list-task"> Ejemplo</i>
 :::
 ::: callout-body
 Un dígito de control de error toma el valor 0 en un $99\%$ de los casos en que hay un error y en un $5\%$ de los mensajes sin error. La probabilidad de error en un mensaje es del $0.5\%$.
@@ -870,7 +868,7 @@ Así el resultado del clasificador o del diagnóstico puede ser:
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"></i> Falsos Positivos y Negativos
+<i class="bi bi-list-task"> Falsos Positivos y Falsos Negativos</i>
 :::
 ::: callout-body
 Consideremos un problema de predicción de clases binario, en la que los 
@@ -895,7 +893,7 @@ Veamos el siguiente ejemplo:
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"></i> Falsos Positivos y Negativos
+<i class="bi bi-list-task"> Falsos Positivos y Negativos</i>
 :::
 ::: callout-body
 Un ejemplo aproximado de un problema real es el siguiente: consideremos una prueba diagnóstica que persiga determinar si una persona tiene una cierta enfermedad.
@@ -917,7 +915,7 @@ Necesitamos  algunas denominaciones adicionales:
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-list-task"></i> Falsos Positivos y Negativos
+<i class="bi bi-book"> Falsos Positivos y Negativos</i>
 :::
 ::: callout-body
 -   **Falsos positivos** $T\cap M^c$: El test da positivo, pero la condición no se da,
@@ -935,7 +933,7 @@ Necesitamos  algunas denominaciones adicionales:
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"></i> Falsos Positivos y Negativos
+<i class="bi bi-list-task"> Falsos Positivos y Negativos</i> 
 :::
 ::: callout-body
 
@@ -983,7 +981,7 @@ $$
 
 ::::: callout-teorema
 ::: callout-title
-<i class="bi bi-list-task"></i> Teorema de Bayes para dos sucesos
+<i class="bi bi-lightbulb"> Teorema de Bayes para dos sucesos</i>
 :::
 ::: callout-body
 
@@ -1001,7 +999,7 @@ $$
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"></i> Ejemplo
+<i class="bi bi-list-task"> Ejemplo</i>
 :::
 ::: callout-body
 
@@ -1017,7 +1015,7 @@ Generalicemos este resultado para una partición arbitraria del espacio muestral
 
 ::::: callout-teorema
 ::: callout-title
-<i class="bi bi-list-task"></i>  Teorema de Bayes para una partición
+<i class="bi bi-lightbulb"> Teorema de Bayes para una partición</i>
 :::
 ::: callout-body
 Sea $A_1,A_2,\ldots,A_n$ una partición de $\Omega$. Sea $B$ un suceso tal que
@@ -1044,7 +1042,7 @@ $$P(A_i|B) =\dfrac{P(A_i\cap B)}{P(B)}=\cdots$$
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"></i>  Test de VIH
+<i class="bi bi-list-task"> Test de VIH</i>
 :::
 ::: callout-body
 Un test para detección de VIH da positivo un 99% de los casos en los que está presente y en un 5% de los casos en los que el virus está ausente. En una población con un $0.5\%$ de infectados por VIH, ¿cuál es la probabilidad que un individuo que haya dado positivo en el test esté infectado?
@@ -1087,7 +1085,7 @@ $$
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"></i>  Ejemplo: Tipos de clientes
+<i class="bi bi-list-task"> Ejemplo: Tipos de clientes</i>  
 :::
 ::: callout-body
 
@@ -1113,7 +1111,7 @@ $$P(B|E)\!=\!\dfrac{P(E|B)\cdot P(B)}{P(E|A)\!\cdot\! P(A)\!+\!P(E|B)\!\cdot\! P
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"></i>  Ejemplo: Fidelización de clientes
+<i class="bi bi-list-task"> Ejemplo: Fidelización de clientes</i> 
 :::
 ::: callout-body
 Para fidelizar a sus clientes una empresa  implementa un test de detección precoz de abandono de clientes de una empresa de telefonía da positivo el 97.5% de las ocasiones en las que, posteriormente, el cliente se da de baja, y un 12% de las veces en que no se dio de baja. La probabilidad que un cliente escogido al azar se dé de baja es de un 2%.
@@ -1170,7 +1168,7 @@ donde $P(T^c|B)=1-P(T|B)=0.025$ y $P(T^c|B^c)=1-P(T|B^c)=0.88.$
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-list-task"></i> Sucesos Independientes 
+<i class="bi bi-book"> Sucesos Independientes </i>
 :::
 ::: callout-body
 
@@ -1185,9 +1183,9 @@ $$
 :::
 :::::
 
-::::: callout-propiedad
+::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-list-task"></i> Propiedad
+<i class="bi bi-clipboard-check"> Propiedad</i>
 :::
 ::: callout-body
 
@@ -1205,11 +1203,11 @@ Dados dos sucesos $A$ y $B$ con $P(A),P(B)0$, las siguientes afirmaciones son eq
 
 
 
-Veamos un secillo ejemplo de compras de billetes de avión y alojamiento en hotel.
+Veamos un sencillo ejemplo de compras de billetes de avión y alojamiento en hotel.
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"></i> Ejemplo billete avión
+<i class="bi bi-list-task"> Ejemplo billete avión</i>
 :::
 ::: callout-body
 
@@ -1233,7 +1231,7 @@ Concluimos que son dependientes, ya que $P(A\cap B)\neq P(A)\cdot P(B)$.
 
 ::::: callout-ejercicio
 ::: callout-title
-<i class="bi bi-list-task"></i> sucesos disjuntos e independencia
+<i class="bi bi-list-task"> sucesos disjuntos e independencia</i>
 :::
 ::: callout-body
 1.  Dos sucesos $A$ y $B$ disjuntos, ¿son necesariamente independientes?

@@ -1,0 +1,43 @@
+---
+title: "Untitled"
+editor: visual
+---
+
+
+
+<i class="bi bi-book"></i> Definición
+
+
+<i class="bi bi-lightbulb"></i> Teorema
+
+
+
+
+## Proposición
+
+
+<i class="bi bi-clipboard-check"></i> Proposición
+
+
+<i class="bi bi-list-task"></i> Ejemplo
+
+
+
+
+## Ejercicio
+
+
+<i class="bi bi-pencil-square"></i> Ejercicio
+
+
+
+------------------------------------------------------------------------
+
+
+<i class="bi bi-info-circle"></i> Nota
+
+
+<i class="bi bi-exclamation-triangle"></i> Advertencia
+
+<i class="bi bi-question-circle"></i> Curiosidad
+

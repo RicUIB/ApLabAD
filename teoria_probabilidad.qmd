@@ -13,18 +13,24 @@ Se supone que el lector conoce la teoría básca de conjuntos, operaciones entre
 :::
 
 ::: callout-content
-Sea $\Omega$ un conjunto y $\mathcal{A}\subseteq \mathcal{P}(\Omega)$ una familia de subconjuntos de $\Omega$ diremos que $\mathcal{A}$ es una álgebra de $\Omega$ si: 1. $\Omega\in\mathcal{A}$ 2. $A\in\mathcal{A}\Rightarrow A^c\in\mathcal{A}$ 3. $A_1,A_2,\ldots,A_n \in\mathcal{A}\Rightarrow \bigcup_{i=1}^{\infty}A_i\in\mathcal{A}$ para todo $n\in\mathbb{N}$
+Sea $\Omega$ un conjunto y $\mathcal{A}\subseteq \mathcal{P}(\Omega)$ una familia de subconjuntos de $\Omega$ diremos que $\mathcal{A}$ es una **álgebra** de $\Omega$ si: 
 
-Sí además se cumple que $\mathcal{A}$ es cerrada respecto a la unión numerable de conjuntos entonces diremos que $\mathcal{A}$ es una $\sigma$-álgebra de $\Omega$.
+1. $\Omega\in\mathcal{A}$ 
+2. $A\in\mathcal{A}\Rightarrow A^c\in\mathcal{A}$ 
+3. $A_1,A_2,\ldots,A_n \in\mathcal{A}\Rightarrow \bigcup_{i=1}^{\infty}A_i\in\mathcal{A}$ para todo $n\in\mathbb{N}$
+
+Sí además se cumple que $\mathcal{A}$ es cerrada respecto a la unión numerable de conjuntos entonces diremos que $\mathcal{A}$ es una **$\sigma$-álgebra** de $\Omega$.
 
 El par formado por $(\Omega,\mathcal{A})$ se llama espacio medible y los elemento de $\mathcal{A}$ se denominan conjuntos medibles (en esta $\sigma$-álgebra) o sucesos.
 :::
 :::::
+
+<br>
 <br>
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-book"> Proposición</i>
+<i class="bi bi-clipboard-check"> Proposición</i>
 :::
 
 ::: callout-content
@@ -43,7 +49,7 @@ Sea $\mathcal{A}$ una $\sigma$-álgebra de $\Omega$ entonces:
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-book"> Proposición</i>
+<i class="bi bi-clipboard-check"> Proposición</i>
 :::
 
 ::: callout-content
@@ -62,7 +68,7 @@ nombre de $\sigma$-álgebra generada por $\mathcal{F}$.
 
 ::::: callout-ejemplos
 ::: callout-title
-<i class="bi bi-book"> Alguns $\sigma$-álgebras famosas </i>
+<i class="bi bi-list-task"> Algunas $\sigma$-álgebras notables </i>
 :::
 
 ::: callout-content
