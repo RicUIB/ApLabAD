@@ -16,9 +16,20 @@ Para conseguirlo utilizaremos unas funciones que transformen los elementos del e
 
 Comenzaremos dando una definición poco rigurosa, pero suficiente, de variable aleatoria.
 
-<l class="definition"> Variable Aleatoria (definición práctica) </l>
+
+::::: callout-definicion
+::: callout-title
+<i class="bi bi-book"> Variable Aleatoria (definición práctica)</i>
+:::
+::: callout-body
 
 Una variable aleatoria (v.a.) es una aplicación que toma valores numéricos determinados por el resultado de un experimento aleatorio
+:::
+:::::
+
+<br>
+<br>
+
 
 ::::: callout-nota
 ::: callout-title
@@ -205,7 +216,7 @@ Finalmente su dominio es $D_X=\{0,1\}.$
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-info-circle"> Ejemplo: urna con bolas</i>
+<i class="bi bi-info-circle">  Ejemplo: urna con bolas</i>
 :::
 ::: callout-body
 Tenemos una urna con tres bolas rojas, una negra y dos blancas. Realizamos una
@@ -246,11 +257,12 @@ Su función de probabilidad $P_{X}$ verifica las siguientes propiedades:
 -   $\sum\limits_{x\in D_X} P_{X}(x)=1.$
 :::
 :::::
-
+<br>
+<br>
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-info-circle">Ejemplo: urna con bolas</i>
+<i class="bi bi-info-circle"> Ejemplo: lanzmiento moneda</i>
 :::
 ::: callout-body
 Lanzamos al aire tres veces, de forma independiente, una moneda perfecta. 
@@ -329,11 +341,11 @@ lo que demuestra la primera propiedad.
 
 Por otro lado, si $X$ se encuentra entre dos valores $a$ y $b$ $\left\{a< X \leq b\right\}= \left\{X\leq b\right\}-\left\{X\leq  a\right\}$. Ahora podemos hacer
 
-\begin{eqnarray*}
-P(a<X\leq b)&=&P(\left\{X\leq b\right\}-\left\{X\leq a\right\})\\
-&=& P(\left\{X\leq b\right\})-P(\left\{X\leq a\right\})\\
-&=& F_{X}(b)-F_{X}(a).
-\end{eqnarray*}
+\begin{align*}
+P(a<X\leq b)= & P(\left\{X\leq b\right\}-\left\{X\leq a\right\})\\
+= &  P(\left\{X\leq b\right\})-P(\left\{X\leq a\right\})\\
+= &  F_{X}(b)-F_{X}(a).
+\end{align*}
 
 Lo que finaliza la demistración de la propiedad.
 
@@ -367,9 +379,7 @@ desigualdades de estrictas o no estrictas.
 
 Veamos que propiedades tenemos cuando se cambian estas desigualdades.
 
-Dada una $F_{X}$ una función de distribución de la v.a. $X$ y denotamos por $$F_{X}(x_0^{-})=\displaystyle \lim_{x\to x_0^{-}} F_{X}(x),$$,
-
-entonces se cumplen las siguientes igualdades:
+Dada una $F_{X}$ una función de distribución de la v.a. $X$ y denotamos por $F_{X}(x_0^{-})=\displaystyle \lim_{x\to x_0^{-}} F_{X}(x),$, entonces se cumplen las siguientes igualdades:
 
 -   $P(X=x)=F_{X}(x)-F_{X}(x^{-})$.
 -   $P(a< X< b)=F_{X}(b^{-})-F_{X}(a)$.
@@ -406,10 +416,12 @@ lo que demuestra la primera propiedad.
 
 Para demostrar la segunda basta hacer
 
-$$ 
-F_{X}(x_0)= P(X\leq x_0)=P\left(\bigcup_{x\leq
-x_0; x\in D_X} \{x\}\right)= \sum_{x\leq x_0}P(X=x)= \sum_{x\leq x_0}P_{X}(x).
-$$
+\begin{align*}
+F_{X}(x_0)= &  P(X\leq x_0)=P\left(\bigcup_{x\leq
+x_0; x\in D_X} \{x\}\right)= \sum_{x\leq x_0}P(X=x)=\\
+&\sum_{x\leq x_0}P_{X}(x).
+\end{align*}
+
 Lo que demuestra estas dos propiedades.
 
 
@@ -426,24 +438,31 @@ $$P_{X}(x)=\left\{\begin{array}{ll} \frac16, & \mbox{si } x=1,2,3,4,5,6\\ 0, & \
 
 por lo tanto
 
-$$\scriptsize{F_{X}(x)=P(X\leq x)=\left\{\begin{array}{ll}
+$$
+F_{X}(x)=P(X\leq x)=
+\left\{
+    \begin{array}{ll}
    0, & \mbox{si } x<1,\\
    \frac16, &\mbox{si } 1\leq x<2,\\[1ex]
    \frac26, &\mbox{si } 2\leq x<3,\\
    \frac36, &\mbox{si } 3\leq x<4,\\
    \frac46, &\mbox{si } 4\leq x<5,\\
    \frac56, &\mbox{si } 5\leq x<6,\\
-   1, &\mbox{si } 6\leq x.\end{array}\right.}$$
+   1, &\mbox{si } 6\leq x.\end{array}
+\right.
+$$
 
 Calculemos más detalladamente algún valor de $F_{X}$, por ejemplo:
 
-\begin{eqnarray*}
-F_{X}(3.5) & = & P(X\leq 3.5)=  P(\{X=1\}\cup\{X=2\}\cup \{X=3\})\\
-&=& P(\{X=1\})+P(\{X=2\})+P(\{X=3\})\\
-&=& \frac16+\frac16+\frac16=\frac36 =\frac12,
-\end{eqnarray*}
 
-o de otra forma
+\begin{align*}
+F_{X}(3.5) & =  P(X\leq 3.5)=  P(\{X=1\}\cup\{X=2\}\cup \{X=3\})\\
+&= P(\{X=1\})+P(\{X=2\})+P(\{X=3\})\\
+&= \frac16+\frac16+\frac16=\frac36 =\frac12,
+\end{align*}
+
+
+o tambiñen podemos prodeder así:
 
 $$F_{X}(3.5)=\sum_{x\leq 3.5} P_X(x)=\sum_{x=1}^3 P(X=x)=\sum_{x=1}^3 \frac16= 3 \cdot
    \frac16=\frac12.
@@ -550,6 +569,8 @@ Supongamos que el editor nos paga $2$ euros por cada página que encontremos con
 :::
 :::::
 
+<br>
+<br>
 
 
 ::::: callout-proposicion
@@ -566,6 +587,9 @@ $$E(g(X))=\sum_{x}g(x) \cdot  P_{X}(x).$$
 :::::
 
 
+<br>
+<br>
+
 ::::: callout-proposicion
 ::: callout-title
 <i class="bi bi-clipboard-check"></i> Propiedades
@@ -580,12 +604,15 @@ $$E(g(X))=\sum_{x}g(x) \cdot  P_{X}(x).$$
 La demostración de las propiedades anteriores se deja como ejercicio.
 
 
+<br>
+<br>
+
 
 ::::: callout-ejemplo
 ::: callout-title
 <i class="bi bi-clipboard-check"></i> Ejemplo: paleta de colores aleatoria
 :::
-
+::: callout-body
 Supongamos que estamos sentados delante de nuestro ordenador con un amigo y le decimos que en dos minutos podemos programar una paleta para poner colores a unos gráficos.
 
 Queremos que la paleta tenga dos botones con las opciones color rojo y color azul. Como hemos programado a gran velocidad resulta que el programa tiene un error; cada vez que se abre la paleta los colores se colocan al azar (con igual probabilidad) en cada botón, así que no sabemos en qué color hemos de pinchar.
@@ -607,7 +634,7 @@ $$
 :::::
 
 
-## Series geométricas
+### Series geométricas
 
 
 **Series geométricas**
@@ -632,12 +659,12 @@ $$
 
 -   Si $|r|<1$ también son convergentes las derivadas, respecto de $r$, de la serie geométrica y convergen a la derivada correspondiente. Así tenemos que
 
-\begin{eqnarray*}
+\begin{align*}
 \left(\sum_{k=0}^{+\infty} r^k\right)'= & \sum_{k=1}^{+\infty}k
 r^{k-1}; \qquad  \left(\frac1{1-r}\right)'=\frac1{(1-r)^2}\\
 \left(\sum_{k=0}^{+\infty} r^k\right)^{''}=&\sum_{k=2}^{+\infty}k (k-1)
 r^{k-2}  ;\qquad  \left(\frac1{1-r}\right)^{''}=\frac2{(1-r)^3}
-\end{eqnarray*}.
+\end{align*}.
 :::
 :::::
 
@@ -652,18 +679,21 @@ r^{k-2}  ;\qquad  \left(\frac1{1-r}\right)^{''}=\frac2{(1-r)^3}
 ::: callout-body
 Si seguimos con el ejemplo de la paleta de colores, su esperanza es:
 
-$$E(X)=\sum_{x=0}^{+\infty} x\cdot  P(X=x)=\sum_{x=0}^{+\infty} x\cdot
+\begin{align*}
+E(X)= & \sum_{x=0}^{+\infty} x\cdot  P(X=x)=\sum_{x=0}^{+\infty} x\cdot
 \left(\frac12\right)^{x+1}=  \left(\frac12\right)^2\sum_{x=1}^{+\infty} x\cdot
-\left(\frac12\right)^{x-1}=\left(\frac12\right)^2\cdot
+\left(\frac12\right)^{x-1}\\ & =\left(\frac12\right)^2\cdot
 \frac1{\left(1-\frac12\right)^2}=1.
-$$
+\end{align*}
 
 Ahora calculemos su función de distribución
 
-$$F_X(x)= P(X\leq x)=\sum_{k=0}^x P(X=k)=\sum_{k=0}^x
+\begin{align*}
+F_X(x)= &  P(X\leq x)=\sum_{k=0}^x P(X=k)=\sum_{k=0}^x
 \left(\frac12\right)^{k+1}= \frac{\frac12-\frac12^{x+1}\cdot
-\frac12}{1-\frac12}=1-\left(\frac12\right)^{x+1}.
-$$
+\frac12}{1-\frac12}=\\ & 1-\left(\frac12\right)^{x+1}.
+\end{align*}
+
 Como la variable toma valores enteros positivos, podemos calcular su valor esperado de esta otra manera
 
 $$E(X)=\sum_{x=0}^{+\infty} (1-F_X(x))=\sum_{x=0}^{+\infty}\left(\frac12\right)^{x+1}=\frac12\cdot 
@@ -677,7 +707,7 @@ $$
 :::
 :::::
 
-## Momentos de una variable aleatoria. Varianza
+### Momentos de una variable aleatoria. Varianza
 
 ::::: callout-proposicion
 ::: callout-title
@@ -698,11 +728,11 @@ Resumen de conceptos:
 -   También tenemos un valor central; el valor esperado $E(X)$.
 -   Como medida básica nos queda definir una medida de lo lejos que están los datos del valor central $E(X)$ una de estas medidas es la varianza de $X$.
 
-## Medidas de la variabilidad
+### Medidas de la variabilidad
 
-::::: callout-proposicion
+::::: callout-definición
 ::: callout-title
-<i class="bi bi-clipboard-check">Definición: Varianza</i> 
+<i class="bi bi-clipboard-check"> Definición: Varianza</i> 
 :::
 ::: callout-body
 
@@ -723,12 +753,12 @@ se la denomina desviación típica o estándar de $X$.
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check">> Propiedad </i> 
+<i class="bi bi-clipboard-check"> Propiedad </i> 
 :::
 ::: callout-body
 
--   Si $X$ es una v.a. discreta con función de probabilidad $P_X$ su varianza es $$\sigma_{X}^2=Var(X)=E((X-E(X))^2)=\sum_{x}(x-E(X))^2\cdot  P_{X}(x).$$
--   Sea $X$ una v.a. $$Var(X)=E(X^2)-(E(X))^2=\sum_{x} x^2\cdot  P_{X}(X)-(E(X))^2$$
+-   Si $X$ es una v.a. discreta con función de probabilidad $P_X$ su varianza es $\sigma_{X}^2=Var(X)=E((X-E(X))^2)=\sum_{x}(x-E(X))^2\cdot  P_{X}(x).$
+-   Sea $X$ una v.a. $Var(X)=E(X^2)-(E(X))^2=\sum_{x} x^2\cdot  P_{X}(X)-(E(X))^2$
 :::
 :::::
 
@@ -736,11 +766,11 @@ se la denomina desviación típica o estándar de $X$.
 
 **Demostración de b)**
 
-\begin{eqnarray*}
-Var(X)&= & \sum_{x}(x-E(X))^2 P_{X}(x) = \sum_{x}(x^2 -2\cdot x\cdot E(X)+(E(X)^2)\cdot P_{X}(x)\\
-&=& \sum_{x}x^2\cdot P_{X}(x) -  E(X)\sum_{x}2\cdot x \cdot P_{X}(x) + (E(X)^2)\cdot\sum_{x} P_{X}(x)\\
-&=& E(X^2)- 2 E(X)\cdot E(X) + (E(X))^2=E(X^2)-(E(X))^2.
-\end{eqnarray*}
+\begin{align*}
+Var(X)= & \sum_{x}(x-E(X))^2 P_{X}(x) = \sum_{x}(x^2 -2\cdot x\cdot E(X)+(E(X)^2)\cdot P_{X}(x)\\
+= &  \sum_{x}x^2\cdot P_{X}(x) -  E(X)\sum_{x}2\cdot x \cdot P_{X}(x) + (E(X)^2)\cdot\sum_{x} P_{X}(x)\\
+= &  E(X^2)- 2 E(X)\cdot E(X) + (E(X))^2=E(X^2)-(E(X))^2.
+\end{align*}
 
 Se deja como ejercicio la primera afirmación.
 
@@ -781,7 +811,7 @@ En resumen $\sigma_{X}^2=0.542$ y $\sigma_{X}=\sqrt{0.542}$
 :::::
 
 
-## Propiedades de la varianza
+### Propiedades de la varianza
 
 <l class="prop"> **Propiedades de la varianza**</l>
 
@@ -796,7 +826,7 @@ Se deja como ejercicio la demostración de estas propiedades.
 :::
 
 
-## se la denomina desviación t
+## Transformaiones lineales de v.a.
 
 ::::: callout-definicion
 ::: callout-title
@@ -814,7 +844,7 @@ Un **cambio de variable lineal** o **transformación lineal** de una v.a. $X$ es
 
 ::::: callout-propiedad
 ::: callout-title
-<i class="bi bi-book">EPorpiedad: Esperanza de una trnaformación lineal </i> 
+<i class="bi bi-book"> Propiedad: Esperanza de una transformación lineal </i> 
 :::
 ::: callout-body
 
@@ -828,11 +858,11 @@ Sea $X$ una v.a. con $E(X)=\mu_{X}$ y $Var(X)=\sigma_{X}^2$ y $a,b\in\mathbb{R}$
 
 **Demostración**:
 
-\begin{eqnarray*}
-E(Y)&=& E(a+bX)=\sum_{x}(a+b\cdot x)\cdot P_{X}(x)\\
-&=& a \sum_{x} P_{X}(x) + b \sum_{x} x\cdot P_{X}(x)\\ 
-&=& a + b\cdot E(X)=a + b\cdot\mu_{X}.
-\end{eqnarray*}
+\begin{align*}
+E(Y)= &  E(a+bX)=\sum_{x}(a+b\cdot x)\cdot P_{X}(x)\\
+= &  a \sum_{x} P_{X}(x) + b \sum_{x} x\cdot P_{X}(x)\\ 
+= &  a + b\cdot E(X)=a + b\cdot\mu_{X}.
+\end{align*}
 
 Lo que demuestra esta propiedad, las emás se dejan comom ejercicio.
 
@@ -889,7 +919,7 @@ $$P(X\leq x)=\frac{C.F.}{C.P.}=\frac{x-0}{1-0}=x.$$
 
 el siguente código grafica la función de distribución uniforme
 
-```{r figUNIF, fig.align='center',out.width="45%"}
+```{r figUNIF, fig.align='center',out.width="100%"}
 curve(punif(x,0,1),xlim=c(-1,2),col="blue",
       main="Función de distribución de una v.a. \n
       uniforme en el intervalo unidad.")
@@ -897,6 +927,9 @@ curve(punif(x,0,1),xlim=c(-1,2),col="blue",
 
 :::
 :::::
+
+<br>
+<br>
 
 ::::: callout-proposicion
 ::: callout-title
@@ -922,17 +955,19 @@ $$\{X\leq a\}\cap \{a<X<b\}=\emptyset$$ $$\{X\leq a\}\cup \{a<X<b\}=\{X<b\},$$
 
 entonces
 
-$P(X< b)= P(\{X\leq a\}\cup \{a<X<b\}) = P(X\leq a)+P(a<X<b)= P(X< a)+P(a<X<b).$
+\begin{eqalign*}
+P(X< b) = &  P(\{X\leq a\}\cup \{a<X<b\}) = P(X\leq a)+P(a<X<b)= \\ & 
+P(X< a)+P(a<X<b).$
+\end{align*}
 
 La demostración de las otras  propiedades las dejamos como ejercicio.
-
 
 <br>
 <br>
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check">Propiedades de la Función de Distribución </i> 
+<i class="bi bi-clipboard-check"> Propiedades de la Función de Distribución </i> 
 :::
 ::: callout-body
 Las propiedades anteriores y combinaciones de ellas se pueden escribir utilizando la función de distribución de $X$:
@@ -968,7 +1003,7 @@ $$P(0.25<X<0.3)=F_{X}(0.3)-F_{X}(0.25)=0.3-0.25=0.05.$$
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"></i> Definición: Función de densidad 
+<i class="bi bi-book"> Definición: Función de densidad </i> 
 :::
 ::: callout-body
 
@@ -984,7 +1019,7 @@ Una función $f:\mathbb{R}\to\mathbb{R}$ es una función de densidad sobre $\mat
 
 ::::: callout-teorema
 ::: callout-title
-<i class="bi bi-book"> Propiedad: relación entre la función de distribcuión y la densidad</i>  
+<i class="bi bi-book"> Propiedad: Relación entre la función de distribución y la densidad</i>  
 :::
 ::: callout-body
 Sea $X$ una v.a. con función de distribución $F_X$. Sea $f:\mathbb{R}\to\mathbb{R}$ una función de densidad tal que
@@ -1050,7 +1085,7 @@ $$
 
 Por lo tanto, $F_X(x)=\displaystyle\int_{-\infty}^x f_X(t) dt$ para todo $x\in\mathbb{R}.$
 
-```{r fig.align="center", fig_caption="Función de densidad de una v.a. uniforme en el intervalo$(0,1)$",out.width="50%"}
+```{r fig.align="center", fig_caption="Función de densidad de una v.a. uniforme en el intervalo$(0,1)$",out.width="100%"}
 curve(dunif(x,0,1),xlim=c(-0.5,1.5),col="blue",
       main="Densidad de la distribución uniforme en [0,1]")
 ```
@@ -1070,17 +1105,19 @@ La función de densidad nos permite calcular diversas probabilidades.
 
 <l class="prop">Propiedades de la función de densidad </l>
 
--   Sea $X$ una v.a. continua con función de distribución $F_X$ y de densidad $f_X$, entonces \begin{eqnarray*}
-    P(a< X< b) &=&  P(a<X\leq b)= P(a\leq X< b)=\\
+-   Sea $X$ una v.a. continua con función de distribución $F_X$ y de densidad $f_X$, 
+entonces \begin{align*}
+    P(a< X< b) = &   P(a<X\leq b)= P(a\leq X< b)=\\
      & & P(a\leq X\leq b)= \displaystyle\int_{a}^b f_X(x) dx.
-    \end{eqnarray*}
+    \end{align*}
 
 -   Si $A$ es un subconjunto adecuado de $\mathbb{R}$ entonces $$P(X\in A)=\displaystyle\int_{A} f(x) dx=\displaystyle\int_{A\cap D_X} f(x) dx.
     $$
 
 <l class="prop">Propiedades de la función de densidad </l>
 
-Sea $X$ una v.a. continua con función de distribución $F_X$ y de densidad $f_X$, entonces:
+Sea $X$ una v.a. continua con función de distribución $F_X$ y 
+de densidad $f_X$, entonces:
 
 -   Si $f_x$ es continua en un punto $x$, $F_X$ es derivable en ese punto y $F_X'(x)=f_X(x).$
 -   $P(X=x)=0$ para todo $x\in\mathbb{R}.$
@@ -1206,7 +1243,7 @@ $X$ es una variable aleatoria continua con función de densidad $f_{X}(x)$
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejemplo: diana (continuación) </i>
+<i class="bi bi-list-task"> Ejemplo: Diana (continuación) </i>
 :::
 ::: callout-body
 
@@ -1216,13 +1253,14 @@ $$E(X^2)=\int_0^1 x^2 dx=\left[\frac{x^3}{3}\right]_0^1=\frac13,$$
 $$Var(X)=E(X^2)-E(X)^2=\frac13-\left(\frac12\right)^2=\frac1{12}.$$
 Podemos comprobar que con la  definición directa el resultado es el mismo
 
-$$
-Var(X)=E\left(\left(X-E(X)\right)^2\right)=
-\int_0^1 \left(x-\frac12\right)^2 dx=
+
+\begin{align*}
+Var(X)= & E\left(\left(X-E(X)\right)^2\right)=
+\int_0^1 \left(x-\frac12\right)^2 dx= \\ & 
 \left[\frac13 \left(x-\frac12\right)^3\right]_0^1= 
 \frac13\cdot \left(\left(1-\frac12\right)^3-\left(0-\frac12\right)^3\right)
 = \frac13\left(\frac18-\left(-\frac18\right)\right)=\frac13\cdot \frac28=\frac1{12}.
-$$
+\end{align*}
 
 :::
 :::::
@@ -1349,11 +1387,9 @@ También son útiles desde el punto de vista teórico, por ejemplo para justific
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"></i> Propiedad: Desigualdad de Markov
+<i class="bi bi-clipboard-check"> Propiedad: Desigualdad de Markov </i>
 :::
-
-::: callout-body
-
+:::   callout-body    
 Sea $X$ una v.a. positiva con $E(X)$ finita. Entonces
 
 $$P(X\geq a)\leq \frac{E(X)}{a}\mbox{ para todo }a>0.$$
@@ -1364,12 +1400,14 @@ $$P(X\geq a)\leq \frac{E(X)}{a}\mbox{ para todo }a>0.$$
 
 Si $X$ es continua y solo toma valores positivos
 
-\begin{eqnarray*}
-E(X) &=& \int_{-\infty}^{+\infty} x\cdot f_{X}(x) dx=  \int_0^{+\infty} x\cdot f_{X}(x) dx=  \int_0^{a} x\cdot f_{X}(x) dx +\int_{a}^{+\infty} x\cdot f_{X}(x) dx \\
-& &\geq   \int_{a}^{+\infty} x\cdot
-f_{X}(x) dx \geq a \int_{a}^{+\infty}
+\begin{align*}
+E(X) =& \int_{-\infty}^{+\infty} x\cdot f_{X}(x) dx=  
+\int_0^{+\infty} x\cdot f_{X}(x) dx\\ 
+& =  \int_0^{a} x\cdot f_{X}(x) dx +\int_{a}^{+\infty} x\cdot f_{X}(x) dx
+ \geq   \int_{a}^{+\infty} x\cdot f_{X}(x) dx \\
+& \geq a \int_{a}^{+\infty}
 f_{X}(x) dx = a \cdot  P(X\geq a),
-\end{eqnarray*}
+\end{align*}
 
 de donde se sigue que
 
@@ -1377,15 +1415,22 @@ $$P(X\geq a)\leq \frac{E(X)}{a}.$$
 
 ### Desigualdad de Markov
 
+
+::::: callout-proposicion
+::: callout-title
+ <i class="bi bi-clipboard-check"> Propiedad: Desigualdad de Markov </i>
+:::
+:::   callout-body    
 Sea $X$ una v.a. con $E(X)$ finita entonces para todo $a>0$
 
 $$P(|X|\geq a )\leq \frac{E(|X|)}{a}.$$
-
-::: exercise
-**Ejercicio**
-
-Demuestra el corolario anterior a partir de la desigualdad de Markov.
 :::
+:::::
+
+
+Se deja como **ejercicio** la prueba del corolario anterior a partir 
+de la desigualdad de Markov.
+
 
 ## Desigualdad de Chebychev
 
@@ -1395,9 +1440,9 @@ Demuestra el corolario anterior a partir de la desigualdad de Markov.
 :::
 ::: callout-body
 
-La **desigualdad de Chebychev** también se denomina de Chebyshov y en inglés *Chebyshev*.
+La **desigualdad de Chebychev** también se escribe de Chebyshov y en inglés 
+*Chebyshev*.
 
-<l class="prop"> Desigualdad de Chebychev</l>
 
 Sea $X$ una v.a.con $E(X)=\mu$ y $Var(X)=\sigma^2$ entonces para todo $a>0$,
 
@@ -1444,8 +1489,14 @@ lo que implica que
 
 $$P(X=E(X))=1,$$
 
-Por lo que la probabilidad de que $X$ sea constantemente $E(X)$ es 1, hecho que nos confirma la utilidad de la varianza como una medida de la dispersión de los datos.
+Por lo que la probabilidad de que $X$ sea constantemente $E(X)$ es 1, 
+hecho que nos confirma la utilidad de la varianza como una medida de la 
+dispersión de los datos.
+:::
+:::::
 
+<br>
+<br>
 
 ::::: callout-ejemplo
 ::: callout-title
@@ -1454,7 +1505,8 @@ Por lo que la probabilidad de que $X$ sea constantemente $E(X)$ es 1, hecho que 
 
 ::: callout-body
 
-Se sabe que el tiempo de respuesta medio y la desviación típica de un sistema multiusuario son 15 y 3 unidades de tiempo respectivamente. Entonces:
+Se sabe que el tiempo de respuesta medio y la desviación típica de un sistema 
+multiusuario son 15 y 3 unidades de tiempo respectivamente. Entonces:
 
 $$
 P(|X-15|\geq 5)\leq \frac9{25}=0.36.
@@ -1463,7 +1515,7 @@ $$
 :::::
 
 
-Si substituimos $a$ por $a\cdot \sigma$ en la desigualdad de Chebychev, nos queda:
+Si sustituimos $a$ por $a\cdot \sigma$ en la desigualdad de Chebychev, nos queda:
 
 $$
 P(|X-\mu|\geq a\cdot \sigma)\leq

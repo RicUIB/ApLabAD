@@ -64,19 +64,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./distibuciones_notables_1.html" rel="next">
+<link href="./teoria_probabilidad.html" rel="next">
 <link href="./probabilidad.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-706344d2ac0d376cb01d0c71f2a45066.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-fdf964b8551a4c1da979a829183e41b0.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-912f80979caa2ab4a22134159bf6713b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -135,7 +133,6 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="custom.css">
 </head>
 
 <body class="nav-sidebar floating">
@@ -163,9 +160,6 @@ window.Quarto = {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">ApLabAD</a> 
-        <div class="sidebar-tools-main">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
-</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -210,14 +204,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./teoria_probabilidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Teoría de la probabilidad</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./distibuciones_notables_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Distribuciones notables 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distribuciones notables 1</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./distibuciones_notables_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distribuciones notables 2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Distribuciones notables 2</span></span></a>
   </div>
 </li>
       </ul>
@@ -243,25 +243,29 @@ window.Quarto = {
   <li><a href="#momentos-de-variables-aleatorias-discretas" id="toc-momentos-de-variables-aleatorias-discretas" class="nav-link" data-scroll-target="#momentos-de-variables-aleatorias-discretas"><span class="header-section-number">3.9</span> Momentos de variables aleatorias discretas</a>
   <ul class="collapse">
   <li><a href="#esperanza-de-un-variable-aleatoria-discreta" id="toc-esperanza-de-un-variable-aleatoria-discreta" class="nav-link" data-scroll-target="#esperanza-de-un-variable-aleatoria-discreta"><span class="header-section-number">3.9.1</span> Esperanza de un variable aleatoria discreta</a></li>
+  <li><a href="#series-geométricas" id="toc-series-geométricas" class="nav-link" data-scroll-target="#series-geométricas"><span class="header-section-number">3.9.2</span> Series geométricas</a></li>
+  <li><a href="#momentos-de-una-variable-aleatoria.-varianza" id="toc-momentos-de-una-variable-aleatoria.-varianza" class="nav-link" data-scroll-target="#momentos-de-una-variable-aleatoria.-varianza"><span class="header-section-number">3.9.3</span> Momentos de una variable aleatoria. Varianza</a></li>
+  <li><a href="#medidas-de-la-variabilidad" id="toc-medidas-de-la-variabilidad" class="nav-link" data-scroll-target="#medidas-de-la-variabilidad"><span class="header-section-number">3.9.4</span> Medidas de la variabilidad</a></li>
+  <li><a href="#propiedades-de-la-varianza" id="toc-propiedades-de-la-varianza" class="nav-link" data-scroll-target="#propiedades-de-la-varianza"><span class="header-section-number">3.9.5</span> Propiedades de la varianza</a></li>
   </ul></li>
-  <li><a href="#series-geométricas" id="toc-series-geométricas" class="nav-link" data-scroll-target="#series-geométricas"><span class="header-section-number">3.10</span> Series geométricas</a></li>
-  <li><a href="#momentos-de-una-variable-aleatoria.-varianza" id="toc-momentos-de-una-variable-aleatoria.-varianza" class="nav-link" data-scroll-target="#momentos-de-una-variable-aleatoria.-varianza"><span class="header-section-number">3.11</span> Momentos de una variable aleatoria. Varianza</a></li>
-  <li><a href="#medidas-de-la-variabilidad" id="toc-medidas-de-la-variabilidad" class="nav-link" data-scroll-target="#medidas-de-la-variabilidad"><span class="header-section-number">3.12</span> Medidas de la variabilidad</a></li>
-  <li><a href="#propiedades-de-la-varianza" id="toc-propiedades-de-la-varianza" class="nav-link" data-scroll-target="#propiedades-de-la-varianza"><span class="header-section-number">3.13</span> Propiedades de la varianza</a></li>
-  <li><a href="#se-la-denomina-desviación-t" id="toc-se-la-denomina-desviación-t" class="nav-link" data-scroll-target="#se-la-denomina-desviación-t"><span class="header-section-number">3.14</span> se la denomina desviación t</a></li>
-  <li><a href="#variables-aleatorias-continuas." id="toc-variables-aleatorias-continuas." class="nav-link" data-scroll-target="#variables-aleatorias-continuas."><span class="header-section-number">3.15</span> Variables aleatorias continuas.</a></li>
-  <li><a href="#esperanza-y-varianza-para-variables-aleatorias-continuas" id="toc-esperanza-y-varianza-para-variables-aleatorias-continuas" class="nav-link" data-scroll-target="#esperanza-y-varianza-para-variables-aleatorias-continuas"><span class="header-section-number">3.16</span> Esperanza y varianza para variables aleatorias continuas</a></li>
-  <li><a href="#esperanza-de-transformaciones-lineales-de-v.a.-continuas" id="toc-esperanza-de-transformaciones-lineales-de-v.a.-continuas" class="nav-link" data-scroll-target="#esperanza-de-transformaciones-lineales-de-v.a.-continuas"><span class="header-section-number">3.17</span> Esperanza de transformaciones lineales de v.a. continuas</a></li>
-  <li><a href="#transformaciones-de-variables-aleatorias" id="toc-transformaciones-de-variables-aleatorias" class="nav-link" data-scroll-target="#transformaciones-de-variables-aleatorias"><span class="header-section-number">3.18</span> Transformaciones de variables aleatorias</a></li>
-  <li><a href="#método-general-de-transformación-de-v.a." id="toc-método-general-de-transformación-de-v.a." class="nav-link" data-scroll-target="#método-general-de-transformación-de-v.a."><span class="header-section-number">3.19</span> Método general de transformación de v.a.</a></li>
-  <li><a href="#desigualdades-de-markov-y-de-chebychev" id="toc-desigualdades-de-markov-y-de-chebychev" class="nav-link" data-scroll-target="#desigualdades-de-markov-y-de-chebychev"><span class="header-section-number">3.20</span> Desigualdades de Markov y de Chebychev</a>
+  <li><a href="#transformaiones-lineales-de-v.a." id="toc-transformaiones-lineales-de-v.a." class="nav-link" data-scroll-target="#transformaiones-lineales-de-v.a."><span class="header-section-number">3.10</span> Transformaiones lineales de v.a.</a></li>
+  <li><a href="#variables-aleatorias-continuas." id="toc-variables-aleatorias-continuas." class="nav-link" data-scroll-target="#variables-aleatorias-continuas."><span class="header-section-number">3.11</span> Variables aleatorias continuas.</a></li>
+  <li><a href="#esperanza-y-varianza-para-variables-aleatorias-continuas" id="toc-esperanza-y-varianza-para-variables-aleatorias-continuas" class="nav-link" data-scroll-target="#esperanza-y-varianza-para-variables-aleatorias-continuas"><span class="header-section-number">3.12</span> Esperanza y varianza para variables aleatorias continuas</a></li>
+  <li><a href="#esperanza-de-transformaciones-lineales-de-v.a.-continuas" id="toc-esperanza-de-transformaciones-lineales-de-v.a.-continuas" class="nav-link" data-scroll-target="#esperanza-de-transformaciones-lineales-de-v.a.-continuas"><span class="header-section-number">3.13</span> Esperanza de transformaciones lineales de v.a. continuas</a></li>
+  <li><a href="#transformaciones-de-variables-aleatorias" id="toc-transformaciones-de-variables-aleatorias" class="nav-link" data-scroll-target="#transformaciones-de-variables-aleatorias"><span class="header-section-number">3.14</span> Transformaciones de variables aleatorias</a></li>
+  <li><a href="#método-general-de-transformación-de-v.a." id="toc-método-general-de-transformación-de-v.a." class="nav-link" data-scroll-target="#método-general-de-transformación-de-v.a."><span class="header-section-number">3.15</span> Método general de transformación de v.a.</a></li>
+  <li><a href="#desigualdades-de-markov-y-de-chebychev" id="toc-desigualdades-de-markov-y-de-chebychev" class="nav-link" data-scroll-target="#desigualdades-de-markov-y-de-chebychev"><span class="header-section-number">3.16</span> Desigualdades de Markov y de Chebychev</a>
   <ul class="collapse">
-  <li><a href="#desigualdad-de-markov" id="toc-desigualdad-de-markov" class="nav-link" data-scroll-target="#desigualdad-de-markov"><span class="header-section-number">3.20.1</span> Desigualdad de Markov</a></li>
-  <li><a href="#desigualdad-de-markov-1" id="toc-desigualdad-de-markov-1" class="nav-link" data-scroll-target="#desigualdad-de-markov-1"><span class="header-section-number">3.20.2</span> Desigualdad de Markov</a></li>
+  <li><a href="#desigualdad-de-markov" id="toc-desigualdad-de-markov" class="nav-link" data-scroll-target="#desigualdad-de-markov"><span class="header-section-number">3.16.1</span> Desigualdad de Markov</a></li>
+  <li><a href="#desigualdad-de-markov-1" id="toc-desigualdad-de-markov-1" class="nav-link" data-scroll-target="#desigualdad-de-markov-1"><span class="header-section-number">3.16.2</span> Desigualdad de Markov</a></li>
   </ul></li>
-  <li><a href="#desigualdad-de-chebychev" id="toc-desigualdad-de-chebychev" class="nav-link" data-scroll-target="#desigualdad-de-chebychev"><span class="header-section-number">3.21</span> Desigualdad de Chebychev</a>
+  <li><a href="#desigualdad-de-chebychev" id="toc-desigualdad-de-chebychev" class="nav-link" data-scroll-target="#desigualdad-de-chebychev"><span class="header-section-number">3.17</span> Desigualdad de Chebychev</a>
   <ul class="collapse">
-  <li><a href="#uso-de-la-desigualdad-de-chebychev" id="toc-uso-de-la-desigualdad-de-chebychev" class="nav-link" data-scroll-target="#uso-de-la-desigualdad-de-chebychev"><span class="header-section-number">3.21.1</span> Uso de la desigualdad de Chebychev</a></li>
+  <li><a href="#uso-de-la-desigualdad-de-chebychev" id="toc-uso-de-la-desigualdad-de-chebychev" class="nav-link" data-scroll-target="#uso-de-la-desigualdad-de-chebychev"><span class="header-section-number">3.17.1</span> Uso de la desigualdad de Chebychev</a></li>
+  </ul></li>
+  <li><a href="#más-formas-de-la-desgualdad-de-chebychev" id="toc-más-formas-de-la-desgualdad-de-chebychev" class="nav-link" data-scroll-target="#más-formas-de-la-desgualdad-de-chebychev"><span class="header-section-number">3.18</span> Más formas de la desgualdad de Chebychev</a>
+  <ul class="collapse">
+  <li><a href="#la-varianza-como-medida-de-dispersión" id="toc-la-varianza-como-medida-de-dispersión" class="nav-link" data-scroll-target="#la-varianza-como-medida-de-dispersión"><span class="header-section-number">3.18.1</span> La varianza como medida de dispersión</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -290,15 +294,22 @@ window.Quarto = {
 
 <section id="introducción" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="introducción"><span class="header-section-number">3.1</span> Introducción</h2>
-<p>Hasta ahora nuestros sucesos han sido de varios tipos: <span class="math inline">\(\{C,+\}\)</span> en la moneda, nombres de periódicos, ángulos en una ruleta, número de veces que sale cara en el lanzamiento de una moneda etc.</p>
+<p>Hasta ahora nuestros sucesos han sido de varios tipos: <span class="math inline">\(\{C,+\}\)</span> en la moneda, nombres de periódicos, ángulos en una ruleta, número de veces que sale cara en el lanzamiento de una moneda etc….</p>
 <p>Necesitamos estandarizar de alguna manera todos estos sucesos. Una solución es asignar a cada suceso un cierto conjunto de números reales, es decir, convertir todos los sucesos en <em>sucesos de números reales</em> para trabajar con ellos de forma unificada.</p>
 <p>Para conseguirlo utilizaremos unas funciones que transformen los elementos del espacio muestral en números; esta funciones son las variables aleatorias.</p>
 </section>
 <section id="definición-de-variable-aleatoria" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="definición-de-variable-aleatoria"><span class="header-section-number">3.2</span> Definición de variable aleatoria</h2>
 <p>Comenzaremos dando una definición poco rigurosa, pero suficiente, de variable aleatoria.</p>
-<p><l class="definition"> Variable Aleatoria (definición práctica) </l></p>
+<div class="callout-definicion">
+<div class="callout-title">
+<p><i class="bi bi-book"> Variable Aleatoria (definición práctica)</i></p>
+</div>
+<div class="callout-body">
 <p>Una variable aleatoria (v.a.) es una aplicación que toma valores numéricos determinados por el resultado de un experimento aleatorio</p>
+</div>
+</div>
+<p><br> <br></p>
 <div class="callout-nota">
 <div class="callout-title">
 <p><i class="bi bi-info-circle"> Notación </i></p>
@@ -463,9 +474,10 @@ caso.}\end{array}\right.\]</span></p>
 </ul>
 </div>
 </div>
+<p><br> <br></p>
 <div class="callout-ejemplo">
 <div class="callout-title">
-<p><i class="bi bi-info-circle">Ejemplo: urna con bolas</i></p>
+<p><i class="bi bi-info-circle"> Ejemplo: lanzmiento moneda</i></p>
 </div>
 <div class="callout-body">
 <p>Lanzamos al aire tres veces, de forma independiente, una moneda perfecta. El espacio muestral de este experimento es <span class="math display">\[\Omega=\{ccc,cc+,c+c,+cc,c++,+c+,++c,+++\}\]</span> (expresados en orden de aparición).</p>
@@ -518,11 +530,11 @@ P(X=0)=P(\{+++\})=\frac18,\\ P(X=1)=P(\{c++,+c+,++c\})=\frac38,\\
 <p><span class="math display">\[P(X&gt;x)=1-P(\overline{\left\{X&gt;x\right\}})=1-P(X\leq x)=1-F_{X}(x),\]</span></p>
 <p>lo que demuestra la primera propiedad.</p>
 <p>Por otro lado, si <span class="math inline">\(X\)</span> se encuentra entre dos valores <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> <span class="math inline">\(\left\{a&lt; X \leq b\right\}= \left\{X\leq b\right\}-\left\{X\leq  a\right\}\)</span>. Ahora podemos hacer</p>
-<p><span class="math display">\[\begin{eqnarray*}
-P(a&lt;X\leq b)&amp;=&amp;P(\left\{X\leq b\right\}-\left\{X\leq a\right\})\\
-&amp;=&amp; P(\left\{X\leq b\right\})-P(\left\{X\leq a\right\})\\
-&amp;=&amp; F_{X}(b)-F_{X}(a).
-\end{eqnarray*}\]</span></p>
+<p><span class="math display">\[\begin{aligned}
+P(a&lt;X\leq b)= &amp; P(\left\{X\leq b\right\}-\left\{X\leq a\right\})\\
+= &amp;  P(\left\{X\leq b\right\})-P(\left\{X\leq a\right\})\\
+= &amp;  F_{X}(b)-F_{X}(a).
+\end{aligned}\]</span></p>
 <p>Lo que finaliza la demistración de la propiedad.</p>
 <div class="callout-definicion">
 <div class="callout-title">
@@ -548,8 +560,7 @@ P(a&lt;X\leq b)&amp;=&amp;P(\left\{X\leq b\right\}-\left\{X\leq a\right\})\\
 <div class="callout-body">
 <p>En las propiedades anteriores no se pueden cambiar en general las desigualdades de estrictas o no estrictas.</p>
 <p>Veamos que propiedades tenemos cuando se cambian estas desigualdades.</p>
-<p>Dada una <span class="math inline">\(F_{X}\)</span> una función de distribución de la v.a. <span class="math inline">\(X\)</span> y denotamos por <span class="math display">\[F_{X}(x_0^{-})=\displaystyle \lim_{x\to x_0^{-}} F_{X}(x),\]</span>,</p>
-<p>entonces se cumplen las siguientes igualdades:</p>
+<p>Dada una <span class="math inline">\(F_{X}\)</span> una función de distribución de la v.a. <span class="math inline">\(X\)</span> y denotamos por <span class="math inline">\(F_{X}(x_0^{-})=\displaystyle \lim_{x\to x_0^{-}} F_{X}(x),\)</span>, entonces se cumplen las siguientes igualdades:</p>
 <ul>
 <li><span class="math inline">\(P(X=x)=F_{X}(x)-F_{X}(x^{-})\)</span>.</li>
 <li><span class="math inline">\(P(a&lt; X&lt; b)=F_{X}(b^{-})-F_{X}(a)\)</span>.</li>
@@ -578,10 +589,12 @@ x_0.\)</span></li>
 <p><span class="math display">\[P(X\leq a)=P(X&lt;a)+P(X=a)= P(X&lt;a)+0= P(X&lt;a),\]</span></p>
 <p>lo que demuestra la primera propiedad.</p>
 <p>Para demostrar la segunda basta hacer</p>
-<p><span class="math display">\[
-F_{X}(x_0)= P(X\leq x_0)=P\left(\bigcup_{x\leq
-x_0; x\in D_X} \{x\}\right)= \sum_{x\leq x_0}P(X=x)= \sum_{x\leq x_0}P_{X}(x).
-\]</span> Lo que demuestra estas dos propiedades.</p>
+<p><span class="math display">\[\begin{aligned}
+F_{X}(x_0)= &amp;  P(X\leq x_0)=P\left(\bigcup_{x\leq
+x_0; x\in D_X} \{x\}\right)= \sum_{x\leq x_0}P(X=x)=\\
+&amp;\sum_{x\leq x_0}P_{X}(x).
+\end{aligned}\]</span></p>
+<p>Lo que demuestra estas dos propiedades.</p>
 <div class="callout-ejemplo">
 <div class="callout-title">
 <p><i class="bi bi-list-task"></i> Ejemplo: dado (continuación)</p>
@@ -590,21 +603,26 @@ x_0; x\in D_X} \{x\}\right)= \sum_{x\leq x_0}P(X=x)= \sum_{x\leq x_0}P_{X}(x).
 <p>En el experimento del dado se tiene que:</p>
 <p><span class="math display">\[P_{X}(x)=\left\{\begin{array}{ll} \frac16, &amp; \mbox{si } x=1,2,3,4,5,6\\ 0, &amp; \mbox{en el resto de casos.}\end{array}\right.\]</span></p>
 <p>por lo tanto</p>
-<p><span class="math display">\[\scriptsize{F_{X}(x)=P(X\leq x)=\left\{\begin{array}{ll}
+<p><span class="math display">\[
+F_{X}(x)=P(X\leq x)=
+\left\{
+    \begin{array}{ll}
    0, &amp; \mbox{si } x&lt;1,\\
    \frac16, &amp;\mbox{si } 1\leq x&lt;2,\\[1ex]
    \frac26, &amp;\mbox{si } 2\leq x&lt;3,\\
    \frac36, &amp;\mbox{si } 3\leq x&lt;4,\\
    \frac46, &amp;\mbox{si } 4\leq x&lt;5,\\
    \frac56, &amp;\mbox{si } 5\leq x&lt;6,\\
-   1, &amp;\mbox{si } 6\leq x.\end{array}\right.}\]</span></p>
+   1, &amp;\mbox{si } 6\leq x.\end{array}
+\right.
+\]</span></p>
 <p>Calculemos más detalladamente algún valor de <span class="math inline">\(F_{X}\)</span>, por ejemplo:</p>
-<p><span class="math display">\[\begin{eqnarray*}
-F_{X}(3.5) &amp; = &amp; P(X\leq 3.5)=  P(\{X=1\}\cup\{X=2\}\cup \{X=3\})\\
-&amp;=&amp; P(\{X=1\})+P(\{X=2\})+P(\{X=3\})\\
-&amp;=&amp; \frac16+\frac16+\frac16=\frac36 =\frac12,
-\end{eqnarray*}\]</span></p>
-<p>o de otra forma</p>
+<p><span class="math display">\[\begin{aligned}
+F_{X}(3.5) &amp; =  P(X\leq 3.5)=  P(\{X=1\}\cup\{X=2\}\cup \{X=3\})\\
+&amp;= P(\{X=1\})+P(\{X=2\})+P(\{X=3\})\\
+&amp;= \frac16+\frac16+\frac16=\frac36 =\frac12,
+\end{aligned}\]</span></p>
+<p>o tambiñen podemos prodeder así:</p>
 <p><span class="math display">\[F_{X}(3.5)=\sum_{x\leq 3.5} P_X(x)=\sum_{x=1}^3 P(X=x)=\sum_{x=1}^3 \frac16= 3 \cdot
    \frac16=\frac12.
 \]</span></p>
@@ -670,14 +688,15 @@ n_6}{n}=\sum_{x=1}^6 x \cdot \frac{n_{x}}{n}.
 <div class="callout-body">
 <p>Sea <span class="math inline">\(X\)</span>= número de erratas en una página de un texto con dominio <span class="math inline">\(D_X=\{0,1,2\}\)</span>.</p>
 <p>Resulta que</p>
-<p><span class="math display">\[\begin{align*}
+<p><span class="math display">\[\begin{aligned}
 P(X=0)&amp;= 0.42,\ P(X=1)=0.4,\ P(X=2)=0.18, \mbox{ por lo tanto, }\\
 E(X)&amp;= 0\cdot 0.42+ 1\cdot 0.4 + 2 \cdot 0.18=0.76.
-\end{align*}\]</span></p>
+\end{aligned}\]</span></p>
 <p>Elegida una página del texto al azar esperamos encontrar <span class="math inline">\(0.76\)</span> errores por página.</p>
 <p>Supongamos que el editor nos paga <span class="math inline">\(2\)</span> euros por cada página que encontremos con <span class="math inline">\(1\)</span> error y <span class="math inline">\(3\)</span> euros por cada página con dos errores (y nada por las páginas correctas) ¿Cuánto <em>esperamos</em> cobrar si analizamos una página?</p>
 </div>
 </div>
+<p><br> <br></p>
 <div class="callout-proposicion">
 <div class="callout-title">
 <p><i class="bi bi-clipboard-check"></i> Propiedad: Esperanzas de funciones de variables aleatorias discretas</p>
@@ -687,6 +706,7 @@ E(X)&amp;= 0\cdot 0.42+ 1\cdot 0.4 + 2 \cdot 0.18=0.76.
 <p><span class="math display">\[E(g(X))=\sum_{x}g(x) \cdot  P_{X}(x).\]</span></p>
 </div>
 </div>
+<p><br> <br></p>
 <div class="callout-proposicion">
 <div class="callout-title">
 <p><i class="bi bi-clipboard-check"></i> Propiedades</p>
@@ -700,10 +720,12 @@ E(X)&amp;= 0\cdot 0.42+ 1\cdot 0.4 + 2 \cdot 0.18=0.76.
 </div>
 </div>
 <p>La demostración de las propiedades anteriores se deja como ejercicio.</p>
+<p><br> <br></p>
 <div class="callout-ejemplo">
 <div class="callout-title">
 <p><i class="bi bi-clipboard-check"></i> Ejemplo: paleta de colores aleatoria</p>
 </div>
+<div class="callout-body">
 <p>Supongamos que estamos sentados delante de nuestro ordenador con un amigo y le decimos que en dos minutos podemos programar una paleta para poner colores a unos gráficos.</p>
 <p>Queremos que la paleta tenga dos botones con las opciones color rojo y color azul. Como hemos programado a gran velocidad resulta que el programa tiene un error; cada vez que se abre la paleta los colores se colocan al azar (con igual probabilidad) en cada botón, así que no sabemos en qué color hemos de pinchar.</p>
 <p>Además, como nos sobraron <span class="math inline">\(15\)</span> segundos para hacer el programa y pensando en la comodidad del usuario, la paleta se cierra después de haber seleccionado un color y hay que volverla a abrir de nuevo.</p>
@@ -714,11 +736,10 @@ P_X(x)=P(X=x)=P(\stackrel{x \mbox{ veces}}{\overbrace{rojo, rojo,\ldots,rojo},az
 =\left(\frac12\right)^{x+1}.
 \]</span></p>
 </div>
-<p>:::::</p>
+</div>
 </section>
-</section>
-<section id="series-geométricas" class="level2" data-number="3.10">
-<h2 data-number="3.10" class="anchored" data-anchor-id="series-geométricas"><span class="header-section-number">3.10</span> Series geométricas</h2>
+<section id="series-geométricas" class="level3" data-number="3.9.2">
+<h3 data-number="3.9.2" class="anchored" data-anchor-id="series-geométricas"><span class="header-section-number">3.9.2</span> Series geométricas</h3>
 <p><strong>Series geométricas</strong></p>
 <ul>
 <li>Una <strong>progresión geométrica</strong> de razón <span class="math inline">\(r\)</span> es una sucesión de la forma<br>
@@ -741,12 +762,12 @@ r^k=\frac1{1-r}\]</span>.</p></li>
 <li><p>En el caso en que se comience en <span class="math inline">\(n_0\)</span> se tiene que <span class="math display">\[\sum_{k=n_0}^{+\infty} r^k=\frac{r^{n_0}}{1-r}.\]</span></p></li>
 <li><p>Si <span class="math inline">\(|r|&lt;1\)</span> también son convergentes las derivadas, respecto de <span class="math inline">\(r\)</span>, de la serie geométrica y convergen a la derivada correspondiente. Así tenemos que</p></li>
 </ul>
-<p><span class="math display">\[\begin{eqnarray*}
+<p><span class="math display">\[\begin{aligned}
 \left(\sum_{k=0}^{+\infty} r^k\right)'= &amp; \sum_{k=1}^{+\infty}k
 r^{k-1}; \qquad  \left(\frac1{1-r}\right)'=\frac1{(1-r)^2}\\
 \left(\sum_{k=0}^{+\infty} r^k\right)^{''}=&amp;\sum_{k=2}^{+\infty}k (k-1)
 r^{k-2}  ;\qquad  \left(\frac1{1-r}\right)^{''}=\frac2{(1-r)^3}
-\end{eqnarray*}\]</span>.</p>
+\end{aligned}\]</span>.</p>
 </div>
 </div>
 <p><br> <br></p>
@@ -756,16 +777,19 @@ r^{k-2}  ;\qquad  \left(\frac1{1-r}\right)^{''}=\frac2{(1-r)^3}
 </div>
 <div class="callout-body">
 <p>Si seguimos con el ejemplo de la paleta de colores, su esperanza es:</p>
-<p><span class="math display">\[E(X)=\sum_{x=0}^{+\infty} x\cdot  P(X=x)=\sum_{x=0}^{+\infty} x\cdot
+<p><span class="math display">\[\begin{aligned}
+E(X)= &amp; \sum_{x=0}^{+\infty} x\cdot  P(X=x)=\sum_{x=0}^{+\infty} x\cdot
 \left(\frac12\right)^{x+1}=  \left(\frac12\right)^2\sum_{x=1}^{+\infty} x\cdot
-\left(\frac12\right)^{x-1}=\left(\frac12\right)^2\cdot
+\left(\frac12\right)^{x-1}\\ &amp; =\left(\frac12\right)^2\cdot
 \frac1{\left(1-\frac12\right)^2}=1.
-\]</span></p>
+\end{aligned}\]</span></p>
 <p>Ahora calculemos su función de distribución</p>
-<p><span class="math display">\[F_X(x)= P(X\leq x)=\sum_{k=0}^x P(X=k)=\sum_{k=0}^x
+<p><span class="math display">\[\begin{aligned}
+F_X(x)= &amp;  P(X\leq x)=\sum_{k=0}^x P(X=k)=\sum_{k=0}^x
 \left(\frac12\right)^{k+1}= \frac{\frac12-\frac12^{x+1}\cdot
-\frac12}{1-\frac12}=1-\left(\frac12\right)^{x+1}.
-\]</span> Como la variable toma valores enteros positivos, podemos calcular su valor esperado de esta otra manera</p>
+\frac12}{1-\frac12}=\\ &amp; 1-\left(\frac12\right)^{x+1}.
+\end{aligned}\]</span></p>
+<p>Como la variable toma valores enteros positivos, podemos calcular su valor esperado de esta otra manera</p>
 <p><span class="math display">\[E(X)=\sum_{x=0}^{+\infty} (1-F_X(x))=\sum_{x=0}^{+\infty}\left(\frac12\right)^{x+1}=\frac12\cdot
 \frac1{1-\frac12}=1.\]</span></p>
 <p>Calculad el valor esperado de la variable</p>
@@ -775,8 +799,8 @@ Y=\mbox{número de intentos para conseguir el color azul.}
 </div>
 </div>
 </section>
-<section id="momentos-de-una-variable-aleatoria.-varianza" class="level2" data-number="3.11">
-<h2 data-number="3.11" class="anchored" data-anchor-id="momentos-de-una-variable-aleatoria.-varianza"><span class="header-section-number">3.11</span> Momentos de una variable aleatoria. Varianza</h2>
+<section id="momentos-de-una-variable-aleatoria.-varianza" class="level3" data-number="3.9.3">
+<h3 data-number="3.9.3" class="anchored" data-anchor-id="momentos-de-una-variable-aleatoria.-varianza"><span class="header-section-number">3.9.3</span> Momentos de una variable aleatoria. Varianza</h3>
 <div class="callout-proposicion">
 <div class="callout-title">
 <p><i class="bi bi-clipboard-check">Definición: Momentos de orden <span class="math inline">\(m\)</span> </i></p>
@@ -796,11 +820,11 @@ Y=\mbox{número de intentos para conseguir el color azul.}
 <li>Como medida básica nos queda definir una medida de lo lejos que están los datos del valor central <span class="math inline">\(E(X)\)</span> una de estas medidas es la varianza de <span class="math inline">\(X\)</span>.</li>
 </ul>
 </section>
-<section id="medidas-de-la-variabilidad" class="level2" data-number="3.12">
-<h2 data-number="3.12" class="anchored" data-anchor-id="medidas-de-la-variabilidad"><span class="header-section-number">3.12</span> Medidas de la variabilidad</h2>
-<div class="callout-proposicion">
+<section id="medidas-de-la-variabilidad" class="level3" data-number="3.9.4">
+<h3 data-number="3.9.4" class="anchored" data-anchor-id="medidas-de-la-variabilidad"><span class="header-section-number">3.9.4</span> Medidas de la variabilidad</h3>
+<div class="callout-definición">
 <div class="callout-title">
-<p><i class="bi bi-clipboard-check">Definición: Varianza</i></p>
+<p><i class="bi bi-clipboard-check"> Definición: Varianza</i></p>
 </div>
 <div class="callout-body">
 <p>Sea <span class="math inline">\(X\)</span> una v.a. Llamaremos <strong>varianza</strong> de <span class="math inline">\(X\)</span> a</p>
@@ -813,22 +837,22 @@ Y=\mbox{número de intentos para conseguir el color azul.}
 </div>
 <div class="callout-proposicion">
 <div class="callout-title">
-<p><i class="bi bi-clipboard-check">&gt; Propiedad </i></p>
+<p><i class="bi bi-clipboard-check"> Propiedad </i></p>
 </div>
 <div class="callout-body">
 <ul>
-<li>Si <span class="math inline">\(X\)</span> es una v.a. discreta con función de probabilidad <span class="math inline">\(P_X\)</span> su varianza es <span class="math display">\[\sigma_{X}^2=Var(X)=E((X-E(X))^2)=\sum_{x}(x-E(X))^2\cdot  P_{X}(x).\]</span></li>
-<li>Sea <span class="math inline">\(X\)</span> una v.a. <span class="math display">\[Var(X)=E(X^2)-(E(X))^2=\sum_{x} x^2\cdot  P_{X}(X)-(E(X))^2\]</span></li>
+<li>Si <span class="math inline">\(X\)</span> es una v.a. discreta con función de probabilidad <span class="math inline">\(P_X\)</span> su varianza es <span class="math inline">\(\sigma_{X}^2=Var(X)=E((X-E(X))^2)=\sum_{x}(x-E(X))^2\cdot  P_{X}(x).\)</span></li>
+<li>Sea <span class="math inline">\(X\)</span> una v.a. <span class="math inline">\(Var(X)=E(X^2)-(E(X))^2=\sum_{x} x^2\cdot  P_{X}(X)-(E(X))^2\)</span></li>
 </ul>
 </div>
 </div>
 <p><strong>Demostración</strong></p>
 <p><strong>Demostración de b)</strong></p>
-<p><span class="math display">\[\begin{eqnarray*}
-Var(X)&amp;= &amp; \sum_{x}(x-E(X))^2 P_{X}(x) = \sum_{x}(x^2 -2\cdot x\cdot E(X)+(E(X)^2)\cdot P_{X}(x)\\
-&amp;=&amp; \sum_{x}x^2\cdot P_{X}(x) -  E(X)\sum_{x}2\cdot x \cdot P_{X}(x) + (E(X)^2)\cdot\sum_{x} P_{X}(x)\\
-&amp;=&amp; E(X^2)- 2 E(X)\cdot E(X) + (E(X))^2=E(X^2)-(E(X))^2.
-\end{eqnarray*}\]</span></p>
+<p><span class="math display">\[\begin{aligned}
+Var(X)= &amp; \sum_{x}(x-E(X))^2 P_{X}(x) = \sum_{x}(x^2 -2\cdot x\cdot E(X)+(E(X)^2)\cdot P_{X}(x)\\
+= &amp;  \sum_{x}x^2\cdot P_{X}(x) -  E(X)\sum_{x}2\cdot x \cdot P_{X}(x) + (E(X)^2)\cdot\sum_{x} P_{X}(x)\\
+= &amp;  E(X^2)- 2 E(X)\cdot E(X) + (E(X))^2=E(X^2)-(E(X))^2.
+\end{aligned}\]</span></p>
 <p>Se deja como ejercicio la primera afirmación.</p>
 <div class="callout-ejemplo">
 <div class="callout-title">
@@ -855,8 +879,8 @@ Var(X)=E(X^2)-(E(X))^2 = E(X^2)-(0.76)^2.
 </div>
 </div>
 </section>
-<section id="propiedades-de-la-varianza" class="level2" data-number="3.13">
-<h2 data-number="3.13" class="anchored" data-anchor-id="propiedades-de-la-varianza"><span class="header-section-number">3.13</span> Propiedades de la varianza</h2>
+<section id="propiedades-de-la-varianza" class="level3" data-number="3.9.5">
+<h3 data-number="3.9.5" class="anchored" data-anchor-id="propiedades-de-la-varianza"><span class="header-section-number">3.9.5</span> Propiedades de la varianza</h3>
 <p><l class="prop"> <strong>Propiedades de la varianza</strong></l></p>
 <ul>
 <li><span class="math inline">\(Var(X)\geq 0\)</span>.</li>
@@ -868,8 +892,9 @@ Var(X)=E(X^2)-(E(X))^2 = E(X^2)-(0.76)^2.
 <p>Se deja como ejercicio la demostración de estas propiedades.</p>
 </div>
 </section>
-<section id="se-la-denomina-desviación-t" class="level2" data-number="3.14">
-<h2 data-number="3.14" class="anchored" data-anchor-id="se-la-denomina-desviación-t"><span class="header-section-number">3.14</span> se la denomina desviación t</h2>
+</section>
+<section id="transformaiones-lineales-de-v.a." class="level2" data-number="3.10">
+<h2 data-number="3.10" class="anchored" data-anchor-id="transformaiones-lineales-de-v.a."><span class="header-section-number">3.10</span> Transformaiones lineales de v.a.</h2>
 <div class="callout-definicion">
 <div class="callout-title">
 <p><i class="bi bi-book"> Transformación lineal </i></p>
@@ -881,7 +906,7 @@ Var(X)=E(X^2)-(E(X))^2 = E(X^2)-(0.76)^2.
 <p><br> <br></p>
 <div class="callout-propiedad">
 <div class="callout-title">
-<p><i class="bi bi-book">EPorpiedad: Esperanza de una trnaformación lineal </i></p>
+<p><i class="bi bi-book"> Propiedad: Esperanza de una transformación lineal </i></p>
 </div>
 <div class="callout-body">
 <p>Sea <span class="math inline">\(X\)</span> una v.a. con <span class="math inline">\(E(X)=\mu_{X}\)</span> y <span class="math inline">\(Var(X)=\sigma_{X}^2\)</span> y <span class="math inline">\(a,b\in\mathbb{R}\)</span>. Entonces si <span class="math inline">\(Y=a+b\cdot  X\)</span>:</p>
@@ -893,15 +918,15 @@ Var(X)=E(X^2)-(E(X))^2 = E(X^2)-(0.76)^2.
 </div>
 </div>
 <p><strong>Demostración</strong>:</p>
-<p><span class="math display">\[\begin{eqnarray*}
-E(Y)&amp;=&amp; E(a+bX)=\sum_{x}(a+b\cdot x)\cdot P_{X}(x)\\
-&amp;=&amp; a \sum_{x} P_{X}(x) + b \sum_{x} x\cdot P_{X}(x)\\
-&amp;=&amp; a + b\cdot E(X)=a + b\cdot\mu_{X}.
-\end{eqnarray*}\]</span></p>
+<p><span class="math display">\[\begin{aligned}
+E(Y)= &amp;  E(a+bX)=\sum_{x}(a+b\cdot x)\cdot P_{X}(x)\\
+= &amp;  a \sum_{x} P_{X}(x) + b \sum_{x} x\cdot P_{X}(x)\\
+= &amp;  a + b\cdot E(X)=a + b\cdot\mu_{X}.
+\end{aligned}\]</span></p>
 <p>Lo que demuestra esta propiedad, las emás se dejan comom ejercicio.</p>
 </section>
-<section id="variables-aleatorias-continuas." class="level2" data-number="3.15">
-<h2 data-number="3.15" class="anchored" data-anchor-id="variables-aleatorias-continuas."><span class="header-section-number">3.15</span> Variables aleatorias continuas.</h2>
+<section id="variables-aleatorias-continuas." class="level2" data-number="3.11">
+<h2 data-number="3.11" class="anchored" data-anchor-id="variables-aleatorias-continuas."><span class="header-section-number">3.11</span> Variables aleatorias continuas.</h2>
 <p>Como ya hemos dicho las variables aleatorias continuas toman valores en intervalos o áreas.</p>
 <p>Lo más habitual es que estas variables tengan función de distribución continua y derivable (salvo a los más en una cantidad finita o numerable de puntos:-)).</p>
 <p>En lo que sigue supondremos que la función de distribución de variables aleatorias continuas cumplen estas propiedades.</p>
@@ -943,13 +968,14 @@ x, &amp; \mbox{si } 0&lt;x&lt;1,\\
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="variables_aleatorias_files/figure-html/figUNIF-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:45.0%"></p>
+<p><img src="variables_aleatorias_files/figure-html/figUNIF-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
 </div>
+<p><br> <br></p>
 <div class="callout-proposicion">
 <div class="callout-title">
 <p><i class="bi bi-clipboard-check"> Propiedades</i></p>
@@ -968,12 +994,12 @@ x, &amp; \mbox{si } 0&lt;x&lt;1,\\
 <p>Para otras, como la siguiente, podemos hacer</p>
 <p><span class="math display">\[\{X\leq a\}\cap \{a&lt;X&lt;b\}=\emptyset\]</span> <span class="math display">\[\{X\leq a\}\cup \{a&lt;X&lt;b\}=\{X&lt;b\},\]</span></p>
 <p>entonces</p>
-<p><span class="math inline">\(P(X&lt; b)= P(\{X\leq a\}\cup \{a&lt;X&lt;b\}) = P(X\leq a)+P(a&lt;X&lt;b)= P(X&lt; a)+P(a&lt;X&lt;b).\)</span></p>
+<p>\begin{eqalign<em>} P(X&lt; b) = &amp; P({Xa}{a&lt;X&lt;b}) = P(Xa)+P(a&lt;X&lt;b)= \ &amp; P(X&lt; a)+P(a&lt;X&lt;b).$ \end{align</em>}</p>
 <p>La demostración de las otras propiedades las dejamos como ejercicio.</p>
 <p><br> <br></p>
 <div class="callout-proposicion">
 <div class="callout-title">
-<p><i class="bi bi-clipboard-check">Propiedades de la Función de Distribución </i></p>
+<p><i class="bi bi-clipboard-check"> Propiedades de la Función de Distribución </i></p>
 </div>
 <div class="callout-body">
 <p>Las propiedades anteriores y combinaciones de ellas se pueden escribir utilizando la función de distribución de <span class="math inline">\(X\)</span>:</p>
@@ -999,7 +1025,7 @@ x, &amp; \mbox{si } 0&lt;x&lt;1,\\
 <p><br> <br></p>
 <div class="callout-definicion">
 <div class="callout-title">
-<p><i class="bi bi-book"></i> Definición: Función de densidad</p>
+<p><i class="bi bi-book"> Definición: Función de densidad </i></p>
 </div>
 <div class="callout-body">
 <p>Una función <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span> es una función de densidad sobre <span class="math inline">\(\mathbb{R}\)</span> si cumple que</p>
@@ -1012,7 +1038,7 @@ x, &amp; \mbox{si } 0&lt;x&lt;1,\\
 </div>
 <div class="callout-teorema">
 <div class="callout-title">
-<p><i class="bi bi-book"> Propiedad: relación entre la función de distribcuión y la densidad</i></p>
+<p><i class="bi bi-book"> Propiedad: Relación entre la función de distribución y la densidad</i></p>
 </div>
 <div class="callout-body">
 <p>Sea <span class="math inline">\(X\)</span> una v.a. con función de distribución <span class="math inline">\(F_X\)</span>. Sea <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span> una función de densidad tal que</p>
@@ -1066,7 +1092,7 @@ f_{X}(x)=\left\{
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="variables_aleatorias_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+<p><img src="variables_aleatorias_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -1082,10 +1108,10 @@ f_{X}(x)=\left\{
 <p>La función de densidad nos permite calcular diversas probabilidades.</p>
 <p><l class="prop">Propiedades de la función de densidad </l></p>
 <ul>
-<li><p>Sea <span class="math inline">\(X\)</span> una v.a. continua con función de distribución <span class="math inline">\(F_X\)</span> y de densidad <span class="math inline">\(f_X\)</span>, entonces <span class="math display">\[\begin{eqnarray*}
-P(a&lt; X&lt; b) &amp;=&amp;  P(a&lt;X\leq b)= P(a\leq X&lt; b)=\\
+<li><p>Sea <span class="math inline">\(X\)</span> una v.a. continua con función de distribución <span class="math inline">\(F_X\)</span> y de densidad <span class="math inline">\(f_X\)</span>, entonces <span class="math display">\[\begin{aligned}
+P(a&lt; X&lt; b) = &amp;   P(a&lt;X\leq b)= P(a\leq X&lt; b)=\\
 &amp; &amp; P(a\leq X\leq b)= \displaystyle\int_{a}^b f_X(x) dx.
-\end{eqnarray*}\]</span></p></li>
+\end{aligned}\]</span></p></li>
 <li><p>Si <span class="math inline">\(A\)</span> es un subconjunto adecuado de <span class="math inline">\(\mathbb{R}\)</span> entonces <span class="math display">\[P(X\in A)=\displaystyle\int_{A} f(x) dx=\displaystyle\int_{A\cap D_X} f(x) dx.
 \]</span></p></li>
 </ul>
@@ -1153,8 +1179,8 @@ f_{X}(x)=F_{X}'(x)=\left\{\begin{array}{ll}
 </div>
 </div>
 </section>
-<section id="esperanza-y-varianza-para-variables-aleatorias-continuas" class="level2" data-number="3.16">
-<h2 data-number="3.16" class="anchored" data-anchor-id="esperanza-y-varianza-para-variables-aleatorias-continuas"><span class="header-section-number">3.16</span> Esperanza y varianza para variables aleatorias continuas</h2>
+<section id="esperanza-y-varianza-para-variables-aleatorias-continuas" class="level2" data-number="3.12">
+<h2 data-number="3.12" class="anchored" data-anchor-id="esperanza-y-varianza-para-variables-aleatorias-continuas"><span class="header-section-number">3.12</span> Esperanza y varianza para variables aleatorias continuas</h2>
 <p>Algunas de estas propiedades ya han sido estudiadas en el caso de variables aleatorias discretas. Por ello, en esta sección nos centraremos en presentar sus definiciones, métodos de cálculo y algunos ejemplos en el contexto continuo.</p>
 <p>A partir de ahora, salvo indicación en contrario, consideraremos que <span class="math inline">\(X\)</span> es una variable aleatoria continua con función de densidad <span class="math inline">\(f_{X}(x)\)</span></p>
 <div class="callout-definicion">
@@ -1189,23 +1215,23 @@ f_{X}(x)=F_{X}'(x)=\left\{\begin{array}{ll}
 <p><br> <br></p>
 <div class="callout-ejemplo">
 <div class="callout-title">
-<p><i class="bi bi-list-task"> Ejemplo: diana (continuación) </i></p>
+<p><i class="bi bi-list-task"> Ejemplo: Diana (continuación) </i></p>
 </div>
 <div class="callout-body">
 <p><span class="math display">\[\mu_{X}=  \int_0^1 x  dx=\left[\frac{x}{2}\right]_0^1=\frac12,\]</span> <span class="math display">\[E(X^2)=\int_0^1 x^2 dx=\left[\frac{x^3}{3}\right]_0^1=\frac13,\]</span></p>
 <p><span class="math display">\[Var(X)=E(X^2)-E(X)^2=\frac13-\left(\frac12\right)^2=\frac1{12}.\]</span> Podemos comprobar que con la definición directa el resultado es el mismo</p>
-<p><span class="math display">\[
-Var(X)=E\left(\left(X-E(X)\right)^2\right)=
-\int_0^1 \left(x-\frac12\right)^2 dx=
+<p><span class="math display">\[\begin{aligned}
+Var(X)= &amp; E\left(\left(X-E(X)\right)^2\right)=
+\int_0^1 \left(x-\frac12\right)^2 dx= \\ &amp;
 \left[\frac13 \left(x-\frac12\right)^3\right]_0^1=
 \frac13\cdot \left(\left(1-\frac12\right)^3-\left(0-\frac12\right)^3\right)
 = \frac13\left(\frac18-\left(-\frac18\right)\right)=\frac13\cdot \frac28=\frac1{12}.
-\]</span></p>
+\end{aligned}\]</span></p>
 </div>
 </div>
 </section>
-<section id="esperanza-de-transformaciones-lineales-de-v.a.-continuas" class="level2" data-number="3.17">
-<h2 data-number="3.17" class="anchored" data-anchor-id="esperanza-de-transformaciones-lineales-de-v.a.-continuas"><span class="header-section-number">3.17</span> Esperanza de transformaciones lineales de v.a. continuas</h2>
+<section id="esperanza-de-transformaciones-lineales-de-v.a.-continuas" class="level2" data-number="3.13">
+<h2 data-number="3.13" class="anchored" data-anchor-id="esperanza-de-transformaciones-lineales-de-v.a.-continuas"><span class="header-section-number">3.13</span> Esperanza de transformaciones lineales de v.a. continuas</h2>
 <div class="callout-proposicion">
 <div class="callout-title">
 <p><i class="bi bi-clipboard-check"></i> Propiedad</p>
@@ -1231,8 +1257,8 @@ Var(X)=E\left(\left(X-E(X)\right)^2\right)=
 </div>
 </div>
 </section>
-<section id="transformaciones-de-variables-aleatorias" class="level2" data-number="3.18">
-<h2 data-number="3.18" class="anchored" data-anchor-id="transformaciones-de-variables-aleatorias"><span class="header-section-number">3.18</span> Transformaciones de variables aleatorias</h2>
+<section id="transformaciones-de-variables-aleatorias" class="level2" data-number="3.14">
+<h2 data-number="3.14" class="anchored" data-anchor-id="transformaciones-de-variables-aleatorias"><span class="header-section-number">3.14</span> Transformaciones de variables aleatorias</h2>
 <p>Muchas variables aleatorias son funciones de otras v.a. En lo que sigue resumiremos diversas técnicas para dada una v.a. <span class="math inline">\(X\)</span> y una transformación <span class="math inline">\(Y=h(X)\)</span> encontrar <span class="math inline">\(F_{Y}\)</span> a partir de <span class="math inline">\(F_{X}\)</span>.</p>
 <div class="callout-proposicion">
 <div class="callout-title">
@@ -1275,8 +1301,8 @@ Var(X)=E\left(\left(X-E(X)\right)^2\right)=
 </div>
 </div>
 </i></i></section><i class="bi bi-clipboard-check"><i class="bi bi-clipboard-check">
-<section id="método-general-de-transformación-de-v.a." class="level2" data-number="3.19">
-<h2 data-number="3.19" class="anchored" data-anchor-id="método-general-de-transformación-de-v.a."><span class="header-section-number">3.19</span> Método general de transformación de v.a.</h2>
+<section id="método-general-de-transformación-de-v.a." class="level2" data-number="3.15">
+<h2 data-number="3.15" class="anchored" data-anchor-id="método-general-de-transformación-de-v.a."><span class="header-section-number">3.15</span> Método general de transformación de v.a.</h2>
 <p>Cuando no podamos aplicar las propiedades anteriores intentaremos calcular primero la función de distribución de la transformación y luego su densidad.</p>
 <p>Notemos que en general si <span class="math inline">\(Y=g(X)\)</span> es una v.a. transformación de la v.a. <span class="math inline">\(X\)</span> entonces</p>
 <p><span class="math display">\[
@@ -1290,16 +1316,16 @@ F_{Y}(y)=P(g(X)\leq y)=P(X\leq g^{-1}(y))=F_{X}(g^{-1}(y)),
 F_{Y}(y)=P(g(X)\leq y)=P(X\geq g^{-1}(y))=1-F_{X}(g^{-1}(y)).
 \]</span></p>
 </section>
-<section id="desigualdades-de-markov-y-de-chebychev" class="level2" data-number="3.20">
-<h2 data-number="3.20" class="anchored" data-anchor-id="desigualdades-de-markov-y-de-chebychev"><span class="header-section-number">3.20</span> Desigualdades de Markov y de Chebychev</h2>
+<section id="desigualdades-de-markov-y-de-chebychev" class="level2" data-number="3.16">
+<h2 data-number="3.16" class="anchored" data-anchor-id="desigualdades-de-markov-y-de-chebychev"><span class="header-section-number">3.16</span> Desigualdades de Markov y de Chebychev</h2>
 <p>En esta sección distintas desigualdades que acotan determinadas probabilidades de una variable aleatoria.</p>
 <p>Estas desigualdades sirven en algunos casos para acotar probabilidades de determinados sucesos.</p>
 <p>También son útiles desde el punto de vista teórico, por ejemplo para justificar que la varianza es una medida de la dispersión de los datos.</p>
-<section id="desigualdad-de-markov" class="level3" data-number="3.20.1">
-<h3 data-number="3.20.1" class="anchored" data-anchor-id="desigualdad-de-markov"><span class="header-section-number">3.20.1</span> Desigualdad de Markov</h3>
+<section id="desigualdad-de-markov" class="level3" data-number="3.16.1">
+<h3 data-number="3.16.1" class="anchored" data-anchor-id="desigualdad-de-markov"><span class="header-section-number">3.16.1</span> Desigualdad de Markov</h3>
 <div class="callout-proposicion">
 <div class="callout-title">
-<p><i class="bi bi-clipboard-check"></i> Propiedad: Desigualdad de Markov</p>
+<p><i class="bi bi-clipboard-check"> Propiedad: Desigualdad de Markov </i></p>
 </div>
 <div class="callout-body">
 <p>Sea <span class="math inline">\(X\)</span> una v.a. positiva con <span class="math inline">\(E(X)\)</span> finita. Entonces</p>
@@ -1308,34 +1334,39 @@ F_{Y}(y)=P(g(X)\leq y)=P(X\geq g^{-1}(y))=1-F_{X}(g^{-1}(y)).
 </div>
 <p><strong>Demostración</strong>:</p>
 <p>Si <span class="math inline">\(X\)</span> es continua y solo toma valores positivos</p>
-<p><span class="math display">\[\begin{eqnarray*}
-E(X) &amp;=&amp; \int_{-\infty}^{+\infty} x\cdot f_{X}(x) dx=  \int_0^{+\infty} x\cdot f_{X}(x) dx=  \int_0^{a} x\cdot f_{X}(x) dx +\int_{a}^{+\infty} x\cdot f_{X}(x) dx \\
-&amp; &amp;\geq   \int_{a}^{+\infty} x\cdot
-f_{X}(x) dx \geq a \int_{a}^{+\infty}
+<p><span class="math display">\[\begin{aligned}
+E(X) =&amp; \int_{-\infty}^{+\infty} x\cdot f_{X}(x) dx=  
+\int_0^{+\infty} x\cdot f_{X}(x) dx\\
+&amp; =  \int_0^{a} x\cdot f_{X}(x) dx +\int_{a}^{+\infty} x\cdot f_{X}(x) dx
+\geq   \int_{a}^{+\infty} x\cdot f_{X}(x) dx \\
+&amp; \geq a \int_{a}^{+\infty}
 f_{X}(x) dx = a \cdot  P(X\geq a),
-\end{eqnarray*}\]</span></p>
+\end{aligned}\]</span></p>
 <p>de donde se sigue que</p>
 <p><span class="math display">\[P(X\geq a)\leq \frac{E(X)}{a}.\]</span></p>
 </section>
-<section id="desigualdad-de-markov-1" class="level3" data-number="3.20.2">
-<h3 data-number="3.20.2" class="anchored" data-anchor-id="desigualdad-de-markov-1"><span class="header-section-number">3.20.2</span> Desigualdad de Markov</h3>
+<section id="desigualdad-de-markov-1" class="level3" data-number="3.16.2">
+<h3 data-number="3.16.2" class="anchored" data-anchor-id="desigualdad-de-markov-1"><span class="header-section-number">3.16.2</span> Desigualdad de Markov</h3>
+<div class="callout-proposicion">
+<div class="callout-title">
+<p><i class="bi bi-clipboard-check"> Propiedad: Desigualdad de Markov </i></p>
+</div>
+<div class="callout-body">
 <p>Sea <span class="math inline">\(X\)</span> una v.a. con <span class="math inline">\(E(X)\)</span> finita entonces para todo <span class="math inline">\(a&gt;0\)</span></p>
 <p><span class="math display">\[P(|X|\geq a )\leq \frac{E(|X|)}{a}.\]</span></p>
-<div class="exercise">
-<p><strong>Ejercicio</strong></p>
-<p>Demuestra el corolario anterior a partir de la desigualdad de Markov.</p>
 </div>
+</div>
+<p>Se deja como <strong>ejercicio</strong> la prueba del corolario anterior a partir de la desigualdad de Markov.</p>
 </section>
 </section>
-<section id="desigualdad-de-chebychev" class="level2" data-number="3.21">
-<h2 data-number="3.21" class="anchored" data-anchor-id="desigualdad-de-chebychev"><span class="header-section-number">3.21</span> Desigualdad de Chebychev</h2>
+<section id="desigualdad-de-chebychev" class="level2" data-number="3.17">
+<h2 data-number="3.17" class="anchored" data-anchor-id="desigualdad-de-chebychev"><span class="header-section-number">3.17</span> Desigualdad de Chebychev</h2>
 <div class="callout-proposicion">
 <div class="callout-title">
 <p><i class="bi bi-clipboard-check"> Propiedad: Desigualdad de Chebychev</i></p>
 </div>
 <div class="callout-body">
-<p>La <strong>desigualdad de Chebychev</strong> también se denomina de Chebyshov y en inglés <em>Chebyshev</em>.</p>
-<p><l class="prop"> Desigualdad de Chebychev</l></p>
+<p>La <strong>desigualdad de Chebychev</strong> también se escribe de Chebyshov y en inglés <em>Chebyshev</em>.</p>
 <p>Sea <span class="math inline">\(X\)</span> una v.a.con <span class="math inline">\(E(X)=\mu\)</span> y <span class="math inline">\(Var(X)=\sigma^2\)</span> entonces para todo <span class="math inline">\(a&gt;0\)</span>,</p>
 <p><span class="math display">\[P(|X-\mu|\geq a)\leq \frac{\sigma^2}{a^2}.\]</span></p>
 </div>
@@ -1355,8 +1386,8 @@ P(Y^2\geq a^2) \leq
 P(Y^2\geq a^2)=P(|Y|\geq a)= P(|X-\mu|\geq a),
 \]</span></p>
 <p>hecho que, junto con la desigualdad anterior, demuestra el resultado.</p>
-<section id="uso-de-la-desigualdad-de-chebychev" class="level3" data-number="3.21.1">
-<h3 data-number="3.21.1" class="anchored"><span class="header-section-number">3.21.1</span> Uso de la desigualdad de Chebychev</h3>
+<section id="uso-de-la-desigualdad-de-chebychev" class="level3" data-number="3.17.1">
+<h3 data-number="3.17.1" class="anchored" data-anchor-id="uso-de-la-desigualdad-de-chebychev"><span class="header-section-number">3.17.1</span> Uso de la desigualdad de Chebychev</h3>
 <div class="callout-nota">
 <div class="callout-title">
 <p><i class="bi bi-info-circle"> Utilidad básica de la desigualdad de Chebychev </i></p>
@@ -1367,6 +1398,9 @@ P(Y^2\geq a^2)=P(|Y|\geq a)= P(|X-\mu|\geq a),
 <p>lo que implica que</p>
 <p><span class="math display">\[P(X=E(X))=1,\]</span></p>
 <p>Por lo que la probabilidad de que <span class="math inline">\(X\)</span> sea constantemente <span class="math inline">\(E(X)\)</span> es 1, hecho que nos confirma la utilidad de la varianza como una medida de la dispersión de los datos.</p>
+</div>
+</div>
+<p><br> <br></p>
 <div class="callout-ejemplo">
 <div class="callout-title">
 <p><i class="bi bi-list-task">Ejemplo: tiempo de respuesta</i></p>
@@ -1378,14 +1412,16 @@ P(|X-15|\geq 5)\leq \frac9{25}=0.36.
 \]</span></p>
 </div>
 </div>
-<p>Si substituimos <span class="math inline">\(a\)</span> por <span class="math inline">\(a\cdot \sigma\)</span> en la desigualdad de Chebychev, nos queda:</p>
+<p>Si sustituimos <span class="math inline">\(a\)</span> por <span class="math inline">\(a\cdot \sigma\)</span> en la desigualdad de Chebychev, nos queda:</p>
 <p><span class="math display">\[
 P(|X-\mu|\geq a\cdot \sigma)\leq
 \frac{\sigma^2}{(a\cdot \sigma)^2}=\frac1{a^2},
 \]</span></p>
 <p>que es otra manera de expresar la desigualdad de Chebychev.</p>
-<section id="más-formas-de-la-desgualdad-de-chebychev" class="level2" data-number="3.22">
-<h2 data-number="3.22" class="anchored" data-anchor-id="más-formas-de-la-desgualdad-de-chebychev"><span class="header-section-number">3.22</span> Más formas de la desgualdad de Chebychev</h2>
+</section>
+</section>
+<section id="más-formas-de-la-desgualdad-de-chebychev" class="level2" data-number="3.18">
+<h2 data-number="3.18" class="anchored" data-anchor-id="más-formas-de-la-desgualdad-de-chebychev"><span class="header-section-number">3.18</span> Más formas de la desgualdad de Chebychev</h2>
 <p>La desigualdad de Chebychev también se puede escribir de al menos dos maneras más:</p>
 <p><span class="math display">\[
 P(\mu-a\leq X\leq \mu+a)\geq 1-\frac{\sigma^2}{a^2},
@@ -1394,17 +1430,39 @@ P(\mu-a\leq X\leq \mu+a)\geq 1-\frac{\sigma^2}{a^2},
 <p><span class="math display">\[
 P(\mu-k\cdot \sigma\leq X\leq \mu+ k \cdot \sigma)\geq 1-\frac1{k^2}.
 \]</span></p>
-<section id="la-varianza-como-medida-de-dispersión" class="level3" data-number="3.22.1">
-<h3 data-number="3.22.1" class="anchored" data-anchor-id="la-varianza-como-medida-de-dispersión"><span class="header-section-number">3.22.1</span> La varianza como medida de dispersión</h3>
+<section id="la-varianza-como-medida-de-dispersión" class="level3" data-number="3.18.1">
+<h3 data-number="3.18.1" class="anchored" data-anchor-id="la-varianza-como-medida-de-dispersión"><span class="header-section-number">3.18.1</span> La varianza como medida de dispersión</h3>
 <p>Tomando la segunda expresión que hemos visto para la desigualdad de Chebychev para distintos valores de <span class="math inline">\(k&gt;0\)</span> obtenemos la siguiente tabla:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(k\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P\left(|X-E(X)|\geq k  \cdot \sigma\right)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\leq 1\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\leq 0.25\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\leq 0.111\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(4\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\leq 0.0025\)</span></td>
+</tr>
+</tbody>
+</table>
 <p>Por ejemplo para <span class="math inline">\(k=2\)</span>, esta desigualdad se puede interpretar como que, dada una v.a. <span class="math inline">\(X\)</span> con cualquier distribución que tenga <span class="math inline">\(E(X)\)</span> y <span class="math inline">\(Var(X)\)</span> finitos, <em>la probabilidad de que un valor se aleje de la media</em> <span class="math inline">\(\mu\)</span> más de <span class="math inline">\(a=2\)</span> desviaciones típicas es menor o igual que <span class="math inline">\(0.25\)</span>.</p>
 <p>Es decir sólo el 25% de los valores estarán alejados de la media más de <span class="math inline">\(2\cdot \sigma\)</span> ¡<em>Sea cual sea la distribución de la v.a.</em>!</p>
 
 
-</section>
-</section>
-</div>
-</div>
 </section>
 </section>
 
@@ -1429,150 +1487,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
-      }
-    }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-      }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
-        }
-      });
-    }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -1977,8 +1891,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./distibuciones_notables_1.html" class="pagination-link" aria-label="Distribuciones notables 1">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Distribuciones notables 1</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./teoria_probabilidad.html" class="pagination-link" aria-label="Teoría de la probabilidad">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Teoría de la probabilidad</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,0 +1,52 @@
+project:
+  type: book
+  output-dir: docs
+  
+book:
+  title: "ApLabAD"
+  author: "RICUIB"
+  date: " febrero 2025"
+  subtitle: "Apuntes de Laboratorio de Análisis de Datos"
+  
+  chapters:
+    - index.qmd
+    - part: probabilidad_y_variables_aleatorias.qmd
+      chapters: 
+        - preliminares.qmd
+        - probabilidad.qmd
+        - variables_aleatorias.qmd
+        - distibuciones_notables_1.qmd
+        - distibuciones_notables_2.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+    - [materia, custom.css]]
+    cover-image: 100_prisoners_boxes_fixed.png
+    toggle: true
+    fig-width: 8
+    fig-height: 6
+    code:
+      linenums: true
+      highlight: tango
+    
+
+
+  pdf:
+    documentclass: scrreprt
+    highlight: tango
+    numbersections: true
+    toc: true
+    toc-depth: 3
+    fig-width: 6
+    fig-height: 4
+    code:
+      linenums: true
+      highlight: tango
+      
+filters:
+  - parse-latex   
+  
+lang: es

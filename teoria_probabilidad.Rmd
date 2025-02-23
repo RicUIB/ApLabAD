@@ -1,0 +1,72 @@
+---
+title: "Untitled"
+editor: visual
+css: custom.css
+---
+
+:::: callout-definicion
+::: callout-title
+<i class="bi bi-book">Definición: Álgebra y $\sigma$-Álgebra</i>
+:::
+::: callout-content
+Sea $\Omega$ un conjunto y $\mathcal{A}\subseteq \mathcal{P}(\Omega)$ una familia
+de subconjuntos de $\Omega$ diremos que $\mathcal{A}$ es una álgebra de $\Omega$ si:
+  1. $\Omega\in\mathcal{A}$
+  2. $A\in\mathcal{A}\Rightarrow A^c\in\mathcal{A}$
+  3. $A_1,A_2,\ldots,A_n \in\mathcal{A}\Rightarrow \bigcup_{i=1}^{\infty}A_i\in\mathcal{A}$ 
+  para todo $n\in\mathbb{N}$
+
+Sí además se cumple que $\mathcal{A}$ es cerrada respecto a la unión numerable de conjuntos entonces diremos que $\mathcal{A}$ es una $\sigma$-álgebra de $\Omega$.
+
+El par formado por $(\Omega,\mathcal{A})$ se llama espacio medible y los 
+elemento de $\mathcal{A}$ se denominan  conjuntos medibles 
+(en esta $\sigma$-álgebra) o sucesos.
+:::
+::::
+
+
+:::: callout-proposicion
+::: callout-title
+<i class="bi bi-book">Proposición</i>
+:::
+::: callout-content
+Sea  $\mathcal{A}$  una $\sigma$-álgebra de $\Omega$ entonces:
+
+1.  Es cerrada respecto a la diferencia e conjuntos e intersecciones finitas o  numerables.
+y además $\emptyset\in\mathcal{A}$.
+2. Si $\mathcal{A}$ es un álgebra será  tambiñen una $\sigma$-álgebra  si
+  a. Dada un familia ${A_i}_{i=1}^{\infty}$ de elemento de $\mathcal{A}$ tales que $A_i\subseteq A_{i+1}$  para todo $i$ 
+  entonces $\bigcup_{i=1}^{\infty} A_i\in\mathcal{A}$
+  b. Dada un familia ${A_i}_{i=1}^{\infty}$ de elemento de $\mathcal{A}$ tales que $A_i\cap A_{j}$  para todo $i,j$ $i\neq j$ 
+  entonces $\bigcup_{i=1}^{\infty} A_i\in\mathcal{A}$
+
+:::
+::::
+
+
+:::: callout-proposicion
+::: callout-title
+<i class="bi bi-book">Proposición</i>
+:::
+::: callout-content
+Sean  $\mathcal{A}$ y $\mathcal{B}$  dos $\sigma$-álgebras de $\Omega$ entonces
+
+$C={A\cap B: A\in\mathcal{A}, B\in\mathcal{B}}$ es una $\sigma$-álgebra de $\Omega$.
+
+
+Si $\mathcal{F}\in\mathcal{P}(\Omega)$  particular la intersección de todas las $\sigma$-álgebras  de 
+$\Omega$ que continene a $\mathcal{F}$  recibe el nombre de  $\sigma$-álgebra generada por $\mathcal{F}$.
+:::
+::::
+
+**La $\sigma$-álgebra** más grande de $\Omega$ es $\mathcal{P}(\Omega)$ y la más pequeña o trivial  es $\{\emptyset,\Omega\}$.
+
+Dado $A\subseteq \Omega$, 
+la familia $\{\emptyset,A,A^c,\Omega\}$  es la **$\sigma$-álgebra de $\Omega$ generada** por $A$.
+
+
+La $\sigma$-álgebra de Borel de $\mathbb{R}$ es la $\sigma$-álgebra generada por los  semi-intervalos abiertos por  derecha $\{x \in R : x<a\}=]-\infty,a]$ con $a\in\mathbb{R}$.  
+
+La anterior $\sigma$-álgebra se puede generalizar a  $\mathbb{R}^n$  como la $\sigma$-álgebra generada por $\{(x_1,\ldots,x_n) \in \mathbb{R}^n : x_i<a\}$ con  $a\in\mathbb{R}$ y para $i\in\{1,2,\ldots,n\}$.
+
+

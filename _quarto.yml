@@ -15,6 +15,7 @@ book:
         - preliminares.qmd
         - probabilidad.qmd
         - variables_aleatorias.qmd
+        - teoria_probabilidad.qmd
         - distibuciones_notables_1.qmd
         - distibuciones_notables_2.qmd
 
@@ -22,16 +23,29 @@ bibliography: references.bib
 
 format:
   html:
-    theme:
-      light: materia
-      dark: darkly
-    css: custom.css
+    theme: [materia, custom.scss]
     cover-image: 100_prisoners_boxes_fixed.png
     toggle: true
-
+    code-copy: true
+    fig-width: 8
+    fig-height: 6
+    code:
+      linenums: true
+      highlight: tango
 
   pdf:
     documentclass: scrreprt
-   
-editor: visual
+    highlight: tango
+    numbersections: true
+    toc: true
+    toc-depth: 3
+    fig-width: 6
+    fig-height: 4
+    code:
+      linenums: true
+      highlight: tango
+      
+filters:
+  - parse-latex   
+  
 lang: es
