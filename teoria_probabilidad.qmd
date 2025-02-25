@@ -155,7 +155,7 @@ $\mathcal{D}\subseteq\mathcal{P}(\Omega)$ que cumplan las siguientes propiedades
 
 1. $\Omega\in \mathcal{D}$.
 2. Si $\{A_n\}_{n\geq 1}$ es una sucesión creciente de conjuntos de $\mathcal{D}$, entonces $\cup_{n=1}^{\infty} A_n \in \mathcal{D}.$
-3. Si $A,B\in \mathcal{D}$ y $A\subset B$, entonces $B\setminus A \in \mathcal{D}$.
+3. Si $A,B\in \mathcal{D}$ y $A\subset B$, entonces $B -  A \in \mathcal{D}$.
 :::
 ::::: 
 
@@ -258,15 +258,15 @@ $$
 $$
 Si además $\mu(A) < +\infty$, entonces:
 $$
-\mu(B \setminus A) = \mu(B) - \mu(A).
+\mu(B  -  A) = \mu(B) - \mu(A).
 $$
 
 **Demostración**:  
-Como $B$ puede descomponerse como $B = A \cup (B \setminus A)$ con $A \cap (B \setminus A) = \emptyset$, la propiedad de **aditividad de la medida** nos dice que:
+Como $B$ puede descomponerse como $B = A \cup (B  -  A)$ con $A \cap (B  -  A) = \emptyset$, la propiedad de **aditividad de la medida** nos dice que:
 $$
-\mu(B) = \mu(A) + \mu(B \setminus A) \geq \mu(A).
+\mu(B) = \mu(A) + \mu(B  -  A) \geq \mu(A).
 $$
-Si $\mu(A) < +\infty$, despejando obtenemos $\mu(B \setminus A) = \mu(B) - \mu(A)$.
+Si $\mu(A) < +\infty$, despejando obtenemos $\mu(B  -  A) = \mu(B) - \mu(A)$.
 
 
 
@@ -285,7 +285,7 @@ Sea $A = \bigcup_n A_n$. Si $\mu(A_n) = +\infty$ para algún $n$, entonces $\mu(
 Si todos los $A_n$ tienen **medida finita**, reescribimos la unión como:
 
 $$
-A = A_1 \cup (A_2 \setminus A_1) \cup (A_3 \setminus A_2) \cup \dots
+A = A_1 \cup (A_2  -  A_1) \cup (A_3  -  A_2) \cup \dots
 $$
 
 Dado que los términos son **disjuntos**, la aditividad numerable implica:
@@ -307,15 +307,15 @@ $$
 $$
 
 **Demostración**:  
-Podemos suponer sin pérdida de generalidad que $A_1$ tiene medida finita. Definimos $A = \bigcap_n A_n$ y consideramos la sucesión creciente $B_n = A_1 \setminus A_n$, la cual satisface:
+Podemos suponer sin pérdida de generalidad que $A_1$ tiene medida finita. Definimos $A = \bigcap_n A_n$ y consideramos la sucesión creciente $B_n = A_1  -  A_n$, la cual satisface:
 
 $$
-\bigcup_n B_n = A_1 \setminus A.
+\bigcup_n B_n = A_1  -  A.
 $$
 
 Aplicando la **continuidad hacia arriba** al conjunto $B_n$, se obtiene:
 $$
-\mu(A_1 \setminus A) = \lim_n \mu(A_1 \setminus A_n).
+\mu(A_1  -  A) = \lim_n \mu(A_1  -  A_n).
 $$
 
 Restando de $\mu(A_1)$, se obtiene la ecuación deseada:
@@ -334,12 +334,12 @@ $$
 **Demostración**:  
 Sea $A := \bigcup_{n=1}^{\infty} A_n$. Descomponemos $A$ en términos de las uniones de diferencias:
 $$
-A = \bigcup_{n=1}^{\infty} \left( A_n \setminus \bigcup_{i=1}^{n-1} A_i \right).
+A = \bigcup_{n=1}^{\infty} \left( A_n  -  \bigcup_{i=1}^{n-1} A_i \right).
 $$
 
 Por **aditividad numerable** y el hecho de que la medida es no negativa:
 $$
-\mu(A) = \sum_n \mu(A_n \setminus \bigcup_{i=1}^{n-1} A_i) \leq \sum_n \mu(A_n).
+\mu(A) = \sum_n \mu(A_n  -  \bigcup_{i=1}^{n-1} A_i) \leq \sum_n \mu(A_n).
 $$
 
 
