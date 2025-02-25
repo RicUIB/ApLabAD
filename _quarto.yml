@@ -39,9 +39,11 @@ format:
     numbersections: true
     toc: true
     toc-depth: 3
+    toccolor: blue
     fig-width: 6
     fig-height: 4
     colorlinks: true
+    css: custom.css
     include-in-header:
       - text: |
           \usepackage{xcolor,eurosym,libertine,colortbl}

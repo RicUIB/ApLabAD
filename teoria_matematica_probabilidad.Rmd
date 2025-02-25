@@ -1,0 +1,119 @@
+---
+title: "Problemas"
+author: "Taller MAT3 GIN 24-25"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+### **Problemas de teoría de la medida y conjuntos medibles**
+
+#### **Problema 1**
+- Si \( A \) y \( B \) son sucesos disjuntos, determinar:
+   \( A - B \) (diferencia de conjuntos)
+  2. \( A \cap B \) (intersección)
+  3. \( A^c \cap B^c \) (intersección de los complementos)
+
+#### **Problema 2**
+- **Parte (a):** Cálculo de la intersección de intervalos en términos de números racionales y su comportamiento al infinito.
+- **Parte (b):** Cálculo del **límite superior** y **límite inferior** de una sucesión de conjuntos \( A_n \).
+- **Parte (c):** Variación del problema anterior para distintos tipos de sucesiones de conjuntos.
+
+#### **Problema 3**
+- Dados \( \Omega = \{1,2,3,4\} \), se pide describir explícitamente los conjuntos:
+   \( \mathcal{P}(\Omega) \) (conjunto potencia de \( \Omega \))
+  2. \( \Lambda = \{ (i,j) \in \Omega^2 : i + j \leq 4 \} \) (subconjunto del producto cartesiano de \( \Omega \))
+
+#### **Problema 4**
+- Estudio de una sucesión de subconjuntos \( (A_n) \) y la construcción de \( A = \bigcup A_n \).
+- Se define \( B_n \) como la unión parcial creciente de \( A_k \), y se analiza si los conjuntos \( C_n \) son disjuntos.
+
+#### **Problema 5**
+- Se estudia el **indicador de un conjunto** cuando se tienen conjuntos disjuntos en una sucesión \( (A_n) \) con \( A = \bigcup A_n \), mostrando que \( I_A = \sum I_{A_n} \).
+
+#### **Problema 6**
+- Se pide clasificar diferentes familias de subconjuntos \( \mathcal{A} \) según sean:
+   **$\sigma$-álgebra**
+  2. **Álgebra**
+  3. **$\pi$-sistema**
+  4. **$d$-sistema**
+
+  Se dan distintos ejemplos de familias de subconjuntos en \( \Omega \) y se debe analizar cuál de las estructuras anteriores cumple cada una.
+
+#### **Problema 7**
+- Se pregunta por la **más pequeña $\sigma$-álgebra** en \( \Omega \) que contiene ciertos subconjuntos dados \( A_1, A_2, \dots, A_n \). Esto lleva a la noción de **$\sigma$-álgebra generada** por un conjunto de subconjuntos.
+
+La imagen muestra el **Problema 8**, que trata sobre la **$\sigma$-álgebra de Borel** en \( \mathbb{R} \) y \( \mathbb{R}^n \). Aquí tienes un resumen y explicación de cada apartado:
+
+### **Problema 8**
+**Parte (a): Generación de la $\sigma$-álgebra de Borel en \( \mathbb{R} \)**
+La **$\sigma$-álgebra de Borel** en \( \mathbb{R} \) (denotada como \( \mathcal{B}(\mathbb{R}) \)) es la **más pequeña $\sigma$-álgebra que contiene todos los conjuntos abiertos** de la recta ral \( \mathbb{R} \).
+Se pide demostrar que también se puede engendrar por diferentes familias de intervalos:
+  1.Intervalos de la forma \( ]-\infty, x] \), con \( x \in \mathbb{R} \).
+  2. Intervalos de la forma \( ]x, \infty[ \), con \( x \in \mathbb{R} \).
+  3. Intervalos de la forma \( [x, \infty[ \), con \( x \in \mathbb{R} \).
+  4. Intervalos de la forma \( ]-\infty, r] \), con \( r \in \mathbb{Q} \) (intervalos con extremos racionales).
+  
+**Parte (b): Generación de la $\sigma$-álgebra de Borel en \( \mathbb{R}^n \)**
+Similar a la parte anterior, pero ahora en el espacio euclidiano \( \mathbb{R}^n \).
+ Si  \( \mathcal{B}(\mathbb{R}^n) \) es la **$\sigma$-álgebra más pequeña que contiene todos los conjuntos abiertos de \( \mathbb{R}^n \)**.
+- Se pide demostrar que también se puede engendrar por:
+
+  
+  1. **La familia de los intervalos cerrados y acotados en \( \mathbb{R}^n \) (es decir, cajas de la forma \( [a_1, b_1] \times \dots \times [a_n, b_n] \)).**
+  
+  4
+  2. **Los semiespacios de la forma \( \{x \in \mathbb{R}^n : x_i < a \} \) para \( 1 \leq i \leq n \), con \( a \in \mathbb{Q} \).**
+  
+#### **Parte (c): Producto de $\sigma$-álgebras de Borel**
+- Se pide probar que la **$\sigma$-álgebra de Borel en \( \mathbb{R}^n \) es igual al producto de \( n \) copias de la $\sigma$-álgebra de Borel en \( \mathbb{R} \)**:
+  \[
+  \mathcal{B}(\mathbb{R}^n) = \mathcal{B}(\mathbb{R}) \times \mathcal{B}(\mathbb{R}) \times \dots \times \mathcal{B}(\mathbb{R})
+  \]
+  donde el producto de $\sigma$-álgebras se define como la $\sigma$-álgebra generada por los conjuntos de la forma:
+  \[
+  A_1 \times A_2 \times \dots \times A_n, \quad A_i \in \mathcal{B}(\mathbb{R}).
+  \]
+
+Esto muestra que la estructura de la **$\sigma$-álgebra de Borel en \( \mathbb{R}^n \)** puede entenderse a partir de las $\sigma$-álgebras de Borel en \( \mathbb{R} \).
+
+---
+
+Este problema es fundamental en **teoría de la medida y probabilidad**, ya que establece una base para la construcción de medidas en espacios euclidianos. Si necesitas ayuda con la demostración de alguna parte en particular, dime.
+### **Problema 9**
+- Se considera un espacio medible \( (\Omega, \mathcal{A}) \) y un subconjunto no vacío \( B \subset \Omega \).
+- Se define la **$\sigma$-álgebra inducida** en \( B \) como:
+  \[
+  \mathcal{A}_B := \{ A \cap B : A \in \mathcal{A} \}
+  \]
+  y se debe probar que es una $\sigma$-álgebra de partes de \( B \) y que \( \mathcal{A}_B \subset \mathcal{A} \).
+- Se analiza cómo la **$\sigma$-álgebra generada** por \( C \), es decir, \( \mathcal{A} = \sigma(C) \), se traduce en términos de la $\sigma$-álgebra inducida en \( B \).
+- Se introduce la notación \( \sigma_B(C_B) \) como la **mínima $\sigma$-álgebra en \( B \) que contiene a \( C_B \)**, siguiendo el **Ejemplo 8**.
+
+### **Problema 10**
+- Se trabaja con el conjunto finito \( \Omega = \{1,2,3\} \) y la $\sigma$-álgebra:
+  \[
+  \mathcal{A} = \{\emptyset, \Omega, \{1,2\}, \{3,4\}\}
+  \]
+  (aunque parece haber una inconsistencia en la definición, pues \( 4 \notin \Omega \)).
+- Se debe describir explícitamente el **espacio medible producto** \( (\Omega^2, \mathcal{A}^2) \), donde \( \Omega^2 = \Omega \times \Omega \).
+
+### **Problema 11**
+- **Parte (a):** Se considera un conjunto infinito no numerable \( \Omega \) y la colección:
+  \[
+  C = \{ A \in \mathcal{P}(\Omega) : A \text{ o } A^c \text{ es numerable} \}
+  \]
+  Se pide demostrar que \( C \) es una **$\sigma$-álgebra**.
+- **Parte (b):** Se debe describir la **$\sigma$-álgebra generada por los conjuntos unitarios** en \( \mathbb{R} \).
+
+### **Problema 12**
+- Se pide demostrar que **una familia \( \mathcal{A} \) de partes de \( \Omega \) es una $\sigma$-álgebra si y solo si es un $d$-sistema y un $\pi$-sistema**.
+- Esto se relaciona con el **Teorema de Dynkin**, el cual permite demostrar que una colección de subconjuntos es una $\sigma$-álgebra a partir de ciertas propiedades.
+
+

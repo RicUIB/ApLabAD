@@ -12,11 +12,11 @@ Pero muchos tienen una falta de conocimientos en teoría básica de conjuntos y 
 
 ## Teoría de conjuntos
 
-::::: callout-definicion
-::: callout-title
+::::: {callout-definicion}
+::: {callout-title}
 <i class="bi bi-book"> Definición de conjunto</i>
 :::
-::: callout-body
+::: {callout-body}
 La definición de conjunto es una [idea o noción primitiva](https://es.wikipedia.org/wiki/Concepto_primitivo). Es decir es una idea básica del pensamiento humano: un conjunto es una colección de objetos: números, imágenes... cualquier cosa, jugadores de fútbol, palabras, colores ....
 :::
 :::::
