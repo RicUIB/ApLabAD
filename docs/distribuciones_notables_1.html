@@ -404,7 +404,7 @@ p &amp; \mbox{ si } x=1 \\
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbinom</span>(<span class="at">n=</span><span class="dv">20</span>,<span class="at">size =</span> <span class="dv">1</span>,<span class="at">prob=</span><span class="fl">0.25</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 0 1 0 1 0 1 0 0 0 0 0 0 0 1 0 1 0 0 0 0</code></pre>
+<pre><code> [1] 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0</code></pre>
 </div>
 </div>
 <p>El siguiente código dibuja las función de probabilidad y la de distribución de una <span class="math inline">\(Ber(p=0.25)\)</span></p>
@@ -653,12 +653,12 @@ de 100 valores de una población <span class="math inline">\(B(20,0.5)\)</span><
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>binom.rvs(n<span class="op">=</span><span class="dv">20</span>,p<span class="op">=</span><span class="fl">0.25</span>,size <span class="op">=</span> <span class="dv">100</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>array([ 6,  4,  5,  6,  4,  5,  7,  4,  7,  5,  6,  5,  3,  5,  4,  3,  1,
-        4,  7,  6,  5,  4,  3,  4,  4,  3,  5,  4,  6,  5,  7,  7,  4,  2,
-        0,  5,  3,  2,  7,  4,  5,  2,  6,  7,  3,  5,  4,  9,  6,  2,  4,
-        4,  7,  7,  3,  2,  3,  7,  9,  4,  6,  6,  4,  5,  8,  4,  2,  6,
-        5,  4,  8,  4,  4,  7,  5,  3,  6,  5,  8,  6,  3,  6, 11,  2,  6,
-        5,  6,  6,  4,  4,  4,  4,  5,  2,  5,  5,  5,  5,  3,  4],
+<pre><code>array([ 6,  4,  9,  4,  1,  5,  3,  5,  6,  7,  5,  5,  6,  4,  3,  5,  4,
+        5,  3,  6,  2,  5,  2,  3,  6,  3,  5,  5,  4,  4,  5,  5,  4,  5,
+        2,  3,  4,  5,  4,  5,  5,  4,  4,  5,  5,  3,  6, 10,  4,  5,  7,
+        5,  9,  7,  6,  8,  5,  2,  5,  4,  3,  9,  5,  4,  4,  4,  5,  2,
+        4,  4,  6,  5,  6,  7,  3,  7,  4,  7,  7,  6,  8,  5,  6,  6,  5,
+        6,  5,  6, 10,  5,  6,  6,  5,  5,  5,  6,  2,  5,  5,  8],
       dtype=int64)</code></pre>
 </div>
 </div>
@@ -671,12 +671,12 @@ de 100 valores de una población <span class="math inline">\(B(20,0.5)\)</span><
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>binom.rvs(n<span class="op">=</span><span class="dv">20</span>,p<span class="op">=</span><span class="fl">0.25</span>,size <span class="op">=</span> <span class="dv">100</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>array([ 2,  7,  6,  4,  5,  6,  7,  1,  7,  7,  1,  4,  7,  7,  2,  5,  2,
-        7,  9,  4,  6,  3,  5,  4,  3, 10,  7,  9,  5,  4,  3,  4,  4,  5,
-        3,  5,  1,  4,  5,  5,  6,  6,  9,  5,  4,  6,  6,  8,  6,  5,  4,
-        4,  3,  4,  1,  4,  5,  4,  8,  5,  4,  6,  5,  2,  4,  4,  5,  3,
-        5,  4,  3,  5,  4,  4,  2,  3,  4,  4,  7,  3, 10,  4,  4,  5,  2,
-        9,  5,  6,  2,  5,  3,  4,  6,  4,  6,  5,  5,  9,  3,  3],
+<pre><code>array([ 7,  7,  6,  4,  4,  2,  3,  3,  7,  5,  7,  4,  4,  4,  4,  3,  5,
+        3,  7,  3,  7,  5,  4,  7,  7,  7,  6,  5,  1,  2,  4,  5,  5,  1,
+        2,  5,  6,  6,  1,  6,  5,  2,  7,  6,  4,  4,  4,  9,  5,  1,  2,
+        8,  6,  5,  7,  6,  9,  3,  8,  5,  3,  3,  7,  4,  3,  3,  5,  3,
+        3,  3,  3,  4,  1,  3,  8,  6,  6,  4,  5,  4,  6,  4,  5,  1,  5,
+        6,  7,  4,  5,  6, 10,  7,  6,  6,  5,  4,  2,  6,  6,  5],
       dtype=int64)</code></pre>
 </div>
 </div>
@@ -695,7 +695,7 @@ de 100 valores de una población <span class="math inline">\(B(20,0.5)\)</span><
 </div>
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>binom.rvs(n<span class="op">=</span><span class="dv">20</span>,p<span class="op">=</span><span class="fl">0.25</span>,size<span class="op">=</span><span class="dv">10</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>array([7, 6, 3, 2, 5, 4, 3, 1, 4, 4], dtype=int64)</code></pre>
+<pre><code>array([4, 5, 8, 5, 6, 4, 2, 6, 5, 4], dtype=int64)</code></pre>
 </div>
 </div>
 </section>
@@ -806,7 +806,7 @@ Adjuntando el paquete: 'dplyr'</code></pre>
 <span id="cb50-20"><a href="#cb50-20" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Función de Probabilidad (PMF) - Binomial(10, 0.7)'</span>)</span>
 <span id="cb50-21"><a href="#cb50-21" aria-hidden="true" tabindex="-1"></a>plt.xticks(x)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>([&lt;matplotlib.axis.XTick object at 0x00000261FCA394F0&gt;, &lt;matplotlib.axis.XTick object at 0x00000261FCA39370&gt;, &lt;matplotlib.axis.XTick object at 0x00000261FCA27C70&gt;, &lt;matplotlib.axis.XTick object at 0x00000261FCB23E20&gt;, &lt;matplotlib.axis.XTick object at 0x00000261FCAB75B0&gt;, &lt;matplotlib.axis.XTick object at 0x00000261FCB30DC0&gt;, &lt;matplotlib.axis.XTick object at 0x00000261FCB300A0&gt;, &lt;matplotlib.axis.XTick object at 0x00000261FCB306D0&gt;, &lt;matplotlib.axis.XTick object at 0x00000261FCAB7D30&gt;, &lt;matplotlib.axis.XTick object at 0x00000261FCB23EB0&gt;, &lt;matplotlib.axis.XTick object at 0x00000261FCB29FD0&gt;], [Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, '')])</code></pre>
+<pre><code>([&lt;matplotlib.axis.XTick object at 0x00000196C13A64F0&gt;, &lt;matplotlib.axis.XTick object at 0x00000196C13A6370&gt;, &lt;matplotlib.axis.XTick object at 0x00000196C1397C70&gt;, &lt;matplotlib.axis.XTick object at 0x00000196C32E3E20&gt;, &lt;matplotlib.axis.XTick object at 0x00000196C2C375B0&gt;, &lt;matplotlib.axis.XTick object at 0x00000196C32ECDC0&gt;, &lt;matplotlib.axis.XTick object at 0x00000196C32EC0A0&gt;, &lt;matplotlib.axis.XTick object at 0x00000196C32EC6D0&gt;, &lt;matplotlib.axis.XTick object at 0x00000196C2C37D30&gt;, &lt;matplotlib.axis.XTick object at 0x00000196C32E3EB0&gt;, &lt;matplotlib.axis.XTick object at 0x00000196C32E9FD0&gt;], [Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, '')])</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>plt.grid(axis<span class="op">=</span><span class="st">'y'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
@@ -820,7 +820,7 @@ Adjuntando el paquete: 'dplyr'</code></pre>
 <span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Función de Distribución Acumulada (CDF) - Binomial(10, 0.7)'</span>)</span>
 <span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a>plt.xticks(x)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>([&lt;matplotlib.axis.XTick object at 0x00000261FCB4BCD0&gt;, &lt;matplotlib.axis.XTick object at 0x00000261FCB4BCA0&gt;, &lt;matplotlib.axis.XTick object at 0x00000261FCB4B0D0&gt;, &lt;matplotlib.axis.XTick object at 0x00000261FCB9D070&gt;, &lt;matplotlib.axis.XTick object at 0x00000261FCB9D880&gt;, &lt;matplotlib.axis.XTick object at 0x00000261FCB9DC70&gt;, &lt;matplotlib.axis.XTick object at 0x00000261FCB7C1F0&gt;, &lt;matplotlib.axis.XTick object at 0x00000261FCB829A0&gt;, &lt;matplotlib.axis.XTick object at 0x00000261FCB92340&gt;, &lt;matplotlib.axis.XTick object at 0x00000261FCB96310&gt;, &lt;matplotlib.axis.XTick object at 0x00000261FCBA20A0&gt;], [Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, '')])</code></pre>
+<pre><code>([&lt;matplotlib.axis.XTick object at 0x00000196C330BCD0&gt;, &lt;matplotlib.axis.XTick object at 0x00000196C330BCA0&gt;, &lt;matplotlib.axis.XTick object at 0x00000196C330B0D0&gt;, &lt;matplotlib.axis.XTick object at 0x00000196C335D070&gt;, &lt;matplotlib.axis.XTick object at 0x00000196C335D880&gt;, &lt;matplotlib.axis.XTick object at 0x00000196C335DC70&gt;, &lt;matplotlib.axis.XTick object at 0x00000196C333B1F0&gt;, &lt;matplotlib.axis.XTick object at 0x00000196C33419A0&gt;, &lt;matplotlib.axis.XTick object at 0x00000196C3352340&gt;, &lt;matplotlib.axis.XTick object at 0x00000196C3357310&gt;, &lt;matplotlib.axis.XTick object at 0x00000196C33620A0&gt;], [Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, '')])</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>plt.grid(axis<span class="op">=</span><span class="st">'y'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
@@ -1350,8 +1350,8 @@ Var(X)=\frac{1-p}{p^2}=\frac{1-\frac{1}{10}}{\left(\frac{1}{10}\right)^2}=\frac{
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb86"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>geom.rvs(p<span class="op">=</span><span class="fl">0.25</span>, size<span class="op">=</span><span class="dv">20</span>, loc<span class="op">=-</span><span class="dv">1</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>array([3, 0, 2, 4, 0, 4, 0, 2, 0, 0, 6, 7, 3, 0, 0, 5, 2, 2, 2, 6],
-      dtype=int64)</code></pre>
+<pre><code>array([ 2,  4, 12, 17,  3,  1,  2,  3,  2,  5,  5,  5,  1,  0,  3,  1,  3,
+        0,  2, 12], dtype=int64)</code></pre>
 </div>
 </div>
 <p><strong>Ejercicio</strong></p>
@@ -1714,12 +1714,12 @@ Var(X)=n\cdot\frac{1-p}{p^2}=2 \cdot \frac{1-0.1}{0.1^2}=180,
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb118"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a>nbinom.rvs(n<span class="op">=</span><span class="dv">2</span>, p<span class="op">=</span><span class="fl">0.1</span>, size<span class="op">=</span><span class="dv">100</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>array([ 6, 14,  8,  8, 16, 19, 19, 29, 17,  4,  4,  9,  2, 29, 11,  5, 13,
-        8, 47,  9,  8, 25, 24,  0,  4, 38, 13, 16,  5, 14, 45, 14, 16,  5,
-       18, 22, 31, 34, 19,  4, 37, 12, 24, 37,  9,  7,  5,  2, 23, 12, 53,
-       24,  6, 14,  6, 32, 11, 14, 15,  6, 17, 31, 27, 17, 27, 26, 26, 44,
-       26, 18, 12, 20,  8,  8,  4, 17, 16, 22, 73,  1, 15, 33, 10,  5,  8,
-       12,  8, 24, 22, 27,  3, 16,  4, 27,  7, 35, 16,  6,  2, 10],
+<pre><code>array([20, 25, 32,  5, 19,  8,  2, 41, 22,  8,  4, 29, 22, 14, 16,  8,  5,
+       27, 11, 32, 19,  6, 12,  4, 24, 33, 35, 20,  7,  6, 23, 19, 10, 25,
+       34,  8, 53,  9, 16, 11,  6, 36,  6, 53, 10, 11, 11, 23,  4,  4,  2,
+       13,  5, 16, 13,  9, 28,  3,  3, 33, 15,  3, 16, 11,  2, 28, 10, 15,
+       52,  6, 31, 18,  5, 15,  7, 39,  6, 25, 10, 31,  9, 48, 20,  8, 12,
+       25, 17,  6, 33, 13, 16,  3, 79, 16, 11, 18,  2,  7, 11, 57],
       dtype=int64)</code></pre>
 </div>
 </div>
@@ -2393,8 +2393,8 @@ P(X\geq 6)&amp;=1- P(X&lt;6)=1-P(X\leq 5)=1-F_X(5)=1-\displaystyle\sum_{x=0}^{5}
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb200"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb200-1"><a href="#cb200-1" aria-hidden="true" tabindex="-1"></a>poisson.rvs(mu<span class="op">=</span><span class="dv">3</span>,size<span class="op">=</span><span class="dv">40</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>array([3, 5, 1, 2, 1, 5, 5, 2, 3, 2, 2, 2, 4, 4, 5, 4, 1, 3, 6, 0, 1, 4,
-       2, 3, 0, 4, 2, 5, 8, 3, 4, 3, 2, 6, 1, 4, 3, 3, 2, 4], dtype=int64)</code></pre>
+<pre><code>array([3, 1, 2, 4, 2, 3, 1, 3, 2, 3, 0, 2, 2, 0, 3, 1, 4, 3, 1, 2, 1, 3,
+       6, 1, 2, 0, 1, 1, 5, 4, 3, 5, 2, 5, 3, 2, 0, 3, 6, 2], dtype=int64)</code></pre>
 </div>
 </div>
 <section id="gráficos-con-python" class="level4" data-number="5.6.7.1">
@@ -2672,11 +2672,11 @@ Var(X)&amp;=k\cdot\frac{m}{m+n}\cdot\left(1-\frac{m}{m+n}\right) \cdot\frac{m+n-
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb226"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb226-1"><a href="#cb226-1" aria-hidden="true" tabindex="-1"></a>hypergeom.rvs(M<span class="op">=</span><span class="dv">15</span><span class="op">+</span><span class="dv">10</span>,n<span class="op">=</span><span class="dv">15</span>,N<span class="op">=</span><span class="dv">3</span>,size<span class="op">=</span><span class="dv">100</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>array([1, 3, 2, 3, 3, 0, 2, 2, 1, 2, 0, 0, 2, 3, 1, 1, 2, 1, 1, 3, 2, 2,
-       2, 2, 2, 2, 1, 2, 1, 2, 1, 3, 0, 3, 2, 3, 2, 2, 2, 2, 1, 3, 1, 2,
-       1, 1, 2, 3, 1, 0, 1, 1, 2, 1, 3, 2, 1, 1, 1, 1, 2, 3, 1, 2, 2, 1,
-       2, 1, 2, 2, 2, 1, 1, 1, 2, 2, 2, 2, 1, 3, 1, 0, 2, 1, 2, 2, 2, 1,
-       1, 1, 3, 3, 2, 2, 1, 2, 1, 3, 3, 2], dtype=int64)</code></pre>
+<pre><code>array([3, 3, 2, 2, 1, 2, 0, 1, 2, 2, 2, 1, 2, 1, 1, 2, 1, 3, 2, 1, 1, 2,
+       1, 2, 3, 2, 1, 2, 2, 1, 1, 3, 3, 1, 2, 3, 1, 2, 2, 2, 2, 1, 2, 3,
+       2, 1, 1, 2, 2, 2, 1, 2, 3, 3, 1, 2, 2, 2, 1, 2, 0, 2, 3, 2, 1, 2,
+       2, 1, 2, 3, 3, 3, 3, 2, 2, 2, 2, 2, 3, 2, 2, 1, 1, 3, 2, 2, 3, 2,
+       3, 3, 1, 3, 2, 2, 2, 2, 3, 3, 3, 2], dtype=int64)</code></pre>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
