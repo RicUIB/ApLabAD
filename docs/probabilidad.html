@@ -1,0 +1,1754 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2&nbsp; Teoría elemental de la probabilidad – ApLabAD</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./variables_aleatorias.html" rel="next">
+<link href="./preliminares.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-912f80979caa2ab4a22134159bf6713b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./probabilidad_y_variables_aleatorias.html">Parte 1: Probabilidad y variables aleatorias</a></li><li class="breadcrumb-item"><a href="./probabilidad.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Teoría elemental de la probabilidad</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">ApLabAD</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prefacio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./probabilidad_y_variables_aleatorias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Parte 1: Probabilidad y variables aleatorias</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./preliminares.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preliminares: conjuntos y combinatoria</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./probabilidad.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Teoría elemental de la probabilidad</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./variables_aleatorias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Variables aleatorias</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./teoria_probabilidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Teoría de la probabilidad</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./distribuciones_notables_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distribuciones notables 1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./distribuciones_notables_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Distribuciones notables 2. Notables Continuas.</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#definiciones-básicas" id="toc-definiciones-básicas" class="nav-link active" data-scroll-target="#definiciones-básicas"><span class="header-section-number">2.1</span> Definiciones básicas</a>
+  <ul class="collapse">
+  <li><a href="#operaciones-con-sucesos" id="toc-operaciones-con-sucesos" class="nav-link" data-scroll-target="#operaciones-con-sucesos"><span class="header-section-number">2.1.1</span> Operaciones con sucesos</a></li>
+  <li><a href="#propiedades" id="toc-propiedades" class="nav-link" data-scroll-target="#propiedades"><span class="header-section-number">2.1.2</span> Propiedades</a></li>
+  </ul></li>
+  <li><a href="#definición-de-probabilidad" id="toc-definición-de-probabilidad" class="nav-link" data-scroll-target="#definición-de-probabilidad"><span class="header-section-number">2.2</span> Definición de probabilidad</a></li>
+  <li><a href="#probabilidad-condicionada" id="toc-probabilidad-condicionada" class="nav-link" data-scroll-target="#probabilidad-condicionada"><span class="header-section-number">2.3</span> Probabilidad condicionada</a>
+  <ul class="collapse">
+  <li><a href="#probabilidad-condicionada.-propiedades" id="toc-probabilidad-condicionada.-propiedades" class="nav-link" data-scroll-target="#probabilidad-condicionada.-propiedades"><span class="header-section-number">2.3.1</span> Probabilidad condicionada. Propiedades</a></li>
+  </ul></li>
+  <li><a href="#teorema-de-la-probabilidad-total" id="toc-teorema-de-la-probabilidad-total" class="nav-link" data-scroll-target="#teorema-de-la-probabilidad-total"><span class="header-section-number">2.4</span> Teorema de la probabilidad total</a></li>
+  <li><a href="#clasificación-o-diagnostico-caso-binario" id="toc-clasificación-o-diagnostico-caso-binario" class="nav-link" data-scroll-target="#clasificación-o-diagnostico-caso-binario"><span class="header-section-number">2.5</span> Clasificación o diagnostico caso binario</a></li>
+  <li><a href="#teorema-de-bayes" id="toc-teorema-de-bayes" class="nav-link" data-scroll-target="#teorema-de-bayes"><span class="header-section-number">3</span> Teorema de Bayes</a></li>
+  <li><a href="#independencia-de-sucesos" id="toc-independencia-de-sucesos" class="nav-link" data-scroll-target="#independencia-de-sucesos"><span class="header-section-number">4</span> Independencia de sucesos</a>
+  <ul class="collapse">
+  <li><a href="#sucesos-independientes-vs-disjuntos" id="toc-sucesos-independientes-vs-disjuntos" class="nav-link" data-scroll-target="#sucesos-independientes-vs-disjuntos"><span class="header-section-number">4.1</span> Sucesos independientes vs disjuntos</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./probabilidad_y_variables_aleatorias.html">Parte 1: Probabilidad y variables aleatorias</a></li><li class="breadcrumb-item"><a href="./probabilidad.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Teoría elemental de la probabilidad</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Teoría elemental de la probabilidad</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="definiciones-básicas" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="definiciones-básicas"><span class="header-section-number">2.1</span> Definiciones básicas</h2>
+<div class="callout-definicion">
+<div class="callout-title">
+<p><i class="bi bi-book"> Definición: experimento aleatorio</i></p>
+</div>
+<div class="callout-body">
+<p>Un experimento que repetido en las mismas condiciones puede dar resultados diferentes, pero que a largo plazo son predecibles recibe el nombre de <strong>experimento aleatorio</strong>.</p>
+</div>
+</div>
+<p>Daremos nombres a distintos tipos de sucesos:</p>
+<div class="callout-definicion">
+<div class="callout-title">
+<p><i class="bi bi-book"> Definición: espacio muestral y tipos de sucesos</i></p>
+</div>
+<div class="callout-body">
+<ul>
+<li>Llamaremos <strong>suceso elemental</strong> a cada uno de los posibles resultados del experimento aleatorio.</li>
+<li>Llamaremos <strong>espacio muestral</strong> (<span class="math inline">\(\Omega\)</span>,<span class="math inline">\(E\)</span>) al conjunto formado por todos los sucesos elementales del experimento aleatorio.</li>
+<li>Llamaremos <strong>suceso</strong> a cualquier subconjunto del espacio muestral.</li>
+<li><strong>Suceso seguro o cierto</strong> <span class="math inline">\(A\subseteq \Omega\)</span></li>
+<li><strong>Suceso imposible o vació</strong>: <span class="math inline">\(\emptyset\)</span></li>
+<li><strong>Partes de un conjunto</strong>: <span class="math inline">\(\mathcal{P}(\Omega)\)</span>: conjunto de todos los sucesos del experimento aleatorio (es decir, el conjunto de todos los subconjuntos de <span class="math inline">\(\Omega\)</span>)</li>
+</ul>
+</div>
+</div>
+<p>A continuación describimos el clásico experimento del lanzamiento de un dado.</p>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-list-task"> Ejemplo</i></p>
+</div>
+<div class="callout-body">
+<p>Consideremos el experimento aleatorio que consiste en lanzar un dado. El espacio muestral de este experimento es <span class="math inline">\(\Omega=\{1,2,3,4,5,6\}\)</span> o las figuras de las caras del dado.</p>
+<p>Si lo representamos gráficamente, tendríamos:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="probabilidad_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Por comodidad y conveniencia se opta por representar el espacio muestral por <span class="math display">\[\Omega = \{1,2,3,4,5,6\}.\]</span></p>
+</div>
+</div>
+<p>Recordemos la notación <span class="math inline">\(\mathcal{P}(\Omega)\)</span> que usamos para referirnos al conjunto de todos los subconjuntos de <span class="math inline">\(\Omega\)</span>. Este conjunto se llama <strong>conjunto de partes</strong> de <span class="math inline">\(\Omega\)</span>.</p>
+<div class="callout-ejercicio">
+<div class="callout-title">
+<p><i class="bi bi-pencil-square"> Ejercicio</i></p>
+</div>
+<div class="callout-body">
+<p>¿Cuantos elementos contiene el conjunto de partes de <span class="math inline">\(\Omega\)</span> del experimento anterior?</p>
+</div>
+</div>
+<p>Veamos algún ejemplo menos clásico. Podemos considerar el experimento aleatorio que consiste en calcular los <span class="math inline">\(n\)</span> gramas de una palabra escogida al azar.</p>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-list-task"></i> Ejemplo <span class="math inline">\(n\)</span>-gramas</p>
+</div>
+<div class="callout-body">
+<p>Se define un <span class="math inline">\(n\)</span>-grama de una palabra como el conjunto de <span class="math inline">\(n\)</span> letras consecutivas de la misma (contando los blancos de inicio y final de palabra que marcamos como “_”).</p>
+<p>Consideremos el experimento aleatorio que consiste en escoger al azar un 3-grama de la palabra “_Baleares_”. Vamos a escribir el espacio muestral y algunos sucesos elementales del mismo.</p>
+<p>En este caso, si consideramos la palabra “_Baleares_”, el espacio muestral del experimento sería:</p>
+<p><span class="math display">\[\Omega=\{\_Ba, Bal, ale, lea, ear, are, res, es\_\}\]</span></p>
+<p>Algunos sucesos serían:</p>
+<ul>
+<li>3-gramas que empiezan por <span class="math inline">\(a\)</span>: <span class="math inline">\(\{ale,are\}.\)</span></li>
+<li>3-gramas de inicio y final de palabra: <span class="math inline">\(\{\_Ba,es\_\}.\)</span></li>
+<li>3-gramas que contengan una <span class="math inline">\(l\)</span>: <span class="math inline">\(\{Bal,ale,lea\}.\)</span></li>
+</ul>
+<p>Existen bases de datos que estudian la frecuencias de <span class="math inline">\(n\)</span>-gramas de caracteres en textos en diferentes idiomas; generalmente de palabras. Por ejemplo, en español, los bi-gramas de sílabas más frecuentes son “EN” (3.01%) y “DE” (2.77%) y los tri-gramas de sílabas son “QUE” (1.66%) y “ENT” (1.38%). Podéis consultar más estadísticas, por ejemplo, en <a href="https://es.sttmedia.com/frecuencias-de-silabas-espanol">Stefan Trost Media frecuencias de sílabas en español</a>.</p>
+</div>
+</div>
+<section id="operaciones-con-sucesos" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="operaciones-con-sucesos"><span class="header-section-number">2.1.1</span> Operaciones con sucesos</h3>
+<p>Si tenemos dos sucesos <span class="math inline">\(A,B\subseteq \Omega\)</span>, podemos definir:</p>
+<ul>
+<li><span class="math inline">\(\Omega\)</span>: <em>suceso</em> total o <em>seguro</em>.</li>
+<li><span class="math inline">\(\emptyset\)</span>: suceso <em>vacío</em> o <em>imposible</em>.</li>
+<li><span class="math inline">\(A\cup B\)</span>: suceso <em>unión</em>; el que ocurre si sucede <span class="math inline">\(A\)</span> o <span class="math inline">\(B\)</span>.</li>
+<li><span class="math inline">\(A\cap B\)</span>: suceso <em>intersección</em>; el que ocurre si sucede <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>.</li>
+<li><span class="math inline">\(A^c\)</span>: suceso <em>complementario</em> el que sucede si NO sucede <span class="math inline">\(A\)</span>.</li>
+<li><span class="math inline">\(A- B=A\cap B^c\)</span>: suceso <em>diferencia</em>, que acontece si sucede <span class="math inline">\(A\)</span> y NO sucede <span class="math inline">\(B\)</span>.</li>
+</ul>
+<div class="callout-definicion">
+<div class="callout-title">
+<p><i class="bi bi-book"> Sucesos incompatibles</i></p>
+</div>
+<div class="callout-body">
+<p>Dos sucesos cualesquiera <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son <em>incompatibles</em> (o <em>disjuntos</em>) cuando <span class="math inline">\(A\cap B=\emptyset\)</span>.</p>
+</div>
+</div>
+<p>Otro ejemplo se observa el sexo y la lateralidad de los estudiantes de una clase.</p>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-list-task"> Ejemplo</i></p>
+</div>
+<div class="callout-body">
+<p>Supongamos que el sexo se divide entre Mujeres y Hombres y la lateralirad en diestros y zurdos. Vamos a definir el espacio muestral, los sucesos elementales y a realizar algunas operaciones entre ellos.</p>
+<p>Estudiantes de esta clase: <span class="math inline">\(\Omega\)</span>. - Mujeres de esta clase: <span class="math inline">\(A\)</span>. - Estudiantes que son zurdos <span class="math inline">\(B\)</span>.</p>
+</div>
+</div>
+<p>Algunas operaciones entre los sucesos anteriores serían:</p>
+<ul>
+<li><span class="math inline">\(A\cup B\)</span>: Estudiantes . que son mujeres o que son zurdos.</li>
+<li><span class="math inline">\(A\cap B\)</span>: Mujeres de esta clase que son zurdas.</li>
+<li><span class="math inline">\(A^c\)</span>: Hombres de esta clase.</li>
+<li><span class="math inline">\(A-B\)</span>: Mujeres de la clases que NO son zurdas.</li>
+<li><span class="math inline">\(B-A\)</span>: Hombres de la clase que son zurdos.</li>
+<li><font color="red"> ¡Cuidado! </font> No son incompatibles.</li>
+</ul>
+</section>
+<section id="propiedades" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="propiedades"><span class="header-section-number">2.1.2</span> Propiedades</h3>
+<div class="callout-proposicion">
+<div class="callout-title">
+<p><i class="bi bi-clipboard-check"></i> Propiedades</p>
+</div>
+<div class="callout-body">
+<p><strong>Conmutativas</strong>:</p>
+<p><span class="math display">\[A\cup B=B\cup A, \quad A\cap B=B\cap A\]</span></p>
+<p><strong>Asociativas</strong>:</p>
+<p><span class="math display">\[\begin{aligned}
+A\cup(B\cup C)=(A\cup B)\cup C, \\
+A\cap(B\cap C)=(A\cap B)\cap C.
+\end{aligned}\]</span></p>
+<p><strong>Distributivas</strong></p>
+<p><span class="math display">\[\begin{aligned}
+A\cap &amp; (B\cup C)=(A\cap B)\cup (A\cap C),\\
+A\cup &amp; (B\cap C)=(A\cup B)\cap (A\cup C).
+\end{aligned}\]</span></p>
+</div>
+</div>
+<p>Veamos algunos diagramas que nos ayuda a demostrar las propiedades anteriores.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(A\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(B\cap C\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(A\cup (B\cap C)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="Images/venn1A.jpeg" height="150"></td>
+<td style="text-align: center;"><img src="Images/venn1ByC.jpeg" height="150"></td>
+<td style="text-align: center;"><img src="Images/venn1AUByC.jpeg" height="150"></td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(A\cup B\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(A\cup C\)</span></th>
+<th style="text-align: center;"><span class="math inline">\((A\cup B)\cap (A\cup C)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="Images/venn1AoB.jpeg" class="image-caption" height="150"></td>
+<td style="text-align: center;"><img src="Images/venn1AoC.jpeg" height="150"></td>
+<td style="text-align: center;"><img src="Images/venn1AUByC.jpeg" height="150"></td>
+</tr>
+</tbody>
+</table>
+<div class="callout-proposicion">
+<div class="callout-title">
+<p><i class="bi bi-clipboard-check"> Complementario del complementario</i></p>
+</div>
+<div class="callout-body">
+<p><span class="math display">\[(A^c)^c=A\]</span></p>
+</div>
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(A\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(A^c\)</span></th>
+<th style="text-align: center;"><span class="math inline">\((A^c)^c\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="Images/venn1A_solo.jpeg" height="150"></td>
+<td style="text-align: center;"><img src="Images/venn1solo_Ac.jpeg" height="150"></td>
+<td style="text-align: center;"><img src="Images/venn1A_solo.jpeg" height="150"></td>
+</tr>
+</tbody>
+</table>
+<div class="callout-proposicion">
+<div class="callout-title">
+<p><i class="bi bi-clipboard-check"> Leyes de De Morgan</i></p>
+</div>
+<div class="callout-body">
+<p><span class="math display">\[(A\cup B)^c=A^c\cap B^c\]</span></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(A\cup B\)</span></th>
+<th style="text-align: center;"><span class="math inline">\((A\cup B)^c\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="Images/proba1dibujos/demorgan6.jpg" height="150"></td>
+<td style="text-align: center;"><img src="Images/proba1dibujos/demorgan7.jpg" height="150"></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[(A\cup B)^c=A^c\cap B^c\]</span></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(A^c\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(B^c\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(A^c\cap B^c\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="Images/venn1Ac_conB.jpeg" height="150"></td>
+<td style="text-align: center;"><img src="Images/venn1Bc_conA.jpeg" height="150"></td>
+<td style="text-align: center;"><img src="Images/venn1interseccioncomplementarios.jpeg" height="150"></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[(A\cap B)^c=A^c\cup B^c\]</span></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(A\cap B\)</span></th>
+<th style="text-align: center;"><span class="math inline">\((A\cap B)^c\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="Images/venn1AyB.jpeg" height="150"></td>
+<td style="text-align: center;"><img src="Images/venn1ComplementarioInterseccion.jpeg" height="145"></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[(A\cap B)^c=A^c\cup B^c\]</span></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(A^c\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(B^c\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(A^c\cup B^c\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="Images/venn1Ac_conB.jpeg" height="150"></td>
+<td style="text-align: center;"><img src="Images/venn1Bc_conA.jpeg" height="150"></td>
+<td style="text-align: center;"><img src="Images/venn1ComplementarioInterseccion.jpeg" height="145"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</section>
+<section id="definición-de-probabilidad" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="definición-de-probabilidad"><span class="header-section-number">2.2</span> Definición de probabilidad</h2>
+<p>La probabilidad de un suceso es una puntuación (<em>score</em>) numérico entre 0 y 1 que mide la verosimilitud de que este evento se produzca.</p>
+<p>Esta verosimilitud puede estar justificada por:</p>
+<ul>
+<li><p>Estimación personal</p></li>
+<li><p>Estimación de expertos</p></li>
+<li><p>La frecuencia con la que se da</p></li>
+<li><p>Cálculo formal</p></li>
+</ul>
+<div class="callout-definicion">
+<div class="callout-title">
+<p><i class="bi bi-book">Definición formal de probabilidad</i></p>
+</div>
+<div class="callout-body">
+<p>Sea <span class="math inline">\(\Omega\)</span> el espacio muestral de un experimento aleatorio. Supongamos que el número de posibles resultados, por el momento, es finito.</p>
+<p>Una probabilidad sobre <span class="math inline">\(\Omega\)</span> es una aplicación <span class="math inline">\(P:\mathcal{P}(\Omega)\to [0,1]\)</span> con las siguientes propiedades:</p>
+<ol type="1">
+<li><span class="math inline">\(0\leq P(A)\leq 1\)</span>, para todo suceso <span class="math inline">\(A\)</span>.</li>
+<li><span class="math inline">\(P(\Omega)=1\)</span>.</li>
+<li>Si <span class="math inline">\(\{A_1,A_2,\ldots,A_n\}\)</span> son sucesos disjuntos dos a dos, entonces</li>
+</ol>
+<p><span class="math display">\[
+P(A_1\cup A_2\cup \cdots \cup A_n)=P(A_1)+P(A_2)+\cdots +P(A_n)
+\]</span></p>
+<p>Si <span class="math inline">\(a\in \Omega\)</span> es un suceso elemental cometeremos el abuso de notación de poner <span class="math inline">\(P(a)\)</span> en lugar de <span class="math inline">\(P(\{a\})\)</span>.</p>
+</div>
+</div>
+<p>Veamos un ejemplo real de cómo se calcula la probabilidad de un suceso.</p>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-list-task"> Ejemplo</i></p>
+</div>
+<div class="callout-body">
+<p>En la página de la <a href="http://www.donasang.org/que-es-la-sang/es_frequencies-dels-diferents-grups.html">Fundación Banco de Sangre y Tejidos de las Islas Baleares (17-08-2023)</a> podemos encontrar información sobre los porcentajes de tipos de sangre de los donantes de las Islas Baleares:</p>
+<p><span class="math display">\[A: 46\%;\  B: 7.5\%;\  AB: 3.5\%;\  O: 43\%.\]</span></p>
+<p>¿Cuál es la probabilidad de que un balear donante de sangre no sea del tipo O?</p>
+<p><strong>Experimento aleatorio:</strong> tipo de sangre de un paciente humano:</p>
+<p><span class="math display">\[\Omega=\{\mbox{A,B,AB,O}\}\]</span></p>
+<p><strong>Probabilidad</strong> de un suceso: se asimila al porcentaje observado de individuos.</p>
+<p><strong>Suceso:</strong> <span class="math inline">\(\{\mbox{O}\}^c=\{\mbox{A,B,AB}\}\)</span>.</p>
+<p><span class="math display">\[P(\{\mbox{O}\}^c)\!=\!P(\{\mbox{A,B,AB}\})\!=\!
+P(\mbox{A})+P (\mbox{B})+P(\mbox{AB})\!=\!0.57.\]</span></p>
+</div>
+</div>
+<p>Necesitaremos tener propiedades y fórmulas prácticas para poder calcular probabilidades de sucesos más complejos. Veamos algunas de ellas.</p>
+<div class="callout-proposicion">
+<div class="callout-title">
+<p><i class="bi bi-clipboard-check"> Propiedades básicas de la probabilidad</i></p>
+</div>
+<div class="callout-body">
+<ul>
+<li><p><span class="math inline">\(P(\emptyset)=0\)</span>.</p></li>
+<li><p><span class="math inline">\(\scriptsize{P(A-B)=P(A)-P(A\cap B)}\)</span> porque <span class="math inline">\(\scriptsize{P(A)=P(A-B)+P(A\cap B)}\)</span>.</p></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/proba1dibujos/A-B.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><p>Si <span class="math inline">\(B\subseteq A\)</span>, entonces <span class="math inline">\(0\leq P(B)\leq P(A)\)</span>.</p></li>
+<li><p><span class="math inline">\(P(A^c)=1-P(A)\)</span>.</p></li>
+</ul>
+</div>
+</div>
+<p>Una identidad muy utilizada es la de la probabilidad de la unión de dos sucesos cualesquiera.</p>
+<div class="callout-proposicion">
+<div class="callout-title">
+<p><i class="bi bi-clipboard-check">La Probabilidad de la unión de dos sucesos</i></p>
+</div>
+<div class="callout-body">
+<p><span class="math inline">\(P(A\cup B)=P(A)+P(B)-P(A\cap B)\)</span></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/proba1dibujos/A-B.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>La demostración analítica de esta propiedad es la siguiente:</p>
+<p><span class="math display">\[\begin{aligned}
+P(A)+P(B)-P(A\cap B) &amp;=&amp; P(A-B)+P(A\cap B)\\
+&amp; &amp; +P(B-A)+ P(A\cap  B)-P(A\cap  B)\\
+&amp;=&amp; P(A-B)+P(A\cap B)+ P(B-A) \\
+&amp;=&amp; P(A\cup B).\\
+\end{aligned}\]</span></p>
+<div class="callout-proposicion">
+<div class="callout-title">
+<p><i class="bi bi-clipboard-check"> Probabilidad de la unión de </i> <span class="math inline">\(n\)</span> conjuntos</p>
+</div>
+<div class="callout-body">
+<p>Sean <span class="math inline">\(A_1, A_2,\ldots A_n\)</span> sucesos. Entonces:</p>
+<p><span class="math display">\[
+P(\cup_{i=1}^n A_i)=\sum_{i=1}^n P(A_i)-\sum_{1\leq i&lt;j\leq n}P(A_i\cap A_j)+\cdots +(-1)^{n-1}P(A_1\cap A_2\cap \cdots \cap A_n).
+\]</span></p>
+</div>
+</div>
+<p>La demostración es sencilla mediante inducción: partimos del caso base de dos sucesos, suponemos que es cierta para <span class="math inline">\(n\)</span> sucesos y luego la extendemos al caso de <span class="math inline">\(n+1\)</span> sucesos.</p>
+<p>Como comprobación, consideremos un ejemplo genérico con tres sucesos.</p>
+<p><span class="math inline">\(A=\{1,4,5,6\}\)</span>, <span class="math inline">\(B=\{2,4,6,7\}\)</span> y <span class="math inline">\(C=\{3,5,6,7\}\)</span>. En este caso la fórmula nos da</p>
+<p><span class="math display">\[
+P(A\cup B\cup C)=  P(A)+P(B)+P(C)-P(A\cap B)-P(A\cap C)
+-P(B\cap C)+P(A\cap B\cap C).
+\]</span></p>
+<p>Gráficamente tenemos esta situación:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/proba1dibujos/tresconjunts.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Ahora podemos comprobar la fórmula para este caso.</p>
+<p><span class="math display">\[\begin{aligned}
+P(A\cup B\cup C)&amp;=&amp;P(A)+P(B)+P(C)-P(A\cap B) \\
+  &amp; &amp; - P(A\cap C)-P(B\cap C)+P(A\cap B\cap C).\\
+\end{aligned}\]</span></p>
+<p>Efectivamente tenemos que:</p>
+<p><span class="math display">\[P(A\cup B\cup C)=P(1)+P(2)+P(3)+P(4)+P(5)+P(6)+P(7).\]</span></p>
+<p>Una de las formas más intuitiva de asignación de probabilidades es hacer el cociente entre los casos favorables a que acontezca el evento y los casos posibles del experimento; la llamada fórmula de Laplace.</p>
+<div class="callout-proposicion">
+<div class="callout-title">
+<p><i class="bi bi-clipboard-check"> Propiedad</i></p>
+</div>
+<div class="callout-body">
+<ul>
+<li><p>En general dado un suceso <span class="math inline">\(A=\{a_1,a_2,\ldots,a_k\}\)</span>, entonces <span class="math display">\[
+P(A)=P(a_1)+P(a_2)+\cdots+P(a_k).
+\]</span></p></li>
+<li><p><strong>Fórmula de Laplace</strong>: Si todos los sucesos elementales tienen la misma probabilidad, <span class="math display">\[
+P(A)=\frac{|A|}{|\Omega|}\Big(=\frac{\mbox{casos favorables}}{\mbox{casos posibles}}\Big).
+\]</span></p></li>
+</ul>
+</div>
+</div>
+<p>En el procesamiento del lenguaje se suelen estudiar las frecuencias de palabras o letras de un determinado idioma. Veamos un ejemplo sobre las frecuencias de las vocales en castellano.</p>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-list-task">&lt; Ejemplo: Frecuencia de vocales/i&gt;</i></p><i class="bi bi-list-task">
+</i></div><i class="bi bi-list-task">
+<div class="callout-body">
+<p>Los porcentajes de vocales de un determinado idioma (de alfabeto latino) según la <a href="https://es.wikipedia.org/wiki/Frecuencia_de_aparici%C3%B3n_de_letras">Wikipedia</a> son:</p>
+<p><span class="math display">\[A: 18.7\%;\ E: 26.1\%;\ I: 25.7\%;\ O: 24.4\%;\ U: 5.1\%.\]</span></p>
+<p>¿Cuál es la probabilidad que una vocal escogida al azar de este idioma sea una E o una O?</p>
+<p>El espacio muestral del experimento es <span class="math inline">\(\Omega=\{A,E,I,O,U\}\)</span>.</p>
+<p>El suceso que deseamos analizar es <span class="math inline">\(\{E,0\}\)</span>.</p>
+<p>Y su probabilidad es</p>
+<p><span class="math display">\[P(\{E,O\})=P(E)+P(O)=0.261+0.244=0.505.\]</span></p>
+</div>
+</i></div><i class="bi bi-list-task">
+<p>Otro ejemplo en este caso es sobre un test de drogas en el que se analiza la presencia de cocaína y cannabis en la sangre de los conductores, inspirado en un caso real.</p>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-list-task"> Ejemplo: Consumo de drogas</i></p>
+</div>
+<div class="callout-body">
+<p>Según un artículo de <a href="https://elpais.com/politica/2019/01/02/actualidad/1546426491_623324.html">El País</a>, en un control especial de la policía el <span class="math inline">\(0.1\%\)</span> de todos los conductores analizados en un control de tráfico dan positivo en un el test en cocaína, y el <span class="math inline">\(1\%\)</span> da positivo en cannabis. Un <span class="math inline">\(1.05\%\)</span> da positivo en alguno de los dos test.</p>
+<p><strong>Pregunta</strong>: ¿Cuál es la probabilidad que un individuo analizado en el control de drogas escogido al azar no de positivo en ninguno de lo dos test?</p>
+<p>Los sucesos elementales del enunciado del problema son:</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: dar positivo en cocaína; <span class="math inline">\(P(A)=0.001.\)</span></li>
+<li><span class="math inline">\(B\)</span>: dar positivo en cannabis; <span class="math inline">\(P(B)=0.01.\)</span></li>
+</ul>
+<p>En este caso nos interesa estudiar los sucesos:</p>
+<ul>
+<li><span class="math inline">\(A\cup B\)</span>: dar positivo en alguno de los dos test; <span class="math inline">\(P(A\cup B)=0.0105.\)</span></li>
+<li><span class="math inline">\((A\cup B)^c\)</span>: no dar positivo en ninguno de los test,por tanto:</li>
+</ul>
+<p><span class="math display">\[P((A\cup B)^c)=1-P(A\cup B)=1-0.0105=0.9895.\]</span></p>
+<p><strong>Pregunta</strong>: ¿Cuál es la probabilidad que un analizado al azar de positivo en los dos test en cocaína y cannabis?</p>
+<p>Los sucesos elementales son:</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: dar positivo en cocaína; <span class="math inline">\(P(A)=0.001.\)</span></li>
+<li><span class="math inline">\(B\)</span>: dar positivo en cannabis; <span class="math inline">\(P(B)=0.01.\)</span></li>
+</ul>
+<p>En este caso nos interesa estudiar los sucesos:</p>
+<ul>
+<li><span class="math inline">\(A\cup B\)</span>: dar positivo en algún de los dos test; <span class="math inline">\(P(A\cup B)=0.0105.\)</span></li>
+<li><span class="math inline">\(A\cap B\)</span>: dar positivo en los dos test</li>
+</ul>
+<p>de donde, por tanto:</p>
+<p><span class="math display">\[\begin{array}{rl}
+{P(A\cap B)} &amp;{=P(A)+P(B)-P(A\cup B)}\\ &amp;{=0.001+0.01-0.0105=0.0005}.
+\end{array}\]</span></p>
+<p><strong>Pregunta</strong>: ¿Cuál es la probabilidad de que un conductor analizado de positivo en cocaína pero no en cannabis?</p>
+<p>Los sucesos elementales son:</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: dar positivo en cocaína; <span class="math inline">\(P(A)=0.001.\)</span></li>
+<li><span class="math inline">\(B\)</span>: dar positivo en cannabis; <span class="math inline">\(P(B)=0.01.\)</span></li>
+</ul>
+<p>En este caso nos interesa estudiar los sucesos:</p>
+<ul>
+<li><span class="math inline">\(A\cap B\)</span>: dar positivo en los dos test; <span class="math inline">\(P(A\cap B)=0.0005.\)</span></li>
+<li><span class="math inline">\(A-B\)</span>: dar positivo en cocaína pero no en cannabis, por lo tanto tenemos que :</li>
+</ul>
+<p><span class="math display">\[P(A-B) =P(A)-P(A\cap B) =0.001-0.0005=0.0005.\]</span></p>
+</div>
+</div>
+</i></section><i class="bi bi-list-task">
+<section id="probabilidad-condicionada" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="probabilidad-condicionada"><span class="header-section-number">2.3</span> Probabilidad condicionada</h2>
+<div class="callout-definicion">
+<div class="callout-title">
+<p><i class="bi bi-book"> Probabilidad condicionada</i></p>
+</div>
+<div class="callout-body">
+<p>Dados dos sucesos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, con <span class="math inline">\(P(A)&gt;0\)</span>, la probabilidad <span class="math inline">\(P(B|A)\)</span> de <span class="math inline">\(B\)</span> condicionado a <span class="math inline">\(A\)</span> es la probabilidad</p>
+<ul>
+<li>de que suceda <span class="math inline">\(B\)</span> suponiendo que pasa <span class="math inline">\(A\)</span>,</li>
+<li>de que si pasa <span class="math inline">\(A\)</span>, entonces suceda <span class="math inline">\(B\)</span>,</li>
+<li>de que un resultado de <span class="math inline">\(A\)</span> también pertenezca a <span class="math inline">\(B\)</span>.</li>
+</ul>
+<p>Se calcula a través de la definición:</p>
+<p><span class="math display">\[
+P(B|A)=\frac{P(A\cap B)}{P(A)}.
+\]</span></p>
+</div>
+</div>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-list-task"> Ejemplo: Probabilidad condicionada</i></p>
+</div>
+<div class="callout-body">
+<p>En una clase de 20 hombres y 30 mujeres, 15 hombres y 18 mujeres llevan gafas. Contestemos las siguientes preguntas:</p>
+<p>¿Cuál es la probabilidad de que un alumno lleve gafas?</p>
+<p><span class="math display">\[
+\frac{33}{50}
+\]</span></p>
+<p>¿Cuál es la probabilidad de que un alumno sea mujer y lleve gafas?</p>
+<p><span class="math display">\[
+\frac{18}{50}
+\]</span></p>
+<p>¿Cuál es la probabilidad de que un chica lleve gafas?</p>
+<p><span class="math display">\[
+\frac{18}{30}=\frac{18/50}{30/50}=\frac{P(\mbox{mujer  y gafas})}{P(\mbox{mujer})}.
+\]</span></p>
+<p>Si escogemos un estudiante al azar ¿Cuál es la probabilidad que si es mujer, entonces lleve gafas?</p>
+<p><span class="math display">\[
+\frac{18}{30}.
+\]</span></p>
+<p>¿Cuál es la probabilidad de que un alumno que lleve gafas sea mujer?</p>
+<p><span class="math display">\[
+\frac{18}{33}=\frac{18/50}{33/50}=\frac{P(\mbox{mujer y gafas})}{P(\mbox{gafas})}.
+\]</span></p>
+<p>Si escogemos un estudiante al azar ¿Cuál es la probabilidad de que si lleva gafas, entonces sea mujer? <span class="math display">\[
+    \frac{18}{33}
+    \]</span></p>
+</div>
+</div>
+<div class="callout-advertencia">
+<div class="callout-title">
+<p><i class="bi bi-exclamation-triangle"> ¡Atención!</i></p>
+</div>
+<div class="callout-body">
+<p>Hay que distinguir bien entre</p>
+<ul>
+<li><span class="math inline">\(P(A\cap B)\)</span>: probabilidad de <span class="math inline">\(A\)</span> <span class="math inline">\(\color{red}{\text{y}}\)</span> <span class="math inline">\(B\)</span>.</li>
+</ul>
+<p><em>Probabilidad de que sea mujer y lleve gafas.</em></p>
+<ul>
+<li><span class="math inline">\(P(A|B)\)</span>: probabilidad de que <span class="math inline">\(\color{red}{\text{si}}\)</span> pasa <span class="math inline">\(B\)</span>, <span class="math inline">\(\color{red}{\text{entonces}}\)</span> pase <span class="math inline">\(A\)</span>.</li>
+</ul>
+<p><em>Probabilidad de que, si es mujer, lleve gafas.</em></p>
+<p>Cuando utilizamos probabilidad condicional <span class="math inline">\(P(A|B)\)</span> estamos restringiendo el espacio muestral a <span class="math inline">\(B\)</span>.</p>
+</div>
+</div>
+<section id="probabilidad-condicionada.-propiedades" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="probabilidad-condicionada.-propiedades"><span class="header-section-number">2.3.1</span> Probabilidad condicionada. Propiedades</h3>
+<p>La probabilidad condicionada es una probabilidad, en el sentido de la siguiente propiedad.</p>
+<div class="callout-proposicion">
+<div class="callout-title">
+<p><i class="bi bi-clipboard-check"> Propiedad</i></p>
+</div>
+<div class="callout-body">
+<p>Sea <span class="math inline">\(A\subseteq \Omega\)</span> un suceso tal que <span class="math inline">\(P(A)&gt;0\)</span>, entonces</p>
+<p><span class="math display">\[
+\begin{array}{rccl}
+P(-|A):&amp; \mathcal{P}(\Omega) &amp; \to &amp; [0,1]\\
+&amp;B &amp; \mapsto &amp; P(B|A).
+\end{array}
+\]</span> satisface las propiedades de las probabilidades, como por ejemplo:</p>
+<p><span class="math display">\[
+\begin{array}{l}
+P(B^c|A)=1-P(B|A),\\
+P(B_1\cup B_2|A)=P(B_1|A)+P(B_2|A)-P(B_1\cap B_2|A).
+\end{array}
+\]</span></p>
+</div>
+</div>
+<p>También se cumplirán el resto de propiedades mientras se condicionen cada una de las probabilidades al mismo suceso <span class="math inline">\(A\)</span>.</p>
+<div class="callout-ejercicio">
+<div class="callout-title">
+<p><i class="bi bi-list-task"> Ejercicio</i></p>
+</div>
+<div class="callout-body">
+<p>Escribid el resto de propiedades que cumpliría una probabilidad condicionada al evento <span class="math inline">\(A\)</span>.</p>
+</div>
+</div>
+<p>Veamos un ejemplo donde se aplica la probabilidad condicionada, en este caso, para calcular la probabilidad de que un adulto sea hipertenso, dado que cree que lo es.</p>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-list-task"> Ejemplo</i></p>
+</div>
+<div class="callout-body">
+<p>Un 15% de los adultos son hipertensos, un 25% de los adultos creen que son hipertensos, y un 9% de los adultos son hipertensos y creen que lo son.</p>
+<p>Si un adulto cree que es hipertenso, ¿cuál es la probabilidad que lo sea?</p>
+<p>Sean los sucesos</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: ser hipertenso, <span class="math inline">\(P(A)=0.15\)</span> ,</li>
+<li><span class="math inline">\(B\)</span>: creer ser hipertenso, <span class="math inline">\(P(B)=0.25\)</span>,</li>
+</ul>
+<p>Ahora podemos definir el suceso:</p>
+<ul>
+<li><span class="math inline">\(A\cap B\)</span>: ser hipertenso y creerlo, <span class="math inline">\(P(A\cap B)=0.09\)</span>.</li>
+</ul>
+<p>de donde, la probabilidad condicionada de ser hipertenso creyéndonos que lo somos es:</p>
+<p><span class="math display">\[\scriptsize P(A|B)=\dfrac{P(A\cap B)}{P(B)}=\dfrac{0.09}{0.25}=0.36.\]</span></p>
+<p>Otra pregunta es, si un adulto es hipertenso, ¿cuál es la probabilidad que crea que lo es?</p>
+<p>Si tenemos los sucesos:</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: ser hipertenso,</li>
+<li><span class="math inline">\(B\)</span>: creer ser hipertenso</li>
+</ul>
+<p>entonces buscamos la probabilidad <span class="math inline">\(P(B|A)\)</span>:</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+P(B|A) &amp; =\dfrac{P(A\cap B)}{P(A)}=\dfrac{0.09}{0.15}=
+0.6
+\end{array}
+\]</span></p>
+</div>
+</div>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-list-task"> Ejemplo</i></p>
+</div>
+<div class="callout-body">
+<p>Otro ejemplo de probabilidad condicionada en este caso un ejemplo simple de dígito de control de error.</p>
+<p>Un dígito de control de error toma el valor 0 en el 99% de los casos en que hay un error. Si la probabilidad de error en un mensaje es del <span class="math inline">\(0.5\%\)</span>. ¿cuál es la probabilidad de que el mensaje sea erróneo y el código de error tenga valor 0?</p>
+<ul>
+<li><span class="math inline">\(B\)</span>: mensaje con error; <span class="math inline">\(P(B)=0.005\)</span>,</li>
+<li><span class="math inline">\(A\)</span>: código de error vale 0,</li>
+<li><span class="math inline">\(P(A|B)=0.99\)</span>,</li>
+</ul>
+<p>entonces: <span class="math display">\[P(A\cap B)=P(B)\cdot P(A|B)=0.005\cdot 0.99=0.00495.\]</span></p>
+</div>
+</div>
+<p>La probabilidad condicional también es útil en la resolución de problemas de clasificación, como el siguiente ejemplo.</p>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-list-task"></i> Ejemplo: SPAM</p>
+</div>
+<div class="callout-body">
+<p>Un 50% de correos recibidos en un servidor llevan adjuntos y un 65% son publicidad no deseada (SPAM). Sólo un 15% de estos correos no llevan adjuntos y no son SPAM.</p>
+<ul>
+<li>¿Cuál es la probabilidad que un correo lleve adjunto si es SPAM?</li>
+<li>¿Cuál es la probabilidad que un correo <strong>no</strong> tenga adjuntos si <strong>no</strong> es SPAM?</li>
+<li>¿Cuál es la probabilidad que un correo lleve adjunto si es SPAM?</li>
+</ul>
+<p>Asignemos sucesos y probabilidades</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: llevar adjuntos; <span class="math inline">\(P(A)=0.5\)</span>, - <span class="math inline">\(S\)</span>: SPAM; <span class="math inline">\(P(S)=0.65\)</span>, - <span class="math inline">\(A^c\cap S^c=(A\cup S)^c\)</span>: no llevar adjunto y no ser SPAM; <span class="math inline">\(P((A\cup S)^c)=0.15\)</span>,</li>
+</ul>
+<p><span class="math display">\[P(A|S)=\dfrac{P(A\cap S)}{P(S)}=?\]</span></p>
+<ul>
+<li><p>¿Cuál es la probabilidad que un correo lleve adjunto si es SPAM?</p></li>
+<li><p><span class="math inline">\(P(A)=0.5, P(S)=0.65, P(A^c\cap S^c)=P((A\cup S)^c)=0.15\)</span>,</p></li>
+<li><p><span class="math inline">\(P(A\cup S)=1-P((A\cup S)^c)=0.85\)</span>,</p></li>
+<li><p><span class="math inline">\(P(A\cap S)=P(A)+P(S)-P(A\cup S)=0.3\)</span>,</p></li>
+</ul>
+<p><span class="math display">\[P(A|S)=\dfrac{P(A\cap S)}{P(S)}=\dfrac{0.3}{0.65}\approx 0.46.\]</span></p>
+<ul>
+<li><p>Otra pregunta es ¿Cuál es la probabilidad de que un correo no lleve adjuntos si no es SPAM?</p></li>
+<li><p><span class="math inline">\(P(A)=0.5, P(S)=0.65, P(A^c\cap S^c)=P((A\cup S)^c)=0.15.\)</span></p></li>
+</ul>
+<p><span class="math display">\[P(A^c|S^c)=\dfrac{P(A^c\cap S^c)}{P(S^c)}=\dfrac{P(A^c\cap S^c)}{1-P(S)}=\dfrac{0.15}{0.35}\approx 0.43.\]</span></p>
+</div>
+</div>
+</section>
+</section>
+<section id="teorema-de-la-probabilidad-total" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="teorema-de-la-probabilidad-total"><span class="header-section-number">2.4</span> Teorema de la probabilidad total</h2>
+<div class="callout-teorema">
+<div class="callout-title">
+<p><i class="bi bi-lightbulb"> Teorema de la probabilidad total</i></p>
+</div>
+<div class="callout-body">
+<p>Dados dos sucesos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> se tiene que</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+P(B)&amp;= P(B\cap A) +P(B\cap A^c)\\
+&amp; =P(A)\cdot P(B|A)+ P(A^c)\cdot P(B|A^c).
+\end{array}
+\]</span></p>
+</div>
+</div>
+<p>Vamos a generalizar el resultado anterior a una colección de sucesos <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> que forman una partición del espacio muestral <span class="math inline">\(\Omega\)</span>.</p>
+<div class="callout-definicion">
+<div class="callout-title">
+<p><i class="bi bi-book"> Partición del espacio espacio muestral</i></p>
+</div>
+<div class="callout-body">
+<p>Los sucesos <span class="math inline">\(A_1,A_2,\ldots, A_n\)</span> son una <strong>partición</strong> del espacio muestral <span class="math inline">\(\Omega\)</span> de un determinado experimento aleatorio, si cumplen las condiciones siguientes:</p>
+<ol type="1">
+<li><span class="math inline">\(A_1\cup A_2\cup\ldots\cup A_n=\Omega\)</span>,</li>
+<li><span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> son incompatibles dos a dos (<span class="math inline">\(A_i\cap A_j=\emptyset\)</span>).</li>
+</ol>
+</div>
+</div>
+<p>Ahora podemos volver a enunciar el teorema anterior pero en esta ocasión para particiones arbitrarias.</p>
+<div class="callout-teorema">
+<div class="callout-title">
+<p><i class="bi bi-lightbulb"> Teorema de la probabilidad total generalizado</i></p>
+</div>
+<div class="callout-body">
+<p>Sea <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> una partición de <span class="math inline">\(\Omega\)</span>. Sea <span class="math inline">\(B\)</span> un suceso cualquiera. Entonces</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+P(B)&amp;= P(B\cap A_1)+\cdots +P(B\cap A_n)\\
+&amp; =P(A_1)\cdot P(B|A_1)+\ldots+P(A_n)\cdot P(B|A_n).
+\end{array}
+\]</span></p>
+</div>
+</div>
+<p>Revisitemos el ejemplo de los mensajes con dígitos de control de error.</p>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-list-task"> Ejemplo</i></p>
+</div>
+<div class="callout-body">
+<p>Un dígito de control de error toma el valor 0 en un <span class="math inline">\(99\%\)</span> de los casos en que hay un error y en un <span class="math inline">\(5\%\)</span> de los mensajes sin error. La probabilidad de error en un mensaje es del <span class="math inline">\(0.5\%\)</span>.</p>
+<p>¿Cuál es la probabilidad de que un mensaje escogido al azar tenga el dígito de control a 0?</p>
+<p>Sean los sucesos del enunciado:</p>
+<ul>
+<li><span class="math inline">\(B\)</span>: mensaje con error; <span class="math inline">\(P(B)=0.005\)</span>,</li>
+<li><span class="math inline">\(A\)</span>: código de error vale 0,</li>
+</ul>
+<p>entonces obtenemos las probabilidades a partir del enunciado:</p>
+<ul>
+<li><span class="math inline">\(P(A|B)=0.99,\)</span></li>
+<li><span class="math inline">\(P(A|B^c)= 0.05\)</span></li>
+</ul>
+<p>y por tanto,</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+P(A)=&amp; P(B)\cdot P(A|B)+P(B^c)\cdot P(A|B^c)\\
+&amp; =0.005\cdot 0.99+0.995\cdot 0.05=0.0547.
+\end{array}
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="clasificación-o-diagnostico-caso-binario" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="clasificación-o-diagnostico-caso-binario"><span class="header-section-number">2.5</span> Clasificación o diagnostico caso binario</h2>
+<p>Consideremos alguna de las siguientes situaciones:</p>
+<ul>
+<li>Un algoritmo detecta si una transacción con tarjeta de crédito es fraude o no.</li>
+<li>Un algoritmo detecta si tiene o no que mostrar un anuncio en una web.</li>
+<li>Un prueba de embarazo.</li>
+<li>Una prueba médica para una enfermedad concreta.</li>
+</ul>
+<p>Nos ceñiremos a la casuística más elemental el algoritmo de clasificación o la diagnosis solo da dos resultado <strong>Positivo</strong> (sí tienes la enfermedad, sí es un fraude) o <strong>Negativo</strong> (en caso contrario).</p>
+<p>SPAM continuación</p>
+<p>En todas estas situaciones podemos calcular lo que se llama <strong>matriz de confusión</strong> que representa todas las situaciones posibles. En el caso de estudiar una condición de tipo binario,</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;">El Test da Positivo</th>
+<th style="text-align: center;">El Test da Negativo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Condición Positiva</td>
+<td style="text-align: center;">Correcto</td>
+<td style="text-align: center;">Error</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Condición Negativa</td>
+<td style="text-align: center;">Error</td>
+<td style="text-align: center;">Correcto</td>
+</tr>
+</tbody>
+</table>
+<p>En general los modelos y algoritmos de clasificación suelen aportar puntuaciones (<em>scores</em>) que determinan el grado de pertenencia a una clase, o que miden si dos objetos están en la misma clase.</p>
+<p>Así el resultado del clasificador o del diagnóstico puede ser:</p>
+<ul>
+<li><strong>un número real</strong>, en cuyo caso debe clasificador entre cada clase debe determinarse por un valor umbral (<em>threshold</em>) por ejemplo para determinar si una persona está estresado podemos dar un <em>scores</em> entre 0 y 1 (1 máximo estrés 0 estrés nulo),</li>
+<li><strong>un resultado discreto</strong> que indica directamente una de las clases (esto es necesario si es un algoritmo que debe decidir qué hacer con el objeto.</li>
+</ul>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-list-task"> Falsos Positivos y Falsos Negativos</i></p>
+</div>
+<div class="callout-body">
+<p>Consideremos un problema de predicción de clases binario, en la que los resultados se etiquetan positivos (P) o negativos (N). Hay cuatro posibles resultados a partir de un clasificador binario como el propuesto.</p>
+<ul>
+<li>Si el resultado de una exploración es P y el valor dado es también P, entonces se conoce como un Verdadero Positivo (VP).</li>
+<li>Sin embargo si el valor real es N entonces se conoce como un Falso Positivo (FP).</li>
+<li>De igual modo, tenemos un Verdadero Negativo (VN) cuando tanto la exploración como el valor dado son N.</li>
+<li>Un Falso Negativo (FN) cuando el resultado de la predicción es N pero el valor real es P.</li>
+</ul>
+</div>
+</div>
+<p>Veamos el siguiente ejemplo:</p>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-list-task"> Falsos Positivos y Negativos</i></p>
+</div>
+<div class="callout-body">
+<p>Un ejemplo aproximado de un problema real es el siguiente: consideremos una prueba diagnóstica que persiga determinar si una persona tiene una cierta enfermedad.</p>
+<ul>
+<li>Un falso positivo en este caso ocurre cuando la prueba predice que el resultado es positivo, cuando la persona no tiene realmente la enfermedad.</li>
+<li>Un falso negativo, por el contrario, ocurre cuando el resultado de la prueba es negativo, sugiriendo que no tiene la enfermedad cuando realmente sí la tiene.</li>
+</ul>
+<p>En un diagnósticos de una cierta condición (por ejemplo, test embarazo, test de enfermedad), tenemos dos tipos de sucesos:</p>
+<ul>
+<li><span class="math inline">\(T\)</span>: el test da positivo,</li>
+<li><span class="math inline">\(M\)</span>: el sujeto satisface la condición.</li>
+</ul>
+</div>
+</div>
+<p>Necesitamos algunas denominaciones adicionales:</p>
+<div class="callout-definicion">
+<div class="callout-title">
+<p><i class="bi bi-book"> Falsos Positivos y Negativos</i></p>
+</div>
+<div class="callout-body">
+<ul>
+<li><strong>Falsos positivos</strong> <span class="math inline">\(T\cap M^c\)</span>: El test da positivo, pero la condición no se da,</li>
+<li><strong>Coeficiente de falsos positivos</strong> <span class="math inline">\(P(T|M^c)\)</span>,</li>
+<li><strong>Falsos negativos</strong> <span class="math inline">\(T^c\cap M\)</span>: El test da negativo, pero la condición sí que se da,</li>
+<li><strong>Coeficiente de falsos negativos</strong>: <span class="math inline">\(P(T^c|M)\)</span>.</li>
+</ul>
+</div>
+</div>
+<p><br> <br></p>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-list-task"> Falsos Positivos y Negativos</i></p>
+</div>
+<div class="callout-body">
+<p>Un test diseñado para diagnosticar una determinada enfermedad tiene un coeficiente de falsos negativos de 0.06, y un coeficiente de falsos positivos de 0.04. En un estudio masivo se observa que un 15% de la población da positivo al test.</p>
+<p>¿Cuál es la probabilidad que una persona escogida aleatoriamente tenga esta enfermedad?</p>
+<p>Los datos del problema son:</p>
+<ul>
+<li><span class="math inline">\(T\)</span>: dar positivo al test; <span class="math inline">\(P(T)=0.15\)</span>,</li>
+<li><span class="math inline">\(M\)</span>: tener la enfermedad,</li>
+<li><span class="math inline">\(P(T)=0.15\)</span>, <span class="math inline">\(P(T^c|M)=0.06\)</span>, <span class="math inline">\(P(T|M^c)=0.04\)</span>,</li>
+<li>¿<span class="math inline">\(P(M)\)</span>?</li>
+</ul>
+<p><span class="math display">\[
+P(T) =P(M)\cdot P(T|M)+P(M^c)\cdot P(T|M^c).
+\]</span></p>
+<p>donde</p>
+<p><span class="math display">\[
+\begin{array}{l}
+P(T|M)=1-P(T^c|M)=0.94 \\
+P(M^c)=1-P(M).
+\end{array}
+\]</span></p>
+<p>Por lo tanto</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+0.15 &amp; = P(M)\cdot 0.94+(1-P(M))\cdot 0.04\\
+&amp; =0.04+0.9\cdot P(M)\\
+P(M) &amp; =\dfrac{0.11}{0.9}\approx 0.1222.
+\end{array}
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="teorema-de-bayes" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Teorema de Bayes</h1>
+<div class="callout-teorema">
+<div class="callout-title">
+<p><i class="bi bi-lightbulb"> Teorema de Bayes para dos sucesos</i></p>
+</div>
+<div class="callout-body">
+<p>Sean <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> dos sucesos. Si <span class="math inline">\(P(B)&gt;0\)</span>, entonces</p>
+<p><span class="math display">\[
+P(A|B) =\dfrac{P(A)\cdot P(B|A)}{P(B)}=\dfrac{P(A)\cdot P(B|A)}{P(A)\cdot P(B|A)+P(A^c)\cdot P(B|A^c)}.
+\]</span></p>
+</div>
+</div>
+<p><br> <br></p>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-list-task"> Ejemplo</i></p>
+</div>
+<div class="callout-body">
+<p>Demostrar el teorema de Bayes utilizando que</p>
+<p><span class="math display">\[P(A|B) =\dfrac{P(A\cap B)}{P(B)}=\cdots\]</span></p>
+</div>
+</div>
+<p>Generalicemos este resultado para una partición arbitraria del espacio muestral.</p>
+<div class="callout-teorema">
+<div class="callout-title">
+<p><i class="bi bi-lightbulb"> Teorema de Bayes para una partición</i></p>
+</div>
+<div class="callout-body">
+<p>Sea <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> una partición de <span class="math inline">\(\Omega\)</span>. Sea <span class="math inline">\(B\)</span> un suceso tal que <span class="math inline">\(P(B)&gt;0\)</span>. entonces(para cualquier <span class="math inline">\(i=1,2,\ldots,n\)</span>):</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+P(A_i|B) &amp; =\dfrac{P(A_i)\cdot P(B|A_i)}{P(B)}\\
+&amp; =\dfrac{P(A_i)\cdot P(B|A_i)}{P(A_1)\cdot P(B|A_1)+\cdots+P(A_n)\cdot P(B|A_n)},
+\end{array}
+\]</span></p>
+</div>
+</div>
+<p>Podéis demostrar el teorema de Bayes utilizando que</p>
+<p><span class="math display">\[P(A_i|B) =\dfrac{P(A_i\cap B)}{P(B)}=\cdots\]</span></p>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-list-task"> Test de VIH</i></p>
+</div>
+<div class="callout-body">
+<p>Un test para detección de VIH da positivo un 99% de los casos en los que está presente y en un 5% de los casos en los que el virus está ausente. En una población con un <span class="math inline">\(0.5\%\)</span> de infectados por VIH, ¿cuál es la probabilidad que un individuo que haya dado positivo en el test esté infectado?</p>
+<p>Los sucesos del ejemplo son:</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: individuo infectado,</li>
+<li><span class="math inline">\(B\)</span>: el test da positivo,</li>
+</ul>
+<p>de donde podemos calcular:</p>
+<p><span class="math display">\[\scriptsize{
+P(A|B) =\dfrac{P(B|A)\cdot P(A)}{P(B|A)\cdot P(A)+P(B|A^c)\cdot P(A^c)}=\dfrac{0.99\cdot 0.005}{0.005\cdot 0.99+0.995\cdot 0.05}=0.09.}
+\]</span></p>
+<p>Un test para detección de VIH da positivo un 99% de los casos en los que está presente y en un 5% de los casos en los que el virus está ausente. En una población con un <span class="math inline">\(0.5\%\)</span> de infectados por VIH, ¿cuál es la probabilidad de que un individuo que haya dado <strong>negativo</strong> en el test <strong>no</strong> esté infectado?</p>
+<p>Los sucesos del ejemplo son:</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: individuo infectado,</li>
+<li><span class="math inline">\(B\)</span>: el test da positivo,</li>
+</ul>
+<p>de donde podemos calcular:</p>
+<p><span class="math display">\[
+\scriptsize{P(A^c|B^c) =\dfrac{P(B^c|A^c)\cdot P(A^c)}{P(B^c|A)\cdot P(A)+P(B^c|A^c)\cdot P(A^c)}=\dfrac{0.95\cdot 0.995}{0.01\cdot 0.005+0.95\cdot 0.995}=0.999947.}
+\]</span></p>
+</div>
+</div>
+<p><br> <br></p>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-list-task"> Ejemplo: Tipos de clientes</i></p>
+</div>
+<div class="callout-body">
+<p>Se ha observado que los cientes de una empresa de ventas por internet son de tres tipos, A, B y C, disjuntos dos a dos. La probabilidad que ser de cualquiera de cada uno de los tipos es <span class="math inline">\(1/3\)</span>, pero la probabilidad de compra de cada tipo es diferente: si es de tipo A compra un 50% de las veces, si de tipo B, un 75% de las veces, y de tipo C, un 60%.</p>
+<p>Supongamos que llega un cliente ¿cuál es la probabilidad de que si ha comprado sea del tipo B?</p>
+<p>Los sucesos del ejercicio son <span class="math inline">\(A\)</span>: el cliente es de tipo A, <span class="math inline">\(B\)</span>: el cliente es de tipo B, <span class="math inline">\(C\)</span>: el cliente es de tipo C y</p>
+<p><span class="math display">\[P(A)=P(B)=P(C)=1/3.\]</span></p>
+<p>Buscamos estudiar el suceso <span class="math inline">\(E\)</span>: el cliente compra, se tiene que:</p>
+<p><span class="math display">\[P(E|A)=0.5, P(E|B)=0.75, P(E|C)=0.6.\]</span></p>
+<p><span class="math display">\[P(B|E)\!=\!\dfrac{P(E|B)\cdot P(B)}{P(E|A)\!\cdot\! P(A)\!+\!P(E|B)\!\cdot\! P(B)\!+\!P(E|C)\!\cdot\! P(C)}\!=\!\ldots\]</span></p>
+</div>
+</div>
+<p><br> <br></p>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-list-task"> Ejemplo: Fidelización de clientes</i></p>
+</div>
+<div class="callout-body">
+<p>Para fidelizar a sus clientes una empresa implementa un test de detección precoz de abandono de clientes de una empresa de telefonía da positivo el 97.5% de las ocasiones en las que, posteriormente, el cliente se da de baja, y un 12% de las veces en que no se dio de baja. La probabilidad que un cliente escogido al azar se dé de baja es de un 2%.</p>
+<ul>
+<li>¿Cuál es la probabilidad que un individuo escogido al azar de positivo en el test?</li>
+<li>¿Cuál es la probabilidad que un individuo escogido al azar se de de baja y dé positivo en el test?</li>
+<li>¿Cuál es la probabilidad que un individuo que dé negativo en el test se dé de baja?</li>
+</ul>
+<p>Definimos los sucesos y datos del ejercicio:</p>
+<ul>
+<li><span class="math inline">\(T\)</span>: Dar positivo al test,</li>
+<li><span class="math inline">\(B\)</span>: darse de baja; <span class="math inline">\(P(B)=0.02\)</span>,</li>
+<li><span class="math inline">\(P(T|B)=0.975, P(T|B^c)=0.12\)</span>.</li>
+</ul>
+<p><span class="math display">\[P(B)=0.02, P(T|B)=0.975, P(T|B^c)=0.12.\]</span></p>
+<ul>
+<li>¿Cuál es la probabilidad que un individuo escogido al azar de positivo en el test?</li>
+</ul>
+<p><span class="math display">\[
+\begin{array}{rl}
+P(T) = &amp; P(B)\cdot P(T|B)+P(B^c)\cdot P(T|B^c)\\[1ex]
+&amp; =0.02\cdot 0.975+0.98\cdot 0.12=0.1371.
+\end{array}
+\]</span></p>
+<p>¿Cuál es la probabilidad que un individuo escogido al azar se de de baja y dé positivo en el test?</p>
+<p><span class="math display">\[P(B\cap T)= P(B)\cdot P(T|B)=0.02\cdot 0.975=0.0195.\]</span></p>
+<p><span class="math display">\[P(B)=0.02, P(T|B)=0.975, P(T|B^c)=0.12.\]</span></p>
+<p>¿Cuál es la probabilidad que un individuo que dé negativo en el test se dé de baja?</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+P(B|T^c)= &amp;\displaystyle \frac{P(B\cap T^c)}{P(T^c)}=
+\frac{P(B)-P(B\cap T)}{1-P(T)}\\[2ex] &amp; \displaystyle =
+\frac{0.02-0.0195}{1-0.1371}\approx 0.00058
+\end{array}
+\]</span></p>
+<p>O también se obtiene así <span class="math display">\[
+    P(B|T^c)=\frac{P(T^c|B)\cdot P(B)}{P(T^c|B)\cdot P(B)+P(T^c|B^c)\cdot P(B^c)},
+    \]</span></p>
+<p>donde <span class="math inline">\(P(T^c|B)=1-P(T|B)=0.025\)</span> y <span class="math inline">\(P(T^c|B^c)=1-P(T|B^c)=0.88.\)</span></p>
+</div>
+</div>
+</section>
+<section id="independencia-de-sucesos" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Independencia de sucesos</h1>
+<div class="callout-definicion">
+<div class="callout-title">
+<p><i class="bi bi-book"> Sucesos Independientes </i></p>
+</div>
+<div class="callout-body">
+<p>Diremos que los sucesos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son <strong>independientes</strong> si <span class="math inline">\(P(A\cap B)=P(A)\cdot P(B)\)</span>.</p>
+<p><span class="math inline">\(A_1,\ldots, A_n\)</span> son sucesos <strong>independientes</strong> cuando, para toda subfamilia <span class="math inline">\(A_{i_1},\ldots,A_{i_k}\)</span>, <span class="math display">\[
+P(A_{i_1}\cap \cdots\cap A_{i_k})=P(A_{i_1})\cdots P(A_{i_k}).
+\]</span></p>
+</div>
+</div>
+<div class="callout-proposicion">
+<div class="callout-title">
+<p><i class="bi bi-clipboard-check"> Propiedad</i></p>
+</div>
+<div class="callout-body">
+<p>Dados dos sucesos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> con <span class="math inline">\(P(A),P(B)0\)</span>, las siguientes afirmaciones son equivalentes:</p>
+<ol type="1">
+<li><span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes.</li>
+<li><span class="math inline">\(P(A|B)=P(A)\)</span>.</li>
+<li><span class="math inline">\(P(B|A)=P(B)\)</span>.</li>
+<li><span class="math inline">\(A^c\)</span> y <span class="math inline">\(B\)</span> son independientes.</li>
+<li><span class="math inline">\(A\)</span> y <span class="math inline">\(B^c\)</span> son independientes.</li>
+<li><span class="math inline">\(A^c\)</span> y <span class="math inline">\(B^c\)</span> son independientes.</li>
+</ol>
+</div>
+</div>
+<p>Veamos un sencillo ejemplo de compras de billetes de avión y alojamiento en hotel.</p>
+<div class="callout-ejemplo">
+<div class="callout-title">
+<p><i class="bi bi-list-task"> Ejemplo billete avión</i></p>
+</div>
+<div class="callout-body">
+<p>En la web de viajes WEBTravel, el 55% de los clientes compra billete de avión, el <span class="math inline">\(20\%\)</span> alojamiento en hotel, y el <span class="math inline">\(60\%\)</span> billete de avión o alojamiento en hotel. ¿Son los sucesos comprar billete de avión y comprar alojamiento en hotel independientes?</p>
+<p>Los sucesos y datos del ejemplo son:</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: comprar billete de avión; <span class="math inline">\(P(A)=0.55\)</span>,</li>
+<li><span class="math inline">\(B\)</span>: comprar alojamiento; <span class="math inline">\(P(B)=0.2\)</span>,</li>
+</ul>
+<p>por tanto, podemos calcular las probabilidades siguientes</p>
+<p><span class="math inline">\(P(A\cap B)=P(A)+P(B)-P(A\cup B)=0.55+0.2-0.6=0.15\)</span> <font color="red"> y </font> <span class="math inline">\(P(A)\cdot P(B) = 0.55\cdot 0.2=0.11.\)</span></p>
+<p>Concluimos que son dependientes, ya que <span class="math inline">\(P(A\cap B)\neq P(A)\cdot P(B)\)</span>.</p>
+</div>
+</div>
+<section id="sucesos-independientes-vs-disjuntos" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="sucesos-independientes-vs-disjuntos"><span class="header-section-number">4.1</span> Sucesos independientes vs disjuntos</h2>
+<div class="callout-ejercicio">
+<div class="callout-title">
+<p><i class="bi bi-list-task"> sucesos disjuntos e independencia</i></p>
+</div>
+<div class="callout-body">
+<ol type="1">
+<li>Dos sucesos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> disjuntos, ¿son necesariamente independientes?</li>
+<li>Dos sucesos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> independientes, ¿son necesariamente disjuntos?</li>
+<li><span class="math inline">\(\emptyset\)</span> y un suceso cualquiera <span class="math inline">\(A\)</span>, ¿son necesariamente independientes?</li>
+<li><span class="math inline">\(\Omega\)</span> y un suceso cualquiera <span class="math inline">\(A\)</span>, ¿son necesariamente independientes?</li>
+<li>¿Qué condiciones se tienen que dar para que un suceso <span class="math inline">\(A\)</span> sea independiente de si mismo?</li>
+</ol>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</i></main><i class="bi bi-list-task"> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./preliminares.html" class="pagination-link" aria-label="Preliminares: conjuntos y combinatoria">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preliminares: conjuntos y combinatoria</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./variables_aleatorias.html" class="pagination-link" aria-label="Variables aleatorias">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Variables aleatorias</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</i></div><i class="bi bi-list-task"> <!-- /content -->
+
+
+
+
+</i></body></html>

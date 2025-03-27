@@ -510,7 +510,7 @@ F_T(t)&amp;=P(T\leq t)= P(scale\cdot X+ loc\leq t)= P\left(X\leq \frac{t-loc}{sc
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="at">n=</span><span class="dv">5</span>,<span class="at">min=</span><span class="sc">-</span><span class="dv">1</span>,<span class="at">max=</span><span class="dv">1</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.3503750 -0.4856224  0.9412998 -0.2012418  0.5402211</code></pre>
+<pre><code>[1] -0.42526190  0.97214874 -0.10088849  0.09015715  0.67317187</code></pre>
 </div>
 </div>
 <p>Por defecto, el valor de los parámetros <code>a</code> y <code>b</code> son 0 y 1, respectivamente:</p>
@@ -525,7 +525,7 @@ F_T(t)&amp;=P(T\leq t)= P(scale\cdot X+ loc\leq t)= P\left(X\leq \frac{t-loc}{sc
 </div>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="at">n=</span><span class="dv">5</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.5032471 0.3617594 0.5646570 0.5761144 0.3099618</code></pre>
+<pre><code>[1] 0.5377154 0.9340245 0.1928896 0.7186150 0.8239391</code></pre>
 </div>
 </div>
 </section>
@@ -548,12 +548,12 @@ F_T(t)&amp;=P(T\leq t)= P(scale\cdot X+ loc\leq t)= P\left(X\leq \frac{t-loc}{sc
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>uniform.rvs(size<span class="op">=</span><span class="dv">30</span>,loc<span class="op">=-</span><span class="dv">1</span>,scale<span class="op">=</span><span class="dv">2</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>array([ 0.02601852, -0.90249554,  0.64373986, -0.76324551,  0.41385957,
-       -0.80568954,  0.02228763, -0.71628873,  0.53483039, -0.76712518,
-       -0.79083056,  0.88241994, -0.94956976, -0.4502038 , -0.1104512 ,
-       -0.1596667 , -0.5976218 , -0.26758971, -0.80020798,  0.20597604,
-       -0.3900367 , -0.50335972, -0.22318012,  0.61032149, -0.96280774,
-        0.76353551,  0.5801509 , -0.80154193, -0.68514078, -0.16271384])</code></pre>
+<pre><code>array([ 0.83985807, -0.15340795,  0.18736041,  0.77391163, -0.96233707,
+        0.21815339, -0.28539386,  0.5161963 , -0.01252076, -0.14203742,
+       -0.71698118, -0.49563882,  0.11620296,  0.25860461, -0.2215775 ,
+        0.7454378 , -0.13646882,  0.57867354, -0.2162649 , -0.16903514,
+       -0.34217926, -0.60879099, -0.53424362, -0.26658756,  0.42075609,
+       -0.79045886, -0.4698919 , -0.63054975, -0.86901214,  0.34374932])</code></pre>
 </div>
 </div>
 <p>Los valores de los parámetros por defecto son <code>loc=0, scale=1</code>:</p>
@@ -568,7 +568,7 @@ F_T(t)&amp;=P(T\leq t)= P(scale\cdot X+ loc\leq t)= P\left(X\leq \frac{t-loc}{sc
 </div>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>uniform.rvs(size<span class="op">=</span><span class="dv">5</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>array([0.12394281, 0.58567712, 0.15256492, 0.69287443, 0.5390889 ])</code></pre>
+<pre><code>array([0.46981771, 0.4740786 , 0.25590337, 0.34982445, 0.02343731])</code></pre>
 </div>
 </div>
 </section>
@@ -884,8 +884,8 @@ P(X&gt;0.5)=1-P(X\leq 0.5)=1-(1-e^{-4\cdot 0.5 })=e^{-2}=0.1353353.
 </div>
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>expon.rvs(scale<span class="op">=</span><span class="fl">1.</span><span class="op">/</span><span class="dv">3</span>,size<span class="op">=</span><span class="dv">10</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>array([0.00713044, 0.00876339, 0.09473404, 0.13648107, 0.11504018,
-       0.50388223, 0.04784977, 0.32281419, 0.31259875, 0.68680153])</code></pre>
+<pre><code>array([0.0073565 , 0.48510978, 0.50926986, 0.30280754, 0.14494797,
+       0.18859969, 0.14828066, 0.19686493, 0.50504179, 0.00377403])</code></pre>
 </div>
 </div>
 </section>
@@ -1102,7 +1102,7 @@ e^{-{1\over 2}{\left({t-\mu}\over{\sigma}\right)}^2} dt.
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb90"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>norm.rvs(loc<span class="op">=</span><span class="dv">1</span>,scale<span class="op">=</span><span class="dv">2</span>,size<span class="op">=</span><span class="dv">5</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>array([-1.64561678,  5.83142685, -1.31866887,  2.55547069, -0.58173312])</code></pre>
+<pre><code>array([1.93562406, 1.50942208, 0.66593561, 1.64598816, 3.24207676])</code></pre>
 </div>
 </div>
 <p>Consultad <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html">SciPy.org</a> para dibujar las funciones de densidad y de distribución con python.</p>
