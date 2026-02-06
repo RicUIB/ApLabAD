@@ -1,0 +1,80 @@
+% Para \rowcolor en tablas
+\usepackage[table]{xcolor}   % habilita colores en tablas
+\usepackage{colortbl}        % define \rowcolor
+
+% Si tu documento usa LightBlue y no está definido:
+\definecolor{LightBlue}{RGB}{217,234,247}
+
+
+
+
+% customblocks.tex
+% Estilos de "callouts" para PDF (LaTeX) usando tcolorbox
+
+% Paquetes
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{amsthm}
+\usepackage{fontawesome} % <-- IMPORTANTE: antes de usar \fa...
+
+% Definición de colores (RGB de tu CSS)
+\definecolor{calloutdef}{RGB}{230,244,234}    % #e6f4ea
+\definecolor{calloutteo}{RGB}{227,232,252}    % #e3e8fc
+\definecolor{calloutejem}{RGB}{243,232,253}   % #f3e8fd
+\definecolor{calloutprop}{RGB}{253,244,227}   % #fdf4e3
+\definecolor{calloutejer}{RGB}{234,245,252}   % #eaf5fc
+\definecolor{calloutnota}{RGB}{255,243,205}   % #fff3cd
+\definecolor{calloutadv}{RGB}{253,236,234}    % #fdecea
+\definecolor{calloutcur}{RGB}{241,248,255}    % #f1f8ff
+\definecolor{calloutgreen}{RGB}{0,86,63}      % #00563F
+
+% Estilo base (común a todas las cajas)
+\tcbset{
+  calloutstyle/.style={
+    enhanced,
+    breakable,
+    arc=3mm,
+    boxrule=1pt,
+    colframe=calloutgreen,
+    fonttitle=\bfseries,
+    left=1mm,
+    right=1mm,
+    top=1mm,
+    bottom=1mm,
+    before skip=10pt,
+    after skip=12pt
+  }
+}
+
+% Definición
+\newtcbtheorem[number within=section]{Definicion}{\textbf{Definición}}%
+{calloutstyle, colback=calloutdef, before title={\faBook\ }}{def}
+
+% Teorema
+\newtcbtheorem[number within=section]{Teorema}{\textbf{Teorema}}%
+{calloutstyle, colback=calloutteo, before title={\faCogs\ }}{teo}
+
+% Proposición
+\newtcbtheorem[number within=section]{Proposicion}{\texbf{Proposición}}%
+{calloutstyle, colback=calloutprop, before title={\faBalanceScale\ }}{prop}
+
+% Ejemplo
+\newtcbtheorem[number within=section]{Ejemplo}{\textbf{Ejemplo}}%
+{calloutstyle, colback=calloutejem, before title={\faLightbulbO\ }}{ejem}
+
+% Ejercicio
+\newtcbtheorem[number within=section]{Ejercicio}{\textbf{Ejercicio}}%
+{calloutstyle, colback=calloutejer, before title={\faPencil\ }}{ejer}
+
+% Nota
+\newtcbtheorem[number within=section]{Nota}{\textbf{Nota}}%
+{calloutstyle, colback=calloutnota, before title={\faInfoCircle\ }}{nota}
+
+% Advertencia
+\newtcbtheorem[number within=section]{Advertencia}{\textbf{Advertencia}}%
+{calloutstyle, colback=calloutadv, before title={\faExclamationTriangle\ }}{adv}
+
+% Curiosidad
+\newtcbtheorem[number within=section]{Curiosidad}{\textbf{Curiosidad}}%
+{calloutstyle, colback=calloutcur, before title={\faQuestionCircle\ }}{cur}

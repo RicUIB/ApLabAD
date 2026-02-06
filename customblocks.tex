@@ -1,0 +1,60 @@
+% Para \rowcolor en tablas
+\usepackage[table]{xcolor}   % habilita colores en tablas
+\usepackage{colortbl}        % define \rowcolor
+
+% Si tu documento usa LightBlue y no está definido:
+\definecolor{LightBlue}{RGB}{217,234,247}
+
+
+
+
+% Necesario para cajas de colores bonitas
+\usepackage[most]{tcolorbox}
+\usepackage{amsthm}
+\usepackage{lmodern}
+\usepackage{xcolor,eurosym,libertine,colortbl}
+% Definiciones de colores (RGB de tu CSS)
+\definecolor{calloutdef}{RGB}{230,244,234}    % #e6f4ea
+\definecolor{calloutteo}{RGB}{227,232,252}    % #e3e8fc
+\definecolor{calloutejem}{RGB}{243,232,253}   % #f3e8fd
+\definecolor{calloutprop}{RGB}{253,244,227}   % #fdf4e3
+\definecolor{calloutejer}{RGB}{234,245,252}   % #eaf5fc
+\definecolor{calloutnota}{RGB}{255,243,205}   % #fff3cd
+\definecolor{calloutadv}{RGB}{253,236,234}    % #fdecea
+\definecolor{calloutcur}{RGB}{241,248,255}    % #f1f8ff
+\definecolor{calloutgreen}{RGB}{0,86,63}      % #00563F
+
+% Definición (Verde claro)
+\newtcbtheorem[number within=section]{Definicion}{Definición}%
+{colback=calloutdef, colframe=calloutgreen, fonttitle=\bfseries, arc=3mm, boxrule=1pt, title={\faBook~}}{def}
+
+% Teorema (Azul claro)
+\newtcbtheorem[number within=section]{Teorema}{Teorema}%
+{colback=calloutteo, colframe=calloutgreen, fonttitle=\bfseries, arc=3mm, boxrule=1pt, title={\faCogs~}}{teo}
+
+% Proposición (Amarillo claro)
+\newtcbtheorem[number within=section]{Proposicion}{Proposición}%
+{colback=calloutprop, colframe=calloutgreen, fonttitle=\bfseries, arc=3mm, boxrule=1pt, title={\faBalanceScale~}}{prop}
+
+% Ejemplo (Violeta claro)
+\newtcbtheorem[number within=section]{Ejemplo}{Ejemplo}%
+{colback=calloutejem, colframe=calloutgreen, fonttitle=\bfseries, arc=3mm, boxrule=1pt, title={\faLightbulbO~}}{ejem}
+
+% Ejercicio (Azul clarísimo)
+\newtcbtheorem[number within=section]{Ejercicio}{Ejercicio}%
+{colback=calloutejer, colframe=calloutgreen, fonttitle=\bfseries, arc=3mm, boxrule=1pt, title={\faPencil~}}{ejer}
+
+% Nota (Amarillo)
+\newtcbtheorem[number within=section]{Nota}{Nota}%
+{colback=calloutnota, colframe=calloutgreen, fonttitle=\bfseries, arc=3mm, boxrule=1pt, title={\faInfoCircle~}}{nota}
+
+% Advertencia (Rojo claro)
+\newtcbtheorem[number within=section]{Advertencia}{Advertencia}%
+{colback=calloutadv, colframe=calloutgreen, fonttitle=\bfseries, arc=3mm, boxrule=1pt, title={\faExclamationTriangle~}}{adv}
+
+% Curiosidad (Azul muy claro)
+\newtcbtheorem[number within=section]{Curiosidad}{Curiosidad}%
+{colback=calloutcur, colframe=calloutgreen, fonttitle=\bfseries, arc=3mm, boxrule=1pt, title={\faQuestionCircle~}}{cur}
+
+% Iconos (requiere paquete fontawesome)
+\usepackage{fontawesome}

@@ -1,0 +1,73 @@
+/* Estilo base para los callouts */
+/* .callout-title i */
+
+.callout {
+  display: flex;
+  border-left: 6px solid #00563F;
+  border-radius: 8px;
+  margin-bottom: 2em;  /* Espacio entre callouts */
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Espaciado entre callouts consecutivos */
+.callout + .callout {
+  margin-top: 2em !important;  
+  padding-top: 0 !important; /* Evita colisión de padding */
+}
+
+/* Barra lateral con color sólido */
+.callout::before {
+  content: "";
+  width: 8px;
+  background-color: #00563F;
+  flex-shrink: 0;
+}
+
+/* Contenedor del título y contenido */
+.callout-content {
+  flex-grow: 1;
+  padding: 1em;
+  background-color: rgba(255, 255, 255, 0.7); /* Suaviza el fondo para evitar que se vea pegado */
+  border-radius: 0 8px 8px 0; /* Mantiene el borde redondeado */
+}
+
+/* Estilo del título */
+.callout-title {
+  font-weight: bold;
+  color: #00563F;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 86, 63, 0.1);
+  padding: 0.75em;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Agregar margen inferior al título para mejorar separación */
+.callout-title + .callout-body {
+  margin-top: 0.5em;
+}
+
+/* Espaciado para los iconos */
+.callout-title i {
+  margin-right: 8px;
+}
+
+/* Estilo del cuerpo del callout */
+.callout-body {
+  padding: 0.75em;
+  background-color: transparent; /* Evita que el fondo coloreado ocupe todo el bloque */
+}
+
+/* Fondos pastel distintos para cada tipo de callout */
+.callout-definicion { background-color: #e6f4ea; }
+.callout-teorema { background-color: #e3e8fc; }
+.callout-proposicion { background-color: #fdf4e3; }
+.callout-ejemplo { background-color: #f3e8fd; }
+.callout-ejercicio { background-color: #eaf5fc; }
+.callout-nota { background-color: #fff3cd; }
+.callout-advertencia { background-color: #fdecea; }
+.callout-curiosidad { background-color: #f1f8ff; }

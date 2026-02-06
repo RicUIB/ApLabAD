@@ -1,23 +1,24 @@
-/* Estilo base para los callouts */
-/* .callout-title i */
+/* --- Callouts: estilos mejorados para web y PDF --- */
 
+/* Caja general de callout */
 .callout {
   display: flex;
   border-left: 6px solid #00563F;
   border-radius: 8px;
-  margin-bottom: 2em;  /* Espacio entre callouts */
+  margin-bottom: 2em;
+  margin-top: 0;
   padding: 0;
+  /* box-shadow eliminado */
+  background: #fff; /* Fondo base sólido */
   overflow: hidden;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Espaciado entre callouts consecutivos */
 .callout + .callout {
-  margin-top: 2em !important;  
-  padding-top: 0 !important; /* Evita colisión de padding */
+  margin-top: 2em !important;
 }
 
-/* Barra lateral con color sólido */
+/* Barra lateral */
 .callout::before {
   content: "";
   width: 8px;
@@ -25,15 +26,15 @@
   flex-shrink: 0;
 }
 
-/* Contenedor del título y contenido */
+/* Contenedor título y contenido */
 .callout-content {
   flex-grow: 1;
   padding: 1em;
-  background-color: rgba(255, 255, 255, 0.7); /* Suaviza el fondo para evitar que se vea pegado */
-  border-radius: 0 8px 8px 0; /* Mantiene el borde redondeado */
+  background-color: #fff; /* Fondo sólido */
+  border-radius: 0 8px 8px 0;
 }
 
-/* Estilo del título */
+/* Título del callout */
 .callout-title {
   font-weight: bold;
   color: #00563F;
@@ -41,28 +42,28 @@
   margin-bottom: 0.5em;
   display: flex;
   align-items: center;
-  background-color: rgba(0, 86, 63, 0.1);
+  background-color: #e6f4ea; /* Mismo fondo que .callout-definicion */
   padding: 0.75em;
   border-radius: 8px 8px 0 0;
 }
 
-/* Agregar margen inferior al título para mejorar separación */
+/* Separación del título con el cuerpo */
 .callout-title + .callout-body {
   margin-top: 0.5em;
 }
 
-/* Espaciado para los iconos */
+/* Iconos en el título */
 .callout-title i {
   margin-right: 8px;
 }
 
-/* Estilo del cuerpo del callout */
+/* Cuerpo del callout */
 .callout-body {
   padding: 0.75em;
-  background-color: transparent; /* Evita que el fondo coloreado ocupe todo el bloque */
+  background-color: transparent;
 }
 
-/* Fondos pastel distintos para cada tipo de callout */
+/* Fondos para distintos tipos de callout */
 .callout-definicion { background-color: #e6f4ea; }
 .callout-teorema { background-color: #e3e8fc; }
 .callout-proposicion { background-color: #fdf4e3; }

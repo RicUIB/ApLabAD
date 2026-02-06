@@ -307,8 +307,11 @@ n!=1\cdot 2\cdot 3\cdots n.
 $$
 :::
 :::::
+
 <br>
 <br>
+
+
 ::::: callout-ejemplo
 ::: callout-title
 <i class="bi bi-book"></i> Ejemplo
@@ -326,6 +329,7 @@ $$
 Puedo formar 21 equipos distintos.
 :::
 :::::
+  
 
 <br>
 <br>
@@ -530,7 +534,7 @@ La función gamma de Euler, cobrará mucha importancia en el curso de estadísti
 
 ### Números multinomiales. Permutaciones con repetición.
 
-::::: callout-definición
+::::: callout-definicion
 ::: callout-title
 <i class="bi bi-book"></i> Ejercicio
 :::

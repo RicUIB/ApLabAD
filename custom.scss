@@ -1,99 +1,96 @@
-/*-- scss:defaults --*/
-$color_1: #00563F;
-$background-color_1: #00563F;
-$background-color_2: rgba(255, 255, 255, 0.7);
-$background-color_3: rgba(0, 86, 63, 0.1);
-$background-color_4: transparent;
-$background-color_5: #e6f4ea;
-$background-color_6: #e3e8fc;
-$background-color_7: #fdf4e3;
-$background-color_8: #f3e8fd;
-$background-color_9: #eaf5fc;
-$background-color_10: #fff3cd;
-$background-color_11: #fdecea;
-$background-color_12: #f1f8ff;
+/* --- Callouts equivalentes para web y PDF --- */
 
-/* Estilo base para los callouts */
-/* .callout-title i */
-/* Espaciado entre callouts consecutivos */
-/* Barra lateral con color sólido */
-/* Contenedor del título y contenido */
-/* Estilo del título */
-/* Agregar margen inferior al título para mejorar separación */
-/* Espaciado para los iconos */
-/* Estilo del cuerpo del callout */
-/* Fondos pastel distintos para cada tipo de callout */
-.callout {
-	display: flex;
-	border-left: 6px solid #00563F;
-	border-radius: 8px;
-	margin-bottom: 2em;
-	padding: 0;
-	overflow: hidden;
-	box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-	+ {
-		.callout {
-			margin-top: 2em !important;
-			padding-top: 0 !important;
-		}
-	}
-	&::before {
-		content: "";
-		width: 8px;
-		background-color: $background-color_1;
-		flex-shrink: 0;
-	}
+/* Caja general */
+.Definicion, .Teorema, .Proposicion, .Ejemplo, .Ejercicio, .Nota, .Advertencia, .Curiosidad {
+  border-left: 6px solid #00563F;
+  border-radius: 8px;
+  margin-bottom: 2em;
+  margin-top: 0;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 0;
 }
-.callout-content {
-	flex-grow: 1;
-	padding: 1em;
-	background-color: $background-color_2;
-	border-radius: 0 8px 8px 0;
+
+/* Título */
+.Definicion > .callout-title,
+.Teorema > .callout-title,
+.Proposicion > .callout-title,
+.Ejemplo > .callout-title,
+.Ejercicio > .callout-title,
+.Nota > .callout-title,
+.Advertencia > .callout-title,
+.Curiosidad > .callout-title {
+  font-weight: bold;
+  color: #00563F;
+  font-size: 1.1em;
+  background: inherit;
+  border-radius: 8px 8px 0 0;
+  padding: 0.75em 1em;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
 }
-.callout-title {
-	font-weight: bold;
-	color: $color_1;
-	font-size: 1.2em;
-	margin-bottom: 0.5em;
-	display: flex;
-	align-items: center;
-	background-color: $background-color_3;
-	padding: 0.75em;
-	border-radius: 8px 8px 0 0;
-	+ {
-		.callout-body {
-			margin-top: 0.5em;
-		}
-	}
-	i {
-		margin-right: 8px;
-	}
+
+/* Cuerpo */
+.Definicion > .callout-body,
+.Teorema > .callout-body,
+.Proposicion > .callout-body,
+.Ejemplo > .callout-body,
+.Ejercicio > .callout-body,
+.Nota > .callout-body,
+.Advertencia > .callout-body,
+.Curiosidad > .callout-body {
+  padding: 1em;
 }
-.callout-body {
-	padding: 0.75em;
-	background-color: $background-color_4;
+
+/* Fondo y barra lateral de cada tipo */
+.Definicion {
+  background: #e6f4ea;
+  border-left-color: #00563F;
 }
-.callout-definicion {
-	background-color: $background-color_5;
+.Teorema {
+  background: #e3e8fc;
+  border-left-color: #00563F;
 }
-.callout-teorema {
-	background-color: $background-color_6;
+.Proposicion {
+  background: #fdf4e3;
+  border-left-color: #00563F;
 }
-.callout-proposicion {
-	background-color: $background-color_7;
+.Ejemplo {
+  background: #f3e8fd;
+  border-left-color: #00563F;
 }
-.callout-ejemplo {
-	background-color: $background-color_8;
+.Ejercicio {
+  background: #eaf5fc;
+  border-left-color: #00563F;
 }
-.callout-ejercicio {
-	background-color: $background-color_9;
+.Nota {
+  background: #fff3cd;
+  border-left-color: #00563F;
 }
-.callout-nota {
-	background-color: $background-color_10;
+.Advertencia {
+  background: #fdecea;
+  border-left-color: #00563F;
 }
-.callout-advertencia {
-	background-color: $background-color_11;
+.Curiosidad {
+  background: #f1f8ff;
+  border-left-color: #00563F;
 }
-.callout-curiosidad {
-	background-color: $background-color_12;
+
+/* Separación entre callouts consecutivos */
+.Definicion + .Definicion,
+.Teorema + .Teorema,
+.Proposicion + .Proposicion,
+.Ejemplo + .Ejemplo,
+.Ejercicio + .Ejercicio,
+.Nota + .Nota,
+.Advertencia + .Advertencia,
+.Curiosidad + .Curiosidad {
+  margin-top: 2em;
+}
+
+/* Opcional: iconos en el título */
+.callout-title i {
+  margin-right: 8px;
 }

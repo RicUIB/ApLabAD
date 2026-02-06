@@ -42,7 +42,8 @@ Consideremos el experimento aleatorio que consiste en lanzar un dado. El espacio
 
 Si lo representamos gráficamente, tendríamos:
 
-```{r, echo=FALSE, out.width="50%",fig.align='center'}
+
+```{r  pepe, echo=FALSE, out.width="50%",fig.align='center'}
 #| fig-align: center
 #| 
 library(cowplot) # for ggdraw() & draw_image()
@@ -216,15 +217,16 @@ $$(A\cup B)^c=A^c\cap B^c$$
 
 $$(A\cap B)^c=A^c\cup B^c$$
 
+
 | $A\cap B$ | $(A\cap B)^c$ |
 |:----------------------------------:|:----------------------------------:|
-| ![](Images/venn1AyB.jpeg){height="150px"} | ![](Images/venn1ComplementarioInterseccion.jpeg){height="145px"} |
+| ![](Images/venn1AyB.jpeg){height="150px"} | ![](Images/_book/Images/venn1interseccioncomplementarios.jpeg){height="145px"} |
 
 $$(A\cap B)^c=A^c\cup B^c$$
 
 | $A^c$ | $B^c$ | $A^c\cup B^c$ |
 |:----------------------:|:----------------------:|:----------------------:|
-| ![](Images/venn1Ac_conB.jpeg){height="150px"} | ![](Images/venn1Bc_conA.jpeg){height="150px"} | ![](Images/venn1ComplementarioInterseccion.jpeg){height="145px"} |
+| ![](Images/venn1Ac_conB.jpeg){height="150px"} | ![](Images/venn1Bc_conA.jpeg){height="150px"} | ![](Images/venn1Ac_conB.jpeg){height="145px"} |
 
 :::
 :::::

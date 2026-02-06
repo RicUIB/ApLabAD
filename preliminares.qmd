@@ -3,7 +3,7 @@
 Para aprender cálculo de probabilidades son necesarios conocimientos de:
 
 1.  Cálculo: Derivadas, integrales, límites, sumas de series...
-2.  Geometría básica y álgebra lineal : rectas, hiperplanos, volúmenes... Matrices, valores propios...
+2.  Geometría básica y álgebra line7 al : rectas, hiperplanos, volúmenes... Matrices, valores propios...
 3.  Teoría de conjuntos y combinatoria.....
 
 Por experiencia sabemos que la mayoría de estudiantes tienen más conocimientos de cálculo, geometría y matrices.
@@ -12,11 +12,12 @@ Pero muchos tienen una falta de conocimientos en teoría básica de conjuntos y 
 
 ## Teoría de conjuntos
 
-::::: {callout-definicion}
-::: {callout-title}
-<i class="bi bi-book"> Definición de conjunto</i>
+::::: callout-definicion
+::: callout-title
+Definición de conjunto
 :::
-::: {callout-body}
+
+::: callout-body
 La definición de conjunto es una [idea o noción primitiva](https://es.wikipedia.org/wiki/Concepto_primitivo). Es decir es una idea básica del pensamiento humano: un conjunto es una colección de objetos: números, imágenes... cualquier cosa, jugadores de fútbol, palabras, colores ....
 :::
 :::::
@@ -68,7 +69,7 @@ El conjunto que no tiene elementos se denomina conjunto vacío y se denota por e
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejemplo</i>
+<i class="bi bi-book"></i> Ejemplo
 :::
 
 ::: callout-body
@@ -88,7 +89,7 @@ Dado un conjunto $\Omega$ podemos construir el **conjunto de todas sus partes** 
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"> Propiedad</i>
+Propiedad
 :::
 
 ::: callout-body
@@ -118,7 +119,7 @@ $$
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"> Intersección de conjuntos</i>
+<i class="bi bi-book"></i> **Intersección**
 :::
 
 ::: callout-body
@@ -133,12 +134,13 @@ A\cap B=\left\{x\in\Omega \big| x\in A \mbox{ y } x\in B\right\}.
 $$
 :::
 :::::
-
-<br> <br>
+ 
+<br>
+<br>  
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"> Unión de conjuntos</i>
+<i class="bi bi-book"></i> **Unión**
 :::
 
 ::: callout-body
@@ -152,13 +154,15 @@ $$
 :::
 :::::
 
-<br> <br>
+
+<br>
+<br>
+
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"> Diferencia de conjuntos</i>
+<i class="bi bi-book"></i> Diferencia.
 :::
-
 ::: callout-body
 El conjunto **diferencia** de $A$ y $B$ es el formado por todos los elementos que perteneces a $A$ **Y NO** pertenecen a $B$, se denota por $A-B=A-(A\cap B)$.
 
@@ -170,13 +174,14 @@ $$
 :::
 :::::
 
-<br> <br>
+<br>
+<br>
+
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"> Complementario</i> 
+<i class="bi bi-book"></i> Complementario
 :::
-
 ::: callout-body
 El **complementario** de un subconjunto $A$ de $\Omega$ es $\Omega-A$ y se denota por $A^c$ o $\overline{A}$.
 
@@ -287,7 +292,7 @@ Por ejemplo si tenemos un equipo de baloncesto con 7 jugadores ¿cuántos equipo
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"> Número combinatorio o número binomial</i>
+<i class="bi bi-book"></i> Número combinatorio o número binomial
 :::
 
 ::: callout-body
@@ -303,17 +308,41 @@ $$
 :::
 :::::
 
-<br> <br>
+<br>
+<br>
+
+
+::::: callout-ejemplo
+::: callout-title
+<i class="bi bi-book"></i> Ejemplo
+:::
+::: callout-body
+En nuestro caso con 7 jugadores $n=7$ el número de equipos distintos de $k=5$ es
+
+$$
+\begin{array}{rl}
+C_7^5&={7\choose 5} = \frac{7!}{5!\cdot (7-5)!}=\frac{7!}{5!\cdot 2!} \\
+&=\frac{1\cdot 2\cdot 3 \cdot 4\cdot 5\cdot 6\cdot 7}{1\cdot 2\cdot 3 \cdot 4\cdot 5\cdot 1\cdot 2}=\frac{6\cdot 7}{2}=\frac{42}{2}=21.
+\end{array}
+$$
+
+Puedo formar 21 equipos distintos.
+:::
+:::::
+  
+
+<br>
+<br>
 
 ::::: callout-ejercicio
 ::: callout-title
-<i class="bi bi-pencil-square">Ejercicio: el paquete `gtools`</i>
+<i class="bi bi-book"></i> Ejercicio: el paquete `gtools`
 :::
-
 ::: callout-body
 Carga el paquete `gtools` de R y investiga la función `combinations(n, r, v, set, repeats.allowed)` para calcular todas las combinaciones anteriores.
 :::
 :::::
+
 
 ### Combinaciones con repetición
 
@@ -321,26 +350,25 @@ En combinatoria, las combinaciones con repetición de un conjunto son las distin
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"> Combinaciones con repetición</i>
+<i class="bi bi-book"></i> Combinaciones con repetición
 :::
-
 ::: callout-body
 El número $CR_n^k$ de multiconjuntos con $k$ elementos escogidos de un conjunto con $n$ elementos satisface:
 
--   Es igual al número de combinaciones con repetición de $k$ elementos escogidos de un conjunto con $n$ elementos.
--   Es igual al número de formas de repartir $k$ objetos en $n$ grupos.
+- Es igual al número de combinaciones con repetición de $k$ elementos escogidos de un conjunto con $n$ elementos.
+- Es igual al número de formas de repartir $k$ objetos en $n$ grupos.
 
 $$CR_n^k = \binom{n+k-1}{k} = \frac{(n+k-1)!}{k!(n-1)!}.$$
 :::
 :::::
 
-<br> <br>
+<br>
+<br>
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejemplo: caramelos</i> 
+<i class="bi bi-list-task"></i> Ejemplo: caramelos
 :::
-
 ::: callout-body
 Vamos a imaginar que vamos a repartir 12 caramelos entre Antonio, Beatriz, Carlos y Dionisio (que representaremos como A, B, C, D). Una posible forma de repartir los caramelos sería: dar 4 caramelos a Antonio, 3 a Beatriz, 2 a Carlos y 3 a Dionisio. Dado que no importa el orden en que se reparten, podemos representar esta selección como AAAABBBCCDDD.
 
@@ -354,6 +382,7 @@ $$CR_{n=4}^{k=12} = \binom{4+12-1}{12}=`r choose(4+12-1,12)`.$$
 :::
 :::::
 
+
 ### Variaciones.
 
 Con los número $\{1,2,3\}$ ¿cuántos números de dos cifras distintas podemos formar sin repetir ninguna cifra?
@@ -366,9 +395,8 @@ Luego hay seis casos, estas son las variaciones de orden $k=2$ de un conjunto de
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"> Variaciones</i>
+<i class="bi bi-book"></i> Variaciones
 :::
-
 ::: callout-body
 Denotaremos las variaciones (sin repetición) de $k$ elementos (de orden $k$) de un conjunto de $n$ elementos por $V_n^k$ su valor es
 
@@ -378,13 +406,13 @@ $$
 :::
 :::::
 
-<br> <br>
+<br>
+<br>
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejemplo</i> 
+<i class="bi bi-book"></i> Ejemplo
 :::
-
 ::: callout-body
 En nuestro ejemplo con $n=3$ dígitos podemos escribir las siguientes variaciones de orden $k=2$
 
@@ -394,13 +422,13 @@ $$
 :::
 :::::
 
-<br> <br>
+<br>
+<br>
 
-::::: callout-ejercicio
+::::: callout-definicion
 ::: callout-title
-<i class="bi bi-pencil-square"> Ejercicio</i>
+<i class="bi bi-book"></i> Ejercicio
 :::
-
 ::: callout-body
 Carga el paquete `gtools` de R y investiga la función `permutations(n, r, v, set, repeats.allowed)` para calcular todas las variaciones anteriores.
 :::
@@ -412,9 +440,8 @@ Carga el paquete `gtools` de R y investiga la función `permutations(n, r, v, se
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"> Variaciones con repetición</i>
+<i class="bi bi-book"></i> Variaciones on repetición
 :::
-
 ::: callout-body
 Las variaciones de orden $k$ de un conjunto de $n$ elementos permitiendo que se repitan los elementos. Las denotamos y valen:
 
@@ -422,13 +449,13 @@ $$VR_n^k=n^k$$
 :::
 :::::
 
-<br> <br>
+<br>
+<br>
 
-::::: callout-ejemplo
+::::: callout-definicion
 ::: callout-title
-<i class="bi bi-list-task"> Ejemplo</i>
+<i class="bi bi-book"></i> Ejemplo
 :::
-
 ::: callout-body
 Efectivamente en nuestro caso
 
@@ -444,7 +471,7 @@ $$
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"> Permutaciones</i> 
+<i class="bi bi-book"></i> Permutaciones
 :::
 
 ::: callout-body
@@ -456,11 +483,13 @@ $$
 :::
 :::::
 
-<br> <br>
+
+<br>
+<br>
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejemplo: dígitos</i> 
+<i class="bi bi-book"></i> Variaciones on repetición
 :::
 
 ::: callout-body
@@ -475,13 +504,15 @@ Efectivamente $P_3=3!=1\cdot  2\cdot 3.$
 :::
 :::::
 
-<br> <br>
+
+<br>
+<br>
+
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-pencil-square"> Ejercicio</i>
+<i class="bi bi-book"></i> Ejercicio
 :::
-
 ::: callout-body
 Carga el paquete `combinat` de R e investiga la función `permn` para calcular todas las permutaciones anteriores.
 
@@ -489,13 +520,13 @@ Investiga también el paquete `itertools` y la función `comb` de `scipy.misc` d
 :::
 :::::
 
-<br> <br>
+<br>
+<br>
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejercicio</i>
+<i class="bi bi-book"></i> Ejercicio
 :::
-
 ::: callout-body
 La función gamma de Euler, cobrará mucha importancia en el curso de estadística. Comprueba que la función `gamma(x+1)` da el mismo valor que la función `factorial(x)` en `R` para todo $x = \{1,2,3,\ldots,10\}$.
 :::
@@ -503,11 +534,10 @@ La función gamma de Euler, cobrará mucha importancia en el curso de estadísti
 
 ### Números multinomiales. Permutaciones con repetición.
 
-::::: callout-ejercicio
+::::: callout-definicion
 ::: callout-title
-<i class="bi bi-pencil-square"> Ejercicio</i> 
+<i class="bi bi-book"></i> Ejercicio
 :::
-
 ::: callout-body
 Consideremos un conjunto de elementos $\{a_1, a_2, \ldots, a_k\}$.
 
@@ -516,14 +546,13 @@ Entonces, si cada uno de los objetos $a_i$ de un conjunto, aparece repetido $n_i
 $$PR_n^{n_1,n_2,\ldots,n_k} = {{n}\choose {n_1\quad n_2 \quad\ldots \quad n_k}}=\frac{n!}{n_1!\cdot n_2!\cdot \ldots \cdot n_k!},$$ donde $n=n_1+n_2+\cdots+n_k$.
 :::
 :::::
-
-<br> <br>
+<br>
+<br>
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejercicio</i>
+<i class="bi bi-book"></i> Ejercicio
 :::
-
 ::: callout-body
 ¿Cuantas palabras diferentes se pueden formar con las letras de la palabra `PROBABILIDAD`?
 
@@ -541,9 +570,8 @@ $$PR^{2,2,2,2,1,1,1,1}_{12} = \frac{12!}{(2!)^4(1!)^4} = 29937600.$$
 
 ::::: callout-teorema
 ::: callout-title
-<i class="bi bi-lightbulb"> El principio de la suma</i>
+<i class="bi bi-book"></i> El principio de la suma
 :::
-
 ::: callout-body
 Sean $A_1, A_2,\ldots, A_n$ conjuntos disjuntos dos a dos, es decir $A_i\cap A_j=\emptyset$ para todo $i\not= j$, $i,j=1,2,\ldots n$. Entonces
 
@@ -551,11 +579,12 @@ $$\#(\cup_{i=1}^n A_i)=\sum_{i=1}^n \#(A_i).$$
 :::
 :::::
 
-<br> <br>
+<br>
+<br>
 
 ::::: callout-teorema
 ::: callout-title
-<i class="bi bi-lightbulb"> Principio de unión exclusión</i>
+<i class="bi bi-book"></i> Principio de unión exclusión
 :::
 
 ::: callout-body
@@ -565,13 +594,13 @@ $$\#(A_1\cup A_2)=\#(A_1)+\#(A_2)-\#(A_1\cap A_2).$$
 :::
 :::::
 
-<br> <br>
+<br>
+<br>
 
 ::::: callout-teorema
 ::: callout-title
-<i class="bi bi-lightbulb"> El principio del producto</i>
+<i class="bi bi-book"></i> El principio del producto
 :::
-
 ::: callout-body
 Sean $A_1,A_2,\ldots A_n$
 
@@ -588,8 +617,33 @@ $$
 
 Evidentemente nos hemos dejado muchas otras propiedades básicas de teoría de conjuntos y de combinatoria como:
 
--   Propiedades de los números combinatorios.
--   Binomio de Newton.
--   Multinomio de Newton.
+-   Propiedades de los números combinatorios
+
+  
+1. $\binom{m}{n}=\binom{m}{m-n}$
+2. $\binom{m}{n}=\binom{m-1}{n}+\binom{m-1}{n-1}$
+  
+  
+
+-   Binomio de Newton.  
+
+$$
+(a+b)^n=\sum_{k=0}^n  \binom{n}{k} \cdot a^k \cdot  b^{n-k}     
+$$  
+
+  $$
+  (1+1)^n=\sum_{k=0}^n  \binom{n}{k} \cdot 1^k \cdot  1^{n-k} =\sum_{k=0}^n  \binom{n}{k} =2^n.
+  $$
+
+$$(1-1)^n=\sum_{k=0}^n  \binom{n}{k} \cdot 1^k \cdot  (-1)^{n-k} =\sum_{k=0}^n  \binom{n}{k} \cdot (-1)^{n-k}=0.$$
+
+
+-   Número multinomial  y Multinomio
+
+$$(a_1+a_2+\cdots + a_k)^n=\sum_{n_1+n_2+\cdots + n_k=n} \binom{n}{n_1\quad n_2 \quad\ldots \quad n_k} \cdot a_1^{n_1}\cdot a_2^{n_2}\cdots a_k^{n_k}.$$
+
+Donde $$\binom{n}{n_1\quad n_2 \quad\ldots \quad n_k} = \frac{n!}{n_1!\cdot n_2!\cdot \ldots \cdot n_k!}$$ es el número multinomial.
+
 
 Si nos son necesarias las volveremos a repetir a lo largo del curso o bien daremos enlaces para que las podáis estudiar en paralelo.
+
