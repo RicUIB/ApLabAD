@@ -12,7 +12,7 @@ book:
     - index.qmd
     - part: probabilidad_y_variables_aleatorias.qmd
       chapters: 
-        - preliminares_bk.qmd
+        - preliminares.qmd
         - probabilidad.qmd
         - variables_aleatorias.qmd
         - teoria_probabilidad.qmd
