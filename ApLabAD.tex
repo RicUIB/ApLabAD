@@ -134,86 +134,51 @@
 \def\fps@figure{htbp}
 \makeatother
 
-% Para \rowcolor en tablas
-\usepackage[table]{xcolor}   % habilita colores en tablas
-\usepackage{colortbl}        % define \rowcolor
-
-% Si tu documento usa LightBlue y no está definido:
-\definecolor{LightBlue}{RGB}{217,234,247}
-
-
-
-
-% customblocks.tex
-% Estilos de "callouts" para PDF (LaTeX) usando tcolorbox
-
-% Paquetes
-\usepackage{lmodern}
-\usepackage{xcolor}
+\usepackage[table]{xcolor}
 \usepackage[most]{tcolorbox}
-\usepackage{amsthm}
-\usepackage{fontawesome} % <-- IMPORTANTE: antes de usar \fa...
+\tcbuselibrary{skins,breakable}
+\usepackage{fontawesome5}
 
-% Definición de colores (RGB de tu CSS)
-\definecolor{calloutdef}{RGB}{230,244,234}    % #e6f4ea
-\definecolor{calloutteo}{RGB}{227,232,252}    % #e3e8fc
-\definecolor{calloutejem}{RGB}{243,232,253}   % #f3e8fd
-\definecolor{calloutprop}{RGB}{253,244,227}   % #fdf4e3
-\definecolor{calloutejer}{RGB}{234,245,252}   % #eaf5fc
-\definecolor{calloutnota}{RGB}{255,243,205}   % #fff3cd
-\definecolor{calloutadv}{RGB}{253,236,234}    % #fdecea
-\definecolor{calloutcur}{RGB}{241,248,255}    % #f1f8ff
-\definecolor{calloutgreen}{RGB}{0,86,63}      % #00563F
+\definecolor{calloutdef}{HTML}{E6F4EA}
+\definecolor{calloutteo}{HTML}{E3E8FC}
+\definecolor{calloutprop}{HTML}{FDF4E3}
+\definecolor{calloutejem}{HTML}{F3E8FD}
+\definecolor{calloutejer}{HTML}{EAF5FC}
+\definecolor{calloutnota}{HTML}{FFF3CD}
+\definecolor{calloutadv}{HTML}{FDECEA}
+\definecolor{calloutcur}{HTML}{F1F8FF}
 
-% Estilo base (común a todas las cajas)
+\definecolor{accdef}{HTML}{00563F}
+\definecolor{accte}{HTML}{1F3A93}
+\definecolor{accpr}{HTML}{8A5A00}
+\definecolor{accex}{HTML}{5B2A86}
+\definecolor{accEj}{HTML}{0B5A7A}
+\definecolor{accno}{HTML}{7A5A00}
+\definecolor{accad}{HTML}{8A1F17}
+\definecolor{acccu}{HTML}{0B4A8B}
+
 \tcbset{
-  calloutstyle/.style={
-    enhanced,
-    breakable,
-    arc=3mm,
-    boxrule=1pt,
-    colframe=calloutgreen,
-    fonttitle=\bfseries,
-    left=1mm,
-    right=1mm,
-    top=1mm,
-    bottom=1mm,
-    before skip=10pt,
-    after skip=12pt
+  htmlcallout/.style 2 args={
+    enhanced, breakable,
+    arc=3.5mm,
+    boxrule=0.4pt,
+    colframe=black!12,
+    colback=#2,
+    borderline west={6pt}{0pt}{#1},
+    left=2mm,right=2mm,top=1mm,bottom=1mm,
+    before skip=10pt, after skip=12pt,
+    drop shadow={black!10},
   }
 }
 
-% Definición
-\newtcbtheorem[number within=section]{Definicion}{\textbf{Definición}}%
-{calloutstyle, colback=calloutdef, before title={\faBook\ }}{def}
-
-% Teorema
-\newtcbtheorem[number within=section]{Teorema}{\textbf{Teorema}}%
-{calloutstyle, colback=calloutteo, before title={\faCogs\ }}{teo}
-
-% Proposición
-\newtcbtheorem[number within=section]{Proposicion}{\texbf{Proposición}}%
-{calloutstyle, colback=calloutprop, before title={\faBalanceScale\ }}{prop}
-
-% Ejemplo
-\newtcbtheorem[number within=section]{Ejemplo}{\textbf{Ejemplo}}%
-{calloutstyle, colback=calloutejem, before title={\faLightbulbO\ }}{ejem}
-
-% Ejercicio
-\newtcbtheorem[number within=section]{Ejercicio}{\textbf{Ejercicio}}%
-{calloutstyle, colback=calloutejer, before title={\faPencil\ }}{ejer}
-
-% Nota
-\newtcbtheorem[number within=section]{Nota}{\textbf{Nota}}%
-{calloutstyle, colback=calloutnota, before title={\faInfoCircle\ }}{nota}
-
-% Advertencia
-\newtcbtheorem[number within=section]{Advertencia}{\textbf{Advertencia}}%
-{calloutstyle, colback=calloutadv, before title={\faExclamationTriangle\ }}{adv}
-
-% Curiosidad
-\newtcbtheorem[number within=section]{Curiosidad}{\textbf{Curiosidad}}%
-{calloutstyle, colback=calloutcur, before title={\faQuestionCircle\ }}{cur}
+\newtcolorbox{Definicion}{htmlcallout={accdef}{calloutdef}}
+\newtcolorbox{Teorema}{htmlcallout={accte}{calloutteo}}
+\newtcolorbox{Proposicion}{htmlcallout={accpr}{calloutprop}}
+\newtcolorbox{Ejemplo}{htmlcallout={accex}{calloutejem}}
+\newtcolorbox{Ejercicio}{htmlcallout={accEj}{calloutejer}}
+\newtcolorbox{Nota}{htmlcallout={accno}{calloutnota}}
+\newtcolorbox{Advertencia}{htmlcallout={accad}{calloutadv}}
+\newtcolorbox{Curiosidad}{htmlcallout={acccu}{calloutcur}}
 \KOMAoption{captions}{tableheading}
 \makeatletter
 \@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
@@ -301,7 +266,7 @@
 
 \renewcommand*\contentsname{Tabla de contenidos}
 {
-\hypersetup{linkcolor=blue}
+\hypersetup{linkcolor=}
 \setcounter{tocdepth}{2}
 \tableofcontents
 }
@@ -350,62 +315,53 @@ Para aprender cálculo de probabilidades son necesarios conocimientos de:
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Cálculo: Derivadas, integrales, límites, sumas de series\ldots{}
+  \textbf{Cálculo}: derivadas, integrales, límites, sumas de
+  series\ldots{}
 \item
-  Geometría básica y álgebra line7 al : rectas, hiperplanos,
-  volúmenes\ldots{} Matrices, valores propios\ldots{}
+  \textbf{Geometría básica y álgebra lineal}: rectas, hiperplanos,
+  volúmenes\ldots{} matrices, valores propios\ldots{}
 \item
-  Teoría de conjuntos y combinatoria\ldots..
+  \textbf{Teoría de conjuntos y combinatoria} (matemática discreta).
 \end{enumerate}
 
 Por experiencia sabemos que la mayoría de estudiantes tienen más
-conocimientos de cálculo, geometría y matrices.
-
-Pero muchos tienen una falta de conocimientos en teoría básica de
-conjuntos y combinatoria (matemática discreta).
+conocimientos de cálculo, geometría y matrices. Sin embargo, muchos
+presentan carencias en teoría básica de conjuntos y combinatoria, que
+será necesaria en este curso.
 
 \section{Teoría de conjuntos}\label{teoruxeda-de-conjuntos}
 
-Definición de conjunto
-
 La definición de conjunto es una
 \href{https://es.wikipedia.org/wiki/Concepto_primitivo}{idea o noción
-primitiva}. Es decir es una idea básica del pensamiento humano: un
-conjunto es una colección de objetos: números, imágenes\ldots{}
-cualquier cosa, jugadores de fútbol, palabras, colores \ldots.
+primitiva}. Es decir, es una idea básica del pensamiento humano: un
+conjunto es una colección de objetos (números, imágenes, palabras,
+jugadores de fútbol, colores, etc.).
 
-La definición de conjunto es una
-\href{https://es.wikipedia.org/wiki/Concepto_primitivo}{idea o noción
-primitiva}. Es decir es una idea básica del pensamiento humano: un
-conjunto es una colección de objetos: números, imágenes\ldots{}
-cualquier cosa, jugadores de fútbol, palabras, colores \ldots.
-
-La teoría de conjuntos básicas es simple y natural y es la que
+La teoría de conjuntos \textbf{básica} es simple y natural, y es la que
 necesitamos para este curso.
 
-La teoría de conjuntos matemática es más compleja y presenta varias
-paradojas como la
+La teoría de conjuntos \textbf{axiomática} es más compleja y presenta
+varias paradojas si no se formaliza adecuadamente, como la
 \href{https://es.wikipedia.org/wiki/Paradoja_de_Russell}{paradoja de
 Russell}.
 
-La idea o noción práctica de conjunto es la de una colección de objetos
-de un cierto tipo.
-
-Estas colecciones o conjuntos se pueden definir por:
+La idea práctica de conjunto es la de una colección de objetos de un
+cierto tipo. Estas colecciones o conjuntos se pueden definir por:
 
 \begin{itemize}
 \tightlist
 \item
   \textbf{Comprensión}: reuniendo los objetos que cumplen una propiedad
-  \(p\)
+  \(p\).
 \item
   \textbf{Extensión}: dando una lista exhaustiva de los miembros del
-  conjunto
+  conjunto.
 \end{itemize}
 
 \subsection{Conjuntos básicos}\label{conjuntos-buxe1sicos}
 
-Los conjuntos suelen tener un conjunto madre como por ejemplo
+A menudo trabajaremos dentro de un conjunto base (o ``universo'').
+Ejemplos habituales son:
 
 \begin{itemize}
 \item
@@ -413,190 +369,199 @@ Los conjuntos suelen tener un conjunto madre como por ejemplo
 \item
   \(\mathbb{Z}=\{\ldots,-2,-1,0,1,2,\ldots\}\)
 \item
-  \(\mathbb{Q}=\left\{\frac{p}{q}\quad\Big|\quad p,q\in \mathbb{Z} \mbox{ y } q \not= 0.\right\}\)
+  \(\mathbb{Q}=\left\{\frac{p}{q}\ \Big|\ p,q\in \mathbb{Z} \text{ y } q \neq 0\right\}\)
 \item
-  \(\mathbb{R}=\{\mbox{Todos los puntos de una recta.}\}\)
+  \(\mathbb{R}\): conjunto de los números reales (puntos de una recta).
 \item
-  \(\mathbb{C}= \left\{a+b\cdot i\quad \big|\quad a,b\in \mathbb{R}\right\}\mbox{ los números complejos}\quad a+b\cdot i.\)
+  \(\mathbb{C}= \left\{a+b\, i\ \big|\ a,b\in \mathbb{R}\right\}\),
+  conjunto de los números complejos.
 \item
-  Alfabeto = \(\{a,b,c,\ldots, A,B,C,\ldots\}.\)
+  Alfabeto \(=\{a,b,c,\ldots, A,B,C,\ldots\}\).
 \item
-  Palabras = \(\{paz, guerra, amor, probabilidad,\ldots\}.\)
+  Palabras \(=\{\text{paz, guerra, amor, probabilidad},\ldots\}\).
 \end{itemize}
 
-Recordemos que \(i\) es la unidad imaginaria que cumple que
-\(i=\sqrt{-1}\).
+Recordemos que \(i\) es la unidad imaginaria y cumple \(i^2=-1\)
+(equivalentemente, \(i=\sqrt{-1}\)).
 
 \subsection{Características y propiedades básicas de los
 conjuntos}\label{caracteruxedsticas-y-propiedades-buxe1sicas-de-los-conjuntos}
 
-Si a cada objeto \(x\) de \(\Omega\) le llamaremos \textbf{elemento del
-conjunto} \(\Omega\) y diremos que \(x\) pertenece a \(\Omega\). Lo
-denotaremos por \(x\in \Omega\).
+Si \(x\) es un objeto de \(\Omega\), diremos que \(x\) es
+\textbf{elemento} del conjunto \(\Omega\) y que \(x\) \textbf{pertenece}
+a \(\Omega\). Lo denotaremos por \(x\in \Omega\).
 
-Un \textbf{conjunto de un elemento}, por ejemplo \(\{1\}\) recibe el
-nombre de \textbf{conjunto elemental} (o \textbf{singleton} del inglés).
+Un \textbf{conjunto con un solo elemento}, por ejemplo \(\{1\}\), recibe
+el nombre de \textbf{conjunto unitario} (o \emph{singleton}).
 
-Sea \(A\) otro conjunto diremos que \(A\) \textbf{es igual a} \(B\) si
-todos los elementos \(A\) están en \(B\) y todos los elementos de \(B\)
-están en \(A\). Por ejemplo \(A=\{1,2,3\}\) es igual a \(B=\{3,1,2\}\).
+Sean \(A\) y \(B\) dos conjuntos. Diremos que \(A\) \textbf{es igual a}
+\(B\) si todos los elementos de \(A\) están en \(B\) y todos los
+elementos de \(B\) están en \(A\). Por ejemplo, \(A=\{1,2,3\}\) es igual
+a \(B=\{3,1,2\}\).
 
-Si \(B\) es otro conjunto, tal que si \(x\in A\) entonces \(x\in B\)
-diremos que \(A\) es un subconjunto de o que está contenido en \(B\). Lo
-denotaremos por \(A\subseteq B.\)
+Diremos que \(A\) es un \textbf{subconjunto} de \(B\) (o que está
+contenido en \(B\)) si se cumple que, para todo \(x\), si \(x\in A\)
+entonces \(x\in B\). Lo denotaremos por \(A\subseteq B\).
 
-El conjunto que no tiene elementos se denomina conjunto vacío y se
-denota por el símbolo \(\emptyset\). Dado \(A\) un conjunto cualquiera
-obviamente \(\emptyset\subseteq A.\)
+El conjunto que no tiene elementos se denomina \textbf{conjunto vacío} y
+se denota por \(\emptyset\). Dado un conjunto cualquiera \(A\), se
+cumple \(\emptyset\subseteq A\).
 
-Ejemplo
+\begin{Ejemplo}{Ejemplo}{}
 
-Tomemos como conjunto base \(\Omega=\{1,2,3\}\)
+Tomemos como conjunto base \(\Omega=\{1,2,3\}\).
 
 \begin{itemize}
 \tightlist
 \item
-  \(\Omega\) es un conjunto de cardinal 3, se denota por
-  \(\#(\Omega)=3\) o por \(|\Omega|=3\)
+  \(\Omega\) es un conjunto de cardinal 3; se denota por
+  \(\#(\Omega)=3\) o por \(|\Omega|=3\).
 \item
-  El conjunto \(\Omega\) tiene \(2^3=8\) subconjuntos.
+  El conjunto \(\Omega\) tiene \(2^3=8\) subconjuntos:
 
   \begin{itemize}
   \tightlist
   \item
-    el vacío \(\emptyset\) y los elementales \(\{1\},\{2\},\{3\}\)
+    el vacío \(\emptyset\) y los unitarios \(\{1\}\),\{2\}\(,\{3\}\),
   \item
-    los subconjuntos de dos elementos: \(\{1,2\},\{1,3\},\{2,3\}\)
+    los subconjuntos de dos elementos: \(\{1,2\}\),\{1,3\}\(,\{2,3\}\),
   \item
-    el conjunto total de tres elementos \(\Omega=\{1,2,3\}.\)
+    el conjunto total: \(\Omega=\{1,2,3\}\).
   \end{itemize}
 \end{itemize}
 
-Dado un conjunto \(\Omega\) podemos construir el \textbf{conjunto de
-todas sus partes} (todos sus subconjuntos) al que denotamos por
-\(\mathcal{P}(\Omega)\). También se denomina de forma directa partes de
-\(\Omega\).
+\end{Ejemplo}
 
-Cardinal de las partes de un conjunto
+Dado un conjunto \(\Omega\), podemos construir el \textbf{conjunto de
+todas sus partes} (todos sus subconjuntos), que denotamos por
+\(\mathcal{P}(\Omega)\).
 
-Propiedad
+\begin{Ejemplo}{Cardinal de las partes de un conjunto}{}
 
-Por ejemplo
-\(\#\left(\mathcal{P}(\{1,2,3\})\right)=2^{\#(\{1,2,3\})}=2^3=8.\)
+Por ejemplo para \(\Omega=\{1,2,3\}\), el conjunto de todas sus partes
+es \(\mathcal{P}(\{1,2,3\})\) y tiene cardinal
 
-Efectivamente
+\[
+\#\big(\mathcal{P}(\{1,2,3\})\big)=2^{\#(\{1,2,3\})}=2^3=8.
+\]
 
-\[\mathcal{P}(\{1,2,3\})=\{\emptyset,\{1\},\{2\},\{3\},\{1,2\},\{1,3\},\{2,3\},\{1,2,3\}\}.\]
+\end{Ejemplo}
 
-Dado un subconjunto \(A\) de \(\Omega\) podemos construir la función
-característica de \(A\) \[\chi_A:\Omega \to \{0,1\}\]
+En efecto,
 
-dado un \(\omega\in \Omega\)
+\[
+\mathcal{P}(\{1,2,3\})=\{\emptyset,\{1\},\{2\},\{3\},\{1,2\},\{1,3\},\{2,3\},\{1,2,3\}
+\}.
+\]
+
+Dado un subconjunto \(A\subseteq \Omega\), podemos construir la función
+característica de \(A\), \(\chi_A:\Omega \to \{0,1\}\), y para
+\(\omega\in \Omega\) se define como
 
 \[
 \chi_A(\omega)=
-\left\{
-\begin{array}{ll}
-1 &  \mbox{si }\omega \in A\\
-0 &  \mbox{si }\omega \not\in A
-\end{array}
-\right.
+\begin{cases}
+1 & \text{si }\omega \in A,\\
+0 & \text{si }\omega \notin A.
+\end{cases}
 \]
 
 \subsection{Operaciones entre
 conjuntos}\label{operaciones-entre-conjuntos}
 
-\textbf{Intersección}
+\begin{Definicion}{Intersección}{}
 
 Sea \(\Omega\) un conjunto y \(A\) y \(B\) dos subconjuntos de
 \(\Omega\).
 
-El conjunto \textbf{intersección} de \(A\) y \(B\) es el formado por
-todos los elementos que perteneces a \(A\) \textbf{Y} \(B\), se denota
-por \(A\cap B\).
+La \textbf{intersección} de \(A\) y \(B\) es el conjunto formado por
+todos los elementos que \textbf{pertenecen} a \(A\) \textbf{y} a \(B\).
+Se denota por \(A\cap B\).
 
-Más formalmente
-
-\[
-A\cap B=\left\{x\in\Omega \big| x\in A \mbox{ y } x\in B\right\}.
+Más formalmente, \[
+A\cap B=\left\{x\in\Omega \,\big|\, x\in A \text{ y } x\in B\right\}.
 \]
 
-\textbf{Unión}
+\end{Definicion}
 
-El conjunto \textbf{unión} de \(A\) y \(B\) es el formado por todos los
-elementos que perteneces a \(A\) \textbf{O} pertenecen a \(B\), se
-denota por \(A\cup B\).
+\begin{Definicion}{Unión}{}
 
-Más formalmente
+La \textbf{unión} de \(A\) y \(B\) es el conjunto formado por todos los
+elementos que \textbf{pertenecen} a \(A\) \textbf{o} pertenecen a \(B\)
+(o a ambos). Se denota por \(A\cup B\).
+
+Más formalmente, \[
+A\cup B=\left\{x\in\Omega \,\big|\, x\in A \text{ o } x\in B\right\}
+\].
+
+\end{Definicion}
+
+\begin{Definicion}{Diferencia}{}
+
+La \textbf{diferencia} de \(A\) y \(B\) es el conjunto formado por los
+elementos que pertenecen a \(A\) \textbf{y no} pertenecen a \(B\). Se
+denota por \(A\setminus B\).
+
+Más formalmente,
 
 \[
-A\cup B=\left\{x\in\Omega \big| x\in A \mbox{ o } x\in B\right\}.
+A\setminus B=\left\{x\in\Omega \,\big|\, x\in A \text{ y } x\notin B\right\}.
 \]
 
-Diferencia.
+\end{Definicion}
 
-El conjunto \textbf{diferencia} de \(A\) y \(B\) es el formado por todos
-los elementos que perteneces a \(A\) \textbf{Y NO} pertenecen a \(B\),
-se denota por \(A-B=A-(A\cap B)\).
-
-Más formalmente
-
-\[
-A- B=\left\{x\in\Omega \big| x\in A \mbox{ y } x\notin B\right\}.
-\]
-
-Complementario
+\begin{Definicion}{Complementario}{}
 
 El \textbf{complementario} de un subconjunto \(A\) de \(\Omega\) es
-\(\Omega-A\) y se denota por \(A^c\) o \(\overline{A}\).
+\(\Omega\setminus A\) y se denota por \(A^c\) o \(\overline{A}\).
 
-Más formalmente
-
-\[
-A^c=\left\{x\in\Omega \big| x\not\in A\right\}.
+Más formalmente, \[
+A^c=\left\{x\in\Omega \,\big|\, x\not\in A\right\}.
 \]
+
+\end{Definicion}
 
 \subsection{Más propiedades}\label{muxe1s-propiedades}
 
 Sea \(\Omega\) un conjunto y \(A\), \(B\), \(C\) tres subconjuntos de
-\(\Omega\)
+\(\Omega\).
 
 \begin{itemize}
 \tightlist
 \item
   Se dice que dos conjuntos \(A\) y \(B\) \textbf{son disjuntos} si
-  \(A\cap B=\emptyset.\)
+  \(A\cap B=\emptyset\).
 \item
   \(\Omega^c=\emptyset\).
 \item
   \(\emptyset^c=\Omega\).
 \item
-  \(A\cup B=B \cup A\) , \(A\cap B=B\cap A\) conmutativas.
+  \(A\cup B=B \cup A\), \(A\cap B=B\cap A\) (conmutativas).
 \item
   \((A\cup B) \cup C = A \cup( B \cup C)\),
-  \((A\cap B) \cap C = A \cap( B \cap C)\) asociativas.
+  \((A\cap B) \cap C = A \cap( B \cap C)\) (asociativas).
 \item
   \(A\cup (B\cap C)=(A\cup B) \cap (A\cup C)\),
-  \(A\cap (B\cup C)=(A\cap B) \cup (A\cap C)\) distributivas.
+  \(A\cap (B\cup C)=(A\cap B) \cup (A\cap C)\) (distributivas).
 \item
-  \(\left(A^c\right)^c=A\) doble complementario.
+  \(\left(A^c\right)^c=A\) (doble complementario).
 \item
   \(\left(A\cup B\right)^c=A^c \cap B^c\),
   \(\left(A\cap B\right)^c=A^c \cup B^c\)
-  \href{https://es.wikipedia.org/wiki/Leyes_de_De_Morgan}{leyes de De
-  Morgan}.
+  (\href{https://es.wikipedia.org/wiki/Leyes_de_De_Morgan}{leyes de De
+  Morgan}).
 \end{itemize}
 
-\subsection{Con R, ejemplos.}\label{con-r-ejemplos.}
+\subsection{Con R: ejemplos}\label{con-r-ejemplos}
 
-Con R los conjuntos de pueden definir como vectores
+Con R los conjuntos se pueden representar como vectores:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{Omega}\OtherTok{=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{10}\NormalTok{)}
-\NormalTok{A}\OtherTok{=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{)}
-\NormalTok{B}\OtherTok{=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{)}
-\NormalTok{C}\OtherTok{=}\FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{8}\NormalTok{)}
+\NormalTok{Omega }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{10}\NormalTok{)}
+\NormalTok{A }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{)}
+\NormalTok{B }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{)}
+\NormalTok{C }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{8}\NormalTok{)}
 \NormalTok{Omega}
 \end{Highlighting}
 \end{Shaded}
@@ -639,26 +604,6 @@ Con R los conjuntos de pueden definir como vectores
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{A}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 1 2 3 4 5
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{B}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 1 4 5
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
 \FunctionTok{intersect}\NormalTok{(A,B)}
 \end{Highlighting}
 \end{Shaded}
@@ -671,26 +616,6 @@ Con R los conjuntos de pueden definir como vectores
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{A}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 1 2 3 4 5
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{B}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 1 4 5
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
 \FunctionTok{union}\NormalTok{(A,B)}
 \end{Highlighting}
 \end{Shaded}
@@ -699,27 +624,7 @@ Con R los conjuntos de pueden definir como vectores
 [1] 1 2 3 4 5
 \end{verbatim}
 
-\(B-C\)
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{B}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 1 4 5
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{C}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 4 6 7 8
-\end{verbatim}
+\(B\setminus C\)
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -731,27 +636,7 @@ Con R los conjuntos de pueden definir como vectores
 [1] 1 5
 \end{verbatim}
 
-\(A^c=\Omega-A\)
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{Omega}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
- [1]  1  2  3  4  5  6  7  8  9 10
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{A}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 1 2 3 4 5
-\end{verbatim}
+\(A^c=\Omega\setminus A\)
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -763,7 +648,7 @@ Con R los conjuntos de pueden definir como vectores
 [1]  6  7  8  9 10
 \end{verbatim}
 
-\subsection{Con python}\label{con-python}
+\subsection{Con Python}\label{con-python}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -811,7 +696,7 @@ Con R los conjuntos de pueden definir como vectores
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{A }\OperatorTok{\&}\NormalTok{ B   }\CommentTok{\# intersección (\&: and/y)}
+\NormalTok{A }\OperatorTok{\&}\NormalTok{ B   }\CommentTok{\# intersección}
 \end{Highlighting}
 \end{Shaded}
 
@@ -821,7 +706,7 @@ Con R los conjuntos de pueden definir como vectores
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{A }\OperatorTok{|}\NormalTok{ B   }\CommentTok{\# unión (|: or/o)}
+\NormalTok{A }\OperatorTok{|}\NormalTok{ B   }\CommentTok{\# unión}
 \end{Highlighting}
 \end{Shaded}
 
@@ -831,7 +716,7 @@ Con R los conjuntos de pueden definir como vectores
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{A }\OperatorTok{{-}}\NormalTok{ C   }\CommentTok{\# diferencia }
+\NormalTok{A }\OperatorTok{{-}}\NormalTok{ C   }\CommentTok{\# diferencia}
 \end{Highlighting}
 \end{Shaded}
 
@@ -841,7 +726,7 @@ Con R los conjuntos de pueden definir como vectores
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{Omega}\OperatorTok{{-}}\NormalTok{C }\CommentTok{\# complementario.}
+\NormalTok{Omega }\OperatorTok{{-}}\NormalTok{ C }\CommentTok{\# complementario}
 \end{Highlighting}
 \end{Shaded}
 
@@ -851,166 +736,149 @@ Con R los conjuntos de pueden definir como vectores
 
 \section{Combinatoria}\label{combinatoria}
 
-La combinatoria es una rama de la matemática discreta que entre otras
-cosas cuenta distintas configuraciones de objetos de un conjunto.
+La combinatoria es una rama de la matemática discreta que, entre otras
+cosas, cuenta configuraciones posibles de objetos de un conjunto.
 
-Por ejemplo si tenemos un equipo de baloncesto con 7 jugadores ¿cuántos
-equipos de 5 jugadores distintos podemos formar?
+Por ejemplo, si tenemos un equipo de baloncesto con 7 jugadores,
+¿cuántos equipos distintos de 5 jugadores podemos formar?
 
-\subsection{Número Binonial}\label{nuxfamero-binonial}
+\subsection{Número binomial}\label{nuxfamero-binomial}
 
-Número combinatorio o número binomial
+\begin{Definicion}{Número combinatorio o número binomial}{}
 
-Nos da el número de subconjuntos de tamaño \(k\) de un conjunto de
-tamaño \(n\). Este número es
-
-\[
-C_n^k={n\choose k} = \frac{n!}{k!\cdot (n-k)!}.
+Da el número de subconjuntos de tamaño \(k\) de un conjunto de tamaño
+\(n\). Este número es: \[
+C_n^k=\binom{n}{k} = \frac{n!}{k!\,(n-k)!}.
 \]
 
-Recordemos que \[
+Recordemos que
+
+\[
 n!=1\cdot 2\cdot 3\cdots n.
 \]
 
-Ejemplo
+\end{Definicion}
 
-En nuestro caso con 7 jugadores \(n=7\) el número de equipos distintos
-de \(k=5\) es
+\begin{Ejemplo}{Ejemplo}{}
+
+En nuestro caso, con 7 jugadores (\(n=7\)) y equipos de 5 (\(k=5\)):
 
 \[
-\begin{array}{rl}
-C_7^5&={7\choose 5} = \frac{7!}{5!\cdot (7-5)!}=\frac{7!}{5!\cdot 2!} \\
-&=\frac{1\cdot 2\cdot 3 \cdot 4\cdot 5\cdot 6\cdot 7}{1\cdot 2\cdot 3 \cdot 4\cdot 5\cdot 1\cdot 2}=\frac{6\cdot 7}{2}=\frac{42}{2}=21.
-\end{array}
+\binom{7}{5} = \frac{7!}{5!\,2!}
+=\frac{6\cdot 7}{2}
+=21.
 \]
 
-Puedo formar 21 equipos distintos.
+Por tanto, puedo formar 21 equipos distintos.
 
-Ejercicio: el paquete \texttt{gtools}
+\end{Ejemplo}
 
-Carga el paquete \texttt{gtools} de R y investiga la función
+\begin{Ejercicio}{Ejercicio: el paquete \texttt{gtools}}{}
+
+Carga el paquete \texttt{gtools} de R e investiga la función
 \texttt{combinations(n,\ r,\ v,\ set,\ repeats.allowed)} para calcular
 todas las combinaciones anteriores.
+
+\end{Ejercicio}
 
 \subsection{Combinaciones con
 repetición}\label{combinaciones-con-repeticiuxf3n}
 
-En combinatoria, las combinaciones con repetición de un conjunto son las
-distintas formas en que se puede hacer una selección de elementos de un
-conjunto dado, permitiendo que las selecciones puedan repetirse.
+En combinatoria, las combinaciones con repetición son selecciones en las
+que se permite repetir elementos.
 
-Combinaciones con repetición
+\begin{Definicion}{Combinaciones con repetición}{}
 
-El número \(CR_n^k\) de multiconjuntos con \(k\) elementos escogidos de
-un conjunto con \(n\) elementos satisface:
+El número \(CR_n^k\) de multiconjuntos de tamaño \(k\) escogidos de un
+conjunto con \(n\) elementos es: \[
+CR_n^k = \binom{n+k-1}{k} = \frac{(n+k-1)!}{k!(n-1)!}.
+\]
 
-\begin{itemize}
-\tightlist
-\item
-  Es igual al número de combinaciones con repetición de \(k\) elementos
-  escogidos de un conjunto con \(n\) elementos.
-\item
-  Es igual al número de formas de repartir \(k\) objetos en \(n\)
-  grupos.
-\end{itemize}
+\end{Definicion}
 
-\[CR_n^k = \binom{n+k-1}{k} = \frac{(n+k-1)!}{k!(n-1)!}.\]
+\begin{Ejemplo}{Ejemplo: caramelos}{}
 
-Ejemplo: caramelos
+Repartimos 12 caramelos entre 4 personas (A, B, C, D). El número de
+repartos posibles es: \[
+CR_4^{12} = \binom{4+12-1}{12}=\binom{15}{12}=\texttt{455}.
+\]
 
-Vamos a imaginar que vamos a repartir 12 caramelos entre Antonio,
-Beatriz, Carlos y Dionisio (que representaremos como A, B, C, D). Una
-posible forma de repartir los caramelos sería: dar 4 caramelos a
-Antonio, 3 a Beatriz, 2 a Carlos y 3 a Dionisio. Dado que no importa el
-orden en que se reparten, podemos representar esta selección como
-AAAABBBCCDDD.
+\end{Ejemplo}
 
-Otra forma posible de repartir los caramelos podría ser: dar 1 caramelo
-a Antonio, ninguno a Beatriz y Carlos, los 11 restantes se los damos a
-Dionisio. Esta repartición la representamos como ADDDDDDDDDDD
+\subsection{Variaciones (sin
+repetición)}\label{variaciones-sin-repeticiuxf3n}
 
-Recíprocamente, cualquier serie de 12 letras A, B, C, D se corresponde a
-una forma de repartir los caramelos. Por ejemplo, la serie AAAABBBBBDDD
-corresponde a: Dar 4 caramelos a Antonio, 5 caramelos a Beatriz, ninguno
-a Carlos y 3 a Dionisio.
-
-De esta forma, el número de formas de repartir los caramelos es:
-
-\[CR_{n=4}^{k=12} = \binom{4+12-1}{12}=455.\]
-
-\subsection{Variaciones.}\label{variaciones.}
-
-Con los número \(\{1,2,3\}\) ¿cuántos números de dos cifras distintas
+Con los números \(\{1,2,3\}\), ¿cuántos números de dos cifras distintas
 podemos formar sin repetir ninguna cifra?
 
-La podemos escribir
-
-\[12,13,21,23,31,32\]
-
-Luego hay seis casos, estas son las variaciones de orden \(k=2\) de un
+Se pueden escribir: \[
+12,13,21,23,31,32.
+\] Luego hay 6 casos: son las variaciones de orden \(k=2\) de un
 conjunto de \(n=3\) elementos.
 
-Variaciones
+\begin{Definicion}{Variaciones (sin repetición)}{}
 
-Denotaremos las variaciones (sin repetición) de \(k\) elementos (de
-orden \(k\)) de un conjunto de \(n\) elementos por \(V_n^k\) su valor es
-
-\[
-V_n^k=\frac{n!}{(n-k)!}=(n-k+1)\cdot (n-k+2)\cdots n.
+Denotaremos las variaciones (sin repetición) de \(k\) elementos de un
+conjunto de \(n\) elementos por \(V_n^k\). Su valor es: \[
+V_n^k=\frac{n!}{(n-k)!}.
 \]
 
-Ejemplo
+\end{Definicion}
 
-En nuestro ejemplo con \(n=3\) dígitos podemos escribir las siguientes
-variaciones de orden \(k=2\)
+\begin{Ejemplo}{Ejemplo}{}
 
-\[
-V^{k=2}_{n=3}=\frac{3!}{(3-2)!}=\frac{1\cdot 2\cdot 3}{1}=6.
+En nuestro ejemplo, con \(n=3\) y \(k=2\): \[
+V_3^2=\frac{3!}{(3-2)!}=6.
 \]
 
-Ejercicio
+\end{Ejemplo}
 
-Carga el paquete \texttt{gtools} de R y investiga la función
+\begin{Definicion}{Ejercicio}{}
+
+Carga el paquete \texttt{gtools} de R e investiga la función
 \texttt{permutations(n,\ r,\ v,\ set,\ repeats.allowed)} para calcular
 todas las variaciones anteriores.
 
+\end{Definicion}
+
 \subsection{Variaciones con
-repetición.}\label{variaciones-con-repeticiuxf3n.}
+repetición}\label{variaciones-con-repeticiuxf3n}
 
 ¿Y si en el caso anterior permitimos que se repita algún dígito?
 
-Variaciones on repetición
+\begin{Definicion}{Variaciones con repetición}{}
 
 Las variaciones de orden \(k\) de un conjunto de \(n\) elementos
-permitiendo que se repitan los elementos. Las denotamos y valen:
-
-\[VR_n^k=n^k\]
-
-Ejemplo
-
-Efectivamente en nuestro caso
-
-\[11,12,13,21,22,23,31,32,33\]
-
-\[
-VR^{k=2}_{n=3}=n^k=3^2=9.
+permitiendo repeticiones se denotan por \(VR_n^k\) y valen: \[
+VR_n^k=n^k.
 \]
+
+\end{Definicion}
+
+\begin{Definicion}{Ejemplo}{}
+
+En nuestro caso: \[
+11,12,13,21,22,23,31,32,33,
+\qquad
+VR_3^2=3^2=9.
+\]
+
+\end{Definicion}
 
 \subsection{Permutaciones}\label{permutaciones}
 
-Permutaciones
+\begin{Definicion}{Permutaciones}{}
 
-Las permutaciones de un conjunto de cardinal \(n\) son todas las
-variaciones de orden máximo \(n\). Las denotamos y valen:
-
-\[
-P_n=V_n^n=n!
+Las permutaciones de un conjunto de cardinal \(n\) son las variaciones
+de orden máximo \(n\). Se denotan por \(P_n\) y valen: \[
+P_n=V_n^n=n!.
 \]
 
-Variaciones on repetición
+\end{Definicion}
 
-Por ejemplo todos los números que se pueden escribir ordenando todos los
-dígitos \(\{1,2,3\}\) sin repetir ninguno
+\begin{Ejemplo}{Ejemplo (R)}{}
+
+Por ejemplo, todas las permutaciones de \(\{1,2,3\}\) son:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1028,101 +896,143 @@ dígitos \(\{1,2,3\}\) sin repetir ninguno
 [1] 2 1 3
 \end{verbatim}
 
-Efectivamente \(P_3=3!=1\cdot  2\cdot 3.\)
+Efectivamente, \(P_3=3!=1\cdot 2\cdot 3\).
 
-Ejercicio
+\end{Ejemplo}
 
-Carga el paquete \texttt{combinat} de R e investiga la función
-\texttt{permn} para calcular todas las permutaciones anteriores.
+\begin{Ejemplo}{Ejercicio}{}
 
-Investiga también el paquete \texttt{itertools} y la función
-\texttt{comb} de \texttt{scipy.misc} de Python e investiga sus funciones
-para todas las formas de contar que hemos visto en este tema.
+En R, investiga la función \texttt{permn} del paquete \texttt{combinat}.
 
-Ejercicio
+En Python, investiga el paquete \texttt{itertools} y la función
+\texttt{comb} de \texttt{scipy.special} para las distintas formas de
+contar vistas en este tema (evita \texttt{scipy.misc}, que está
+deprecado).
 
-La función gamma de Euler, cobrará mucha importancia en el curso de
-estadística. Comprueba que la función \texttt{gamma(x+1)} da el mismo
-valor que la función \texttt{factorial(x)} en \texttt{R} para todo
-\(x = \{1,2,3,\ldots,10\}\).
+\end{Ejemplo}
+
+\begin{Ejemplo}{Ejercicio (función Gamma)}{}
+
+La función Gamma de Euler cobrará mucha importancia en el curso de
+estadística. Comprueba que \texttt{gamma(x+1)} da el mismo valor que
+\texttt{factorial(x)} en R para todo \(x\in\{1,2,3,\ldots,10\}\).
+
+\end{Ejemplo}
 
 \subsection{Números multinomiales. Permutaciones con
-repetición.}\label{nuxfameros-multinomiales.-permutaciones-con-repeticiuxf3n.}
+repetición}\label{nuxfameros-multinomiales.-permutaciones-con-repeticiuxf3n}
 
-Ejercicio
+\begin{Definicion}{Permutaciones con repetición (multinomial)}{}
 
 Consideremos un conjunto de elementos \(\{a_1, a_2, \ldots, a_k\}\).
 
-Entonces, si cada uno de los objetos \(a_i\) de un conjunto, aparece
-repetido \(n_i\) veces para cada \(i\) desde 1 hasta \(k\), entonces el
-número de permutaciones con elementos repetidos es:
+Si cada objeto \(a_i\) aparece repetido \(n_i\) veces (para
+\(i=1,\ldots,k\)) y \(n=n_1+n_2+\cdots+n_k\), entonces el número de
+permutaciones con repetición es:
 
-\[PR_n^{n_1,n_2,\ldots,n_k} = {{n}\choose {n_1\quad n_2 \quad\ldots \quad n_k}}=\frac{n!}{n_1!\cdot n_2!\cdot \ldots \cdot n_k!},\]
-donde \(n=n_1+n_2+\cdots+n_k\).
+\[
+PR_n^{n_1,\ldots,n_k}
+= \binom{n}{n_1\ n_2\ \cdots n_k}
+= \frac{n!}{n_1!\,n_2!\cdots n_k!}.
+\]
 
-Ejercicio
+\end{Definicion}
 
-¿Cuantas palabras diferentes se pueden formar con las letras de la
+\begin{Ejemplo}{Ejercicio}{}
+
+¿Cuántas palabras diferentes se pueden formar con las letras de la
 palabra \texttt{PROBABILIDAD}?
 
-El conjunto de letras de la palabra considerada es el siguiente:
-\(\{A, B, D, I, L, O, P, R\}\) con las repeticiones siguientes: las
-letras A, B, D, e I, aparecen 2 veces cada una; y las letras L, O, P, R
-una vez cada una de ellas.
+Las letras A, B, D e I aparecen 2 veces cada una; y L, O, P, R aparecen
+1 vez cada una. Por tanto: \[
+\frac{12!}{(2!)^4}=29\,937\,600.
+\]
 
-Por tanto, utilizando la fórmula anterior, tenemos que el número de
-palabras (permutaciones con elementos repetidos) que podemos formar es
-
-\[PR^{2,2,2,2,1,1,1,1}_{12} = \frac{12!}{(2!)^4(1!)^4} = 29937600.\]
+\end{Ejemplo}
 
 \section{Para acabar}\label{para-acabar}
 
 \subsection{Principios básicos para contar cardinales de
 conjuntos}\label{principios-buxe1sicos-para-contar-cardinales-de-conjuntos}
 
-El principio de la suma
+\begin{Teorema}{El principio de la suma}{}
 
-Sean \(A_1, A_2,\ldots, A_n\) conjuntos disjuntos dos a dos, es decir
-\(A_i\cap A_j=\emptyset\) para todo \(i\not= j\), \(i,j=1,2,\ldots n\).
-Entonces
-
-\[\#(\cup_{i=1}^n A_i)=\sum_{i=1}^n \#(A_i).\]
-
-Principio de unión exclusión
-
-Consideremos dos conjuntos cualesquiera \(A_1, A_2\) entonces el
-cardinal de su unión es
-
-\[\#(A_1\cup A_2)=\#(A_1)+\#(A_2)-\#(A_1\cap A_2).\]
-
-El principio del producto
-
-Sean \(A_1,A_2,\ldots A_n\)
-
-\[
-\begin{array}{ll}
-\#(A_1\times A_2\times \cdots A_n)=&\#\left(\{(a_1,a_2,\ldots a_n)| a_i\in A_i, i=1,2,\ldots n\}\right)\\
-&=\prod_{i=1}^n \#(A_i).
-\end{array}
+Sean \(A_1, A_2,\ldots, A_n\) conjuntos disjuntos dos a dos, es decir,
+\(A_i\cap A_j=\emptyset\) para todo \(i\neq j\). Entonces \[
+\#\left(\bigcup_{i=1}^n A_i\right)=\sum_{i=1}^n \#(A_i).
 \]
+
+\end{Teorema}
+
+\begin{Teorema}{Principio de inclusión-exclusión (para 2 conjuntos)}{}
+
+Para dos conjuntos cualesquiera \(A_1, A_2\), el cardinal de su unión
+es: \[
+\#(A_1\cup A_2)=\#(A_1)+\#(A_2)-\#(A_1\cap A_2).
+\]
+
+\end{Teorema}
+
+\begin{Teorema}{El principio del producto}{}
+
+Sean \(A_1,A_2,\ldots,A_n\). Entonces: \[
+\#(A_1\times \cdots \times A_n)
+=\prod_{i=1}^n \#(A_i).
+\]
+
+\end{Teorema}
 
 \subsection{Otros aspectos a tener en
 cuenta}\label{otros-aspectos-a-tener-en-cuenta}
 
-Evidentemente nos hemos dejado muchas otras propiedades básicas de
-teoría de conjuntos y de combinatoria como:
+Nos hemos dejado otras propiedades básicas de teoría de conjuntos y
+combinatoria, como:
 
 \begin{itemize}
-\tightlist
 \item
-  Propiedades de los números combinatorios.
+  Propiedades de los números binomiales:
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    \(\binom{m}{0}=1\) y \(\binom{m}{m}=1\) para todo
+    \(m\in \mathbb{N}\).
+  \item
+    \(\binom{m}{n}=\binom{m}{m-n}\).
+  \item
+    \(\binom{m}{n}=\binom{m-1}{n}+\binom{m-1}{n-1}\).
+  \end{enumerate}
 \item
-  Binomio de Newton.
+  Binomio de Newton: \[
+  (a+b)^n=\sum_{k=0}^n  \binom{n}{k}\, a^k\, b^{n-k}.
+  \] En particular, \[
+  (1+1)^n=\sum_{k=0}^n \binom{n}{k}=2^n,
+  \qquad
+  (1-1)^n=\sum_{k=0}^n \binom{n}{k}(-1)^{n-k}=0.
+  \]
 \item
-  Multinomio de Newton.
+  Número multinomial y multinomio:
 \end{itemize}
 
-Si nos son necesarias las volveremos a repetir a lo largo del curso o
+\[
+(a_1+\cdots + a_k)^n
+=\sum_{n_1+\cdots + n_k=n}
+\binom{n}{n_1\, \cdots\, n_k}\,
+a_1^{n_1}\cdots a_k^{n_k},
+\]
+
+donde
+
+\[
+\binom{n}{n_1\, \cdots\. n_k}
+= \frac{n!}{n_1!\cdots n_k!}.
+\] Además, se cumple la siguiente identidad \[
+\binom{n}{n_1\ \cdots\ n_k}
+=  \binom{n}{n_1}\binom{n-n_1}{n_2}\cdots \binom{n-n_1-\cdots -n_{k-1}}{n_k}.
+\]
+
+Si nos son necesarias, las volveremos a utilizar a lo largo del curso o
 bien daremos enlaces para que las podáis estudiar en paralelo.
 
 \chapter{Teoría elemental de la
@@ -1130,15 +1040,17 @@ probabilidad}\label{teoruxeda-elemental-de-la-probabilidad}
 
 \section{Definiciones básicas}\label{definiciones-buxe1sicas}
 
-Definición: experimento aleatorio
+\begin{Definicion}{Definición: experimento aleatorio}{}
 
 Un experimento que repetido en las mismas condiciones puede dar
 resultados diferentes, pero que a largo plazo son predecibles recibe el
 nombre de \textbf{experimento aleatorio}.
 
+\end{Definicion}
+
 Daremos nombres a distintos tipos de sucesos:
 
-Definición: espacio muestral y tipos de sucesos
+\begin{Definicion}{Definición: espacio muestral y tipos de sucesos}{}
 
 \begin{itemize}
 \tightlist
@@ -1152,19 +1064,21 @@ Definición: espacio muestral y tipos de sucesos
   Llamaremos \textbf{suceso} a cualquier subconjunto del espacio
   muestral.
 \item
-  \textbf{Suceso seguro o cierto} \(A\subseteq \Omega\)
+  \textbf{Suceso seguro o cierto}: (\Omega)
 \item
-  \textbf{Suceso imposible o vació}: \(\emptyset\)
+  \textbf{Suceso imposible o vacío}: (\emptyset)
 \item
   \textbf{Partes de un conjunto}: \(\mathcal{P}(\Omega)\): conjunto de
   todos los sucesos del experimento aleatorio (es decir, el conjunto de
   todos los subconjuntos de \(\Omega\))
 \end{itemize}
 
+\end{Definicion}
+
 A continuación describimos el clásico experimento del lanzamiento de un
 dado.
 
-Ejemplo
+\begin{Ejemplo}{Ejemplo}{}
 
 Consideremos el experimento aleatorio que consiste en lanzar un dado. El
 espacio muestral de este experimento es \(\Omega=\{1,2,3,4,5,6\}\) o las
@@ -1179,20 +1093,24 @@ Si lo representamos gráficamente, tendríamos:
 Por comodidad y conveniencia se opta por representar el espacio muestral
 por \[\Omega = \{1,2,3,4,5,6\}.\]
 
+\end{Ejemplo}
+
 Recordemos la notación \(\mathcal{P}(\Omega)\) que usamos para
 referirnos al conjunto de todos los subconjuntos de \(\Omega\). Este
 conjunto se llama \textbf{conjunto de partes} de \(\Omega\).
 
-Ejercicio
+\begin{Ejercicio}{Ejercicio}{}
 
 ¿Cuantos elementos contiene el conjunto de partes de \(\Omega\) del
 experimento anterior?
+
+\end{Ejercicio}
 
 Veamos algún ejemplo menos clásico. Podemos considerar el experimento
 aleatorio que consiste en calcular los \(n\) gramas de una palabra
 escogida al azar.
 
-Ejemplo \(n\)-gramas
+\begin{Ejemplo}{Ejemplo \(n\)-gramas}{}
 
 Se define un \(n\)-grama de una palabra como el conjunto de \(n\) letras
 consecutivas de la misma (contando los blancos de inicio y final de
@@ -1228,6 +1146,8 @@ por ejemplo, en
 \href{https://es.sttmedia.com/frecuencias-de-silabas-espanol}{Stefan
 Trost Media frecuencias de sílabas en español}.
 
+\end{Ejemplo}
+
 \subsection{Operaciones con sucesos}\label{operaciones-con-sucesos}
 
 Si tenemos dos sucesos \(A,B\subseteq \Omega\), podemos definir:
@@ -1248,48 +1168,59 @@ Si tenemos dos sucesos \(A,B\subseteq \Omega\), podemos definir:
   \(A^c\): suceso \emph{complementario} el que sucede si NO sucede
   \(A\).
 \item
-  \(A- B=A\cap B^c\): suceso \emph{diferencia}, que acontece si sucede
-  \(A\) y NO sucede \(B\).
+  \(A\setminus B = A\cap B^c\): suceso \emph{diferencia}, que acontece
+  si sucede \(A\) y NO sucede \(B\).
 \end{itemize}
 
-Sucesos incompatibles
+\begin{Definicion}{Sucesos incompatibles}{}
 
 Dos sucesos cualesquiera \(A\) y \(B\) son \emph{incompatibles} (o
 \emph{disjuntos}) cuando \(A\cap B=\emptyset\).
 
+\end{Definicion}
+
 Otro ejemplo se observa el sexo y la lateralidad de los estudiantes de
 una clase.
 
-Ejemplo
+\begin{Ejemplo}{Ejemplo}{}
 
 Supongamos que el sexo se divide entre Mujeres y Hombres y la
-lateralirad en diestros y zurdos. Vamos a definir el espacio muestral,
+lateralidad en diestros y zurdos. Vamos a definir el espacio muestral,
 los sucesos elementales y a realizar algunas operaciones entre ellos.
 
-Estudiantes de esta clase: \(\Omega\). - Mujeres de esta clase: \(A\). -
-Estudiantes que son zurdos \(B\).
+\begin{itemize}
+\tightlist
+\item
+  Estudiantes de esta clase: (\Omega).
+\item
+  Mujeres de esta clase: (A).
+\item
+  Estudiantes que son zurdos: (B).
+\end{itemize}
+
+\end{Ejemplo}
 
 Algunas operaciones entre los sucesos anteriores serían:
 
 \begin{itemize}
 \tightlist
 \item
-  \(A\cup B\): Estudiantes . que son mujeres o que son zurdos.
+  \(A\cup B\): Estudiantes que son mujeres o que son zurdos.
 \item
   \(A\cap B\): Mujeres de esta clase que son zurdas.
 \item
   \(A^c\): Hombres de esta clase.
 \item
-  \(A-B\): Mujeres de la clases que NO son zurdas.
+  \(A\setminus B\): Mujeres de la clases que NO son zurdas.
 \item
-  \(B-A\): Hombres de la clase que son zurdos.
+  \(B\setminus A\): Hombres de la clase que son zurdos.
 \item
-  ¡Cuidado! No son incompatibles.
+  \textbf{¡Cuidado!} No son incompatibles.
 \end{itemize}
 
 \subsection{Propiedades}\label{propiedades}
 
-Propiedades
+\begin{Proposicion}{Propiedades}{}
 
 \textbf{Conmutativas}:
 
@@ -1297,17 +1228,23 @@ Propiedades
 
 \textbf{Asociativas}:
 
-\begin{align*}
+\[
+\begin{aligned}
 A\cup(B\cup C)=(A\cup B)\cup C, \\
 A\cap(B\cap C)=(A\cap B)\cap C.
-\end{align*}
+\end{aligned}
+\]
 
 \textbf{Distributivas}
 
-\begin{align*}
-A\cap & (B\cup C)=(A\cap B)\cup (A\cap C),\\ 
+\[
+\begin{aligned}
+A\cap & (B\cup C)=(A\cap B)\cup (A\cap C),\\
 A\cup & (B\cap C)=(A\cup B)\cap (A\cup C).
-\end{align*}
+\end{aligned}
+\]
+
+\end{Proposicion}
 
 Veamos algunos diagramas que nos ayuda a demostrar las propiedades
 anteriores.
@@ -1358,9 +1295,11 @@ anteriores.
 \includegraphics[width=\linewidth,height=1.5625in,keepaspectratio]{Images/venn1AUByC.jpeg} \\
 \end{longtable}
 
-Complementario del complementario
+\begin{Proposicion}{Complementario del complementario}{}
 
 \[(A^c)^c=A\]
+
+\end{Proposicion}
 
 \begin{longtable}[]{@{}
   >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
@@ -1385,7 +1324,7 @@ Complementario del complementario
 \includegraphics[width=\linewidth,height=1.5625in,keepaspectratio]{Images/venn1A_solo.jpeg} \\
 \end{longtable}
 
-Leyes de De Morgan
+\begin{Proposicion}{Leyes de De Morgan}{}
 
 \[(A\cup B)^c=A^c\cap B^c\]
 
@@ -1477,6 +1416,8 @@ Leyes de De Morgan
 \includegraphics[width=\linewidth,height=1.51042in,keepaspectratio]{Images/venn1Ac_conB.jpeg} \\
 \end{longtable}
 
+\end{Proposicion}
+
 \section{Definición de
 probabilidad}\label{definiciuxf3n-de-probabilidad}
 
@@ -1496,7 +1437,7 @@ Esta verosimilitud puede estar justificada por:
   Cálculo formal
 \end{itemize}
 
-Definición formal de probabilidad
+\begin{Definicion}{Definición formal de probabilidad}{}
 
 Sea \(\Omega\) el espacio muestral de un experimento aleatorio.
 Supongamos que el número de posibles resultados, por el momento, es
@@ -1524,9 +1465,11 @@ P(A_1\cup A_2\cup \cdots \cup A_n)=P(A_1)+P(A_2)+\cdots +P(A_n)
 Si \(a\in \Omega\) es un suceso elemental cometeremos el abuso de
 notación de poner \(P(a)\) en lugar de \(P(\{a\})\).
 
+\end{Definicion}
+
 Veamos un ejemplo real de cómo se calcula la probabilidad de un suceso.
 
-Ejemplo
+\begin{Ejemplo}{Ejemplo}{}
 
 En la página de la
 \href{http://www.donasang.org/que-es-la-sang/es_frequencies-dels-diferents-grups.html}{Fundación
@@ -1551,17 +1494,19 @@ de individuos.
 \[P(\{\mbox{O}\}^c)\!=\!P(\{\mbox{A,B,AB}\})\!=\!
 P(\mbox{A})+P (\mbox{B})+P(\mbox{AB})\!=\!0.57.\]
 
+\end{Ejemplo}
+
 Necesitaremos tener propiedades y fórmulas prácticas para poder calcular
 probabilidades de sucesos más complejos. Veamos algunas de ellas.
 
-Propiedades básicas de la probabilidad
+\begin{Proposicion}{Propiedades básicas de la probabilidad}{}
 
 \begin{itemize}
 \item
   \(P(\emptyset)=0\).
 \item
-  \(\scriptsize{P(A-B)=P(A)-P(A\cap B)}\) porque
-  \(\scriptsize{P(A)=P(A-B)+P(A\cap B)}\).
+  \(\scriptsize{P(A\setminus B)=P(A)-P(A\cap B)}\) porque
+  \(\scriptsize{P(A)=P(A\setminus B)+P(A\cap B)}\).
 \end{itemize}
 
 \begin{center}
@@ -1575,10 +1520,12 @@ Propiedades básicas de la probabilidad
   \(P(A^c)=1-P(A)\).
 \end{itemize}
 
+\end{Proposicion}
+
 Una identidad muy utilizada es la de la probabilidad de la unión de dos
 sucesos cualesquiera.
 
-La Probabilidad de la unión de dos sucesos
+\begin{Proposicion}{Probabilidad de la unión de dos sucesos}{}
 
 \(P(A\cup B)=P(A)+P(B)-P(A\cap B)\)
 
@@ -1586,22 +1533,28 @@ La Probabilidad de la unión de dos sucesos
 \includegraphics[width=0.6\linewidth,height=\textheight,keepaspectratio]{Images/proba1dibujos/A-B.jpg}
 \end{center}
 
+\end{Proposicion}
+
 La demostración analítica de esta propiedad es la siguiente:
 
-\begin{eqnarray*}
-P(A)+P(B)-P(A\cap B) &=& P(A-B)+P(A\cap B)\\ 
-& & +P(B-A)+ P(A\cap  B)-P(A\cap  B)\\
-&=& P(A-B)+P(A\cap B)+ P(B-A) \\
-&=& P(A\cup B).\\
-\end{eqnarray*}
+\[
+\begin{aligned}
+P(A)+P(B)-P(A\cap B) &= P(A\setminus B)+P(A\cap B)\\
+& & +P(B\setminus A)+ P(A\cap  B)-P(A\cap  B)\\
+&= P(A\setminus B)+P(A\cap B)+ P(B\setminus A) \\
+&= P(A\cup B).\\
+\end{aligned}
+\]
 
-Probabilidad de la unión de \(n\) conjuntos
+\begin{Proposicion}{Probabilidad de la unión de \(n\) conjuntos}{}
 
 Sean \(A_1, A_2,\ldots A_n\) sucesos. Entonces:
 
 \[
 P(\cup_{i=1}^n A_i)=\sum_{i=1}^n P(A_i)-\sum_{1\leq i<j\leq n}P(A_i\cap A_j)+\cdots +(-1)^{n-1}P(A_1\cap A_2\cap \cdots \cap A_n).
 \]
+
+\end{Proposicion}
 
 La demostración es sencilla mediante inducción: partimos del caso base
 de dos sucesos, suponemos que es cierta para \(n\) sucesos y luego la
@@ -1625,10 +1578,12 @@ Gráficamente tenemos esta situación:
 
 Ahora podemos comprobar la fórmula para este caso.
 
-\begin{eqnarray*}
-P(A\cup B\cup C)&=&P(A)+P(B)+P(C)-P(A\cap B) \\
+\[
+\begin{aligned}
+P(A\cup B\cup C)&=P(A)+P(B)+P(C)-P(A\cap B) \\
   & & - P(A\cap C)-P(B\cap C)+P(A\cap B\cap C).\\
-\end{eqnarray*}
+\end{aligned}
+\]
 
 Efectivamente tenemos que:
 
@@ -1638,7 +1593,7 @@ Una de las formas más intuitiva de asignación de probabilidades es hacer
 el cociente entre los casos favorables a que acontezca el evento y los
 casos posibles del experimento; la llamada fórmula de Laplace.
 
-Propiedad
+\begin{Proposicion}{Propiedad}{}
 
 \begin{itemize}
 \item
@@ -1652,11 +1607,13 @@ Propiedad
   \]
 \end{itemize}
 
+\end{Proposicion}
+
 En el procesamiento del lenguaje se suelen estudiar las frecuencias de
 palabras o letras de un determinado idioma. Veamos un ejemplo sobre las
 frecuencias de las vocales en castellano.
 
-\textless{} Ejemplo: Frecuencia de vocales/i\textgreater{}
+\begin{Ejemplo}{< Ejemplo: Frecuencia de vocales/i>}{}
 
 Los porcentajes de vocales de un determinado idioma (de alfabeto latino)
 según la
@@ -1676,11 +1633,13 @@ Y su probabilidad es
 
 \[P(\{E,O\})=P(E)+P(O)=0.261+0.244=0.505.\]
 
+\end{Ejemplo}
+
 Otro ejemplo en este caso es sobre un test de drogas en el que se
 analiza la presencia de cocaína y cannabis en la sangre de los
 conductores, inspirado en un caso real.
 
-Ejemplo: Consumo de drogas
+\begin{Ejemplo}{Ejemplo: Consumo de drogas}{}
 
 Según un artículo de
 \href{https://elpais.com/politica/2019/01/02/actualidad/1546426491_623324.html}{El
@@ -1766,15 +1725,17 @@ En este caso nos interesa estudiar los sucesos:
 \item
   \(A\cap B\): dar positivo en los dos test; \(P(A\cap B)=0.0005.\)
 \item
-  \(A-B\): dar positivo en cocaína pero no en cannabis, por lo tanto
-  tenemos que :
+  \(A\setminus B\): dar positivo en cocaína pero no en cannabis, por lo
+  tanto tenemos que :
 \end{itemize}
 
-\[P(A-B) =P(A)-P(A\cap B) =0.001-0.0005=0.0005.\]
+\[P(A\setminus B) =P(A)-P(A\cap B) =0.001-0.0005=0.0005.\]
+
+\end{Ejemplo}
 
 \section{Probabilidad condicionada}\label{probabilidad-condicionada}
 
-Probabilidad condicionada
+\begin{Definicion}{Probabilidad condicionada}{}
 
 Dados dos sucesos \(A\) y \(B\), con \(P(A)>0\), la probabilidad
 \(P(B|A)\) de \(B\) condicionado a \(A\) es la probabilidad
@@ -1795,7 +1756,9 @@ Se calcula a través de la definición:
 P(B|A)=\frac{P(A\cap B)}{P(A)}.
 \]
 
-Ejemplo: Probabilidad condicionada
+\end{Definicion}
+
+\begin{Ejemplo}{Ejemplo: Probabilidad condicionada}{}
 
 En una clase de 20 hombres y 30 mujeres, 15 hombres y 18 mujeres llevan
 gafas. Contestemos las siguientes preguntas:
@@ -1836,7 +1799,9 @@ lleva gafas, entonces sea mujer? \[
     \frac{18}{33}
     \]
 
-¡Atención!
+\end{Ejemplo}
+
+\begin{Advertencia}{¡Atención!}{}
 
 Hay que distinguir bien entre
 
@@ -1860,13 +1825,15 @@ Hay que distinguir bien entre
 Cuando utilizamos probabilidad condicional \(P(A|B)\) estamos
 restringiendo el espacio muestral a \(B\).
 
+\end{Advertencia}
+
 \subsection{Probabilidad condicionada.
 Propiedades}\label{probabilidad-condicionada.-propiedades}
 
 La probabilidad condicionada es una probabilidad, en el sentido de la
 siguiente propiedad.
 
-Propiedad
+\begin{Proposicion}{Propiedad}{}
 
 Sea \(A\subseteq \Omega\) un suceso tal que \(P(A)>0\), entonces
 
@@ -1884,19 +1851,23 @@ P(B_1\cup B_2|A)=P(B_1|A)+P(B_2|A)-P(B_1\cap B_2|A).
 \end{array}
 \]
 
+\end{Proposicion}
+
 También se cumplirán el resto de propiedades mientras se condicionen
 cada una de las probabilidades al mismo suceso \(A\).
 
-Ejercicio
+\begin{Ejercicio}{Ejercicio}{}
 
 Escribid el resto de propiedades que cumpliría una probabilidad
 condicionada al evento \(A\).
+
+\end{Ejercicio}
 
 Veamos un ejemplo donde se aplica la probabilidad condicionada, en este
 caso, para calcular la probabilidad de que un adulto sea hipertenso,
 dado que cree que lo es.
 
-Ejemplo
+\begin{Ejemplo}{Ejemplo}{}
 
 Un 15\% de los adultos son hipertensos, un 25\% de los adultos creen que
 son hipertensos, y un 9\% de los adultos son hipertensos y creen que lo
@@ -1950,7 +1921,9 @@ P(B|A) & =\dfrac{P(A\cap B)}{P(A)}=\dfrac{0.09}{0.15}=
 \end{array}
 \]
 
-Ejemplo
+\end{Ejemplo}
+
+\begin{Ejemplo}{Ejemplo}{}
 
 Otro ejemplo de probabilidad condicionada en este caso un ejemplo simple
 de dígito de control de error.
@@ -1972,10 +1945,12 @@ código de error tenga valor 0?
 
 entonces: \[P(A\cap B)=P(B)\cdot P(A|B)=0.005\cdot 0.99=0.00495.\]
 
+\end{Ejemplo}
+
 La probabilidad condicional también es útil en la resolución de
 problemas de clasificación, como el siguiente ejemplo.
 
-Ejemplo: SPAM
+\begin{Ejemplo}{Ejemplo: SPAM}{}
 
 Un 50\% de correos recibidos en un servidor llevan adjuntos y un 65\%
 son publicidad no deseada (SPAM). Sólo un 15\% de estos correos no
@@ -2027,10 +2002,12 @@ Asignemos sucesos y probabilidades
 
 \[P(A^c|S^c)=\dfrac{P(A^c\cap S^c)}{P(S^c)}=\dfrac{P(A^c\cap S^c)}{1-P(S)}=\dfrac{0.15}{0.35}\approx 0.43.\]
 
+\end{Ejemplo}
+
 \section{Teorema de la probabilidad
 total}\label{teorema-de-la-probabilidad-total}
 
-Teorema de la probabilidad total
+\begin{Teorema}{Teorema de la probabilidad total}{}
 
 Dados dos sucesos \(A\) y \(B\) se tiene que
 
@@ -2041,11 +2018,13 @@ P(B)&= P(B\cap A) +P(B\cap A^c)\\
 \end{array}
 \]
 
+\end{Teorema}
+
 Vamos a generalizar el resultado anterior a una colección de sucesos
 \(A_1,A_2,\ldots,A_n\) que forman una partición del espacio muestral
 \(\Omega\).
 
-Partición del espacio espacio muestral
+\begin{Definicion}{Partición del espacio espacio muestral}{}
 
 Los sucesos \(A_1,A_2,\ldots, A_n\) son una \textbf{partición} del
 espacio muestral \(\Omega\) de un determinado experimento aleatorio, si
@@ -2061,10 +2040,12 @@ cumplen las condiciones siguientes:
   (\(A_i\cap A_j=\emptyset\)).
 \end{enumerate}
 
+\end{Definicion}
+
 Ahora podemos volver a enunciar el teorema anterior pero en esta ocasión
 para particiones arbitrarias.
 
-Teorema de la probabilidad total generalizado
+\begin{Teorema}{Teorema de la probabilidad total generalizado}{}
 
 Sea \(A_1,A_2,\ldots,A_n\) una partición de \(\Omega\). Sea \(B\) un
 suceso cualquiera. Entonces
@@ -2076,9 +2057,11 @@ P(B)&= P(B\cap A_1)+\cdots +P(B\cap A_n)\\
 \end{array}
 \]
 
+\end{Teorema}
+
 Revisitemos el ejemplo de los mensajes con dígitos de control de error.
 
-Ejemplo
+\begin{Ejemplo}{Ejemplo}{}
 
 Un dígito de control de error toma el valor 0 en un \(99\%\) de los
 casos en que hay un error y en un \(5\%\) de los mensajes sin error. La
@@ -2116,8 +2099,10 @@ P(A)=& P(B)\cdot P(A|B)+P(B^c)\cdot P(A|B^c)\\
 \end{array}
 \]
 
-\section{Clasificación o diagnostico caso
-binario}\label{clasificaciuxf3n-o-diagnostico-caso-binario}
+\end{Ejemplo}
+
+\section{Clasificación o diagnóstico caso
+binario}\label{clasificaciuxf3n-o-diagnuxf3stico-caso-binario}
 
 Consideremos alguna de las siguientes situaciones:
 
@@ -2175,7 +2160,7 @@ Así el resultado del clasificador o del diagnóstico puede ser:
   hacer con el objeto.
 \end{itemize}
 
-Falsos Positivos y Falsos Negativos
+\begin{Ejemplo}{Falsos Positivos y Falsos Negativos}{}
 
 Consideremos un problema de predicción de clases binario, en la que los
 resultados se etiquetan positivos (P) o negativos (N). Hay cuatro
@@ -2198,9 +2183,11 @@ propuesto.
   el valor real es P.
 \end{itemize}
 
+\end{Ejemplo}
+
 Veamos el siguiente ejemplo:
 
-Falsos Positivos y Negativos
+\begin{Ejemplo}{Falsos Positivos y Negativos}{}
 
 Un ejemplo aproximado de un problema real es el siguiente: consideremos
 una prueba diagnóstica que persiga determinar si una persona tiene una
@@ -2229,9 +2216,11 @@ test de enfermedad), tenemos dos tipos de sucesos:
   \(M\): el sujeto satisface la condición.
 \end{itemize}
 
+\end{Ejemplo}
+
 Necesitamos algunas denominaciones adicionales:
 
-Falsos Positivos y Negativos
+\begin{Definicion}{Falsos Positivos y Negativos}{}
 
 \begin{itemize}
 \tightlist
@@ -2247,7 +2236,9 @@ Falsos Positivos y Negativos
   \textbf{Coeficiente de falsos negativos}: \(P(T^c|M)\).
 \end{itemize}
 
-Falsos Positivos y Negativos
+\end{Definicion}
+
+\begin{Ejemplo}{Falsos Positivos y Negativos}{}
 
 Un test diseñado para diagnosticar una determinada enfermedad tiene un
 coeficiente de falsos negativos de 0.06, y un coeficiente de falsos
@@ -2294,9 +2285,11 @@ P(M) & =\dfrac{0.11}{0.9}\approx 0.1222.
 \end{array}
 \]
 
-\chapter{Teorema de Bayes}\label{teorema-de-bayes}
+\end{Ejemplo}
 
-Teorema de Bayes para dos sucesos
+\section{Teorema de Bayes}\label{teorema-de-bayes}
+
+\begin{Teorema}{Teorema de Bayes para dos sucesos}{}
 
 Sean \(A\) y \(B\) dos sucesos. Si \(P(B)>0\), entonces
 
@@ -2304,16 +2297,20 @@ Sean \(A\) y \(B\) dos sucesos. Si \(P(B)>0\), entonces
 P(A|B) =\dfrac{P(A)\cdot P(B|A)}{P(B)}=\dfrac{P(A)\cdot P(B|A)}{P(A)\cdot P(B|A)+P(A^c)\cdot P(B|A^c)}.
 \]
 
-Ejemplo
+\end{Teorema}
+
+\begin{Ejemplo}{Ejemplo}{}
 
 Demostrar el teorema de Bayes utilizando que
 
 \[P(A|B) =\dfrac{P(A\cap B)}{P(B)}=\cdots\]
 
+\end{Ejemplo}
+
 Generalicemos este resultado para una partición arbitraria del espacio
 muestral.
 
-Teorema de Bayes para una partición
+\begin{Teorema}{Teorema de Bayes para una partición}{}
 
 Sea \(A_1,A_2,\ldots,A_n\) una partición de \(\Omega\). Sea \(B\) un
 suceso tal que \(P(B)>0\). entonces(para cualquier \(i=1,2,\ldots,n\)):
@@ -2325,11 +2322,13 @@ P(A_i|B) & =\dfrac{P(A_i)\cdot P(B|A_i)}{P(B)}\\
 \end{array}
 \]
 
+\end{Teorema}
+
 Podéis demostrar el teorema de Bayes utilizando que
 
 \[P(A_i|B) =\dfrac{P(A_i\cap B)}{P(B)}=\cdots\]
 
-Test de VIH
+\begin{Ejemplo}{Test de VIH}{}
 
 Un test para detección de VIH da positivo un 99\% de los casos en los
 que está presente y en un 5\% de los casos en los que el virus está
@@ -2375,7 +2374,9 @@ de donde podemos calcular:
 \scriptsize{P(A^c|B^c) =\dfrac{P(B^c|A^c)\cdot P(A^c)}{P(B^c|A)\cdot P(A)+P(B^c|A^c)\cdot P(A^c)}=\dfrac{0.95\cdot 0.995}{0.01\cdot 0.005+0.95\cdot 0.995}=0.999947.}
 \]
 
-Ejemplo: Tipos de clientes
+\end{Ejemplo}
+
+\begin{Ejemplo}{Ejemplo: Tipos de clientes}{}
 
 Se ha observado que los cientes de una empresa de ventas por internet
 son de tres tipos, A, B y C, disjuntos dos a dos. La probabilidad que
@@ -2398,7 +2399,9 @@ Buscamos estudiar el suceso \(E\): el cliente compra, se tiene que:
 
 \[P(B|E)\!=\!\dfrac{P(E|B)\cdot P(B)}{P(E|A)\!\cdot\! P(A)\!+\!P(E|B)\!\cdot\! P(B)\!+\!P(E|C)\!\cdot\! P(C)}\!=\!\ldots\]
 
-Ejemplo: Fidelización de clientes
+\end{Ejemplo}
+
+\begin{Ejemplo}{Ejemplo: Fidelización de clientes}{}
 
 Para fidelizar a sus clientes una empresa implementa un test de
 detección precoz de abandono de clientes de una empresa de telefonía da
@@ -2472,9 +2475,11 @@ O también se obtiene así \[
 
 donde \(P(T^c|B)=1-P(T|B)=0.025\) y \(P(T^c|B^c)=1-P(T|B^c)=0.88.\)
 
-\chapter{Independencia de sucesos}\label{independencia-de-sucesos}
+\end{Ejemplo}
 
-Sucesos Independientes
+\section{Independencia de sucesos}\label{independencia-de-sucesos}
+
+\begin{Definicion}{Sucesos Independientes}{}
 
 Diremos que los sucesos \(A\) y \(B\) son \textbf{independientes} si
 \(P(A\cap B)=P(A)\cdot P(B)\).
@@ -2484,7 +2489,9 @@ toda subfamilia \(A_{i_1},\ldots,A_{i_k}\), \[
 P(A_{i_1}\cap \cdots\cap A_{i_k})=P(A_{i_1})\cdots P(A_{i_k}).
 \]
 
-Propiedad
+\end{Definicion}
+
+\begin{Proposicion}{Propiedad}{}
 
 Dados dos sucesos \(A\) y \(B\) con \(P(A),P(B)0\), las siguientes
 afirmaciones son equivalentes:
@@ -2506,10 +2513,12 @@ afirmaciones son equivalentes:
   \(A^c\) y \(B^c\) son independientes.
 \end{enumerate}
 
+\end{Proposicion}
+
 Veamos un sencillo ejemplo de compras de billetes de avión y alojamiento
 en hotel.
 
-Ejemplo billete avión
+\begin{Ejemplo}{Ejemplo billete avión}{}
 
 En la web de viajes WEBTravel, el 55\% de los clientes compra billete de
 avión, el \(20\%\) alojamiento en hotel, y el \(60\%\) billete de avión
@@ -2534,10 +2543,12 @@ por tanto, podemos calcular las probabilidades siguientes
 Concluimos que son dependientes, ya que
 \(P(A\cap B)\neq P(A)\cdot P(B)\).
 
+\end{Ejemplo}
+
 \section{Sucesos independientes vs
 disjuntos}\label{sucesos-independientes-vs-disjuntos}
 
-sucesos disjuntos e independencia
+\begin{Ejercicio}{sucesos disjuntos e independencia}{}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2559,13 +2570,15 @@ sucesos disjuntos e independencia
   independiente de si mismo?
 \end{enumerate}
 
+\end{Ejercicio}
+
 \chapter{Variables aleatorias}\label{variables-aleatorias}
 
 \section{Introducción}\label{introducciuxf3n}
 
 Hasta ahora nuestros sucesos han sido de varios tipos: \(\{C,+\}\) en la
 moneda, nombres de periódicos, ángulos en una ruleta, número de veces
-que sale cara en el lanzamiento de una moneda etc\ldots.
+que sale cara en el lanzamiento de una moneda etc.\ldots
 
 Necesitamos estandarizar de alguna manera todos estos sucesos. Una
 solución es asignar a cada suceso un cierto conjunto de números reales,
@@ -2573,7 +2586,7 @@ es decir, convertir todos los sucesos en \emph{sucesos de números
 reales} para trabajar con ellos de forma unificada.
 
 Para conseguirlo utilizaremos unas funciones que transformen los
-elementos del espacio muestral en números; esta funciones son las
+elementos del espacio muestral en números; estas funciones son las
 variables aleatorias.
 
 \section{Definición de variable
@@ -2582,12 +2595,22 @@ aleatoria}\label{definiciuxf3n-de-variable-aleatoria}
 Comenzaremos dando una definición poco rigurosa, pero suficiente, de
 variable aleatoria.
 
-Variable Aleatoria (definición práctica)
+\begin{Definicion}{Variable Aleatoria (definición práctica)}{}
 
 Una variable aleatoria (v.a.) es una aplicación que toma valores
 numéricos determinados por el resultado de un experimento aleatorio
 
-Notación
+\end{Definicion}
+
+\begin{Advertencia}{Aviso}{}
+
+Esta es una \textbf{definición práctica} para empezar a trabajar. Más
+adelante daremos la formulación rigurosa (funciones medibles y
+\(\sigma\)-álgebras).
+
+\end{Advertencia}
+
+\begin{Nota}{Notación}{}
 
 \begin{itemize}
 \tightlist
@@ -2599,7 +2622,9 @@ Notación
   letras minúsculas (las mismas en principio) \(x,y,z\ldots\)
 \end{itemize}
 
-Ejemplo
+\end{Nota}
+
+\begin{Ejemplo}{Ejemplo}{}
 
 Lanzamos un dado convencional de parchís el espacio muestral del
 experimento es
@@ -2608,7 +2633,7 @@ experimento es
 
 Una v.a \(X:\Omega\to\mathbb{R}\) sobre este espacio queda definida por
 
-\[X(1)=1, X(2)=2, X(3)=3, (4)=4, X(5)=5, X(6)=6.\]
+\[X(1)=1, X(2)=2, X(3)=3, X(4)=4, X(5)=5, X(6)=6.\]
 
 \begin{itemize}
 \tightlist
@@ -2636,6 +2661,8 @@ definida por
 
 \[X(\mbox{éxito})=1 \mbox{ y } X(\mbox{fracaso})=0.\]
 
+\end{Ejemplo}
+
 \section{Tipos de variables
 aleatorias}\label{tipos-de-variables-aleatorias}
 
@@ -2644,7 +2671,7 @@ continuas.
 
 Damos a continuación una definición informal.
 
-Variables Aleatorias Discretas y Continuas
+\begin{Definicion}{Variables Aleatorias Discretas y Continuas}{}
 
 \begin{itemize}
 \tightlist
@@ -2659,9 +2686,11 @@ Variables Aleatorias Discretas y Continuas
   parte discreta y otra continua.
 \end{itemize}
 
+\end{Definicion}
+
 \section{Ejemplo}\label{ejemplo}
 
-Ejemplo
+\begin{Ejemplo}{Ejemplo}{}
 
 Son variables \emph{aleatorias discretas}:
 
@@ -2693,6 +2722,8 @@ Son variables \emph{aleatorias continuas}:
   Porcentaje de impurezas en un lote de productos químicos.
 \end{itemize}
 
+\end{Ejemplo}
+
 \section{Variables aleatorias
 discretas}\label{variables-aleatorias-discretas}
 
@@ -2710,7 +2741,7 @@ continuación.
 \section{Distribuciones de probabilidad
 discretas}\label{distribuciones-de-probabilidad-discretas}
 
-\textless{} Función de Probabilidad
+\begin{Definicion}{Función de Probabilidad}{}
 
 La \textbf{función de probabilidad} (\emph{probability mass function} o
 incluso abusando de notación \emph{probability density function}) de una
@@ -2731,7 +2762,9 @@ variable.
 
 En el caso discreto lo más habitual es que \(X(\Omega)=D_X\).
 
-Ejemplo: Dado de parchís
+\end{Definicion}
+
+\begin{Ejemplo}{Ejemplo: Dado de parchís}{}
 
 Lanzamos un dado de parchís una vez, en esta ocasión representaremos los
 sucesos elementales por el número de puntos de la cara obtenida, tenemos
@@ -2756,7 +2789,9 @@ P_{X}(x)=
 
 Su dominio es \[D_X=\{1,2,3,4,5,6\}.\]
 
-Ejemplo: lanzamiento moneda
+\end{Ejemplo}
+
+\begin{Ejemplo}{Ejemplo: lanzamiento moneda}{}
 
 Sea \(X\) la v.a. asociada al lanzamiento de una moneda. Su espacio
 muestral es \(\Omega=\{c,+\}\), la v.a. queda definida por:
@@ -2770,7 +2805,9 @@ es:
 
 Finalmente su dominio es \(D_X=\{0,1\}.\)
 
-Ejemplo: urna con bolas
+\end{Ejemplo}
+
+\begin{Ejemplo}{Ejemplo: urna con bolas}{}
 
 Tenemos una urna con tres bolas rojas, una negra y dos blancas.
 Realizamos una extracción y observamos el color de la bola entonces un
@@ -2789,10 +2826,12 @@ caso.}\end{array}\right.\]
 
 El dominio de la v.a. \(X\) es \(D_X=\{1,2,3\}.\)
 
-\section{Propiedades de la función de
-probabilidad.}\label{propiedades-de-la-funciuxf3n-de-probabilidad.}
+\end{Ejemplo}
 
-Propiedades básicas de la función de probabilidad
+\section{Propiedades de la función de
+probabilidad}\label{propiedades-de-la-funciuxf3n-de-probabilidad}
+
+\begin{Proposicion}{Propiedades básicas de la función de probabilidad}{}
 
 Sea \(X\) una v.a. discreta \(X:\Omega:\to\mathbb{R}\) con dominio
 \(D_X\). Su función de probabilidad \(P_{X}\) verifica las siguientes
@@ -2806,7 +2845,9 @@ propiedades:
   \(\sum\limits_{x\in D_X} P_{X}(x)=1.\)
 \end{itemize}
 
-Ejemplo: lanzmiento moneda
+\end{Proposicion}
+
+\begin{Ejemplo}{Ejemplo: lanzmiento moneda}{}
 
 Lanzamos al aire tres veces, de forma independiente, una moneda
 perfecta. El espacio muestral de este experimento es
@@ -2839,10 +2880,12 @@ Efectivamente los valores de la función de distribución suman 1:
 
 \[\sum_{x=0}^3 P_X(x)= \frac18+\frac38+\frac38+\frac18=1.\]
 
+\end{Ejemplo}
+
 \section{Función de distribución de variables
 aleatorias}\label{funciuxf3n-de-distribuciuxf3n-de-variables-aleatorias}
 
-Función de distribución de Probabilidad (acumuladada)
+\begin{Definicion}{Función de distribución de Probabilidad (acumuladada)}{}
 
 La función de \emph{distribución de probabilidad} (acumulada) de la v.a.
 \(X\) (de cualquier tipo; discreta o continua) \(F_{X}(x)\) representa
@@ -2855,7 +2898,9 @@ probabilidad o simplemente función de distribución} de una v.a., y en
 inglés \emph{cumulative distribution function} por lo que se abrevia con
 el acrónimo \texttt{cdf}.
 
-Propiedades de la Función de Distribución
+\end{Definicion}
+
+\begin{Proposicion}{Propiedades de la Función de Distribución}{}
 
 Sea \(X\) una v.a. y \(F_{X}\) su función de distribución:
 
@@ -2868,6 +2913,8 @@ Sea \(X\) una v.a. y \(F_{X}\) su función de distribución:
   Sea a y b tales que \(a<b\),
   \(P(a<X\leq b)=P(X\leq b)-P(X\leq a)=F_{X}(b)-F_{X}(a).\)
 \end{enumerate}
+
+\end{Proposicion}
 
 \textbf{Demostración}:
 
@@ -2891,7 +2938,7 @@ P(a<X\leq b)= & P(\left\{X\leq b\right\}-\left\{X\leq a\right\})\\
 
 Lo que finaliza la demistración de la propiedad.
 
-Propiedades de la Función de Distribución
+\begin{Proposicion}{Propiedades de la Función de Distribución}{}
 
 Sea \(F_{X}\) la función de distribución de una v.a. \(X\) entonces:
 
@@ -2916,7 +2963,9 @@ Sea \(F_{X}\) la función de distribución de una v.a. \(X\) entonces:
   de distribución de alguna v.a. \(X\).
 \end{itemize}
 
-Advertencia: Desigualdades estrictas
+\end{Proposicion}
+
+\begin{Advertencia}{Advertencia: Desigualdades estrictas}{}
 
 En las propiedades anteriores no se pueden cambiar en general las
 desigualdades de estrictas o no estrictas.
@@ -2944,7 +2993,9 @@ se cumplen las siguientes igualdades:
   \(P(X\geq a)=1-F_{X}(a^{-})\).
 \end{itemize}
 
-Más propiedades de la función de distribución
+\end{Advertencia}
+
+\begin{Definicion}{Más propiedades de la función de distribución}{}
 
 \begin{itemize}
 \tightlist
@@ -2961,6 +3012,8 @@ Más propiedades de la función de distribución
   tales que \(x\leq
   x_0.\)
 \end{itemize}
+
+\end{Definicion}
 
 \textbf{Demostración}:
 
@@ -2980,7 +3033,7 @@ x_0; x\in D_X} \{x\}\right)= \sum_{x\leq x_0}P(X=x)=\\
 
 Lo que demuestra estas dos propiedades.
 
-Ejemplo: dado (continuación)
+\begin{Ejemplo}{Ejemplo: dado (continuación)}{}
 
 En el experimento del dado se tiene que:
 
@@ -3016,7 +3069,9 @@ o tambiñen podemos prodeder así:
    \frac16=\frac12.
 \]
 
-Propiedades
+\end{Ejemplo}
+
+\begin{Proposicion}{Propiedades}{}
 
 Sea \(X\) una variable con función de distribución \(F_{X}\) entonces:
 
@@ -3035,6 +3090,8 @@ Sea \(X\) una variable con función de distribución \(F_{X}\) entonces:
   \(\displaystyle \lim_{x\to x_0^{+}}F_{X}(x)=F_{X}(x_0)\).
 \end{itemize}
 
+\end{Proposicion}
+
 \section{Momentos de variables aleatorias
 discretas}\label{momentos-de-variables-aleatorias-discretas}
 
@@ -3052,10 +3109,10 @@ valor es el que ``\emph{esperamos}'' que se resuma la v.a. o esperamos
 que las realizaciones de la v.a. queden cerca de él. Demos su definición
 formal.
 
-\subsection{Esperanza de un variable aleatoria
-discreta}\label{esperanza-de-un-variable-aleatoria-discreta}
+\subsection{Esperanza de una variable aleatoria
+discreta}\label{esperanza-de-una-variable-aleatoria-discreta}
 
-Definición: Esperanza de una variable aleatoria discreta
+\begin{Definicion}{Definición: Esperanza de una variable aleatoria discreta}{}
 
 El valor \textbf{esperado o esperanza} (\emph{expected value} en inglés)
 \(E(X)\) de una v.a. discreta \(X\), se define como
@@ -3068,7 +3125,9 @@ En ocasiones se denomina \textbf{media} (\emph{mean} en inglés,
 \emph{mitjana} en catalán) poblacional o simplemente media y muy
 frecuentemente se la denota \(\mu_{X}=E(X)\) o simplemente \(\mu=E(X)\).
 
-Ejemplo: Intepretación de de la media
+\end{Definicion}
+
+\begin{Ejemplo}{Ejemplo: Intepretación de de la media}{}
 
 \textbf{Ejemplo: lanzamiento de un dado} \(n\) veces
 
@@ -3091,7 +3150,9 @@ tanto
 Entonces el valor esperado en una v.a. discreta puede entenderse como el
 valor promedio que tomaría una v.a. en un número grande de repeticiones.
 
-Ejemplo: Erratas en un texto
+\end{Ejemplo}
+
+\begin{Ejemplo}{Ejemplo: Erratas en un texto}{}
 
 Sea \(X\)= número de erratas en una página de un texto con dominio
 \(D_X=\{0,1,2\}\).
@@ -3111,7 +3172,9 @@ encontremos con \(1\) error y \(3\) euros por cada página con dos
 errores (y nada por las páginas correctas) ¿Cuánto \emph{esperamos}
 cobrar si analizamos una página?
 
-Propiedad: Esperanzas de funciones de variables aleatorias discretas
+\end{Ejemplo}
+
+\begin{Proposicion}{Propiedad: Esperanzas de funciones de variables aleatorias discretas}{}
 
 Sea \(X\) una v.a. discreta con función de probabilidad \(P_{X}\) y de
 distribución \(F_{X}\). Entonces el \emph{valor esperado de una función}
@@ -3119,7 +3182,9 @@ distribución \(F_{X}\). Entonces el \emph{valor esperado de una función}
 
 \[E(g(X))=\sum_{x}g(x) \cdot  P_{X}(x).\]
 
-Propiedades
+\end{Proposicion}
+
+\begin{Proposicion}{Propiedades}{}
 
 \begin{itemize}
 \tightlist
@@ -3132,9 +3197,11 @@ Propiedades
   entonces \(E(X)=\sum_{x=0}^{+\infty}(1- F_X(x)).\)
 \end{itemize}
 
+\end{Proposicion}
+
 La demostración de las propiedades anteriores se deja como ejercicio.
 
-Ejemplo: paleta de colores aleatoria
+\begin{Ejemplo}{Ejemplo: paleta de colores aleatoria}{}
 
 Supongamos que estamos sentados delante de nuestro ordenador con un
 amigo y le decimos que en dos minutos podemos programar una paleta para
@@ -3163,6 +3230,8 @@ P_X(x)=P(X=x)=P(\stackrel{x \mbox{ veces}}{\overbrace{rojo, rojo,\ldots,rojo},az
 =\left(\frac12\right)^{x+1}.
 \]
 
+\end{Ejemplo}
+
 \subsection{Series geométricas}\label{series-geomuxe9tricas}
 
 \textbf{Series geométricas}
@@ -3185,7 +3254,7 @@ P_X(x)=P(X=x)=P(\stackrel{x \mbox{ veces}}{\overbrace{rojo, rojo,\ldots,rojo},az
   \]
 \end{itemize}
 
-Propiedades
+\begin{Proposicion}{Propiedades}{}
 
 \begin{itemize}
 \item
@@ -3208,7 +3277,9 @@ r^{k-1}; \qquad  \left(\frac1{1-r}\right)'=\frac1{(1-r)^2}\\
 r^{k-2}  ;\qquad  \left(\frac1{1-r}\right)^{''}=\frac2{(1-r)^3}
 \end{align*}.
 
-Ejemplo: paleta de colores (continuación)
+\end{Proposicion}
+
+\begin{Ejemplo}{Ejemplo: paleta de colores (continuación)}{}
 
 Si seguimos con el ejemplo de la paleta de colores, su esperanza es:
 
@@ -3239,10 +3310,12 @@ Calculad el valor esperado de la variable
 Y=\mbox{número de intentos para conseguir el color azul.}
 \]
 
+\end{Ejemplo}
+
 \subsection{Momentos de una variable aleatoria.
 Varianza}\label{momentos-de-una-variable-aleatoria.-varianza}
 
-Definición: Momentos de orden \(m\)
+\begin{Proposicion}{Definición: Momentos de orden \(m\)}{}
 
 Llamaremos \textbf{momento de orden} \(m\) respecto al punto \(C\) a
 \[E\left((X-C)^m\right).\]
@@ -3259,6 +3332,8 @@ Llamaremos \textbf{momento de orden} \(m\) respecto al punto \(C\) a
   momentos que vimos en el curso de estadística descriptiva, recibiendo
   estos último el nombre de momentos muestrales.
 \end{itemize}
+
+\end{Proposicion}
 
 Resumen de conceptos:
 
@@ -3279,7 +3354,7 @@ Resumen de conceptos:
 \subsection{Medidas de la
 variabilidad}\label{medidas-de-la-variabilidad}
 
-Definición: Varianza
+\begin{Definicion}{Definición: Varianza}{}
 
 Sea \(X\) una v.a. Llamaremos \textbf{varianza} de \(X\) a
 
@@ -3294,7 +3369,9 @@ A la raíz cuadrada positiva de la varianza
 
 se la denomina desviación típica o estándar de \(X\).
 
-Propiedad
+\end{Definicion}
+
+\begin{Proposicion}{Propiedad}{}
 
 \begin{itemize}
 \tightlist
@@ -3306,6 +3383,8 @@ Propiedad
   Sea \(X\) una v.a.
   \(Var(X)=E(X^2)-(E(X))^2=\sum_{x} x^2\cdot  P_{X}(X)-(E(X))^2\)
 \end{itemize}
+
+\end{Proposicion}
 
 \textbf{Demostración}
 
@@ -3319,7 +3398,7 @@ Var(X)= & \sum_{x}(x-E(X))^2 P_{X}(x) = \sum_{x}(x^2 -2\cdot x\cdot E(X)+(E(X)^2
 
 Se deja como ejercicio la primera afirmación.
 
-Ejemplo: número de errores (continuación)
+\begin{Ejemplo}{Ejemplo: número de errores (continuación)}{}
 
 Calculemos en el ejemplo del contero de errores la varianza de estos.
 
@@ -3351,6 +3430,8 @@ tanto
 
 En resumen \(\sigma_{X}^2=0.542\) y \(\sigma_{X}=\sqrt{0.542}\)
 
+\end{Ejemplo}
+
 \subsection{Propiedades de la
 varianza}\label{propiedades-de-la-varianza}
 
@@ -3372,14 +3453,16 @@ varianza}\label{propiedades-de-la-varianza}
 
 Se deja como ejercicio la demostración de estas propiedades.
 
-\section{Transformaiones lineales de
-v.a.}\label{transformaiones-lineales-de-v.a.}
+\section{Transformaciones lineales de
+v.a.}\label{transformaciones-lineales-de-v.a.}
 
-Transformación lineal
+\begin{Definicion}{Transformación lineal}{}
 
 Un \textbf{cambio de variable lineal} o \textbf{transformación lineal}
 de una v.a. \(X\) es otra v.a. \(Y= a+ b\cdot  X\) donde
 \(a,b\in\mathbb{R}\).
+
+\end{Definicion}
 
 Propiedad: Esperanza de una transformación lineal
 
@@ -3407,7 +3490,7 @@ E(Y)= &  E(a+bX)=\sum_{x}(a+b\cdot x)\cdot P_{X}(x)\\
 Lo que demuestra esta propiedad, las emás se dejan comom ejercicio.
 
 \section{Variables aleatorias
-continuas.}\label{variables-aleatorias-continuas.}
+continuas}\label{variables-aleatorias-continuas}
 
 Como ya hemos dicho las variables aleatorias continuas toman valores en
 intervalos o áreas.
@@ -3433,7 +3516,7 @@ se hace por la \emph{medida} de los casos posibles partida por la
 Veamos un ejemplo de v.a. continua, que ampliaremos en el tema
 siguiente, en el que se utilizan todos estos conceptos.
 
-Ejemplo: Distribución uniforme en \([0,1]\)
+\begin{Ejemplo}{Ejemplo: Distribución uniforme en \([0,1]\)}{}
 
 \textbf{Ejemplo: distancia dardo centro de la diana}
 
@@ -3485,7 +3568,9 @@ el siguente código grafica la función de distribución uniforme
 \includegraphics[width=1\linewidth,height=\textheight,keepaspectratio]{variables_aleatorias_files/figure-pdf/figUNIF-1.pdf}
 \end{center}
 
-Propiedades
+\end{Ejemplo}
+
+\begin{Proposicion}{Propiedades}{}
 
 En las variables continuas los sucesos del tipo \(\{X\leq x \}\) y
 \(\{X< x \}\) tendrán la misma probabilidad. Otras identidades similares
@@ -3500,6 +3585,8 @@ son :
 \item
   \(P(a<X<b)=P(X<b)-P(X<a)\).
 \end{itemize}
+
+\end{Proposicion}
 
 \textbf{Demostración:}
 
@@ -3520,7 +3607,7 @@ P(X\textless{} a)+P(a\textless X\textless b).\$
 
 La demostración de las otras propiedades las dejamos como ejercicio.
 
-Propiedades de la Función de Distribución
+\begin{Proposicion}{Propiedades de la Función de Distribución}{}
 
 Las propiedades anteriores y combinaciones de ellas se pueden escribir
 utilizando la función de distribución de \(X\):
@@ -3537,9 +3624,11 @@ Dada una variable aleatoria continua se tiene que:
   \(P(a\leq X\leq b)=F_{X}(b)-F_{X}(a)\).
 \end{itemize}
 
+\end{Proposicion}
+
 Se deja la demostración como ejercicio.
 
-Ejemplo
+\begin{Ejemplo}{Ejemplo}{}
 
 \textbf{Ejemplo: diana (continuación)}
 
@@ -3547,7 +3636,9 @@ En el ejemplo de la diana:
 
 \[P(0.25<X<0.3)=F_{X}(0.3)-F_{X}(0.25)=0.3-0.25=0.05.\]
 
-Definición: Función de densidad
+\end{Ejemplo}
+
+\begin{Definicion}{Definición: Función de densidad}{}
 
 Una función \(f:\mathbb{R}\to\mathbb{R}\) es una función de densidad
 sobre \(\mathbb{R}\) si cumple que
@@ -3563,7 +3654,9 @@ sobre \(\mathbb{R}\) si cumple que
   \(\displaystyle\int\limits_{-\infty}^{+\infty} f_{X}(x) dx=1.\)
 \end{itemize}
 
-Propiedad: Relación entre la función de distribución y la densidad
+\end{Definicion}
+
+\begin{Teorema}{Propiedad: Relación entre la función de distribución y la densidad}{}
 
 Sea \(X\) una v.a. con función de distribución \(F_X\). Sea
 \(f:\mathbb{R}\to\mathbb{R}\) una función de densidad tal que
@@ -3577,13 +3670,17 @@ Además el los valores de \(F_X\) son continuos y derivables en los
 puntos donde \(f_X\) es continua y la derivada de la función de
 distribución es una densidad \(F'_x(x)=f_X(x)\).
 
-Definición: Dominio de una variable aleatoria continua
+\end{Teorema}
+
+\begin{Definicion}{Definición: Dominio de una variable aleatoria continua}{}
 
 El conjunto \(D_X=\{x\in\mathbb{R}| f_x(x)>0\}\) recibe el nombre de
 soporte o dominio de la variable aleatoria continua y se interpreta como
 su conjunto de resultados posibles.
 
-Ejemplo: diana (continuación)
+\end{Definicion}
+
+\begin{Ejemplo}{Ejemplo: diana (continuación)}{}
 
 En nuestra ejemplo de la diana, la función \(f\) es una densidad
 
@@ -3633,7 +3730,9 @@ todo \(x\in\mathbb{R}.\)
 \includegraphics[width=1\linewidth,height=\textheight,keepaspectratio]{variables_aleatorias_files/figure-pdf/unnamed-chunk-1-1.pdf}
 \end{center}
 
-Propiedades
+\end{Ejemplo}
+
+\begin{Proposicion}{Propiedades}{}
 
 La función de densidad nos permite calcular diversas probabilidades.
 
@@ -3666,11 +3765,15 @@ densidad \(f_X\), entonces:
   \(P(X=x)=0\) para todo \(x\in\mathbb{R}.\)
 \end{itemize}
 
-Ejercicio
+\end{Proposicion}
+
+\begin{Ejercicio}{Ejercicio}{}
 
 Comprobar estas propiedades en el ejemplo de la diana.
 
-Ejemplo tiempo ejecución de un proceso
+\end{Ejercicio}
+
+\begin{Ejemplo}{Ejemplo tiempo ejecución de un proceso}{}
 
 Sea \(X=\) tiempo de ejecución de un proceso. Se supone que \(X\) sigue
 una distribución uniforme en dos unidades de tiempo, si tarda más el
@@ -3718,11 +3821,15 @@ Efectivamente
   =\frac22-\frac02=1.\)
 \end{itemize}
 
-Ejercicio: Tiempo de un proceso
+\end{Ejemplo}
+
+\begin{Ejercicio}{Ejercicio: Tiempo de un proceso}{}
 
 Calcular la probabilidad de que uno de nuestros procesos tarde más de
 una unidad de tiempo en ser procesado. Calcular también la probabilidad
 de que dure entre \(0.5\) y \(1.5\) unidades de tiempo.
+
+\end{Ejercicio}
 
 \section{Esperanza y varianza para variables aleatorias
 continuas}\label{esperanza-y-varianza-para-variables-aleatorias-continuas}
@@ -3736,7 +3843,7 @@ A partir de ahora, salvo indicación en contrario, consideraremos que
 \(X\) es una variable aleatoria continua con función de densidad
 \(f_{X}(x)\)
 
-Definición: Esperanza y Varianza v.a. continuas
+\begin{Definicion}{Definición: Esperanza y Varianza v.a. continuas}{}
 
 \begin{itemize}
 \tightlist
@@ -3754,7 +3861,9 @@ Definición: Esperanza y Varianza v.a. continuas
   Su desviación típica es: \[\sigma_{X}=+\sqrt{\sigma_{X}^2}.\]
 \end{itemize}
 
-Propiedades
+\end{Definicion}
+
+\begin{Proposicion}{Propiedades}{}
 
 \begin{itemize}
 \tightlist
@@ -3769,7 +3878,9 @@ Propiedades
   \(Var(X)\).
 \end{itemize}
 
-Ejemplo: Diana (continuación)
+\end{Proposicion}
+
+\begin{Ejemplo}{Ejemplo: Diana (continuación)}{}
 
 \[\mu_{X}=  \int_0^1 x  dx=\left[\frac{x}{2}\right]_0^1=\frac12,\]
 \[E(X^2)=\int_0^1 x^2 dx=\left[\frac{x^3}{3}\right]_0^1=\frac13,\]
@@ -3785,10 +3896,12 @@ Var(X)= & E\left(\left(X-E(X)\right)^2\right)=
 = \frac13\left(\frac18-\left(-\frac18\right)\right)=\frac13\cdot \frac28=\frac1{12}.
 \end{align*}
 
+\end{Ejemplo}
+
 \section{Esperanza de transformaciones lineales de v.a.
 continuas}\label{esperanza-de-transformaciones-lineales-de-v.a.-continuas}
 
-Propiedades
+\begin{Proposicion}{Propiedades}{}
 
 Sea \(X\) una v.a. continua con \(E(X)=\mu_{X}\) y
 \(Var(X)=\sigma_{X}^2\) sea \(Y=a+b X\), donde \(a,b\in\mathbb{R}\), es
@@ -3808,7 +3921,9 @@ una nueva v.a. continua obtenida mediante una transformación lineal de
   \(X\) de forma que \[E(Z)=0 \mbox{ y } Var(Z)=1\]
 \end{itemize}
 
-Ejemplo
+\end{Proposicion}
+
+\begin{Ejemplo}{Ejemplo}{}
 
 En una empresa de venta de vinos por internet, sea \(X=\) número de
 litros de vino del país vendidos en un año. Supongamos que sabemos que
@@ -3820,6 +3935,8 @@ de gastos.
 Entonces la esperanza del beneficio es \[E(T)=10 E(X)-50000 = 50000,\] y
 \[Var(T)=10^2 Var(X)= 10000.\]
 
+\end{Ejemplo}
+
 \section{Transformaciones de variables
 aleatorias}\label{transformaciones-de-variables-aleatorias}
 
@@ -3827,7 +3944,7 @@ Muchas variables aleatorias son funciones de otras v.a. En lo que sigue
 resumiremos diversas técnicas para dada una v.a. \(X\) y una
 transformación \(Y=h(X)\) encontrar \(F_{Y}\) a partir de \(F_{X}\).
 
-Propiedad: Transformaciones de v.a. discretas
+\begin{Proposicion}{Propiedad: Transformaciones de v.a. discretas}{}
 
 Sea \(X\) una v.a. discreta con
 \(X(\Omega)=\{x_1,x_2,\ldots,x_{n},..\}\) y sea
@@ -3843,11 +3960,13 @@ funciones de probabilidad y de distribución de \(X\) entonces
   \(\displaystyle F_{Y}(y)=\sum_{x_{i}|h(x_{i})\leq y} P_X(x_{i}).\)
 \end{itemize}
 
+\end{Proposicion}
+
 Desafortunadamente para variables no discretas el resultado no es tan
 sencillo como el anterior, pues la transformación de, por ejemplo, una
 v.a. continua puede ser continua, discreta, mixta,\(\ldots\)
 
-Propiedad: Transformación de v.a. continuas en continuas**
+\begin{Proposicion}{Propiedad: Transformación de v.a. continuas en continuas**}{}
 
 Sea \(X\) una v.a. continua cuya función de densidad es \(f_{X}\). Sea
 \(h:\mathbb{R}\to\mathbb{R}\), una aplicación estrictamente monótona y
@@ -3858,7 +3977,9 @@ una v.a. continua con función de densidad
 \[f_{Y}(y)=\left.\frac{f_{X}(x)}
 {\left|h'(x)\right|}\right|_{x=h^{-1}(y)}\]
 
-Densidad de una transformación de una v.a. continua
+\end{Proposicion}
+
+\begin{Proposicion}{Densidad de una transformación de una v.a. continua}{}
 
 Sea \(X\) una v.a. continua cuya función de densidad es \(f_{X}\). Sea
 \[h:\mathbb{R}\to\mathbb{R}\] una aplicación, no necesariamente monótona
@@ -3879,6 +4000,8 @@ entonces:
 \displaystyle f_{Y}(y)=\left.\sum_{k=1}^{n} \frac{f_{X}(x)}
 {\left|h'(x)\right|}\right|_{x=x_{k}}.
 \]
+
+\end{Proposicion}
 
 \section{Método general de transformación de
 v.a.}\label{muxe9todo-general-de-transformaciuxf3n-de-v.a.}
@@ -3918,11 +4041,15 @@ justificar que la varianza es una medida de la dispersión de los datos.
 
 \subsection{Desigualdad de Markov}\label{desigualdad-de-markov}
 
-Propiedad: Desigualdad de Markov
+\begin{Proposicion}{Propiedad: Desigualdad de Markov}{}
 
 Sea \(X\) una v.a. positiva con \(E(X)\) finita. Entonces
 
-\[P(X\geq a)\leq \frac{E(X)}{a}\mbox{ para todo }a>0.\]
+\[
+P(X\geq a)\leq \frac{E(X)}{a}\mbox{ para todo }a>0
+\]
+
+\end{Proposicion}
 
 \textbf{Demostración}:
 
@@ -3943,18 +4070,20 @@ de donde se sigue que
 
 \subsection{Desigualdad de Markov}\label{desigualdad-de-markov-1}
 
-Propiedad: Desigualdad de Markov
+\begin{Proposicion}{Propiedad: Desigualdad de Markov}{}
 
 Sea \(X\) una v.a. con \(E(X)\) finita entonces para todo \(a>0\)
 
 \[P(|X|\geq a )\leq \frac{E(|X|)}{a}.\]
+
+\end{Proposicion}
 
 Se deja como \textbf{ejercicio} la prueba del corolario anterior a
 partir de la desigualdad de Markov.
 
 \section{Desigualdad de Chebychev}\label{desigualdad-de-chebychev}
 
-Propiedad: Desigualdad de Chebychev
+\begin{Proposicion}{Propiedad: Desigualdad de Chebychev}{}
 
 La \textbf{desigualdad de Chebychev} también se escribe de Chebyshov y
 en inglés \emph{Chebyshev}.
@@ -3963,6 +4092,8 @@ Sea \(X\) una v.a.con \(E(X)=\mu\) y \(Var(X)=\sigma^2\) entonces para
 todo \(a>0\),
 
 \[P(|X-\mu|\geq a)\leq \frac{\sigma^2}{a^2}.\]
+
+\end{Proposicion}
 
 \textbf{Demostración}
 
@@ -3991,7 +4122,7 @@ hecho que, junto con la desigualdad anterior, demuestra el resultado.
 \subsection{Uso de la desigualdad de
 Chebychev}\label{uso-de-la-desigualdad-de-chebychev}
 
-Utilidad básica de la desigualdad de Chebychev
+\begin{Nota}{Utilidad básica de la desigualdad de Chebychev}{}
 
 Supongamos que \(X\) es una v.a. con \(Var(X)=0\), entonces, aplicando
 la desigualdad anterior
@@ -4006,7 +4137,9 @@ Por lo que la probabilidad de que \(X\) sea constantemente \(E(X)\) es
 1, hecho que nos confirma la utilidad de la varianza como una medida de
 la dispersión de los datos.
 
-Ejemplo: tiempo de respuesta
+\end{Nota}
+
+\begin{Ejemplo}{Ejemplo: tiempo de respuesta}{}
 
 Se sabe que el tiempo de respuesta medio y la desviación típica de un
 sistema multiusuario son 15 y 3 unidades de tiempo respectivamente.
@@ -4015,6 +4148,8 @@ Entonces:
 \[
 P(|X-15|\geq 5)\leq \frac9{25}=0.36.
 \]
+
+\end{Ejemplo}
 
 Si sustituimos \(a\) por \(a\cdot \sigma\) en la desigualdad de
 Chebychev, nos queda:
@@ -4078,69 +4213,73 @@ la teoría de la probabilidad.
 Lo haremos de forma esquemática dejando las demostraciones que sean
 fáciles o medias al lector, como ejercicio.
 
-Se supone que el lector conoce la teoría básca de conjuntos, operaciones
-entre conjuntos, aplicaciones entre conjuntos y pricipios básicos de
-numerabilidad.
+Se supone que el lector conoce la teoría básica dde conjuntos,
+operaciones entrde conjuntos, aplicaciones entrde conjuntos y principios
+básicos de numerabilidad.
 
-Definición: Álgebra y \(\sigma\)-Álgebra
+\begin{Definicion}{Definición: Álgebra y \(\sigma\)-álgebra}{}
 
 Sea \(\Omega\) un conjunto y
 \(\mathcal{A}\subseteq \mathcal{P}(\Omega)\) una familia de subconjuntos
-de \(\Omega\) diremos que \(\mathcal{A}\) es una \textbf{álgebra} de
+de \(\Omega\). Diremos que \(\mathcal{A}\) es una \textbf{álgebra} sobre
 \(\Omega\) si:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  \(\Omega\in\mathcal{A}\)
+  \(\Omega\in\mathcal{A}\).
 \item
-  \(A\in\mathcal{A}\Rightarrow A^c\in\mathcal{A}\)
+  Si \(A\in\mathcal{A}\), entoncess \(A^c\in\mathcal{A}\).
 \item
-  \(A_1,A_2,\ldots,A_n \in\mathcal{A}\Rightarrow \bigcup_{i=1}^{\infty}A_i\in\mathcal{A}\)
-  para todo \(n\in\mathbb{N}\)
+  Si \(A_1,\ldots,A_n\in\mathcal{A}\), entoncess
+  \(\bigcup_{i=1}^{n} A_i\in\mathcal{A}\), para todo \(n\in\mathbb{N}\).
 \end{enumerate}
 
-Sí además se cumple que \(\mathcal{A}\) es cerrada respecto a la unión
-numerable de conjuntos entonces diremos que \(\mathcal{A}\) es una
-\textbf{\(\sigma\)-álgebra} de \(\Omega\).
+Si, además, \(\mathcal{A}\) es cerrada respecto a \textbf{uniones
+numerables}, es decir, si para toda familia
+\((A_i)_{i=1}^{\infty}\subseteq\mathcal{A}\) se cumple que
+\(\bigcup_{i=1}^{\infty} A_i\in\mathcal{A}\), entoncess diremos que
+\(\mathcal{A}\) es una \textbf{\(\sigma\)-álgebra} sobre \(\Omega\).
 
-El par formado por \((\Omega,\mathcal{A})\) se llama espacio medible y
-los elemento de \(\mathcal{A}\) se denominan conjuntos medibles (en esta
-\(\sigma\)-álgebra) o sucesos.
+El par \((\Omega,\mathcal{A})\) se llama \textbf{espacio medible} y los
+elementos de \(\mathcal{A}\) se denominan \textbf{conjuntos medibles} (o
+\textbf{sucesos}).
 
-Proposición
+\end{Definicion}
 
-Sea \(\mathcal{A}\) una \(\sigma\)-álgebra de \(\Omega\) entonces:
+\begin{Proposicion}{Proposición}{}
+
+Sea \(\mathcal{A}\) una \(\sigma\)-álgebra sobre \(\Omega\). Entonces:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Es cerrada respecto a la diferencia e conjuntos e intersecciones
-  finitas o numerables. y además \(\emptyset\in\mathcal{A}\).
+  \(\emptyset\in\mathcal{A}\).
 \item
-  Si \(\mathcal{A}\) es un álgebra será tambiñen una \(\sigma\)-álgebra
-  si
+  \(\mathcal{A}\) es cerrada respecto a \textbf{intersecciones finitas y
+  numerables} y respecto a la \textbf{diferencia dde conjuntos}. En
+  particular, si \(A,B\in\mathcal{A}\), entoncess
+  \(A\cap B\in\mathcal{A}\) y \(A\setminus B\in\mathcal{A}\).
+\item
+  (Continuidad para uniones crecientes) Si
+  \((A_i)_{i=1}^{\infty}\subseteq\mathcal{A}\) cumple
+  \(A_i\subseteq A_{i+1}\) para todo \(i\), entoncess
+  \(\bigcup_{i=1}^{\infty} A_i\in\mathcal{A}\).
+\item
+  (Continuidad para intersecciones decrecientes) Si
+  \((A_i)_{i=1}^{\infty}\subseteq\mathcal{A}\) cumple
+  \(A_{i+1}\subseteq A_i\) para todo \(i\), entoncess
+  \(\bigcap_{i=1}^{\infty} A_i\in\mathcal{A}\).
 \end{enumerate}
 
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\tightlist
-\item
-  Dada un familia \({A_i}_{i=1}^{\infty}\) de elemento de
-  \(\mathcal{A}\) tales que \(A_i\subseteq A_{i+1}\) para todo \(i\)
-  entonces \(\bigcup_{i=1}^{\infty} A_i\in\mathcal{A}\)
-\item
-  Dada un familia \({A_i}_{i=1}^{\infty}\) de elemento de
-  \(\mathcal{A}\) tales que \(A_i\cap A_{j}\) para todo \(i,j\)
-  \(i\neq j\) entonces \(\bigcup_{i=1}^{\infty} A_i\in\mathcal{A}\)
-\end{enumerate}
+\end{Proposicion}
 
-Proposición
+\begin{Proposicion}{Proposición}{}
 
 Sean \(\mathcal{A}\) y \(\mathcal{B}\) dos \(\sigma\)-álgebras de
-\(\Omega\) entonces
+\(\Omega\) entoncess
 \(\mathcal{C}={A\cap B: A\in\mathcal{A}, B\in\mathcal{B}}\) es una
 \(\sigma\)-álgebra de \(\Omega\).
 
@@ -4148,6 +4287,8 @@ Si \(\mathcal{F}\in\mathcal{P}(\Omega)\) particular la intersección de
 todas as \(\sigma\)-álgebras de \(\Omega\) que continene a
 \(\mathcal{F}\) recibe el nombre de \(\sigma\)-álgebra generada por
 \(\mathcal{F}\).
+
+\end{Proposicion}
 
 Algunas \(\sigma\)-álgebras notables
 
@@ -4167,7 +4308,7 @@ como la \(\sigma\)-álgebra generada por
 \(\{(x_1,\ldots,x_n) \in \mathbb{R}^n : x_i<a\}\) con \(a\in\mathbb{R}\)
 y para \(i\in\{1,2,\ldots,n\}\).
 
-Proposición
+\begin{Proposicion}{Proposición}{}
 
 La intersección arbitraria de \(\sigma\)-álgebras de partes de un
 conjunto \(\Omega\) es una \(\sigma\)-álgebra en \(\Omega\). Así, si
@@ -4176,9 +4317,11 @@ pequeña \(\sigma\)-álgebra de \(\Omega\) que contiene a \(C\); la
 llamaremos \(\sigma\)-álgebra engendrada por \(C\)y la denotaremos
 \(\sigma(C)\).''
 
+\end{Proposicion}
+
 Vamos a esbozar la algunas ideas para construir \(\sigma\)-álgebras
 
-\(\sigma\)-álgebra producto Ejercicio
+\begin{Ejercicio}{\(\sigma\)-álgebra producto Ejercicio}{}
 
 Sean \((\Omega_1,\mathcal{A}_1)\) y \((\Omega_2,\mathcal{A}_2)\) dos
 espacios medibles.
@@ -4187,29 +4330,32 @@ Podemos construir una \textbf{\(\sigma\)-álgebra producto} para un
 espacio medible producto \(\Omega=\Omega_1\times \Omega_2\).
 
 Tomaremos como \textbf{conjunto producto medible} los conjuntos de la
-forma\\
-\(A_1 \times A_2\) con \(A_i \in \mathcal{A}_i\) para \(i=1,2\). La
-\(\sigma\)- álgebra generada por estos productos de conjuntos medibles
-se llama \(\sigma\)-\textbf{álgebra producto} y la denotaresmos por
-\(\mathcal{A}_1 \times \mathcal{A}_2\).
+forma \(A_1 \times A_2\) con \(A_i \in \mathcal{A}_i\) para \(i=1,2\).
+La \(\sigma\)- álgebra generada por estos productos dde conjuntos
+medibles se llama \(\sigma\)-\textbf{álgebra producto} y la denotaresmos
+por \(\mathcal{A}_1 \times \mathcal{A}_2\).
 
 Estudiad si la \(\sigma\)-álgebra de Borel en \(\mathbb{R}^n\) es igual
 al producto de \(n\) copias de la \(\sigma\)-álgebra de Borel en
 \(\mathbb{R}\).
 
-\(\sigma\)-álgebra inducida
+\end{Ejercicio}
+
+\begin{Ejercicio}{\(\sigma\)-álgebra inducida}{}
 
 Dado un espacio medible \((\Omega,\mathcal{A})\) y un subconjunto
 \(B \subset \Omega\) no vacío, podemos construir una \(\sigma\)-álgebra
 \(\sigma\)-álgebra en \(B\) a la que llamaremos inducida
 
 \[
-  \mathcal{A}_B = \{ A \cap B : A \in \mathcal{A} \}
-  \]
+ \mathcal{A}_B = \{ A \cap B : A \in \mathcal{A} \}
+ \]
 
 Demostrar que \((B,\mathcal{A}_B)\) es un espacio medible.
 
-Definición: \(pi\) y \(d\) sistemas
+\end{Ejercicio}
+
+\begin{Definicion}{Definición: \(pi\) y \(d\) sistemas}{}
 
 Se define \(\pi\)-\textbf{sistema} con una familia subconjuntos de
 \(\Omega\) cerrada bajo intersecciones finitas.
@@ -4224,12 +4370,15 @@ que cumplan las siguientes propiedades:
 \item
   \(\Omega\in \mathcal{D}\).
 \item
-  Si \(\{A_n\}_{n\geq 1}\) es una sucesión creciente de conjuntos de
-  \(\mathcal{D}\), entonces \(\cup_{n=1}^{\infty} A_n \in \mathcal{D}.\)
+  Si \(\{A_n\}_{n\geq 1}\) es una sucesión creciente dde conjuntos de
+  \(\mathcal{D}\), entoncess
+  \(\cup_{n=1}^{\infty} A_n \in \mathcal{D}.\)
 \item
-  Si \(A,B\in \mathcal{D}\) y \(A\subset B\), entonces
-  \(B -  A \in \mathcal{D}\).
+  Si \(A,B\in \mathcal{D}\) y \(A\subset B\), entoncess
+  \(B - A \in \mathcal{D}\).
 \end{enumerate}
+
+\end{Definicion}
 
 \textbf{Ejercicio}
 
@@ -4239,11 +4388,7 @@ subconjuntos forma una \(\sigma\)-álgebra.
 
 \textbf{Problemas propuestos}
 
-\chapter{Medidas y Probabilidades}\label{medidas-y-probabilidades}
-
-La imagen muestra la \textbf{Definición 3.1} sobre \textbf{medidas en
-espacios medibles} en teoría de la medida. A continuación, te hago un
-resumen y explicación detallada del contenido:
+\section{Medidas y probabilidades}\label{medidas-y-probabilidades}
 
 \subsection{\texorpdfstring{\textbf{Definición de
 Medida}}{Definición de Medida}}\label{definiciuxf3n-de-medida}
@@ -4268,19 +4413,25 @@ que cumple dos propiedades fundamentales:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
+\tightlist
 \item
-  \textbf{Aditividad numerable (\(\sigma\)-aditividad):}\\
-  Si \((A_n)\)es una sucesión de conjuntos \textbf{disjuntos} en
-  \(\mathcal{A}\), entonces:
+  \textbf{Aditividad numerable (\(\sigma\)-aditividad):} Si \((A_n)\)es
+  una sucesión dde conjuntos \textbf{disjuntos} en \(\mathcal{A}\),
+  entoncess:
+\end{enumerate}
 
-  \[
+\[
   \mu\left( \bigcup_n A_n \right) = \sum_n \mu(A_n).
   \]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
 \item
-  \textbf{Medida del conjunto vacío:}\\
-  \[
-  \mu(\emptyset) = 0.
-  \]
+  \textbf{Medida del conjunto vacío:} \[
+    \mu(\emptyset) = 0.
+    \]
 \end{enumerate}
 
 A la \(\sigma\)-álgebra y su espacio de medida
@@ -4294,17 +4445,16 @@ Según el comportamiento de \$\mu \$, podemos clasificar las medidas en:
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  \textbf{Medida finita:}\\
-  Si \(\mu(\Omega)<+\infty\), es decir, la medida total del espacio es
-  finita.
+  \textbf{Medida finita:} Si \(\mu(\Omega)<+\infty\), es decir, la
+  medida total del espacio es finita.
 \item
-  \textbf{Medida \(\sigma\)-finita:}\\
-  Si \(\Omega\) puede cubrirse con una colección \textbf{numerable} de
-  conjuntos medibles de \textbf{medida finita}.
+  \textbf{Medida \(\sigma\)-finita:} Si \(\Omega\) puede cubrirse con
+  una colección \textbf{numerable} dde conjuntos medibles de
+  \textbf{medida finita}.
 \item
-  \textbf{Medida de probabilidad:}\\
-  Si \$\mu(\Omega) = 1 \$, se llama \textbf{probabilidad}, y el espacio
-  medible \((\Omega, \mathcal{A}, \mu)\) se llama \textbf{espacio de
+  \textbf{Medida de probabilidad:} Si \$\mu(\Omega) = 1 \$, se llama
+  \textbf{probabilidad}, y el espacio medible
+  \((\Omega, \mathcal{A}, \mu)\) se llama \textbf{espacio de
   probabilidad}.
 \end{enumerate}
 
@@ -4313,49 +4463,56 @@ Según el comportamiento de \$\mu \$, podemos clasificar las medidas en:
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  \textbf{Medida de conteo:}\\
-  Si \(\mu(A)\) es simplemente el número de elementos de\(A\)
-  (cuando\(A\) es finito o numerable), entonces es una medida finita si
-  \(\Omega\) es finito, pero puede ser infinita si \(\Omega\)es
-  infinito.
+  \textbf{Medida de conteo:} Si \(\mu(A)\) es simplemente el número de
+  elementos de\(A\) (cuando\(A\) es finito o numerable), entoncess es
+  una medida finita si \(\Omega\) es finito, pero puede ser infinita si
+  \(\Omega\)es infinito.
 \item
   Medida de Lebesgue en \(\mathbb{R}\):
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Es la \textbf{medida estándar de la longitud} en \(\mathbb{R}\).
-  \item
-    Es una \textbf{medida \(\sigma\)-finita} porque \(\mathbb{R}\) puede
-    cubrirse con intervalos de medida finita como \([-n,n]\).
-  \end{itemize}
-\item
-  Medida de probabilidad uniforme en \([0,1]\):
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Es una \textbf{medida de probabilidad} porque \(\mu([0,1]) = 1\).
-  \item
-    La probabilidad de un subconjunto \(A\) es simplemente la longitud
-    de \(A\) en \([0,1]\).
-  \end{itemize}
-\item
-  \textbf{Medida de Dirac:}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Es una \textbf{medida de probabilidad}.
-  \item
-    La probabilidad de un conjunto \(A\) es 1 si \(0\in A\) y 0 en caso
-    contrario.
-  \end{itemize}
 \end{enumerate}
 
-La imagen muestra la \textbf{Proposición 3.1}, que establece propiedades
-fundamentales de las medidas en espacios medibles. A continuación, te
-resumo y explico cada una de las propiedades junto con su demostración.
+\begin{itemize}
+\tightlist
+\item
+  Es la \textbf{medida estándar de la longitud} en \(\mathbb{R}\).
+\item
+  Es una \textbf{medida \(\sigma\)-finita} porque \(\mathbb{R}\) puede
+  cubrirse con intervalos de medida finita como \([-n,n]\).
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Medida de probabilidad uniforme en \([0,1]\):
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Es una \textbf{medida de probabilidad} porque \(\mu([0,1]) = 1\).
+\item
+  La probabilidad de un subconjunto \(A\) es simplemente la longitud de
+  \(A\) en \([0,1]\).
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  \textbf{Medida de Dirac:}
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Es una \textbf{medida de probabilidad}.
+\item
+  La probabilidad de un conjunto \(A\) es 1 si \(0\in A\) y 0 en caso
+  contrario.
+\end{itemize}
 
 \section{\texorpdfstring{\textbf{Proposición 3.1: Propiedades
 fundamentales de la
@@ -4367,38 +4524,35 @@ Sea \(\mu\) una medida definida en un espacio medible
 \subsection{\texorpdfstring{\textbf{(a)
 Monotonía}}{(a) Monotonía}}\label{a-monotonuxeda}
 
-Si \(A \subseteq B\), entonces: \[
+Si \(A \subseteq B\), entoncess: \[
 \mu(A) \leq \mu(B).
-\] Si además \(\mu(A) < +\infty\), entonces: \[
-\mu(B  -  A) = \mu(B) - \mu(A).
+\] Si además \(\mu(A) < +\infty\), entoncess: \[
+\mu(B - A) = \mu(B) - \mu(A).
 \]
 
-\textbf{Demostración}:\\
-Como \(B\) puede descomponerse como \(B = A \cup (B  -  A)\) con
-\(A \cap (B  -  A) = \emptyset\), la propiedad de \textbf{aditividad de
-la medida} nos dice que: \[
-\mu(B) = \mu(A) + \mu(B  -  A) \geq \mu(A).
+\textbf{Demostración}: Como \(B\) puede descomponerse como
+\(B = A \cup (B - A)\) con \(A \cap (B - A) = \emptyset\), la propiedad
+de \textbf{aditividad de la medida} nos dice que: \[
+\mu(B) = \mu(A) + \mu(B - A) \geq \mu(A).
 \] Si \(\mu(A) < +\infty\), despejando obtenemos
-\(\mu(B  -  A) = \mu(B) - \mu(A)\).
+\(\mu(B - A) = \mu(B) - \mu(A)\).
 
 \subsection{\texorpdfstring{\textbf{(b) Continuidad hacia
 arriba}}{(b) Continuidad hacia arriba}}\label{b-continuidad-hacia-arriba}
 
-Si \((A_n)\) es una sucesión creciente de conjuntos, es decir, \[
+Si \((A_n)\) es una sucesión creciente dde conjuntos, es decir, \[
 A_1 \subseteq A_2 \subseteq A_3 \subseteq \dots,
-\] entonces: \[
+\] entoncess: \[
 \mu\left(\bigcup_n A_n\right) = \lim_{n \to \infty} \mu(A_n).
 \]
 
-\textbf{Demostración}:\\
-Sea \(A = \bigcup_n A_n\). Si \(\mu(A_n) = +\infty\) para algún \(n\),
-entonces \(\mu(A_k) = \infty\) para todo \(k \geq n\) y el resultado es
-trivial.\\
-Si todos los \(A_n\) tienen \textbf{medida finita}, reescribimos la
-unión como:
+\textbf{Demostración}: Sea \(A = \bigcup_n A_n\). Si
+\(\mu(A_n) = +\infty\) para algún \(n\), entoncess \(\mu(A_k) = \infty\)
+para todo \(k \geq n\) y el resultado es trivial. Si todos los \(A_n\)
+tienen \textbf{medida finita}, reescribimos la unión como:
 
 \[
-A = A_1 \cup (A_2  -  A_1) \cup (A_3  -  A_2) \cup \dots
+A = A_1 \cup (A_2 - A_1) \cup (A_3 - A_2) \cup \dots
 \]
 
 Dado que los términos son \textbf{disjuntos}, la aditividad numerable
@@ -4409,24 +4563,24 @@ implica: \[
 \subsection{\texorpdfstring{\textbf{(c) Continuidad hacia
 abajo}}{(c) Continuidad hacia abajo}}\label{c-continuidad-hacia-abajo}
 
-Si \((A_n)\) es una sucesión decreciente de conjuntos, es decir: \[
+Si \((A_n)\) es una sucesión decreciente dde conjuntos, es decir: \[
 A_1 \supseteq A_2 \supseteq A_3 \supseteq \dots,
-\] y al menos uno de los \(A_n\) tiene medida finita, entonces: \[
+\] y al menos uno de los \(A_n\) tiene medida finita, entoncess: \[
 \mu\left(\bigcap_n A_n\right) = \lim_{n \to \infty} \mu(A_n).
 \]
 
-\textbf{Demostración}:\\
-Podemos suponer sin pérdida de generalidad que \(A_1\) tiene medida
-finita. Definimos \(A = \bigcap_n A_n\) y consideramos la sucesión
-creciente \(B_n = A_1  -  A_n\), la cual satisface:
+\textbf{Demostración}: Podemos suponer sin pérdida de generalidad que
+\(A_1\) tiene medida finita. Definimos \(A = \bigcap_n A_n\) y
+consideramos la sucesión creciente \(B_n = A_1 - A_n\), la cual
+satisface:
 
 \[
-\bigcup_n B_n = A_1  -  A.
+\bigcup_n B_n = A_1 - A.
 \]
 
 Aplicando la \textbf{continuidad hacia arriba} al conjunto \(B_n\), se
 obtiene: \[
-\mu(A_1  -  A) = \lim_n \mu(A_1  -  A_n).
+\mu(A_1 - A) = \lim_n \mu(A_1 - A_n).
 \]
 
 Restando de \(\mu(A_1)\), se obtiene la ecuación deseada: \[
@@ -4436,19 +4590,18 @@ Restando de \(\mu(A_1)\), se obtiene la ecuación deseada: \[
 \subsection{\texorpdfstring{\textbf{(d) Subaditividad numerable
 (σ-subaditividad)}}{(d) Subaditividad numerable (σ-subaditividad)}}\label{d-subaditividad-numerable-ux3c3-subaditividad}
 
-Si \((A_n)\) es una sucesión arbitraria de conjuntos, entonces: \[
+Si \((A_n)\) es una sucesión arbitraria dde conjuntos, entoncess: \[
 \mu\left(\bigcup_n A_n\right) \leq \sum_n \mu(A_n).
 \]
 
-\textbf{Demostración}:\\
-Sea \(A := \bigcup_{n=1}^{\infty} A_n\). Descomponemos \(A\) en términos
-de las uniones de diferencias: \[
-A = \bigcup_{n=1}^{\infty} \left( A_n  -  \bigcup_{i=1}^{n-1} A_i \right).
+\textbf{Demostración}: Sea \(A := \bigcup_{n=1}^{\infty} A_n\).
+Descomponemos \(A\) en términos de las uniones de diferencias: \[
+A = \bigcup_{n=1}^{\infty} \left( A_n - \bigcup_{i=1}^{n-1} A_i \right).
 \]
 
 Por \textbf{aditividad numerable} y el hecho de que la medida es no
 negativa: \[
-\mu(A) = \sum_n \mu(A_n  -  \bigcup_{i=1}^{n-1} A_i) \leq \sum_n \mu(A_n).
+\mu(A) = \sum_n \mu(A_n - \bigcup_{i=1}^{n-1} A_i) \leq \sum_n \mu(A_n).
 \]
 
 \section{\texorpdfstring{\textbf{Conclusión}}{Conclusión}}\label{conclusiuxf3n}
@@ -4464,7 +4617,7 @@ teoría de integración}. En particular:
   subconjuntos de medida más pequeña.
 \item
   La \textbf{continuidad hacia arriba y hacia abajo} garantiza que la
-  medida respeta límites de secuencias de conjuntos.
+  medida respeta límites de secuencias dde conjuntos.
 \item
   La \textbf{σ-subaditividad} es una propiedad crucial para la
   construcción de medidas y prueba de teoremas como el \textbf{teorema
@@ -4490,7 +4643,7 @@ una cola,\ldots{}
 
 \section{Distribución Bernoulli}\label{distribuciuxf3n-bernoulli}
 
-Distribución Bernoulli
+\begin{Definicion}{Distribución Bernoulli}{}
 
 Consideremos un experimento con dos resultados posibles éxito (E) y
 fracaso (F). El espacio de sucesos será \(\Omega=\{E,F\}\).
@@ -4540,6 +4693,8 @@ o que sigue una ley de \textbf{distribución de probabilidad Bernoulli}
 de parámetro \(p\). * Lo denotaremos por
 \[X\sim Ber(p)\mbox{ o también } X\sim B(1,p).\]
 
+\end{Definicion}
+
 Este tipo de experimentos (éxito/fracaso)se reciben el nombre de
 experimentos Bernoulli.
 
@@ -4567,39 +4722,39 @@ Su desviación típica es
 \sqrt{Var(X)}=\sqrt{p \cdot (1-p)}.
 \]
 
-Pongamos en una tabla el resumen de v.a con distribución Bernoulli
+Pongamos en una tabla el resumen de v.a. con distribución Bernoulli
 
 \begin{table}
 \centering
 \begin{tabular}{|l|}
 \hline\rowcolor{LightBlue}
-$X$ Bernoulli:  $Ber(p)$ 
+$X$ Bernoulli: $Ber(p)$ 
 \\\hline
-$D_X=   \{0,1\}$  
+$D_X= \{0,1\}$ 
 \\\hline
 $P_X(x)=P(X=x)=
 \left\{
 \begin{array}{ll}
 1-p=q & \mbox{ si } x=0\\
 p & \mbox{ si } x=1 \\
-0  & \mbox{ en otro caso.}
+0 & \mbox{ en otro caso.}
 \end{array}\right.
 $ 
 \\\hline
 $F_X(x)=P(X\leq X)=
 \left\{
 \begin{array}{ll}
-  0 &   \mbox{ si } x<0\\ 
- (1-p)  &  \mbox{ si } 0\leq x< 1 \\ 
+ 0 & \mbox{ si } x<0\\ 
+ (1-p) & \mbox{ si } 0\leq x< 1 \\ 
 1 & \mbox{ si } x\geq 1
 \end{array}
 \right.$.
 \\\hline
-$E(X)=p$; $\scriptstyle  Var(X)= p \cdot (1-p)$ \\\hline
+$E(X)=p$; $\scriptstyle Var(X)= p \cdot (1-p)$ \\\hline
 \end{tabular}
 \end{table}
 
-Ejemplo : Cálculos con R
+\begin{Ejemplo}{Ejemplo : Cálculos con R}{}
 
 Veamos los cálculos básicos \(Ber(p=0.25)\) en \texttt{R}.
 
@@ -4630,7 +4785,7 @@ Veamos los cálculos básicos \(Ber(p=0.25)\) en \texttt{R}.
 \end{Shaded}
 
 \begin{verbatim}
- [1] 0 0 0 1 0 1 0 0 1 0 1 0 1 0 1 0 0 0 0 0
+ [1] 0 1 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 1 0
 \end{verbatim}
 
 El siguiente código dibuja las función de probabilidad y la de
@@ -4640,9 +4795,11 @@ distribución de una \(Ber(p=0.25)\)
 \includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{distribuciones_notables_1_files/figure-pdf/ber_plot_1-1.pdf}
 \end{center}
 
+\end{Ejemplo}
+
 \section{Distribución binomial}\label{distribuciuxf3n-binomial}
 
-Distribución binomial
+\begin{Definicion}{Distribución binomial}{}
 
 Si repetimos \(n\) veces de forma independiente un experimento Bernoulli
 de parámetro \(p\).
@@ -4658,13 +4815,15 @@ Obviamente se tiene que una v.a. Bernoulli es una binomial con \(n=1\)
 
 \[B(1,p)=Ber(p).\]
 
+\end{Definicion}
+
 La \textbf{función de probabilidad} de una binomial es
 
 \[
 P_{X}(x)=\left\{
 \begin{array}{ll}
-{n\choose x}\cdot  p^x \cdot(1-p)^{n-x} &\mbox{ si } x=0,1,\ldots,n\\
-0  & \mbox{ en otro caso}
+{n\choose x}\cdot p^x \cdot(1-p)^{n-x} &\mbox{ si } x=0,1,\ldots,n\\
+0 & \mbox{ en otro caso}
 \end{array}\right..
 \]
 
@@ -4677,12 +4836,12 @@ F_{X}(x)=P(X\leq x)&=\sum_{i=0}^x P_X(i)\\
 \left\{
 \begin{array}{ll}
 0 & \mbox{ si } x<0\\\displaystyle
-\sum_{i=0}^k {n\choose i}\cdot  p^i \cdot (1-p)^{n-i} & \mbox{ si } 
+\sum_{i=0}^k {n\choose i}\cdot p^i \cdot (1-p)^{n-i} & \mbox{ si } 
 \left\{
-  \begin{array}{l} 
-  k\leq x< k+1\\
-  k=0,1,\ldots,n.
-  \end{array}
+ \begin{array}{l} 
+ k\leq x< k+1\\
+ k=0,1,\ldots,n.
+ \end{array}
 \right.\\
 1 & \mbox{ si } n\leq x
 \end{array}
@@ -4691,7 +4850,7 @@ F_{X}(x)=P(X\leq x)&=\sum_{i=0}^x P_X(i)\\
 
 Recordemos los números binomiales con un ejemplo
 
-Números binomiales
+\begin{Ejemplo}{Números binomiales}{}
 
 Los números binomiales calculan el número de equipos de baloncesto
 distintos que (\(k=5\) jugadores) se pueden hacer con 6 jugadores
@@ -4741,12 +4900,16 @@ plantilla 22 jugadores (quitando los guardametas) se pueden formar
 un bonito número capicúa que nos da el número de equipos distintos que
 se pueden formar.
 
-Ejercicio
+\end{Ejemplo}
+
+\begin{Ejercicio}{Ejercicio}{}
 
 Calculad las funciones de distribución de una binomial \(B(n=1,p=0.3)\)
 y comprobar que coinciden con las distribuciones de una \(Ber(p=0.3)\).
 
-Observaciones sobre la distribución binomial
+\end{Ejercicio}
+
+\begin{Nota}{Observaciones sobre la distribución binomial}{}
 
 \begin{itemize}
 \tightlist
@@ -4756,7 +4919,7 @@ Observaciones sobre la distribución binomial
   de las fórmulas.
 \item
   Su \textbf{función de distribución no tienen una formula general}, hay
-  que calcularla con una función de R o python\ldots{} En el siglo
+  que calcularla con una función de R o Python\ldots{} En el siglo
   pasado se tabulaban en los libros de papel :-).
 \item
   En el material adicional os pondremos unas tablas de esta distribución
@@ -4768,14 +4931,16 @@ Observaciones sobre la distribución binomial
   tablas} queda \textbf{totalmente anticuado}.
 \end{itemize}
 
+\end{Nota}
+
 La \textbf{esperanza} de una v.a. \(X\) con distribución \(B(n,p)\) es
 
-\[E(X)=\displaystyle\sum_{k=0}^n k \cdot  {n \choose k }\cdot p^k\cdot q^{n-k} = n\cdot p.\]
+\[E(X)=\displaystyle\sum_{k=0}^n k \cdot {n \choose k }\cdot p^k\cdot q^{n-k} = n\cdot p.\]
 
 La esperanza de \(X^2\) es
 
 \begin{eqnarray*}
-E(X^2)&=& \displaystyle\sum_{k=0}^n k^2 \cdot  {n \choose k }\cdot p^k\cdot q^{n-k}\\
+E(X^2)&=& \displaystyle\sum_{k=0}^n k^2 \cdot {n \choose k }\cdot p^k\cdot q^{n-k}\\
 &=& n\cdot p\cdot q+(n\cdot p)^2.
 \end{eqnarray*}
 
@@ -4791,38 +4956,40 @@ En temas posteriores veremos una forma sencilla del cálculo de la
 esperanza y varianza de una \(B(n,p)\) como las suma de \(n\) v.a.
 \(Ber(p)\) independientes.
 
-Ejercicio
+\begin{Ejercicio}{Ejercicio}{}
 
 Justificar de forma intuitiva que si \(X_i\) con \(i=1,2,\ldots, n\) son
 v.a. \(Ber(p)\) independientes entonces
 \(X=\displaystyle\sum_{i=1}^n X_i\) sigue una distribución \(B(n,p).\)
 
-\subsection{\texorpdfstring{Resumen v.a con distribución binomial
-\(B(n,p)\)}{Resumen v.a con distribución binomial B(n,p)}}\label{resumen-v.a-con-distribuciuxf3n-binomial-bnp}
+\end{Ejercicio}
+
+\subsection{\texorpdfstring{Resumen: v.a. con distribución binomial
+\(B(n,p)\)}{Resumen: v.a. con distribución binomial B(n,p)}}\label{resumen-v.a.-con-distribuciuxf3n-binomial-bnp}
 
 \begin{table}
 \centering
 \begin{tabular}{|l|}
 \hline\rowcolor{LightBlue}
-$X$ binomial:   $B(n,p)$ \\\hline
-$D_X= \{0,1,\ldots n\}$  \\\hline
-$P_X(x)=P(X=x)=\left\{\begin{array}{ll}\scriptstyle {n\choose x}\cdot  p^x\cdot  (1-p)^{n-x} & \mbox{ si } x=0,1,\ldots,n\\0  & \mbox{ en otro caso.}\end{array}\right.$ \\\hline
+$X$ binomial: $B(n,p)$ \\\hline
+$D_X= \{0,1,\ldots n\}$ \\\hline
+$P_X(x)=P(X=x)=\left\{\begin{array}{ll}\scriptstyle {n\choose x}\cdot p^x\cdot (1-p)^{n-x} & \mbox{ si } x=0,1,\ldots,n\\0 & \mbox{ en otro caso.}\end{array}\right.$ \\\hline
 $F_X(x)=P(X\leq X)=
 \scriptstyle\left\{
 \begin{array}{ll}
- 0 &  \mbox{ si } x<0\\ 
-\sum_{i=0}^k {n\choose i}\cdot  p^i\cdot  (1-p)^{n-i} &  \mbox{si }  k\leq x< k+1;\quad  k=0,1,\dots,n \\ 
-1 &   \mbox{ si } x\geq n
+ 0 & \mbox{ si } x<0\\ 
+\sum_{i=0}^k {n\choose i}\cdot p^i\cdot (1-p)^{n-i} & \mbox{si } k\leq x< k+1;\quad k=0,1,\dots,n \\ 
+1 & \mbox{ si } x\geq n
 \end{array}
 \right.$.\\\hline
-$E(X)=n\cdot p$; $  Var(X)=n\cdot p \cdot (1-p)$ \\\hline
+$E(X)=n\cdot p$; $ Var(X)=n\cdot p \cdot (1-p)$ \\\hline
 \end{tabular}
 \end{table}
 
 \subsubsection{Cálculos distribución binomial con
 R}\label{cuxe1lculos-distribuciuxf3n-binomial-con-r}
 
-Veamos los cálculos básicos con funciones de R para una v.a \(X\) con
+Veamos los cálculos básicos con funciones de R para una v.a. \(X\) con
 distribución binomial \(B(n=10,p=0.25)\).
 
 Si queremos calcular con \texttt{R} algún valor de la función de
@@ -4900,9 +5067,9 @@ Que corresponde a los resultados de repetir 100 veces el experimento de
 lanzar una moneda 20 veces y contar el número de caras.
 
 \subsubsection{Cálculos distribución binomial con
-python}\label{cuxe1lculos-distribuciuxf3n-binomial-con-python}
+Python}\label{cuxe1lculos-distribuciuxf3n-binomial-con-python}
 
-Veamos los cálculos básicos con funciones de python para una v.a \(X\)
+Veamos los cálculos básicos con funciones de Python para una v.a. \(X\)
 con distribución binomial \(B(n=10,p=0.25)\).
 
 Primero importamos la función \texttt{binom} de la librería
@@ -4982,8 +5149,8 @@ el valor 0.
 
 Si queremos generar una muestras aleatorias que siga una distribución
 binomial, podemos usar la función \texttt{rvs}. En este caso,
-generaremos una muestra aleatoria\\
-de 100 valores de una población \(B(20,0.5)\)
+generaremos una muestra aleatoria de 100 valores de una población
+\(B(20,0.5)\)
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4992,16 +5159,14 @@ de 100 valores de una población \(B(20,0.5)\)
 \end{Shaded}
 
 \begin{verbatim}
-array([ 4,  5,  7,  7,  2,  3,  2,  5,  7,  5,  5,  0,  4,  6,  5,  9,  4,
-        4,  0,  2,  3,  6,  4,  4,  8,  4,  4,  7,  3,  7,  5,  7,  2,  6,
-        6,  8,  4,  6,  4,  5,  4,  3,  4,  4,  6,  6,  3,  6,  2,  4,  5,
-        5,  5,  5,  7,  3,  4,  6,  7, 10,  8,  5,  7,  3,  8,  2,  3,  7,
-        7,  3,  7,  4,  2,  3,  2,  3,  3,  5,  4,  7,  9,  1,  6,  6,  7,
-        3,  2,  1,  6,  6,  5,  2,  5,  7,  6,  7,  6,  4,  6,  6],
-      dtype=int64)
+array([4, 4, 4, 5, 5, 6, 8, 5, 6, 5, 7, 5, 2, 3, 9, 4, 4, 9, 2, 4, 6, 7,
+       4, 5, 4, 8, 7, 5, 6, 6, 6, 0, 6, 4, 5, 6, 7, 5, 2, 7, 4, 5, 5, 5,
+       3, 2, 3, 5, 3, 8, 6, 3, 8, 7, 8, 5, 6, 2, 4, 7, 3, 4, 6, 7, 4, 5,
+       3, 5, 7, 6, 3, 4, 5, 5, 4, 6, 5, 3, 7, 3, 4, 6, 4, 5, 4, 3, 6, 3,
+       5, 2, 4, 8, 3, 6, 5, 9, 5, 8, 4, 8], dtype=int64)
 \end{verbatim}
 
-Observación
+\begin{Advertencia}{Observación}{}
 
 Notemos que la secuencia aleatoria generada no es la misma que con
 \texttt{R}. De hecho, si volvemos a ejecutar esta función obtendremos
@@ -5014,17 +5179,18 @@ una muestra aleatoria distinta.
 \end{Shaded}
 
 \begin{verbatim}
-array([ 3,  6,  4,  7,  4,  8,  8,  5,  5,  3,  4,  6,  5,  5,  9,  4,  7,
-        5,  7,  6,  6,  3,  7,  4,  8,  6,  5,  7,  5,  3,  5,  6,  3,  5,
-        2,  5,  7,  6,  5,  5,  4,  7,  6,  2,  1,  6,  6,  3,  5,  6,  4,
-        4,  7,  5,  5,  7,  5,  4,  4,  4,  5,  8,  6,  4,  5,  4,  6,  3,
-        7,  6,  1,  3,  4,  5,  4,  3,  4,  6,  7,  6,  8,  5,  2,  3,  5,
-        5,  8,  4,  8,  4,  5,  4,  1,  6,  7,  6,  2, 10,  5,  7],
+array([ 4,  7,  6,  4,  9,  6,  3,  3,  8,  7,  6,  4,  3,  7,  2, 13,  5,
+        5,  5,  7,  8,  2,  3,  4,  2,  1,  6,  8,  4,  4,  7,  7,  7,  4,
+        5,  7,  4,  7,  6,  3,  3,  5, 10,  5,  7,  1,  7,  4,  3,  5,  4,
+        8,  5,  2,  3,  8,  3,  7,  7,  7,  6,  4,  4,  8,  3,  6,  5,  6,
+        7,  5,  5,  6,  5,  8,  3,  5,  6,  6,  2,  3,  6,  7,  6,  4,  2,
+        7,  8,  5,  6,  3,  3,  3,  7,  3,  3,  7,  5,  7,  3,  2],
       dtype=int64)
 \end{verbatim}
 
-Veamos algunos cálculos básicos con funciones de python para la
-binomial\\
+\end{Advertencia}
+
+Veamos algunos cálculos básicos con funciones de Python para la binomial
 \(B(n=10,p=0.25)\).
 
 \begin{Shaded}
@@ -5054,7 +5220,7 @@ binomial\\
 \end{Shaded}
 
 \begin{verbatim}
-array([5, 3, 3, 5, 4, 4, 8, 3, 4, 6], dtype=int64)
+array([3, 3, 3, 4, 3, 4, 5, 7, 5, 3], dtype=int64)
 \end{verbatim}
 
 \subsubsection{Gráficas de la distribución binomial con
@@ -5154,7 +5320,7 @@ i Please use `linewidth` instead.
 \end{center}
 
 \subsubsection{Gráficos de la distribución binomial con
-python}\label{gruxe1ficos-de-la-distribuciuxf3n-binomial-con-python}
+Python}\label{gruxe1ficos-de-la-distribuciuxf3n-binomial-con-python}
 
 Necesitaremos usar estas librerías:
 
@@ -5193,7 +5359,7 @@ Necesitaremos usar estas librerías:
 \end{Shaded}
 
 \begin{verbatim}
-([<matplotlib.axis.XTick object at 0x0000026B40039520>, <matplotlib.axis.XTick object at 0x0000026B40039D90>, <matplotlib.axis.XTick object at 0x0000026B40028CA0>, <matplotlib.axis.XTick object at 0x0000026B40752CD0>, <matplotlib.axis.XTick object at 0x0000026B400B7F10>, <matplotlib.axis.XTick object at 0x0000026B4075ED90>, <matplotlib.axis.XTick object at 0x0000026B4075E1C0>, <matplotlib.axis.XTick object at 0x0000026B4075E370>, <matplotlib.axis.XTick object at 0x0000026B400B7F40>, <matplotlib.axis.XTick object at 0x0000026B40752310>, <matplotlib.axis.XTick object at 0x0000026B40755F70>], [Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, '')])
+([<matplotlib.axis.XTick object at 0x000001B1B6FA9520>, <matplotlib.axis.XTick object at 0x000001B1B6FA9D90>, <matplotlib.axis.XTick object at 0x000001B1B6F99CA0>, <matplotlib.axis.XTick object at 0x000001B1C06E2CD0>, <matplotlib.axis.XTick object at 0x000001B1C0036F10>, <matplotlib.axis.XTick object at 0x000001B1C06EFD90>, <matplotlib.axis.XTick object at 0x000001B1C06EF1C0>, <matplotlib.axis.XTick object at 0x000001B1C06EF370>, <matplotlib.axis.XTick object at 0x000001B1C0036F40>, <matplotlib.axis.XTick object at 0x000001B1C06E24F0>, <matplotlib.axis.XTick object at 0x000001B1C06E7F70>], [Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, '')])
 \end{verbatim}
 
 \begin{Shaded}
@@ -5213,7 +5379,7 @@ Necesitaremos usar estas librerías:
 \end{Shaded}
 
 \begin{verbatim}
-([<matplotlib.axis.XTick object at 0x0000026B4077ED00>, <matplotlib.axis.XTick object at 0x0000026B4077ECD0>, <matplotlib.axis.XTick object at 0x0000026B4077E100>, <matplotlib.axis.XTick object at 0x0000026B407CD160>, <matplotlib.axis.XTick object at 0x0000026B407CD880>, <matplotlib.axis.XTick object at 0x0000026B407CDC70>, <matplotlib.axis.XTick object at 0x0000026B407AD1F0>, <matplotlib.axis.XTick object at 0x0000026B407B29A0>, <matplotlib.axis.XTick object at 0x0000026B407C1340>, <matplotlib.axis.XTick object at 0x0000026B407C4310>, <matplotlib.axis.XTick object at 0x0000026B407D30A0>], [Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, '')])
+([<matplotlib.axis.XTick object at 0x000001B1C070CD00>, <matplotlib.axis.XTick object at 0x000001B1C070CCD0>, <matplotlib.axis.XTick object at 0x000001B1C070C100>, <matplotlib.axis.XTick object at 0x000001B1C075D160>, <matplotlib.axis.XTick object at 0x000001B1C075D880>, <matplotlib.axis.XTick object at 0x000001B1C075DC70>, <matplotlib.axis.XTick object at 0x000001B1C073C1F0>, <matplotlib.axis.XTick object at 0x000001B1C07429A0>, <matplotlib.axis.XTick object at 0x000001B1C0751340>, <matplotlib.axis.XTick object at 0x000001B1C0756310>, <matplotlib.axis.XTick object at 0x000001B1C07630A0>], [Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, '')])
 \end{verbatim}
 
 \begin{Shaded}
@@ -5231,7 +5397,7 @@ Necesitaremos usar estas librerías:
 \includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{distribuciones_notables_1_files/figure-pdf/unnamed-chunk-10-1.pdf}
 \end{center}
 
-Ejemplo: número de bolas rojas extraídas de una urna con reposición
+\begin{Ejemplo}{Ejemplo: número de bolas rojas extraídas de una urna con reposición}{}
 
 Tenemos una urna con \(100\) bolas de las cuales 40 son rojas y 60 son
 blancas. Extraemos al azar una bola, anotamos su color y la devolvemos a
@@ -5296,7 +5462,7 @@ Con R
 
 La probabilidad de sacar al menos 4 rojas se expresa como
 
-\(P(X \geq  4)=1-P(X<4)=1-P(X\leq 3):\)
+\(P(X \geq 4)=1-P(X<4)=1-P(X\leq 3):\)
 
 \begin{align*}
 P(X\leq 3)=& P(X=0)+P(X=1)+P(X=2)+P(X=3)\\
@@ -5351,7 +5517,7 @@ duda nuestra mejor opción:
 \(3\) bolas rojas?
 
 \begin{align*}
-P(X< 3)=& P(X\leq 2)=  P(X=0)+P(X=1)+P(X=2)\\
+P(X< 3)=& P(X\leq 2)= P(X=0)+P(X=1)+P(X=2)\\
 =& 
 {10\choose 0}\cdot 0.4^0\cdot (1-0.4)^{10-0}+ {10\choose 1}\cdot 0.4^1\cdot (1-0.4)^{10-1}\\
 &+
@@ -5388,7 +5554,7 @@ Como \(X\) es una \(B(n=10,p=0.4)\) sabemos que
 
 \[E(X)=n\cdot p = 10\cdot 0.4=4.\]
 
-Aunque en python tenemos la función \texttt{stats} que nos lo calcula
+Aunque en Python tenemos la función \texttt{stats} que nos lo calcula
 directamente:
 
 \begin{Shaded}
@@ -5412,7 +5578,7 @@ Por lo tanto la desviación típica es
 
 \[\sqrt{Var(X)}=\sqrt{2.4}= 1.5491933.\]
 
-Aunque en python tenemos la función \texttt{stats} que nos lo calcula
+Aunque en Python tenemos la función \texttt{stats} que nos lo calcula
 directamente:
 
 \begin{Shaded}
@@ -5424,6 +5590,8 @@ directamente:
 \begin{verbatim}
 Var(X) = 2.4
 \end{verbatim}
+
+\end{Ejemplo}
 
 \section{Distribución geométrica}\label{distribuciuxf3n-geomuxe9trica}
 
@@ -5439,7 +5607,7 @@ dinero hasta que falla.
 La \textbf{modelización de este tipo de problemas se consigue con la
 llamada distribución geométrica}.
 
-Distribución geométrica
+\begin{Definicion}{Distribución geométrica}{}
 
 Repitamos un experimento Bernoulli, de parámetro \(p\), de forma
 independiente hasta obtener el primer éxito. Sea \(X\) la v.a. que
@@ -5462,7 +5630,9 @@ La v.a. definida anteriormente diremos que sigue una distribución
 geométrica de parámetro \(p\). La denotaremos por \(Ge(p)\). Su dominio
 es \(D_X=\{0,1,2,\ldots\}\).
 
-Ejemplo
+\end{Definicion}
+
+\begin{Ejemplo}{Ejemplo}{}
 
 Por ejemplo calculemos P(\(X\leq 3\)). Por la propiedad de la
 probabilidad del suceso complementario tenemos que
@@ -5495,18 +5665,20 @@ En general, tendremos que: \[
 F_X(x)=P(X\leq x)=
 \left\{\begin{array}{ll} 
 0, & \mbox{ si } x<0,\\
-1- (1-p),  & \mbox{ si } k=0\leq x <1,\\
+1- (1-p), & \mbox{ si } k=0\leq x <1,\\
 1- (1-p)^2, & \mbox{ si } k=1\leq x <2,\\
 1- (1-p)^3, & \mbox{ si } k=2\leq x <3,\\
 1- (1-p)^{k+1}, & \mbox{ si } \left\{ \begin{array}{l}k\leq x< k+1,\\\mbox{para } k=0,1,2,\ldots\end{array}
-    \right.
+ \right.
 \end{array}
 \right..
 \]
 
+\end{Ejemplo}
+
 Lo que demuestra la siguiente propiedad
 
-Función de distribución de una \(Ge(p)\)
+\begin{Proposicion}{Función de distribución de una \(Ge(p)\)}{}
 
 Si \(X\) es una v.a. que sigue una distribución geométrica de parámetro
 \(p\), entonces su función de distribución es:
@@ -5525,6 +5697,8 @@ Notemos que el límite de la función de distribución es: \[
 \displaystyle\lim_{k\to +\infty } F_X(k)=\lim_{k\to +\infty } 1-(1-p)^{k+1}=
 1,
 \] ya que \(0<1-p<1\).
+
+\end{Proposicion}
 
 Hagamos los cálculos necesarios para los momentos básicos de la
 distribución geométrica. Recordemos del tema de variables aleatorias que
@@ -5569,9 +5743,9 @@ E(X^2)
  (1-p)^{2}\cdot p\cdot \sum_{x=2}^{+\infty} x\cdot (x-1)\cdot (1-p)^{x-2}
  +(1-p)\cdot p\sum_{x=1}^{+\infty} x \cdot (1-p)^{x-1}\\
 =&
- p\cdot (1-p)^2 \frac{2}{(1-(1-p))^3}+  (1-p)\cdot p \frac{1}{(1-(1-p))^2}\\
+ p\cdot (1-p)^2 \frac{2}{(1-(1-p))^3}+ (1-p)\cdot p \frac{1}{(1-(1-p))^2}\\
 =&
-p\cdot (1-p)^2 \frac{2}{p^3}+  (1-p)\cdot p \frac{1}{p^2}=\frac{2\cdot (1-p)^2}{p^2}+\frac{1-p}{p}.
+p\cdot (1-p)^2 \frac{2}{p^3}+ (1-p)\cdot p \frac{1}{p^2}=\frac{2\cdot (1-p)^2}{p^2}+\frac{1-p}{p}.
 \end{align*}
 
 Ahora la varianza es
@@ -5596,13 +5770,13 @@ empezando en
 \centering
 \begin{tabular}{|l|}
 \hline\rowcolor{LightBlue}
-$X=$ Geométrica (empieza en $0$) número de fracasos  para conseguir el primer éxito
+$X=$ Geométrica (empieza en $0$) número de fracasos para conseguir el primer éxito
 \\\hline
 $D_X=\{0,1,\ldots n,\ldots\}$ \\\hline
-$P_X(x)=P(X=x)=\left\{\begin{array}{ll}(1-p)^{x}\cdot p & \mbox{ si } x=0,1,2,\ldots \\0  & \mbox{ en otro caso.}\end{array}\right.$\\\hline
+$P_X(x)=P(X=x)=\left\{\begin{array}{ll}(1-p)^{x}\cdot p & \mbox{ si } x=0,1,2,\ldots \\0 & \mbox{ en otro caso.}\end{array}\right.$\\\hline
 $F_X(x)=P(X\leq X)=\left\{\begin{array}{ll} 0 & \mbox{ si } x<0\\
-  1- (1-p)^{k+1} & \mbox{ si } \left\{ \begin{array}{l}k\leq x< k+1\\\mbox{para } k=0,1,2,\ldots\end{array}
-    \right.\end{array}\right.$ \\\hline
+ 1- (1-p)^{k+1} & \mbox{ si } \left\{ \begin{array}{l}k\leq x< k+1\\\mbox{para } k=0,1,2,\ldots\end{array}
+ \right.\end{array}\right.$ \\\hline
 $E(X)=\frac{1-p}{p}$; $Var(X)=\frac{1-p}{p^2}$\\\hline
 \end{tabular}
 \end{table}
@@ -5620,18 +5794,18 @@ misma \(Var(Y)=Var(X+1)=Var(X)=\frac{1-p}{p^2}\).
 
 \subsection{\texorpdfstring{Resumen distribución geométrica \(Ge(p)\)
 empezando en
-\(1\).}{Resumen distribución geométrica Ge(p) empezando en 1.}}\label{resumen-distribuciuxf3n-geomuxe9trica-gep-empezando-en-1.}
+\(1\)}{Resumen distribución geométrica Ge(p) empezando en 1}}\label{resumen-distribuciuxf3n-geomuxe9trica-gep-empezando-en-1}
 
 \renewcommand{\arraystretch}{1.75}
 \begin{table}
 \centering
 \begin{tabular}{|l|}
 \hline\rowcolor{LightBlue}
-$Y$ geométrica (que cuenta el éxito) número de **INTENTOS**  para OBTENER el primer éxito
+$Y$ geométrica (que cuenta el éxito) número de **INTENTOS** para OBTENER el primer éxito
 \\\hline
 $D_Y=\{1,2,\ldots n,\ldots\}$ \\\hline
-$P_Y(y)=P(Y=y)=\left\{\begin{array}{ll}(1-p)^{y-1}\cdot p & \mbox{ si } y=1,2,3,\ldots\\  0  & \mbox{ en otro caso.}\end{array}\right.$\\\hline
-$F_Y(y)=P(Y\leq y)=\left\{\begin{array}{ll} 0 & \mbox{ si } y<1\\ 1- (1-p)^{k} & \mbox{ si } \left\{ \begin{array}{l}k\leq y< k+1\\\mbox{para } k=1,2,3,\dots \end{array}    \right.\end{array}\right.$ \\\hline
+$P_Y(y)=P(Y=y)=\left\{\begin{array}{ll}(1-p)^{y-1}\cdot p & \mbox{ si } y=1,2,3,\ldots\\ 0 & \mbox{ en otro caso.}\end{array}\right.$\\\hline
+$F_Y(y)=P(Y\leq y)=\left\{\begin{array}{ll} 0 & \mbox{ si } y<1\\ 1- (1-p)^{k} & \mbox{ si } \left\{ \begin{array}{l}k\leq y< k+1\\\mbox{para } k=1,2,3,\dots \end{array} \right.\end{array}\right.$ \\\hline
 $E(X)=\frac1{p}; Var(X)=\frac{1-p}{p^2}$
 \\\hline
 \end{tabular}
@@ -5640,7 +5814,7 @@ $E(X)=\frac1{p}; Var(X)=\frac{1-p}{p^2}$
 \subsection{Propiedad de la falta de
 memoria}\label{propiedad-de-la-falta-de-memoria}
 
-Propiedad de la falta de memoria
+\begin{Proposicion}{Propiedad de la falta de memoria}{}
 
 Sea \(X\) una v.a. discreta con dominio \(D_X=\{0,1,2,\ldots\}\), con
 \(P(X=0)=p\).
@@ -5648,6 +5822,8 @@ Sea \(X\) una v.a. discreta con dominio \(D_X=\{0,1,2,\ldots\}\), con
 Entonces \(X\) sigue una ley \(Ge(p)\) si, y sólo si, \[
 P\left(X> k+j\big| X\geq j\right)=P(X> k)
 \] para todo \(k,j=0,1,2,3\ldots\).
+
+\end{Proposicion}
 
 \textbf{Demostración}
 
@@ -5660,7 +5836,7 @@ P(X>k)=1-P(X\leq k)=1-\left(1-(1-p)^{k+1}\right)=(1-p)^{k+1},
 \begin{align*}
 P\left(X> k+j\big| X\geq j\right)=&\frac{P\left(\{X> k+j\}\cap \{X\geq j\} \right)}{P\left(X\geq j\right)}=
 \frac{P\left(X>k+j \right)}{P\left(X\geq j \right)} = \frac{1-P(X\leq k+j)}{1-P(X\leq j-1)}\\
-=&  \frac{1-(1-(1-p)^{k+j+1})}{1-(1-(1-p)^{j-1+1})} =\frac{(1-p)^{k+j+1}}{(1-p)^{j}} = (1-p)^{k+1},
+=& \frac{1-(1-(1-p)^{k+j+1})}{1-(1-(1-p)^{j-1+1})} =\frac{(1-p)^{k+j+1}}{(1-p)^{j}} = (1-p)^{k+1},
 \end{align*}
 
 lo que demuestra la igualdad.
@@ -5721,9 +5897,9 @@ probabilidades \(P(X=k)\) a partir de la \(P(X=0)=p\): \[
 \scriptsize{
 \begin{array}{rl}
 P(X=0)&= p,\\
-P(X=1)&=P(X=0+1)= (1-p)\cdot P(X=0) =(1-p)\cdot  p,\\
+P(X=1)&=P(X=0+1)= (1-p)\cdot P(X=0) =(1-p)\cdot p,\\
 P(X=2)&=P(X=1+1)= (1-p)\cdot P(X=1)=(1-p)\cdot (1-p)\cdot p=(1-p)^2\cdot p,\\
- \vdots &    \vdots \\
+ \vdots & \vdots \\
 P(X=k)&=P(X=(k-1)+1)= (1-p)\cdot P(X=k-1)=(1-p)\cdot (1-p)^{k-1}\cdot p=(1-p)^{k}\cdot p,
 \end{array}
 }
@@ -5731,23 +5907,23 @@ P(X=k)&=P(X=(k-1)+1)= (1-p)\cdot P(X=k-1)=(1-p)\cdot (1-p)^{k-1}\cdot p=(1-p)^{k
 
 Lo que demuestra la propiedad de la falta de memoria
 
-Observación: Interpretación\\
-de la propiedad
+\begin{Advertencia}{Observación: Interpretación de la propiedad}{}
 
 La propiedad de la falta de memoria \[
 P(X> k+j\big|X \geq j)=P(X > k),
-\]\\
-significa que, aunque \textbf{ya llevemos al menos \(j\) fracasos}, la
-probabilidad de \textbf{que fracasemos \(k\) veces más} no disminuye, es
-la misma que era cuando empezamos el experimento.
+\] significa que, aunque \textbf{ya llevemos al menos \(j\) fracasos},
+la probabilidad de \textbf{que fracasemos \(k\) veces más} no disminuye,
+es la misma que era cuando empezamos el experimento.
 
-A este efecto se le suele etiquetar con la frase\\
-\textbf{el experimento carece de memoria} o es un \textbf{experimento
-sin memoria} (\emph{Memoryless Property}).
+A este efecto se le suele etiquetar con la frase \textbf{el experimento
+carece de memoria} o es un \textbf{experimento sin memoria}
+(\emph{Memoryless Property}).
+
+\end{Advertencia}
 
 Un ejemplo muy sencillo nos aclarará el alcance de esta propiedad
 
-Ejercicio: la llave que abre la puerta
+\begin{Ejemplo}{Ejercicio: la llave que abre la puerta}{}
 
 Tenemos un llavero con 10 llaves, solo una de ellas abre una puerta.
 Cada vez que probamos una llave y falla olvidamos que llave hemos
@@ -5781,7 +5957,9 @@ Var(X)=\frac{1-p}{p^2}=\frac{1-\frac{1}{10}}{\left(\frac{1}{10}\right)^2}=\frac{
 
 La desviación típica es \(\sqrt{90}=9.486833.\)
 
-Ejemplo: El clásico del fútbol
+\end{Ejemplo}
+
+\begin{Ejemplo}{Ejemplo: El clásico del fútbol}{}
 
 \textbf{Ejemplo: partidos hasta que el Barça gana al Madrid}
 
@@ -5853,6 +6031,8 @@ y
 
 La desviación típica es \[\sqrt{3.6397}=1.9078.\]
 
+\end{Ejemplo}
+
 \subsubsection{Cálculos con R}\label{cuxe1lculos-con-r}
 
 Veamos los cálculos básicos con R para la distribución geométrica
@@ -5915,9 +6095,9 @@ código}\label{gruxe1ficos-con-r-el-cuxf3digo}
 \includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio]{distribuciones_notables_1_files/figure-pdf/graficos22-1.pdf}
 \end{center}
 
-\subsubsection{Cálculos con python}\label{cuxe1lculos-con-python}
+\subsubsection{Cálculos con Python}\label{cuxe1lculos-con-python}
 
-Veamos los cálculos básicos con python para la distribución geométrica
+Veamos los cálculos básicos con Python para la distribución geométrica
 \(Ge(p=0.25)\). scipy.stats implementa la distribución geométrica que
 cuenta el número intentos así que empieza en 1
 
@@ -5986,8 +6166,8 @@ Una muestra aleatoria de tamaño 25 de una \(Ge(0.25)\)
 \end{Shaded}
 
 \begin{verbatim}
-array([10,  1,  0,  3,  0,  5,  1,  0,  0,  0,  1,  9,  5,  7, 10,  6,  0,
-        2,  9,  7], dtype=int64)
+array([ 1,  4, 11,  0,  1,  2,  0,  0,  0,  5,  0,  2,  4,  9,  0,  4,  2,
+        3,  2,  0], dtype=int64)
 \end{verbatim}
 
 \textbf{Ejercicio}
@@ -6015,7 +6195,7 @@ array([0.    , 0.3   , 0.51  , 0.657 , 0.7599])
 array([0.3    , 0.51   , 0.657  , 0.7599 , 0.83193])
 \end{verbatim}
 
-Con python también podemos calcular directamente algunos parámetros
+Con Python también podemos calcular directamente algunos parámetros
 asociado a una función de distribución predefinida
 
 \begin{Shaded}
@@ -6038,7 +6218,7 @@ asociado a una función de distribución predefinida
 (array(3.), array(12.))
 \end{verbatim}
 
-Ejercicio
+\begin{Ejercicio}{Ejercicio}{}
 
 Comprobad que las medias y las varianzas calculadas en el código
 anterior, corresponden a una \(Ge(p=0.3)\) empezando en \(1\) y a una
@@ -6046,8 +6226,10 @@ anterior, corresponden a una \(Ge(p=0.3)\) empezando en \(1\) y a una
 
 ¿Son las varianzas siempre iguales?
 
+\end{Ejercicio}
+
 \subsubsection{Gráficos distribución geométrica con
-python}\label{gruxe1ficos-distribuciuxf3n-geomuxe9trica-con-python}
+Python}\label{gruxe1ficos-distribuciuxf3n-geomuxe9trica-con-python}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6138,22 +6320,26 @@ P(X=3) & =P(\{FFFEE,FFEFE,FEFFE,EFFFE\})=4\cdot (1-p)^3\cdot p^2.
 }
 \]
 
-Distribución binomial negativa
+\begin{Definicion}{Distribución binomial negativa}{}
 
 Una v.a. con este tipo de distribución recibe el nombre de
 \textbf{binomial negativa} y la denotaremos por \(BN(n,p)\).
 
 Notemos que \(BN(1,p)=Ge(p)\).
 
-Propiedade
+\end{Definicion}
+
+\begin{Proposicion}{Propiedade}{}
 
 En general la función de probabilidad de una v.a. \(BN(n,p)\) es
 
 \[
 P_{X}(k)=P(X=k)=\left\{\begin{array}{ll}
-     {k+n-1\choose n-1} \cdot (1-p)^{k}\cdot p^n & \mbox{si } k=0,1,\ldots\\
-     0 & \mbox{en otro caso}\end{array}\right.
+ {k+n-1\choose n-1} \cdot (1-p)^{k}\cdot p^n & \mbox{si } k=0,1,\ldots\\
+ 0 & \mbox{en otro caso}\end{array}\right.
 \]
+
+\end{Proposicion}
 
 \textbf{Demostración}
 
@@ -6170,12 +6356,14 @@ De estas cadenas hay tantas como maneras de elegir de entre las
 \(k+n-1\) primeras posiciones \(n-1\) para colocar los éxitos. Esta
 cantidad es el número binomial \({k+n-1\choose n-1}.\)
 
-Números binomiales negativos
+\begin{Definicion}{Números binomiales negativos}{}
 
 Dados dos enteros positivos \(n\) y \(k\) se define el número binomial
 negativo como
 
 \[\binom{-n}{k}=\frac{(-n)(-n-1)\cdots (-n-k+1)}{k!}.\]
+
+\end{Definicion}
 
 Los números binomiales negativos generalizan la fórmula de Newton para
 exponentes negativos: \[
@@ -6189,7 +6377,7 @@ binomiales, sean negativos o no. Veámoslo con un ejemplo:
 \[
 \begin{array}{rl}
 {-6\choose 4}&=\frac{-6\cdot (-6-1)\cdot \cdot (-6-2)\cdot (-6-3) }{4!}\\
-&=  \frac{-6\cdot(-7)\cdot (-8)\cdot (-9)}{24}\\
+&= \frac{-6\cdot(-7)\cdot (-8)\cdot (-9)}{24}\\
 &= \frac{3024}{24}=126.
 \end{array}
 \]
@@ -6239,27 +6427,27 @@ y por tanto la desviación típica es
 \hline\rowcolor{LightBlue}
  $X=$ Número de fracasos antes de conseguir el $n$-ésimo éxito, $P(\mbox{Éxito})=p$. $BN(n,p)$ 
 \\\hline
-$D_X=\{0,1,2,3\ldots\}$  \\\hline
-$P_X(k)=P(X=k)=\left\{\begin{array}{ll} {k+n-1\choose n-1} \cdot (1-p)^{k}\cdot p^n, & \mbox{si }  k=0,1,\ldots \\ 0, & \mbox{en otro caso.}\end{array}\right.$\\\hline
+$D_X=\{0,1,2,3\ldots\}$ \\\hline
+$P_X(k)=P(X=k)=\left\{\begin{array}{ll} {k+n-1\choose n-1} \cdot (1-p)^{k}\cdot p^n, & \mbox{si } k=0,1,\ldots \\ 0, & \mbox{en otro caso.}\end{array}\right.$\\\hline
 $
 F_X(x)=P(X\leq x)=
 \left\{
-\begin{array}{ll} 0, & \mbox{si } x<0\\\displaystyle\sum_{i=0}^{k} P(X=i) & \mbox{si  }\left\{\begin{array}{l}k\leq x< k+1,\\k=0,1,2,\ldots\end{array}\right.\end{array}\right.$ 
+\begin{array}{ll} 0, & \mbox{si } x<0\\\displaystyle\sum_{i=0}^{k} P(X=i) & \mbox{si }\left\{\begin{array}{l}k\leq x< k+1,\\k=0,1,2,\ldots\end{array}\right.\end{array}\right.$ 
 \\\hline
-$E(X)=n\cdot\frac{1-p}{p}$;  $Var(X)=n\cdot \frac{1-p}{p^2}.$ \\\hline
+$E(X)=n\cdot\frac{1-p}{p}$; $Var(X)=n\cdot \frac{1-p}{p^2}.$ \\\hline
 \end{tabular}
 \end{table}
 
 \subsection{Ejemplo de la puerta con dos
 cerraduras}\label{ejemplo-de-la-puerta-con-dos-cerraduras}
 
-: Ejemplo: puerta con dos cerraduras
+\begin{Ejemplo}{: Ejemplo: puerta con dos cerraduras}{}
 
 Recordemos nuestra puerta con dos cerraduras que se abren
 secuencialmente. Tenemos un manojo de 10 llaves casi idénticas de manera
 que cada vez que probamos una llave olvidamos qué llave hemos usado.
 
-Sea \(X\) la v.a que nos da el número de intentos fallidos hasta abrir
+Sea \(X\) la v.a. que nos da el número de intentos fallidos hasta abrir
 abrir la puerta.
 
 Estamos interesado en modelar este problema. La preguntas son:
@@ -6268,8 +6456,8 @@ Estamos interesado en modelar este problema. La preguntas son:
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  ¿Cuál es la distribución de probabilidad de \(X\) la v.a que nos da el
-  número fallos hasta abrir la puerta?
+  ¿Cuál es la distribución de probabilidad de \(X\) la v.a. que nos da
+  el número fallos hasta abrir la puerta?
 \item
   ¿Cuál es la función de probabilidad y de distribución de \(X\)?
 \item
@@ -6282,7 +6470,7 @@ Estamos interesado en modelar este problema. La preguntas son:
 \end{enumerate}
 
 \textbf{Solución 1.} ¿Cuál es la distribución de probabilidad de \(X\)
-la v.a que nos da el número fallos hasta abrir la puerta?
+la v.a. que nos da el número fallos hasta abrir la puerta?
 
 Bajo estados condiciones tenemos que la probabilidad de ``éxito'' de
 cada intento es \(p=\frac{1}{10}=0.1\). Como cada vez \emph{olvidamos}
@@ -6304,7 +6492,7 @@ En general la función de probabilidad de una \(BN(n,p)\) es
 P_X(k)=P(X=k)=
 \left\{
 \begin{array}{cc} 
-{k+n-1\choose n-1} \cdot (1-p)^{k}\cdot p^n & \mbox{si }  k=0,1,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.
+{k+n-1\choose n-1} \cdot (1-p)^{k}\cdot p^n & \mbox{si } k=0,1,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.
 \]
 
 Si aplicamos la expresión anterior para \(n=2\) y \(p=0.1\), obtenemos:
@@ -6312,7 +6500,7 @@ Si aplicamos la expresión anterior para \(n=2\) y \(p=0.1\), obtenemos:
 P_X(k)=P(X=k)=
 \left\{
 \begin{array}{cc} 
-{k+2-1\choose 2-1} \cdot 0.9^{k}\cdot 0.1^2 & \mbox{si }  k=0,1,2,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.
+{k+2-1\choose 2-1} \cdot 0.9^{k}\cdot 0.1^2 & \mbox{si } k=0,1,2,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.
 \]
 
 Simplificando
@@ -6321,7 +6509,7 @@ Simplificando
 P_X(X=k)=P(X=k)=
 \left\{
 \begin{array}{cc} 
-0.01\cdot (k+1)\cdot 0.9^{k}, & \mbox{si }  k=0,1,2,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.
+0.01\cdot (k+1)\cdot 0.9^{k}, & \mbox{si } k=0,1,2,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.
 \]
 
 La función de distribución en general es
@@ -6359,8 +6547,7 @@ P(X=5)= 0.01\cdot (5+1) \cdot 0.9^{5}= 0.06 \cdot 0.9^{5}= 0.0354294.
 
 \textbf{Solución 4.} ¿Cuál es la probabilidad de fallar más de 4?
 
-Nos piden que\\
-\[
+Nos piden que \[
 P(X>4)=1-P(X\leq 4).
 \]
 
@@ -6368,7 +6555,7 @@ Calculemos primero \(P(X\leq 4):\)
 
 \[
 \begin{array}{rl}
-P(X\leq 4) &=  \displaystyle\sum_{x=0}^{4} P(X=x)=P(X=0)+P(X=1)+P(X=2)+P(X=3)+P(X=4)\\
+P(X\leq 4) &= \displaystyle\sum_{x=0}^{4} P(X=x)=P(X=0)+P(X=1)+P(X=2)+P(X=3)+P(X=4)\\
 &= 0.01\cdot (0+1) \cdot 0.9^{0}+0.01\cdot (1+1) \cdot 0.9^{1}+0.01\cdot (2+1) \cdot 0.9^{2} \\ &\ \ 
 +0.01\cdot (3+1) \cdot 0.9^{3} + 0.01\cdot (4+1) \cdot 0.9^{4} \\ & =
 0.01 +0.018+0.0243+0.02916+0.032805 = 0.114265.
@@ -6396,6 +6583,8 @@ Var(X)=n\cdot\frac{1-p}{p^2}=2 \cdot \frac{1-0.1}{0.1^2}=180,
 \]
 
 y su desviación típica \(\sqrt{180}=13.41641.\)
+
+\end{Ejemplo}
 
 \subsubsection{\texorpdfstring{Cálculos de la distribución \(BN(n,p)\)
 con
@@ -6458,7 +6647,7 @@ De forma similar calculamos calculamos \(P(X\leq 4)\),
 [1] 0.885735
 \end{verbatim}
 
-La función con python es \texttt{nbinom.pmf(k,\ n,\ p,\ loc)}. Hay que
+La función con Python es \texttt{nbinom.pmf(k,\ n,\ p,\ loc)}. Hay que
 cargarla desde \texttt{scpi.stats}
 
 \begin{Shaded}
@@ -6525,18 +6714,18 @@ serán las veces que hemos fallado hasta abrir la puerta 100 veces.
 \end{Shaded}
 
 \begin{verbatim}
-array([13, 60, 11, 17,  6, 39, 26, 26,  7,  2, 12, 16, 19,  5, 11,  5,  8,
-       16, 19, 19, 17, 13, 15,  3, 27, 28, 40,  6, 11, 55, 31, 30,  4, 11,
-       12,  8, 28, 24, 17, 10, 25,  7, 12, 29, 36,  5, 12,  6,  5, 43,  2,
-        9, 31, 11, 14, 18, 17, 19, 19,  2, 15,  3, 16, 26, 20,  8, 23,  5,
-       20, 41,  7,  5,  4, 18,  7,  8,  9, 15, 26, 11, 16, 28, 19, 26,  3,
-       39, 21, 17,  9,  8, 11, 10, 30, 33,  4,  4, 24,  1,  2, 35],
+array([ 5,  8, 17, 40, 11, 12,  2, 26, 18, 19, 31, 75, 22, 59,  2, 25, 20,
+        6, 22,  8, 21, 27, 17,  7, 35, 37, 12, 16, 40,  3, 15, 22,  4,  1,
+        2,  9, 11, 10,  5, 25,  6, 12, 27, 22, 17,  5,  4, 23, 27, 38, 24,
+       10,  5,  9,  6, 31, 20,  8, 30,  2, 13, 33, 14,  2,  9, 28, 12, 18,
+       10, 13,  9, 34, 23, 23, 13, 11, 22, 16,  1, 19, 15,  9, 18, 37, 15,
+       32, 11, 14,  2, 31, 20,  8, 11, 30, 18,  5, 41,  5, 20, 18],
       dtype=int64)
 \end{verbatim}
 
 \subsubsection{\texorpdfstring{Cálculos de la distribución \(BN(n,p)\)
 con
-python}{Cálculos de la distribución BN(n,p) con python}}\label{cuxe1lculos-de-la-distribuciuxf3n-bnnp-con-python}
+Python}{Cálculos de la distribución BN(n,p) con Python}}\label{cuxe1lculos-de-la-distribuciuxf3n-bnnp-con-python}
 
 La \textbf{esperanza} y la \textbf{varianza}de una \(BN(n=2,0.1)\)
 valen:
@@ -6631,9 +6820,9 @@ Y con \texttt{ggplot2}:
 \end{center}
 
 \subsubsection{Gráficos de la binomial negativa con
-python}\label{gruxe1ficos-de-la-binomial-negativa-con-python}
+Python}\label{gruxe1ficos-de-la-binomial-negativa-con-python}
 
-Este es el código con python que dibuja las función de probabilidad y la
+Este es el código con Python que dibuja las función de probabilidad y la
 de distribución de una \(BN(n=2,p=0.1)\)
 
 \begin{Shaded}
@@ -6691,7 +6880,7 @@ de distribución de una \(BN(n=2,p=0.1)\)
 \end{center}
 
 \subsubsection{Caso práctico: Acceso aleatorio a un sistema con triple
-clave.}\label{caso-pruxe1ctico-acceso-aleatorio-a-un-sistema-con-triple-clave.}
+clave}\label{caso-pruxe1ctico-acceso-aleatorio-a-un-sistema-con-triple-clave}
 
 \textbf{Sistema con tres claves de acceso}
 
@@ -6714,7 +6903,7 @@ contraseña.
 
 Así hasta conseguir entrar en el sistema.
 
-Sea \(X\) la v.a que nos da el número de fallos antes de entrar en el
+Sea \(X\) la v.a. que nos da el número de fallos antes de entrar en el
 sistema.
 
 Estamos interesados en modelar este problema. La preguntas son:
@@ -6723,7 +6912,7 @@ Estamos interesados en modelar este problema. La preguntas son:
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  ¿Cuál es la distribución de probabilidad de \(X\), la v.a que nos da
+  ¿Cuál es la distribución de probabilidad de \(X\), la v.a. que nos da
   el número de fallos antes de acceder al sistema.
 \item
   ¿Cuál es la función de probabilidad y de distribución del \(X\)?
@@ -6739,7 +6928,7 @@ Estamos interesados en modelar este problema. La preguntas son:
 \end{enumerate}
 
 \textbf{Solución 1.} ¿Cuál es la distribución de probabilidad de \(X\),
-la v.a que nos da el número de fallos antes de acceder al sistema?
+la v.a. que nos da el número de fallos antes de acceder al sistema?
 
 Bajo estados condiciones tenemos que la probabilidad de ``éxito'' de
 cada intento es \(p=\frac{1}{1000}=0.001\). Y como cada vez
@@ -6759,7 +6948,7 @@ En general la función de probabilidad de una \(BN(n,p)\) es
 P_X(X=x)=P(X=x)=
 \left\{
 \begin{array}{cc} 
-{x+n-1\choose n-1} \cdot (1-p)^{x}\cdot p^n & \mbox{si }  x=0,1,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.
+{x+n-1\choose n-1} \cdot (1-p)^{x}\cdot p^n & \mbox{si } x=0,1,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.
 \] En particular la función de probabilidad de una \(BN(n=3,p=0.001)\)
 es
 
@@ -6767,7 +6956,7 @@ es
 P_X(X=x)=P(X=x)=
 \left\{
 \begin{array}{cc} 
-{x+2\choose 2} \cdot 0.999^{x}\cdot 0.001^3 & \mbox{si }  x=0,1,2,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.
+{x+2\choose 2} \cdot 0.999^{x}\cdot 0.001^3 & \mbox{si } x=0,1,2,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.
 \]
 
 \textbf{Solución 3.} ¿Cuál es la probabilidad de fallar 150 veces antes
@@ -6804,7 +6993,7 @@ Lo calcularemos operando con R
 \textbf{Solución 3.} ¿Cuál es la probabilidad de fallar 150 veces antes
 de acceder en el sistema?
 
-Nos piden, lo resolveremos con python
+Nos piden, lo resolveremos con Python
 
 \[
 P(X=150)= {152\choose 2} \cdot 0.999^{150}\cdot 0.001^3
@@ -6856,7 +7045,7 @@ Con R
 [1] 0.0005232003
 \end{verbatim}
 
-Con python
+Con Python
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6880,7 +7069,7 @@ Tenemos que
 \(E(X)=n\cdot \frac{1-p}{p}=3\cdot \frac{1- 0.001}{0.001}=2997\) y
 \(Var(X)=n\cdot \frac{1-p}{p^2}=3\cdot \frac{1- 0.001^2}{0.001^2}=\ensuremath{2.997\times 10^{6}}.\)
 
-Con python
+Con Python
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6973,7 +7162,7 @@ Usando la expresión anterior para \(x=-\lambda\), tenemos:
 \]
 
 \subsection{La distribución de Poisson como ``límite'' de una
-binomial.}\label{la-distribuciuxf3n-de-poisson-como-luxedmite-de-una-binomial.}
+binomial}\label{la-distribuciuxf3n-de-poisson-como-luxedmite-de-una-binomial}
 
 La distribución de Poisson
 (\href{https://es.wikipedia.org/wiki/Sim\%C3\%A9on_Denis_Poisson}{Siméon
@@ -6995,20 +7184,20 @@ cumplen las siguientes condiciones:
   Es posible dividir el intervalo de tiempo en un gran número de
   subintervalos (denotemos por \(n\) al número de intervalos) de forma
   que:
-
-  \begin{itemize}
-  \tightlist
-  \item
-    La probabilidad de que se produzcan dos o más eventos en un
-    subintervalo es despreciable.
-  \item
-    El número de ocurrencias de eventos en un intervalo es independiente
-    del número de ocurrencias en otro intervalo.
-  \item
-    La probabilidad de que un evento ocurra en un subintervalo es
-    \(p_n=\frac{\lambda}{n}\)·
-  \end{itemize}
 \end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  La probabilidad de que se produzcan dos o más eventos en un
+  subintervalo es despreciable.
+\item
+  El número de ocurrencias de eventos en un intervalo es independiente
+  del número de ocurrencias en otro intervalo.
+\item
+  La probabilidad de que un evento ocurra en un subintervalo es
+  \(p_n=\frac{\lambda}{n}\)·
+\end{itemize}
 
 Bajo estas condiciones, podemos considerar que el número de eventos en
 el intervalo \((0,t]\) será el número de ``éxitos'' en \(n\)
@@ -7020,7 +7209,7 @@ escribir como
 
 \[
 \begin{array}{rl}
-P(X_n=k)&=\left(\begin{array}{c} n\\ k\end{array}\right) \cdot p_n^k\cdot  (1-p_n)^{n-k}
+P(X_n=k)&=\left(\begin{array}{c} n\\ k\end{array}\right) \cdot p_n^k\cdot (1-p_n)^{n-k}
 \\
 &= {n\choose k}\cdot \left(\frac{\lambda}{n}\right)^{k}\cdot \left(1-\frac{\lambda}{n}\right)^{n-k}\\
 &=
@@ -7048,7 +7237,7 @@ Calculemos el límite de algunos de los factores de la expresión
 Y también teniendo en cuanta que \(k\) es constante.
 
 \[
-\lim_{n\to \infty} \left(1-\frac{\lambda}{n}\right)^{-k}=\lim_{n\to \infty} 1^{-k}=\lim_{n\to \infty}  1=1.
+\lim_{n\to \infty} \left(1-\frac{\lambda}{n}\right)^{-k}=\lim_{n\to \infty} 1^{-k}=\lim_{n\to \infty} 1=1.
 \]
 
 Para acabar
@@ -7096,12 +7285,12 @@ El conjunto de variables \(\{X_t\}_{t>0}\) recibe el nombre de
 \centering
 \begin{tabular}{|l|}
 \hline\rowcolor{LightBlue}
-$X$ con distribución  Poisson  de media o promedio $\lambda$,  $Po(\lambda)$
+$X$ con distribución Poisson de media o promedio $\lambda$, $Po(\lambda)$
 \\\hline
 $D_X=\{0,1,\ldots \}$ \\\hline
-$P_X(x)=P(X=x)=\left\{\begin{array}{ll}  \frac{\lambda^x}{x!}e^{-\lambda} & \mbox{ si } x=0,1,\ldots\\ 0  & \mbox{ en otro caso.}\end{array}\right.$\\\hline
-$\scriptstyle F_X(x)=P(X\leq X)=\left\{\begin{array}{ll} 0 & \mbox{si } x<0\\\displaystyle\scriptstyle\sum_{i=0}^{k} P(X=i)= \displaystyle\scriptstyle\sum_{i=0}^{k} \frac{\lambda^i}{i!}\cdot e^{-\lambda} & \mbox{si  }\left\{\begin{array}{l}\scriptstyle k\leq x< k+1\\\scriptstyle k=0,1,2,\ldots\end{array}\right.\end{array}\right.$
-     \\\hline
+$P_X(x)=P(X=x)=\left\{\begin{array}{ll} \frac{\lambda^x}{x!}e^{-\lambda} & \mbox{ si } x=0,1,\ldots\\ 0 & \mbox{ en otro caso.}\end{array}\right.$\\\hline
+$\scriptstyle F_X(x)=P(X\leq X)=\left\{\begin{array}{ll} 0 & \mbox{si } x<0\\\displaystyle\scriptstyle\sum_{i=0}^{k} P(X=i)= \displaystyle\scriptstyle\sum_{i=0}^{k} \frac{\lambda^i}{i!}\cdot e^{-\lambda} & \mbox{si }\left\{\begin{array}{l}\scriptstyle k\leq x< k+1\\\scriptstyle k=0,1,2,\ldots\end{array}\right.\end{array}\right.$
+ \\\hline
 $E(X)=\lambda$; $Var(X)=\lambda$\\\hline
 \end{tabular}
 \end{table}
@@ -7114,13 +7303,13 @@ $E(X)=\lambda$; $Var(X)=\lambda$\\\hline
 \centering
 \begin{tabular}{|l|}
 \hline\rowcolor{LightBlue}
-$X_t=$ número de eventos en el intervalo $(0,t]$  $Po(\lambda\cdot t)$  donde  $\lambda$ promedio por u.t. 
+$X_t=$ número de eventos en el intervalo $(0,t]$ $Po(\lambda\cdot t)$ donde $\lambda$ promedio por u.t. 
 \\\hline
 $D_X=\{0,1,\ldots \}$ \\\hline
-$P_X(x)=P(X=x)=\left\{\begin{array}{ll}  \frac{(\lambda\cdot t)^x}{x!}e^{-\lambda\cdot t} & \mbox{ si } x=0,1,\ldots\\ 0  & \mbox{ en otro caso.}\end{array}\right.$\\\hline
-$\scriptstyle F_X(x)=P(X\leq X)=\left\{\begin{array}{ll} 0 & \mbox{si } x<0\\\displaystyle\scriptstyle\sum_{i=0}^{k} P(X=i)= \displaystyle\scriptstyle\sum_{i=0}^{k} \frac{(\lambda\cdot t)^i}{i!}\cdot e^{-\lambda\cdot t} & \mbox{si  }\left\{\begin{array}{l}\scriptstyle k\leq x< k+1\\\scriptstyle k=0,1,2,\ldots\end{array}\right.\end{array}\right.$
+$P_X(x)=P(X=x)=\left\{\begin{array}{ll} \frac{(\lambda\cdot t)^x}{x!}e^{-\lambda\cdot t} & \mbox{ si } x=0,1,\ldots\\ 0 & \mbox{ en otro caso.}\end{array}\right.$\\\hline
+$\scriptstyle F_X(x)=P(X\leq X)=\left\{\begin{array}{ll} 0 & \mbox{si } x<0\\\displaystyle\scriptstyle\sum_{i=0}^{k} P(X=i)= \displaystyle\scriptstyle\sum_{i=0}^{k} \frac{(\lambda\cdot t)^i}{i!}\cdot e^{-\lambda\cdot t} & \mbox{si }\left\{\begin{array}{l}\scriptstyle k\leq x< k+1\\\scriptstyle k=0,1,2,\ldots\end{array}\right.\end{array}\right.$
 
-   \\\hline
+ \\\hline
 $E(X)=\lambda\cdot t$; $Var(X)=\lambda\cdot t$\\\hline
 \end{tabular}
 \end{table}
@@ -7194,28 +7383,27 @@ intuitivamente las condiciones para tener una distribución Poisson.
   Es posible dividir el intervalo de tiempo de una hora en un gran
   número de subintervalos (denotemos por \(n\) al número de intervalos)
   de forma que:
-
-  \begin{itemize}
-  \tightlist
-  \item
-    La probabilidad de que se produzcan dos o más electrocuciones un
-    subintervalo es despreciable. No es posible que dos mosquitos se
-    electrocuten al mismo tiempo.
-  \item
-    El número de ocurrencias, electrocuciones de insectos, en un
-    intervalo es independiente del número de electrocuciones en otro
-    intervalo.
-  \item
-    La probabilidad de que un evento ocurra en un subintervalo es
-    \(p_n=\frac{\lambda}{n}\)· Podemos dividir los 20 insectos promedio
-    entre los \(n\) intervalos (trozo de hora) de forma que
-    \(p_n=\frac{\lambda}{n}\).
-  \item
-    Por ejemplo si \(n=60\) tenemos que
-    \(p_n=\frac{20}{60}=\frac{1}{3}\). La probabilidad de que en un
-    minuto la trampa chisporrotee es \(\frac{1}{3}\).
-  \end{itemize}
 \end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  La probabilidad de que se produzcan dos o más electrocuciones un
+  subintervalo es despreciable. No es posible que dos mosquitos se
+  electrocuten al mismo tiempo.
+\item
+  El número de ocurrencias, electrocuciones de insectos, en un intervalo
+  es independiente del número de electrocuciones en otro intervalo.
+\item
+  La probabilidad de que un evento ocurra en un subintervalo es
+  \(p_n=\frac{\lambda}{n}\)· Podemos dividir los 20 insectos promedio
+  entre los \(n\) intervalos (trozo de hora) de forma que
+  \(p_n=\frac{\lambda}{n}\).
+\item
+  Por ejemplo si \(n=60\) tenemos que \(p_n=\frac{20}{60}=\frac{1}{3}\).
+  La probabilidad de que en un minuto la trampa chisporrotee es
+  \(\frac{1}{3}\).
+\end{itemize}
 
 \textbf{Solución 2.} Escribid de forma explicita la función de
 probabilidad y de distribución de \(X\).
@@ -7223,13 +7411,13 @@ probabilidad y de distribución de \(X\).
 La distribución de probabilidad de un \(Po(\lambda)\) es
 
 \[
-P_X(x)=P(X=x)=\left\{\begin{array}{ll}  \frac{\lambda^x}{x!}e^{-\lambda} & \mbox{ si } x=0,1,\ldots\\ 0  & \mbox{ en otro caso.}\end{array}\right.
+P_X(x)=P(X=x)=\left\{\begin{array}{ll} \frac{\lambda^x}{x!}e^{-\lambda} & \mbox{ si } x=0,1,\ldots\\ 0 & \mbox{ en otro caso.}\end{array}\right.
 \]
 
 En nuestro caso, \(\lambda =20\):
 
 \[
-P_X(x)=P(X=x)=\left\{\begin{array}{ll}\frac{20^x}{x!}e^{-20} & \mbox{ si } x=0,1,\ldots\\ 0  & \mbox{ en otro caso.}\end{array}\right.
+P_X(x)=P(X=x)=\left\{\begin{array}{ll}\frac{20^x}{x!}e^{-20} & \mbox{ si } x=0,1,\ldots\\ 0 & \mbox{ en otro caso.}\end{array}\right.
 \]
 
 La función de distribución es
@@ -7238,7 +7426,7 @@ La función de distribución es
 F_X(x)=P(X\leq X)=
 \left\{\begin{array}{ll} 
 0 & \mbox{si } x<0\\
-\displaystyle\sum_{i=0}^{k} P(X=i)=\sum_{i=0}^{k}\frac{\lambda^i}{i!}\cdot e^{-\lambda} & \mbox{si  }
+\displaystyle\sum_{i=0}^{k} P(X=i)=\sum_{i=0}^{k}\frac{\lambda^i}{i!}\cdot e^{-\lambda} & \mbox{si }
 \left\{\begin{array}{l}
 k\leq x< k+1\\k=0,1,2,\ldots
 \end{array}
@@ -7251,7 +7439,7 @@ En nuestro caso \[
 F_X(x)=P(X\leq X)=
 \left\{\begin{array}{ll} 
 0 & \mbox{si } x<0\\
-\displaystyle\sum_{i=0}^{k} P(X=i)=\sum_{i=0}^{k}\frac{20^i}{i!}\cdot e^{-20} & \mbox{si  }
+\displaystyle\sum_{i=0}^{k} P(X=i)=\sum_{i=0}^{k}\frac{20^i}{i!}\cdot e^{-20} & \mbox{si }
 \left\{\begin{array}{l}
 k\leq x< k+1\\k=0,1,2,\ldots
 \end{array}
@@ -7500,7 +7688,7 @@ R}\label{gruxe1ficos-de-la-distribuciuxf3n-poisson-con-r}
 \includegraphics[width=1\linewidth,height=\textheight,keepaspectratio]{distribuciones_notables_1_files/figure-pdf/graficosPOISON-1.pdf}
 \end{center}
 
-\subsection{Cálculos con python}\label{cuxe1lculos-con-python-1}
+\subsection{Cálculos con Python}\label{cuxe1lculos-con-python-1}
 
 Sea \(X\) un una v.a. \(Po(\lambda=3)\). Entonces
 
@@ -7602,7 +7790,7 @@ array([0.04978707, 0.14936121, 0.22404181, 0.22404181, 0.16803136,
 \end{verbatim}
 
 En el ejercicio de la trampa para insectos teníamos que \(X\) es una
-\(Po(20)\). Responded con python a la preguntas 3 y 4 de este ejercicio
+\(Po(20)\). Responded con Python a la preguntas 3 y 4 de este ejercicio
 
 \textbf{Pregunta 3.} Calculad la probabilidad de que en una hora caigan
 en la trampa exactamente 21 insectos.
@@ -7669,11 +7857,11 @@ población \(Po(3)\)
 \end{Shaded}
 
 \begin{verbatim}
-array([2, 5, 2, 1, 3, 3, 2, 4, 2, 2, 2, 0, 3, 3, 4, 6, 4, 3, 1, 4, 2, 3,
-       2, 3, 1, 4, 2, 4, 3, 1, 5, 3, 5, 1, 3, 2, 2, 4, 6, 8], dtype=int64)
+array([5, 5, 1, 2, 4, 0, 0, 5, 4, 2, 2, 6, 2, 5, 4, 4, 2, 6, 3, 2, 6, 1,
+       0, 6, 5, 2, 1, 2, 2, 5, 1, 2, 3, 1, 3, 2, 3, 4, 3, 2], dtype=int64)
 \end{verbatim}
 
-\subsubsection{Gráficos con python}\label{gruxe1ficos-con-python}
+\subsubsection{Gráficos con Python}\label{gruxe1ficos-con-python}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7832,7 +8020,7 @@ Diremos que la distribución de \(X\) es hipergeométrica de parámetros
 
 Su dominio es
 
-\[D_X=\left\{x\in\mathbf{N}\mid \max\{0,k-n\}\leq  x \leq \min\{m,k\}\right\}\]
+\[D_X=\left\{x\in\mathbf{N}\mid \max\{0,k-n\}\leq x \leq \min\{m,k\}\right\}\]
 
 Para explicarlo, veamos varios ejemplos:
 
@@ -7841,46 +8029,33 @@ Para explicarlo, veamos varios ejemplos:
 \item
   \(H(m=5,n=2,k=3)\). Tenemos \(m=5\) bolas blancas, \(n=2\) no blancas
   y sacamos \(k=3\) bolas sin reposición.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    En este caso el mínimo de bolas blancas extraídas es \(1=k-n=3-2\),
-    ya que sólo hay dos no blancas.
-  \item
-    En cambio, el máximo si es \(k=3\), ya que tenemos bolas blancas de
-    ``sobra''.
-  \end{itemize}
+\item
+  En este caso el mínimo de bolas blancas extraídas es \(1=k-n=3-2\), ya
+  que sólo hay dos no blancas.
+\item
+  En cambio, el máximo si es \(k=3\), ya que tenemos bolas blancas de
+  ``sobra''.
 \end{itemize}
 
-\[D_X=\left\{x\in\mathbf{N}\mid \max\{0,k-n\}\leq  x \leq \min\{m,k\}\right\}\]
+\[D_X=\left\{x\in\mathbf{N}\mid \max\{0,k-n\}\leq x \leq \min\{m,k\}\right\}\]
 
 \begin{itemize}
-\tightlist
 \item
   \(H(m=2,n=5,k=3)\). Tenemos \(m=2\) bolas blancas, \(n=5\) no blancas
   y sacamos \(k=3\) bolas sin reposición.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    En este caso el mínimo de bolas blancas es \(0\) ya que puedo sacar
-    3 no blancas.
-  \item
-    En cambio, el máximo si es \(m=2\), ya que aunque saquemos \(k=3\)
-    bolas, al llegar a 2 ya hemos extraído todas las bolas blancas de la
-    urna.
-  \end{itemize}
+\item
+  En este caso el mínimo de bolas blancas es \(0\) ya que puedo sacar 3
+  no blancas.
+\item
+  En cambio, el máximo si es \(m=2\), ya que aunque saquemos \(k=3\)
+  bolas, al llegar a 2 ya hemos extraído todas las bolas blancas de la
+  urna.
 \item
   \(H(m=10,n=10,k=3)\). Tenemos \(m=10\) bolas blancas, \(n=10\) no
   blancas y sacamos \(k=3\) bolas sin reposición.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    En este caso podemos obtener desde \(0\) blancas hasta \(k=3\)
-    blancas.
-  \end{itemize}
+\item
+  En este caso podemos obtener desde \(0\) blancas hasta \(k=3\)
+  blancas.
 \end{itemize}
 
 Su función de probabilidad es:
@@ -7889,8 +8064,8 @@ Su función de probabilidad es: \[
 P_{X}(x)=\left\{
 \begin{array}{ll}
 \frac{\binom{m}{x}\cdot \binom{n}{k-x}}{\binom{m+n}{k}}, & \mbox{ si }
-\max\{0,k-n\}\leq x \leq \min\{m,k\}, \mbox { para  } x\in \mathbf{N},\\
-0,  & \mbox{en otro caso.}\end{array}\right.
+\max\{0,k-n\}\leq x \leq \min\{m,k\}, \mbox { para } x\in \mathbf{N},\\
+0, & \mbox{en otro caso.}\end{array}\right.
 \]
 
 \textbf{Observación: otras parametrizaciones}
@@ -7905,7 +8080,7 @@ hipergeométrica así
 \[H(N,k,p)\mbox{ donde } p=\frac{m}{N}.\]
 
 \subsection{\texorpdfstring{Resumen distribución Hipergeométrica
-\(H(m,n,k)\).}{Resumen distribución Hipergeométrica H(m,n,k).}}\label{resumen-distribuciuxf3n-hipergeomuxe9trica-hmnk.}
+\(H(m,n,k)\)}{Resumen distribución Hipergeométrica H(m,n,k)}}\label{resumen-distribuciuxf3n-hipergeomuxe9trica-hmnk}
 
 \renewcommand{\arraystretch}{1.75}
 \begin{table}
@@ -7913,17 +8088,17 @@ hipergeométrica así
 \begin{tabular}{|l|}
 \hline\rowcolor{LightBlue}
 $X= \left\{\begin{array}{l}
-\mbox{número de bolas blancas  en $k$ extracciones}\\
+\mbox{número de bolas blancas en $k$ extracciones}\\
 \mbox{sin reposición de una urna con} $m$\\
 \mbox{bolas blancas y }$n$ \mbox{ negras.}
-\end{array}\right.$;  $H(m,n,k)$
+\end{array}\right.$; $H(m,n,k)$
 \\\hline
-$D_X=\left\{x\in\mathbb{N}\mid \max\{0,k-n\}\leq  x \leq \min\{m,k\}\right\}$\\\hline
+$D_X=\left\{x\in\mathbb{N}\mid \max\{0,k-n\}\leq x \leq \min\{m,k\}\right\}$\\\hline
 $P_X(x)=P(X=x)=\left\{
 \begin{array}{ll}
 \frac{\binom{m}{x}\cdot \binom{n}{k-x}}{\binom{m+n}{k}}, & \mbox{ si }
 \max\{0,k-n\}\leq x \leq \min\{m,k\}, \\
-0,  & \mbox{en otro caso.}\end{array}\right.$\\\hline
+0, & \mbox{en otro caso.}\end{array}\right.$\\\hline
 $F_X(x)=P(X\leq x)$.\\\hline
 $E(X)=\frac{k\cdot m}{m+n}$; $Var(X)=k\cdot\frac{m}{m+n}\cdot\left(1-\frac{m}{m+n}\right) \cdot\frac{m+n-k}{m+n-1}$
 \\\hline
@@ -7943,21 +8118,21 @@ La función de probabilidad es
 P_X(x)=P(X=x)=\left\{
 \begin{array}{ll}
 \frac{\binom{m}{x}\cdot \binom{n}{k-x}}{\binom{m+n}{k}} & \mbox{ si }
-\max\{0,k-n\}\leq x \leq \min\{m,k\} \mbox { para  } x\in \mathbf{N}\\
-0  & \mbox{en otro caso}\end{array}\right.,
+\max\{0,k-n\}\leq x \leq \min\{m,k\} \mbox { para } x\in \mathbf{N}\\
+0 & \mbox{en otro caso}\end{array}\right.,
 \]
 
 \[\mbox{sustituyendo }\scriptsize{
 P_X(x)=P(X=x)=\left\{
 \begin{array}{ll}
 \frac{\binom{15}{x}\cdot \binom{10}{3-x}}{\binom{25}{3}} & \mbox{ si }
-0\leq x \leq 3 \mbox { para  } x\in \mathbf{N}\\
-0  & \mbox{en otro caso}\end{array}\right.
+0\leq x \leq 3 \mbox { para } x\in \mathbf{N}\\
+0 & \mbox{en otro caso}\end{array}\right.
 }\]
 
 \subsection{\texorpdfstring{Ejemplo clásico urna \(m=15\) blancas,
 \(n=10\) rojas y \(k=3\) extracciones sin
-reposición.}{Ejemplo clásico urna m=15 blancas, n=10 rojas y k=3 extracciones sin reposición.}}\label{ejemplo-cluxe1sico-urna-m15-blancas-n10-rojas-y-k3-extracciones-sin-reposiciuxf3n.}
+reposición}{Ejemplo clásico urna m=15 blancas, n=10 rojas y k=3 extracciones sin reposición}}\label{ejemplo-cluxe1sico-urna-m15-blancas-n10-rojas-y-k3-extracciones-sin-reposiciuxf3n}
 
 La probabilidad de sacar 2 blancas será
 
@@ -8076,7 +8251,7 @@ Una muestra aleatoria de este experimento de tamaño 200 sería:
 \includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{distribuciones_notables_1_files/figure-pdf/unnamed-chunk-52-1.pdf}
 \end{center}
 
-\subsection{Cálculos con python}\label{cuxe1lculos-con-python-2}
+\subsection{Cálculos con Python}\label{cuxe1lculos-con-python-2}
 
 Sea \(X\) una \(H(m,n,k)\), las funciones de \texttt{scipy.stats}
 cambian los parámetros
@@ -8139,11 +8314,11 @@ Una muestra aleatoria de este experimento sería\ldots{}
 \end{Shaded}
 
 \begin{verbatim}
-array([2, 1, 3, 1, 1, 2, 2, 1, 2, 1, 3, 2, 1, 2, 3, 2, 1, 0, 1, 1, 2, 3,
-       0, 3, 3, 2, 2, 1, 2, 3, 1, 2, 2, 1, 1, 1, 2, 1, 2, 2, 1, 0, 2, 2,
-       2, 1, 3, 2, 1, 2, 0, 0, 2, 3, 3, 3, 2, 2, 2, 1, 2, 3, 3, 2, 2, 2,
-       1, 2, 2, 1, 3, 2, 1, 2, 2, 1, 1, 1, 2, 2, 3, 2, 2, 1, 2, 2, 2, 2,
-       1, 2, 2, 2, 2, 2, 3, 3, 2, 3, 1, 2], dtype=int64)
+array([1, 1, 1, 2, 2, 3, 2, 1, 3, 3, 0, 3, 2, 2, 1, 3, 3, 2, 1, 3, 3, 2,
+       1, 3, 3, 2, 1, 0, 2, 2, 2, 2, 2, 3, 3, 2, 2, 3, 2, 1, 2, 2, 2, 2,
+       1, 3, 1, 3, 2, 1, 2, 0, 1, 3, 1, 1, 2, 1, 2, 1, 2, 0, 1, 2, 1, 1,
+       2, 2, 1, 3, 2, 2, 1, 1, 2, 2, 1, 3, 2, 2, 3, 1, 2, 1, 3, 1, 0, 1,
+       3, 3, 1, 1, 2, 3, 3, 2, 2, 2, 1, 2], dtype=int64)
 \end{verbatim}
 
 \begin{Shaded}
@@ -8176,32 +8351,34 @@ array([2, 1, 3, 1, 1, 2, 2, 1, 2, 1, 3, 2, 1, 2, 3, 2, 1, 0, 1, 1, 2, 3,
 \includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{distribuciones_notables_1_files/figure-pdf/py_hyper2-1.pdf}
 \end{center}
 
-\chapter{Distribuciones notables 2. Notables
-Continuas.}\label{distribuciones-notables-2.-notables-continuas.}
+\chapter{Distribuciones notables 2: distribuciones
+continuas}\label{distribuciones-notables-2-distribuciones-continuas}
 
 \section{Introducción}\label{introducciuxf3n-2}
 
-En esta segunda parate del tema de distribucione notable veremos las
-distribuciones continuas másusuales: uniforme, exponencial y normal.
+En esta segunda parte del tema de distribuciones notables veremos las
+distribuciones continuas más usuales: uniforme, exponencial y normal.
 
 El lector debe tener en cuenta que exiten muchas otras distribuciones
 que deberá estudiar y algunas ya las hemos visto como la \(\chi^2\)
 
 \section{Distribución uniforme}\label{distribuciuxf3n-uniforme}
 
-Distribución uniforme
+\begin{Definicion}{Distribución uniforme}{}
 
 Una v.a. continua \(X\) tiene una distribución uniforme sobre el
 intervalo real \((a,b)\) ,con \(a<b\), si su función de densidad es
 
 \[
 f_X(x)=\left\{\begin{array}{ll}
-\frac1{b-a}, & \mbox{si } a<x<b,\\ 0,  & \mbox{en cualquier otro caso.}
+\frac1{b-a}, & \mbox{si } a<x<b,\\ 0, & \mbox{en cualquier otro caso.}
 \end{array}
 \right. 
 \]
 
-Ejercicio
+\end{Definicion}
+
+\begin{Ejercicio}{Ejercicio}{}
 
 Comprobar que el área comprendida entre \(f_X\) y la horizontal vale 1.
 
@@ -8210,11 +8387,13 @@ Comprobar que el área comprendida entre \(f_X\) y la horizontal vale 1.
 \frac{b-a}{b-a}=1.
 \]
 
+\end{Ejercicio}
+
 Ahora calculemos su función de distribución
 
 \[
-F_X(x)=\left\{\begin{array}{ll} 0,  & \mbox{si } x\leq a,\\
-\frac{x-a}{b-a}, & \mbox{si } a<x<b,\\ 1,  & \mbox{si } b\leq x.
+F_X(x)=\left\{\begin{array}{ll} 0, & \mbox{si } x\leq a,\\
+\frac{x-a}{b-a}, & \mbox{si } a<x<b,\\ 1, & \mbox{si } b\leq x.
 \end{array}
 \right. 
 \]
@@ -8244,7 +8423,7 @@ F_X(x)&=\displaystyle\int_{-\infty}^{x} f(t)\cdot dt= \int_{-\infty}^{a} 0\cdot 
 \[
 \begin{array}{rl}
 F_X(x)&=\displaystyle\int_{-\infty}^{x} f(t) dt=\int_{a}^{b} \frac{1}{b-a} dt=
-  \left.  \frac{t}{b-a} \right]_{t=a}^{t=b}
+ \left. \frac{t}{b-a} \right]_{t=a}^{t=b}
 \\&=\displaystyle \frac{b}{b-a}-\frac{a}{b-a}=\frac{b-a}{b-a}=1.
 \end{array}
 \]
@@ -8275,7 +8454,7 @@ dx =\left.\frac{x^3}{3\cdot (b-a)}\right]_{x=a}^{x=b} \\
 \end{array}
 \]
 
-Ejercicio
+\begin{Ejercicio}{Ejercicio}{}
 
 \begin{itemize}
 \item
@@ -8284,6 +8463,8 @@ Ejercicio
 \item
   Utilizadla para el cálculo final del valor de \(E(X^2)\).
 \end{itemize}
+
+\end{Ejercicio}
 
 Calculemos ahora \(Var(X)\).
 
@@ -8332,9 +8513,9 @@ uniforme}\label{transformaciuxf3n-lineal-de-la-v.a.-uniforme}
 Si \(X\) sigue una distribución \(U(a,b)\) entonces
 \(Z=\frac{X-a}{b-a}\) sigue una distribución \(U(0,1)\).
 
-Propiedad: Transformación lineal de la v.a. uniforme
+\begin{Proposicion}{Propiedad: Transformación lineal de la v.a. uniforme}{}
 
-Sea \(X\) una v.a \(U(a,b)\)
+Sea \(X\) una v.a. \(U(a,b)\)
 
 Si \(scale\not=0\) y \(loc\) son dos constantes reales entonces
 
@@ -8342,11 +8523,13 @@ Si \(scale\not=0\) y \(loc\) son dos constantes reales entonces
 \tightlist
 \item
   si \(scale>0\), \(T=scale\cdot X+loc\) sigue una ley
-  \(U(scale\cdot a +loc,scale\cdot b +loc)\)\\
+  \(U(scale\cdot a +loc,scale\cdot b +loc)\)
 \item
   si \(scale<0\), \(T=scale\cdot X+loc\) sigue una ley
   \(U(scale\cdot b +loc,scale\cdot a +loc)\)
 \end{itemize}
+
+\end{Proposicion}
 
 \textbf{Demostración}
 
@@ -8365,18 +8548,18 @@ Si \(T\) vale \(T=scale\cdot X+loc\), su función de distribución será:
 F_T(t)&=P(T\leq t)= P(scale\cdot X+ loc\leq t)= P\left(X\leq \frac{t-loc}{scale}\right)=F_X\left(\frac{t-loc}{scale}\right)\\
 &=
 \left\{\begin{array}{ll} 0, & \mbox{ si } \frac{t-loc}{scale}\leq a\\\frac{\frac{t-loc}{scale}-a}{b-a}, & \mbox{ si } a\leq \frac{t-loc}{scale}\leq b,\\1, & \mbox{ si } b\leq \frac{t-loc}{scale},\end{array}\right.=
-\left\{\begin{array}{ll} 0, & \mbox{ si }  t\leq scale\cdot a +loc, \\
+\left\{\begin{array}{ll} 0, & \mbox{ si } t\leq scale\cdot a +loc, \\
 \frac{t-(scale\cdot a+loc)}{scale\cdot (b-a)}, & \mbox{ si } scale\cdot a+loc \leq t\leq scale\cdot b+loc, \\
 1, & \mbox{ si } scale\cdot b+loc\leq t, \end{array}\right.\\
 & = 
-\left\{\begin{array}{ll} 0, & \mbox{ si }  t\leq scale\cdot a +loc, \\
+\left\{\begin{array}{ll} 0, & \mbox{ si } t\leq scale\cdot a +loc, \\
 \frac{t-(scale\cdot a+loc)}{scale\cdot b+loc-(scale\cdot a+loc)}, & \mbox{ si } scale\cdot a+loc \leq t\leq scale\cdot b+loc, \\
 1, & \mbox{ si } scale\cdot b+loc\leq t,\end{array}\right.
 \end{array}
 \] por lo que \(T\) sigue una ley
 \(U(scale\cdot a +loc,scale\cdot b +loc)\).
 
-Ejercicio
+\begin{Ejercicio}{Ejercicio}{}
 
 Sea \(X\) una variable \(U(0,1)\) y sea \(T=scale\cdot X+loc\):
 
@@ -8391,8 +8574,10 @@ Sea \(X\) una variable \(U(0,1)\) y sea \(T=scale\cdot X+loc\):
   \(T\)?
 \end{itemize}
 
-\subsection{\texorpdfstring{Resumen v.a con distribución uniforme,
-\(U(a,b)\)}{Resumen v.a con distribución uniforme, U(a,b)}}\label{resumen-v.a-con-distribuciuxf3n-uniforme-uab}
+\end{Ejercicio}
+
+\subsection{\texorpdfstring{Resumen v.a. con distribución uniforme,
+\(U(a,b)\)}{Resumen v.a. con distribución uniforme, U(a,b)}}\label{resumen-v.a.-con-distribuciuxf3n-uniforme-uab}
 
 \renewcommand{\arraystretch}{1.8}
 \begin{table}
@@ -8402,7 +8587,7 @@ Sea \(X\) una variable \(U(0,1)\) y sea \(T=scale\cdot X+loc\):
 Distribución uniforme $U(a,b)$
 \\\hline
 Dominio $D_X=(a,b)$\\\hline
-$f_{X}(x)\left\{\begin{array}{ll}\frac1{b-a}, & \mbox{si } a<x<b,\\ 0,  & \mbox{en cualquier otro caso.}\end{array} \right.$\\\hline
+$f_{X}(x)\left\{\begin{array}{ll}\frac1{b-a}, & \mbox{si } a<x<b,\\ 0, & \mbox{en cualquier otro caso.}\end{array} \right.$\\\hline
 $F_X(x)=P(X\leq X)=\left\{\begin{array}{ll} 0, & \mbox{ si } x\leq a\\\frac{x-a}{b-a}, & \mbox{ si } a\leq x\leq b,\\1, & \mbox{ si } b\leq x.\end{array}\right.$\\\hline
 $E(X)=\frac{a+b}2$; $Var(X)=\frac{(b-a)^2}{12}$
 \\\hline
@@ -8446,7 +8631,7 @@ tamaño \(n\) que sigan la distribución \(U(a,b)\):
 \end{Shaded}
 
 \begin{verbatim}
-[1]  0.2741183  0.8393339  0.7685981 -0.2207081 -0.4354126
+[1] -0.5584915  0.7439996 -0.6570565 -0.8626793 -0.5517519
 \end{verbatim}
 
 Por defecto, el valor de los parámetros \texttt{a} y \texttt{b} son 0 y
@@ -8479,16 +8664,16 @@ Por defecto, el valor de los parámetros \texttt{a} y \texttt{b} son 0 y
 \end{Shaded}
 
 \begin{verbatim}
-[1] 0.03000966 0.82183212 0.03280388 0.27288867 0.16643806
+[1] 0.4312417 0.7356539 0.9338797 0.9037686 0.9695566
 \end{verbatim}
 
-\subsection{Cálculos con python}\label{cuxe1lculos-con-python-3}
+\subsection{Cálculos con Python}\label{cuxe1lculos-con-python-3}
 
 Sea \(X\) una \(v.a.\) \(U(-1,1)\). Tomando como ``base'' la v.a.
 \(U(0,1)\), los parámetros \(loc\) y \(scale\) valen: \(loc=-1\) y
 \(scale=2,\) ya que como hemos visto \(X=2*U(0,1)-1=U(-1,1)\).
 
-En python, hay que usar dichos parámetros para calcular la función de
+En Python, hay que usar dichos parámetros para calcular la función de
 densidad y de distribución:
 
 \begin{Shaded}
@@ -8522,12 +8707,12 @@ Para generar una muestra de valores aleatorios, hay que usar la función
 \end{Shaded}
 
 \begin{verbatim}
-array([-0.77126537, -0.00294577,  0.14892953, -0.30537848,  0.82167188,
-        0.80836683,  0.75688943,  0.39986224,  0.5304999 , -0.84383617,
-        0.86906643, -0.3610576 , -0.94250889, -0.98431152,  0.7096734 ,
-       -0.42599412, -0.62212564,  0.76066025,  0.24634928, -0.97155788,
-       -0.00140058,  0.08953431,  0.16228905, -0.03001202,  0.79561919,
-       -0.6106312 , -0.34314154, -0.95719638,  0.99112062,  0.15703772])
+array([ 0.33541561, -0.62460112,  0.11166066, -0.3012854 , -0.68287742,
+       -0.29995617,  0.39343862,  0.48617175,  0.59662121, -0.5129402 ,
+        0.71871414, -0.6925716 ,  0.98039402,  0.98407522, -0.81479936,
+       -0.58325134,  0.1046107 ,  0.38884188, -0.4263951 , -0.06706708,
+        0.31406986,  0.00689044,  0.6408363 , -0.27444479,  0.69315496,
+        0.2068644 ,  0.07141915, -0.16016694,  0.43890956,  0.82267301])
 \end{verbatim}
 
 Los valores de los parámetros por defecto son \texttt{loc=0,\ scale=1}:
@@ -8559,13 +8744,13 @@ Los valores de los parámetros por defecto son \texttt{loc=0,\ scale=1}:
 \end{Shaded}
 
 \begin{verbatim}
-array([0.21900306, 0.42969883, 0.28322892, 0.62198463, 0.04471838])
+array([0.27068656, 0.19860999, 0.91786307, 0.02163124, 0.24503844])
 \end{verbatim}
 
 \section{Cuantiles de variables
 aleatorias}\label{cuantiles-de-variables-aleatorias}
 
-Definición Cuantiles
+\begin{Definicion}{Definición Cuantiles}{}
 
 Si \(X\) es una v.a. con dominio \(D_X\) y \(0<p<1\) llamaremos cuantil
 de orden \(p\) al menor valor perteneciente al dominio \(x_p\in D_X\)
@@ -8577,7 +8762,9 @@ En \texttt{R}, cada distribución \(X\) tiene la función
 \texttt{qX(p,...)} que devuelve precisamente el cuantil \(x_p\) tal que
 \(P(X\leq x_p)\geq p.\)
 
-Ejemplo
+\end{Definicion}
+
+\begin{Ejemplo}{Ejemplo}{}
 
 Consideremos una v.a. \(X\) de distribución \(B(5,0.5)\).
 
@@ -8607,7 +8794,7 @@ F_x(x)=P(X\leq x)=
 0.50000, & \mbox{ si } 2 \leq x< 3, \\
 0.81250, & \mbox{ si } 3 \leq x< 4, \\
 0.96875, & \mbox{ si } 4 \leq x< 5, \\
-1.00000, & \mbox{ si }  5\leq x. \\
+1.00000, & \mbox{ si } 5\leq x. \\
 \end{array}
 \right.}
 \]
@@ -8616,7 +8803,9 @@ El cuantil \(p=0.3\) es el primer valor \(x\in D_X\) tal que
 \(F_X(x)=P(X\leq x_{0.3})\geq 0.3\). Mirando la expresión anterior,
 comprobamos que \(x_{0.3}=2\) ya que \(F_X(2)=P(X\leq 2)=0.5 \geq 0.3\).
 
-Cálculo de cuantiles
+\end{Ejemplo}
+
+\begin{Proposicion}{Cálculo de cuantiles}{}
 
 Dada una variable aleatoria \(X\), si existe la inversa de la función de
 distribución de \(X\), \(F_X^{-1}\), el cuantil de orden \(p\) sería el
@@ -8635,7 +8824,9 @@ sólo valores del dominio de la variable:
 y nos da una fórmula explícita para calcular los cuantiles de cualquier
 variable aleatoria.
 
-Ejemplo: cuantiles en un un dado
+\end{Proposicion}
+
+\begin{Ejemplo}{Ejemplo: cuantiles en un un dado}{}
 
 Sea \(X\) la variable aleatoria uniforme discreta que nos da el número
 de puntos obtenidos en el lanzamiento de un dado (seis caras numeradas
@@ -8659,7 +8850,7 @@ F_X(x)= P(X\leq x)=
 \begin{array}{ll}
 0, & \mbox{ si } x<1, \\
 \frac{k}{6} & \mbox{ si } k\leq x< k+1 \mbox{ para } x= 1,2,3,4,6, \\
- 1, & \mbox{si  } x \geq 6.
+ 1, & \mbox{si } x \geq 6.
 \end{array}
 \right.
 \]
@@ -8778,7 +8969,9 @@ Efectivamente los cuantiles del dado \(X\) son
 [1]  1  3  3  6 NA NA
 \end{verbatim}
 
-Ejemplo: Cuantiles Binomial
+\end{Ejemplo}
+
+\begin{Ejemplo}{Ejemplo: Cuantiles Binomial}{}
 
 Por ejemplo si \(X\) es una \(B(n=10,p=0.3)\)
 
@@ -8850,6 +9043,8 @@ Por ejemplo si \(X\) es una \(BN(n=3,p=0.1)\)
  [1] 18  9  6 46 66 49 24 44 19 26
 \end{verbatim}
 
+\end{Ejemplo}
+
 \section{Distribución exponencial}\label{distribuciuxf3n-exponencial}
 
 La distribución exponencial está asociadad al tiempo que transcurre
@@ -8869,19 +9064,19 @@ Sea \(t>0\), entonces
 \begin{array}{rl}
 P(T>t)&=P(\mbox{Cero eventos en el intervalo}(0,t])\\
 &=P(N_{t}=0)=
-         \frac{(\lambda t)^0}{0!} e^{-\lambda
-         t}=e^{-\lambda t}.
+ \frac{(\lambda t)^0}{0!} e^{-\lambda
+ t}=e^{-\lambda t}.
 \end{array}
 \]
 
 Tomando complementarios, la función de distribución de \(T\) será: \[
 F_{T}(t)= P(T\leq t)=1-P(T>t)=\left\{\begin{array}{ll} 0, &\mbox{ si } t\leq 0,\\
-  1-e^{-\lambda t},& \mbox{ si } t>0,\end{array}\right.
+ 1-e^{-\lambda t},& \mbox{ si } t>0,\end{array}\right.
 \]
 
 Para hallar la función de densidad de \(T\), basta derivar la expresión
 anterior: \[
-f_{T}(t)=\left\{\begin{array}{ll}\lambda \cdot e^{-\lambda t}, & \mbox{ si }  t>0,\\
+f_{T}(t)=\left\{\begin{array}{ll}\lambda \cdot e^{-\lambda t}, & \mbox{ si } t>0,\\
 0, & \mbox{ si } t\leq 0. \end{array}\right.
 \]
 
@@ -8891,11 +9086,13 @@ denotaremos por \(Exp(\lambda)\).
 \subsection{Propiedad de la falta de
 memoria}\label{propiedad-de-la-falta-de-memoria-1}
 
-Propiedad de la falta de memoria
+\begin{Proposicion}{Propiedad de la falta de memoria}{}
 
 Sea \(X\) una v.a. \(Exp(\lambda)\) entonces
 
-\[P(X>s+t\big|X>s)=P(X>t)\mbox{  para todo } s,t\in \mathbb{R}\]
+\[P(X>s+t\big|X>s)=P(X>t)\mbox{ para todo } s,t\in \mathbb{R}\]
+
+\end{Proposicion}
 
 \textbf{Demostración}
 
@@ -8910,7 +9107,7 @@ P(X>s+t\big|X>s) & =\frac{P(\{X>s+t\}\cap \{X>s\})}{P(X>s)}=\frac{P(X>s+t)}{P(X>
 \end{array}
 \]
 
-Ejemplo: El clásico problema del peluquero.
+\begin{Ejemplo}{Ejemplo: El clásico problema del peluquero.}{}
 
 Una pequeña peluquería es regentada por un único peluquero. El peluquero
 está esperando al próximo cliente mientras lee el periódico.
@@ -8978,7 +9175,9 @@ Si queremos hacer los cálculos con R,
 [1] 0.2231302
 \end{verbatim}
 
-\subsection{Cálculos con R y python}\label{cuxe1lculos-con-r-y-python}
+\end{Ejemplo}
+
+\subsection{Cálculos con R y Python}\label{cuxe1lculos-con-r-y-python}
 
 La función de densidad, de distribución y la generación aleatoria de
 valores de una exponencial, se pueden obtener en R con:
@@ -9014,7 +9213,7 @@ valores de una exponencial, se pueden obtener en R con:
 [8] 0.2377065
 \end{verbatim}
 
-Y en python con:
+Y en Python con:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -9044,12 +9243,12 @@ Y en python con:
 \end{Shaded}
 
 \begin{verbatim}
-array([0.49116989, 0.13024988, 0.05473979, 0.21973076, 0.2507258 ,
-       0.23665472, 0.34229763, 1.13940015, 0.01529716, 0.52575863])
+array([0.29793213, 0.80142213, 0.25189437, 0.41674714, 0.06895067,
+       0.19993541, 0.45794563, 0.29778896, 0.17738571, 0.05870628])
 \end{verbatim}
 
-\subsection{\texorpdfstring{Resumen v.a con distribución exponencial
-\(Exp(\lambda)\)}{Resumen v.a con distribución exponencial Exp(\textbackslash lambda)}}\label{resumen-v.a-con-distribuciuxf3n-exponencial-explambda}
+\subsection{\texorpdfstring{Resumen v.a. con distribución exponencial
+\(Exp(\lambda)\)}{Resumen v.a. con distribución exponencial Exp(\textbackslash lambda)}}\label{resumen-v.a.-con-distribuciuxf3n-exponencial-explambda}
 
 \renewcommand{\arraystretch}{2}
 \begin{table}
@@ -9059,7 +9258,7 @@ array([0.49116989, 0.13024988, 0.05473979, 0.21973076, 0.2507258 ,
 $X$ sigue una distribución $Exp(\lambda)$
 \\\hline
 $D_X=(0,+\infty)$ \\\hline
-$f_{X}(x)=\left\{\begin{array}{ll} \lambda\cdot  e^{-\lambda x} & \mbox{ si }  x>0\\ 0 & \mbox{ si } x\leq 0 \end{array}\right.$
+$f_{X}(x)=\left\{\begin{array}{ll} \lambda\cdot e^{-\lambda x} & \mbox{ si } x>0\\ 0 & \mbox{ si } x\leq 0 \end{array}\right.$
 \\\hline
 $F_X(x)=P(X\leq X)= \left\{\begin{array}{ll} 0 &\mbox{si } x\leq 0\\1-e^{-\lambda x}& \mbox{si } x>0\end{array}\right.$
 \\\hline
@@ -9092,14 +9291,16 @@ $E(X)=\frac{1}{\lambda}$; $Var(X)=\frac{1}{\lambda^2}$
 \includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{distribuciones_notables_2_files/figure-pdf/unnamed-chunk-20-1.pdf}
 \end{center}
 
-Ejercicio
+\begin{Ejercicio}{Ejercicio}{}
 
-Consultad en el manual de python
+Consultad en el manual de Python
 \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.expon.html}{scipy.stats}.
 
 Dibujad la función de densidad y de distribución de una \(Exp(10).\)
 
-Ejercicio: las bombillas que no envejecen
+\end{Ejercicio}
+
+\begin{Ejercicio}{Ejercicio: las bombillas que no envejecen}{}
 
 Supongamos que compramos una bombilla led que promete un \textbf{valor
 esperado} de duración de 10000 (1.14 años) horas de funcionamiento
@@ -9122,6 +9323,8 @@ exponencial.
   ¿Cuál es la varianza de la duración en horas de este tipo de
   bombillas?
 \end{itemize}
+
+\end{Ejercicio}
 
 \section{Distribución normal o
 Gaussiana}\label{distribuciuxf3n-normal-o-gaussiana}
@@ -9165,7 +9368,7 @@ Gaussiana}\label{gruxe1fica-distribuciuxf3n-normal-o-gaussiana}
 \subsection{Propiedades de la función de densidad de la distribución
 normal}\label{propiedades-de-la-funciuxf3n-de-densidad-de-la-distribuciuxf3n-normal}
 
-Propiedades de la función de densidad de la distribución normal
+\begin{Proposicion}{Propiedades de la función de densidad de la distribución normal}{}
 
 Sea \(X\) una v.a. \(N(\mu,\sigma)\) y sea \(f_{X}\) su función de
 densidad. Entonces:
@@ -9203,19 +9406,21 @@ La función \(F(x)\) no tiene ninguna expresión algebraica ``decente''.
 Es por esta razón, y por comodidad, que esta función está tabulada o hay
 que calcularla usando un software estadístico.
 
-\subsection{\texorpdfstring{Resumen v.a con distribución normal,
-\(N(\mu,\sigma)\)}{Resumen v.a con distribución normal, N(\textbackslash mu,\textbackslash sigma)}}\label{resumen-v.a-con-distribuciuxf3n-normal-nmusigma}
+\end{Proposicion}
+
+\subsection{\texorpdfstring{Resumen v.a. con distribución normal,
+\(N(\mu,\sigma)\)}{Resumen v.a. con distribución normal, N(\textbackslash mu,\textbackslash sigma)}}\label{resumen-v.a.-con-distribuciuxf3n-normal-nmusigma}
 
 \renewcommand{\arraystretch}{2}
 \begin{table}
 \centering
 \begin{tabular}{|l|}
 \hline\rowcolor{LightBlue}
-$X$  sigue una distribución $N(\mu,\sigma)$ \\\hline
+$X$ sigue una distribución $N(\mu,\sigma)$ \\\hline
 $D_X=\mathbb{R}=(-\infty,+\infty)$\\\hline
 $f_{X}(x)=\frac{1}{\sqrt{2\pi\cdot\sigma^2}}\cdot e^{\frac{-(x-\mu)^2}{2\cdot \sigma^2}}\mbox{ para todo }x\in \mathbb{R}.$\\\hline
 $\displaystyle F_X(x)=P(X\leq X)=\int_{-\infty}^x f_X(t) dt.$\\\hline
-$E(X)=\mu$;  $Var(X)=\sigma^2.$
+$E(X)=\mu$; $Var(X)=\sigma^2.$
 \\\hline
 \end{tabular}
 \end{table}
@@ -9277,7 +9482,7 @@ Y la generación aleatoria de valores según \(X\) como
 [1]  0.9806747  5.5415845  2.8174087 -2.4085639  0.8920435
 \end{verbatim}
 
-\subsection{Cálculos con python}\label{cuxe1lculos-con-python-4}
+\subsection{Cálculos con Python}\label{cuxe1lculos-con-python-4}
 
 De forma la forma habitual importaremos \texttt{norm} de
 \texttt{scipy.stas} los parámetros son \texttt{loc} y \texttt{scale} la
@@ -9336,15 +9541,15 @@ Y la generación aleatoria de valores según \(X\) como
 \end{Shaded}
 
 \begin{verbatim}
-array([1.77107355, 3.20785389, 4.34032547, 2.15404335, 3.64185863])
+array([ 1.32636204,  1.0744936 ,  1.80795114, -1.43822087, -0.40919507])
 \end{verbatim}
 
 Consultad
 \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html}{SciPy.org}
-para dibujar las funciones de densidad y de distribución con python.
+para dibujar las funciones de densidad y de distribución con Python.
 
 \subsection{Resumen de la distribución
-normal.}\label{resumen-de-la-distribuciuxf3n-normal.}
+normal}\label{resumen-de-la-distribuciuxf3n-normal}
 
 \textbf{Propiedades de la función de densidad de la distribución normal}
 
@@ -9392,7 +9597,7 @@ propiedades:
 \subsection{Transformaciones lineales de variables aleatorias
 normales}\label{transformaciones-lineales-de-variables-aleatorias-normales}
 
-Propiedad: transformación lineal la distribución normal
+\begin{Proposicion}{Propiedad: transformación lineal la distribución normal}{}
 
 Sea \(X\) una variable \(N(\mu,\sigma)\) entonces la variable
 \(Y=a X+b\) con \(a\not=0,b\in\mathbb{R}\) tiene distribución
@@ -9419,10 +9624,12 @@ distribución normal estándar:
 F_X(x)=F_Z \left(\frac{x-\mu}{\sigma}\right).
 \]
 
+\end{Proposicion}
+
 \subsection{Propiedades de la distribución normal
 estándar}\label{propiedades-de-la-distribuciuxf3n-normal-estuxe1ndar}
 
-Proiedades normal estándar
+\begin{Proposicion}{Proiedades normal estándar}{}
 
 Sea \(Z\) una \(N(0,1)\).
 
@@ -9444,7 +9651,9 @@ siguiente:
   \]
 \end{itemize}
 
-Ejercicio
+\end{Proposicion}
+
+\begin{Ejercicio}{Ejercicio}{}
 
 Cálculos con la distribución normal estándar
 
@@ -9493,8 +9702,10 @@ Resolución:
   \(P( Z \geq -2)=1-P(Z< -2)=1-F_{Z}(-2)=1-(1-F_Z(2))=F_Z(2).\)
 \end{itemize}
 
+\end{Ejercicio}
+
 \subsection{Relación entre una distribución normal y la normal
-estándar.}\label{relaciuxf3n-entre-una-distribuciuxf3n-normal-y-la-normal-estuxe1ndar.}
+estándar}\label{relaciuxf3n-entre-una-distribuciuxf3n-normal-y-la-normal-estuxe1ndar}
 
 Para hallar la probabilidad de que \(X\) esté en un intervalo \((a,b)\)
 cualquiera, podemos usar la función de distribución de \(Z\) de la
@@ -9509,13 +9720,13 @@ F_{Z}\left(\frac{a-\mu}{\sigma}\right).
 Para el caso particular en que el intervalo esté centrado en la media
 \(\mu\), o sea existe un valor \(\delta>0\) tal que
 \((a,b)=(\mu-\delta,\mu+\delta)\), obtenemos: \[
-P\left(\mu-\delta\leq X \leq\mu+\delta\right)=2\cdot  F_Z\left(\frac{\delta}{\sigma}\right)-1.
+P\left(\mu-\delta\leq X \leq\mu+\delta\right)=2\cdot F_Z\left(\frac{\delta}{\sigma}\right)-1.
 \]
 
 \subsection{Ejemplo cálculo probabilidades
 normal}\label{ejemplo-cuxe1lculo-probabilidades-normal}
 
-Ejercicio
+\begin{Ejercicio}{Ejercicio}{}
 
 Sea \(X\) una normal con media \(2\) y varianza \(4\). Calcular
 
@@ -9540,10 +9751,12 @@ La segunda probabilidad se calcular de la forma siguiente: \[
 P(X>3)=P\left(\frac{X-2}2>\frac{3-2}{2}\right)=P(Z>0.5)=1-F_{Z}(0.5).
 \]
 
-Ejercicio
+\end{Ejercicio}
+
+\begin{Ejercicio}{Ejercicio}{}
 
 Sea \(X\) una normal con media \(2\) y varianza \(4\). Calcular con R y
-con python las probabilidades
+con Python las probabilidades
 
 \begin{itemize}
 \tightlist
@@ -9585,7 +9798,7 @@ con python las probabilidades
 [1] 0.3085375
 \end{verbatim}
 
-\textbf{Solución con python}
+\textbf{Solución con Python}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -9606,6 +9819,8 @@ con python las probabilidades
 \begin{verbatim}
 0.3085375387259869
 \end{verbatim}
+
+\end{Ejercicio}
 
 \section{La distribución normal aproxima otras
 distribuciones}\label{la-distribuciuxf3n-normal-aproxima-otras-distribuciones}

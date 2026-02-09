@@ -1,4 +1,4 @@
-# Distribuciones notables 2. Notables Continuas.
+# Distribuciones notables 2: distribuciones continuas
 
 
 
@@ -11,8 +11,8 @@ options(width = 75)
 
 ## Introducción
 
-En esta segunda parate del  tema de distribucione notable veremos 
-las distribuciones continuas másusuales: uniforme, exponencial y normal.
+En esta segunda parte del tema de distribuciones notables veremos 
+las distribuciones continuas más usuales: uniforme, exponencial y normal.
 
 El lector debe tener en cuenta que exiten muchas otras distribuciones que 
 deberá estudiar y algunas ya las hemos visto como la $\chi^2$
@@ -30,7 +30,7 @@ Una v.a. continua $X$ tiene una distribución uniforme sobre el intervalo real $
 
 $$
 f_X(x)=\left\{\begin{array}{ll}
-\frac1{b-a}, & \mbox{si } a<x<b,\\ 0,  & \mbox{en cualquier otro caso.}
+\frac1{b-a}, & \mbox{si } a<x<b,\\ 0, & \mbox{en cualquier otro caso.}
 \end{array}
 \right. 
 $$ 
@@ -61,8 +61,8 @@ $$
 Ahora calculemos su función de distribución
 
 $$
-F_X(x)=\left\{\begin{array}{ll} 0,  & \mbox{si } x\leq a,\\
-\frac{x-a}{b-a}, & \mbox{si } a<x<b,\\ 1,  & \mbox{si } b\leq x.
+F_X(x)=\left\{\begin{array}{ll} 0, & \mbox{si } x\leq a,\\
+\frac{x-a}{b-a}, & \mbox{si } a<x<b,\\ 1, & \mbox{si } b\leq x.
 \end{array}
 \right. 
 $$
@@ -88,16 +88,16 @@ $$
 $$
 \begin{array}{rl}
 F_X(x)&=\displaystyle\int_{-\infty}^{x} f(t) dt=\int_{a}^{b} \frac{1}{b-a} dt=
-  \left.  \frac{t}{b-a} \right]_{t=a}^{t=b}
+ \left. \frac{t}{b-a} \right]_{t=a}^{t=b}
 \\&=\displaystyle \frac{b}{b-a}-\frac{a}{b-a}=\frac{b-a}{b-a}=1.
 \end{array}
 $$
 
 
-Denotaremos a la v.a. $X$ uniforme en el intervalo $(a,b)$ por  $U(a,b)$.
+Denotaremos a la v.a. $X$ uniforme en el intervalo $(a,b)$ por $U(a,b)$.
 
 
-Calculemos  la esperanza de $X$
+Calculemos la esperanza de $X$
 
 $$
 \begin{array}{rl}
@@ -126,9 +126,9 @@ $$
 :::
 ::: callout-body
 
-* Demostrad que la  igualdad  $b^3-a^3=(b-a)\cdot (b^2+ab+a^2)$ es cierta.
+* Demostrad que la igualdad $b^3-a^3=(b-a)\cdot (b^2+ab+a^2)$ es cierta.
 
-* Utilizadla para el cálculo final del valor de  $E(X^2)$.
+* Utilizadla para el cálculo final del valor de $E(X^2)$.
 :::
 :::::
 
@@ -166,7 +166,7 @@ curve(punif(x,a,b),xlim=c(a-1,b+1),ylim=c(0,1.1),
       )
 par(mfrow=c(1,1))
 ```
-  
+ 
 
 ```{r grafica_unif10_vista, echo=FALSE,fig.align='center'}
 par(mfrow=c(1,2))
@@ -185,7 +185,7 @@ curve(punif(x,a,b),xlim=c(a-1,b+1),ylim=c(0,1.1),
 ### Transformación lineal de la v.a. uniforme
 
 
-Si $X$ sigue una distribución $U(a,b)$ entonces  $Z=\frac{X-a}{b-a}$ sigue una distribución $U(0,1)$.
+Si $X$ sigue una distribución $U(a,b)$ entonces $Z=\frac{X-a}{b-a}$ sigue una distribución $U(0,1)$.
 
 
 
@@ -195,18 +195,18 @@ Si $X$ sigue una distribución $U(a,b)$ entonces  $Z=\frac{X-a}{b-a}$ sigue una 
 :::
 ::: callout-body
 
-Sea $X$ una v.a  $U(a,b)$
+Sea $X$ una v.a. $U(a,b)$
 
 Si $scale\not=0$ y $loc$ son dos constantes reales entonces 
 
-* si $scale>0$, $T=scale\cdot X+loc$ sigue una ley $U(scale\cdot a +loc,scale\cdot b +loc)$  
+* si $scale>0$, $T=scale\cdot X+loc$ sigue una ley $U(scale\cdot a +loc,scale\cdot b +loc)$ 
 * si $scale<0$, $T=scale\cdot X+loc$ sigue una ley $U(scale\cdot b +loc,scale\cdot a +loc)$
 :::
 :::::
 
 **Demostración**
 
-Supongamos  que $X$ sigue una ley $U(a,b)$, que $scale>0$ y que 
+Supongamos que $X$ sigue una ley $U(a,b)$, que $scale>0$ y que 
 $T=scale\cdot X+loc$. Dejamos el caso $scale<0$ como ejercicio.
 
 La función de distribución de $X$ es:
@@ -224,11 +224,11 @@ $$
 F_T(t)&=P(T\leq t)= P(scale\cdot X+ loc\leq t)= P\left(X\leq \frac{t-loc}{scale}\right)=F_X\left(\frac{t-loc}{scale}\right)\\
 &=
 \left\{\begin{array}{ll} 0, & \mbox{ si } \frac{t-loc}{scale}\leq a\\\frac{\frac{t-loc}{scale}-a}{b-a}, & \mbox{ si } a\leq \frac{t-loc}{scale}\leq b,\\1, & \mbox{ si } b\leq \frac{t-loc}{scale},\end{array}\right.=
-\left\{\begin{array}{ll} 0, & \mbox{ si }  t\leq scale\cdot a +loc, \\
+\left\{\begin{array}{ll} 0, & \mbox{ si } t\leq scale\cdot a +loc, \\
 \frac{t-(scale\cdot a+loc)}{scale\cdot (b-a)}, & \mbox{ si } scale\cdot a+loc \leq t\leq scale\cdot b+loc, \\
 1, & \mbox{ si } scale\cdot b+loc\leq t, \end{array}\right.\\
 & = 
-\left\{\begin{array}{ll} 0, & \mbox{ si }  t\leq scale\cdot a +loc, \\
+\left\{\begin{array}{ll} 0, & \mbox{ si } t\leq scale\cdot a +loc, \\
 \frac{t-(scale\cdot a+loc)}{scale\cdot b+loc-(scale\cdot a+loc)}, & \mbox{ si } scale\cdot a+loc \leq t\leq scale\cdot b+loc, \\
 1, & \mbox{ si } scale\cdot b+loc\leq t,\end{array}\right.
 \end{array}
@@ -244,16 +244,16 @@ por lo que $T$ sigue una ley $U(scale\cdot a +loc,scale\cdot b +loc)$.
 
 Sea $X$ una variable $U(0,1)$ y sea $T=scale\cdot X+loc$:
 
-* Si $T$ es $U(-5,5)$  ¿qué  valores toman $scale$ y $loc$?
+* Si $T$ es $U(-5,5)$ ¿qué valores toman $scale$ y $loc$?
 
-* Si $loc=-10$ y $scale=10$ ¿qué distribución de probabilidad sigue  $T$?
+* Si $loc=-10$ y $scale=10$ ¿qué distribución de probabilidad sigue $T$?
 
-* Si $loc=0$ y $scale=-1$ ¿qué distribución probabilidad sigue  $T$?
+* Si $loc=0$ y $scale=-1$ ¿qué distribución probabilidad sigue $T$?
 :::
 :::::
 
 
-### Resumen v.a con distribución uniforme, $U(a,b)$
+### Resumen v.a. con distribución uniforme, $U(a,b)$
 
 \renewcommand{\arraystretch}{1.8}
 \begin{table}
@@ -263,7 +263,7 @@ Sea $X$ una variable $U(0,1)$ y sea $T=scale\cdot X+loc$:
 Distribución uniforme $U(a,b)$
 \\\hline
 Dominio $D_X=(a,b)$\\\hline
-$f_{X}(x)\left\{\begin{array}{ll}\frac1{b-a}, & \mbox{si } a<x<b,\\ 0,  & \mbox{en cualquier otro caso.}\end{array} \right.$\\\hline
+$f_{X}(x)\left\{\begin{array}{ll}\frac1{b-a}, & \mbox{si } a<x<b,\\ 0, & \mbox{en cualquier otro caso.}\end{array} \right.$\\\hline
 $F_X(x)=P(X\leq X)=\left\{\begin{array}{ll} 0, & \mbox{ si } x\leq a\\\frac{x-a}{b-a}, & \mbox{ si } a\leq x\leq b,\\1, & \mbox{ si } b\leq x.\end{array}\right.$\\\hline
 $E(X)=\frac{a+b}2$; $Var(X)=\frac{(b-a)^2}{12}$
 \\\hline
@@ -272,7 +272,7 @@ $E(X)=\frac{a+b}2$; $Var(X)=\frac{(b-a)^2}{12}$
 
 
 
-### Cálculos con  R
+### Cálculos con R
 
 Sea $X$ una $v.a.$ $U(a,b)$. Las funciones `dunif(x,a,b)` y `punif(x,a,b)` calculan la función de densidad y de distribución de $X$ en el valor $X$. Por ejemplo, para $a=-1$, $b=1$ y $x=0.5$, los valores $f_X(x)$ y $F_X(x)$ valen:
 
@@ -295,11 +295,11 @@ punif(q=0.5)
 runif(n=5)
 ```
 
-### Cálculos con python
+### Cálculos con Python
 
 Sea $X$ una $v.a.$ $U(-1,1)$. Tomando como "base" la v.a. $U(0,1)$, los parámetros $loc$ y $scale$ valen: $loc=-1$ y $scale=2,$ ya que como hemos visto $X=2*U(0,1)-1=U(-1,1)$.
 
-En python, hay que usar dichos parámetros para calcular la función de densidad y de distribución:
+En Python, hay que usar dichos parámetros para calcular la función de densidad y de distribución:
 
 ```{python}
 
@@ -335,7 +335,7 @@ uniform.rvs(size=5)
 ::: callout-body
 
 
-Si  $X$ es una v.a. con dominio $D_X$ y  $0<p<1$ llamaremos cuantil de orden $p$ al menor valor  perteneciente al dominio $x_p\in D_X$ tal que 
+Si $X$ es una v.a. con dominio $D_X$ y $0<p<1$ llamaremos cuantil de orden $p$ al menor valor perteneciente al dominio $x_p\in D_X$ tal que 
 
 $$P(X\leq x_p)\geq p.$$
 
@@ -377,7 +377,7 @@ F_x(x)=P(X\leq x)=
 0.50000, & \mbox{ si } 2 \leq x< 3, \\
 0.81250, & \mbox{ si } 3 \leq x< 4, \\
 0.96875, & \mbox{ si } 4 \leq x< 5, \\
-1.00000, & \mbox{ si }  5\leq x. \\
+1.00000, & \mbox{ si } 5\leq x. \\
 \end{array}
 \right.}
 $$
@@ -387,7 +387,7 @@ $$
 
 
 
-El cuantil $p=0.3$ es el  primer valor $x\in D_X$  tal que $F_X(x)=P(X\leq x_{0.3})\geq 0.3$. Mirando la expresión anterior, comprobamos que $x_{0.3}=2$ ya que $F_X(2)=P(X\leq 2)=0.5 \geq 0.3$.
+El cuantil $p=0.3$ es el primer valor $x\in D_X$ tal que $F_X(x)=P(X\leq x_{0.3})\geq 0.3$. Mirando la expresión anterior, comprobamos que $x_{0.3}=2$ ya que $F_X(2)=P(X\leq 2)=0.5 \geq 0.3$.
 
 :::
 :::::
@@ -427,9 +427,9 @@ Entonces el cuantil $p$ es el mínimo del conjunto $A_p$ considerando sólo valo
 ::: callout-body
 
 
-Sea  $X$ la variable aleatoria uniforme discreta que nos da el número de puntos obtenidos en el lanzamiento de un dado (seis caras numeradas del 1 al 6).
+Sea $X$ la variable aleatoria uniforme discreta que nos da el número de puntos obtenidos en el lanzamiento de un dado (seis caras numeradas del 1 al 6).
 
-Su dominio  es $D_X=\{1,2,3,4,5,6\}$ y su función de probabilidad es 
+Su dominio es $D_X=\{1,2,3,4,5,6\}$ y su función de probabilidad es 
 $$
 P_X(x)=P(X=x)=
 \left\{
@@ -448,7 +448,7 @@ F_X(x)= P(X\leq x)=
 \begin{array}{ll}
 0, & \mbox{ si } x<1, \\
 \frac{k}{6} & \mbox{ si } k\leq x< k+1 \mbox{ para } x= 1,2,3,4,6, \\
- 1, & \mbox{si  } x \geq 6.
+ 1, & \mbox{si } x \geq 6.
 \end{array}
 \right.
 $$
@@ -559,7 +559,7 @@ rnbinom(10,3,0.1)
 
 ## Distribución exponencial
 
-La distribución exponencial está asociadad al  tiempo que transcurre  entre dos eventos Poisson
+La distribución exponencial está asociadad al tiempo que transcurre entre dos eventos Poisson
 consecutivos.
 
 Supongamos que tenemos un proceso Poisson con parámetro $\lambda$ en una unidad de tiempo.
@@ -572,8 +572,8 @@ $$
 \begin{array}{rl}
 P(T>t)&=P(\mbox{Cero eventos en el intervalo}(0,t])\\
 &=P(N_{t}=0)=
-         \frac{(\lambda t)^0}{0!} e^{-\lambda
-         t}=e^{-\lambda t}.
+ \frac{(\lambda t)^0}{0!} e^{-\lambda
+ t}=e^{-\lambda t}.
 \end{array}
 $$
 
@@ -581,12 +581,12 @@ $$
 Tomando complementarios, la función de distribución de $T$ será:
 $$
 F_{T}(t)= P(T\leq t)=1-P(T>t)=\left\{\begin{array}{ll} 0, &\mbox{ si } t\leq 0,\\
-  1-e^{-\lambda t},& \mbox{ si } t>0,\end{array}\right.
+ 1-e^{-\lambda t},& \mbox{ si } t>0,\end{array}\right.
 $$
 
 Para hallar la función de densidad de $T$, basta derivar la expresión anterior:
 $$
-f_{T}(t)=\left\{\begin{array}{ll}\lambda \cdot e^{-\lambda t}, & \mbox{ si }  t>0,\\
+f_{T}(t)=\left\{\begin{array}{ll}\lambda \cdot e^{-\lambda t}, & \mbox{ si } t>0,\\
 0, & \mbox{ si } t\leq 0. \end{array}\right.
 $$
 
@@ -604,9 +604,9 @@ Llamaremos a la variable $T$ exponencial de parámetro $\lambda$ y la denotaremo
 
 ::: callout-body
 
-Sea $X$  una v.a. $Exp(\lambda)$ entonces
+Sea $X$ una v.a. $Exp(\lambda)$ entonces
 
-$$P(X>s+t\big|X>s)=P(X>t)\mbox{  para todo } s,t\in \mathbb{R}$$
+$$P(X>s+t\big|X>s)=P(X>t)\mbox{ para todo } s,t\in \mathbb{R}$$
 :::
 :::::
 
@@ -633,13 +633,13 @@ $$
 
 Una pequeña peluquería es regentada por un único peluquero. El peluquero está esperando al próximo cliente mientras lee el periódico. 
 
-Supongamos que $N_T=$ número de clientes  que llegan en el intervalo $[0,t)$ es una $Po(\lambda\cdot t)$ entonces la variable $T=$ tiempo entre dos clientes consecutivos sigue una ley $Exp(\lambda)$.
+Supongamos que $N_T=$ número de clientes que llegan en el intervalo $[0,t)$ es una $Po(\lambda\cdot t)$ entonces la variable $T=$ tiempo entre dos clientes consecutivos sigue una ley $Exp(\lambda)$.
 
 Supongamos que $t$ se mide en horas y que $\lambda=4$ es el promedio de clientes por hora.
 
 
 En este ejemplo la propiedad de la pérdida de memoria significa que
-si el peluquero lleva ya esperando más de $s>0.25$  un cuarto de hora  la probabilidad de que espere $t=1/6$ de hora más (10 minutos) no cambia sigue siendo $P(T>0.25+1/6|T>0.25)=P(T>1/6).$
+si el peluquero lleva ya esperando más de $s>0.25$ un cuarto de hora la probabilidad de que espere $t=1/6$ de hora más (10 minutos) no cambia sigue siendo $P(T>0.25+1/6|T>0.25)=P(T>1/6).$
 
 El tiempo esperado (en horas) hasta el siguiente cliente es
 
@@ -653,7 +653,7 @@ $$
 Var(X)=\frac{1}{\lambda^2}=\frac{1}{4^2}=`r 1/16`.
 $$
 
-Por último ¿Cuál es la probabilidad de que nuestro peluquero esté sin  clientes (leyendo el periódico) más de 30 minutos (0.5 horas)?
+Por último ¿Cuál es la probabilidad de que nuestro peluquero esté sin clientes (leyendo el periódico) más de 30 minutos (0.5 horas)?
 
 
 $$
@@ -672,7 +672,7 @@ pexp(0.5,rate=3,lower.tail = FALSE)
 :::::
 
 
-### Cálculos  con R y python
+### Cálculos con R y Python
 
 La función de densidad, de distribución y la generación aleatoria de valores de una exponencial, se pueden obtener en R con:
 
@@ -684,7 +684,7 @@ rexp(8,3)# ocho tiempos de una exponencial
 
 
 
-Y en  python con:
+Y en Python con:
 
 
 ```{python}
@@ -695,7 +695,7 @@ expon.rvs(scale=1./3,size=10)
 ```
 
 
-### Resumen v.a con distribución exponencial $Exp(\lambda)$
+### Resumen v.a. con distribución exponencial $Exp(\lambda)$
 
 
 \renewcommand{\arraystretch}{2}
@@ -706,7 +706,7 @@ expon.rvs(scale=1./3,size=10)
 $X$ sigue una distribución $Exp(\lambda)$
 \\\hline
 $D_X=(0,+\infty)$ \\\hline
-$f_{X}(x)=\left\{\begin{array}{ll} \lambda\cdot  e^{-\lambda x} & \mbox{ si }  x>0\\ 0 & \mbox{ si } x\leq 0 \end{array}\right.$
+$f_{X}(x)=\left\{\begin{array}{ll} \lambda\cdot e^{-\lambda x} & \mbox{ si } x>0\\ 0 & \mbox{ si } x\leq 0 \end{array}\right.$
 \\\hline
 $F_X(x)=P(X\leq X)= \left\{\begin{array}{ll} 0 &\mbox{si } x\leq 0\\1-e^{-\lambda x}& \mbox{si } x>0\end{array}\right.$
 \\\hline
@@ -757,7 +757,7 @@ par(mfrow=c(1,1))
 
 ::: callout-body
 
-Consultad  en el manual de python [scipy.stats](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.expon.html). 
+Consultad en el manual de Python [scipy.stats](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.expon.html). 
 
 
 Dibujad la función de densidad y de distribución de una $Exp(10).$
@@ -775,12 +775,12 @@ Dibujad la función de densidad y de distribución de una $Exp(10).$
 
 ::: callout-body
 
-Supongamos que compramos una bombilla led que promete un **valor esperado** de duración de 10000 (1.14 años) horas de funcionamiento continuo. Además, nos aseguran que la distribución de $X$, el número de horas de funcionamiento continuo de una bombilla led, sigue una ley  exponencial.
+Supongamos que compramos una bombilla led que promete un **valor esperado** de duración de 10000 (1.14 años) horas de funcionamiento continuo. Además, nos aseguran que la distribución de $X$, el número de horas de funcionamiento continuo de una bombilla led, sigue una ley exponencial.
 
-* Si $X$ es $Exp(\lambda)$ ¿cuál es el valor del parámetro  $\lambda$?.
+* Si $X$ es $Exp(\lambda)$ ¿cuál es el valor del parámetro $\lambda$?.
 * ¿Cuál es la probabilidad de que una bombilla led ilumine más de 2 años?
 * Supongamos que ya tengo una bombilla led funcionando 1 año ¿Cuál es la probabilidad de que dure dos años más?
-* ¿Cuál es la varianza de la duración  en horas de este tipo de bombillas?
+* ¿Cuál es la varianza de la duración en horas de este tipo de bombillas?
 
 :::
 :::::
@@ -788,7 +788,7 @@ Supongamos que compramos una bombilla led que promete un **valor esperado** de d
 
 ## Distribución normal o Gaussiana
 
-Una de las variables  aleatorias  continua más populares  es la llamada    distribución normal o [Gaussiana](https://es.wikipedia.org/wiki/Distribuci%C3%B3n_normal) .
+Una de las variables aleatorias continua más populares es la llamada distribución normal o [Gaussiana](https://es.wikipedia.org/wiki/Distribuci%C3%B3n_normal) .
 
 <l class="def"> Distribución normal o de Gauss</l>
 Diremos que una v.a. $X$ sigue una ley normal de parámetros
@@ -828,7 +828,7 @@ curve(dnorm(x),
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"></i>  Propiedades de la función de densidad de la distribución normal
+<i class="bi bi-clipboard-check"></i> Propiedades de la función de densidad de la distribución normal
 :::
 
 ::: callout-body
@@ -847,7 +847,7 @@ F(x)=\displaystyle\int_{-\infty}^{x} {1\over{\sqrt{2\cdot \pi\cdot\sigma^2}}}
 e^{-{1\over 2}{\left({t-\mu}\over{\sigma}\right)}^2} dt.
 $$
 
-La función $F(x)$ no tiene ninguna expresión algebraica "decente". Es por esta razón, y  por comodidad, que esta función está tabulada o hay que calcularla usando un software estadístico.
+La función $F(x)$ no tiene ninguna expresión algebraica "decente". Es por esta razón, y por comodidad, que esta función está tabulada o hay que calcularla usando un software estadístico.
 
 :::
 :::::
@@ -855,7 +855,7 @@ La función $F(x)$ no tiene ninguna expresión algebraica "decente". Es por esta
 
 
 
-### Resumen v.a con distribución normal, $N(\mu,\sigma)$
+### Resumen v.a. con distribución normal, $N(\mu,\sigma)$
 
 
 \renewcommand{\arraystretch}{2}
@@ -863,17 +863,17 @@ La función $F(x)$ no tiene ninguna expresión algebraica "decente". Es por esta
 \centering
 \begin{tabular}{|l|}
 \hline\rowcolor{LightBlue}
-$X$  sigue una distribución $N(\mu,\sigma)$ \\\hline
+$X$ sigue una distribución $N(\mu,\sigma)$ \\\hline
 $D_X=\mathbb{R}=(-\infty,+\infty)$\\\hline
 $f_{X}(x)=\frac{1}{\sqrt{2\pi\cdot\sigma^2}}\cdot e^{\frac{-(x-\mu)^2}{2\cdot \sigma^2}}\mbox{ para todo }x\in \mathbb{R}.$\\\hline
 $\displaystyle F_X(x)=P(X\leq X)=\int_{-\infty}^x f_X(t) dt.$\\\hline
-$E(X)=\mu$;  $Var(X)=\sigma^2.$
+$E(X)=\mu$; $Var(X)=\sigma^2.$
 \\\hline
 \end{tabular}
 \end{table}
 
 
-###  Cálculos con R
+### Cálculos con R
  
 Las funciones que calculan la función de densidad y de distribución de una variable $N(\mu,\sigma)$ en un valor `x` son `dnorm(x,mean=mu,sd=sigma)` y `pnorm(x,mean=mu,sd=sigma)`, respectivamente. Por ejemplo, para una variable $X\sim N(\mu=1,\sigma=2)$ la función de densidad $f_X(2)$ se puede calcular de la forma siguiente:
  
@@ -886,7 +886,7 @@ y la función de distribución $F_X(2) = P(X\leq 2)$ de la forma siguiente:
 pnorm(2,mean=1,sd=2) 
 ```
 
-El cuantil $x_{0.95}$ es el valor que cumple  $P(X\leq x_{0.95})=0.95$ como
+El cuantil $x_{0.95}$ es el valor que cumple $P(X\leq x_{0.95})=0.95$ como
 
 ```{r codigoNormalR2}
 qnorm(0.95,mean=1,sd=2)
@@ -899,7 +899,7 @@ rnorm(n=5,mean=1,sd=2)
 ```
 
 
-###  Cálculos con python
+### Cálculos con Python
  
 De forma la forma habitual importaremos `norm` de `scipy.stas` los parámetros son `loc` y `scale` la media $\mu$ y la desviación estándar $\sigma$. 
  
@@ -919,7 +919,7 @@ y la función de distribución $F_X(2) = P(X\leq 2)$:
 norm.cdf(2,loc=1,scale=2)
 ```
 
-El cuantil $x_{0.95}$ es el valor que cumple  $P(X\leq x_{0.95})=0.95$ como
+El cuantil $x_{0.95}$ es el valor que cumple $P(X\leq x_{0.95})=0.95$ como
 
 ```{python}
 norm.ppf(0.95,loc=1,scale=2)
@@ -932,10 +932,10 @@ Y la generación aleatoria de valores según $X$ como
 norm.rvs(loc=1,scale=2,size=5)
 ```
 
-Consultad [SciPy.org](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html) para dibujar las funciones de densidad y de distribución con python.
+Consultad [SciPy.org](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html) para dibujar las funciones de densidad y de distribución con Python.
 
 
-###  Resumen  de la distribución normal.
+### Resumen de la distribución normal
 
  **Propiedades de la función de densidad de la distribución normal**
 
@@ -999,18 +999,18 @@ par(mfrow=c(1,1))
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"></i> Propiedad: transformación lineal la distribución  normal
+<i class="bi bi-clipboard-check"></i> Propiedad: transformación lineal la distribución normal
 :::
 
 ::: callout-body
 
-Sea $X$ una variable  $N(\mu,\sigma)$  entonces la variable $Y=a X+b$ con
+Sea $X$ una variable $N(\mu,\sigma)$ entonces la variable $Y=a X+b$ con
 $a\not=0,b\in\mathbb{R}$ tiene distribución $N(a\mu+b, |a| \sigma)$
 
 
 
-En particular si  $X$ sigue una $N(\mu,\sigma)$, tomando $a=\frac1{\sigma}$ y $b=
-\frac{-\mu}{\sigma}$  obtenemos la tipificación  o estandarización  de la v.a. 
+En particular si $X$ sigue una $N(\mu,\sigma)$, tomando $a=\frac1{\sigma}$ y $b=
+\frac{-\mu}{\sigma}$ obtenemos la tipificación o estandarización de la v.a. 
 
 $$Z={{X-\mu}\over {\sigma}}$$
 se distribuye $N(0,1)$, es decir $E(X)=0$ y $Var(X)=1$.
@@ -1019,9 +1019,9 @@ Esta propiedad es muy útil, ya que utilizándola sólo necesitaremos tabular la
 $N(0,1)$. 
 
 
-Si $Z$ sigue una   distribución $N(0,1)$  diremos que $Z$ sigue una distribución normal estándar. 
+Si $Z$ sigue una distribución $N(0,1)$ diremos que $Z$ sigue una distribución normal estándar. 
 
-Por lo tanto  podemos calcular cualquier distribución  normal  desde la distribución normal estándar:
+Por lo tanto podemos calcular cualquier distribución normal desde la distribución normal estándar:
 
 $$
 F_X(x)=F_Z \left(\frac{x-\mu}{\sigma}\right).
@@ -1062,9 +1062,9 @@ $$
 
 ::: callout-body
 
-Cálculos con la distribución  normal estándar
+Cálculos con la distribución normal estándar
 
-Sea  $Z$  una distribución $N(0,1)$, calcular las siguientes probabilidades en función de $F_Z$.
+Sea $Z$ una distribución $N(0,1)$, calcular las siguientes probabilidades en función de $F_Z$.
 
 * $P(-4\leq Z \leq 4).$
 * $P(-2\leq Z \leq 2).$
@@ -1089,7 +1089,7 @@ Resolución:
 :::::
 
 
-### Relación entre una  distribución normal y la normal estándar.
+### Relación entre una distribución normal y la normal estándar
 
 Para hallar la probabilidad de que $X$ esté en un intervalo $(a,b)$ cualquiera, podemos usar la función de distribución de $Z$ de la siguiente manera:
 $$
@@ -1102,7 +1102,7 @@ $$
 
 Para el caso particular en que el intervalo esté centrado en la media $\mu$, o sea existe un valor $\delta>0$ tal que $(a,b)=(\mu-\delta,\mu+\delta)$, obtenemos:
 $$
-P\left(\mu-\delta\leq X \leq\mu+\delta\right)=2\cdot  F_Z\left(\frac{\delta}{\sigma}\right)-1.
+P\left(\mu-\delta\leq X \leq\mu+\delta\right)=2\cdot F_Z\left(\frac{\delta}{\sigma}\right)-1.
 $$
 
 
@@ -1151,7 +1151,7 @@ $$
 
 ::: callout-body
 
-Sea $X$ una normal con media $2$ y varianza $4$. Calcular  con R y con python las probabilidades
+Sea $X$ una normal con media $2$ y varianza $4$. Calcular con R y con Python las probabilidades
 
 * $P(1< X< 2).$
 * $P(X>3).$
@@ -1167,7 +1167,7 @@ pnorm(3,mean=2,sd=2,lower.tail =FALSE) #P(X>3)
 
 
 
-**Solución con python**
+**Solución con Python**
 
 
 ```{python}
@@ -1186,4 +1186,3 @@ En los temas que siguen veremos como, bajo determinadas condiciones,
 * la distribución normal puede aproximar la distribución binomial,
 * la distribución normal puede aproximar la distribución Poisson
 * la distribución normal es la distribución límite de la media aritmética de una muestra de variables aleatorias.
-

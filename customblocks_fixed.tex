@@ -78,3 +78,34 @@
 % Curiosidad
 \newtcbtheorem[number within=section]{Curiosidad}{\textbf{Curiosidad}}%
 {calloutstyle, colback=calloutcur, before title={\faQuestionCircle\ }}{cur}
+
+/* =========================================================
+   Restaurar fondo + marco (sin volver a la doble pestaña)
+   Pegar AL FINAL del CSS
+   ========================================================= */
+
+/* Contenedor: card completa con fondo y marco */
+[class^="callout-"], [class*=" callout-"]{
+  background: var(--callout-bg, #fff) !important;                 /* fondo vuelve */
+  border: 1px solid rgba(0,0,0,.10) !important;                   /* marco vuelve */
+  border-left: 6px solid var(--callout-accent, #00563F) !important;/* barra única */
+  border-radius: 14px !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,.07) !important;
+  overflow: hidden !important;
+}
+
+/* Título y cuerpo: transparentes para NO duplicar barra */
+.callout-title,
+.callout-body,
+.callout-content{
+  background: transparent !important;
+  border-left: 0 !important;
+}
+
+/* Si quieres “pestaña” elegante SOLO para el título (opcional)
+   -> es una franja superior sutil, NO otra barra lateral */
+.callout-title{
+  background: rgba(0,0,0,.02) !important;
+  border-bottom: 1px solid rgba(0,0,0,.06) !important;
+}
+

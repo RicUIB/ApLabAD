@@ -1,0 +1,45 @@
+\usepackage[table]{xcolor}
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usepackage{fontawesome5}
+
+\definecolor{calloutdef}{HTML}{E6F4EA}
+\definecolor{calloutteo}{HTML}{E3E8FC}
+\definecolor{calloutprop}{HTML}{FDF4E3}
+\definecolor{calloutejem}{HTML}{F3E8FD}
+\definecolor{calloutejer}{HTML}{EAF5FC}
+\definecolor{calloutnota}{HTML}{FFF3CD}
+\definecolor{calloutadv}{HTML}{FDECEA}
+\definecolor{calloutcur}{HTML}{F1F8FF}
+
+\definecolor{accdef}{HTML}{00563F}
+\definecolor{accte}{HTML}{1F3A93}
+\definecolor{accpr}{HTML}{8A5A00}
+\definecolor{accex}{HTML}{5B2A86}
+\definecolor{accEj}{HTML}{0B5A7A}
+\definecolor{accno}{HTML}{7A5A00}
+\definecolor{accad}{HTML}{8A1F17}
+\definecolor{acccu}{HTML}{0B4A8B}
+
+\tcbset{
+  htmlcallout/.style 2 args={
+    enhanced, breakable,
+    arc=3.5mm,
+    boxrule=0.4pt,
+    colframe=black!12,
+    colback=#2,
+    borderline west={6pt}{0pt}{#1},
+    left=2mm,right=2mm,top=1mm,bottom=1mm,
+    before skip=10pt, after skip=12pt,
+    drop shadow={black!10},
+  }
+}
+
+\newtcolorbox{Definicion}{htmlcallout={accdef}{calloutdef}}
+\newtcolorbox{Teorema}{htmlcallout={accte}{calloutteo}}
+\newtcolorbox{Proposicion}{htmlcallout={accpr}{calloutprop}}
+\newtcolorbox{Ejemplo}{htmlcallout={accex}{calloutejem}}
+\newtcolorbox{Ejercicio}{htmlcallout={accEj}{calloutejer}}
+\newtcolorbox{Nota}{htmlcallout={accno}{calloutnota}}
+\newtcolorbox{Advertencia}{htmlcallout={accad}{calloutadv}}
+\newtcolorbox{Curiosidad}{htmlcallout={acccu}{calloutcur}}

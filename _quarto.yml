@@ -1,18 +1,20 @@
 project:
   type: book
   output-dir: docs
-  
+
 book:
   title: "ApLabAD"
-  author: "RICUIB"
-  date: " febrero 2025"
   subtitle: "Apuntes de Laboratorio de Análisis de Datos"
-  
+  author: "RICUIB"
+  date: "febrero 2025"
+  output-file: "ApLabAD"
+  downloads: [pdf]
+
   chapters:
     - index.qmd
     - part: probabilidad_y_variables_aleatorias.qmd
-      chapters: 
-        - preliminares_bk.qmd
+      chapters:
+        - preliminares.qmd
         - probabilidad.qmd
         - variables_aleatorias.qmd
         - teoria_probabilidad.qmd
@@ -21,10 +23,15 @@ book:
 
 bibliography: references.bib
 
+lang: es
+
 format:
   html:
-    theme: [materia]
+    theme: materia
     css: custom_callouts_fixed.css
+    include-in-header:
+      - text: |
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     cover-image: 100_prisoners_boxes_fixed.png
     toggle: true
     code-copy: true
@@ -37,23 +44,19 @@ format:
   pdf:
     documentclass: scrreprt
     highlight: tango
-    numbersections: true
+    number-sections: true
     toc: true
     toc-depth: 3
-    toccolor: blue
-    fig-width: 6
-    fig-height: 4
     colorlinks: true
     keep-tex: true
-    include-in-header: customblocks_fixed.tex
-    
-      
-
+    include-in-header: customblocks_fixed_htmlmatch.tex
+    fig-width: 6
+    fig-height: 4
     code:
       linenums: true
       highlight: tango
-      
+
 filters:
-  - parse-latex   
+  - parse-latex
+  - callouts-to-tcolorbox.lua
   
-lang: es

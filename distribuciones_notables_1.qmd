@@ -29,11 +29,11 @@ Empezaremos con las variables aleatorias discretas que se presentan con frecuenc
 :::
 ::: callout-body
 Consideremos un experimento con dos resultados posibles éxito (E) y
-fracaso (F).  El espacio de sucesos será $\Omega=\{E,F\}$.
+fracaso (F). El espacio de sucesos será $\Omega=\{E,F\}$.
 
-Supongamos que la probabilidad de éxito es  $P(E)=p$,  y naturalmente $P(F)=1-p=q$ con $0<p<1$.
+Supongamos que la probabilidad de éxito es $P(E)=p$, y naturalmente $P(F)=1-p=q$ con $0<p<1$.
 
-Consideremos la  aplicación 
+Consideremos la aplicación 
 
 $$
 X:\Omega=\{E,F\}\to \mathbb{R}
@@ -45,7 +45,7 @@ $$
 X(E)=1\mbox{, }X(F)=0.
 $$
 
-Su  función de probabilidad es
+Su función de probabilidad es
 
 
 $$
@@ -72,7 +72,7 @@ F_{X}(x)=P(X\leq x)=
 $$
 
 
-Bajo estas condiciones diremos que $X$  **es una v.a. Bernoulli** o que  sigue una ley de  **distribución de probabilidad  Bernoulli** de parámetro $p$.
+Bajo estas condiciones diremos que $X$ **es una v.a. Bernoulli** o que sigue una ley de **distribución de probabilidad Bernoulli** de parámetro $p$.
 * Lo denotaremos por
 $$X\sim Ber(p)\mbox{ o también } X\sim B(1,p).$$
 :::
@@ -81,7 +81,7 @@ $$X\sim Ber(p)\mbox{ o también } X\sim B(1,p).$$
 
 Este tipo de experimentos (éxito/fracaso)se reciben el nombre de experimentos Bernoulli.
 
-Fue su descubridor un científico suizo  [Jacob Bernoulli](https://es.wikipedia.org/wiki/Jakob_Bernoulli),  uno más de la conocida [familia de científicos suizos Bernoulli](https://es.wikipedia.org/wiki/Familia_Bernoulli).
+Fue su descubridor un científico suizo [Jacob Bernoulli](https://es.wikipedia.org/wiki/Jakob_Bernoulli), uno más de la conocida [familia de científicos suizos Bernoulli](https://es.wikipedia.org/wiki/Familia_Bernoulli).
 
 
 Su **valor esperado** es 
@@ -95,7 +95,7 @@ Calculemos también $E(X^2)$
 $$E(X^2)=\displaystyle\sum_{x=0}^1 x^2\cdot P(X=x)= 0^2\cdot(1-p)+1^2\cdot p=p.$$
 
 
-La   **varianza**  de una va.a Bernouilli es 
+La **varianza** de una va.a Bernouilli es 
 
 $$Var(X)=E(X^2)-\left(E(X)\right)^2=p-p^2=p\cdot (1-p)=p\cdot q.$$
 
@@ -106,36 +106,36 @@ $$
 \sqrt{Var(X)}=\sqrt{p \cdot (1-p)}.
 $$
 
-Pongamos en una tabla el resumen de v.a con distribución Bernoulli
+Pongamos en una tabla el resumen de v.a. con distribución Bernoulli
 
 
 \begin{table}
 \centering
 \begin{tabular}{|l|}
 \hline\rowcolor{LightBlue}
-$X$ Bernoulli:  $Ber(p)$ 
+$X$ Bernoulli: $Ber(p)$ 
 \\\hline
-$D_X=   \{0,1\}$  
+$D_X= \{0,1\}$ 
 \\\hline
 $P_X(x)=P(X=x)=
 \left\{
 \begin{array}{ll}
 1-p=q & \mbox{ si } x=0\\
 p & \mbox{ si } x=1 \\
-0  & \mbox{ en otro caso.}
+0 & \mbox{ en otro caso.}
 \end{array}\right.
 $ 
 \\\hline
 $F_X(x)=P(X\leq X)=
 \left\{
 \begin{array}{ll}
-  0 &   \mbox{ si } x<0\\ 
- (1-p)  &  \mbox{ si } 0\leq x< 1 \\ 
+ 0 & \mbox{ si } x<0\\ 
+ (1-p) & \mbox{ si } 0\leq x< 1 \\ 
 1 & \mbox{ si } x\geq 1
 \end{array}
 \right.$.
 \\\hline
-$E(X)=p$; $\scriptstyle  Var(X)= p \cdot (1-p)$ \\\hline
+$E(X)=p$; $\scriptstyle Var(X)= p \cdot (1-p)$ \\\hline
 \end{tabular}
 \end{table}
 
@@ -156,7 +156,7 @@ rbinom(n=20,size = 1,prob=0.25)
 ```
 
 
-El siguiente código dibuja las función de probabilidad y la de distribución de una  $Ber(p=0.25)$
+El siguiente código dibuja las función de probabilidad y la de distribución de una $Ber(p=0.25)$
 
 ```{r ber_plot_1, fig.align='center',echo=FALSE,out.fig="80%"}
 par(mfrow=c(1,2))
@@ -202,8 +202,8 @@ La **función de probabilidad** de una binomial es
 $$
 P_{X}(x)=\left\{
 \begin{array}{ll}
-{n\choose x}\cdot  p^x \cdot(1-p)^{n-x} &\mbox{ si } x=0,1,\ldots,n\\
-0  & \mbox{ en otro caso}
+{n\choose x}\cdot p^x \cdot(1-p)^{n-x} &\mbox{ si } x=0,1,\ldots,n\\
+0 & \mbox{ en otro caso}
 \end{array}\right..
 $$
 
@@ -217,12 +217,12 @@ F_{X}(x)=P(X\leq x)&=\sum_{i=0}^x P_X(i)\\
 \left\{
 \begin{array}{ll}
 0 & \mbox{ si } x<0\\\displaystyle
-\sum_{i=0}^k {n\choose i}\cdot  p^i \cdot (1-p)^{n-i} & \mbox{ si } 
+\sum_{i=0}^k {n\choose i}\cdot p^i \cdot (1-p)^{n-i} & \mbox{ si } 
 \left\{
-  \begin{array}{l} 
-  k\leq x< k+1\\
-  k=0,1,\ldots,n.
-  \end{array}
+ \begin{array}{l} 
+ k\leq x< k+1\\
+ k=0,1,\ldots,n.
+ \end{array}
 \right.\\
 1 & \mbox{ si } n\leq x
 \end{array}
@@ -240,21 +240,21 @@ Recordemos los números binomiales con un ejemplo
 <i class="bi bi-list-task"> Números binomiales</i> 
 :::
 ::: callout-body
-Los números binomiales calculan el número de equipos de baloncesto distintos que  ($k=5$ jugadores) se pueden hacer con 6 jugadores ($n=6$).
+Los números binomiales calculan el número de equipos de baloncesto distintos que ($k=5$ jugadores) se pueden hacer con 6 jugadores ($n=6$).
 
-Es decir cuántas  maneras distintas hay para elegir (*choose*) 5 jugadores en un conjunto de 6 jugadores. Todo el mundo diría 
+Es decir cuántas maneras distintas hay para elegir (*choose*) 5 jugadores en un conjunto de 6 jugadores. Todo el mundo diría 
 ¡¡¡6!!!. Efectivamente con R es 
 
 ```{r}
 choose(6,5)
 ```
 
-Con 10 jugadores  el número de equipos de  5 distintos es bastante más grande
+Con 10 jugadores el número de equipos de 5 distintos es bastante más grande
 
 ```{r}
 choose(10,5)
 ```
-Y, por ejemplo, con un equipo de fútbol profesional  que tiene en plantilla 22 jugadores  (quitando los guardametas) se pueden formar ¡¡nada menos que!!
+Y, por ejemplo, con un equipo de fútbol profesional que tiene en plantilla 22 jugadores (quitando los guardametas) se pueden formar ¡¡nada menos que!!
 
 ```{r}
 choose(22,10)
@@ -272,7 +272,7 @@ un bonito número capicúa que nos da el número de equipos distintos que se pue
 <i class="bi bi-pencil-square"> Ejercicio</i>
 :::
 ::: callout-body
-Calculad las funciones de distribución de una binomial $B(n=1,p=0.3)$ y comprobar que coinciden con  las distribuciones de una $Ber(p=0.3)$.
+Calculad las funciones de distribución de una binomial $B(n=1,p=0.3)$ y comprobar que coinciden con las distribuciones de una $Ber(p=0.3)$.
 :::
 :::::
 
@@ -284,8 +284,8 @@ Calculad las funciones de distribución de una binomial $B(n=1,p=0.3)$ y comprob
 <i class="bi bi-info-circle"> Observaciones sobre la distribución binomial</i> 
 :::
 ::: callout-body
-* La probabilidad de fracaso se suele denotar con  $q=1-p$, **sin ningún aviso adicional**, con el fin de acortar  y agilizar la escritura de las  fórmulas.
-* Su **función de distribución no tienen una formula general**, hay que calcularla con una función de R o python... En el siglo pasado se tabulaban en los libros de papel :-).
+* La probabilidad de fracaso se suele denotar con $q=1-p$, **sin ningún aviso adicional**, con el fin de acortar y agilizar la escritura de las fórmulas.
+* Su **función de distribución no tienen una formula general**, hay que calcularla con una función de R o Python... En el siglo pasado se tabulaban en los libros de papel :-).
 * En el material adicional os pondremos unas tablas de esta distribución
 para distintos valores de $n$ y $p$ para que disfrutéis de tan ancestral método de cálculo. 
 * Cualquier paquete estadístico, hoja de cálculo dispone de
@@ -295,15 +295,15 @@ funciones para el cálculo de estas probabilidades, así que el **uso de las tab
 
 <br>
 
-La **esperanza**  de una v.a. $X$ con distribución  $B(n,p)$  es
+La **esperanza** de una v.a. $X$ con distribución $B(n,p)$ es
 
-$$E(X)=\displaystyle\sum_{k=0}^n k \cdot  {n \choose k }\cdot p^k\cdot q^{n-k} = n\cdot p.$$
+$$E(X)=\displaystyle\sum_{k=0}^n k \cdot {n \choose k }\cdot p^k\cdot q^{n-k} = n\cdot p.$$
 
 La esperanza de $X^2$ es 
 
 
 \begin{eqnarray*}
-E(X^2)&=& \displaystyle\sum_{k=0}^n k^2 \cdot  {n \choose k }\cdot p^k\cdot q^{n-k}\\
+E(X^2)&=& \displaystyle\sum_{k=0}^n k^2 \cdot {n \choose k }\cdot p^k\cdot q^{n-k}\\
 &=& n\cdot p\cdot q+(n\cdot p)^2.
 \end{eqnarray*}
 
@@ -312,51 +312,51 @@ Por lo tanto su **varianza** se calcula así
 
 $$Var(X)=E(X^2)-\left(E(X)\right)^2=n\cdot p \cdot q=n\cdot p\cdot (1-p).$$
 
-Su desviación  típica es
+Su desviación típica es
  
  $$\sqrt{n\cdot p\cdot q}=\sqrt{n\cdot p\cdot (1-p)}.$$
  
  
 En temas posteriores veremos una forma sencilla del cálculo de la esperanza y varianza de una $B(n,p)$ como las suma de $n$ v.a. $Ber(p)$ independientes.
 
-  
+ 
 ::::: callout-ejercicio
 ::: callout-title
 <i class="bi bi-pencil-square"> Ejercicio</i> 
 :::
 
 ::: callout-body
-Justificar de forma intuitiva que si $X_i$ con $i=1,2,\ldots, n$ son v.a. $Ber(p)$ independientes  entonces $X=\displaystyle\sum_{i=1}^n X_i$ sigue una distribución $B(n,p).$ 
+Justificar de forma intuitiva que si $X_i$ con $i=1,2,\ldots, n$ son v.a. $Ber(p)$ independientes entonces $X=\displaystyle\sum_{i=1}^n X_i$ sigue una distribución $B(n,p).$ 
 :::
 :::::
 
 
-### Resumen v.a con distribución binomial $B(n,p)$
+### Resumen: v.a. con distribución binomial $B(n,p)$
 
 
 \begin{table}
 \centering
 \begin{tabular}{|l|}
 \hline\rowcolor{LightBlue}
-$X$ binomial:   $B(n,p)$ \\\hline
-$D_X= \{0,1,\ldots n\}$  \\\hline
-$P_X(x)=P(X=x)=\left\{\begin{array}{ll}\scriptstyle {n\choose x}\cdot  p^x\cdot  (1-p)^{n-x} & \mbox{ si } x=0,1,\ldots,n\\0  & \mbox{ en otro caso.}\end{array}\right.$ \\\hline
+$X$ binomial: $B(n,p)$ \\\hline
+$D_X= \{0,1,\ldots n\}$ \\\hline
+$P_X(x)=P(X=x)=\left\{\begin{array}{ll}\scriptstyle {n\choose x}\cdot p^x\cdot (1-p)^{n-x} & \mbox{ si } x=0,1,\ldots,n\\0 & \mbox{ en otro caso.}\end{array}\right.$ \\\hline
 $F_X(x)=P(X\leq X)=
 \scriptstyle\left\{
 \begin{array}{ll}
- 0 &  \mbox{ si } x<0\\ 
-\sum_{i=0}^k {n\choose i}\cdot  p^i\cdot  (1-p)^{n-i} &  \mbox{si }  k\leq x< k+1;\quad  k=0,1,\dots,n \\ 
-1 &   \mbox{ si } x\geq n
+ 0 & \mbox{ si } x<0\\ 
+\sum_{i=0}^k {n\choose i}\cdot p^i\cdot (1-p)^{n-i} & \mbox{si } k\leq x< k+1;\quad k=0,1,\dots,n \\ 
+1 & \mbox{ si } x\geq n
 \end{array}
 \right.$.\\\hline
-$E(X)=n\cdot p$; $  Var(X)=n\cdot p \cdot (1-p)$ \\\hline
+$E(X)=n\cdot p$; $ Var(X)=n\cdot p \cdot (1-p)$ \\\hline
 \end{tabular}
 \end{table}
 
 
-#### Cálculos distribución  binomial con R
+#### Cálculos distribución binomial con R
 
-Veamos los cálculos básicos con funciones de R para una v.a $X$ con distribución  binomial  $B(n=10,p=0.25)$. 
+Veamos los cálculos básicos con funciones de R para una v.a. $X$ con distribución binomial $B(n=10,p=0.25)$. 
 
 Si queremos calcular con `R` algún valor de la función de distribución como por ejemplo $F_X(0)=P(X\leq 0)$, tenemos que hacer:
 
@@ -377,7 +377,7 @@ Sin embargo, si queremos calcular algún valor de la función de probabilidad co
 dbinom(0,size=10,prob=0.25)
 ```
 
-o por ejemplo para  $P(X=4)$:
+o por ejemplo para $P(X=4)$:
 
 ```{r}
 dbinom(4,size=10,prob=0.25)
@@ -385,22 +385,22 @@ dbinom(4,size=10,prob=0.25)
 
 #### Generación de muestras aleatorias con R
 
-Generaremos una muestra aleatoria  de  100 valores  de una población con distribución $B(20,0.5)$
+Generaremos una muestra aleatoria de 100 valores de una población con distribución $B(20,0.5)$
 
 ```{r semilla_binomial,size="scriptsize"}
 set.seed(2019)
 rbinom(100,size = 20,prob=0.5)
 ```
 
-  
-Que corresponde a los resultados de repetir 100 veces el experimento de lanzar una moneda  20 veces y contar el número de caras.
-  
+ 
+Que corresponde a los resultados de repetir 100 veces el experimento de lanzar una moneda 20 veces y contar el número de caras.
+ 
 
-####  Cálculos distribución binomial con python
+#### Cálculos distribución binomial con Python
 
-Veamos los cálculos básicos con funciones de python para una v.a $X$ con distribución  binomial  $B(n=10,p=0.25)$.
+Veamos los cálculos básicos con funciones de Python para una v.a. $X$ con distribución binomial $B(n=10,p=0.25)$.
 
-Primero importamos la  función `binom` de la librería `scipy.stat`
+Primero importamos la función `binom` de la librería `scipy.stat`
 
 ```{python binomialfunciones2A_python}
 from scipy.stats import binom
@@ -434,8 +434,8 @@ binom.pmf(4,n=10,p=0.25)
 Notemos que al no indicar el valor de `loc`, se le asume que toma el valor 0.
 
 Si queremos generar una muestras aleatorias que siga una distribución binomial,
-podemos usar la función `rvs`. En este caso, generaremos una muestra aleatoria  
-de  100 valores  de una población $B(20,0.5)$
+podemos usar la función `rvs`. En este caso, generaremos una muestra aleatoria 
+de 100 valores de una población $B(20,0.5)$
 
 ```{python bino4_py_3}
 binom.rvs(n=20,p=0.25,size = 100)
@@ -451,7 +451,7 @@ binom.rvs(n=20,p=0.25,size = 100)
 Notemos que la secuencia aleatoria generada no es la misma que con `R`. 
 De hecho, si volvemos a ejecutar esta función obtendremos una muestra 
 aleatoria distinta.
-  
+ 
 
 ```{python bino4_py}
 binom.rvs(n=20,p=0.25,size = 100)
@@ -461,7 +461,7 @@ binom.rvs(n=20,p=0.25,size = 100)
 
 
 
-Veamos algunos cálculos básicos con funciones de python para la binomial  
+Veamos algunos cálculos básicos con funciones de Python para la binomial 
 $B(n=10,p=0.25)$.
 
 ```{python binomialfunciones2A_python2}
@@ -470,10 +470,10 @@ binom.pmf(1,n=10,p=0.25)
 binom.rvs(n=20,p=0.25,size=10)
 ```
 
-#### Gráficas de la distribución binomial con R 
+#### Gráficas de la distribución binomial con R
 
 El siguiente código de R dibuja las función de probabilidad y la de distribución
-de una  $B(n=10,p=0.25)$
+de una $B(n=10,p=0.25)$
 
 
 ```{r fig.align='center',echo=FALSE,out.width = "100%"}
@@ -532,9 +532,9 @@ ggplot(data, aes(x = x, y = prob, fill = type, color = type)) +
 
 
 
-#### Gráficos de la distribución binomial con python
+#### Gráficos de la distribución binomial con Python
 
-Necesitaremos usar  estas librerías:
+Necesitaremos usar estas librerías:
 
 ```{python}
 import numpy as np
@@ -586,7 +586,7 @@ plt.show()
 ```
 
 
-  
+ 
 
 ::::: callout-ejemplo
 ::: callout-title
@@ -608,17 +608,17 @@ Bajo estas condiciones repetimos $n=10$ veces el mismo experimento de Bernoulli
 con probabilidad de éxito (sacar bola roja)
 $$P(Roja)=P(Éxito)=p=\frac{40}{100}=0.4.$$
 
-Así que la variable $X$ que es el número de bolas rojas extraídas de la urna (con reposición) en $n=10$ ocasiones sigue una ley binomial  $B(n=10,p=0.4).$
-  
+Así que la variable $X$ que es el número de bolas rojas extraídas de la urna (con reposición) en $n=10$ ocasiones sigue una ley binomial $B(n=10,p=0.4).$
+ 
 
-  
+ 
 Nos preguntamos:
 
 1. ¿Cuál es la probabilidad de que saquemos exactamente $4$ bolas rojas?
-2. ¿Cuál es la probabilidad de que saquemos al menos  $4$ bolas rojas?
-3. ¿Cuál es la probabilidad de que saquemos  menos de $3$ bolas rojas?
+2. ¿Cuál es la probabilidad de que saquemos al menos $4$ bolas rojas?
+3. ¿Cuál es la probabilidad de que saquemos menos de $3$ bolas rojas?
 4. ¿Cuál es el valor esperado del número de bolas rojas?
-5. ¿Cuál es la desviación típica  del número de bolas rojas?
+5. ¿Cuál es la desviación típica del número de bolas rojas?
 
 **Solución 1**. ¿Cuál es la probabilidad de que saquemos exactamente $4$ rojas?
 
@@ -637,11 +637,11 @@ dbinom(4,size=10,prob = 0.4)
 ```
 
 
-**Solución 2**.  ¿Cuál es la probabilidad de que saquemos al menos  $4$ bolas rojas?
+**Solución 2**. ¿Cuál es la probabilidad de que saquemos al menos $4$ bolas rojas?
 
 La probabilidad de sacar al menos 4 rojas se expresa como 
 
-$P(X \geq  4)=1-P(X<4)=1-P(X\leq 3):$
+$P(X \geq 4)=1-P(X<4)=1-P(X\leq 3):$
 
 
 \begin{align*}
@@ -677,11 +677,11 @@ pbinom(3,10,0.4,lower.tail = FALSE)
 ```
 
 
-**Solución 3**.  ¿Cuál es la probabilidad de que saquemos  menos  de $3$ bolas rojas?
+**Solución 3**. ¿Cuál es la probabilidad de que saquemos menos de $3$ bolas rojas?
 
 
 \begin{align*}
-P(X< 3)=& P(X\leq 2)=  P(X=0)+P(X=1)+P(X=2)\\
+P(X< 3)=& P(X\leq 2)= P(X=0)+P(X=1)+P(X=2)\\
 =& 
 {10\choose 0}\cdot 0.4^0\cdot (1-0.4)^{10-0}+ {10\choose 1}\cdot 0.4^1\cdot (1-0.4)^{10-1}\\
 &+
@@ -699,28 +699,28 @@ pbinom(2,10,0.4)
 
 **Solución 4**. ¿Cuál es el valor esperado del número de bolas rojas?
 
-Como  $X$ es una $B(n=10,p=0.4)$ sabemos que 
+Como $X$ es una $B(n=10,p=0.4)$ sabemos que 
 
 $$E(X)=n\cdot p = 10\cdot 0.4=`r 10*0.4`.$$
 
-Aunque en python tenemos la función `stats` que nos lo calcula directamente:
+Aunque en Python tenemos la función `stats` que nos lo calcula directamente:
 
 ```{python}
 print("E(X) = {m}".format(m=binom.stats(n = 10, p = 0.4, moments='m')))
 ```
 
-**Solución 5**. ¿Cuál es la desviación típica  del número de bolas rojas?
+**Solución 5**. ¿Cuál es la desviación típica del número de bolas rojas?
 
 La varianza es:
 $$
 Var(X)=n\cdot p \cdot(1-p)=10\cdot 0.4\cdot 0.6=`r 10*0.4*0.6`.
 $$
 
-Por lo  tanto la desviación típica es 
+Por lo tanto la desviación típica es 
 
 $$\sqrt{Var(X)}=\sqrt{`r 10*0.4*0.6`}= `r sqrt(10*0.4*0.6)`.$$
 
-Aunque en python tenemos la función `stats` que nos lo calcula directamente:
+Aunque en Python tenemos la función `stats` que nos lo calcula directamente:
 
 ```{python}
 print("Var(X) = {v}".format(v=binom.stats(n = 10, p = 0.4, moments='v')))
@@ -736,9 +736,9 @@ print("Var(X) = {v}".format(v=binom.stats(n = 10, p = 0.4, moments='v')))
 Todos hemos jugado a, por ejemplo, tirar una moneda hasta que obtengamos la primera cara.
 O también tirar una pelota a una canasta de baloncesto hasta obtener la primera canasta.
 
-Desde otro punto de vista también podemos intentar modelar el número de veces que accionamos una interruptor  y la bombilla se ilumina  hasta que falla.  O también el número de veces que un cajero automático nos da dinero hasta que falla.
+Desde otro punto de vista también podemos intentar modelar el número de veces que accionamos una interruptor y la bombilla se ilumina hasta que falla. O también el número de veces que un cajero automático nos da dinero hasta que falla.
 
-La **modelización de este tipo de problemas se consigue con la  llamada distribución geométrica**.
+La **modelización de este tipo de problemas se consigue con la llamada distribución geométrica**.
 
 
 
@@ -749,7 +749,7 @@ La **modelización de este tipo de problemas se consigue con la  llamada distrib
 :::
 ::: callout-body
 Repitamos un experimento Bernoulli, de parámetro $p$, de forma independiente hasta obtener el primer éxito.
-Sea $X$ la v.a. que cuenta el número de fracasos antes del primer éxito. Por ejemplo  que  hayamos tenido  $x$ fracasos  será una cadena de $x$ fracasos culminada con un éxito. Más concretamente 
+Sea $X$ la v.a. que cuenta el número de fracasos antes del primer éxito. Por ejemplo que hayamos tenido $x$ fracasos será una cadena de $x$ fracasos culminada con un éxito. Más concretamente 
 
 $$P(\overbrace{FFF\ldots F}^{x}E)=P(F)^{x}\cdot P(E)=(1-p)^{x}\cdot p=q^{x}\cdot p.$$
 
@@ -767,7 +767,7 @@ $$
 
 
  La v.a. definida anteriormente diremos que sigue una distribución geométrica de parámetro $p$. 
- La  denotaremos por $Ge(p)$.  Su dominio es  $D_X=\{0,1,2,\ldots\}$.
+ La denotaremos por $Ge(p)$. Su dominio es $D_X=\{0,1,2,\ldots\}$.
 :::
 :::::
 
@@ -792,7 +792,7 @@ $$
 \{X>3\}=\{X\geq 4\}= \{FFFF\}
 $$
 
-Ahora, al  ser los intentos independientes, tenemos que:
+Ahora, al ser los intentos independientes, tenemos que:
 
 \begin{eqnarray*}
 P(X>3) & = & P(\{FFFF\})= P(F)\cdot P(F)\cdot P(F)\cdot P(F)\\
@@ -814,11 +814,11 @@ $$
 F_X(x)=P(X\leq x)=
 \left\{\begin{array}{ll} 
 0, & \mbox{ si } x<0,\\
-1- (1-p),  & \mbox{ si } k=0\leq x <1,\\
+1- (1-p), & \mbox{ si } k=0\leq x <1,\\
 1- (1-p)^2, & \mbox{ si } k=1\leq x <2,\\
 1- (1-p)^3, & \mbox{ si } k=2\leq x <3,\\
 1- (1-p)^{k+1}, & \mbox{ si } \left\{ \begin{array}{l}k\leq x< k+1,\\\mbox{para } k=0,1,2,\ldots\end{array}
-    \right.
+ \right.
 \end{array}
 \right..
 $$
@@ -860,11 +860,11 @@ ya que $0<1-p<1$.
 </br>
 </br>
 
-Hagamos los cálculos necesarios para los momentos básicos de la  distribución 
+Hagamos los cálculos necesarios para los momentos básicos de la distribución 
 geométrica. Recordemos del tema de variables aleatorias que 
 
 
-Si $|r|<1$  son convergentes las derivadas, respecto de $r$, de la serie geométrica y convergen a la derivada correspondiente. Así tenemos que
+Si $|r|<1$ son convergentes las derivadas, respecto de $r$, de la serie geométrica y convergen a la derivada correspondiente. Así tenemos que
 
 $$
 \begin{array}{rlrl}
@@ -886,7 +886,7 @@ E(X)=&\sum_{x=0}^{+\infty} x\cdot P_x(x)=\sum_{x=0}^{+\infty} x\cdot (1-p)^x\cdo
 \end{align*}
 
 
-Necesitamos calcular $E(X^2)$,  aplicado la fórmula anterior con $r=1-p$
+Necesitamos calcular $E(X^2)$, aplicado la fórmula anterior con $r=1-p$
 
 \begin{align*}
 E(X^2)
@@ -902,9 +902,9 @@ E(X^2)
  (1-p)^{2}\cdot p\cdot \sum_{x=2}^{+\infty} x\cdot (x-1)\cdot (1-p)^{x-2}
  +(1-p)\cdot p\sum_{x=1}^{+\infty} x \cdot (1-p)^{x-1}\\
 =&
- p\cdot (1-p)^2 \frac{2}{(1-(1-p))^3}+  (1-p)\cdot p \frac{1}{(1-(1-p))^2}\\
+ p\cdot (1-p)^2 \frac{2}{(1-(1-p))^3}+ (1-p)\cdot p \frac{1}{(1-(1-p))^2}\\
 =&
-p\cdot (1-p)^2 \frac{2}{p^3}+  (1-p)\cdot p \frac{1}{p^2}=\frac{2\cdot (1-p)^2}{p^2}+\frac{1-p}{p}.
+p\cdot (1-p)^2 \frac{2}{p^3}+ (1-p)\cdot p \frac{1}{p^2}=\frac{2\cdot (1-p)^2}{p^2}+\frac{1-p}{p}.
 \end{align*}
 
 
@@ -922,25 +922,25 @@ Var(X)=& E(X^2)-E(X)^2=\frac{2\cdot (1-p)^2}{p^2}+\frac{1-p}{p}-\left(\frac{1-p}
 \end{align*}
 
 
-Por último  su desviación típica es
+Por último su desviación típica es
 
 $$\sqrt{Var(X)}=\sqrt{\frac{1-p}{p^2}}.$$
 
 
-### Resumen  distribución geométrica $Ge(p)$ empezando en 0
+### Resumen distribución geométrica $Ge(p)$ empezando en 0
 
 
 \begin{table}
 \centering
 \begin{tabular}{|l|}
 \hline\rowcolor{LightBlue}
-$X=$ Geométrica (empieza en $0$) número de fracasos  para conseguir el primer éxito
+$X=$ Geométrica (empieza en $0$) número de fracasos para conseguir el primer éxito
 \\\hline
 $D_X=\{0,1,\ldots n,\ldots\}$ \\\hline
-$P_X(x)=P(X=x)=\left\{\begin{array}{ll}(1-p)^{x}\cdot p & \mbox{ si } x=0,1,2,\ldots \\0  & \mbox{ en otro caso.}\end{array}\right.$\\\hline
+$P_X(x)=P(X=x)=\left\{\begin{array}{ll}(1-p)^{x}\cdot p & \mbox{ si } x=0,1,2,\ldots \\0 & \mbox{ en otro caso.}\end{array}\right.$\\\hline
 $F_X(x)=P(X\leq X)=\left\{\begin{array}{ll} 0 & \mbox{ si } x<0\\
-  1- (1-p)^{k+1} & \mbox{ si } \left\{ \begin{array}{l}k\leq x< k+1\\\mbox{para } k=0,1,2,\ldots\end{array}
-    \right.\end{array}\right.$ \\\hline
+ 1- (1-p)^{k+1} & \mbox{ si } \left\{ \begin{array}{l}k\leq x< k+1\\\mbox{para } k=0,1,2,\ldots\end{array}
+ \right.\end{array}\right.$ \\\hline
 $E(X)=\frac{1-p}{p}$; $Var(X)=\frac{1-p}{p^2}$\\\hline
 \end{tabular}
 \end{table}
@@ -949,24 +949,24 @@ $E(X)=\frac{1-p}{p}$; $Var(X)=\frac{1-p}{p^2}$\\\hline
 La variable geométrica que cuenta los intentos para obtener el primer éxito.
 
 Supongamos que sólo estamos interesados en el **número de intentos** para obtener el primer éxito. 
-Si definimos $Y$= número de  intentos para obtener el  primer éxito. Entonces $Y=X+1$  donde $X\sim Ge(p)$.
+Si definimos $Y$= número de intentos para obtener el primer éxito. Entonces $Y=X+1$ donde $X\sim Ge(p)$.
 Su dominio es $D_Y=\{1,2,\ldots\}$ 
-La media se incrementa en un intento debido al  éxito  $E(Y)=E(X+1)=E(X)+1=\frac{1-p}{p}+1=\frac1{p}$.
+La media se incrementa en un intento debido al éxito $E(Y)=E(X+1)=E(X)+1=\frac{1-p}{p}+1=\frac1{p}$.
 La varianza es la misma $Var(Y)=Var(X+1)=Var(X)=\frac{1-p}{p^2}$.
 
 
-### Resumen distribución geométrica $Ge(p)$ empezando en $1$.
+### Resumen distribución geométrica $Ge(p)$ empezando en $1$
 
 \renewcommand{\arraystretch}{1.75}
 \begin{table}
 \centering
 \begin{tabular}{|l|}
 \hline\rowcolor{LightBlue}
-$Y$ geométrica (que cuenta el éxito) número de **INTENTOS**  para OBTENER el primer éxito
+$Y$ geométrica (que cuenta el éxito) número de **INTENTOS** para OBTENER el primer éxito
 \\\hline
 $D_Y=\{1,2,\ldots n,\ldots\}$ \\\hline
-$P_Y(y)=P(Y=y)=\left\{\begin{array}{ll}(1-p)^{y-1}\cdot p & \mbox{ si } y=1,2,3,\ldots\\  0  & \mbox{ en otro caso.}\end{array}\right.$\\\hline
-$F_Y(y)=P(Y\leq y)=\left\{\begin{array}{ll} 0 & \mbox{ si } y<1\\ 1- (1-p)^{k} & \mbox{ si } \left\{ \begin{array}{l}k\leq y< k+1\\\mbox{para } k=1,2,3,\dots \end{array}    \right.\end{array}\right.$ \\\hline
+$P_Y(y)=P(Y=y)=\left\{\begin{array}{ll}(1-p)^{y-1}\cdot p & \mbox{ si } y=1,2,3,\ldots\\ 0 & \mbox{ en otro caso.}\end{array}\right.$\\\hline
+$F_Y(y)=P(Y\leq y)=\left\{\begin{array}{ll} 0 & \mbox{ si } y<1\\ 1- (1-p)^{k} & \mbox{ si } \left\{ \begin{array}{l}k\leq y< k+1\\\mbox{para } k=1,2,3,\dots \end{array} \right.\end{array}\right.$ \\\hline
 $E(X)=\frac1{p}; Var(X)=\frac{1-p}{p^2}$
 \\\hline
 \end{tabular}
@@ -976,7 +976,7 @@ $E(X)=\frac1{p}; Var(X)=\frac{1-p}{p^2}$
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"> Propiedad de la falta  de memoria </l>
+<i class="bi bi-clipboard-check"> Propiedad de la falta de memoria </l>
 :::
 ::: callout-body
 Sea $X$ una v.a. discreta con dominio $D_X=\{0,1,2,\ldots\}$, con $P(X=0)=p$.
@@ -1002,15 +1002,15 @@ y el lado de izquierdo es
 \begin{align*}
 P\left(X> k+j\big| X\geq j\right)=&\frac{P\left(\{X> k+j\}\cap \{X\geq j\} \right)}{P\left(X\geq j\right)}=
 \frac{P\left(X>k+j \right)}{P\left(X\geq j \right)} = \frac{1-P(X\leq k+j)}{1-P(X\leq j-1)}\\
-=&  \frac{1-(1-(1-p)^{k+j+1})}{1-(1-(1-p)^{j-1+1})} =\frac{(1-p)^{k+j+1}}{(1-p)^{j}} = (1-p)^{k+1},
+=& \frac{1-(1-(1-p)^{k+j+1})}{1-(1-(1-p)^{j-1+1})} =\frac{(1-p)^{k+j+1}}{(1-p)^{j}} = (1-p)^{k+1},
 \end{align*}
 
 
-lo que demuestra  la igualdad.
+lo que demuestra la igualdad.
 
 
-  
-Para demostrar el recíproco, tomemos $j=1$  y $k\geq 0$. Entonces, por la propiedad de la pérdida de memoria:
+ 
+Para demostrar el recíproco, tomemos $j=1$ y $k\geq 0$. Entonces, por la propiedad de la pérdida de memoria:
 $$
 P\left(X> k+1\big| X\geq 1\right)=P(X> k)
 $$
@@ -1031,8 +1031,8 @@ P(X>k+1)&=&P(X\geq 1)\cdot P(X>k)=\left(1-P(X<1)\right)\cdot P(X>k)\\
 
 
 
-  
-Es decir  en general tenemos que 
+ 
+Es decir en general tenemos que 
 
 $$
 P(X>k+1)=(1-p)\cdot P(X>k)
@@ -1056,7 +1056,7 @@ $$
 $$
 
 
-  
+ 
 
 
 Ahora operando 
@@ -1072,7 +1072,7 @@ $$
 
 
 
-  
+ 
 
 De forma similar obtenemos 
 
@@ -1084,21 +1084,21 @@ $$
 \scriptsize{
 \begin{array}{rl}
 P(X=0)&= p,\\
-P(X=1)&=P(X=0+1)= (1-p)\cdot P(X=0) =(1-p)\cdot  p,\\
+P(X=1)&=P(X=0+1)= (1-p)\cdot P(X=0) =(1-p)\cdot p,\\
 P(X=2)&=P(X=1+1)= (1-p)\cdot P(X=1)=(1-p)\cdot (1-p)\cdot p=(1-p)^2\cdot p,\\
- \vdots &    \vdots \\
+ \vdots & \vdots \\
 P(X=k)&=P(X=(k-1)+1)= (1-p)\cdot P(X=k-1)=(1-p)\cdot (1-p)^{k-1}\cdot p=(1-p)^{k}\cdot p,
 \end{array}
 }
 $$
-lo que demuestra  el recíproco, es decir, que $X$ es $Geom(p)$.
-  
+lo que demuestra el recíproco, es decir, que $X$ es $Geom(p)$.
+ 
 
-Lo que demuestra la  propiedad de la falta de memoria
+Lo que demuestra la propiedad de la falta de memoria
 
 ::::: callout-advertencia
 ::: callout-title
-<i class="bi bi-exclamation-triangle"> Observación: Interpretación  
+<i class="bi bi-exclamation-triangle"> Observación: Interpretación 
 de la propiedad </i> 
 :::
 ::: callout-body
@@ -1106,12 +1106,12 @@ de la propiedad </i>
 La propiedad de la falta de memoria
 $$
 P(X> k+j\big|X \geq j)=P(X > k),
-$$   
-significa que, aunque **ya llevemos al menos  $j$ fracasos**, 
+$$ 
+significa que, aunque **ya llevemos al menos $j$ fracasos**, 
 la probabilidad de **que fracasemos $k$ veces más** no disminuye, 
-es la misma  que era cuando empezamos el experimento.  
+es la misma que era cuando empezamos el experimento. 
 
-A este efecto se le suele etiquetar con la frase  
+A este efecto se le suele etiquetar con la frase 
 **el experimento carece de memoria** o es un **experimento sin memoria** 
 (*Memoryless Property*).
 :::
@@ -1127,8 +1127,8 @@ Un ejemplo muy sencillo nos aclarará el alcance de esta propiedad
 <i class="bi bi-list-task"> Ejercicio: la llave que abre la puerta</i> 
 :::
 ::: callout-body
-Tenemos un llavero con 10 llaves,  solo una de ellas abre una puerta. Cada vez que probamos una llave y falla olvidamos que llave hemos probado. ¿Cuál es la probabilidad de que  si ya lo hemos intentado  5 veces necesitemos más de 4 intentos adicionales  para abrir la puerta?
-  
+Tenemos un llavero con 10 llaves, solo una de ellas abre una puerta. Cada vez que probamos una llave y falla olvidamos que llave hemos probado. ¿Cuál es la probabilidad de que si ya lo hemos intentado 5 veces necesitemos más de 4 intentos adicionales para abrir la puerta?
+ 
 Tomemos $k=4,j=5$, aplicando la propiedad de la falta de memoria
 
 $$
@@ -1136,8 +1136,8 @@ P(X> 4+5/X \geq 5)=P(X > 4)
 $$
 
 Después de 5 fracasos no estamos "más cerca" de abrir la puerta.
-La propiedad de la falta de  memoria  nos dice que en **después de cada intento es como si empezásemos  de nuevo a abrir la puerta**. Tras 5 fracasos la probabilidad de que fallemos más de  4 veces  más es la misma que cuando lo intentamos la primera vez.
-  
+La propiedad de la falta de memoria nos dice que en **después de cada intento es como si empezásemos de nuevo a abrir la puerta**. Tras 5 fracasos la probabilidad de que fallemos más de 4 veces más es la misma que cuando lo intentamos la primera vez.
+ 
 ¿Cuál es el número esperado de fracasos hasta abrir la puerta?
 
 $$
@@ -1166,7 +1166,7 @@ La desviación típica es $\sqrt{90}=`r sqrt(90)`.$
 ::: callout-body
 **Ejemplo: partidos hasta que el Barça gana al Madrid**
 
-Los partidos Real Madrid vs FC Barcelona de **la liga** española se suelen denominar  **El Clásico**, sean en el Bernabeu (estadio del Real Madrid) o en el Camp Nou (estadio del Barça)
+Los partidos Real Madrid vs FC Barcelona de **la liga** española se suelen denominar **El Clásico**, sean en el Bernabeu (estadio del Real Madrid) o en el Camp Nou (estadio del Barça)
 
 Sea $X$ la variable que cuenta el número de veces consecutivas que en un partido de fútbol de la liga el Barça no gana al Madrid sea en el Camp Nou o el Bernabeu.
 
@@ -1174,30 +1174,30 @@ Nuestra amiga Aina es muy culé (hincha del Barça) y quiere averiguar cuántos 
 
 Le interesa estimar cuánto le va a costar este capricho. Tendrá que comprar las entradas y pagar los viajes de Barcelona a Madrid.
 
-En [datos historicos de **El clásico**  en la wikipedia](https://es.wikipedia.org/wiki/El_Cl%C3%A1sico) están los datos hasta el 3 de marzo de 2019: se han jugado en total 178 **Clásicos** donde el Real Madrid ganó en 72 ocasiones, el Barça, en 72 y empataron 34 veces.
+En [datos historicos de **El clásico** en la wikipedia](https://es.wikipedia.org/wiki/El_Cl%C3%A1sico) están los datos hasta el 3 de marzo de 2019: se han jugado en total 178 **Clásicos** donde el Real Madrid ganó en 72 ocasiones, el Barça, en 72 y empataron 34 veces.
 
 Nos hacemos las siguientes preguntas:
 
-*  Si Aina solo tiene dinero para ir a ver 3 partidos, ¿cuál es la probabilidad de no ver ganar al Barça en al menos tres partidos consecutivos?
+* Si Aina solo tiene dinero para ir a ver 3 partidos, ¿cuál es la probabilidad de no ver ganar al Barça en al menos tres partidos consecutivos?
 * ¿Cuántos partidos se tienen que jugar de media para ver ganar al Barça por primera vez?
 
 Con los datos anteriores, podemos estimar que la probabilidad de que el Barça gane un clásico cualquiera es:
 
 $$P(\mbox{Barça})=\frac{72}{178}=`r round(72/178,4)`.$$
 
-Por tanto, podemos modelar la variable $X$, que cuenta el número de veces consecutivas que en un partido de fútbol de la liga el Barça no gana al Madrid, con una ley  geométrica empezando en cero con probabilidad de éxito $p=P(\mbox{Barça})=\frac{72}{178}$,
-  
+Por tanto, podemos modelar la variable $X$, que cuenta el número de veces consecutivas que en un partido de fútbol de la liga el Barça no gana al Madrid, con una ley geométrica empezando en cero con probabilidad de éxito $p=P(\mbox{Barça})=\frac{72}{178}$,
+ 
 
  
 
 
 $$X=Ge\left(p=\frac{72}{178}=`r round(72/178,4)`\right)$$
 
-Así que  lo que nos pregunta Aina es la siguiente probabilidad
+Así que lo que nos pregunta Aina es la siguiente probabilidad
 
 $$P(X\geq 3)=1-P(X\leq 2)=1-\left(1-\frac{72}{178}\right)^{2+1}=`r round(1-(1-72/178)^3,4)`.$$
 
-Así que  Aina tiene una probabilidad del $`r round(1-(1-72/178)^3,4)*100.0`\%$ de no ver ganar al Barça en al menos 3 partidos antes de ver uno en el sí que gane.
+Así que Aina tiene una probabilidad del $`r round(1-(1-72/178)^3,4)*100.0`\%$ de no ver ganar al Barça en al menos 3 partidos antes de ver uno en el sí que gane.
 
 Para responder a la segunda pregunta, usando que la distribución de $X$ es:
 
@@ -1220,7 +1220,7 @@ $$\sqrt{`r round((1- (72/178))/(72/178)^2,4)`}=`r round(sqrt((1- (72/178))/(72/1
 
 #### Cálculos con R
 
-Veamos los cálculos básicos con  R para la distribución geométrica  $Ge(p=0.25)$. R implementa la geométrica que cuenta el número de fracasos.
+Veamos los cálculos básicos con R para la distribución geométrica $Ge(p=0.25)$. R implementa la geométrica que cuenta el número de fracasos.
 
 
 $P(X=0)=(1-0.25)^0\cdot 0.25^1=0.25$
@@ -1278,13 +1278,13 @@ rgeom(n=25,prob=0.25)
 
 
 
-#### Cálculos con python
+#### Cálculos con Python
 
-Veamos los cálculos básicos con  python para la distribución geométrica  $Ge(p=0.25)$. scipy.stats implementa la distribución geométrica que cuenta el número  intentos así que empieza en 1
+Veamos los cálculos básicos con Python para la distribución geométrica $Ge(p=0.25)$. scipy.stats implementa la distribución geométrica que cuenta el número intentos así que empieza en 1
 
 
 
-Cargamos la  función de la librería 
+Cargamos la función de la librería 
 
 ```{python geom1}
 from scipy.stats import geom
@@ -1293,7 +1293,7 @@ from scipy.stats import geom
 
 
 
-La función de probabilidad es `geom.pmf(x,p,loc=0)=geom.pmf(x,p)` es un geométrica que cuenta el número de intentos para obtener el primer éxito el valor por defecto del último parámetro es  `loc=0`.
+La función de probabilidad es `geom.pmf(x,p,loc=0)=geom.pmf(x,p)` es un geométrica que cuenta el número de intentos para obtener el primer éxito el valor por defecto del último parámetro es `loc=0`.
 
 Si queremos la que cuenta el número de fracasos para obtener el primer éxito (la geométrica que empieza en 0) tenemos que usar `geom.pmf(x,p,loc=-1)`.
 
@@ -1331,19 +1331,19 @@ geom.rvs(p=0.25, size=20, loc=-1)
 
 
 
-  
+ 
 **Ejercicio**
 
 Qué probabilidades son las que calcula el siguiente código y qué tipo de variables geométricas son?
 
-  
+ 
 
 ```{python}
 geom.cdf(range(5),p=0.3,loc=0)
 geom.cdf(range(5),p=0.3,loc=-1)
 ```
 
-Con python también podemos calcular directamente algunos parámetros asociado a una función de distribución predefinida
+Con Python también podemos calcular directamente algunos parámetros asociado a una función de distribución predefinida
 
 
 ```{python py_mean_var_stats}
@@ -1371,7 +1371,7 @@ empezando en $0$.
 
 
 
-#### Gráficos distribución geométrica con python
+#### Gráficos distribución geométrica con Python
 
 ```{python}
 import numpy as np
@@ -1425,18 +1425,18 @@ plt.show()
 ## Distribución binomial negativa
 
 
-Podemos volver al probalma de de la puerta  pero en esta ocasión tiene dos cerraduras. Supongamos que disponemos de 10 llaves distintas y tenemos que abrir una puerta con **dos cerraduras**.
+Podemos volver al probalma de de la puerta pero en esta ocasión tiene dos cerraduras. Supongamos que disponemos de 10 llaves distintas y tenemos que abrir una puerta con **dos cerraduras**.
 
 Comenzamos por la primera cerradura, de tal forma que cada vez olvidamos qué llave hemos probado. Una vez abierta la primera cerradura probamos de igual forma con la segunda hasta que también la abrimos.
 
-Sea $X=$ la v.a. que cuenta el número de fracasos hasta abrir la  puerta.
+Sea $X=$ la v.a. que cuenta el número de fracasos hasta abrir la puerta.
 Acertar una llave de la puerta es un experimento Bernoulli con probabilidad de éxito $p=0.1$. Lo repetiremos hasta obtener 2 éxitos.
 
 
 En general tendremos un experimento de Bernoulli con probabilidad de éxito $0<p<1$ tal que:
 
 Repetimos el experimento hasta obtener el $n$-ésimo éxito ¡¡abrir la maldita puerta!!.
-Sea $X$ la v.a. que cuenta el número fallos hasta abrir la puerta, es decir, hasta  conseguir el n-ésimo éxito. Notemos que no contamos los éxitos, solo  contamos los fracasos
+Sea $X$ la v.a. que cuenta el número fallos hasta abrir la puerta, es decir, hasta conseguir el n-ésimo éxito. Notemos que no contamos los éxitos, solo contamos los fracasos
 
 
 Si representamos como es habitual un suceso como una cadena de F's y E's, para $n=2$, algunos sucesos elementales serán:
@@ -1458,7 +1458,7 @@ $$
 
 
 
-     
+ 
 
 
 ::::: callout-definicion
@@ -1485,8 +1485,8 @@ En general la función de probabilidad de una v.a. $BN(n,p)$ es
 
 $$
 P_{X}(k)=P(X=k)=\left\{\begin{array}{ll}
-     {k+n-1\choose n-1} \cdot (1-p)^{k}\cdot p^n & \mbox{si } k=0,1,\ldots\\
-     0 & \mbox{en otro caso}\end{array}\right.
+ {k+n-1\choose n-1} \cdot (1-p)^{k}\cdot p^n & \mbox{si } k=0,1,\ldots\\
+ 0 & \mbox{en otro caso}\end{array}\right.
 $$
 :::
 :::::
@@ -1504,18 +1504,18 @@ $$
 
 
 
-De estas cadenas hay  tantas como maneras de elegir de entre las $k+n-1$ primeras posiciones $n-1$ para colocar los éxitos. Esta cantidad es el número binomial ${k+n-1\choose n-1}.$
+De estas cadenas hay tantas como maneras de elegir de entre las $k+n-1$ primeras posiciones $n-1$ para colocar los éxitos. Esta cantidad es el número binomial ${k+n-1\choose n-1}.$
 
 
 
-  
+ 
 
 ::::: callout-definicion
 ::: callout-title
 <i class="bi bi-book"> Números binomiales negativos</i>
 :::
 ::: callout-body
-Dados dos enteros positivos $n$ y $k$ se  define el número binomial negativo como 
+Dados dos enteros positivos $n$ y $k$ se define el número binomial negativo como 
 
 $$\binom{-n}{k}=\frac{(-n)(-n-1)\cdots (-n-k+1)}{k!}.$$
 
@@ -1534,7 +1534,7 @@ $$
 $$
 \begin{array}{rl}
 {-6\choose 4}&=\frac{-6\cdot (-6-1)\cdot \cdot (-6-2)\cdot (-6-3) }{4!}\\
-&=  \frac{-6\cdot(-7)\cdot (-8)\cdot (-9)}{24}\\
+&= \frac{-6\cdot(-7)\cdot (-8)\cdot (-9)}{24}\\
 &= \frac{3024}{24}=126.
 \end{array}
 $$
@@ -1551,7 +1551,7 @@ Su **esperanza es**
 $$E(X)=\sum_{k=0}^{+\infty} k\cdot {k+n-1\choose n-1} \cdot (1-p)^{k}\cdot p^n=n\cdot\frac{1-p}{p}.$$
 
 
-La **esperanza de $X^2$ es**  
+La **esperanza de $X^2$ es** 
 
 $$E(X^2)=\sum_{k=0}^{+\infty} k^2\cdot {k+n-1\choose n-1} \cdot (1-p)^{k}\cdot p^n=n\cdot\frac{1-p}{p^2}+\left(n\cdot \frac{1-p}{p}\right)^2.$$
 
@@ -1569,7 +1569,7 @@ y por tanto la desviación típica es
 
 $$\sqrt{Var(X)} = \frac{\sqrt{n(1-p)}}{p}$$
 
-### Resumen distribución  Binomial Negativa $BN(n,p)$
+### Resumen distribución Binomial Negativa $BN(n,p)$
 
 \begin{table}
 \centering
@@ -1577,56 +1577,56 @@ $$\sqrt{Var(X)} = \frac{\sqrt{n(1-p)}}{p}$$
 \hline\rowcolor{LightBlue}
  $X=$ Número de fracasos antes de conseguir el $n$-ésimo éxito, $P(\mbox{Éxito})=p$. $BN(n,p)$ 
 \\\hline
-$D_X=\{0,1,2,3\ldots\}$  \\\hline
-$P_X(k)=P(X=k)=\left\{\begin{array}{ll} {k+n-1\choose n-1} \cdot (1-p)^{k}\cdot p^n, & \mbox{si }  k=0,1,\ldots \\ 0, & \mbox{en otro caso.}\end{array}\right.$\\\hline
+$D_X=\{0,1,2,3\ldots\}$ \\\hline
+$P_X(k)=P(X=k)=\left\{\begin{array}{ll} {k+n-1\choose n-1} \cdot (1-p)^{k}\cdot p^n, & \mbox{si } k=0,1,\ldots \\ 0, & \mbox{en otro caso.}\end{array}\right.$\\\hline
 $
 F_X(x)=P(X\leq x)=
 \left\{
-\begin{array}{ll} 0, & \mbox{si } x<0\\\displaystyle\sum_{i=0}^{k} P(X=i) & \mbox{si  }\left\{\begin{array}{l}k\leq x< k+1,\\k=0,1,2,\ldots\end{array}\right.\end{array}\right.$ 
+\begin{array}{ll} 0, & \mbox{si } x<0\\\displaystyle\sum_{i=0}^{k} P(X=i) & \mbox{si }\left\{\begin{array}{l}k\leq x< k+1,\\k=0,1,2,\ldots\end{array}\right.\end{array}\right.$ 
 \\\hline
-$E(X)=n\cdot\frac{1-p}{p}$;  $Var(X)=n\cdot \frac{1-p}{p^2}.$ \\\hline
+$E(X)=n\cdot\frac{1-p}{p}$; $Var(X)=n\cdot \frac{1-p}{p^2}.$ \\\hline
 \end{tabular}
 \end{table}
 
 
 
-### Ejemplo de la puerta con dos cerraduras  
-  
+### Ejemplo de la puerta con dos cerraduras
+ 
 :::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> : Ejemplo: puerta  con dos cerraduras</i> 
+<i class="bi bi-list-task"> : Ejemplo: puerta con dos cerraduras</i> 
 :::
 
 ::: callout-body
 Recordemos nuestra puerta con dos cerraduras que se abren secuencialmente. Tenemos un manojo de 10 llaves casi idénticas de manera que cada vez que probamos una llave olvidamos qué llave hemos usado.
 
 
-Sea $X$ la v.a que nos da el número de  intentos fallidos hasta abrir  abrir la puerta. 
+Sea $X$ la v.a. que nos da el número de intentos fallidos hasta abrir abrir la puerta. 
 
 
-Estamos interesado en modelar  este problema.  La preguntas son:
+Estamos interesado en modelar este problema. La preguntas son:
 
-1. ¿Cuál es la distribución de probabilidad de $X$ la v.a que nos da el número fallos  hasta abrir la puerta? 
+1. ¿Cuál es la distribución de probabilidad de $X$ la v.a. que nos da el número fallos hasta abrir la puerta? 
 2. ¿Cuál es la función de probabilidad y de distribución de $X$?
-3. ¿Cuál es la probabilidad de fallar  exactamente  5 veces antes de abrir la puerta?
-4. ¿Cuál es la probabilidad de fallar más de  4?
-5. ¿Cuál es  el número esperado de fallos? ¿Y su desviación típica?
+3. ¿Cuál es la probabilidad de fallar exactamente 5 veces antes de abrir la puerta?
+4. ¿Cuál es la probabilidad de fallar más de 4?
+5. ¿Cuál es el número esperado de fallos? ¿Y su desviación típica?
 
-  
+ 
 
 
-**Solución 1.**  ¿Cuál es la distribución de probabilidad de $X$ la v.a que nos da el número fallos  hasta abrir la puerta? 
+**Solución 1.** ¿Cuál es la distribución de probabilidad de $X$ la v.a. que nos da el número fallos hasta abrir la puerta? 
 
 Bajo estados condiciones tenemos que la probabilidad de "éxito" de cada intento es $p=\frac{1}{10}=0.1$. Como cada vez *olvidamos* qué llave hemos probado, cada intento será independiente del anterior.
 
-Así que  la variable $X$ que queremos modelar  cuenta el número  fallos  de repeticiones sucesivas e independientes de  un experimento $Ber(p=0.1)$ hasta conseguir 2 éxitos en un experimento.
+Así que la variable $X$ que queremos modelar cuenta el número fallos de repeticiones sucesivas e independientes de un experimento $Ber(p=0.1)$ hasta conseguir 2 éxitos en un experimento.
 
-Por lo tanto  podemos asegurar que $X$ sigue un distribución $BN(n=2,p=0.1).$
-  
+Por lo tanto podemos asegurar que $X$ sigue un distribución $BN(n=2,p=0.1).$
+ 
 
 **Solución 2.** ¿Cuál es la función de probabilidad y de distribución del $X$?
 
-En general la función de probabilidad  de una $BN(n,p)$ es 
+En general la función de probabilidad de una $BN(n,p)$ es 
 
 
 
@@ -1634,7 +1634,7 @@ $$
 P_X(k)=P(X=k)=
 \left\{
 \begin{array}{cc} 
-{k+n-1\choose n-1} \cdot (1-p)^{k}\cdot p^n & \mbox{si }  k=0,1,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.
+{k+n-1\choose n-1} \cdot (1-p)^{k}\cdot p^n & \mbox{si } k=0,1,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.
 $$
 
 Si aplicamos la expresión anterior para $n=2$ y $p=0.1$, obtenemos:
@@ -1642,19 +1642,19 @@ $$
 P_X(k)=P(X=k)=
 \left\{
 \begin{array}{cc} 
-{k+2-1\choose 2-1} \cdot 0.9^{k}\cdot 0.1^2 & \mbox{si }  k=0,1,2,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.
+{k+2-1\choose 2-1} \cdot 0.9^{k}\cdot 0.1^2 & \mbox{si } k=0,1,2,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.
 $$
-  
+ 
 Simplificando
 
 $$
 P_X(X=k)=P(X=k)=
 \left\{
 \begin{array}{cc} 
-0.01\cdot (k+1)\cdot 0.9^{k}, & \mbox{si }  k=0,1,2,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.
+0.01\cdot (k+1)\cdot 0.9^{k}, & \mbox{si } k=0,1,2,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.
 $$
 
-La función de distribución  en general es 
+La función de distribución en general es 
 
 $$
 F_X(x)=P(X\leq x)=
@@ -1680,7 +1680,7 @@ F_X(x)=P(X\leq x)=
 \right.
 $$
 
-**Solución 3.**  ¿Cuál es la probabilidad de fallar  exactamente  5 veces antes de abrir la puerta?
+**Solución 3.** ¿Cuál es la probabilidad de fallar exactamente 5 veces antes de abrir la puerta?
 
 $$
 P(X=5)= 0.01\cdot (5+1) \cdot 0.9^{5}= 0.06 \cdot 0.9^{5}= `r 6*0.9^5*0.1^2`.
@@ -1688,7 +1688,7 @@ $$
 
 **Solución 4.** ¿Cuál es la probabilidad de fallar más de 4?
 
-Nos piden que  
+Nos piden que 
 $$
 P(X>4)=1-P(X\leq 4).
 $$
@@ -1697,13 +1697,13 @@ Calculemos primero $P(X\leq 4):$
 
 $$
 \begin{array}{rl}
-P(X\leq 4) &=  \displaystyle\sum_{x=0}^{4} P(X=x)=P(X=0)+P(X=1)+P(X=2)+P(X=3)+P(X=4)\\
+P(X\leq 4) &= \displaystyle\sum_{x=0}^{4} P(X=x)=P(X=0)+P(X=1)+P(X=2)+P(X=3)+P(X=4)\\
 &= 0.01\cdot (0+1) \cdot 0.9^{0}+0.01\cdot (1+1) \cdot 0.9^{1}+0.01\cdot (2+1) \cdot 0.9^{2} \\ &\ \ 
 +0.01\cdot (3+1) \cdot 0.9^{3} + 0.01\cdot (4+1) \cdot 0.9^{4} \\ & =
 0.01 +`r 0.01*2*0.9`+`r 0.01*3*0.9^2`+`r 0.01*4*0.9^3`+`r 0.01*5*0.9^4` = `r 0.01+ 0.01*2*0.9+ 0.01*3*0.9^2+ 0.01*4*0.9^3+ 0.01*5*0.9^4`.
 \end{array}
 $$
-  
+ 
 
 
 
@@ -1725,7 +1725,7 @@ dnbinom(2,2,0.1)
 3*0.9^2* 0.1^2
 ```
 
-**Solución 5.**  ¿Cuál es  el número esperado de fallos? ¿Y su desviación típica?
+**Solución 5.** ¿Cuál es el número esperado de fallos? ¿Y su desviación típica?
 
 
 Como $X$ sigue una ley $BN(n=2,p=0.1)$
@@ -1745,14 +1745,14 @@ y su desviación típica $\sqrt{180}=`r round(sqrt(2*(1-0.1)/0.1^2),5)`.$
 
 
 
-#### Cálculos de la distribución  $BN(n,p)$ con  R
+#### Cálculos de la distribución $BN(n,p)$ con R
 
-La función de `R` que calcula la función de probabilidad de la  binomial negativa con sus parámetros básicos es: 
+La función de `R` que calcula la función de probabilidad de la binomial negativa con sus parámetros básicos es: 
 
 ```
 dnbinom(x, size, prob,...)`
 ```
-donde `size` ($n$) es el número de éxitos y  `prob` ($p$), la probabilidad de éxito.
+donde `size` ($n$) es el número de éxitos y `prob` ($p$), la probabilidad de éxito.
 
 Así en el ejemplo de la puerta con dos cerraduras, $X$ es una $BN(n=size=2,p=prob=0.1)$. Por ejemplo, $P(X=5)$ que hemos calculado en el ejemplo anterior, vale:
 
@@ -1771,7 +1771,7 @@ pnbinom(4,size=2,p=0.1,lower.tail=FALSE)
 
 
 
-La función con python es `nbinom.pmf(k, n, p, loc)`. Hay que cargarla desde `scpi.stats`
+La función con Python es `nbinom.pmf(k, n, p, loc)`. Hay que cargarla desde `scpi.stats`
 
 ```{python}
 from scipy.stats import nbinom
@@ -1800,7 +1800,7 @@ Generemos 100 observaciones aleatorias de una $BN(n=2,0.1)$. Es decir serán las
 nbinom.rvs(n=2, p=0.1, size=100)
 ```
 
-#### Cálculos de la distribución $BN(n,p)$ con python
+#### Cálculos de la distribución $BN(n,p)$ con Python
 
 La **esperanza** y la **varianza**de una $BN(n=2,0.1)$ valen: 
 
@@ -1811,9 +1811,9 @@ print("E(X)={m}".format(m=params[0]))
 print("Var(X)={v}".format(v=params[1]))
 ```
 
-#### Gráficas de la binomial negativa con R 
+#### Gráficas de la binomial negativa con R
 
-El siguiente código de R dibuja las función de probabilidad y la de distribución de una  $BN(n=2,p=0.1)$
+El siguiente código de R dibuja las función de probabilidad y la de distribución de una $BN(n=2,p=0.1)$
 
 
 ```{r fig.align='center',echo=TRUE,eval=FALSE,fig.out="100%"}
@@ -1866,11 +1866,11 @@ ggplot(df_cdf, aes(x = x, y = y)) +
 
 
 
-#### Gráficos de la binomial negativa con python
+#### Gráficos de la binomial negativa con Python
 
  
 
-Este es el código con python que dibuja las función de probabilidad y la de distribución de una  $BN(n=2,p=0.1)$
+Este es el código con Python que dibuja las función de probabilidad y la de distribución de una $BN(n=2,p=0.1)$
 
 
 ```{python}
@@ -1943,16 +1943,16 @@ _=plt.show()
 ```
 
 
-#### Caso práctico: Acceso aleatorio a un sistema con triple clave. 
+#### Caso práctico: Acceso aleatorio a un sistema con triple clave
 
-  
+ 
 **Sistema con tres claves de acceso**
 
-Supongamos que tenemos un sistema informático tiene un programa de seguridad que genera accesos con   claves  de  3 dígitos  $000,001,\ldots 999$. En total 1000 posibilidades.
+Supongamos que tenemos un sistema informático tiene un programa de seguridad que genera accesos con claves de 3 dígitos $000,001,\ldots 999$. En total 1000 posibilidades.
 
-Como una clave de tres dígitos es fácil de romper proponemos considerar  tres claves consecutivas de acceso al sistema, cada una de 3 dígitos.
+Como una clave de tres dígitos es fácil de romper proponemos considerar tres claves consecutivas de acceso al sistema, cada una de 3 dígitos.
 
-Para acceder al sistema hay que dar  las tres claves de forma consecutiva y por orden.
+Para acceder al sistema hay que dar las tres claves de forma consecutiva y por orden.
 
 Es decir hasta que no averiguamos la primera clave no pasamos a la segunda clave.
 
@@ -1960,32 +1960,32 @@ Supongamos que cada vez que ponemos las dos claves olvidamos el resultado y segu
 
 Así hasta conseguir entrar en el sistema.
 
-Sea $X$ la v.a que nos da el número de fallos antes de  entrar en el sistema.
+Sea $X$ la v.a. que nos da el número de fallos antes de entrar en el sistema.
 
 
-  
+ 
 
-Estamos interesados en modelar  este problema.  La preguntas son:
+Estamos interesados en modelar este problema. La preguntas son:
 
-1. ¿Cuál es la distribución de probabilidad de $X$, la v.a que nos da el número de fallos antes de acceder al  sistema.
+1. ¿Cuál es la distribución de probabilidad de $X$, la v.a. que nos da el número de fallos antes de acceder al sistema.
 2. ¿Cuál es la función de probabilidad y de distribución del $X$?
-3. ¿Cuál es la probabilidad de fallar  150 veces antes de acceder en el sistema?
-4. ¿Cuál es la probabilidad de fallar  más de  150  veces antes de entrar en el sistema?
-5. ¿Cuál es  el número esperado de fallos antes de acceder al sistema? ¿Y su varianza?
+3. ¿Cuál es la probabilidad de fallar 150 veces antes de acceder en el sistema?
+4. ¿Cuál es la probabilidad de fallar más de 150 veces antes de entrar en el sistema?
+5. ¿Cuál es el número esperado de fallos antes de acceder al sistema? ¿Y su varianza?
 
-  
+ 
 
 
 
  
 
-**Solución 1.**  ¿Cuál es la distribución de probabilidad de $X$, la v.a que nos da el número de fallos antes de acceder al  sistema?
+**Solución 1.** ¿Cuál es la distribución de probabilidad de $X$, la v.a. que nos da el número de fallos antes de acceder al sistema?
 
 Bajo estados condiciones tenemos que la probabilidad de "éxito" de cada intento es $p=\frac{1}{1000}=0.001$. Y como cada vez *olvidamos* en los dígitos cada intento será independiente del anterior.
 
-Así que  la variable $X$   cuenta el número de fracasos independientes hasta conseguir 3 éxitos en un experimento $Ber(p=0.001)$ por lo tanto $X$ sigue un distribución $BN(n=3,p=0.001).$
+Así que la variable $X$ cuenta el número de fracasos independientes hasta conseguir 3 éxitos en un experimento $Ber(p=0.001)$ por lo tanto $X$ sigue un distribución $BN(n=3,p=0.001).$
 
-  
+ 
 
 
 
@@ -1996,32 +1996,32 @@ Así que  la variable $X$   cuenta el número de fracasos independientes hasta c
 
 **Solución 2.** ¿Cuál es la función de probabilidad y de distribución del $X$
 
-En general la   función de probabilidad  de una $BN(n,p)$ es 
+En general la función de probabilidad de una $BN(n,p)$ es 
 
 
 $$
 P_X(X=x)=P(X=x)=
 \left\{
 \begin{array}{cc} 
-{x+n-1\choose n-1} \cdot (1-p)^{x}\cdot p^n & \mbox{si }  x=0,1,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.
+{x+n-1\choose n-1} \cdot (1-p)^{x}\cdot p^n & \mbox{si } x=0,1,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.
 $$
-En particular la   función de probabilidad  de una $BN(n=3,p=0.001)$ es
+En particular la función de probabilidad de una $BN(n=3,p=0.001)$ es
 
 
 $$
 P_X(X=x)=P(X=x)=
 \left\{
 \begin{array}{cc} 
-{x+2\choose 2} \cdot 0.999^{x}\cdot 0.001^3 & \mbox{si }  x=0,1,2,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.
+{x+2\choose 2} \cdot 0.999^{x}\cdot 0.001^3 & \mbox{si } x=0,1,2,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.
 $$
 
 
-  
+ 
 
 
 
 
-**Solución 3.** ¿Cuál es la probabilidad de fallar  150 veces antes de acceder en el sistema?
+**Solución 3.** ¿Cuál es la probabilidad de fallar 150 veces antes de acceder en el sistema?
 
 Nos piden
 
@@ -2029,7 +2029,7 @@ $$
 \scriptsize{P(X=150)= {152\choose 2} \cdot 0.999^{150}\cdot 0.001^3.}
 $$
 
-Lo calcularemos operando  con R
+Lo calcularemos operando con R
 
 ```{r}
 choose(152,2)*0.999^150*0.001^3
@@ -2040,9 +2040,9 @@ dnbinom(150,size=3,p=0.001)
 ```
 
 
-**Solución 3.** ¿Cuál es la probabilidad de fallar  150 veces antes de acceder en el sistema?
+**Solución 3.** ¿Cuál es la probabilidad de fallar 150 veces antes de acceder en el sistema?
 
-Nos piden, lo resolveremos con python
+Nos piden, lo resolveremos con Python
 
 $$
 P(X=150)= {152\choose 2} \cdot 0.999^{150}\cdot 0.001^3
@@ -2055,7 +2055,7 @@ nbinom.pmf(150,n=3,p=0.001)
 ```
 
 
-**Solución 4.** ¿Cuál es la probabilidad de fallar  más de  150  veces antes de entrar en el sistema?
+**Solución 4.** ¿Cuál es la probabilidad de fallar más de 150 veces antes de entrar en el sistema?
 
 
 $$P(X>150)=1-P(X\leq 150)$$
@@ -2073,7 +2073,7 @@ Con R
 ```{r}
 pnbinom(150,3,0.001)
 ```
-Con python
+Con Python
 
 ```{python}
 nbinom.cdf(150,n=3,p=0.001)
@@ -2088,11 +2088,11 @@ Vemos que es muy probable que fallemos más de 150 veces antes de entrar en el s
 
 
 
-**Solución 5.**  ¿Cuál es  el número esperado de fallos antes de acceder al sistema? ¿Y su desviación típica?
+**Solución 5.** ¿Cuál es el número esperado de fallos antes de acceder al sistema? ¿Y su desviación típica?
 
 Tenemos que $E(X)=n\cdot \frac{1-p}{p}=3\cdot \frac{1- 0.001}{0.001}=`r 3*(1- 0.001)/0.001`$ y $Var(X)=n\cdot \frac{1-p}{p^2}=3\cdot \frac{1- 0.001^2}{0.001^2}=`r 3*(1- 0.001)/0.001^2`.$
 
-Con python
+Con Python
 
 ```{python}
 params = nbinom.stats(n=3,p=0.001,moments='mv')
@@ -2100,24 +2100,24 @@ print("E(X) = {m}".format(m=params[0]))
 print("Var(X) = {v}".format(v=params[1]))
 ```
 
-  
+ 
 
 
-#### Caso práctico:  ¿Tres claves de tres dígitos o una de 9 dígitos?
+#### Caso práctico: ¿Tres claves de tres dígitos o una de 9 dígitos?
 
-Supongamos que hemos decidido tener  una sola clave de 9 dígitos.
+Supongamos que hemos decidido tener una sola clave de 9 dígitos.
 Estudiemos en este caso la variable aleatoria que da el número de fallos antes 
 de entrar en el sistema y comparemos los resultados.
 
-  
-Como en el caso anteriro supongamos  que cada vez que alguien  intenta acceder 
-lo hace con una contraseña  al azar pero esta vez con una  clave de  9 dígitos. 
+ 
+Como en el caso anteriro supongamos que cada vez que alguien intenta acceder 
+lo hace con una contraseña al azar pero esta vez con una clave de 9 dígitos. 
 La probabilidad de éxito será ahora $p=\frac{1}{10^{9}}$.
 
-Si llamamos $X_9$  a la variable aleatoria que nos da el número de fallos antes 
+Si llamamos $X_9$ a la variable aleatoria que nos da el número de fallos antes 
 de entra en el sistema seguirá una distribución $Ge(p=\frac{1}{10^9}=0.000000001)$.
-  
-Qué da más seguridad  ¿tres claves de tres dígitos o una de 9 dígitos?
+ 
+Qué da más seguridad ¿tres claves de tres dígitos o una de 9 dígitos?
 
 Su valor esperado es
 
@@ -2126,15 +2126,15 @@ E(X_9)=\frac{1-p}{p}=
 \frac{1-0.000000001}{0.000000001}=`r (1-0.000000001)/0.000000001`.
 $$
 
- $1000 000 000$  son  1000 millones de fallos esperados hasta abrir la puerta.
+ $1000 000 000$ son 1000 millones de fallos esperados hasta abrir la puerta.
  
- Recordemos que con tres contraseñas de 3 dígitos  el valor esperado de fallos es 
+ Recordemos que con tres contraseñas de 3 dígitos el valor esperado de fallos es 
  
  $$3\cdot \frac{1-0.001}{0.001}=`r 3*(1-0.001)/0.001`.$$
  
 Por lo tanto, desde el punto de vista de la seguridad, es mejor una clave larga
 de 9 dígitos que tres cortas si escribimos las contraseñas al azar.
-  
+ 
 
 ## Distribución de Poisson
 
@@ -2153,15 +2153,15 @@ $$
 
 
 
-Usando que el desarrollo en serie  de Taylor de la función exponencial es 
+Usando que el desarrollo en serie de Taylor de la función exponencial es 
 $$
 e^{\lambda}=\sum_{x=0}^{+\infty} \frac{\lambda^x}{x!},
 $$
-es  fácil comprobar que la suma de la función de probabilidad en todos los 
+es fácil comprobar que la suma de la función de probabilidad en todos los 
 valores del dominio de $X$, o sea, los enteros positivos, vale 1.
 
 
-Además recordemos que   dado $x\in\mathbb{R}-\{0\}$   se tiene que  
+Además recordemos que dado $x\in\mathbb{R}-\{0\}$ se tiene que 
 
 $$
 \lim_{n\to\infty} \left(1+\frac{x}{n}\right)^n=e^x.
@@ -2177,13 +2177,13 @@ $$
 \left(1+\frac{-\lambda}{n}\right)^n=e^{-\lambda}.
 $$
 
-### La distribución de Poisson como "límite" de una binomial.
+### La distribución de Poisson como "límite" de una binomial
 
 La distribución de Poisson ([Siméon Denis Poisson](https://es.wikipedia.org/wiki/Sim%C3%A9on_Denis_Poisson)) 
-aparece en el conteo de determinados  eventos que se producen en un intervalo 
+aparece en el conteo de determinados eventos que se producen en un intervalo 
 de tiempo o en el espacio.
 
-Supongamos que nuestra variable de interés es  $X$, el número de eventos en el 
+Supongamos que nuestra variable de interés es $X$, el número de eventos en el 
 intervalo de tiempo $(0,t]$, como por ejemplo el número de llamadas a un 
 *call center* en una hora donde suponemos que se cumplen las siguientes 
 condiciones:
@@ -2194,9 +2194,9 @@ condiciones:
 $\lambda>0$.
 2. Es posible dividir el intervalo de tiempo en un
 gran número de subintervalos (denotemos por $n$ al número de intervalos) de forma que:
-    + La probabilidad de que se produzcan dos o más eventos en un subintervalo es despreciable.
-    + El número de ocurrencias de eventos en un intervalo  es independiente del número de ocurrencias en otro intervalo.
-    + La probabilidad de que un evento ocurra en un subintervalo es $p_n=\frac{\lambda}{n}$·
+ + La probabilidad de que se produzcan dos o más eventos en un subintervalo es despreciable.
+ + El número de ocurrencias de eventos en un intervalo es independiente del número de ocurrencias en otro intervalo.
+ + La probabilidad de que un evento ocurra en un subintervalo es $p_n=\frac{\lambda}{n}$·
 
 
 
@@ -2208,7 +2208,7 @@ Entonces si $n\to\infty$ y $p_n\cdot n$ se mantiene igual a $\lambda$ resulta qu
 
 $$
 \begin{array}{rl}
-P(X_n=k)&=\left(\begin{array}{c} n\\ k\end{array}\right) \cdot p_n^k\cdot  (1-p_n)^{n-k}
+P(X_n=k)&=\left(\begin{array}{c} n\\ k\end{array}\right) \cdot p_n^k\cdot (1-p_n)^{n-k}
 \\
 &= {n\choose k}\cdot \left(\frac{\lambda}{n}\right)^{k}\cdot \left(1-\frac{\lambda}{n}\right)^{n-k}\\
 &=
@@ -2240,10 +2240,10 @@ $$
 $$
 
 
-Y  también teniendo en cuanta que $k$ es constante.
+Y también teniendo en cuanta que $k$ es constante.
 
 $$
-\lim_{n\to \infty} \left(1-\frac{\lambda}{n}\right)^{-k}=\lim_{n\to \infty} 1^{-k}=\lim_{n\to \infty}  1=1.
+\lim_{n\to \infty} \left(1-\frac{\lambda}{n}\right)^{-k}=\lim_{n\to \infty} 1^{-k}=\lim_{n\to \infty} 1=1.
 $$
 
 
@@ -2255,16 +2255,16 @@ $$
 \cdot p_n^k \cdot (1-p_n)^{n-k}= \frac{\lambda^k}{k!}\cdot 1 \cdot e^{-\lambda}\cdot 1=\frac{\lambda^k}{k!}\cdot e^{-\lambda}.
 $$
 
-Lo que confirma que  límite de una serie de variables 
+Lo que confirma que límite de una serie de variables 
 $B(n,p_n=\frac{\lambda}{n})$ sigue una ley $Po(\lambda)$.
 
 ### Procesos de Poisson
 
-Lo interesante de las variables Poisson es que podemos modificar (si el modelo lo permite)  el intervalo de tiempo $(0,t]$ en el que contamos los eventos.
+Lo interesante de las variables Poisson es que podemos modificar (si el modelo lo permite) el intervalo de tiempo $(0,t]$ en el que contamos los eventos.
 
 Claro que esto no tiene que poder ser así. 
 
-Pero en general si la variable es poisson en  $(0,t]$  también lo será en cualquier subintervalo $(0,t']$ para todo $t'$ tal que  $0<t'<t$. 
+Pero en general si la variable es poisson en $(0,t]$ también lo será en cualquier subintervalo $(0,t']$ para todo $t'$ tal que $0<t'<t$. 
 
 Así que podremos definir una serie de variables $X_t$ de distribución $Po(\lambda\cdot t)$.
 
@@ -2273,7 +2273,7 @@ Así que podremos definir una serie de variables $X_t$ de distribución $Po(\lam
 
 <l class="prop"> Definición procesos de Poisson </l>
 
-Consideremos  un experimento *Poisson*  con $\lambda$ igual
+Consideremos un experimento *Poisson* con $\lambda$ igual
 al promedio de eventos en una unidad de tiempo (u.t.).
 
 Si $t$ es una cantidad de tiempo en u.t., la v.a. $X_{t}$=numero de eventos en el intervalo $(0,t]$ es una $Po(\lambda\cdot t)$.
@@ -2281,24 +2281,24 @@ Si $t$ es una cantidad de tiempo en u.t., la v.a. $X_{t}$=numero de eventos en e
 El conjunto de variables $\{X_t\}_{t>0}$ recibe el nombre de **proceso de Poisson**.
 
 
-### Resumen distribución  Poisson  $X\sim Po(\lambda)$
+### Resumen distribución Poisson $X\sim Po(\lambda)$
 
 \renewcommand{\arraystretch}{1.75}
 \begin{table}
 \centering
 \begin{tabular}{|l|}
 \hline\rowcolor{LightBlue}
-$X$ con distribución  Poisson  de media o promedio $\lambda$,  $Po(\lambda)$
+$X$ con distribución Poisson de media o promedio $\lambda$, $Po(\lambda)$
 \\\hline
 $D_X=\{0,1,\ldots \}$ \\\hline
-$P_X(x)=P(X=x)=\left\{\begin{array}{ll}  \frac{\lambda^x}{x!}e^{-\lambda} & \mbox{ si } x=0,1,\ldots\\ 0  & \mbox{ en otro caso.}\end{array}\right.$\\\hline
-$\scriptstyle F_X(x)=P(X\leq X)=\left\{\begin{array}{ll} 0 & \mbox{si } x<0\\\displaystyle\scriptstyle\sum_{i=0}^{k} P(X=i)= \displaystyle\scriptstyle\sum_{i=0}^{k} \frac{\lambda^i}{i!}\cdot e^{-\lambda} & \mbox{si  }\left\{\begin{array}{l}\scriptstyle k\leq x< k+1\\\scriptstyle k=0,1,2,\ldots\end{array}\right.\end{array}\right.$
-     \\\hline
+$P_X(x)=P(X=x)=\left\{\begin{array}{ll} \frac{\lambda^x}{x!}e^{-\lambda} & \mbox{ si } x=0,1,\ldots\\ 0 & \mbox{ en otro caso.}\end{array}\right.$\\\hline
+$\scriptstyle F_X(x)=P(X\leq X)=\left\{\begin{array}{ll} 0 & \mbox{si } x<0\\\displaystyle\scriptstyle\sum_{i=0}^{k} P(X=i)= \displaystyle\scriptstyle\sum_{i=0}^{k} \frac{\lambda^i}{i!}\cdot e^{-\lambda} & \mbox{si }\left\{\begin{array}{l}\scriptstyle k\leq x< k+1\\\scriptstyle k=0,1,2,\ldots\end{array}\right.\end{array}\right.$
+ \\\hline
 $E(X)=\lambda$; $Var(X)=\lambda$\\\hline
 \end{tabular}
 \end{table}
 
-### Resumen proceso   Poisson  $X_t\sim Po(\lambda\cdot t)$
+### Resumen proceso Poisson $X_t\sim Po(\lambda\cdot t)$
 
 
 \renewcommand{\arraystretch}{1.75}
@@ -2306,13 +2306,13 @@ $E(X)=\lambda$; $Var(X)=\lambda$\\\hline
 \centering
 \begin{tabular}{|l|}
 \hline\rowcolor{LightBlue}
-$X_t=$ número de eventos en el intervalo $(0,t]$  $Po(\lambda\cdot t)$  donde  $\lambda$ promedio por u.t. 
+$X_t=$ número de eventos en el intervalo $(0,t]$ $Po(\lambda\cdot t)$ donde $\lambda$ promedio por u.t. 
 \\\hline
 $D_X=\{0,1,\ldots \}$ \\\hline
-$P_X(x)=P(X=x)=\left\{\begin{array}{ll}  \frac{(\lambda\cdot t)^x}{x!}e^{-\lambda\cdot t} & \mbox{ si } x=0,1,\ldots\\ 0  & \mbox{ en otro caso.}\end{array}\right.$\\\hline
-$\scriptstyle F_X(x)=P(X\leq X)=\left\{\begin{array}{ll} 0 & \mbox{si } x<0\\\displaystyle\scriptstyle\sum_{i=0}^{k} P(X=i)= \displaystyle\scriptstyle\sum_{i=0}^{k} \frac{(\lambda\cdot t)^i}{i!}\cdot e^{-\lambda\cdot t} & \mbox{si  }\left\{\begin{array}{l}\scriptstyle k\leq x< k+1\\\scriptstyle k=0,1,2,\ldots\end{array}\right.\end{array}\right.$
+$P_X(x)=P(X=x)=\left\{\begin{array}{ll} \frac{(\lambda\cdot t)^x}{x!}e^{-\lambda\cdot t} & \mbox{ si } x=0,1,\ldots\\ 0 & \mbox{ en otro caso.}\end{array}\right.$\\\hline
+$\scriptstyle F_X(x)=P(X\leq X)=\left\{\begin{array}{ll} 0 & \mbox{si } x<0\\\displaystyle\scriptstyle\sum_{i=0}^{k} P(X=i)= \displaystyle\scriptstyle\sum_{i=0}^{k} \frac{(\lambda\cdot t)^i}{i!}\cdot e^{-\lambda\cdot t} & \mbox{si }\left\{\begin{array}{l}\scriptstyle k\leq x< k+1\\\scriptstyle k=0,1,2,\ldots\end{array}\right.\end{array}\right.$
 
-   \\\hline
+ \\\hline
 $E(X)=\lambda\cdot t$; $Var(X)=\lambda\cdot t$\\\hline
 \end{tabular}
 \end{table}
@@ -2320,73 +2320,73 @@ $E(X)=\lambda\cdot t$; $Var(X)=\lambda\cdot t$\\\hline
 
 #### Aproximación de la distribución binomial por la Poisson
 
-Bajo el punto de vista anterior y si $p$ es pequeño y $n$ suficientemente grande  la distribución  $B(n,p)$ se aproxima a una $Po(\lambda=n\cdot p)$.
+Bajo el punto de vista anterior y si $p$ es pequeño y $n$ suficientemente grande la distribución $B(n,p)$ se aproxima a una $Po(\lambda=n\cdot p)$.
 
 Existen distintos criterios (ninguno perfecto) de cuando la aproximación es buena.
 
-Por ejemplo  si 
+Por ejemplo si 
 
 $$n\geq 20\mbox{ o mejor }n\geq 30, n\cdot p < 10 \mbox{ y } p\leq 0.05,$$
 
 
-la aproximación  de una $B(n,p)$ por una $Po(n\cdot p)$ es buena. Sobre todo para los valores cercanos a $E(X)=\lambda$.
+la aproximación de una $B(n,p)$ por una $Po(n\cdot p)$ es buena. Sobre todo para los valores cercanos a $E(X)=\lambda$.
 
-Condición deseable $n\geq 20$,  $n\cdot p < 10$, $p\leq 0.05$.
+Condición deseable $n\geq 20$, $n\cdot p < 10$, $p\leq 0.05$.
 
 
 ### Caso práctico: Trampa de insectos
-  
+ 
 **Ejemplo**: Trampa insectos.
 
-La conocida [lámpara antiinsectos o insecticida eléctrico](https://es.wikipedia.org/wiki/Insecticida_el%C3%A9ctrico) atrae a  los insectos voladores con una luz ultravioleta  y los mata por electrocución. 
+La conocida [lámpara antiinsectos o insecticida eléctrico](https://es.wikipedia.org/wiki/Insecticida_el%C3%A9ctrico) atrae a los insectos voladores con una luz ultravioleta y los mata por electrocución. 
 
 Consideremos la v.a. $X$ que cuenta el número de insectos caídos en la trampa en una hora. Supongamos que el número promedio de insectos que captura la trampa en una hora es $E(X)=20$ y que podemos admitir que $X$ sigue una ley de probabilidad $Po(\lambda=20)$.
 
 
 Nos piden 
 
-1.  Comentar de forma breve si se cumplen intuitivamente las condiciones para tener una distribución Poisson. 
-2.  Escribir de forma explicita la función de probabilidad  y de distribución de $X$.
-3.  Calculad la probabilidad de  que en una hora caigan en la trampa  exactamente 21 insectos.
-4.  Calculad la probabilidad de  que en una hora caigan en la trampa  al menos 6 insectos.
-5.  ¿Cuál es el valor esperando, la varianza y la desviación típica de $X$?
+1. Comentar de forma breve si se cumplen intuitivamente las condiciones para tener una distribución Poisson. 
+2. Escribir de forma explicita la función de probabilidad y de distribución de $X$.
+3. Calculad la probabilidad de que en una hora caigan en la trampa exactamente 21 insectos.
+4. Calculad la probabilidad de que en una hora caigan en la trampa al menos 6 insectos.
+5. ¿Cuál es el valor esperando, la varianza y la desviación típica de $X$?
 
-  
-
-
-**Solución 1.**  Comentar de forma breve si se cumplen intuitivamente las condiciones para tener una distribución Poisson. 
+ 
 
 
-1. El número promedio de eventos en el intervalo $(0,1]$, una hora  es
+**Solución 1.** Comentar de forma breve si se cumplen intuitivamente las condiciones para tener una distribución Poisson. 
+
+
+1. El número promedio de eventos en el intervalo $(0,1]$, una hora es
 $\lambda=20>0$.
-2. Es posible dividir el intervalo de tiempo  de una hora en un
+2. Es posible dividir el intervalo de tiempo de una hora en un
 gran número de subintervalos (denotemos por $n$ al número de intervalos) de forma que:
-    + La probabilidad de que se produzcan dos o más  electrocuciones un subintervalo es despreciable. No es posible que dos mosquitos se electrocuten al mismo tiempo.
-    + El número de ocurrencias, electrocuciones de insectos, en un intervalo  es independiente del número de electrocuciones en otro intervalo.
-    + La probabilidad de que un evento ocurra en un subintervalo es  $p_n=\frac{\lambda}{n}$· Podemos dividir los 20  insectos promedio entre los $n$ intervalos (trozo de hora) de forma que $p_n=\frac{\lambda}{n}$. 
-    + Por ejemplo si $n=60$ tenemos que $p_n=\frac{20}{60}=\frac{1}{3}$. La probabilidad de que en un minuto la trampa chisporrotee es  $\frac{1}{3}$.
-    
-  
+ + La probabilidad de que se produzcan dos o más electrocuciones un subintervalo es despreciable. No es posible que dos mosquitos se electrocuten al mismo tiempo.
+ + El número de ocurrencias, electrocuciones de insectos, en un intervalo es independiente del número de electrocuciones en otro intervalo.
+ + La probabilidad de que un evento ocurra en un subintervalo es $p_n=\frac{\lambda}{n}$· Podemos dividir los 20 insectos promedio entre los $n$ intervalos (trozo de hora) de forma que $p_n=\frac{\lambda}{n}$. 
+ + Por ejemplo si $n=60$ tenemos que $p_n=\frac{20}{60}=\frac{1}{3}$. La probabilidad de que en un minuto la trampa chisporrotee es $\frac{1}{3}$.
+ 
+ 
 
 
 
 
-**Solución 2.** Escribid de forma explicita la función de probabilidad  y de distribución de $X$.
+**Solución 2.** Escribid de forma explicita la función de probabilidad y de distribución de $X$.
 
 
 La distribución de probabilidad de un $Po(\lambda)$ es
 
 $$
-P_X(x)=P(X=x)=\left\{\begin{array}{ll}  \frac{\lambda^x}{x!}e^{-\lambda} & \mbox{ si } x=0,1,\ldots\\ 0  & \mbox{ en otro caso.}\end{array}\right.
+P_X(x)=P(X=x)=\left\{\begin{array}{ll} \frac{\lambda^x}{x!}e^{-\lambda} & \mbox{ si } x=0,1,\ldots\\ 0 & \mbox{ en otro caso.}\end{array}\right.
 $$
 
 En nuestro caso, $\lambda =20$:
 
 $$
-P_X(x)=P(X=x)=\left\{\begin{array}{ll}\frac{20^x}{x!}e^{-20} & \mbox{ si } x=0,1,\ldots\\ 0  & \mbox{ en otro caso.}\end{array}\right.
+P_X(x)=P(X=x)=\left\{\begin{array}{ll}\frac{20^x}{x!}e^{-20} & \mbox{ si } x=0,1,\ldots\\ 0 & \mbox{ en otro caso.}\end{array}\right.
 $$
 
-  
+ 
 
 
 
@@ -2397,14 +2397,14 @@ $$
 F_X(x)=P(X\leq X)=
 \left\{\begin{array}{ll} 
 0 & \mbox{si } x<0\\
-\displaystyle\sum_{i=0}^{k} P(X=i)=\sum_{i=0}^{k}\frac{\lambda^i}{i!}\cdot e^{-\lambda} & \mbox{si  }
+\displaystyle\sum_{i=0}^{k} P(X=i)=\sum_{i=0}^{k}\frac{\lambda^i}{i!}\cdot e^{-\lambda} & \mbox{si }
 \left\{\begin{array}{l}
 k\leq x< k+1\\k=0,1,2,\ldots
 \end{array}
 \right.
 \end{array}
 \right.
-$$     
+$$ 
 
 
 En nuestro caso 
@@ -2412,7 +2412,7 @@ $$
 F_X(x)=P(X\leq X)=
 \left\{\begin{array}{ll} 
 0 & \mbox{si } x<0\\
-\displaystyle\sum_{i=0}^{k} P(X=i)=\sum_{i=0}^{k}\frac{20^i}{i!}\cdot e^{-20} & \mbox{si  }
+\displaystyle\sum_{i=0}^{k} P(X=i)=\sum_{i=0}^{k}\frac{20^i}{i!}\cdot e^{-20} & \mbox{si }
 \left\{\begin{array}{l}
 k\leq x< k+1\\k=0,1,2,\ldots
 \end{array}
@@ -2422,7 +2422,7 @@ k\leq x< k+1\\k=0,1,2,\ldots
 $$ 
  
  
-  
+ 
 
 
 
@@ -2430,7 +2430,7 @@ $$
 
 
 
-**Solución 3.** Calculad la probabilidad de  que en una hora caigan en la trampa  exactamente 21 insectos.
+**Solución 3.** Calculad la probabilidad de que en una hora caigan en la trampa exactamente 21 insectos.
 
 Nos piden la probabilidad siguiente:
 $$
@@ -2443,13 +2443,13 @@ Para realizar el cálculo anterior, podemos usar `R` como calculadora o usar la 
 dpois(21,lambda = 20)
 ```
 
-  
+ 
 
 
 
 
 
-**Solución 4.**  Calculad la probabilidad de  que en una hora caigan en la trampa  al menos 6 insectos.
+**Solución 4.** Calculad la probabilidad de que en una hora caigan en la trampa al menos 6 insectos.
 
 
 Nos piden la probabilidad siguiente:
@@ -2466,19 +2466,19 @@ $$
 \end{array}
 $$
 
-**Solución 5.**  ¿Cuál es el valor esperado, la varianza y la desviación típica de $X$?
+**Solución 5.** ¿Cuál es el valor esperado, la varianza y la desviación típica de $X$?
 
  
- El valor esperado del número de insectos caídos  en la trampa en una hora es 
+ El valor esperado del número de insectos caídos en la trampa en una hora es 
 
 $$E(X)=\lambda=20$$
 
 Su varianza es 
 $$Var(X)=\lambda=20$$
 
-y  su desviación típica vale
+y su desviación típica vale
 $$\sqrt{Var(X)}=+\sqrt{\lambda}=+\sqrt{20}=`r round(sqrt(20),5)`.$$
-  
+ 
 
 ### Cálculos con R
 
@@ -2520,25 +2520,25 @@ rpois(n=100,lambda = 3)
 
 
 
-  
+ 
 **Ejercicio de la trampa para insectos (continuación)**
 
-En   el ejercicio de la trampa para insectos  teníamos que $X$ es una $Po(20)$. Responded con R  a la preguntas 3 y 4 de este ejercicio
+En el ejercicio de la trampa para insectos teníamos que $X$ es una $Po(20)$. Responded con R a la preguntas 3 y 4 de este ejercicio
 
-  
+ 
 
 
-**Pregunta 3.**  Calculad la probabilidad de  que en una hora caigan en la trampa  exactamente 21 insectos.
+**Pregunta 3.** Calculad la probabilidad de que en una hora caigan en la trampa exactamente 21 insectos.
 
 Recordemos que la probabilidad pedida es $P(X=21)$:
 
 ```{r}
 dpois(21,lambda=20)# P(X=21)
 ```
-  
+ 
 
 
-**Pregunta 4.**  Calculad la probabilidad de  que en una hora caigan en la trampa  al menos 6 insectos.
+**Pregunta 4.** Calculad la probabilidad de que en una hora caigan en la trampa al menos 6 insectos.
 
 Recordemos que la probabilidad pedida es $P(X\geq 6)=1-P(X<6)=1-P(X\leq 5)$:
 
@@ -2548,10 +2548,10 @@ ppois(5,lambda=20)
 ppois(5,lambda=20,lower.tail =FALSE ) # acumula hacia arriba 
 # P(X>5)=P(X>=6)=P(X=6)+P(X=7)+...
 ```
-  
+ 
 
 
-#### Gráficos  de la distribución Poisson con R
+#### Gráficos de la distribución Poisson con R
 
 ```{r graficosPOISON, fig.align='center',echo=FALSE,out.width="100%"}
 lambda=20
@@ -2576,11 +2576,11 @@ par(mfrow=c(1,1))
 
 
 
-### Cálculos con python
+### Cálculos con Python
 
 Sea $X$ un una v.a. $Po(\lambda=3)$. Entonces
 
-$P_X(0)=P(X=0), P_X(1)=P(X=1)$   en este orden son 
+$P_X(0)=P(X=0), P_X(1)=P(X=1)$ en este orden son 
 
 
 ```{python poisson_python}
@@ -2593,7 +2593,7 @@ poisson.pmf(1,mu = 3)
 
 Sea $X$ un una v.a. $Po(\lambda=3)$. Entonces
 
-$F_X(0)=P(X\leq 0), F_X(1)=P(X\leq 1)$   en este orden son 
+$F_X(0)=P(X\leq 0), F_X(1)=P(X\leq 1)$ en este orden son 
 
 
 ```{python poisson_python_bis}
@@ -2604,7 +2604,7 @@ poisson.pmf(0,mu = 3)+poisson.pmf(1,mu= 3)
 ```
 
 
-Por ejemplo  podemos comprobar que $F_X(10)=\displaystyle\sum_{0}^{10} P_X(x)$
+Por ejemplo podemos comprobar que $F_X(10)=\displaystyle\sum_{0}^{10} P_X(x)$
 
 ::: {.tiny}
 ```{python poisson_python2}
@@ -2614,15 +2614,15 @@ poisson.cdf(10,mu=3)
 ```
 :::
 
-  
-En   el ejercicio de la trampa para insectos  teníamos que $X$ es una $Po(20)$. Responded con python a la preguntas 3 y 4 de este ejercicio
+ 
+En el ejercicio de la trampa para insectos teníamos que $X$ es una $Po(20)$. Responded con Python a la preguntas 3 y 4 de este ejercicio
 
-  
+ 
 
 
-**Pregunta 3.**  Calculad la probabilidad de  que en una hora caigan en la trampa  exactamente 21 insectos.
+**Pregunta 3.** Calculad la probabilidad de que en una hora caigan en la trampa exactamente 21 insectos.
 
- La  respuesta a la pregunta 3 es calcular  $P(X=21)$ 
+ La respuesta a la pregunta 3 es calcular $P(X=21)$ 
 
 ```{python poisson_py3}
 poisson.pmf(21,mu=20)
@@ -2630,15 +2630,15 @@ poisson.pmf(21,mu=20)
 ```
 
 
-**Pregunta 4.**  Calculad la probabilidad de  que en una hora caigan en la trampa  al menos 6 insectos.
+**Pregunta 4.** Calculad la probabilidad de que en una hora caigan en la trampa al menos 6 insectos.
 
-La pregunta  4 nos pide calcular $P(X\geq 6)=1-P(X\leq 5)$
+La pregunta 4 nos pide calcular $P(X\geq 6)=1-P(X\leq 5)$
 
 ```{python poisson_py4}
 1-poisson.cdf(5,mu=20) 
 # es 1-P(X<=5)=P(X>=6)
 ```
-  
+ 
 
 Como ya hemos visto con `scipy.stats` podemos pedir los momentos de una variable aleatoria
 $Po(3)$
@@ -2658,7 +2658,7 @@ poisson.rvs(mu=3,size=40)
 
 
 
-#### Gráficos con python
+#### Gráficos con Python
 
 ```{python py_poiss1_2,eval=FALSE,echo=TRUE,size="scriptsize"}
 ax = fig.add_subplot(1,2,2)
@@ -2703,31 +2703,31 @@ _=plt.show()
 
 **Número de impactos de insectos en la visera de un casco**
 
-Un colega de trabajo, al que llamaremos  JG, es muy aficionado a los grandes premios de velocidad tanto en coches como en motos.
+Un colega de trabajo, al que llamaremos JG, es muy aficionado a los grandes premios de velocidad tanto en coches como en motos.
 
-Como es tan aficionado está obsesionado con  muchas de las más extravagantes estadísticas de estos deportes.
-En particular le propusimos que estudiara el número de insectos que chocan contra la visera de un casco de un  motorista GP  o de un  conductor de fórmula 1 .
-  
-
-
+Como es tan aficionado está obsesionado con muchas de las más extravagantes estadísticas de estos deportes.
+En particular le propusimos que estudiara el número de insectos que chocan contra la visera de un casco de un motorista GP o de un conductor de fórmula 1 .
+ 
 
 
-  
-La idea es que el número de insectos  está igualmente repartido por todo el circuito y de promedio impactan $\lambda>0$ insectos por minuto. También es razonable suponer que:
+
+
+ 
+La idea es que el número de insectos está igualmente repartido por todo el circuito y de promedio impactan $\lambda>0$ insectos por minuto. También es razonable suponer que:
 
 * podemos dividir la superficie de la visera en cuadrados suficientemente pequeños de forma que la probabilidad de que caigan dos insectos en la misma zona es prácticamente 0. 
-* la probabilidad de que un insecto impacte en  un cuadrado cualquiera  de la visera es independiente de cualquier otro cuadrado.
+* la probabilidad de que un insecto impacte en un cuadrado cualquiera de la visera es independiente de cualquier otro cuadrado.
 * si hemos dividido la visera en $n$ cuadrados la probabilidad $p_n$ de impacto de un cuadrado vale $p_n=\frac{\lambda}{n}$.
 
-Bajo estas condiciones,  si denotamos por $X_t$ como el número de insectos que ha impactado en la visera en  el intervalo $(0,t]$ (en $t$ minutos), podemos afirmar que $X_t$  es un proceso de  Poisson $Po(\lambda\cdot t)$.
+Bajo estas condiciones, si denotamos por $X_t$ como el número de insectos que ha impactado en la visera en el intervalo $(0,t]$ (en $t$ minutos), podemos afirmar que $X_t$ es un proceso de Poisson $Po(\lambda\cdot t)$.
 
-Supongamos que nos dicen que  $\lambda=3$ insectos por minuto. Entonces el proceso de poisson $X_t$ seguirá un ley $Po(3\cdot t).$ 
+Supongamos que nos dicen que $\lambda=3$ insectos por minuto. Entonces el proceso de poisson $X_t$ seguirá un ley $Po(3\cdot t).$ 
 
-Ahora estamos en condiciones de  preguntar  al  proceso de Poisson. 
+Ahora estamos en condiciones de preguntar al proceso de Poisson. 
 
 ¿Cuál es la probabilidad de que en 10 minutos impacten más de 25 insectos?
 
-En este caso $t=10$ $X_{10}$= número de insectos que impactan en 10 minutos, el intervalo $[0,10)$ que sigue  una $P(3\cdot 10=30)$. Por lo tanto 
+En este caso $t=10$ $X_{10}$= número de insectos que impactan en 10 minutos, el intervalo $[0,10)$ que sigue una $P(3\cdot 10=30)$. Por lo tanto 
 
 $$P(X>25)=1-P(X\leq 25)$$
 
@@ -2737,13 +2737,13 @@ lo resolvemos con R
 1-ppois(25,lambda=30)
 ```
 
-  
+ 
 
 
 
  
 
-Otra pregunta interesante es  que tengamos que esperar más de 2 minutos para observar el primer impacto 
+Otra pregunta interesante es que tengamos que esperar más de 2 minutos para observar el primer impacto 
 
 $$P(X_2=0)=\frac{(3\cdot 2)^0}{0!}\cdot e^{-3\cdot 2}= e^{-6}=`r round(exp(-6),6)`.$$
 
@@ -2755,7 +2755,7 @@ ppois(0,lambda=3*2)
 ```
 
 
-  
+ 
 
 
 
@@ -2767,18 +2767,18 @@ ppois(0,lambda=3*2)
 
 **Modelo de la distribución hipergeométrica**
 
-Supongamos que disponemos de una  urna de de sorteos que contiene $m$ bolas blancas y $n$ bolas rojas.
+Supongamos que disponemos de una urna de de sorteos que contiene $m$ bolas blancas y $n$ bolas rojas.
 
-En total en esta urna  hay $m+n$ bolas, $m$ blancas y $n$ rojas. Si extraemos dos bolas de la urna lo podemos hacer de dos formas:
+En total en esta urna hay $m+n$ bolas, $m$ blancas y $n$ rojas. Si extraemos dos bolas de la urna lo podemos hacer de dos formas:
 
-* Extraer una anotar su color y reponerla. Sacar otra y anotar su color. Hemos extraído  la bola con reposición.
+* Extraer una anotar su color y reponerla. Sacar otra y anotar su color. Hemos extraído la bola con reposición.
 * Extraer simultáneamente dos bolas (sin reposición) y contar el número de bolas blancas.
 
 
 
 Sea $X$ es la v.a. que cuenta el número de bolas blancas extraídas.
 
-* En el primer caso, $X$ es una $B(n=2,p=\frac{m}{m+n})$  ya que consiste en  repetir dos veces el mismo experimento de Bernoulli.
+* En el primer caso, $X$ es una $B(n=2,p=\frac{m}{m+n})$ ya que consiste en repetir dos veces el mismo experimento de Bernoulli.
 * En el segundo caso, $X$ sigue una distribución hipergeométrica que estudiaremos en esta sección.
 
 
@@ -2786,37 +2786,37 @@ Sea $X$ es la v.a. que cuenta el número de bolas blancas extraídas.
 
 <l class="definition"> Distribución hipergeométrica </l>
 
-Sean $n$, $m$ y $k$ tres número enteros positivos y tales  que $k<m+n$.
+Sean $n$, $m$ y $k$ tres número enteros positivos y tales que $k<m+n$.
 
 Consideremos una urna que contiene $m+n$ bolas de las que $m$ son blancas y las restantes $n$ no (son no blancas).
 
-El número total de bolas es $m+n$. Extraemos  de forma aleatoria $k$ bolas de la urna sin reemplazarlas.
+El número total de bolas es $m+n$. Extraemos de forma aleatoria $k$ bolas de la urna sin reemplazarlas.
 
 
 
 
-Sea  $X$ la v.a. que cuenta el número de bolas blancas extraídas. Diremos que la distribución de $X$ es hipergeométrica de parámetros $m$, $n$ y $k$ y la denotaremos por $H(m,n,k)$.
+Sea $X$ la v.a. que cuenta el número de bolas blancas extraídas. Diremos que la distribución de $X$ es hipergeométrica de parámetros $m$, $n$ y $k$ y la denotaremos por $H(m,n,k)$.
 
 Su dominio es 
 
-$$D_X=\left\{x\in\mathbf{N}\mid \max\{0,k-n\}\leq  x \leq \min\{m,k\}\right\}$$
+$$D_X=\left\{x\in\mathbf{N}\mid \max\{0,k-n\}\leq x \leq \min\{m,k\}\right\}$$
 
 
-Para explicarlo,  veamos varios ejemplos: 
+Para explicarlo, veamos varios ejemplos: 
 
-* $H(m=5,n=2,k=3)$. Tenemos  $m=5$ bolas blancas, $n=2$ no blancas y sacamos $k=3$ bolas sin reposición.
-  + En este caso el mínimo de bolas blancas extraídas es $1=k-n=3-2$, ya que sólo hay dos no blancas.
-  + En cambio, el máximo si es $k=3$, ya que tenemos bolas blancas de "sobra". 
+* $H(m=5,n=2,k=3)$. Tenemos $m=5$ bolas blancas, $n=2$ no blancas y sacamos $k=3$ bolas sin reposición.
+ + En este caso el mínimo de bolas blancas extraídas es $1=k-n=3-2$, ya que sólo hay dos no blancas.
+ + En cambio, el máximo si es $k=3$, ya que tenemos bolas blancas de "sobra". 
 
 
-$$D_X=\left\{x\in\mathbf{N}\mid \max\{0,k-n\}\leq  x \leq \min\{m,k\}\right\}$$
+$$D_X=\left\{x\in\mathbf{N}\mid \max\{0,k-n\}\leq x \leq \min\{m,k\}\right\}$$
 
 * $H(m=2,n=5,k=3)$. Tenemos $m=2$ bolas blancas, $n=5$ no blancas y sacamos $k=3$ bolas sin reposición. 
-  + En este caso el mínimo de bolas blancas es $0$ ya que puedo sacar 3 no blancas.
-  + En cambio, el máximo si es $m=2$, ya que aunque saquemos $k=3$ bolas, al llegar a 2 ya hemos  extraído todas las bolas blancas de la urna.  
+ + En este caso el mínimo de bolas blancas es $0$ ya que puedo sacar 3 no blancas.
+ + En cambio, el máximo si es $m=2$, ya que aunque saquemos $k=3$ bolas, al llegar a 2 ya hemos extraído todas las bolas blancas de la urna. 
 
 * $H(m=10,n=10,k=3)$. Tenemos $m=10$ bolas blancas, $n=10$ no blancas y sacamos $k=3$ bolas sin reposición. 
-  + En este caso podemos obtener desde $0$ blancas hasta $k=3$ blancas.
+ + En este caso podemos obtener desde $0$ blancas hasta $k=3$ blancas.
 
 
 
@@ -2828,8 +2828,8 @@ $$
 P_{X}(x)=\left\{
 \begin{array}{ll}
 \frac{\binom{m}{x}\cdot \binom{n}{k-x}}{\binom{m+n}{k}}, & \mbox{ si }
-\max\{0,k-n\}\leq x \leq \min\{m,k\}, \mbox { para  } x\in \mathbf{N},\\
-0,  & \mbox{en otro caso.}\end{array}\right.
+\max\{0,k-n\}\leq x \leq \min\{m,k\}, \mbox { para } x\in \mathbf{N},\\
+0, & \mbox{en otro caso.}\end{array}\right.
 $$
 
 
@@ -2844,7 +2844,7 @@ Así podemos **parametrizar alternativamente** la distribución hipergeométrica
 
 $$H(N,k,p)\mbox{ donde } p=\frac{m}{N}.$$
 
-### Resumen distribución   Hipergeométrica  $H(m,n,k)$.
+### Resumen distribución Hipergeométrica $H(m,n,k)$
 
 \renewcommand{\arraystretch}{1.75}
 \begin{table}
@@ -2852,17 +2852,17 @@ $$H(N,k,p)\mbox{ donde } p=\frac{m}{N}.$$
 \begin{tabular}{|l|}
 \hline\rowcolor{LightBlue}
 $X= \left\{\begin{array}{l}
-\mbox{número de bolas blancas  en $k$ extracciones}\\
+\mbox{número de bolas blancas en $k$ extracciones}\\
 \mbox{sin reposición de una urna con} $m$\\
 \mbox{bolas blancas y }$n$ \mbox{ negras.}
-\end{array}\right.$;  $H(m,n,k)$
+\end{array}\right.$; $H(m,n,k)$
 \\\hline
-$D_X=\left\{x\in\mathbb{N}\mid \max\{0,k-n\}\leq  x \leq \min\{m,k\}\right\}$\\\hline
+$D_X=\left\{x\in\mathbb{N}\mid \max\{0,k-n\}\leq x \leq \min\{m,k\}\right\}$\\\hline
 $P_X(x)=P(X=x)=\left\{
 \begin{array}{ll}
 \frac{\binom{m}{x}\cdot \binom{n}{k-x}}{\binom{m+n}{k}}, & \mbox{ si }
 \max\{0,k-n\}\leq x \leq \min\{m,k\}, \\
-0,  & \mbox{en otro caso.}\end{array}\right.$\\\hline
+0, & \mbox{en otro caso.}\end{array}\right.$\\\hline
 $F_X(x)=P(X\leq x)$.\\\hline
 $E(X)=\frac{k\cdot m}{m+n}$; $Var(X)=k\cdot\frac{m}{m+n}\cdot\left(1-\frac{m}{m+n}\right) \cdot\frac{m+n-k}{m+n-1}$
 \\\hline
@@ -2873,12 +2873,12 @@ $E(X)=\frac{k\cdot m}{m+n}$; $Var(X)=k\cdot\frac{m}{m+n}\cdot\left(1-\frac{m}{m+
 
 
 
-  
+ 
 **Urna con bolas blancas y rojas**
 
-Tenemos una urna con 15 bolas blancas y 10 bolas rojas. Extraemos al azar tres bolas de la urna sin reposición. Sea  $X$ el número de bolas **blancas** extraídas. Bajo esta condiciones, la v.a. $X$ sigue una ley de distribución $H(m=15,n=10,k=3)$.
+Tenemos una urna con 15 bolas blancas y 10 bolas rojas. Extraemos al azar tres bolas de la urna sin reposición. Sea $X$ el número de bolas **blancas** extraídas. Bajo esta condiciones, la v.a. $X$ sigue una ley de distribución $H(m=15,n=10,k=3)$.
 
-  
+ 
 
 
 
@@ -2891,23 +2891,23 @@ $$
 P_X(x)=P(X=x)=\left\{
 \begin{array}{ll}
 \frac{\binom{m}{x}\cdot \binom{n}{k-x}}{\binom{m+n}{k}} & \mbox{ si }
-\max\{0,k-n\}\leq x \leq \min\{m,k\} \mbox { para  } x\in \mathbf{N}\\
-0  & \mbox{en otro caso}\end{array}\right.,
+\max\{0,k-n\}\leq x \leq \min\{m,k\} \mbox { para } x\in \mathbf{N}\\
+0 & \mbox{en otro caso}\end{array}\right.,
 $$
 
 $$\mbox{sustituyendo }\scriptsize{
 P_X(x)=P(X=x)=\left\{
 \begin{array}{ll}
 \frac{\binom{15}{x}\cdot \binom{10}{3-x}}{\binom{25}{3}} & \mbox{ si }
-0\leq x \leq 3 \mbox { para  } x\in \mathbf{N}\\
-0  & \mbox{en otro caso}\end{array}\right.
+0\leq x \leq 3 \mbox { para } x\in \mathbf{N}\\
+0 & \mbox{en otro caso}\end{array}\right.
 }$$
 
 
-  
+ 
 
 
-### Ejemplo clásico urna $m=15$ blancas, $n=10$ rojas y $k=3$ extracciones sin reposición.
+### Ejemplo clásico urna $m=15$ blancas, $n=10$ rojas y $k=3$ extracciones sin reposición
 
 
 
@@ -2928,12 +2928,12 @@ $P(X=2)=\frac{`r choose(15,2)`\cdot`r choose(10,1)` }{`r choose(25,3)`}=`r choos
 phyper(2,15,10,3)
 ```
 
-  
+ 
 
 
 
 
-La probabilidad de que saquemos más de   1 bola blanca es
+La probabilidad de que saquemos más de 1 bola blanca es
 
 $$
 \begin{array}{rl}
@@ -2948,7 +2948,7 @@ P(X> 1)&= 1-P(X\leq 1)=1-(P(X=0)+P(X=1))\\
 \end{array}
 $$
 
-  
+ 
 
 
 
@@ -2956,7 +2956,7 @@ $$
 
 
 
-El número esperado de  bolas blancas extraídas para una v.a. $X$ $H(m=15,n=10,k=3)$ es 
+El número esperado de bolas blancas extraídas para una v.a. $X$ $H(m=15,n=10,k=3)$ es 
 
 $$E(X)=\frac{k\cdot m}{m+n}=\frac{3\cdot 15}{15+10}=\frac{45}{35}=`r round(45/35,6)`.$$
 
@@ -3025,7 +3025,7 @@ par(mfrow=c(1,1))
 
 
 
-### Cálculos con python 
+### Cálculos con Python
 
 
 Sea $X$ una $H(m,n,k)$, las funciones de `scipy.stats` cambian los parámetros 
@@ -3033,7 +3033,7 @@ Sea $X$ una $H(m,n,k)$, las funciones de `scipy.stats` cambian los parámetros
 
 * $M$ es el número total de bolas. Con nuestra parametrización $M=m+n$.
 * $n$ es el número de bolas blancas. Con nuestra parametrización $n=m$.
-* $N$  es el número de extracciones. Con nuestra parametrización $N=k$.
+* $N$ es el número de extracciones. Con nuestra parametrización $N=k$.
 
 ```{python}
 from scipy.stats import hypergeom

@@ -1,0 +1,76 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "ApLabAD"
+  subtitle: "Apuntes de Laboratorio de Análisis de Datos"
+  author: "RICUIB"
+  date: "febrero 2025"
+
+  # Nombre fijo del PDF (y del resto de salidas del book)
+  output-file: "ApLabAD"
+
+  # Botón/enlace de descarga en el HTML (útil para GitHub Pages)
+  downloads: [pdf]
+
+  chapters:
+    - index.qmd
+    - part: probabilidad_y_variables_aleatorias.qmd
+      chapters:
+        - preliminares.qmd
+        - probabilidad.qmd
+        - variables_aleatorias.qmd
+        - teoria_probabilidad.qmd
+        - distribuciones_notables_1.qmd
+        - distribuciones_notables_2.qmd
+
+bibliography: references.bib
+lang: es
+
+format:
+  html:
+    # Selector claro/oscuro (permite "escoger el color de fondo")
+    theme:
+      light: materia
+      dark: darkly
+    css: custom_callouts_fixed.css
+
+    # Iconos para callouts (Bootstrap Icons)
+    include-in-header:
+      - text: |
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    cover-image: 100_prisoners_boxes_fixed.png
+
+    # Navegación/índice del libro: la barra lateral se puede colapsar/expandir
+    sidebar:
+      collapse-level: 2
+
+    # Índice "en esta página" (derecha). Puedes poner false si no lo quieres.
+    toc: true
+    toc-location: right
+
+    code-copy: true
+    fig-width: 8
+    fig-height: 6
+    highlight: tango
+    code:
+      line-numbers: true
+
+  pdf:
+    documentclass: scrreprt
+    highlight: tango
+    number-sections: true
+    toc: true
+    toc-depth: 3
+    colorlinks: true
+    keep-tex: true
+    include-in-header: customblocks_fixed.tex
+    fig-width: 6
+    fig-height: 4
+    code:
+      line-numbers: true
+
+filters:
+  - parse-latex
