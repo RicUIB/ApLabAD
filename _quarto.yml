@@ -13,15 +13,11 @@ book:
   chapters:
     - index.qmd
     - part: probabilidad_y_variables_aleatorias.qmd
-<<<<<<< HEAD
       chapters:
-=======
-      chapters: 
->>>>>>> c5bc480895a783fa1264d0ead48dc8d22eb1a858
         - preliminares.qmd
         - probabilidad.qmd
         - variables_aleatorias.qmd
-        - teoria_probabilidad.qmd
+#        - teoria_probabilidad.qmd
         - distribuciones_notables_1.qmd
         - distribuciones_notables_2.qmd
 

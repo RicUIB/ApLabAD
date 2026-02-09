@@ -1,6 +1,4 @@
-# Distribuciones notables 2: distribuciones continuas
-
-
+# Distribuciones notables continuas
 
 ```{r setup0, include = FALSE}
 knitr::opts_chunk$set(echo = TRUE, cache = FALSE,

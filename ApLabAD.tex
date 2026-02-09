@@ -990,7 +990,6 @@ combinatoria, como:
 
 \begin{itemize}
 \item
-<<<<<<< HEAD
   Propiedades de los números binomiales:
 
   \begin{enumerate}
@@ -1034,49 +1033,6 @@ donde
 \]
 
 Si nos son necesarias, las volveremos a utilizar a lo largo del curso o
-=======
-  Propiedades de los números combinatorios
-\end{itemize}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \(\binom{m}{n}=\binom{m}{m-n}\)
-\item
-  \(\binom{m}{n}=\binom{m-1}{n}+\binom{m-1}{n-1}\)
-\end{enumerate}
-
-\begin{itemize}
-\tightlist
-\item
-  Binomio de Newton.
-\end{itemize}
-
-\[
-(a+b)^n=\sum_{k=0}^n  \binom{n}{k} \cdot a^k \cdot  b^{n-k}     
-\]
-
-\[
-  (1+1)^n=\sum_{k=0}^n  \binom{n}{k} \cdot 1^k \cdot  1^{n-k} =\sum_{k=0}^n  \binom{n}{k} =2^n.
-  \]
-
-\[(1-1)^n=\sum_{k=0}^n  \binom{n}{k} \cdot 1^k \cdot  (-1)^{n-k} =\sum_{k=0}^n  \binom{n}{k} \cdot (-1)^{n-k}=0.\]
-
-\begin{itemize}
-\tightlist
-\item
-  Número multinomial y Multinomio
-\end{itemize}
-
-\[(a_1+a_2+\cdots + a_k)^n=\sum_{n_1+n_2+\cdots + n_k=n} \binom{n}{n_1\quad n_2 \quad\ldots \quad n_k} \cdot a_1^{n_1}\cdot a_2^{n_2}\cdots a_k^{n_k}.\]
-
-Donde
-\[\binom{n}{n_1\quad n_2 \quad\ldots \quad n_k} = \frac{n!}{n_1!\cdot n_2!\cdot \ldots \cdot n_k!}\]
-es el número multinomial.
-
-Si nos son necesarias las volveremos a repetir a lo largo del curso o
->>>>>>> c5bc480895a783fa1264d0ead48dc8d22eb1a858
 bien daremos enlaces para que las podáis estudiar en paralelo.
 
 \chapter{Teoría elemental de la
@@ -4249,426 +4205,8 @@ media} \(\mu\) más de \(a=2\) desviaciones típicas es menor o igual que
 Es decir sólo el 25\% de los valores estarán alejados de la media más de
 \(2\cdot \sigma\) ¡\emph{Sea cual sea la distribución de la v.a.}!
 
-\chapter{Teoría de la probabilidad}\label{teoruxeda-de-la-probabilidad}
-
-En esta sección definiremos de forma rigurosa los conceptos básicos de
-la teoría de la probabilidad.
-
-Lo haremos de forma esquemática dejando las demostraciones que sean
-fáciles o medias al lector, como ejercicio.
-
-Se supone que el lector conoce la teoría básica dde conjuntos,
-operaciones entrde conjuntos, aplicaciones entrde conjuntos y principios
-básicos de numerabilidad.
-
-\begin{Definicion}{Definición: Álgebra y \(\sigma\)-álgebra}{}
-
-Sea \(\Omega\) un conjunto y
-\(\mathcal{A}\subseteq \mathcal{P}(\Omega)\) una familia de subconjuntos
-de \(\Omega\). Diremos que \(\mathcal{A}\) es una \textbf{álgebra} sobre
-\(\Omega\) si:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \(\Omega\in\mathcal{A}\).
-\item
-  Si \(A\in\mathcal{A}\), entoncess \(A^c\in\mathcal{A}\).
-\item
-  Si \(A_1,\ldots,A_n\in\mathcal{A}\), entoncess
-  \(\bigcup_{i=1}^{n} A_i\in\mathcal{A}\), para todo \(n\in\mathbb{N}\).
-\end{enumerate}
-
-Si, además, \(\mathcal{A}\) es cerrada respecto a \textbf{uniones
-numerables}, es decir, si para toda familia
-\((A_i)_{i=1}^{\infty}\subseteq\mathcal{A}\) se cumple que
-\(\bigcup_{i=1}^{\infty} A_i\in\mathcal{A}\), entoncess diremos que
-\(\mathcal{A}\) es una \textbf{\(\sigma\)-álgebra} sobre \(\Omega\).
-
-El par \((\Omega,\mathcal{A})\) se llama \textbf{espacio medible} y los
-elementos de \(\mathcal{A}\) se denominan \textbf{conjuntos medibles} (o
-\textbf{sucesos}).
-
-\end{Definicion}
-
-\begin{Proposicion}{Proposición}{}
-
-Sea \(\mathcal{A}\) una \(\sigma\)-álgebra sobre \(\Omega\). Entonces:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \(\emptyset\in\mathcal{A}\).
-\item
-  \(\mathcal{A}\) es cerrada respecto a \textbf{intersecciones finitas y
-  numerables} y respecto a la \textbf{diferencia dde conjuntos}. En
-  particular, si \(A,B\in\mathcal{A}\), entoncess
-  \(A\cap B\in\mathcal{A}\) y \(A\setminus B\in\mathcal{A}\).
-\item
-  (Continuidad para uniones crecientes) Si
-  \((A_i)_{i=1}^{\infty}\subseteq\mathcal{A}\) cumple
-  \(A_i\subseteq A_{i+1}\) para todo \(i\), entoncess
-  \(\bigcup_{i=1}^{\infty} A_i\in\mathcal{A}\).
-\item
-  (Continuidad para intersecciones decrecientes) Si
-  \((A_i)_{i=1}^{\infty}\subseteq\mathcal{A}\) cumple
-  \(A_{i+1}\subseteq A_i\) para todo \(i\), entoncess
-  \(\bigcap_{i=1}^{\infty} A_i\in\mathcal{A}\).
-\end{enumerate}
-
-\end{Proposicion}
-
-\begin{Proposicion}{Proposición}{}
-
-Sean \(\mathcal{A}\) y \(\mathcal{B}\) dos \(\sigma\)-álgebras de
-\(\Omega\) entoncess
-\(\mathcal{C}={A\cap B: A\in\mathcal{A}, B\in\mathcal{B}}\) es una
-\(\sigma\)-álgebra de \(\Omega\).
-
-Si \(\mathcal{F}\in\mathcal{P}(\Omega)\) particular la intersección de
-todas as \(\sigma\)-álgebras de \(\Omega\) que continene a
-\(\mathcal{F}\) recibe el nombre de \(\sigma\)-álgebra generada por
-\(\mathcal{F}\).
-
-\end{Proposicion}
-
-Algunas \(\sigma\)-álgebras notables
-
-La \(\sigma\)-álgebra más grande de \(\Omega\) es
-\(\mathcal{P}(\Omega)\) y la más pequeña o trivial es
-\(\{\emptyset,\Omega\}\).
-
-Dado \(A\subseteq \Omega\), la familia \(\{\emptyset,A,A^c,\Omega\}\) es
-la \(\sigma\)-álgebra de \(\Omega\) generada por \(A\).
-
-La \(\sigma\)-álgebra de Borel de \(\mathbb{R}\) es la
-\(\sigma\)-álgebra generada por los semi-intervalos abiertos por derecha
-\(\{x \in R : x<a\}=]-\infty,a]\) con \(a\in\mathbb{R}\).
-
-La anterior \(\sigma\)-álgebra se puede generalizar a \(\mathbb{R}^n\)
-como la \(\sigma\)-álgebra generada por
-\(\{(x_1,\ldots,x_n) \in \mathbb{R}^n : x_i<a\}\) con \(a\in\mathbb{R}\)
-y para \(i\in\{1,2,\ldots,n\}\).
-
-\begin{Proposicion}{Proposición}{}
-
-La intersección arbitraria de \(\sigma\)-álgebras de partes de un
-conjunto \(\Omega\) es una \(\sigma\)-álgebra en \(\Omega\). Así, si
-\(C\) es una familia de subconjuntos de \(\Omega\), existe la más
-pequeña \(\sigma\)-álgebra de \(\Omega\) que contiene a \(C\); la
-llamaremos \(\sigma\)-álgebra engendrada por \(C\)y la denotaremos
-\(\sigma(C)\).''
-
-\end{Proposicion}
-
-Vamos a esbozar la algunas ideas para construir \(\sigma\)-álgebras
-
-\begin{Ejercicio}{\(\sigma\)-álgebra producto Ejercicio}{}
-
-Sean \((\Omega_1,\mathcal{A}_1)\) y \((\Omega_2,\mathcal{A}_2)\) dos
-espacios medibles.
-
-Podemos construir una \textbf{\(\sigma\)-álgebra producto} para un
-espacio medible producto \(\Omega=\Omega_1\times \Omega_2\).
-
-Tomaremos como \textbf{conjunto producto medible} los conjuntos de la
-forma \(A_1 \times A_2\) con \(A_i \in \mathcal{A}_i\) para \(i=1,2\).
-La \(\sigma\)- álgebra generada por estos productos dde conjuntos
-medibles se llama \(\sigma\)-\textbf{álgebra producto} y la denotaresmos
-por \(\mathcal{A}_1 \times \mathcal{A}_2\).
-
-Estudiad si la \(\sigma\)-álgebra de Borel en \(\mathbb{R}^n\) es igual
-al producto de \(n\) copias de la \(\sigma\)-álgebra de Borel en
-\(\mathbb{R}\).
-
-\end{Ejercicio}
-
-\begin{Ejercicio}{\(\sigma\)-álgebra inducida}{}
-
-Dado un espacio medible \((\Omega,\mathcal{A})\) y un subconjunto
-\(B \subset \Omega\) no vacío, podemos construir una \(\sigma\)-álgebra
-\(\sigma\)-álgebra en \(B\) a la que llamaremos inducida
-
-\[
- \mathcal{A}_B = \{ A \cap B : A \in \mathcal{A} \}
- \]
-
-Demostrar que \((B,\mathcal{A}_B)\) es un espacio medible.
-
-\end{Ejercicio}
-
-\begin{Definicion}{Definición: \(pi\) y \(d\) sistemas}{}
-
-Se define \(\pi\)-\textbf{sistema} con una familia subconjuntos de
-\(\Omega\) cerrada bajo intersecciones finitas.
-
-Definimos \(d\)-\textbf{sistema} o clase de Dynkin con una familia de
-subconjuntos de \(\Omega\) \(\mathcal{D}\subseteq\mathcal{P}(\Omega)\)
-que cumplan las siguientes propiedades:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \(\Omega\in \mathcal{D}\).
-\item
-  Si \(\{A_n\}_{n\geq 1}\) es una sucesión creciente dde conjuntos de
-  \(\mathcal{D}\), entoncess
-  \(\cup_{n=1}^{\infty} A_n \in \mathcal{D}.\)
-\item
-  Si \(A,B\in \mathcal{D}\) y \(A\subset B\), entoncess
-  \(B - A \in \mathcal{D}\).
-\end{enumerate}
-
-\end{Definicion}
-
-\textbf{Ejercicio}
-
-Demostrar que la intersección arbitraria de d-sistemas sigue siendo un
-d-sistema, lo que facilita la demostración de que una familia de
-subconjuntos forma una \(\sigma\)-álgebra.
-
-\textbf{Problemas propuestos}
-
-\section{Medidas y probabilidades}\label{medidas-y-probabilidades}
-
-\subsection{\texorpdfstring{\textbf{Definición de
-Medida}}{Definición de Medida}}\label{definiciuxf3n-de-medida}
-
-Sea \((\Omega,\mathcal{A})\) un \textbf{espacio medible}, donde:
-
-\begin{itemize}
-\item
-  \(\Omega\) es el \textbf{espacio de referencia}.
-\item
-  \(\mathcal{A}\) es una \textbf{\(\sigma\)-álgebra} de subconjuntos de
-  \(\Omega\).
-\end{itemize}
-
-Una \textbf{medida} es una función:
-
-\[
-\mu : \mathcal{A} \to [0, +\infty]
-\]
-
-que cumple dos propiedades fundamentales:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \textbf{Aditividad numerable (\(\sigma\)-aditividad):} Si \((A_n)\)es
-  una sucesión dde conjuntos \textbf{disjuntos} en \(\mathcal{A}\),
-  entoncess:
-\end{enumerate}
-
-\[
-  \mu\left( \bigcup_n A_n \right) = \sum_n \mu(A_n).
-  \]
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
-\item
-  \textbf{Medida del conjunto vacío:} \[
-    \mu(\emptyset) = 0.
-    \]
-\end{enumerate}
-
-A la \(\sigma\)-álgebra y su espacio de medida
-\((\Omega,\mathcal{A},\mu)\) la llamaremos \textbf{espacio de medida}.
-
-\subsection{\texorpdfstring{\textbf{Tipos de
-medidas}}{Tipos de medidas}}\label{tipos-de-medidas}
-
-Según el comportamiento de \$\mu \$, podemos clasificar las medidas en:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  \textbf{Medida finita:} Si \(\mu(\Omega)<+\infty\), es decir, la
-  medida total del espacio es finita.
-\item
-  \textbf{Medida \(\sigma\)-finita:} Si \(\Omega\) puede cubrirse con
-  una colección \textbf{numerable} dde conjuntos medibles de
-  \textbf{medida finita}.
-\item
-  \textbf{Medida de probabilidad:} Si \$\mu(\Omega) = 1 \$, se llama
-  \textbf{probabilidad}, y el espacio medible
-  \((\Omega, \mathcal{A}, \mu)\) se llama \textbf{espacio de
-  probabilidad}.
-\end{enumerate}
-
-\subsection{\texorpdfstring{\textbf{Ejemplos}}{Ejemplos}}\label{ejemplos}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  \textbf{Medida de conteo:} Si \(\mu(A)\) es simplemente el número de
-  elementos de\(A\) (cuando\(A\) es finito o numerable), entoncess es
-  una medida finita si \(\Omega\) es finito, pero puede ser infinita si
-  \(\Omega\)es infinito.
-\item
-  Medida de Lebesgue en \(\mathbb{R}\):
-\end{enumerate}
-
-\begin{itemize}
-\tightlist
-\item
-  Es la \textbf{medida estándar de la longitud} en \(\mathbb{R}\).
-\item
-  Es una \textbf{medida \(\sigma\)-finita} porque \(\mathbb{R}\) puede
-  cubrirse con intervalos de medida finita como \([-n,n]\).
-\end{itemize}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
-\tightlist
-\item
-  Medida de probabilidad uniforme en \([0,1]\):
-\end{enumerate}
-
-\begin{itemize}
-\tightlist
-\item
-  Es una \textbf{medida de probabilidad} porque \(\mu([0,1]) = 1\).
-\item
-  La probabilidad de un subconjunto \(A\) es simplemente la longitud de
-  \(A\) en \([0,1]\).
-\end{itemize}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{3}
-\tightlist
-\item
-  \textbf{Medida de Dirac:}
-\end{enumerate}
-
-\begin{itemize}
-\tightlist
-\item
-  Es una \textbf{medida de probabilidad}.
-\item
-  La probabilidad de un conjunto \(A\) es 1 si \(0\in A\) y 0 en caso
-  contrario.
-\end{itemize}
-
-\section{\texorpdfstring{\textbf{Proposición 3.1: Propiedades
-fundamentales de la
-medida}}{Proposición 3.1: Propiedades fundamentales de la medida}}\label{proposiciuxf3n-3.1-propiedades-fundamentales-de-la-medida}
-
-Sea \(\mu\) una medida definida en un espacio medible
-\((\Omega,\mathcal{A})\), se cumplen las siguientes propiedades:
-
-\subsection{\texorpdfstring{\textbf{(a)
-Monotonía}}{(a) Monotonía}}\label{a-monotonuxeda}
-
-Si \(A \subseteq B\), entoncess: \[
-\mu(A) \leq \mu(B).
-\] Si además \(\mu(A) < +\infty\), entoncess: \[
-\mu(B - A) = \mu(B) - \mu(A).
-\]
-
-\textbf{Demostración}: Como \(B\) puede descomponerse como
-\(B = A \cup (B - A)\) con \(A \cap (B - A) = \emptyset\), la propiedad
-de \textbf{aditividad de la medida} nos dice que: \[
-\mu(B) = \mu(A) + \mu(B - A) \geq \mu(A).
-\] Si \(\mu(A) < +\infty\), despejando obtenemos
-\(\mu(B - A) = \mu(B) - \mu(A)\).
-
-\subsection{\texorpdfstring{\textbf{(b) Continuidad hacia
-arriba}}{(b) Continuidad hacia arriba}}\label{b-continuidad-hacia-arriba}
-
-Si \((A_n)\) es una sucesión creciente dde conjuntos, es decir, \[
-A_1 \subseteq A_2 \subseteq A_3 \subseteq \dots,
-\] entoncess: \[
-\mu\left(\bigcup_n A_n\right) = \lim_{n \to \infty} \mu(A_n).
-\]
-
-\textbf{Demostración}: Sea \(A = \bigcup_n A_n\). Si
-\(\mu(A_n) = +\infty\) para algún \(n\), entoncess \(\mu(A_k) = \infty\)
-para todo \(k \geq n\) y el resultado es trivial. Si todos los \(A_n\)
-tienen \textbf{medida finita}, reescribimos la unión como:
-
-\[
-A = A_1 \cup (A_2 - A_1) \cup (A_3 - A_2) \cup \dots
-\]
-
-Dado que los términos son \textbf{disjuntos}, la aditividad numerable
-implica: \[
-\mu(A) = \mu(A_1) + (\mu(A_2) - \mu(A_1)) + (\mu(A_3) - \mu(A_2)) + \dots
-\] y esto converge a \(\lim_{n} \mu(A_n)\).
-
-\subsection{\texorpdfstring{\textbf{(c) Continuidad hacia
-abajo}}{(c) Continuidad hacia abajo}}\label{c-continuidad-hacia-abajo}
-
-Si \((A_n)\) es una sucesión decreciente dde conjuntos, es decir: \[
-A_1 \supseteq A_2 \supseteq A_3 \supseteq \dots,
-\] y al menos uno de los \(A_n\) tiene medida finita, entoncess: \[
-\mu\left(\bigcap_n A_n\right) = \lim_{n \to \infty} \mu(A_n).
-\]
-
-\textbf{Demostración}: Podemos suponer sin pérdida de generalidad que
-\(A_1\) tiene medida finita. Definimos \(A = \bigcap_n A_n\) y
-consideramos la sucesión creciente \(B_n = A_1 - A_n\), la cual
-satisface:
-
-\[
-\bigcup_n B_n = A_1 - A.
-\]
-
-Aplicando la \textbf{continuidad hacia arriba} al conjunto \(B_n\), se
-obtiene: \[
-\mu(A_1 - A) = \lim_n \mu(A_1 - A_n).
-\]
-
-Restando de \(\mu(A_1)\), se obtiene la ecuación deseada: \[
-\mu(A) = \lim_n \mu(A_n).
-\]
-
-\subsection{\texorpdfstring{\textbf{(d) Subaditividad numerable
-(σ-subaditividad)}}{(d) Subaditividad numerable (σ-subaditividad)}}\label{d-subaditividad-numerable-ux3c3-subaditividad}
-
-Si \((A_n)\) es una sucesión arbitraria dde conjuntos, entoncess: \[
-\mu\left(\bigcup_n A_n\right) \leq \sum_n \mu(A_n).
-\]
-
-\textbf{Demostración}: Sea \(A := \bigcup_{n=1}^{\infty} A_n\).
-Descomponemos \(A\) en términos de las uniones de diferencias: \[
-A = \bigcup_{n=1}^{\infty} \left( A_n - \bigcup_{i=1}^{n-1} A_i \right).
-\]
-
-Por \textbf{aditividad numerable} y el hecho de que la medida es no
-negativa: \[
-\mu(A) = \sum_n \mu(A_n - \bigcup_{i=1}^{n-1} A_i) \leq \sum_n \mu(A_n).
-\]
-
-\section{\texorpdfstring{\textbf{Conclusión}}{Conclusión}}\label{conclusiuxf3n}
-
-Estas propiedades son fundamentales en la teoría de la medida y se
-aplican en muchas áreas como \textbf{análisis real, probabilidad y
-teoría de integración}. En particular:
-
-\begin{itemize}
-\tightlist
-\item
-  La \textbf{monotonía} muestra que medidas más grandes contienen
-  subconjuntos de medida más pequeña.
-\item
-  La \textbf{continuidad hacia arriba y hacia abajo} garantiza que la
-  medida respeta límites de secuencias dde conjuntos.
-\item
-  La \textbf{σ-subaditividad} es una propiedad crucial para la
-  construcción de medidas y prueba de teoremas como el \textbf{teorema
-  de Carathéodory}.
-\end{itemize}
-
-\chapter{Distribuciones notables 1}\label{distribuciones-notables-1}
+\chapter{Distribuciones notables
+discretas}\label{distribuciones-notables-discretas}
 
 \section{Introducción}\label{introducciuxf3n-1}
 
@@ -4829,11 +4367,7 @@ Veamos los cálculos básicos \(Ber(p=0.25)\) en \texttt{R}.
 \end{Shaded}
 
 \begin{verbatim}
-<<<<<<< HEAD
- [1] 0 1 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 1 0
-=======
- [1] 0 0 0 0 0 0 1 1 1 0 0 0 1 0 0 0 0 1 1 0
->>>>>>> c5bc480895a783fa1264d0ead48dc8d22eb1a858
+ [1] 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1
 \end{verbatim}
 
 El siguiente código dibuja las función de probabilidad y la de
@@ -5207,19 +4741,11 @@ generaremos una muestra aleatoria de 100 valores de una población
 \end{Shaded}
 
 \begin{verbatim}
-<<<<<<< HEAD
-array([4, 4, 4, 5, 5, 6, 8, 5, 6, 5, 7, 5, 2, 3, 9, 4, 4, 9, 2, 4, 6, 7,
-       4, 5, 4, 8, 7, 5, 6, 6, 6, 0, 6, 4, 5, 6, 7, 5, 2, 7, 4, 5, 5, 5,
-       3, 2, 3, 5, 3, 8, 6, 3, 8, 7, 8, 5, 6, 2, 4, 7, 3, 4, 6, 7, 4, 5,
-       3, 5, 7, 6, 3, 4, 5, 5, 4, 6, 5, 3, 7, 3, 4, 6, 4, 5, 4, 3, 6, 3,
-       5, 2, 4, 8, 3, 6, 5, 9, 5, 8, 4, 8], dtype=int64)
-=======
-array([5, 5, 5, 9, 5, 6, 6, 7, 7, 6, 4, 7, 5, 4, 4, 4, 6, 2, 7, 3, 3, 6,
-       4, 4, 2, 8, 6, 5, 6, 7, 6, 7, 4, 5, 5, 5, 3, 4, 7, 6, 6, 4, 7, 5,
-       6, 5, 4, 6, 6, 6, 6, 5, 6, 3, 6, 5, 5, 4, 6, 7, 9, 4, 4, 3, 5, 4,
-       8, 4, 4, 5, 2, 3, 5, 6, 4, 6, 5, 6, 6, 4, 3, 5, 5, 5, 4, 6, 6, 7,
-       5, 6, 2, 6, 5, 6, 3, 5, 7, 6, 3, 3], dtype=int64)
->>>>>>> c5bc480895a783fa1264d0ead48dc8d22eb1a858
+array([3, 5, 6, 6, 3, 5, 4, 4, 4, 9, 7, 9, 4, 4, 4, 8, 5, 5, 0, 9, 5, 5,
+       6, 3, 3, 4, 6, 7, 5, 6, 3, 6, 4, 5, 7, 5, 5, 4, 5, 4, 7, 7, 3, 4,
+       5, 6, 7, 3, 5, 5, 4, 8, 4, 9, 6, 4, 3, 6, 7, 4, 4, 6, 6, 2, 3, 6,
+       4, 5, 5, 3, 2, 7, 7, 4, 3, 6, 8, 5, 5, 6, 3, 4, 3, 7, 3, 6, 6, 4,
+       4, 5, 7, 4, 7, 6, 9, 6, 4, 3, 4, 7], dtype=int64)
 \end{verbatim}
 
 \begin{Advertencia}{Observación}{}
@@ -5235,21 +4761,12 @@ una muestra aleatoria distinta.
 \end{Shaded}
 
 \begin{verbatim}
-<<<<<<< HEAD
-array([ 4,  7,  6,  4,  9,  6,  3,  3,  8,  7,  6,  4,  3,  7,  2, 13,  5,
-        5,  5,  7,  8,  2,  3,  4,  2,  1,  6,  8,  4,  4,  7,  7,  7,  4,
-        5,  7,  4,  7,  6,  3,  3,  5, 10,  5,  7,  1,  7,  4,  3,  5,  4,
-        8,  5,  2,  3,  8,  3,  7,  7,  7,  6,  4,  4,  8,  3,  6,  5,  6,
-        7,  5,  5,  6,  5,  8,  3,  5,  6,  6,  2,  3,  6,  7,  6,  4,  2,
-        7,  8,  5,  6,  3,  3,  3,  7,  3,  3,  7,  5,  7,  3,  2],
-=======
-array([ 1,  3,  4,  5,  5,  3,  5,  8,  5,  6,  3,  8,  2,  9,  9,  2,  7,
-        3,  7,  4,  5,  5,  3,  6,  1,  3,  3,  5,  6,  6,  2,  2,  4,  6,
-        6,  3,  6,  6, 10,  5,  7, 10,  4,  4,  6,  7,  4,  7,  3,  7,  7,
-        6,  2,  5,  1,  9,  4,  6,  4,  6,  5,  4,  5,  7,  5,  7,  4,  4,
-        5,  2,  7,  5,  3,  5,  4,  9,  7,  5,  5,  6,  3,  5,  9,  5,  6,
-        9,  5,  7,  8,  9,  4,  6,  3,  6,  3,  7,  5,  9,  5,  3],
->>>>>>> c5bc480895a783fa1264d0ead48dc8d22eb1a858
+array([ 3,  3,  4,  4,  5,  4,  5,  4,  5,  6,  3,  5,  3,  5,  4,  4,  7,
+        7,  4,  3,  5,  5,  4,  7,  6,  6,  7,  4,  6,  4,  6,  2,  7,  5,
+        3, 11,  6,  7,  8,  4,  3,  6,  4,  2,  3,  8,  5,  2,  6,  5,  4,
+        6,  3,  2,  8, 10,  7,  6,  3,  8,  3,  8,  2,  7,  3,  4, 10,  6,
+        7,  9,  4,  9,  5,  4,  4,  5,  6,  5,  4, 10,  5,  5,  6,  6,  4,
+        7,  3,  4,  5,  6,  3,  3,  7,  5,  3,  6,  5, 10,  6,  5],
       dtype=int64)
 \end{verbatim}
 
@@ -5285,11 +4802,7 @@ Veamos algunos cálculos básicos con funciones de Python para la binomial
 \end{Shaded}
 
 \begin{verbatim}
-<<<<<<< HEAD
-array([3, 3, 3, 4, 3, 4, 5, 7, 5, 3], dtype=int64)
-=======
-array([ 4, 10,  6,  5,  4,  5,  4,  5,  9,  6], dtype=int64)
->>>>>>> c5bc480895a783fa1264d0ead48dc8d22eb1a858
+array([3, 4, 4, 6, 8, 2, 5, 7, 2, 3], dtype=int64)
 \end{verbatim}
 
 \subsubsection{Gráficas de la distribución binomial con
@@ -5428,11 +4941,7 @@ Necesitaremos usar estas librerías:
 \end{Shaded}
 
 \begin{verbatim}
-<<<<<<< HEAD
-([<matplotlib.axis.XTick object at 0x000001B1B6FA9520>, <matplotlib.axis.XTick object at 0x000001B1B6FA9D90>, <matplotlib.axis.XTick object at 0x000001B1B6F99CA0>, <matplotlib.axis.XTick object at 0x000001B1C06E2CD0>, <matplotlib.axis.XTick object at 0x000001B1C0036F10>, <matplotlib.axis.XTick object at 0x000001B1C06EFD90>, <matplotlib.axis.XTick object at 0x000001B1C06EF1C0>, <matplotlib.axis.XTick object at 0x000001B1C06EF370>, <matplotlib.axis.XTick object at 0x000001B1C0036F40>, <matplotlib.axis.XTick object at 0x000001B1C06E24F0>, <matplotlib.axis.XTick object at 0x000001B1C06E7F70>], [Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, '')])
-=======
-([<matplotlib.axis.XTick object at 0x00000269D97DA520>, <matplotlib.axis.XTick object at 0x00000269D97DAD90>, <matplotlib.axis.XTick object at 0x00000269D97C9CA0>, <matplotlib.axis.XTick object at 0x00000269D9F12CD0>, <matplotlib.axis.XTick object at 0x00000269D9867F10>, <matplotlib.axis.XTick object at 0x00000269D9F1FD90>, <matplotlib.axis.XTick object at 0x00000269D9F1F1C0>, <matplotlib.axis.XTick object at 0x00000269D9F1F370>, <matplotlib.axis.XTick object at 0x00000269D9867F40>, <matplotlib.axis.XTick object at 0x00000269D9F124F0>, <matplotlib.axis.XTick object at 0x00000269D9F14F70>], [Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, '')])
->>>>>>> c5bc480895a783fa1264d0ead48dc8d22eb1a858
+([<matplotlib.axis.XTick object at 0x000001E75AA1A520>, <matplotlib.axis.XTick object at 0x000001E75AA1AD90>, <matplotlib.axis.XTick object at 0x000001E75AA08CA0>, <matplotlib.axis.XTick object at 0x000001E75AF32CD0>, <matplotlib.axis.XTick object at 0x000001E75AAA7F10>, <matplotlib.axis.XTick object at 0x000001E75AF3CD90>, <matplotlib.axis.XTick object at 0x000001E75AF3C1C0>, <matplotlib.axis.XTick object at 0x000001E75AF3C370>, <matplotlib.axis.XTick object at 0x000001E75AAA7F40>, <matplotlib.axis.XTick object at 0x000001E75AF324F0>, <matplotlib.axis.XTick object at 0x000001E75AF38F70>], [Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, '')])
 \end{verbatim}
 
 \begin{Shaded}
@@ -5452,11 +4961,7 @@ Necesitaremos usar estas librerías:
 \end{Shaded}
 
 \begin{verbatim}
-<<<<<<< HEAD
-([<matplotlib.axis.XTick object at 0x000001B1C070CD00>, <matplotlib.axis.XTick object at 0x000001B1C070CCD0>, <matplotlib.axis.XTick object at 0x000001B1C070C100>, <matplotlib.axis.XTick object at 0x000001B1C075D160>, <matplotlib.axis.XTick object at 0x000001B1C075D880>, <matplotlib.axis.XTick object at 0x000001B1C075DC70>, <matplotlib.axis.XTick object at 0x000001B1C073C1F0>, <matplotlib.axis.XTick object at 0x000001B1C07429A0>, <matplotlib.axis.XTick object at 0x000001B1C0751340>, <matplotlib.axis.XTick object at 0x000001B1C0756310>, <matplotlib.axis.XTick object at 0x000001B1C07630A0>], [Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, '')])
-=======
-([<matplotlib.axis.XTick object at 0x00000269D9F3DD00>, <matplotlib.axis.XTick object at 0x00000269D9F3DCD0>, <matplotlib.axis.XTick object at 0x00000269D9F3D100>, <matplotlib.axis.XTick object at 0x00000269D9F8D160>, <matplotlib.axis.XTick object at 0x00000269D9F8D880>, <matplotlib.axis.XTick object at 0x00000269D9F8DC70>, <matplotlib.axis.XTick object at 0x00000269D9F6D1F0>, <matplotlib.axis.XTick object at 0x00000269D9F729A0>, <matplotlib.axis.XTick object at 0x00000269D9F81340>, <matplotlib.axis.XTick object at 0x00000269D9F86310>, <matplotlib.axis.XTick object at 0x00000269D9F930A0>], [Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, '')])
->>>>>>> c5bc480895a783fa1264d0ead48dc8d22eb1a858
+([<matplotlib.axis.XTick object at 0x000001E75AF5BD00>, <matplotlib.axis.XTick object at 0x000001E75AF5BCD0>, <matplotlib.axis.XTick object at 0x000001E75AF5B100>, <matplotlib.axis.XTick object at 0x000001E75AFAD160>, <matplotlib.axis.XTick object at 0x000001E75AFAD880>, <matplotlib.axis.XTick object at 0x000001E75AFADC70>, <matplotlib.axis.XTick object at 0x000001E75AF8C1F0>, <matplotlib.axis.XTick object at 0x000001E75AF929A0>, <matplotlib.axis.XTick object at 0x000001E75AFA1340>, <matplotlib.axis.XTick object at 0x000001E75AFA6310>, <matplotlib.axis.XTick object at 0x000001E75AFB30A0>], [Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, '')])
 \end{verbatim}
 
 \begin{Shaded}
@@ -6243,13 +5748,8 @@ Una muestra aleatoria de tamaño 25 de una \(Ge(0.25)\)
 \end{Shaded}
 
 \begin{verbatim}
-<<<<<<< HEAD
-array([ 1,  4, 11,  0,  1,  2,  0,  0,  0,  5,  0,  2,  4,  9,  0,  4,  2,
-        3,  2,  0], dtype=int64)
-=======
-array([1, 9, 2, 4, 1, 0, 1, 0, 0, 0, 1, 1, 7, 1, 1, 2, 5, 8, 1, 0],
+array([1, 5, 0, 2, 0, 1, 7, 2, 1, 0, 2, 2, 4, 0, 7, 4, 0, 0, 5, 3],
       dtype=int64)
->>>>>>> c5bc480895a783fa1264d0ead48dc8d22eb1a858
 \end{verbatim}
 
 \textbf{Ejercicio}
@@ -6796,21 +6296,12 @@ serán las veces que hemos fallado hasta abrir la puerta 100 veces.
 \end{Shaded}
 
 \begin{verbatim}
-<<<<<<< HEAD
-array([ 5,  8, 17, 40, 11, 12,  2, 26, 18, 19, 31, 75, 22, 59,  2, 25, 20,
-        6, 22,  8, 21, 27, 17,  7, 35, 37, 12, 16, 40,  3, 15, 22,  4,  1,
-        2,  9, 11, 10,  5, 25,  6, 12, 27, 22, 17,  5,  4, 23, 27, 38, 24,
-       10,  5,  9,  6, 31, 20,  8, 30,  2, 13, 33, 14,  2,  9, 28, 12, 18,
-       10, 13,  9, 34, 23, 23, 13, 11, 22, 16,  1, 19, 15,  9, 18, 37, 15,
-       32, 11, 14,  2, 31, 20,  8, 11, 30, 18,  5, 41,  5, 20, 18],
-=======
-array([ 8, 24,  9, 10, 23,  3,  3, 12,  7, 12, 17, 54, 30, 16, 10, 10, 25,
-       10, 19, 13, 16,  8, 31,  7, 11, 26, 11,  9, 23, 39,  6, 64, 20, 18,
-       31,  7,  9,  9,  9, 19,  7, 13, 72,  2, 18,  9,  7, 21,  5, 10, 35,
-        8, 14,  6, 28,  6, 28, 16, 22, 26, 14, 17, 10, 21, 16, 23, 49, 43,
-       66,  3, 16, 14, 18, 14, 20, 17, 45, 22,  3, 27, 47,  7, 32,  5,  1,
-       23, 12, 13, 25, 18,  2,  4, 29, 17, 58, 58, 15, 26,  7,  4],
->>>>>>> c5bc480895a783fa1264d0ead48dc8d22eb1a858
+array([22,  5,  9, 22, 12,  4,  9, 12, 27, 16, 13, 57, 42, 11, 21, 10, 59,
+        8,  5, 16, 37, 20,  2,  2, 29, 18, 39,  8,  3,  5, 23, 28, 14, 10,
+        5,  0, 42, 13, 40, 18, 11, 14, 17,  7,  8, 25,  7, 42,  9, 12, 19,
+        7, 18, 11, 12, 35,  9, 39, 16,  2, 37, 33, 22,  8, 12,  7,  8,  3,
+        5, 15, 28,  4,  3,  9,  5, 12,  8, 21, 13, 45, 29,  5,  3, 13,  3,
+        4, 21, 35,  8, 26, 31, 26,  9, 20, 58,  8,  5, 16, 25,  5],
       dtype=int64)
 \end{verbatim}
 
@@ -7948,13 +7439,8 @@ población \(Po(3)\)
 \end{Shaded}
 
 \begin{verbatim}
-<<<<<<< HEAD
-array([5, 5, 1, 2, 4, 0, 0, 5, 4, 2, 2, 6, 2, 5, 4, 4, 2, 6, 3, 2, 6, 1,
-       0, 6, 5, 2, 1, 2, 2, 5, 1, 2, 3, 1, 3, 2, 3, 4, 3, 2], dtype=int64)
-=======
-array([2, 2, 3, 3, 5, 3, 2, 4, 3, 4, 3, 1, 4, 6, 2, 1, 4, 4, 3, 1, 2, 2,
-       1, 3, 3, 1, 3, 3, 1, 4, 3, 0, 4, 2, 4, 3, 2, 3, 1, 4], dtype=int64)
->>>>>>> c5bc480895a783fa1264d0ead48dc8d22eb1a858
+array([0, 3, 3, 2, 4, 2, 3, 0, 3, 2, 2, 3, 2, 4, 5, 2, 4, 2, 2, 4, 3, 1,
+       3, 4, 6, 4, 2, 0, 5, 2, 3, 1, 3, 7, 1, 2, 3, 1, 6, 2], dtype=int64)
 \end{verbatim}
 
 \subsubsection{Gráficos con Python}\label{gruxe1ficos-con-python}
@@ -8410,19 +7896,11 @@ Una muestra aleatoria de este experimento sería\ldots{}
 \end{Shaded}
 
 \begin{verbatim}
-<<<<<<< HEAD
-array([1, 1, 1, 2, 2, 3, 2, 1, 3, 3, 0, 3, 2, 2, 1, 3, 3, 2, 1, 3, 3, 2,
-       1, 3, 3, 2, 1, 0, 2, 2, 2, 2, 2, 3, 3, 2, 2, 3, 2, 1, 2, 2, 2, 2,
-       1, 3, 1, 3, 2, 1, 2, 0, 1, 3, 1, 1, 2, 1, 2, 1, 2, 0, 1, 2, 1, 1,
-       2, 2, 1, 3, 2, 2, 1, 1, 2, 2, 1, 3, 2, 2, 3, 1, 2, 1, 3, 1, 0, 1,
-       3, 3, 1, 1, 2, 3, 3, 2, 2, 2, 1, 2], dtype=int64)
-=======
-array([2, 2, 2, 1, 3, 2, 0, 1, 1, 1, 2, 1, 2, 1, 2, 2, 3, 0, 1, 2, 2, 1,
-       3, 0, 2, 1, 2, 2, 2, 1, 2, 3, 3, 1, 3, 0, 1, 3, 2, 2, 2, 1, 0, 2,
-       2, 1, 1, 2, 2, 1, 3, 1, 0, 1, 1, 3, 2, 2, 3, 3, 1, 2, 2, 2, 2, 3,
-       2, 0, 2, 2, 3, 1, 2, 0, 1, 3, 1, 0, 2, 1, 3, 2, 2, 2, 1, 3, 1, 0,
-       1, 3, 0, 3, 1, 2, 2, 3, 2, 3, 2, 2], dtype=int64)
->>>>>>> c5bc480895a783fa1264d0ead48dc8d22eb1a858
+array([2, 3, 2, 1, 3, 3, 2, 2, 3, 1, 2, 2, 1, 1, 2, 1, 2, 1, 2, 2, 3, 1,
+       2, 3, 2, 1, 1, 3, 2, 1, 2, 0, 1, 3, 2, 2, 1, 1, 3, 2, 0, 2, 2, 2,
+       0, 3, 1, 2, 2, 2, 3, 3, 1, 2, 2, 2, 3, 2, 2, 0, 2, 2, 1, 3, 3, 2,
+       1, 2, 1, 2, 2, 2, 1, 1, 2, 2, 2, 2, 0, 2, 2, 1, 3, 1, 1, 3, 1, 2,
+       2, 1, 1, 2, 1, 1, 2, 1, 3, 3, 2, 3], dtype=int64)
 \end{verbatim}
 
 \begin{Shaded}
@@ -8455,8 +7933,8 @@ array([2, 2, 2, 1, 3, 2, 0, 1, 1, 1, 2, 1, 2, 1, 2, 2, 3, 0, 1, 2, 2, 1,
 \includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{distribuciones_notables_1_files/figure-pdf/py_hyper2-1.pdf}
 \end{center}
 
-\chapter{Distribuciones notables 2: distribuciones
-continuas}\label{distribuciones-notables-2-distribuciones-continuas}
+\chapter{Distribuciones notables
+continuas}\label{distribuciones-notables-continuas}
 
 \section{Introducción}\label{introducciuxf3n-2}
 
@@ -8735,11 +8213,7 @@ tamaño \(n\) que sigan la distribución \(U(a,b)\):
 \end{Shaded}
 
 \begin{verbatim}
-<<<<<<< HEAD
-[1] -0.5584915  0.7439996 -0.6570565 -0.8626793 -0.5517519
-=======
-[1]  0.9418577  0.1963104  0.8987921  0.9943518 -0.4394979
->>>>>>> c5bc480895a783fa1264d0ead48dc8d22eb1a858
+[1]  0.2432759 -0.2827828 -0.8715729  0.7606701  0.5504770
 \end{verbatim}
 
 Por defecto, el valor de los parámetros \texttt{a} y \texttt{b} son 0 y
@@ -8772,11 +8246,7 @@ Por defecto, el valor de los parámetros \texttt{a} y \texttt{b} son 0 y
 \end{Shaded}
 
 \begin{verbatim}
-<<<<<<< HEAD
-[1] 0.4312417 0.7356539 0.9338797 0.9037686 0.9695566
-=======
-[1] 0.7089507 0.2788081 0.7877320 0.9326447 0.4585226
->>>>>>> c5bc480895a783fa1264d0ead48dc8d22eb1a858
+[1] 0.8348241 0.4421061 0.7906439 0.5410380 0.6689772
 \end{verbatim}
 
 \subsection{Cálculos con Python}\label{cuxe1lculos-con-python-3}
@@ -8819,21 +8289,12 @@ Para generar una muestra de valores aleatorios, hay que usar la función
 \end{Shaded}
 
 \begin{verbatim}
-<<<<<<< HEAD
-array([ 0.33541561, -0.62460112,  0.11166066, -0.3012854 , -0.68287742,
-       -0.29995617,  0.39343862,  0.48617175,  0.59662121, -0.5129402 ,
-        0.71871414, -0.6925716 ,  0.98039402,  0.98407522, -0.81479936,
-       -0.58325134,  0.1046107 ,  0.38884188, -0.4263951 , -0.06706708,
-        0.31406986,  0.00689044,  0.6408363 , -0.27444479,  0.69315496,
-        0.2068644 ,  0.07141915, -0.16016694,  0.43890956,  0.82267301])
-=======
-array([-0.45177402, -0.77071255,  0.22521442,  0.72099784, -0.66399182,
-       -0.82060828, -0.30217959, -0.57622418, -0.30343533,  0.39245562,
-       -0.91227801, -0.40051638, -0.90810392,  0.4786918 ,  0.50422214,
-        0.44657054, -0.43264303, -0.92761551,  0.03655001,  0.93008122,
-       -0.5782674 ,  0.10712824, -0.75260841,  0.13476907,  0.96169102,
-        0.62446193,  0.43341972, -0.36046273,  0.86665433, -0.27432763])
->>>>>>> c5bc480895a783fa1264d0ead48dc8d22eb1a858
+array([-0.96400294, -0.28098517,  0.93336358, -0.21166553,  0.79062069,
+       -0.52713386,  0.91324723,  0.43391265, -0.93609723, -0.33691811,
+       -0.56741694,  0.91613935, -0.81515025,  0.34628267, -0.87474465,
+       -0.02740065, -0.82179118,  0.38217883, -0.10327036, -0.96366202,
+        0.57001477,  0.57614094, -0.84251932,  0.97471924, -0.67735867,
+        0.61149072,  0.46658583,  0.93706989,  0.83085158, -0.08942976])
 \end{verbatim}
 
 Los valores de los parámetros por defecto son \texttt{loc=0,\ scale=1}:
@@ -8865,11 +8326,7 @@ Los valores de los parámetros por defecto son \texttt{loc=0,\ scale=1}:
 \end{Shaded}
 
 \begin{verbatim}
-<<<<<<< HEAD
-array([0.27068656, 0.19860999, 0.91786307, 0.02163124, 0.24503844])
-=======
-array([0.65645053, 0.35262999, 0.61394266, 0.65135353, 0.85876612])
->>>>>>> c5bc480895a783fa1264d0ead48dc8d22eb1a858
+array([0.66034094, 0.27771447, 0.17102644, 0.54748246, 0.24939644])
 \end{verbatim}
 
 \section{Cuantiles de variables
@@ -9368,13 +8825,8 @@ Y en Python con:
 \end{Shaded}
 
 \begin{verbatim}
-<<<<<<< HEAD
-array([0.29793213, 0.80142213, 0.25189437, 0.41674714, 0.06895067,
-       0.19993541, 0.45794563, 0.29778896, 0.17738571, 0.05870628])
-=======
-array([0.46511086, 0.676244  , 0.16936049, 0.42020546, 1.22093425,
-       0.793023  , 0.02083158, 0.09260082, 0.14154005, 0.02614312])
->>>>>>> c5bc480895a783fa1264d0ead48dc8d22eb1a858
+array([0.67371222, 0.43263282, 1.09394935, 0.38873815, 0.001644  ,
+       0.03675472, 0.47969944, 0.11788067, 0.23121459, 0.39705633])
 \end{verbatim}
 
 \subsection{\texorpdfstring{Resumen v.a. con distribución exponencial
@@ -9671,11 +9123,7 @@ Y la generación aleatoria de valores según \(X\) como
 \end{Shaded}
 
 \begin{verbatim}
-<<<<<<< HEAD
-array([ 1.32636204,  1.0744936 ,  1.80795114, -1.43822087, -0.40919507])
-=======
-array([-3.57929946, -3.09487871,  0.91055999, -0.33974444,  0.6312333 ])
->>>>>>> c5bc480895a783fa1264d0ead48dc8d22eb1a858
+array([ 1.36540437,  1.19071474,  1.78934011, -0.04199608,  1.51766098])
 \end{verbatim}
 
 Consultad
