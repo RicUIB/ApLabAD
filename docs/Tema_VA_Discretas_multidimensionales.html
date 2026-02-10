@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>6&nbsp; Variables aleatorias bidimensionales discretas – ApLabAD</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./distribuciones_notables_2.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-49738affbfc1e3211023e8bb34f508e2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="custom_callouts_fixed.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./probabilidad_y_variables_aleatorias.html">Parte 1: Probabilidad y variables aleatorias</a></li><li class="breadcrumb-item"><a href="./Tema_VA_Discretas_multidimensionales.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Variables aleatorias bidimensionales discretas</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">ApLabAD</a> 
+        <div class="sidebar-tools-main">
+    <a href="./ApLabAD.pdf" title="Descargar PDF" class="quarto-navigation-tool px-1" aria-label="Descargar PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prefacio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./probabilidad_y_variables_aleatorias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Parte 1: Probabilidad y variables aleatorias</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./preliminares.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preliminares: conjuntos y combinatoria</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./probabilidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Teoría elemental de la probabilidad</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./variables_aleatorias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Variables aleatorias</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./distribuciones_notables_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Distribuciones notables discretas</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./distribuciones_notables_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distribuciones notables continuas</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Tema_VA_Discretas_multidimensionales.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Variables aleatorias bidimensionales discretas</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#variables-aleatorias-bidimensionales-discretas.-introducción" id="toc-variables-aleatorias-bidimensionales-discretas.-introducción" class="nav-link active" data-scroll-target="#variables-aleatorias-bidimensionales-discretas.-introducción"><span class="header-section-number">6.1</span> Variables aleatorias bidimensionales discretas. Introducción</a></li>
+  <li><a href="#función-de-probabilidad-conjunta" id="toc-función-de-probabilidad-conjunta" class="nav-link" data-scroll-target="#función-de-probabilidad-conjunta"><span class="header-section-number">6.2</span> Función de probabilidad conjunta</a></li>
+  <li><a href="#función-de-probabilidad-conjunta-1" id="toc-función-de-probabilidad-conjunta-1" class="nav-link" data-scroll-target="#función-de-probabilidad-conjunta-1"><span class="header-section-number">6.3</span> Función de probabilidad conjunta</a></li>
+  <li><a href="#propiedades-de-la-función-de-probabilidad-conjunta" id="toc-propiedades-de-la-función-de-probabilidad-conjunta" class="nav-link" data-scroll-target="#propiedades-de-la-función-de-probabilidad-conjunta"><span class="header-section-number">6.4</span> Propiedades de la función de probabilidad conjunta</a></li>
+  <li><a href="#propiedades-de-la-función-de-probabilidad-conjunta-1" id="toc-propiedades-de-la-función-de-probabilidad-conjunta-1" class="nav-link" data-scroll-target="#propiedades-de-la-función-de-probabilidad-conjunta-1"><span class="header-section-number">6.5</span> Propiedades de la función de probabilidad conjunta</a></li>
+  <li><a href="#función-de-distribución-acumulada" id="toc-función-de-distribución-acumulada" class="nav-link" data-scroll-target="#función-de-distribución-acumulada"><span class="header-section-number">6.6</span> Función de distribución acumulada</a></li>
+  <li><a href="#distribuciones-marginales" id="toc-distribuciones-marginales" class="nav-link" data-scroll-target="#distribuciones-marginales"><span class="header-section-number">7</span> Distribuciones marginales</a>
+  <ul class="collapse">
+  <li><a href="#variables-aleatorias-marginales-y-su-distribución" id="toc-variables-aleatorias-marginales-y-su-distribución" class="nav-link" data-scroll-target="#variables-aleatorias-marginales-y-su-distribución"><span class="header-section-number">7.1</span> Variables aleatorias marginales y su distribución</a></li>
+  <li><a href="#funciones-de-probabilidad-marginales" id="toc-funciones-de-probabilidad-marginales" class="nav-link" data-scroll-target="#funciones-de-probabilidad-marginales"><span class="header-section-number">7.2</span> Funciones de probabilidad marginales</a></li>
+  <li><a href="#variables-aleatorias-marginales" id="toc-variables-aleatorias-marginales" class="nav-link" data-scroll-target="#variables-aleatorias-marginales"><span class="header-section-number">7.3</span> Variables aleatorias marginales</a></li>
+  <li><a href="#variables-aleatorias-marginales-1" id="toc-variables-aleatorias-marginales-1" class="nav-link" data-scroll-target="#variables-aleatorias-marginales-1"><span class="header-section-number">7.4</span> Variables aleatorias marginales</a></li>
+  <li><a href="#independencia-de-variables-aleatorias-discretas" id="toc-independencia-de-variables-aleatorias-discretas" class="nav-link" data-scroll-target="#independencia-de-variables-aleatorias-discretas"><span class="header-section-number">7.5</span> Independencia de variables aleatorias discretas</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./probabilidad_y_variables_aleatorias.html">Parte 1: Probabilidad y variables aleatorias</a></li><li class="breadcrumb-item"><a href="./Tema_VA_Discretas_multidimensionales.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Variables aleatorias bidimensionales discretas</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Variables aleatorias bidimensionales discretas</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="variables-aleatorias-bidimensionales-discretas.-introducción" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="variables-aleatorias-bidimensionales-discretas.-introducción"><span class="header-section-number">6.1</span> Variables aleatorias bidimensionales discretas. Introducción</h2>
+<div class="callout-definicion">
+<div class="callout-title">
+<p>Definición de variable aleatoria bidimensional. ::: callout-content</p>
+<p>Sea <span class="math inline">\(\Omega\)</span> es espacio muestral de un experimento. Diremos que <span class="math inline">\((X,Y)\)</span> es una <strong>variable aleatoria bidimensional</strong> cuando tanto <span class="math inline">\(X\)</span> como <span class="math inline">\(Y\)</span> toman valores reales para cada elemento del espacio <span class="math inline">\(\Omega\)</span>.</p>
+<p>Diremos que es <strong>discreta</strong> cuando su conjunto de valores en <span class="math inline">\(\mathbb{R}^2\)</span>, <span class="math inline">\((X,Y)(\Omega)\)</span> es un conjunto finito o numerable.</p>
+<p>Diremos que es <strong>continua</strong> cuando su conjunto de valores en <span class="math inline">\(\mathbb{R}^2\)</span>, <span class="math inline">\((X,Y)(\Omega)\)</span> es un producto de intervalos.</p>
+<p>Diremos que es <strong>heterogénea</strong> cuando <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> no compartan ser continuas o discretas.</p>
+</div>
+</div>
+</section>
+<section id="función-de-probabilidad-conjunta" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="función-de-probabilidad-conjunta"><span class="header-section-number">6.2</span> Función de probabilidad conjunta</h2>
+<div class="callout-definicion">
+<div class="callout-title">
+<p>Definición de función de probabilidad conjunta ::: callout-content Dada una <strong>variable aleatoria bidimensional discreta</strong> <span class="math inline">\((X,Y)\)</span></p>
+<p>definimos la función de <strong>probabilidad discreta bidimensional</strong> como</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+P_{XY}: \mathbb{R}^2 &amp; \longrightarrow [0,1]\\
+(x,y) &amp; \longrightarrow P_{XY}(x,y)=P(X= x,\ Y= y).
+\end{array}
+\]</span></p>
+<p>Llamaremos dominio de la variable conjunta a <span class="math display">\[D_{XY}=\{(x,y)\in \mathbb{R}^2 | P_{XY}(x,y)=P(X= x,\ Y= y)&gt;0\}.\]</span></p>
+<p>Es decir es el conjunto de valores posibles que toma la v.a. <span class="math inline">\((X,Y)\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="función-de-probabilidad-conjunta-1" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="función-de-probabilidad-conjunta-1"><span class="header-section-number">6.3</span> Función de probabilidad conjunta</h2>
+<p>Por tanto, de cara a calcular <span class="math inline">\(P_{XY}\)</span> basta calcular <span class="math inline">\(P_{XY}(x_i,y_j)\)</span> para <span class="math inline">\((x_i,y_j)\in D_{XY}\)</span>:</p>
+<div class="center">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(X/Y\)</span></th>
+<th><span class="math inline">\(y_1\)</span></th>
+<th><span class="math inline">\(y_2\)</span></th>
+<th><span class="math inline">\(\ldots\)</span></th>
+<th><span class="math inline">\(y_N\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(x_1\)</span></td>
+<td><span class="math inline">\(P_{XY}(x_1,y_1)\)</span></td>
+<td><span class="math inline">\(P_{XY}(x_1,y_2)\)</span></td>
+<td><span class="math inline">\(\ldots\)</span></td>
+<td><span class="math inline">\(P_{XY}(x_1,y_N)\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x_2\)</span></td>
+<td><span class="math inline">\(P_{XY}(x_2,y_1)\)</span></td>
+<td><span class="math inline">\(P_{XY}(x_2,y_2)\)</span></td>
+<td><span class="math inline">\(\ldots\)</span></td>
+<td><span class="math inline">\(P_{XY}(x_2,y_N)\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\vdots\)</span></td>
+<td><span class="math inline">\(\vdots\)</span></td>
+<td><span class="math inline">\(\vdots\)</span></td>
+<td><span class="math inline">\(\vdots\)</span></td>
+<td><span class="math inline">\(\vdots\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x_M\)</span></td>
+<td><span class="math inline">\(P_{XY}(x_M,y_1)\)</span></td>
+<td><span class="math inline">\(P_{XY}(x_M,y_2)\)</span></td>
+<td><span class="math inline">\(\ldots\)</span></td>
+<td><span class="math inline">\(P_{XY}(x_M,y_N)\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="propiedades-de-la-función-de-probabilidad-conjunta" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="propiedades-de-la-función-de-probabilidad-conjunta"><span class="header-section-number">6.4</span> Propiedades de la función de probabilidad conjunta</h2>
+<div class="callout-proposicion">
+<div class="callout-title">
+<p>Sea <span class="math inline">\((X,Y)\)</span> una <strong>variable aleatoria bidimensional discreta</strong> con dominio <span class="math inline">\(D_{XY}=\{(x_i,y_j)\, i=1,2,\ldots,\ j=1,2,\ldots\}\)</span>. Su <strong>función de probabilidad conjunta</strong> verifica las siguientes propiedades:</p>
+</div>
+<p>La suma de todos los valores de la <strong>función de probabilidad conjunta</strong> sobre el conjunto de valores siempre vale 1: <span class="math display">\[\sum_{i}\sum_j P_{XY}(x_i,y_j)=1.\]</span></p>
+</div>
+<p>:::::</p>
+</section>
+<section id="propiedades-de-la-función-de-probabilidad-conjunta-1" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="propiedades-de-la-función-de-probabilidad-conjunta-1"><span class="header-section-number">6.5</span> Propiedades de la función de probabilidad conjunta</h2>
+<div class="callout-proposicion">
+<div class="callout-title">
+<p>Propiedad</p>
+</div>
+<div class="callout-content">
+<p>Sea <span class="math inline">\(B\)</span> un subconjunto cualquiera del dominio <span class="math inline">\(D_{XY}\)</span>. El valor de la probabilidad <span class="math inline">\(P((X,Y)\in B)\)</span> se puede calcular de la forma siguiente: <span class="math display">\[
+P((X,Y)\in B) =\sum_{(x_i,y_j)\in B} P_{XY}(x_i,y_j).
+\]</span> Es decir, la probabilidad de que la variable bidimensional tome valores en <span class="math inline">\(B\)</span> es igual a la suma de todos aquellos valores de la función de probabilidad conjunta que están en <span class="math inline">\(B\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="función-de-distribución-acumulada" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="función-de-distribución-acumulada"><span class="header-section-number">6.6</span> Función de distribución acumulada</h2>
+<div class="callout-definicion">
+<div class="callout-title">
+<p>Definición función de distribución conjunta</p>
+</div>
+<div class="callout-content">
+<p>La función de distribución acumulada conjunto o simplemente distribución conjunta se define como</p>
+<p><span class="math display">\[
+F_{XY}(x,y)=P(X\leq x,Y\leq y).
+\]</span> La <strong>función de distribución conjunta</strong> se puede obtener conociendo la <strong>función de probabilidad conjunta</strong></p>
+<p><span class="math display">\[
+F_{XY}(x,y)=\sum_{x_i\leq x, y_j\leq y} P_{XY}(x_i,y_j).
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="distribuciones-marginales" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Distribuciones marginales</h1>
+<section id="variables-aleatorias-marginales-y-su-distribución" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="variables-aleatorias-marginales-y-su-distribución"><span class="header-section-number">7.1</span> Variables aleatorias marginales y su distribución</h2>
+<p>Consideremos una variable aleatoria <strong>bidimensional discreta <span class="math inline">\((X,Y)\)</span></strong> con <strong>función de probabilidad conjunta</strong> <span class="math inline">\(P_{XY}(x_i,y_j)\)</span>, para cada <span class="math inline">\((x_i,y_j)\in D_{XY}\)</span>.</p>
+<p>La tabla de la <strong>función de probabilidad conjunta</strong> contiene suficiente información para obtener las <strong>funciones de probabilidad</strong> de las variables <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>.</p>
+<p>Dichas variables <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> se denominan <strong>variables marginales</strong> y sus correspondientes <strong>funciones de probabilidad</strong>, <strong>funciones de probabilidad marginales</strong> <span class="math inline">\(P_X\)</span> de la variable <span class="math inline">\(X\)</span> y <span class="math inline">\(P_Y\)</span> de la variable <span class="math inline">\(Y\)</span>.</p>
+<p>Veamos cómo obtener <span class="math inline">\(P_X\)</span> y <span class="math inline">\(P_Y\)</span> a partir de la tabla <span class="math inline">\(P_{XY}\)</span>.</p>
+</section>
+<section id="funciones-de-probabilidad-marginales" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="funciones-de-probabilidad-marginales"><span class="header-section-number">7.2</span> Funciones de probabilidad marginales</h2>
+<div class="callout-definicion">
+<div class="callout-title">
+<p>Proposición. Cálculo de las funciones de probabilidad marginales.</p>
+</div>
+<div class="callout-content">
+<p>Sea <span class="math inline">\((X,Y)\)</span> una variable aleatoria <strong>bidimensional discreta</strong> con <strong>función de probabilidad conjunta</strong> <span class="math inline">\(P_{XY}(x_i,y_j)\)</span>, con <span class="math inline">\((x_i,y_j)\in D_{XY}\)</span>.</p>
+<p>Las <strong>funciones de probabilidad marginales</strong> <span class="math inline">\(P_X(x_i)\)</span> y <span class="math inline">\(P_Y(y_j)\)</span> se calculan usando las expresiones siguientes: <span class="math display">\[
+\displaystyle
+\begin{array}{rl}
+P_X(x_i)  &amp; = \displaystyle\sum_{j} P_{XY}(x_i,y_j),\  i=1,2,\ldots,\\ P_Y(y_j) &amp;  = \displaystyle\sum_{i} P_{XY}(x_i,y_j),\ \ j=1,2,\ldots
+\end{array}
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="variables-aleatorias-marginales" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="variables-aleatorias-marginales"><span class="header-section-number">7.3</span> Variables aleatorias marginales</h2>
+<ul>
+<li>Podemos representar <span class="math inline">\(P_{XY}\)</span> como una tabla bidimensional en la primera fila están los valores de la variable <span class="math inline">\(Y\)</span> (<span class="math inline">\(y_1,y_2,\ldots\)</span>) y en la primera columna están los valores de la variable <span class="math inline">\(X\)</span> (<span class="math inline">\(x_1,x_2,\ldots\)</span>)</li>
+<li>Para obtener la <strong>función de probabilidad marginal</strong> de la variable <span class="math inline">\(X\)</span> en el valor <span class="math inline">\(x_i\)</span>, <span class="math inline">\(P_X(x_i)\)</span>, hay que sumar todos los valores de <span class="math inline">\(P_{XY}(x_i,y_j)\)</span> correspondientes a la fila <span class="math inline">\(i\)</span>-ésima</li>
+<li>De forma análoga para obtener la <strong>función de probabilidad marginal</strong> de la variable <span class="math inline">\(Y\)</span> en el valor <span class="math inline">\(y_j\)</span>, <span class="math inline">\(P_Y(y_j)\)</span>, hay que sumar todos los valores de <span class="math inline">\(P_{XY}(x_i,y_j)\)</span> correspondientes a la columna <span class="math inline">\(j\)</span>-ésima.</li>
+</ul>
+</section>
+<section id="variables-aleatorias-marginales-1" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="variables-aleatorias-marginales-1"><span class="header-section-number">7.4</span> Variables aleatorias marginales</h2>
+<div class="center">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(X\backslash Y\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(y_1\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(y_2\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(\ldots\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(y_N\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P_X(x_i)=\displaystyle\sum_j P_{XY}(x_i,y_j)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(x_1\qquad\qquad\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(P_{XY}(x_1,y_1)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(P_{XY}(x_1,y_2)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(\ldots\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(P_{XY}(x_1,y_N)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(P_X(x_1)\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x_2\qquad\qquad\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(P_{XY}(x_2,y_1)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(P_{XY}(x_2,y_2)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(\ldots\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(P_{XY}(x_2,y_N)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(P_X(x_2)\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x_M\qquad\qquad\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(P_{XY}(x_M,y_1)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(P_{XY}(x_M,y_2)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(\ldots\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(P_{XY}(x_M,y_N)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(P_X(x_M)\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(P_Y(y_j)=\displaystyle\sum_i P_{XY}(x_i,y_j)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(P_Y(y_1)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(P_Y(y_2)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(\ldots\ldots\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(P_Y(y_N)\)</span></td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="independencia-de-variables-aleatorias-discretas" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="independencia-de-variables-aleatorias-discretas"><span class="header-section-number">7.5</span> Independencia de variables aleatorias discretas</h2>
+<p>Recordemos que dos sucesos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes si</p>
+<p><span class="math display">\[P(A\cap B)=P(A)\cdot P(B).\]</span></p>
+<p>¿Cómo trasladar dicho concepto al caso de variables aleatorias?</p>
+<div class="callout-definicion">
+<div class="callout-title">
+<p>Definición de independencia para variables aleatorias bidimensionales discretas.</p>
+</div>
+<div class="callout-content">
+<p>Dada una variable aleatoria bidimensional discreta <span class="math inline">\((X,Y)\)</span> con <span class="math inline">\(D_{XY}=\{(x_i,y_j),\ i=1,2,\ldots,j=1,2,\ldots\}\)</span></p>
+<p>Así que al menos todos los sucesos de la forma <span class="math inline">\(\{X=x_i,\  Y=y_j\}\)</span> deberán ser independientes. :::</p>
+</div>
+<section id="independencia-de-variables-aleatorias-discretas-1" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="independencia-de-variables-aleatorias-discretas-1"><span class="header-section-number">7.6</span> Independencia de variables aleatorias discretas</h2>
+<div class="callout-definicion">
+<div class="callout-title">
+<p>Definición de independencia para variables aleatorias bidimensionales discretas. </p>
+</div>
+<div class="callout-content">
+<p>Dada <span class="math inline">\((X,Y)\)</span> una <strong>variable aleatoria bidimensional discreta</strong> con <strong>función de probabilidad</strong> <span class="math inline">\(P_{XY}\)</span> y <strong>funciones de probabilidad marginales</strong> <span class="math inline">\(P_X\)</span> y <span class="math inline">\(P_Y\)</span>.</p>
+<p>Diremos que <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> son independientes si: <span class="math display">\[
+P_{XY}(x_i,y_j)=P_X(x_i)\cdot P_Y(y_j),\ i=1,2,\ldots,j=1,2,\ldots
+\]</span> o dicho de otra forma: <span class="math display">\[
+P(X=x_i,\ Y=y_j)=P(X=x_i)\cdot P(Y=y_j),\ i=1,2,\ldots,j=1,2,\ldots
+\]</span></p>
+</div>
+</div>
+<div class="callout-proposicion">
+<div class="callout-title">
+<p>Propiedad</p>
+</div>
+<div class="callout-content">
+<p>Las v.a. <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> son independientes si y solo si <span class="math inline">\(F_{XY}(x,y)=F_X(x) \cdot F_Y(y).\)</span></p>
+</div>
+</div>
+</section>
+<section id="esperanza-y-varianza-de-las-distribuciones-marginales" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="esperanza-y-varianza-de-las-distribuciones-marginales"><span class="header-section-number">7.7</span> Esperanza y varianza de las distribuciones marginales</h2>
+<div class="callout-proposicion">
+<div class="callout-title">
+<p>Propiedad</p>
+</div>
+<div class="callout-content">
+<ul>
+<li><span class="math inline">\(E(X)=\displaystyle \sum_{x\in D_X} x\cdot P_X(x)=\sum_{x\in D_X} x\cdot P(X=x).\)</span></li>
+<li><span class="math inline">\(E(Y)=\displaystyle\sum_{y\in D_Y} y\cdot P_Y(y)=\sum_{y\in D_Y} y\cdot P(Y=y).\)</span></li>
+<li><span class="math inline">\(\sigma_X^2=Var(X)=E(X-E(X))=E(X)-E(X)^2.\)</span></li>
+<li><span class="math inline">\(\sigma_Y^2=Var(Y)=E(Y-E(Y))=E(Y)-E(Y)^2.\)</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="distibuciones-condicionales" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="distibuciones-condicionales"><span class="header-section-number">7.8</span> Distibuciones condicionales</h2>
+<div class="callout-proposicion">
+<div class="callout-title">
+<p>Propiedad</p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Dado un valor fijo <span class="math inline">\(y\in D_Y\)</span> definimos la distribución condicional de la v.a. <span class="math inline">\(X\)</span> condicionada a que <span class="math inline">\(Y=y\)</span> como</li>
+</ul>
+<p><span class="math display">\[P(X=x|Y=y)=\frac{P_{XY}(x,y)}{P_Y(y)}=\frac{P(X=x,Y=y)}{P(Y=y)},\mbox{  para todo } x\in D_X.\]</span></p>
+<ul>
+<li>Dado un valor fijo <span class="math inline">\(y\in D_Y\)</span> definimos la distribución condicional de la v.a. <span class="math inline">\(Y\)</span> condicionada a que <span class="math inline">\(X=x\)</span> como</li>
+</ul>
+<p><span class="math display">\[P(Y=y|X=x)=\frac{P_{XY}(x,y)}{P_X(x)}=\frac{P(X=x,Y=y)}{P(X=x)},\mbox{  para todo } y\in D_Y.\]</span></p>
+</div>
+</div>
+</section>
+<section id="distibuciones-condicionales-e-independencia" class="level2" data-number="7.9">
+<h2 data-number="7.9" class="anchored" data-anchor-id="distibuciones-condicionales-e-independencia"><span class="header-section-number">7.9</span> Distibuciones condicionales e independencia</h2>
+<div class="callout-proposicion">
+<div class="callout-title">
+<p>Propiedad</p>
+</div>
+<div class="callout-content">
+<p>Si las variables <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> son independientes se cumple que</p>
+<ol type="1">
+<li><span class="math inline">\(P(X=x|Y=y)=P(X=x)\)</span></li>
+<li><span class="math inline">\(P(Y=y|X=x)=P(Y=y)\)</span>.</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="esperanzas-condicionales" class="level2" data-number="7.10">
+<h2 data-number="7.10" class="anchored" data-anchor-id="esperanzas-condicionales"><span class="header-section-number">7.10</span> Esperanzas condicionales</h2>
+<p><span class="math display">\[E(X|Y=y)=\sum_{x\in D_X} x\cdot P(X=x|Y=y)\]</span></p>
+<p><span class="math display">\[E(Y|X=x)=\sum_{y\in D_Y} y\cdot P(Y=y|X=x)\]</span></p>
+<div class="callout-proposicion">
+<div class="callout-title">
+<p>Propiedad</p>
+</div>
+<div class="callout-content">
+<p>Si las variables <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> son independientes se cumple que</p>
+<ol type="1">
+<li><span class="math inline">\(E(X|Y=y)=E(X)\)</span></li>
+<li><span class="math inline">\(E(Y|X=x)=E(Y)\)</span></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="esperanzas-de-funciones-de-v.a.-discretas-bidimensionales.-covarianza-y-correlación" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Esperanzas de funciones de v.a. discretas bidimensionales. Covarianza y correlación</h1>
+<section id="esperanzas-de-funciones-de-v.a.-discretas-bidimensionales" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="esperanzas-de-funciones-de-v.a.-discretas-bidimensionales"><span class="header-section-number">8.1</span> Esperanzas de funciones de v.a. discretas bidimensionales</h2>
+<div class="callout-definicion">
+<div class="callout-title">
+<p>Definición (propiedada) de esperanza de funciones de v.a. discretas bidimensionales</p>
+</div>
+<div class="callout-content">
+<p>Sea <span class="math inline">\((X,Y)\)</span> una variable aleatoria bidimensional discreta y <span class="math inline">\(g(X,Y)\)</span> una función de esa variable bidimensional entonces <span class="math inline">\(E(g(X,Y))=\sum_i\sum_j g(x_i,y_j) \cdot P(X=x_i,Y=y_j)\)</span>.</p>
+<p>En particular:</p>
+<ul>
+<li><span class="math inline">\(\scriptsize{\displaystyle E(X+Y)=\sum_i\sum_j (x_i+y_j) \cdot P(X=x_i,Y=y_j)}=\mu_X+\mu_Y.\)</span></li>
+<li><span class="math inline">\(\scriptsize{\displaystyle Var(X+Y)=E\left(\left(X+Y-E(X+Y)\right)^2\right)=\sum_i\sum_j (x_i+y_j-(\mu_X+\mu_Y))^2\cdot P(X=x_i,Y=y_j).}\)</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="esperanzas-de-funciones-de-v.a.-discretas-bidimensionales-1" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="esperanzas-de-funciones-de-v.a.-discretas-bidimensionales-1"><span class="header-section-number">8.2</span> Esperanzas de funciones de v.a. discretas bidimensionales</h2>
+<div class="callout-proposicion">
+<div class="callout-title">
+<p>Propiedad</p>
+</div>
+<div class="callout-content">
+<p>Sea <span class="math inline">\((X,Y)\)</span> una variable aleatoria bidimensional entonces se cumple que:</p>
+<ul>
+<li><span class="math inline">\(E(X+Y)=E(X)+E(Y)=\mu_X+ \mu_y\)</span></li>
+<li>Si <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> son independientes entonces <span class="math inline">\(E(X\cdot Y)=E(X)\cdot E(Y)=\mu_X\cdot \mu_y\)</span></li>
+<li>Si <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> son independientes entonces <span class="math inline">\(Var(X+Y)=Var(X)+ Var(Y)=\sigma_X^2+ \sigma_y^2\)</span></li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="covarianza-y-correlación" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Covarianza y correlación</h1>
+<section id="medida-de-la-variación-conjunta-covarianza" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="medida-de-la-variación-conjunta-covarianza"><span class="header-section-number">9.1</span> Medida de la variación conjunta: covarianza</h2>
+<div class="callout-definicion">
+<div class="callout-title">
+<p>Definición covarianza</p>
+</div>
+<div class="callout-content">
+<p>El <strong>momento conjunto centrado en las medias para <span class="math inline">\(k=1\)</span> y <span class="math inline">\(l=1\)</span></strong> se denomina <strong>covarianza</strong> entre las variables <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>: <span class="math display">\[
+\sigma_{XY}=Cov(X,Y)=E((X-\mu_X)(Y-\mu_Y)).
+\]</span> La covarianza puede calcularse también con: <span class="math display">\[
+Cov(X,Y)=E(X\cdot Y)-E(X)\cdot E(Y)=E(X\cdot Y)-\mu_X\cdot \mu_Y,
+\]</span></p>
+</div>
+</div>
+<div class="callout-proposicion">
+<div class="callout-title">
+<p>Propiedad</p>
+</div>
+<div class="callout-content">
+<p>Si las variables <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> son <strong>independientes</strong>, entonces <span class="math inline">\(Cov(X,Y)=0\)</span>.</p>
+<p>Es una consecuencia de que si <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> son independientes entonces que vimos que <span class="math inline">\(E(X\cdot Y)=E(X)\cdot E(Y) =\mu_X\cdot \mu_y\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="covarianza-entre-las-variables" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="covarianza-entre-las-variables"><span class="header-section-number">9.2</span> Covarianza entre las variables</h2>
+<p>La <strong>covarianza</strong> es una medida de lo relacionadas están las variables <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>:</p>
+<ul>
+<li><p>Si cuando <span class="math inline">\(X\geq \mu_X\)</span>, también ocurre que <span class="math inline">\(Y\geq \mu_Y\)</span> o viceversa, cuando <span class="math inline">\(X\leq \mu_X\)</span>, también ocurre que <span class="math inline">\(Y\leq \mu_Y\)</span>, el valor <span class="math inline">\((X-\mu_X)(Y-\mu_Y)\)</span> será positivo y la <strong>covarianza</strong> será positiva.</p></li>
+<li><p>Si por el contrario, cuando <span class="math inline">\(X\geq \mu_X\)</span>, también ocurre que <span class="math inline">\(Y\leq \mu_Y\)</span> o viceversa, cuando <span class="math inline">\(X\leq \mu_X\)</span>, también ocurre que <span class="math inline">\(Y\geq \mu_Y\)</span>, el valor <span class="math inline">\((X-\mu_X)(Y-\mu_Y)\)</span> será negativo y la <strong>covarianza</strong> será negativa.</p></li>
+<li><p>En cambio, si a veces ocurre una cosa y a veces ocurre otra, la <strong>covarianza</strong> va cambiando de signo y puede tener un valor cercano a 0.</p></li>
+</ul>
+</section>
+<section id="propiedades-de-la-covarianza" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="propiedades-de-la-covarianza"><span class="header-section-number">9.3</span> Propiedades de la covarianza</h2>
+<div class="callout-proposicion">
+<div class="callout-title">
+<p>Propiedad</p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Sea <span class="math inline">\((X,Y)\)</span> una variable aleatoria bidimensional. Entonces la <strong>varianza de la suma/resta</strong> se calcula usando la expresión siguiente:</li>
+</ul>
+<p><span class="math display">\[
+Var(X\pm Y)=Var(X)+Var(Y)\pm 2\cdot Cov(X,Y).
+\]</span></p>
+<ul>
+<li>Sea <span class="math inline">\((X,Y)\)</span> una variable aleatoria bidimensional donde las variables <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> son <strong>independientes</strong>. Entonces:</li>
+</ul>
+<p><span class="math display">\[
+Var(X+Y)=Var(X)+Var(Y).
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="coeficiente-de-correlación" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="coeficiente-de-correlación"><span class="header-section-number">9.4</span> Coeficiente de correlación</h2>
+<div class="callout-proposicion">
+<div class="callout-title">
+<p>Propiedad</p>
+</div>
+<div class="callout-content">
+<p>La <strong>covarianza</strong> depende de las unidades en las que se midan las variables <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> ya que si <span class="math inline">\(a&gt;0\)</span> y <span class="math inline">\(b&gt;0\)</span>, entonces: <span class="math display">\[
+Cov(a\cdot X,b\cdot Y)=a\cdot b\cdot Cov(X,Y).
+\]</span></p>
+</div>
+</div>
+<p>Por tanto, si queremos “medir” la relación que existe entre las variables <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> tendremos que “normalizar” la <strong>covarianza</strong> definiendo el <strong>coeficiente de correlación</strong> entre las variables <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>:</p>
+</section>
+<section id="coeficiente-de-correlación-entre-las-variables" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="coeficiente-de-correlación-entre-las-variables"><span class="header-section-number">9.5</span> Coeficiente de correlación entre las variables</h2>
+<div class="callout-definicion">
+<div class="callout-title">
+<p>Definición del coeficiente de correlación.</p>
+</div>
+<div class="callout-content">
+<p>Sea <span class="math inline">\((X,Y)\)</span> una variable aleatoria bidimensional. Se define el <strong>coeficiente de correlación</strong> entre las variables <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> como: <span class="math display">\[
+\rho_{XY}=\frac{Cov(X,Y)}{\sqrt{Var(X)}\cdot\sqrt{Var(Y)}}=\frac{E(X\cdot Y)-\mu_X\cdot \mu_Y}{\sqrt{E\left(X^2\right)-\mu_X^2}\cdot \sqrt{E\left(Y^2\right)-\mu_Y^2}}.
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="coeficiente-de-correlación-entre-las-variables-1" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="coeficiente-de-correlación-entre-las-variables-1"><span class="header-section-number">9.6</span> Coeficiente de correlación entre las variables</h2>
+<div class="callout-advertencia">
+<div class="callout-title">
+<p>Observación.</p>
+</div>
+<div class="callout-content">
+<p>Si las variables <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> son <strong>independientes</strong>, su <strong>coeficiente de correlación</strong> <span class="math inline">\(\rho_{XY}=0\)</span> es nulo ya que su <strong>covarianza</strong> lo es.</p>
+<p>Notemos también que la <strong>correlación</strong> no tiene unidades y es invariante a cambios de escala.</p>
+<p>Además, la <strong>covarianza</strong> de las <strong>variables tipificadas</strong> <span class="math inline">\(\frac{X-\mu_X}{\sigma_X}\)</span> y <span class="math inline">\(\frac{Y-\mu_Y}{\sigma_Y}\)</span> coincide con la <strong>correlación</strong> de <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>.</p>
+<p>El <strong>coeficiente de correlación</strong> es un valor normalizado ya que siempre está entre -1 y 1: <span class="math inline">\(-1\leq\rho_{XY}\leq 1\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="coeficiente-de-correlación-entre-las-variables-2" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="coeficiente-de-correlación-entre-las-variables-2"><span class="header-section-number">9.7</span> Coeficiente de correlación entre las variables</h2>
+<div class="callout-advertencia">
+<div class="callout-title">
+<p>Observación.</p>
+</div>
+<div class="callout-content">
+<p>Si las variables <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> tiene dependencia lineal, por ejemplo si <span class="math inline">\(Y=a\cdot X+b\)</span> para algunas constantes <span class="math inline">\(a,b\in\mathbb{R}\)</span>, entonces su <strong>coeficiente de correlación</strong> <span class="math inline">\(\rho_{XY}=\pm 1\)</span>, es decir toma el valor <span class="math inline">\(1\)</span> si la pendiente <span class="math inline">\(a&gt;0\)</span> y <span class="math inline">\(-1\)</span> si <span class="math inline">\(a&lt;0\)</span>.</p>
+<p>De forma similar:</p>
+<ul>
+<li>si <span class="math inline">\(Cor(X,Y)=+1\)</span> <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> tienen relación lineal con pendiente positiva.</li>
+<li>si <span class="math inline">\(Cor(X,Y)=-1\)</span> <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> tienen relación lineal con pendiente negativa.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="matriz-de-varianzas-covarianzas-y-matriz-de-correlaciones" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="matriz-de-varianzas-covarianzas-y-matriz-de-correlaciones"><span class="header-section-number">9.8</span> Matriz de varianzas-covarianzas y matriz de correlaciones</h2>
+<div class="callout-definicion">
+<div class="callout-title">
+<p>Definicón matriz de varianzas covarianzas</p>
+</div>
+<div class="callout-content">
+<p>Sea <span class="math inline">\((X,Y)\)</span> una variable bidimensional Notemos que</p>
+<ul>
+<li><span class="math inline">\(Cov(X,X)=\sigma_{X X}=\sigma_{X}^2.\)</span></li>
+<li><span class="math inline">\(Cov(Y,Y)=\sigma_{Y Y}=\sigma_{Y}^2.\)</span></li>
+<li><span class="math inline">\(\sigma_{X Y}= Cov(X,Y)=Cov(Y,X)= \sigma_{Y X}.\)</span></li>
+</ul>
+<p>Se denomina matriz de varianzas-covarianzas y se suele denotar como <span class="math inline">\(\Sigma\)</span> a</p>
+<p><span class="math display">\[\Sigma=\pmatrix{Cov(X,X) &amp;  Cov(X,Y)\\Cov(Y,X) &amp; Cov(Y,Y)}=\pmatrix{\sigma_{XX} &amp;  \sigma_{XY}\\ \sigma_{YX} &amp; \sigma_{YY}}=
+\pmatrix{\sigma_{X}^2 &amp;  \sigma_{XY}\\ \sigma_{Y X} &amp; \sigma_{Y}^2}\]</span></p>
+</div>
+</div>
+</section>
+<section id="matriz-de-varianzas-covarianzas-y-matriz-de-correlaciones-1" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="matriz-de-varianzas-covarianzas-y-matriz-de-correlaciones-1"><span class="header-section-number">9.9</span> Matriz de varianzas-covarianzas y matriz de correlaciones</h2>
+<div class="callout-definicion">
+<div class="callout-title">
+<p>Definicón matriz de varianzas covarianzas</p>
+</div>
+<div class="callout-content">
+<p>Sea <span class="math inline">\((X,Y)\)</span> una variable bidimensional Notemos que</p>
+<ul>
+<li><span class="math inline">\(Cor(X,X)=\rho_{X X}=1.\)</span></li>
+<li><span class="math inline">\(Cor(Y,Y)=\rho_{Y Y}=1.\)</span></li>
+<li><span class="math inline">\(\rho_{X Y}= Cor(X,Y)=Cor(Y,X)= \rho_{Y X}.\)</span></li>
+</ul>
+<p>Se denomina matriz de correlaciones a</p>
+<p><span class="math display">\[R=\pmatrix{Cor(X,X) &amp;  Cor(X,Y)\\Cor(Y,X) &amp; Cor(Y,Y)}=\pmatrix{1 &amp;  \rho_{XY}\\ \rho_{Y X} &amp; 1}=
+\pmatrix{1 &amp;  \rho_{XY}\\ \rho_{X Y} &amp; 1}.\]</span></p>
+</div>
+</div>
+</section>
+</section>
+<section id="distribuciones-multidimensionales" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Distribuciones multidimensionales</h1>
+<section id="conceptos-básicos.-función-de-probabilidad-y-de-distribución." class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="conceptos-básicos.-función-de-probabilidad-y-de-distribución."><span class="header-section-number">10.1</span> Conceptos básicos. Función de probabilidad y de distribución.</h2>
+<p>Consideremos un vector compuesto de <span class="math inline">\(n\)</span> variables aleatorias discretas <span class="math inline">\((X_1,X_2,\ldots,X_n)\)</span></p>
+<p>Su <strong>función de probabilidad</strong> es</p>
+<p><span class="math display">\[\begin{aligned} P_{X_1,X_2,\ldots, X_n}(x_1,x_2,\ldots,x_n) &amp;= P\Big((X_1,X_2,\ldots,X_n)=(x_1,x_2,\ldots,x_n)\Big)\\
+&amp;=P(X_1=x_1,X_2=x_2,\ldots,X_n=x_n).\end{aligned}\]</span></p>
+<p>Su función de <strong>distribución de probabilidad</strong> es</p>
+<p><span class="math display">\[F_{X_1,X_2,\ldots, X_n}(x_1,x_2,\ldots,x_n)=P(X_1\leq x_1,X_2\leq x_2,\ldots,X_n\leq x_n).\]</span></p>
+</section>
+<section id="independencia" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="independencia"><span class="header-section-number">10.2</span> Independencia</h2>
+<p><l class="definition">Definición independencia</l></p>
+<p>Diremos que la variables <span class="math inline">\(X_1,X_2,\ldots, X_n\)</span> son <strong>INDEPENDIENTES</strong> cuando <span class="math display">\[P_{X_1,X_2,\ldots, X_n}(x_1,x_2,\ldots,x_n) =P_{X_1}(x_1)\cdot P_{X_2}(x_2)\cdot  \ldots \cdot  P_{X_n}(x_n).\]</span></p>
+<p><l class="prop ">Propiedad </l></p>
+<p>Las variables <span class="math inline">\(X_1,X_2,\ldots, X_n\)</span> son <strong>INDEPENDIENTES</strong> si y solo si <span class="math display">\[F_{X_1,X_2,\ldots, X_n}(x_1,x_2,\ldots,x_n)=F_{X_1}(x_1)\cdot F_{X_2}(x_2)\cdot  \ldots \cdot  F_{X_n}(x_n).\]</span></p>
+</section>
+<section id="conceptos-básicos" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="conceptos-básicos"><span class="header-section-number">10.3</span> Conceptos básicos</h2>
+<p><l class="definition"> Vector de medias </l></p>
+<p>Si denotamos <span class="math inline">\(E(X_i)=\mu_i\)</span> para <span class="math inline">\(i=1,2,\ldots,n\)</span> el <strong>vector de medias</strong> es <span class="math display">\[E(X_1,X_2,\ldots,X_n)=(E(X_1),E(X_2),\ldots,E(X_n))=(\mu_1,\mu_2,\ldots,\mu_n).\]</span></p>
+<p><l class="definition"> Covarianza y varianzas </l></p>
+<p>Si denotamos <span class="math inline">\(\sigma_{ij}=Cov(X_i,X_j)\)</span> para todo <span class="math inline">\(i,j\)</span> en <span class="math inline">\(1,2,\ldots n\)</span> entonces tenemos que</p>
+<ul>
+<li><span class="math inline">\(\sigma_{ii}=Cov(X_i,X_i)=\sigma_{ii}=\sigma_i^2.\)</span></li>
+<li><span class="math inline">\(\sigma_{ij}=Cov(X_i,X_j)=Cov(X_j,X_i)=\sigma_{ji}.\)</span></li>
+</ul>
+</section>
+<section id="conceptos-básicos-1" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="conceptos-básicos-1"><span class="header-section-number">10.4</span> Conceptos básicos</h2>
+<p>Si denotamos <span class="math inline">\(\rho_{ij}=Cor(X_i,X_j)\)</span> para todo <span class="math inline">\(i,j\)</span> en <span class="math inline">\(1,2,\ldots n\)</span> entonces tenemos que</p>
+<ul>
+<li><span class="math inline">\(\rho_{ii}=Cor(X_i,X_i)=1.\)</span></li>
+<li><span class="math inline">\(\rho_{ij}=Cor(X_i,X_j)=Cor(X_j,X_i)=\rho_{ji}.\)</span></li>
+</ul>
+</section>
+<section id="matrices-de-varianzas-covarianzas-y-de-correlaciones" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="matrices-de-varianzas-covarianzas-y-de-correlaciones"><span class="header-section-number">10.5</span> Matrices de varianzas-covarianzas y de correlaciones</h2>
+<p><span class="math display">\[\Sigma=\pmatrix{ \sigma_{1}^2 &amp; \sigma_{12} &amp; \ldots &amp; \sigma_{1n}\\
+\sigma_{21} &amp; \sigma_{2}^2 &amp; \ldots &amp; \sigma_{2n}\\
+\vdots &amp; \vdots &amp; \ddots&amp; \vdots\\
+\sigma_{n1} &amp; \sigma_{n2} &amp; \ldots &amp; \sigma_{n}^2
+}, \qquad R=\pmatrix{ 1 &amp; \rho_{12} &amp; \ldots &amp; \rho_{1n}\\
+\rho_{21} &amp; 1 &amp; \ldots &amp; \rho_{2n}\\
+\vdots &amp; \vdots &amp; \ddots&amp; \vdots\\
+\rho_{n1} &amp; \rho_{n2} &amp; \ldots &amp; 1
+}.\]</span></p>
+<!-- 
+## Ampliación de conceptos 
+
+
+
+
+
+
+::: {.cell}
+::: {.cell-output-display}
+![](Images/curso_probabilidad.PNG){width=1000px}
+:::
+:::
+
+
+
+
+
+ -->
+
+
+</section>
+</section>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./distribuciones_notables_2.html" class="pagination-link" aria-label="Distribuciones notables continuas">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distribuciones notables continuas</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

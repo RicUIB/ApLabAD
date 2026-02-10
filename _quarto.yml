@@ -20,6 +20,7 @@ book:
 #        - teoria_probabilidad.qmd
         - distribuciones_notables_1.qmd
         - distribuciones_notables_2.qmd
+        - Tema_VA_Discretas_multidimensionales.qmd
 
 bibliography: references.bib
 
