@@ -4,7 +4,8 @@
 
 ::::: callout-definicion
 ::: callout-title 
-Definición de variable aleatoria bidimensional.</l>
+Definición de variable aleatoria bidimensional
+:::
 ::: callout-content
   
 Sea $\Omega$ es espacio muestral de un experimento. Diremos que  $(X,Y)$  es una **variable aleatoria bidimensional** cuando tanto $X$ como $Y$  toman valores reales para cada elemento del espacio $\Omega$. 
@@ -22,6 +23,7 @@ Diremos que es **heterogénea** cuando $X$ e $Y$ no compartan ser continuas o di
 ::::: callout-definicion
 ::: callout-title 
 Definición de función de probabilidad conjunta
+:::
 ::: callout-content
 Dada una **variable aleatoria bidimensional discreta** $(X,Y)$ 
 
@@ -68,7 +70,7 @@ Por tanto, de cara a calcular $P_{XY}$ basta calcular $P_{XY}(x_i,y_j)$ para $(x
 Sea $(X,Y)$ una **variable aleatoria bidimensional discreta** con dominio $D_{XY}=\{(x_i,y_j)\, i=1,2,\ldots,\ j=1,2,\ldots\}$. 
 Su **función de probabilidad conjunta** verifica las siguientes propiedades:
 :::
-
+::: callout-content
 La suma de todos los valores de la **función de probabilidad conjunta** sobre el conjunto de valores siempre vale 1: $$\sum_{i}\sum_j P_{XY}(x_i,y_j)=1.$$
 :::
 :::::
@@ -141,13 +143,11 @@ $$
 P_X(x_i)  & = \displaystyle\sum_{j} P_{XY}(x_i,y_j),\  i=1,2,\ldots,\\ P_Y(y_j) &  = \displaystyle\sum_{i} P_{XY}(x_i,y_j),\ \ j=1,2,\ldots
 \end{array}
 $$
-
 :::
 :::::
 
 
 ## Variables aleatorias marginales
-
 
 * Podemos representar  $P_{XY}$ como una tabla bidimensional en la primera fila están los valores de la variable $Y$ ($y_1,y_2,\ldots$) y en la primera columna están los valores de la variable $X$ ($x_1,x_2,\ldots$)
 * Para obtener la **función de probabilidad marginal** de la variable $X$ en el valor $x_i$, $P_X(x_i)$, hay que sumar todos los valores de $P_{XY}(x_i,y_j)$ correspondientes a la fila $i$-ésima
@@ -155,16 +155,17 @@ $$
 
 ## Variables aleatorias marginales
 
-<div class="center">
-| $X\backslash Y$| $y_1$    | $y_2$  | $\ldots$ | $y_N$ | $P_X(x_i)=\displaystyle\sum_j P_{XY}(x_i,y_j)$|
-|----|----:|----:|----:|----:|:---:|
-| $x_1\qquad\qquad$| $P_{XY}(x_1,y_1)$ | $P_{XY}(x_1,y_2)$ | $\ldots$ | $P_{XY}(x_1,y_N)$|$P_X(x_1)$|
-| $x_2\qquad\qquad$| $P_{XY}(x_2,y_1)$ | $P_{XY}(x_2,y_2)$ | $\ldots$ | $P_{XY}(x_2,y_N)$|$P_X(x_2)$|
-| $\vdots$ |$\vdots$ |$\vdots$ |$\vdots$ |$\vdots$ ||\vdots$|
-| $x_M\qquad\qquad$| $P_{XY}(x_M,y_1)$ | $P_{XY}(x_M,y_2)$ | $\ldots$ | $P_{XY}(x_M,y_N)$|$P_X(x_M)$|
-|$P_Y(y_j)=\displaystyle\sum_i P_{XY}(x_i,y_j)$|$P_Y(y_1)$|$P_Y(y_2)$|$\ldots\ldots$|$P_Y(y_N)$| 1|
-</div> 
+::: {.smalltable .center}
 
+| $X\backslash Y$ | $y_1$ | $y_2$ | $\ldots$ | $y_N$ | $P_X(x_i)=\sum_j P_{XY}(x_i,y_j)$ |
+|---|---:|---:|---:|---:|:---:|
+| $x_1$ | $P_{XY}(x_1,y_1)$ | $P_{XY}(x_1,y_2)$ | $\ldots$ | $P_{XY}(x_1,y_N)$ | $P_X(x_1)$ |
+| $x_2$ | $P_{XY}(x_2,y_1)$ | $P_{XY}(x_2,y_2)$ | $\ldots$ | $P_{XY}(x_2,y_N)$ | $P_X(x_2)$ |
+| $\vdots$ | $\vdots$ | $\vdots$ | $\vdots$ | $\vdots$ | $\vdots$ |
+| $x_M$ | $P_{XY}(x_M,y_1)$ | $P_{XY}(x_M,y_2)$ | $\ldots$ | $P_{XY}(x_M,y_N)$ | $P_X(x_M)$ |
+| $P_Y(y_j)=\sum_i P_{XY}(x_i,y_j)$ | $P_Y(y_1)$ | $P_Y(y_2)$ | $\ldots$ | $P_Y(y_N)$ | $1$ |
+
+:::
 
 
 ##  Independencia de variables aleatorias discretas
@@ -184,12 +185,14 @@ Definición de independencia para variables aleatorias bidimensionales discretas
 Dada una variable aleatoria bidimensional discreta $(X,Y)$ con $D_{XY}=\{(x_i,y_j),\ i=1,2,\ldots,j=1,2,\ldots\}$
 
 
-Así que al menos  todos los sucesos  de la forma $\{X=x_i,\  Y=y_j\}$ deberán ser independientes. :::
+Así que al menos  todos los sucesos  de la forma $\{X=x_i,\  Y=y_j\}$ deberán ser independientes.
+:::
 :::::
 
 
 
 ## Independencia de variables aleatorias discretas
+
 ::::: callout-definicion
 ::: callout-title
 Definición de independencia para variables aleatorias bidimensionales discretas. </l>
@@ -339,11 +342,11 @@ Definición covarianza
 
 El **momento conjunto centrado en las medias para $k=1$ y $l=1$** se denomina **covarianza** entre las variables $X$ e $Y$:
 $$
-\sigma_{XY}=Cov(X,Y)=E((X-\mu_X)(Y-\mu_Y)).
+\sigma_{XY}=\Cov(X,Y)=E((X-\mu_X)(Y-\mu_Y)).
 $$
 La covarianza puede calcularse también con:
 $$
-Cov(X,Y)=E(X\cdot Y)-E(X)\cdot E(Y)=E(X\cdot Y)-\mu_X\cdot \mu_Y,
+\\Cov(X,Y)=E(X\cdot Y)-E(X)\cdot E(Y)=E(X\cdot Y)-\mu_X\cdot \mu_Y,
 $$
 :::
 :::::
@@ -354,7 +357,7 @@ $$
 Propiedad
 :::
 ::: callout-content
-Si las variables $X$ e $Y$ son **independientes**, entonces $Cov(X,Y)=0$. 
+Si las variables $X$ e $Y$ son **independientes**, entonces $\Cov(X,Y)=0$. 
 
 Es una consecuencia de que si $X$ e $Y$ son independientes entonces que vimos que $E(X\cdot Y)=E(X)\cdot E(Y) =\mu_X\cdot \mu_y$.
 :::
@@ -380,7 +383,7 @@ Propiedad
 * Sea $(X,Y)$ una variable aleatoria bidimensional. Entonces la **varianza de la suma/resta** se calcula usando la expresión siguiente:
 
 $$
-Var(X\pm Y)=Var(X)+Var(Y)\pm 2\cdot Cov(X,Y).
+Var(X\pm Y)=Var(X)+Var(Y)\pm 2\cdot \Cov(X,Y).
 $$
 
 * Sea $(X,Y)$ una variable aleatoria bidimensional donde las variables $X$ e $Y$ son **independientes**. 
@@ -402,7 +405,7 @@ Propiedad
 ::: callout-content
 La **covarianza** depende de las unidades en las que se midan las variables $X$ e $Y$ ya que si $a>0$ y $b>0$, entonces:
 $$
-Cov(a\cdot X,b\cdot Y)=a\cdot b\cdot Cov(X,Y).
+\Cov(a\cdot X,b\cdot Y)=a\cdot b\cdot \Cov(X,Y).
 $$
 :::
 :::::
@@ -418,7 +421,7 @@ Definición del coeficiente de correlación.
 ::: callout-content
 Sea $(X,Y)$ una variable aleatoria bidimensional. Se define el **coeficiente de correlación** entre las variables $X$ e $Y$ como: 
 $$
-\rho_{XY}=\frac{Cov(X,Y)}{\sqrt{Var(X)}\cdot\sqrt{Var(Y)}}=\frac{E(X\cdot Y)-\mu_X\cdot \mu_Y}{\sqrt{E\left(X^2\right)-\mu_X^2}\cdot \sqrt{E\left(Y^2\right)-\mu_Y^2}}.
+\rho_{XY}=\frac{\Cov(X,Y)}{\sqrt{Var(X)}\cdot\sqrt{Var(Y)}}=\frac{E(X\cdot Y)-\mu_X\cdot \mu_Y}{\sqrt{E\left(X^2\right)-\mu_X^2}\cdot \sqrt{E\left(Y^2\right)-\mu_Y^2}}.
 $$
 :::
 :::::
@@ -454,12 +457,13 @@ Si las variables $X$ e $Y$  tiene dependencia lineal, por ejemplo si  $Y=a\cdot 
 
 De forma similar:
 
-* si $Cor(X,Y)=+1$  $X$ e $Y$ tienen relación lineal con pendiente positiva.
-* si $Cor(X,Y)=-1$  $X$ e $Y$ tienen relación lineal con pendiente negativa.
+* si $\Cor(X,Y)=+1$  $X$ e $Y$ tienen relación lineal con pendiente positiva.
+* si $\Cor(X,Y)=-1$  $X$ e $Y$ tienen relación lineal con pendiente negativa.
 :::
 :::::
 
 ## Matriz de varianzas-covarianzas y matriz de correlaciones
+
 ::::: callout-definicion
 ::: callout-title
 Definicón  matriz de varianzas covarianzas 
@@ -469,16 +473,31 @@ Definicón  matriz de varianzas covarianzas
 Sea $(X,Y)$ una variable bidimensional Notemos que 
 
 
-* $Cov(X,X)=\sigma_{X X}=\sigma_{X}^2.$
-* $Cov(Y,Y)=\sigma_{Y Y}=\sigma_{Y}^2.$
-* $\sigma_{X Y}= Cov(X,Y)=Cov(Y,X)= \sigma_{Y X}.$
+* $\Cov(X,X)=\sigma_{X X}=\sigma_{X}^2.$
+* $\Cov(Y,Y)=\sigma_{Y Y}=\sigma_{Y}^2.$
+* $\sigma_{X Y}= \Cov(X,Y)=\Cov(Y,X)= \sigma_{Y X}.$
 
 
 
 Se denomina matriz de varianzas-covarianzas y se suele denotar como $\Sigma$ a
 
-$$\Sigma=\pmatrix{Cov(X,X) &  Cov(X,Y)\\Cov(Y,X) & Cov(Y,Y)}=\pmatrix{\sigma_{XX} &  \sigma_{XY}\\ \sigma_{YX} & \sigma_{YY}}=
-\pmatrix{\sigma_{X}^2 &  \sigma_{XY}\\ \sigma_{Y X} & \sigma_{Y}^2}$$
+$$
+\Sigma=
+\begin{pmatrix}
+\Cov(X,X) &  \Cov(X,Y)\\
+\Cov(Y,X) & \Cov(Y,Y)
+\end{pmatrix}
+=
+\begin{pmatrix}
+\sigma_{XX} &  \sigma_{XY}\\
+\sigma_{YX} & \sigma_{YY}
+\end{pmatrix}
+=
+\begin{pmatrix}
+\sigma_{X}^2 &  \sigma_{XY}\\
+\sigma_{Y X} & \sigma_{Y}^2
+\end{pmatrix}
+$$
 
 :::
 :::::
@@ -496,15 +515,24 @@ Definicón  matriz de varianzas covarianzas
 Sea $(X,Y)$ una variable bidimensional Notemos que 
 
 
-* $Cor(X,X)=\rho_{X X}=1.$
-* $Cor(Y,Y)=\rho_{Y Y}=1.$
-* $\rho_{X Y}= Cor(X,Y)=Cor(Y,X)= \rho_{Y X}.$
+* $\Cor(X,X)=\rho_{X X}=1.$
+* $\Cor(Y,Y)=\rho_{Y Y}=1.$
+* $\rho_{X Y}= \Cor(X,Y)=\Cor(Y,X)= \rho_{Y X}.$
 
 
 
 Se denomina matriz de correlaciones a
 
-$$R=\pmatrix{Cor(X,X) &  Cor(X,Y)\\Cor(Y,X) & Cor(Y,Y)}=\pmatrix{1 &  \rho_{XY}\\ \rho_{Y X} & 1}=
+$$R=
+\begin{pmatrix}
+\Cor(X,X) &  \Cor(X,Y)\\
+\Cor(Y,X) & \Cor(Y,Y)
+\end{pmatrix}=
+\begin{pmatrix}
+1 &  \rho_{XY}\\ 
+\rho_{Y X} & 1
+\end{pmatrix}
+=
 \pmatrix{1 &  \rho_{XY}\\ \rho_{X Y} & 1}.$$
 
 :::
@@ -558,17 +586,17 @@ Si denotamos $E(X_i)=\mu_i$ para $i=1,2,\ldots,n$ el **vector de medias** es
 <l class="definition"> Covarianza y varianzas </l>
 
 
-Si denotamos  $\sigma_{ij}=Cov(X_i,X_j)$  para todo $i,j$  en  $1,2,\ldots n$ entonces tenemos que 
+Si denotamos  $\sigma_{ij}=\Cov(X_i,X_j)$  para todo $i,j$  en  $1,2,\ldots n$ entonces tenemos que 
 
-* $\sigma_{ii}=Cov(X_i,X_i)=\sigma_{ii}=\sigma_i^2.$
-* $\sigma_{ij}=Cov(X_i,X_j)=Cov(X_j,X_i)=\sigma_{ji}.$
+* $\sigma_{ii}=\Cov(X_i,X_i)=\sigma_{ii}=\sigma_i^2.$
+* $\sigma_{ij}=\Cov(X_i,X_j)=\Cov(X_j,X_i)=\sigma_{ji}.$
 
 ## Conceptos básicos
 
-Si denotamos  $\rho_{ij}=Cor(X_i,X_j)$ para todo $i,j$  en  $1,2,\ldots n$ entonces tenemos que 
+Si denotamos  $\rho_{ij}=\Cor(X_i,X_j)$ para todo $i,j$  en  $1,2,\ldots n$ entonces tenemos que 
 
-* $\rho_{ii}=Cor(X_i,X_i)=1.$
-* $\rho_{ij}=Cor(X_i,X_j)=Cor(X_j,X_i)=\rho_{ji}.$
+* $\rho_{ii}=\Cor(X_i,X_i)=1.$
+* $\rho_{ij}=\Cor(X_i,X_j)=\Cor(X_j,X_i)=\rho_{ji}.$
 
 
 ## Matrices de varianzas-covarianzas y de correlaciones

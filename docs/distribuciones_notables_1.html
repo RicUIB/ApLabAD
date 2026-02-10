@@ -103,6 +103,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      Cor: "\\mathrm{Cor}",
+      Cov: "\\mathrm{Cov}"
+    }
+  }
+};
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -217,12 +227,6 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./distribuciones_notables_2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distribuciones notables continuas</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Tema_VA_Discretas_multidimensionales.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Variables aleatorias bidimensionales discretas</span></span></a>
   </div>
 </li>
       </ul>
@@ -409,7 +413,7 @@ p &amp; \mbox{ si } x=1 \\
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbinom</span>(<span class="at">n=</span><span class="dv">20</span>,<span class="at">size =</span> <span class="dv">1</span>,<span class="at">prob=</span><span class="fl">0.25</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 0 0 0 1 0 1 1 0 0 0 1 0 0 1 0 1 0 0 0 0</code></pre>
+<pre><code> [1] 0 0 0 0 1 1 1 1 0 0 0 0 0 1 0 0 0 1 0 0</code></pre>
 </div>
 </div>
 <p>El siguiente código dibuja las función de probabilidad y la de distribución de una <span class="math inline">\(Ber(p=0.25)\)</span></p>
@@ -657,11 +661,11 @@ E(X^2)&amp;=&amp; \displaystyle\sum_{k=0}^n k^2 \cdot {n \choose k }\cdot p^k\cd
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>binom.rvs(n<span class="op">=</span><span class="dv">20</span>,p<span class="op">=</span><span class="fl">0.25</span>,size <span class="op">=</span> <span class="dv">100</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>array([3, 3, 4, 6, 5, 5, 5, 4, 6, 6, 2, 6, 5, 6, 4, 5, 8, 5, 7, 4, 5, 9,
-       8, 5, 6, 2, 3, 4, 4, 5, 8, 3, 3, 6, 7, 2, 8, 4, 1, 2, 6, 1, 3, 3,
-       5, 6, 7, 3, 3, 3, 6, 4, 6, 3, 3, 3, 6, 6, 6, 4, 4, 6, 5, 2, 1, 6,
-       9, 1, 3, 4, 4, 6, 3, 5, 8, 6, 7, 3, 4, 4, 6, 7, 5, 6, 5, 8, 5, 1,
-       4, 2, 4, 5, 8, 5, 5, 2, 5, 8, 4, 5], dtype=int64)</code></pre>
+<pre><code>array([4, 6, 7, 5, 7, 4, 3, 4, 3, 4, 9, 4, 6, 6, 4, 4, 6, 3, 2, 8, 4, 5,
+       6, 3, 4, 3, 6, 5, 7, 2, 5, 4, 8, 5, 2, 4, 1, 6, 4, 3, 1, 5, 4, 5,
+       2, 4, 6, 8, 7, 7, 5, 3, 5, 4, 6, 6, 7, 5, 2, 7, 4, 6, 7, 3, 6, 1,
+       4, 8, 6, 6, 3, 8, 5, 3, 7, 6, 5, 4, 6, 6, 4, 4, 8, 6, 1, 3, 5, 4,
+       5, 5, 5, 2, 5, 4, 5, 7, 4, 5, 3, 4], dtype=int64)</code></pre>
 </div>
 </div>
 <div class="callout-advertencia">
@@ -673,11 +677,13 @@ E(X^2)&amp;=&amp; \displaystyle\sum_{k=0}^n k^2 \cdot {n \choose k }\cdot p^k\cd
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>binom.rvs(n<span class="op">=</span><span class="dv">20</span>,p<span class="op">=</span><span class="fl">0.25</span>,size <span class="op">=</span> <span class="dv">100</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>array([6, 5, 2, 5, 5, 5, 4, 3, 3, 3, 8, 5, 6, 2, 5, 5, 5, 5, 5, 4, 3, 7,
-       6, 2, 5, 8, 7, 2, 1, 8, 4, 9, 4, 4, 2, 4, 4, 4, 7, 7, 7, 5, 4, 7,
-       6, 3, 6, 7, 2, 4, 1, 8, 5, 7, 4, 5, 5, 6, 2, 7, 5, 5, 6, 4, 2, 6,
-       1, 4, 3, 8, 7, 2, 5, 7, 6, 2, 3, 5, 3, 7, 5, 6, 6, 3, 5, 5, 4, 6,
-       4, 2, 5, 4, 6, 4, 4, 5, 4, 7, 9, 7], dtype=int64)</code></pre>
+<pre><code>array([ 5,  4,  9,  3,  7,  6,  5,  8,  7,  6,  8,  7, 10,  9,  4,  3,  4,
+        4,  3,  4,  5,  7,  3,  4,  2,  6, 10,  5,  4,  8,  8,  7,  8,  6,
+        6,  4,  6,  6,  5,  4,  3,  4,  5,  9,  7,  8,  5,  7,  4,  6,  6,
+        4,  2,  6,  6,  8,  3,  5,  4,  8,  5,  6,  5,  4,  7,  3,  7,  3,
+        6,  5,  7,  6,  6,  6,  8,  6,  7,  6,  2,  7,  5,  5,  5,  6,  7,
+        8,  6,  4,  6,  3,  2,  6,  7,  5,  7,  4,  5,  3,  1,  4],
+      dtype=int64)</code></pre>
 </div>
 </div>
 </div>
@@ -694,7 +700,7 @@ E(X^2)&amp;=&amp; \displaystyle\sum_{k=0}^n k^2 \cdot {n \choose k }\cdot p^k\cd
 </div>
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>binom.rvs(n<span class="op">=</span><span class="dv">20</span>,p<span class="op">=</span><span class="fl">0.25</span>,size<span class="op">=</span><span class="dv">10</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>array([4, 5, 6, 9, 3, 5, 5, 7, 4, 7], dtype=int64)</code></pre>
+<pre><code>array([ 5,  6,  4,  5,  4,  4,  5,  4,  3, 10], dtype=int64)</code></pre>
 </div>
 </div>
 </section>
@@ -817,7 +823,7 @@ Adjuntando el paquete: 'dplyr'</code></pre>
 <span id="cb55-20"><a href="#cb55-20" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Función de Probabilidad (PMF) - Binomial(10, 0.7)'</span>)</span>
 <span id="cb55-21"><a href="#cb55-21" aria-hidden="true" tabindex="-1"></a>plt.xticks(x)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>([&lt;matplotlib.axis.XTick object at 0x0000021F66C49D90&gt;, &lt;matplotlib.axis.XTick object at 0x0000021F66C49D00&gt;, &lt;matplotlib.axis.XTick object at 0x0000021F66C36BB0&gt;, &lt;matplotlib.axis.XTick object at 0x0000021F66CD9FD0&gt;, &lt;matplotlib.axis.XTick object at 0x0000021F66CD9DC0&gt;, &lt;matplotlib.axis.XTick object at 0x0000021F6738DD90&gt;, &lt;matplotlib.axis.XTick object at 0x0000021F6738D9D0&gt;, &lt;matplotlib.axis.XTick object at 0x0000021F6738D670&gt;, &lt;matplotlib.axis.XTick object at 0x0000021F66CD9670&gt;, &lt;matplotlib.axis.XTick object at 0x0000021F67389700&gt;, &lt;matplotlib.axis.XTick object at 0x0000021F67382820&gt;], [Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, '')])</code></pre>
+<pre><code>([&lt;matplotlib.axis.XTick object at 0x000001A284B79D90&gt;, &lt;matplotlib.axis.XTick object at 0x000001A284B79D00&gt;, &lt;matplotlib.axis.XTick object at 0x000001A284B66BB0&gt;, &lt;matplotlib.axis.XTick object at 0x000001A284C09FD0&gt;, &lt;matplotlib.axis.XTick object at 0x000001A284C09DC0&gt;, &lt;matplotlib.axis.XTick object at 0x000001A2852BBD90&gt;, &lt;matplotlib.axis.XTick object at 0x000001A2852BB9D0&gt;, &lt;matplotlib.axis.XTick object at 0x000001A2852BB670&gt;, &lt;matplotlib.axis.XTick object at 0x000001A284C09670&gt;, &lt;matplotlib.axis.XTick object at 0x000001A2852B9700&gt;, &lt;matplotlib.axis.XTick object at 0x000001A2852B2820&gt;], [Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, '')])</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>plt.grid(axis<span class="op">=</span><span class="st">'y'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
@@ -831,7 +837,7 @@ Adjuntando el paquete: 'dplyr'</code></pre>
 <span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Función de Distribución Acumulada (CDF) - Binomial(10, 0.7)'</span>)</span>
 <span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a>plt.xticks(x)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>([&lt;matplotlib.axis.XTick object at 0x0000021F673AE280&gt;, &lt;matplotlib.axis.XTick object at 0x0000021F673AEB50&gt;, &lt;matplotlib.axis.XTick object at 0x0000021F673AEAF0&gt;, &lt;matplotlib.axis.XTick object at 0x0000021F673FC070&gt;, &lt;matplotlib.axis.XTick object at 0x0000021F673FC6D0&gt;, &lt;matplotlib.axis.XTick object at 0x0000021F673DB5B0&gt;, &lt;matplotlib.axis.XTick object at 0x0000021F673F1370&gt;, &lt;matplotlib.axis.XTick object at 0x0000021F673E2B20&gt;, &lt;matplotlib.axis.XTick object at 0x0000021F673E2DC0&gt;, &lt;matplotlib.axis.XTick object at 0x0000021F673F2D90&gt;, &lt;matplotlib.axis.XTick object at 0x0000021F673FC460&gt;], [Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, '')])</code></pre>
+<pre><code>([&lt;matplotlib.axis.XTick object at 0x000001A2852DD280&gt;, &lt;matplotlib.axis.XTick object at 0x000001A2852DDB50&gt;, &lt;matplotlib.axis.XTick object at 0x000001A2852DDAF0&gt;, &lt;matplotlib.axis.XTick object at 0x000001A28532C070&gt;, &lt;matplotlib.axis.XTick object at 0x000001A28532C6D0&gt;, &lt;matplotlib.axis.XTick object at 0x000001A28530B5B0&gt;, &lt;matplotlib.axis.XTick object at 0x000001A285321370&gt;, &lt;matplotlib.axis.XTick object at 0x000001A285311B20&gt;, &lt;matplotlib.axis.XTick object at 0x000001A285311DC0&gt;, &lt;matplotlib.axis.XTick object at 0x000001A285322D90&gt;, &lt;matplotlib.axis.XTick object at 0x000001A28532C460&gt;], [Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, '')])</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>plt.grid(axis<span class="op">=</span><span class="st">'y'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
@@ -1358,8 +1364,8 @@ Var(X)=\frac{1-p}{p^2}=\frac{1-\frac{1}{10}}{\left(\frac{1}{10}\right)^2}=\frac{
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb91"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a>geom.rvs(p<span class="op">=</span><span class="fl">0.25</span>, size<span class="op">=</span><span class="dv">20</span>, loc<span class="op">=-</span><span class="dv">1</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>array([ 6,  1,  1,  1,  5,  3,  3,  2, 14,  0,  0,  1,  7,  0,  1,  0,  7,
-        6,  4,  4], dtype=int64)</code></pre>
+<pre><code>array([ 0,  1,  0,  0, 11,  4,  3,  2,  0,  5,  4,  5,  7,  2,  0,  2,  2,
+        5,  0,  0], dtype=int64)</code></pre>
 </div>
 </div>
 <p><strong>Ejercicio</strong></p>
@@ -1721,12 +1727,12 @@ Var(X)=n\cdot\frac{1-p}{p^2}=2 \cdot \frac{1-0.1}{0.1^2}=180,
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb123"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a>nbinom.rvs(n<span class="op">=</span><span class="dv">2</span>, p<span class="op">=</span><span class="fl">0.1</span>, size<span class="op">=</span><span class="dv">100</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>array([ 7, 18, 16, 22, 13, 38, 13,  4, 21, 19, 13,  2, 13, 14, 13, 51, 37,
-       17, 10, 13, 24,  3, 17, 26, 13, 17, 14, 13, 23, 12, 32,  5, 19,  8,
-       10,  3,  2, 25, 77,  9,  2, 11, 17, 40, 16, 17, 16, 23,  9, 15,  6,
-        7, 14, 10, 15, 15, 32,  6, 35,  7, 14,  3, 17, 46, 42, 49,  5, 52,
-       16, 49, 10, 23,  9, 10, 28, 54, 21, 41, 41, 14,  5, 14,  2, 12, 12,
-       24, 16, 13,  7,  6, 14,  1,  1, 21, 39, 17, 24, 19, 13, 14],
+<pre><code>array([ 1, 23,  5, 26, 21, 15,  3, 20, 21, 17, 16, 31, 11, 10, 19, 35,  7,
+       11,  6,  0, 11, 32, 10,  7, 50, 41,  8,  7, 44, 46, 12,  7,  5, 15,
+       38, 36, 15, 38, 15,  7, 16, 21,  5, 13, 27, 49, 16,  9,  6, 61, 14,
+       24, 11, 38, 24, 22, 22, 10, 27,  8, 12, 10, 21, 24, 16,  8, 16, 17,
+       19,  1, 15, 18,  9,  0,  5,  2,  5, 24, 19, 14, 30,  3,  7, 11, 20,
+       10, 15, 15,  3, 68, 16, 28,  5, 17,  4, 30,  2,  8, 16, 11],
       dtype=int64)</code></pre>
 </div>
 </div>
@@ -2400,8 +2406,8 @@ P(X\geq 6)&amp;=1- P(X&lt;6)=1-P(X\leq 5)=1-F_X(5)=1-\displaystyle\sum_{x=0}^{5}
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb205"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb205-1"><a href="#cb205-1" aria-hidden="true" tabindex="-1"></a>poisson.rvs(mu<span class="op">=</span><span class="dv">3</span>,size<span class="op">=</span><span class="dv">40</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>array([0, 4, 4, 0, 2, 5, 4, 1, 2, 2, 2, 5, 1, 1, 3, 4, 1, 2, 4, 7, 1, 2,
-       1, 4, 7, 4, 3, 2, 3, 6, 1, 3, 4, 7, 1, 4, 4, 4, 1, 1], dtype=int64)</code></pre>
+<pre><code>array([3, 3, 4, 2, 1, 3, 1, 2, 2, 2, 5, 4, 4, 2, 7, 2, 3, 5, 4, 6, 3, 4,
+       5, 2, 5, 3, 1, 2, 4, 5, 5, 4, 6, 5, 1, 4, 2, 1, 6, 2], dtype=int64)</code></pre>
 </div>
 </div>
 <section id="gráficos-con-python" class="level4" data-number="4.6.7.1">
@@ -2673,11 +2679,11 @@ Var(X)&amp;=k\cdot\frac{m}{m+n}\cdot\left(1-\frac{m}{m+n}\right) \cdot\frac{m+n-
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb231"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb231-1"><a href="#cb231-1" aria-hidden="true" tabindex="-1"></a>hypergeom.rvs(M<span class="op">=</span><span class="dv">15</span><span class="op">+</span><span class="dv">10</span>,n<span class="op">=</span><span class="dv">15</span>,N<span class="op">=</span><span class="dv">3</span>,size<span class="op">=</span><span class="dv">100</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>array([3, 1, 0, 2, 2, 2, 3, 2, 1, 1, 1, 2, 1, 2, 0, 2, 1, 0, 2, 2, 1, 3,
-       2, 1, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2,
-       2, 1, 2, 1, 3, 2, 2, 2, 2, 2, 0, 0, 2, 3, 2, 2, 2, 2, 1, 1, 2, 2,
-       0, 2, 1, 2, 2, 1, 0, 1, 3, 1, 3, 1, 3, 0, 3, 1, 0, 2, 2, 2, 1, 2,
-       1, 2, 1, 2, 1, 2, 2, 3, 3, 2, 2, 2], dtype=int64)</code></pre>
+<pre><code>array([2, 1, 2, 1, 1, 1, 2, 3, 1, 2, 1, 2, 2, 1, 3, 2, 1, 1, 2, 2, 3, 1,
+       3, 2, 1, 2, 2, 2, 3, 3, 2, 3, 3, 2, 2, 1, 1, 2, 1, 1, 2, 1, 0, 2,
+       1, 2, 3, 1, 2, 1, 2, 1, 1, 0, 2, 2, 2, 2, 3, 0, 1, 2, 2, 1, 1, 2,
+       1, 2, 3, 2, 1, 2, 2, 2, 2, 1, 2, 2, 0, 2, 2, 3, 1, 2, 0, 2, 3, 3,
+       2, 2, 2, 3, 1, 1, 2, 2, 2, 2, 1, 3], dtype=int64)</code></pre>
 </div>
 </div>
 <div class="cell" data-layout-align="center">

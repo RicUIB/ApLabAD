@@ -178,3 +178,11 @@
 }
 
 
+.smalltable {
+  overflow-x: auto;
+}
+.smalltable table {
+  font-size: 0.78em;
+  white-space: nowrap;
+}
+.center table { margin-left:auto; margin-right:auto; }

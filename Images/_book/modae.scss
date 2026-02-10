@@ -1,0 +1,98 @@
+/*-- scss:defaults --*/
+  /*-- background-image: "poli.png"; --*/
+  
+  .definition {
+    margin: 1em 0;
+    border: 2px solid gray;
+    border-left: 10px solid teal; 
+    border-radius: 10px;
+  }
+
+.definition-header {
+  margin-left: 0em;
+  padding-left:  10px;
+  padding-top:  5px;
+  padding-bottom: 0.1em;
+  color: black;
+  background-color: rgb(123, 173, 173);
+  border-top-right-radius: 10px;
+  font-size: 1em;
+  font-weight: bold;
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: 15px center;
+}
+
+
+.definition-container {
+  padding-top: 5px;
+  padding-left: 10px;
+  color: black;
+  background-color: white;
+  border-bottom-right-radius: 10px;
+}
+
+/*-- theorem.scss --*/
+  .theorem {
+    margin: 1em 0;
+    border: 2px solid gray;
+    border-left: 10px solid #cb4335 ; 
+    border-radius: 10px;
+  }
+
+.theorem-header {
+  margin-left: 0em;
+  padding-left:  10px;
+  padding-top:  5px;
+  padding-bottom: 0.1em;
+  color: black;
+  background-color: #f1948a ;
+    border-top-right-radius: 10px;
+  font-size: 1em;
+  font-weight: bold;
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: 15px center;
+}
+
+
+.theorem-container {
+  padding-top: 5px;
+  padding-left: 10px;
+  color: black;
+  background-color: white;
+  border-bottom-right-radius: 10px;
+}
+
+
+/*-- ejerciciosejemplos.scss --*/
+  .exe {
+    margin: 1em 0;
+    border: 2px solid gray;
+    border-left: 10px solid #b3b6b7 ; 
+    border-radius: 10px;
+  }
+
+.exe-header {
+  margin-left: 0em;
+  padding-left:  10px;
+  padding-top:  5px;
+  padding-bottom: 0.1em;
+  color: black;
+  background-color: #f0f3f4  ;
+    border-top-right-radius: 10px;
+  font-size: 1em;
+  font-weight: bold;
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: 15px center;
+}
+
+
+.exe-container {
+  padding-top: 5px;
+  padding-left: 10px;
+  color: black;
+  background-color: white;
+  border-bottom-right-radius: 10px;
+}

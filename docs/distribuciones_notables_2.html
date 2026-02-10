@@ -64,7 +64,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Tema_VA_Discretas_multidimensionales.html" rel="next">
 <link href="./distribuciones_notables_1.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -103,6 +102,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      Cor: "\\mathrm{Cor}",
+      Cov: "\\mathrm{Cov}"
+    }
+  }
+};
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -217,12 +226,6 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./distribuciones_notables_2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distribuciones notables continuas</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Tema_VA_Discretas_multidimensionales.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Variables aleatorias bidimensionales discretas</span></span></a>
   </div>
 </li>
       </ul>
@@ -515,7 +518,7 @@ F_T(t)&amp;=P(T\leq t)= P(scale\cdot X+ loc\leq t)= P\left(X\leq \frac{t-loc}{sc
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="at">n=</span><span class="dv">5</span>,<span class="at">min=</span><span class="sc">-</span><span class="dv">1</span>,<span class="at">max=</span><span class="dv">1</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.8184797  0.5264389  0.8025826 -0.3098991 -0.3916398</code></pre>
+<pre><code>[1] -0.5924021  0.9902232 -0.0571942  0.8247396 -0.6656877</code></pre>
 </div>
 </div>
 <p>Por defecto, el valor de los parámetros <code>a</code> y <code>b</code> son 0 y 1, respectivamente:</p>
@@ -530,7 +533,7 @@ F_T(t)&amp;=P(T\leq t)= P(scale\cdot X+ loc\leq t)= P\left(X\leq \frac{t-loc}{sc
 </div>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="at">n=</span><span class="dv">5</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.2388311 0.2538881 0.2713106 0.2742524 0.9011992</code></pre>
+<pre><code>[1] 0.814481016 0.816218852 0.104200843 0.362285253 0.004005755</code></pre>
 </div>
 </div>
 </section>
@@ -553,12 +556,12 @@ F_T(t)&amp;=P(T\leq t)= P(scale\cdot X+ loc\leq t)= P\left(X\leq \frac{t-loc}{sc
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>uniform.rvs(size<span class="op">=</span><span class="dv">30</span>,loc<span class="op">=-</span><span class="dv">1</span>,scale<span class="op">=</span><span class="dv">2</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>array([-0.12785407,  0.95124247,  0.69951833, -0.51797164, -0.17672172,
-       -0.79956402, -0.04390405, -0.56920556, -0.5819101 , -0.39520632,
-       -0.90774941,  0.43109268,  0.5089555 ,  0.64976406,  0.19313473,
-        0.55535855,  0.94811568, -0.69022086,  0.01304166, -0.78560829,
-       -0.3894105 , -0.80178547, -0.60459754, -0.11729507, -0.15949343,
-        0.60919102,  0.51084954,  0.70785393, -0.8458981 ,  0.30877432])</code></pre>
+<pre><code>array([ 0.41103314,  0.55714548,  0.46586799,  0.60172616, -0.1359922 ,
+       -0.65626634,  0.24118778, -0.08111496,  0.72494024, -0.52425811,
+       -0.46454942, -0.15583585,  0.6119169 ,  0.48439611, -0.52957573,
+       -0.98650049,  0.30219835, -0.8577408 ,  0.25395617, -0.5202329 ,
+       -0.60645955,  0.72308476,  0.6922923 ,  0.2264679 ,  0.05905518,
+       -0.71000934,  0.89392298,  0.7119933 ,  0.38774336,  0.25887117])</code></pre>
 </div>
 </div>
 <p>Los valores de los parámetros por defecto son <code>loc=0, scale=1</code>:</p>
@@ -573,7 +576,7 @@ F_T(t)&amp;=P(T\leq t)= P(scale\cdot X+ loc\leq t)= P\left(X\leq \frac{t-loc}{sc
 </div>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>uniform.rvs(size<span class="op">=</span><span class="dv">5</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>array([0.29018119, 0.31355404, 0.27471331, 0.00963338, 0.05612942])</code></pre>
+<pre><code>array([0.53202729, 0.81363264, 0.7956216 , 0.63293519, 0.58210607])</code></pre>
 </div>
 </div>
 </section>
@@ -889,8 +892,8 @@ P(X&gt;0.5)=1-P(X\leq 0.5)=1-(1-e^{-4\cdot 0.5 })=e^{-2}=0.1353353.
 </div>
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>expon.rvs(scale<span class="op">=</span><span class="fl">1.</span><span class="op">/</span><span class="dv">3</span>,size<span class="op">=</span><span class="dv">10</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>array([0.19307726, 0.01050308, 0.4316379 , 0.71703193, 0.61843383,
-       0.02205154, 0.21958104, 0.2273292 , 0.18997984, 0.22592138])</code></pre>
+<pre><code>array([0.05334751, 0.85685947, 0.03228314, 0.4642467 , 0.2139437 ,
+       0.7120241 , 0.35966368, 0.18774555, 0.36541055, 0.16234022])</code></pre>
 </div>
 </div>
 </section>
@@ -1107,7 +1110,7 @@ e^{-{1\over 2}{\left({t-\mu}\over{\sigma}\right)}^2} dt.
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb90"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>norm.rvs(loc<span class="op">=</span><span class="dv">1</span>,scale<span class="op">=</span><span class="dv">2</span>,size<span class="op">=</span><span class="dv">5</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>array([-1.31535363,  0.76829331,  1.8591948 ,  5.31386387,  1.57769053])</code></pre>
+<pre><code>array([-1.40889988,  4.49554274,  0.18860443,  5.09478575,  2.29166203])</code></pre>
 </div>
 </div>
 <p>Consultad <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html">SciPy.org</a> para dibujar las funciones de densidad y de distribución con Python.</p>
@@ -1734,9 +1737,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Tema_VA_Discretas_multidimensionales.html" class="pagination-link" aria-label="Variables aleatorias bidimensionales discretas">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Variables aleatorias bidimensionales discretas</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

@@ -179,6 +179,9 @@
 \newtcolorbox{Nota}{htmlcallout={accno}{calloutnota}}
 \newtcolorbox{Advertencia}{htmlcallout={accad}{calloutadv}}
 \newtcolorbox{Curiosidad}{htmlcallout={acccu}{calloutcur}}
+\usepackage{amsmath}
+\newcommand{\Cor}{\mathrm{Cor}}
+\newcommand{\Cov}{\mathrm{Cov}}
 \KOMAoption{captions}{tableheading}
 \makeatletter
 \@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
@@ -4367,7 +4370,7 @@ Veamos los cálculos básicos \(Ber(p=0.25)\) en \texttt{R}.
 \end{Shaded}
 
 \begin{verbatim}
- [1] 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1
+ [1] 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 1
 \end{verbatim}
 
 El siguiente código dibuja las función de probabilidad y la de
@@ -4741,11 +4744,13 @@ generaremos una muestra aleatoria de 100 valores de una población
 \end{Shaded}
 
 \begin{verbatim}
-array([3, 5, 6, 6, 3, 5, 4, 4, 4, 9, 7, 9, 4, 4, 4, 8, 5, 5, 0, 9, 5, 5,
-       6, 3, 3, 4, 6, 7, 5, 6, 3, 6, 4, 5, 7, 5, 5, 4, 5, 4, 7, 7, 3, 4,
-       5, 6, 7, 3, 5, 5, 4, 8, 4, 9, 6, 4, 3, 6, 7, 4, 4, 6, 6, 2, 3, 6,
-       4, 5, 5, 3, 2, 7, 7, 4, 3, 6, 8, 5, 5, 6, 3, 4, 3, 7, 3, 6, 6, 4,
-       4, 5, 7, 4, 7, 6, 9, 6, 4, 3, 4, 7], dtype=int64)
+array([ 6,  4,  9,  5,  4,  6,  6,  4,  2,  2,  6,  4,  8, 10,  4,  6,  6,
+        5,  7,  9,  5,  4,  7,  5,  6,  4,  5,  4,  7,  7,  7,  3,  2,  7,
+        4,  9,  2,  2,  7,  3,  3,  6,  1,  5,  6,  4,  3,  2,  3,  7,  3,
+        6,  1,  9,  6,  5,  6,  7,  7,  4,  3,  5,  5,  6,  3,  4,  4,  3,
+        5,  8,  3,  4,  5,  3,  6,  4,  7,  3,  3,  2,  3,  4,  4,  8,  5,
+        5,  1,  7,  4,  5, 10,  7,  4,  5,  5,  5,  5,  4,  6,  5],
+      dtype=int64)
 \end{verbatim}
 
 \begin{Advertencia}{Observación}{}
@@ -4761,12 +4766,12 @@ una muestra aleatoria distinta.
 \end{Shaded}
 
 \begin{verbatim}
-array([ 3,  3,  4,  4,  5,  4,  5,  4,  5,  6,  3,  5,  3,  5,  4,  4,  7,
-        7,  4,  3,  5,  5,  4,  7,  6,  6,  7,  4,  6,  4,  6,  2,  7,  5,
-        3, 11,  6,  7,  8,  4,  3,  6,  4,  2,  3,  8,  5,  2,  6,  5,  4,
-        6,  3,  2,  8, 10,  7,  6,  3,  8,  3,  8,  2,  7,  3,  4, 10,  6,
-        7,  9,  4,  9,  5,  4,  4,  5,  6,  5,  4, 10,  5,  5,  6,  6,  4,
-        7,  3,  4,  5,  6,  3,  3,  7,  5,  3,  6,  5, 10,  6,  5],
+array([ 7,  6,  8,  8,  4,  3,  5,  6,  5,  3,  4,  6,  8,  4,  9,  2,  4,
+        7,  7,  5,  7,  4,  9,  1,  2,  9,  7,  4,  8,  9,  4,  6,  3, 10,
+        2,  3,  6,  6,  6,  7,  3,  6,  5,  5,  3,  5,  5,  6,  5,  5,  3,
+        7,  7,  3,  3,  5,  6,  2,  3,  6,  3,  4,  5,  8,  8,  4,  7,  6,
+        5,  6,  5,  6,  2,  7,  5,  2,  4,  6,  3,  5,  5,  8,  2,  4,  6,
+        7, 11,  7,  8,  3,  6,  5,  8,  4,  4,  7,  3,  6,  7,  4],
       dtype=int64)
 \end{verbatim}
 
@@ -4802,7 +4807,7 @@ Veamos algunos cálculos básicos con funciones de Python para la binomial
 \end{Shaded}
 
 \begin{verbatim}
-array([3, 4, 4, 6, 8, 2, 5, 7, 2, 3], dtype=int64)
+array([ 5, 10,  4,  5,  9,  3, 10,  5,  5,  2], dtype=int64)
 \end{verbatim}
 
 \subsubsection{Gráficas de la distribución binomial con
@@ -4897,6 +4902,14 @@ Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
 i Please use `linewidth` instead.
 \end{verbatim}
 
+\begin{verbatim}
+Warning in min(x): ningún argumento finito para min; retornando Inf
+\end{verbatim}
+
+\begin{verbatim}
+Warning in max(x): ningun argumento finito para max; retornando -Inf
+\end{verbatim}
+
 \begin{center}
 \includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{distribuciones_notables_1_files/figure-pdf/unnamed-chunk-8-1.pdf}
 \end{center}
@@ -4941,7 +4954,7 @@ Necesitaremos usar estas librerías:
 \end{Shaded}
 
 \begin{verbatim}
-([<matplotlib.axis.XTick object at 0x000001E75AA1A520>, <matplotlib.axis.XTick object at 0x000001E75AA1AD90>, <matplotlib.axis.XTick object at 0x000001E75AA08CA0>, <matplotlib.axis.XTick object at 0x000001E75AF32CD0>, <matplotlib.axis.XTick object at 0x000001E75AAA7F10>, <matplotlib.axis.XTick object at 0x000001E75AF3CD90>, <matplotlib.axis.XTick object at 0x000001E75AF3C1C0>, <matplotlib.axis.XTick object at 0x000001E75AF3C370>, <matplotlib.axis.XTick object at 0x000001E75AAA7F40>, <matplotlib.axis.XTick object at 0x000001E75AF324F0>, <matplotlib.axis.XTick object at 0x000001E75AF38F70>], [Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, '')])
+([<matplotlib.axis.XTick object at 0x000001269976A520>, <matplotlib.axis.XTick object at 0x000001269976AD90>, <matplotlib.axis.XTick object at 0x0000012699757CA0>, <matplotlib.axis.XTick object at 0x0000012699EA2CD0>, <matplotlib.axis.XTick object at 0x00000126997F7F10>, <matplotlib.axis.XTick object at 0x0000012699EAFD90>, <matplotlib.axis.XTick object at 0x0000012699EAF1C0>, <matplotlib.axis.XTick object at 0x0000012699EAF370>, <matplotlib.axis.XTick object at 0x00000126997F7F40>, <matplotlib.axis.XTick object at 0x0000012699EA24F0>, <matplotlib.axis.XTick object at 0x0000012699EA7F70>], [Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, '')])
 \end{verbatim}
 
 \begin{Shaded}
@@ -4961,7 +4974,7 @@ Necesitaremos usar estas librerías:
 \end{Shaded}
 
 \begin{verbatim}
-([<matplotlib.axis.XTick object at 0x000001E75AF5BD00>, <matplotlib.axis.XTick object at 0x000001E75AF5BCD0>, <matplotlib.axis.XTick object at 0x000001E75AF5B100>, <matplotlib.axis.XTick object at 0x000001E75AFAD160>, <matplotlib.axis.XTick object at 0x000001E75AFAD880>, <matplotlib.axis.XTick object at 0x000001E75AFADC70>, <matplotlib.axis.XTick object at 0x000001E75AF8C1F0>, <matplotlib.axis.XTick object at 0x000001E75AF929A0>, <matplotlib.axis.XTick object at 0x000001E75AFA1340>, <matplotlib.axis.XTick object at 0x000001E75AFA6310>, <matplotlib.axis.XTick object at 0x000001E75AFB30A0>], [Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, '')])
+([<matplotlib.axis.XTick object at 0x0000012699ECDD00>, <matplotlib.axis.XTick object at 0x0000012699ECDCD0>, <matplotlib.axis.XTick object at 0x0000012699ECD100>, <matplotlib.axis.XTick object at 0x0000012699F1D160>, <matplotlib.axis.XTick object at 0x0000012699F1D880>, <matplotlib.axis.XTick object at 0x0000012699F1DC70>, <matplotlib.axis.XTick object at 0x0000012699EFC1F0>, <matplotlib.axis.XTick object at 0x0000012699F029A0>, <matplotlib.axis.XTick object at 0x0000012699F11340>, <matplotlib.axis.XTick object at 0x0000012699F15310>, <matplotlib.axis.XTick object at 0x0000012699F240A0>], [Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, '')])
 \end{verbatim}
 
 \begin{Shaded}
@@ -5748,7 +5761,7 @@ Una muestra aleatoria de tamaño 25 de una \(Ge(0.25)\)
 \end{Shaded}
 
 \begin{verbatim}
-array([1, 5, 0, 2, 0, 1, 7, 2, 1, 0, 2, 2, 4, 0, 7, 4, 0, 0, 5, 3],
+array([9, 7, 4, 0, 2, 1, 1, 0, 7, 0, 8, 0, 0, 0, 6, 9, 1, 0, 3, 0],
       dtype=int64)
 \end{verbatim}
 
@@ -6296,12 +6309,12 @@ serán las veces que hemos fallado hasta abrir la puerta 100 veces.
 \end{Shaded}
 
 \begin{verbatim}
-array([22,  5,  9, 22, 12,  4,  9, 12, 27, 16, 13, 57, 42, 11, 21, 10, 59,
-        8,  5, 16, 37, 20,  2,  2, 29, 18, 39,  8,  3,  5, 23, 28, 14, 10,
-        5,  0, 42, 13, 40, 18, 11, 14, 17,  7,  8, 25,  7, 42,  9, 12, 19,
-        7, 18, 11, 12, 35,  9, 39, 16,  2, 37, 33, 22,  8, 12,  7,  8,  3,
-        5, 15, 28,  4,  3,  9,  5, 12,  8, 21, 13, 45, 29,  5,  3, 13,  3,
-        4, 21, 35,  8, 26, 31, 26,  9, 20, 58,  8,  5, 16, 25,  5],
+array([15, 14,  3,  5,  4,  9, 74, 21,  6,  2,  3, 10, 24, 12, 35, 22, 22,
+       13, 36,  1, 71, 60, 12, 30, 25, 39, 14,  7, 37, 32, 13,  4,  3, 17,
+       10, 13, 42, 33, 32,  8, 16, 30,  5, 42, 12,  2, 25, 12,  3,  5,  7,
+       10,  4, 14, 34,  7, 52, 32, 14,  2, 19,  7, 14, 10, 29, 42,  8, 39,
+       11,  5, 24, 22, 17,  8, 24, 34, 16, 40, 13, 22,  6,  8,  9, 33, 21,
+        5,  3,  6, 19,  8,  9, 13, 13, 24, 22, 13, 22, 20,  5, 29],
       dtype=int64)
 \end{verbatim}
 
@@ -7439,8 +7452,8 @@ población \(Po(3)\)
 \end{Shaded}
 
 \begin{verbatim}
-array([0, 3, 3, 2, 4, 2, 3, 0, 3, 2, 2, 3, 2, 4, 5, 2, 4, 2, 2, 4, 3, 1,
-       3, 4, 6, 4, 2, 0, 5, 2, 3, 1, 3, 7, 1, 2, 3, 1, 6, 2], dtype=int64)
+array([6, 6, 1, 4, 2, 3, 4, 3, 3, 1, 0, 4, 7, 2, 4, 0, 3, 3, 3, 2, 3, 2,
+       2, 4, 4, 2, 2, 5, 3, 1, 2, 3, 0, 2, 5, 6, 4, 0, 2, 3], dtype=int64)
 \end{verbatim}
 
 \subsubsection{Gráficos con Python}\label{gruxe1ficos-con-python}
@@ -7896,11 +7909,11 @@ Una muestra aleatoria de este experimento sería\ldots{}
 \end{Shaded}
 
 \begin{verbatim}
-array([2, 3, 2, 1, 3, 3, 2, 2, 3, 1, 2, 2, 1, 1, 2, 1, 2, 1, 2, 2, 3, 1,
-       2, 3, 2, 1, 1, 3, 2, 1, 2, 0, 1, 3, 2, 2, 1, 1, 3, 2, 0, 2, 2, 2,
-       0, 3, 1, 2, 2, 2, 3, 3, 1, 2, 2, 2, 3, 2, 2, 0, 2, 2, 1, 3, 3, 2,
-       1, 2, 1, 2, 2, 2, 1, 1, 2, 2, 2, 2, 0, 2, 2, 1, 3, 1, 1, 3, 1, 2,
-       2, 1, 1, 2, 1, 1, 2, 1, 3, 3, 2, 3], dtype=int64)
+array([3, 2, 2, 1, 1, 2, 2, 2, 1, 3, 1, 3, 2, 0, 0, 1, 3, 3, 2, 2, 2, 1,
+       1, 0, 2, 2, 2, 2, 0, 0, 2, 2, 2, 2, 2, 1, 1, 2, 3, 2, 2, 1, 2, 0,
+       1, 1, 3, 3, 1, 1, 3, 3, 0, 2, 2, 1, 2, 2, 1, 3, 3, 3, 2, 3, 1, 1,
+       1, 3, 2, 2, 2, 1, 2, 1, 2, 2, 1, 2, 2, 3, 2, 2, 2, 2, 2, 3, 1, 1,
+       1, 3, 3, 1, 1, 2, 1, 0, 2, 2, 2, 2], dtype=int64)
 \end{verbatim}
 
 \begin{Shaded}
@@ -8213,7 +8226,7 @@ tamaño \(n\) que sigan la distribución \(U(a,b)\):
 \end{Shaded}
 
 \begin{verbatim}
-[1]  0.2432759 -0.2827828 -0.8715729  0.7606701  0.5504770
+[1] -0.9306800  0.3021719 -0.9974941  0.8299272 -0.6946479
 \end{verbatim}
 
 Por defecto, el valor de los parámetros \texttt{a} y \texttt{b} son 0 y
@@ -8246,7 +8259,7 @@ Por defecto, el valor de los parámetros \texttt{a} y \texttt{b} son 0 y
 \end{Shaded}
 
 \begin{verbatim}
-[1] 0.8348241 0.4421061 0.7906439 0.5410380 0.6689772
+[1] 0.3615970 0.9147782 0.8485162 0.4778956 0.6634579
 \end{verbatim}
 
 \subsection{Cálculos con Python}\label{cuxe1lculos-con-python-3}
@@ -8289,12 +8302,12 @@ Para generar una muestra de valores aleatorios, hay que usar la función
 \end{Shaded}
 
 \begin{verbatim}
-array([-0.96400294, -0.28098517,  0.93336358, -0.21166553,  0.79062069,
-       -0.52713386,  0.91324723,  0.43391265, -0.93609723, -0.33691811,
-       -0.56741694,  0.91613935, -0.81515025,  0.34628267, -0.87474465,
-       -0.02740065, -0.82179118,  0.38217883, -0.10327036, -0.96366202,
-        0.57001477,  0.57614094, -0.84251932,  0.97471924, -0.67735867,
-        0.61149072,  0.46658583,  0.93706989,  0.83085158, -0.08942976])
+array([-0.08473376,  0.33430555,  0.41330315, -0.21398281,  0.77977462,
+        0.42683521,  0.09761335,  0.91614649, -0.38732816, -0.69759636,
+       -0.71898505,  0.83294298,  0.41112129,  0.06347201, -0.97180241,
+        0.62168698, -0.26977296,  0.59545469, -0.04592417,  0.38742208,
+       -0.30165347,  0.91077012,  0.33167581,  0.78016846,  0.04464196,
+       -0.33727213, -0.27984067, -0.71034518,  0.50256322, -0.70109717])
 \end{verbatim}
 
 Los valores de los parámetros por defecto son \texttt{loc=0,\ scale=1}:
@@ -8326,7 +8339,7 @@ Los valores de los parámetros por defecto son \texttt{loc=0,\ scale=1}:
 \end{Shaded}
 
 \begin{verbatim}
-array([0.66034094, 0.27771447, 0.17102644, 0.54748246, 0.24939644])
+array([0.17375736, 0.5837242 , 0.22618403, 0.12647794, 0.80626228])
 \end{verbatim}
 
 \section{Cuantiles de variables
@@ -8825,8 +8838,8 @@ Y en Python con:
 \end{Shaded}
 
 \begin{verbatim}
-array([0.67371222, 0.43263282, 1.09394935, 0.38873815, 0.001644  ,
-       0.03675472, 0.47969944, 0.11788067, 0.23121459, 0.39705633])
+array([0.75917744, 0.67256418, 0.16310332, 0.22596409, 0.0954248 ,
+       0.30887535, 0.78989342, 0.46893109, 0.11925351, 0.04277942])
 \end{verbatim}
 
 \subsection{\texorpdfstring{Resumen v.a. con distribución exponencial
@@ -9123,7 +9136,7 @@ Y la generación aleatoria de valores según \(X\) como
 \end{Shaded}
 
 \begin{verbatim}
-array([ 1.36540437,  1.19071474,  1.78934011, -0.04199608,  1.51766098])
+array([ 4.01828234,  5.10969613, -1.06616899,  4.40336832,  2.13174928])
 \end{verbatim}
 
 Consultad
