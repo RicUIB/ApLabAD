@@ -6,11 +6,11 @@ knitr::opts_chunk$set(echo = TRUE,out.width="70%")
 
 ## Introducción
 
-Hasta ahora nuestros sucesos han sido de varios tipos: $\{C,+\}$ en la moneda, nombres de periódicos, ángulos en una ruleta, número de veces que sale cara en el lanzamiento de una moneda etc\ldots.
+Hasta ahora nuestros sucesos han sido de varios tipos: $\{C,+\}$ en la moneda, nombres de periódicos, ángulos en una ruleta, número de veces que sale cara en el lanzamiento de una moneda etc.\ldots
 
 Necesitamos estandarizar de alguna manera todos estos sucesos. Una solución es asignar a cada suceso un cierto conjunto de números reales, es decir, convertir todos los sucesos en *sucesos de números reales* para trabajar con ellos de forma unificada.
 
-Para conseguirlo utilizaremos unas funciones que transformen los elementos del espacio muestral en números; esta funciones son las variables aleatorias.
+Para conseguirlo utilizaremos unas funciones que transformen los elementos del espacio muestral en números; estas funciones son las variables aleatorias.
 
 ## Definición de variable aleatoria
 
@@ -19,7 +19,7 @@ Comenzaremos dando una definición poco rigurosa, pero suficiente, de variable a
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"> Variable Aleatoria (definición práctica)</i>
+Variable Aleatoria (definición práctica)
 :::
 ::: callout-body
 
@@ -27,13 +27,24 @@ Una variable aleatoria (v.a.) es una aplicación que toma valores numéricos det
 :::
 :::::
 
+
+::::: callout-advertencia
+::: callout-title
+Aviso
+:::
+::: callout-body
+Esta es una **definición práctica** para empezar a trabajar. Más adelante daremos la formulación rigurosa (funciones medibles y $\sigma$-álgebras).
+:::
+:::::
+
+
 <br>
 <br>
 
 
 ::::: callout-nota
 ::: callout-title
-<i class="bi bi-info-circle"> Notación </i>  
+ Notación   
 :::
 ::: callout-body
 -   Normalmente representaremos las v.a. por letras mayúsculas $X,Y,Z\ldots$
@@ -46,7 +57,7 @@ Una variable aleatoria (v.a.) es una aplicación que toma valores numéricos det
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejemplo</i>  
+ Ejemplo  
 :::
 ::: callout-body
 Lanzamos un dado convencional de parchís el espacio muestral del experimento es
@@ -55,7 +66,7 @@ $$\Omega=\{1,2, 3, 4,  5, 6\}.$$
 
 Una v.a $X:\Omega\to\mathbb{R}$ sobre este espacio queda definida por
 
-$$X(1)=1, X(2)=2, X(3)=3, (4)=4, X(5)=5, X(6)=6.$$
+$$X(1)=1, X(2)=2, X(3)=3, X(4)=4, X(5)=5, X(6)=6.$$
 
 -   Ahora el suceso $A=\{2, 4, 6\}$, es decir "salir número par", es equivalente a $\{X=2,X=4,X=6\}$.
 -   El suceso $B=\{1,2,3\}$, es decir "salir un número inferior o igual a $3$" es en términos de la v.a. $\{X=1,X=2,X=3\}$ o también $\{X\leq
@@ -81,7 +92,7 @@ Damos a continuación una definición informal.
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"> Variables Aleatorias Discretas y Continuas</i>
+Variables Aleatorias Discretas y Continuas
 :::
 ::: callout-body
 - Una variable aleatoria es **discreta** si sólo puede tomar una cantidad 
@@ -96,7 +107,7 @@ y otra continua.
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejemplo</i>
+ Ejemplo
 :::
 ::: callout-body
 
@@ -132,7 +143,7 @@ continuación.
 
 ::::: callout-definicion
 ::: callout-title 
-<<i class="bi bi-book"> Función de Probabilidad</i>
+Función de Probabilidad
 :::
 ::: callout-body
 La **función de probabilidad** (*probability mass function* o incluso abusando 
@@ -159,7 +170,7 @@ En el caso discreto lo más habitual es que $X(\Omega)=D_X$.
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejemplo: Dado de parchís</i>
+ Ejemplo: Dado de parchís
 :::
 ::: callout-body
 
@@ -193,7 +204,7 @@ Su dominio es $$D_X=\{1,2,3,4,5,6\}.$$
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejemplo: lanzamiento moneda </i>
+ Ejemplo: lanzamiento moneda
 :::
 ::: callout-body
 
@@ -216,7 +227,7 @@ Finalmente su dominio es $D_X=\{0,1\}.$
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task">  Ejemplo: urna con bolas</i>
+  Ejemplo: urna con bolas
 :::
 ::: callout-body
 Tenemos una urna con tres bolas rojas, una negra y dos blancas. Realizamos una
@@ -240,13 +251,13 @@ El dominio de la v.a. $X$ es $D_X=\{1,2,3\}.$
 :::
 :::::
 
-## Propiedades de la función de probabilidad.
+## Propiedades de la función de probabilidad
 
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"> Propiedades básicas de la función de 
-probabilidad</i>
+Propiedades básicas de la función de 
+probabilidad
 :::
 ::: callout-body
 
@@ -262,7 +273,7 @@ Su función de probabilidad $P_{X}$ verifica las siguientes propiedades:
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejemplo: lanzmiento moneda</i>
+ Ejemplo: lanzmiento moneda
 :::
 ::: callout-body
 Lanzamos al aire tres veces, de forma independiente, una moneda perfecta. 
@@ -301,7 +312,7 @@ $$\sum_{x=0}^3 P_X(x)= \frac18+\frac38+\frac38+\frac18=1.$$
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"> Función de distribución de Probabilidad (acumuladada)</i>
+Función de distribución de Probabilidad (acumuladada)
 :::
 ::: callout-body
 La función de *distribución de probabilidad* (acumulada) de la v.a. $X$ 
@@ -321,7 +332,7 @@ distribution function* por lo que se abrevia con el acrónimo `cdf`.
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"> Propiedades de la Función de Distribución </i> 
+Propiedades de la Función de Distribución  
 :::
 ::: callout-body
 Sea $X$ una v.a. y $F_{X}$ su función de distribución:
@@ -351,7 +362,7 @@ Lo que finaliza la demistración de la propiedad.
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"> Propiedades de la Función de Distribución </i> 
+Propiedades de la Función de Distribución  
 :::
 ::: callout-body
 Sea $F_{X}$ la función de distribución de una v.a. $X$ entonces:
@@ -371,7 +382,7 @@ Sea $F_{X}$ la función de distribución de una v.a. $X$ entonces:
 
 ::::: callout-advertencia
 ::: callout-title
-<i class="bi bi-exclamation-triangle"> Advertencia: Desigualdades estrictas </i> 
+Advertencia: Desigualdades estrictas  
 :::
 ::: callout-body
 En las propiedades anteriores no se pueden cambiar en general las 
@@ -396,7 +407,7 @@ Dada una $F_{X}$ una función de distribución de la v.a. $X$ y denotamos por $F
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"> Más propiedades de la función de distribución</i> 
+Más propiedades de la función de distribución 
 :::
 ::: callout-body
 
@@ -429,7 +440,7 @@ Lo que demuestra estas dos propiedades.
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejemplo: dado (continuación)</i>
+Ejemplo: dado (continuación)
 :::
 ::: callout-body
 En el experimento del dado se tiene que:
@@ -476,7 +487,7 @@ $$
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"> Propiedades</i>
+Propiedades
 :::
 
 ::: callout-body
@@ -499,11 +510,11 @@ A estas medidas se les suele añadir el adjetivo **poblacionales** mientras que 
 
 Por ejemplo podemos buscar un valor que resuma toda la variable. Este valor es el que "*esperamos*" que se resuma la v.a. o esperamos que las realizaciones de la v.a. queden cerca de él. Demos su definición formal.
 
-### Esperanza de un variable aleatoria discreta
+### Esperanza de una variable aleatoria discreta
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"> Definición: Esperanza de una variable aleatoria discreta</i> 
+Definición: Esperanza de una variable aleatoria discreta 
 :::
 ::: callout-body
 El valor **esperado o esperanza** (*expected value* en inglés) $E(X)$ de una v.a. discreta $X$, se define como
@@ -522,7 +533,7 @@ En ocasiones se denomina **media** (*mean* en inglés, *mitjana* en catalán) po
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejemplo: Intepretación de de la media</i>
+ Ejemplo: Intepretación de de la media
 :::
 ::: callout-body
 
@@ -549,7 +560,7 @@ Entonces el valor esperado en una v.a. discreta puede entenderse como el valor p
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejemplo: Erratas en un texto</i> 
+Ejemplo: Erratas en un texto 
 :::
 ::: callout-body
 
@@ -575,8 +586,8 @@ Supongamos que el editor nos paga $2$ euros por cada página que encontremos con
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"> Propiedad: Esperanzas de funciones
-de variables aleatorias discretas</i>
+Propiedad: Esperanzas de funciones
+de variables aleatorias discretas
 :::
 ::: callout-body
 Sea $X$ una v.a. discreta con función de probabilidad $P_{X}$ y de distribución 
@@ -592,7 +603,7 @@ $$E(g(X))=\sum_{x}g(x) \cdot  P_{X}(x).$$
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check">Propiedades</i> 
+Propiedades 
 :::
 ::: callout-body
 -   $E(k)=k$ para cualquier constante $k$.
@@ -610,7 +621,7 @@ La demostración de las propiedades anteriores se deja como ejercicio.
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejemplo: paleta de colores aleatoria</i>
+ Ejemplo: paleta de colores aleatoria
 :::
 ::: callout-body
 Supongamos que estamos sentados delante de nuestro ordenador con un amigo y le decimos que en dos minutos podemos programar una paleta para poner colores a unos gráficos.
@@ -648,7 +659,7 @@ $$
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"> Propiedades </i> 
+Propiedades  
 :::
 ::: callout-body
 -   Si $|r|<1$ la serie geométrica es convergente y $$\sum_{k=0}^{+\infty }
@@ -672,7 +683,7 @@ r^{k-2}  ;\qquad  \left(\frac1{1-r}\right)^{''}=\frac2{(1-r)^3}
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejemplo: paleta de colores (continuación)</i>
+ Ejemplo: paleta de colores (continuación)
 :::
 ::: callout-body
 Si seguimos con el ejemplo de la paleta de colores, su esperanza es:
@@ -709,7 +720,7 @@ $$
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check">Definición: Momentos de orden $m$ </i> 
+Definición: Momentos de orden $m$  
 :::
 ::: callout-body
 
@@ -728,12 +739,11 @@ Resumen de conceptos:
 
 ### Medidas de la variabilidad
 
-::::: callout-definición
+::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"> Definición: Varianza</i> 
+Definición: Varianza 
 :::
 ::: callout-body
-
 Sea $X$ una v.a. Llamaremos **varianza** de $X$ a
 
 $$Var(X)=E((X-E(X))^2).$$
@@ -751,7 +761,7 @@ se la denomina desviación típica o estándar de $X$.
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"> Propiedad </i> 
+Propiedad  
 :::
 ::: callout-body
 
@@ -775,7 +785,7 @@ Se deja como ejercicio la primera afirmación.
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task">Ejemplo: número de errores (continuación) </i>
+Ejemplo: número de errores (continuación) 
 :::
 ::: callout-body
 Calculemos en el ejemplo del contero de errores la varianza de estos.
@@ -824,11 +834,11 @@ Se deja como ejercicio la demostración de estas propiedades.
 :::
 
 
-## Transformaiones lineales de v.a.
+## Transformaciones lineales de v.a.
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"> Transformación lineal </i>
+Transformación lineal 
 :::
 ::: callout-body
 
@@ -842,7 +852,7 @@ Un **cambio de variable lineal** o **transformación lineal** de una v.a. $X$ es
 
 ::::: callout-propiedad
 ::: callout-title
-<i class="bi bi-clipboard-check"> Propiedad: Esperanza de una transformación lineal </i> 
+Propiedad: Esperanza de una transformación lineal  
 :::
 ::: callout-body
 
@@ -865,7 +875,7 @@ E(Y)= &  E(a+bX)=\sum_{x}(a+b\cdot x)\cdot P_{X}(x)\\
 Lo que demuestra esta propiedad, las emás se dejan comom ejercicio.
 
 
-## Variables aleatorias continuas.
+## Variables aleatorias continuas
 
 Como ya hemos dicho las variables aleatorias continuas toman valores en intervalos o áreas.
 
@@ -884,7 +894,7 @@ Veamos un ejemplo de v.a. continua, que ampliaremos en el tema siguiente, en el 
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejemplo: Distribución uniforme en $[0,1]$</i>
+ Ejemplo: Distribución uniforme en $[0,1]$
 :::
 ::: callout-body
 **Ejemplo: distancia dardo centro de la diana**
@@ -931,7 +941,7 @@ curve(punif(x,0,1),xlim=c(-1,2),col="blue",
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check">  Propiedades</i>
+ Propiedades
 :::
 ::: callout-body
 En las variables continuas los sucesos del tipo $\{X\leq x \}$ y $\{X< x \}$ tendrán la misma probabilidad.
@@ -965,7 +975,7 @@ La demostración de las otras  propiedades las dejamos como ejercicio.
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"> Propiedades de la Función de Distribución </i> 
+Propiedades de la Función de Distribución  
 :::
 ::: callout-body
 Las propiedades anteriores y combinaciones de ellas se pueden escribir utilizando la función de distribución de $X$:
@@ -984,7 +994,7 @@ Se deja la demostración como ejercicio.
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejemplo </i>
+ Ejemplo 
 :::
 ::: example
 **Ejemplo: diana (continuación)**
@@ -1001,7 +1011,7 @@ $$P(0.25<X<0.3)=F_{X}(0.3)-F_{X}(0.25)=0.3-0.25=0.05.$$
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"> Definición: Función de densidad </i> 
+Definición: Función de densidad  
 :::
 ::: callout-body
 
@@ -1017,7 +1027,7 @@ Una función $f:\mathbb{R}\to\mathbb{R}$ es una función de densidad sobre $\mat
 
 ::::: callout-teorema
 ::: callout-title
-<i class="bi bi-lightbulb"> Propiedad: Relación entre la función de distribución y la densidad</i>  
+<i class="bi bi-lightbulb"> Propiedad: Relación entre la función de distribución y la densidad  
 :::
 ::: callout-body
 Sea $X$ una v.a. con función de distribución $F_X$. Sea $f:\mathbb{R}\to\mathbb{R}$ una función de densidad tal que
@@ -1035,7 +1045,7 @@ Además el los valores de $F_X$ son continuos y derivables en los puntos donde $
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"> Definición: Dominio de una variable aleatoria continua</i>  
+Definición: Dominio de una variable aleatoria continua  
 :::
 ::: callout-body
 
@@ -1049,7 +1059,7 @@ El conjunto $D_X=\{x\in\mathbb{R}| f_x(x)>0\}$ recibe el nombre de <l class="def
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejemplo: diana (continuación) </i>  
+ Ejemplo: diana (continuación)   
 :::
 ::: callout-body
 
@@ -1095,7 +1105,7 @@ curve(dunif(x,0,1),xlim=c(-0.5,1.5),col="blue",
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"> Propiedades </i>  
+Propiedades   
 :::
 ::: callout-body
 
@@ -1127,7 +1137,7 @@ de densidad $f_X$, entonces:
 
 ::::: callout-ejercicio
 ::: callout-title
-<i class="bi bi-pencil-square"> Ejercicio </i>  
+<i class="bi bi-pencil-square"> Ejercicio   
 :::
 ::: callout-body
 
@@ -1140,7 +1150,7 @@ Comprobar estas propiedades en el ejemplo de la diana.
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejemplo tiempo ejecución de un proceso</i>  
+ Ejemplo tiempo ejecución de un proceso  
 :::
 ::: callout-body
 
@@ -1189,7 +1199,7 @@ Efectivamente
 
 ::::: callout-ejercicio
 ::: callout-title
-<i class="bi bi-pencil-square"> Ejercicio: Tiempo de un proceso </i>  
+<i class="bi bi-pencil-square"> Ejercicio: Tiempo de un proceso   
 :::
 ::: callout-body
 Calcular la probabilidad de que uno de nuestros procesos tarde más de una unidad de tiempo en ser procesado. Calcular también la probabilidad de que dure entre $0.5$ y $1.5$ unidades de tiempo.
@@ -1206,7 +1216,7 @@ $X$ es una variable aleatoria continua con función de densidad $f_{X}(x)$
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"> Definición: Esperanza  y Varianza v.a. continuas</i> 
+Definición: Esperanza  y Varianza v.a. continuas 
 :::
 ::: callout-body
 
@@ -1225,7 +1235,7 @@ $X$ es una variable aleatoria continua con función de densidad $f_{X}(x)$
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"> Propiedades </i> 
+Propiedades  
 :::
 ::: callout-body
 
@@ -1241,7 +1251,7 @@ $X$ es una variable aleatoria continua con función de densidad $f_{X}(x)$
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejemplo: Diana (continuación) </i>
+ Ejemplo: Diana (continuación) 
 :::
 ::: callout-body
 
@@ -1268,7 +1278,7 @@ Var(X)= & E\left(\left(X-E(X)\right)^2\right)=
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"> Propiedades</i> 
+Propiedades 
 :::
 ::: callout-body
 Sea $X$ una v.a. continua con $E(X)=\mu_{X}$ y $Var(X)=\sigma_{X}^2$ sea $Y=a+b X$, donde $a,b\in\mathbb{R}$, es una nueva v.a. continua obtenida mediante una transformación lineal de $X$. Se verifican las mismas propiedades que en el caso discreto:
@@ -1287,7 +1297,7 @@ Sea $X$ una v.a. continua con $E(X)=\mu_{X}$ y $Var(X)=\sigma_{X}^2$ sea $Y=a+b 
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejemplo </i>
+ Ejemplo 
 :::
 ::: callout-body
 
@@ -1303,7 +1313,7 @@ Muchas variables aleatorias son funciones de otras v.a. En lo que sigue resumire
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check">Propiedad: Transformaciones de v.a. discretas </l>
+Propiedad: Transformaciones de v.a. discretas </l>
 :::
 ::: callout-body
 Sea $X$ una v.a. discreta con $X(\Omega)=\{x_1,x_2,\ldots,x_{n},..\}$ y sea $h:\mathbb{R}\to\mathbb{R}$ una aplicación. Entonces $Y=h(X)$ es también una v.a. discreta. Además si $P_X$ y $F_{X}$ son las funciones de probabilidad y de distribución de $X$ entonces
@@ -1318,8 +1328,8 @@ Desafortunadamente para variables no discretas el resultado no es tan sencillo c
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check">Propiedad: Transformación de v.a. continuas en continuas**
- </i>
+Propiedad: Transformación de v.a. continuas en continuas**
+ 
 :::
 ::: callout-body
 Sea $X$ una v.a. continua cuya función de densidad es $f_{X}$. Sea $h:\mathbb{R}\to\mathbb{R}$, una aplicación estrictamente monótona y derivable, por lo tanto $h'(x)\not=0$ para todo $x\in\mathbb{R}$. Sea $Y=h(X)$ la transformación de $X$ por $h$. Entonces $Y$ es una v.a. continua con función de densidad
@@ -1333,7 +1343,7 @@ $$f_{Y}(y)=\left.\frac{f_{X}(x)}
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"> Densidad de una transformación de una v.a. continua </i> 
+Densidad de una transformación de una v.a. continua  
 :::
 ::: callout-body
 
@@ -1350,7 +1360,6 @@ $$
 $$
 :::
 :::::
-
 
 ## Método general de transformación de v.a.
 
@@ -1385,12 +1394,15 @@ También son útiles desde el punto de vista teórico, por ejemplo para justific
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"> Propiedad: Desigualdad de Markov </i>
+Propiedad: Desigualdad de Markov 
 :::
-:::   callout-body    
+::: callout-body
+
 Sea $X$ una v.a. positiva con $E(X)$ finita. Entonces
 
-$$P(X\geq a)\leq \frac{E(X)}{a}\mbox{ para todo }a>0.$$
+$$
+P(X\geq a)\leq \frac{E(X)}{a}\mbox{ para todo }a>0
+$$
 :::
 :::::
 
@@ -1416,9 +1428,9 @@ $$P(X\geq a)\leq \frac{E(X)}{a}.$$
 
 ::::: callout-proposicion
 ::: callout-title
- <i class="bi bi-clipboard-check"> Propiedad: Desigualdad de Markov </i>
+ Propiedad: Desigualdad de Markov 
 :::
-:::   callout-body    
+::: callout-body
 Sea $X$ una v.a. con $E(X)$ finita entonces para todo $a>0$
 
 $$P(|X|\geq a )\leq \frac{E(|X|)}{a}.$$
@@ -1434,7 +1446,7 @@ de la desigualdad de Markov.
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"> Propiedad: Desigualdad de Chebychev</i>
+Propiedad: Desigualdad de Chebychev
 :::
 ::: callout-body
 
@@ -1475,7 +1487,7 @@ hecho que, junto con la desigualdad anterior, demuestra el resultado.
 
 ::::: callout-nota
 ::: callout-title
-<i class="bi bi-info-circle"> Utilidad básica de la desigualdad de Chebychev </i>
+ Utilidad básica de la desigualdad de Chebychev 
 :::
 ::: callout-body
 
@@ -1498,7 +1510,7 @@ dispersión de los datos.
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task">Ejemplo: tiempo de respuesta</i> 
+Ejemplo: tiempo de respuesta 
 :::
 
 ::: callout-body

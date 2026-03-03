@@ -1,7 +1,12 @@
 # custom
 
 PARTE1
-Images
+# bk
+*bk.qmd
+*bk.html
+*bk.tex
+*bk.pdf
+/mas_temas/
 
 # History files
 .Rhistory
@@ -56,3 +61,14 @@ rsconnect/
 
 
 /.quarto/
+
+
+docs/
+_book/
+*.pdf
+*.png
+*.jpg
+*.svg
+*.aux
+*.log
+*.synctex.gz

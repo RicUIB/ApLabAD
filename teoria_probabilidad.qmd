@@ -1,45 +1,25 @@
 # Teoría de la probabilidad
+En esta sección definiremos de forma rigurosa los conceptos básicos de la teoría de la probabilidad.
 
-En esta sección  definiremos  de forma rigurosa los conceptos básicos de la teoría de la probabilidad.
+Lo haremos de forma esquemática dejando las demostraciones que sean fáciles o medias al lector, como ejercicio.
 
-Lo haremos de forma esquemática dejando las demostraciones que sean  fáciles o medias al lector, como ejercicio.
-
-Se supone que el lector conoce la teoría básca de conjuntos, operaciones entre conjuntos, aplicaciones entre conjuntos y pricipios básicos de numerabilidad.
+Se supone que el lector conoce la teoría básica dde conjuntos, operaciones entrde conjuntos, aplicaciones entrde conjuntos y principios básicos de numerabilidad.
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"> Definición: Álgebra y $\sigma$-Álgebra</i>
+Definición: Álgebra y $\sigma$-álgebra
 :::
 
-::: callout-content
-Sea $\Omega$ un conjunto y $\mathcal{A}\subseteq \mathcal{P}(\Omega)$ una familia de subconjuntos de $\Omega$ diremos que $\mathcal{A}$ es una **álgebra** de $\Omega$ si: 
+::: callout-body
+Sea $\Omega$ un conjunto y $\mathcal{A}\subseteq \mathcal{P}(\Omega)$ una familia de subconjuntos de $\Omega$. Diremos que $\mathcal{A}$ es una **álgebra** sobre $\Omega$ si:
 
-1. $\Omega\in\mathcal{A}$ 
-2. $A\in\mathcal{A}\Rightarrow A^c\in\mathcal{A}$ 
-3. $A_1,A_2,\ldots,A_n \in\mathcal{A}\Rightarrow \bigcup_{i=1}^{\infty}A_i\in\mathcal{A}$ para todo $n\in\mathbb{N}$
+1. $\Omega\in\mathcal{A}$.
+2. Si $A\in\mathcal{A}$, entoncess $A^c\in\mathcal{A}$.
+3. Si $A_1,\ldots,A_n\in\mathcal{A}$, entoncess $\bigcup_{i=1}^{n} A_i\in\mathcal{A}$, para todo $n\in\mathbb{N}$.
 
-Sí además se cumple que $\mathcal{A}$ es cerrada respecto a la unión numerable de conjuntos entonces diremos que $\mathcal{A}$ es una **$\sigma$-álgebra** de $\Omega$.
+Si, además, $\mathcal{A}$ es cerrada respecto a **uniones numerables**, es decir, si para toda familia $(A_i)_{i=1}^{\infty}\subseteq\mathcal{A}$ se cumple que $\bigcup_{i=1}^{\infty} A_i\in\mathcal{A}$, entoncess diremos que $\mathcal{A}$ es una **$\sigma$-álgebra** sobre $\Omega$.
 
-El par formado por $(\Omega,\mathcal{A})$ se llama espacio medible y los elemento de $\mathcal{A}$ se denominan conjuntos medibles (en esta $\sigma$-álgebra) o sucesos.
-:::
-:::::
-
-<br>
-<br>
-
-::::: callout-proposicion
-::: callout-title
-<i class="bi bi-clipboard-check"> Proposición</i>
-:::
-
-::: callout-content
-Sea $\mathcal{A}$ una $\sigma$-álgebra de $\Omega$ entonces:
-
-1.  Es cerrada respecto a la diferencia e conjuntos e intersecciones finitas o numerables. y además $\emptyset\in\mathcal{A}$.
-2.  Si $\mathcal{A}$ es un álgebra será tambiñen una $\sigma$-álgebra si
-
-  a.  Dada un familia ${A_i}_{i=1}^{\infty}$ de elemento de $\mathcal{A}$ tales que $A_i\subseteq A_{i+1}$ para todo $i$ entonces $\bigcup_{i=1}^{\infty} A_i\in\mathcal{A}$
-  b.  Dada un familia ${A_i}_{i=1}^{\infty}$ de elemento de $\mathcal{A}$ tales que $A_i\cap A_{j}$ para todo $i,j$ $i\neq j$ entonces $\bigcup_{i=1}^{\infty} A_i\in\mathcal{A}$
+El par $(\Omega,\mathcal{A})$ se llama **espacio medible** y los elementos de $\mathcal{A}$ se denominan **conjuntos medibles** (o **sucesos**).
 :::
 :::::
 
@@ -48,11 +28,29 @@ Sea $\mathcal{A}$ una $\sigma$-álgebra de $\Omega$ entonces:
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"> Proposición</i>
+Proposición
 :::
 
-::: callout-content
-Sean $\mathcal{A}$ y $\mathcal{B}$ dos $\sigma$-álgebras de $\Omega$ entonces
+::: callout-body
+Sea $\mathcal{A}$ una $\sigma$-álgebra sobre $\Omega$. Entonces:
+
+1. $\emptyset\in\mathcal{A}$.
+2. $\mathcal{A}$ es cerrada respecto a **intersecciones finitas y numerables** y respecto a la **diferencia dde conjuntos**. En particular, si $A,B\in\mathcal{A}$, entoncess $A\cap B\in\mathcal{A}$ y $A\setminus B\in\mathcal{A}$.
+3. (Continuidad para uniones crecientes) Si $(A_i)_{i=1}^{\infty}\subseteq\mathcal{A}$ cumple $A_i\subseteq A_{i+1}$ para todo $i$, entoncess $\bigcup_{i=1}^{\infty} A_i\in\mathcal{A}$.
+4. (Continuidad para intersecciones decrecientes) Si $(A_i)_{i=1}^{\infty}\subseteq\mathcal{A}$ cumple $A_{i+1}\subseteq A_i$ para todo $i$, entoncess $\bigcap_{i=1}^{\infty} A_i\in\mathcal{A}$.
+:::
+:::::
+
+<br>
+<br>
+
+::::: callout-proposicion
+::: callout-title
+Proposición
+:::
+
+::: callout-body
+Sean $\mathcal{A}$ y $\mathcal{B}$ dos $\sigma$-álgebras de $\Omega$ entoncess
 $\mathcal{C}={A\cap B: A\in\mathcal{A}, B\in\mathcal{B}}$ es una $\sigma$-álgebra de $\Omega$.
 
 Si $\mathcal{F}\in\mathcal{P}(\Omega)$ particular la intersección de todas 
@@ -67,10 +65,10 @@ nombre de $\sigma$-álgebra generada por $\mathcal{F}$.
 
 ::::: callout-ejemplos
 ::: callout-title
-<i class="bi bi-list-task"> Algunas $\sigma$-álgebras notables </i>
+Algunas $\sigma$-álgebras notables 
 :::
 
-::: callout-content
+::: callout-body
 
 La $\sigma$-álgebra más grande de $\Omega$ es $\mathcal{P}(\Omega)$ y la más pequeña o trivial es $\{\emptyset,\Omega\}$.
 
@@ -87,10 +85,9 @@ La anterior $\sigma$-álgebra se puede generalizar a $\mathbb{R}^n$ como la $\si
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"></i> Proposición
+Proposición
 :::
 ::: callout-body
-
 La intersección arbitraria de $\sigma$-álgebras de partes de un conjunto 
 $\Omega$ es una $\sigma$-álgebra en $\Omega$. Así, si $C$ es una familia de subconjuntos de 
 $\Omega$, existe la más pequeña $\sigma$-álgebra de $\Omega$ que contiene a $C$; la llamaremos $\sigma$-álgebra engendrada por $C$y la denotaremos $\sigma(C)$."
@@ -101,11 +98,9 @@ $\Omega$, existe la más pequeña $\sigma$-álgebra de $\Omega$ que contiene a $
 Vamos a esbozar la algunas ideas para construir $\sigma$-álgebras
 
 
-
-
 ::::: callout-ejercicio
 ::: callout-title
-<i class="bi bi-pencil-square"> $\sigma$-álgebra producto</i> Ejercicio
+ $\sigma$-álgebra producto Ejercicio
 :::
 
 ::: callout-body
@@ -114,28 +109,28 @@ Sean $(\Omega_1,\mathcal{A}_1)$ y $(\Omega_2,\mathcal{A}_2)$ dos espacios medibl
 
 Podemos construir una **$\sigma$-álgebra producto** para un espacio medible producto $\Omega=\Omega_1\times \Omega_2$.
 
-Tomaremos como **conjunto producto medible** los conjuntos de la forma  
+Tomaremos como **conjunto producto medible** los conjuntos de la forma 
 $A_1 \times A_2$ con $A_i \in \mathcal{A}_i$ para $i=1,2$.
-La $\sigma$- álgebra generada por estos   productos de conjuntos   medibles se llama $\sigma$-**álgebra producto** 
-y la denotaresmos por  $\mathcal{A}_1 \times \mathcal{A}_2$.
+La $\sigma$- álgebra generada por estos productos dde conjuntos medibles se llama $\sigma$-**álgebra producto** 
+y la denotaresmos por $\mathcal{A}_1 \times \mathcal{A}_2$.
 
-Estudiad si la $\sigma$-álgebra de Borel en $\mathbb{R}^n$  es igual  al producto de $n$ copias de la $\sigma$-álgebra de Borel en $\mathbb{R}$.
+Estudiad si la $\sigma$-álgebra de Borel en $\mathbb{R}^n$ es igual al producto de $n$ copias de la $\sigma$-álgebra de Borel en $\mathbb{R}$.
 :::
 :::::
 
 
 ::::: callout-ejercicio
 ::: callout-title
-<i class="bi bi-pencil-square"> $\sigma$-álgebra inducida</i>
+ $\sigma$-álgebra inducida
 :::
 ::: callout-body
-Dado un espacio medible $(\Omega,\mathcal{A})$  y un  subconjunto 
+Dado un espacio medible $(\Omega,\mathcal{A})$ y un subconjunto 
 $B \subset \Omega$
-no vacío,  podemos construir una $\sigma$-álgebra  $\sigma$-álgebra  en $B$  a la que llamaremos inducida
+no vacío, podemos construir una $\sigma$-álgebra $\sigma$-álgebra en $B$ a la que llamaremos inducida
 
  $$
-  \mathcal{A}_B = \{ A \cap B : A \in \mathcal{A} \}
-  $$
+ \mathcal{A}_B = \{ A \cap B : A \in \mathcal{A} \}
+ $$
 
 Demostrar que $(B,\mathcal{A}_B)$ es un espacio medible.
 :::
@@ -145,24 +140,24 @@ Demostrar que $(B,\mathcal{A}_B)$ es un espacio medible.
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"> Definición: $pi$ y $d$ sistemas</i>
+Definición: $pi$ y $d$ sistemas
 :::
-::: callout-content
-Se define $\pi$-**sistema** con una familia  subconjuntos de $\Omega$ cerrada bajo intersecciones finitas.
+::: callout-body
+Se define $\pi$-**sistema** con una familia subconjuntos de $\Omega$ cerrada bajo intersecciones finitas.
 
 Definimos $d$-**sistema** o clase de Dynkin con una familia de subconjuntos de $\Omega$ 
 $\mathcal{D}\subseteq\mathcal{P}(\Omega)$ que cumplan las siguientes propiedades:
 
 1. $\Omega\in \mathcal{D}$.
-2. Si $\{A_n\}_{n\geq 1}$ es una sucesión creciente de conjuntos de $\mathcal{D}$, entonces $\cup_{n=1}^{\infty} A_n \in \mathcal{D}.$
-3. Si $A,B\in \mathcal{D}$ y $A\subset B$, entonces $B -  A \in \mathcal{D}$.
+2. Si $\{A_n\}_{n\geq 1}$ es una sucesión creciente dde conjuntos de $\mathcal{D}$, entoncess $\cup_{n=1}^{\infty} A_n \in \mathcal{D}.$
+3. Si $A,B\in \mathcal{D}$ y $A\subset B$, entoncess $B - A \in \mathcal{D}$.
 :::
 ::::: 
 
 
 **Ejercicio**
 
-Demostrar que la  intersección arbitraria de d-sistemas sigue siendo un d-sistema,
+Demostrar que la intersección arbitraria de d-sistemas sigue siendo un d-sistema,
 lo que facilita la demostración de que una familia de subconjuntos forma una $\sigma$-álgebra.
 
 **Problemas propuestos**
@@ -170,10 +165,7 @@ lo que facilita la demostración de que una familia de subconjuntos forma una $\
 
 
 
-# Medidas y Probabilidades
-
-La imagen muestra la **Definición 3.1** sobre **medidas en espacios medibles** en teoría de la medida. A continuación, te hago un resumen y explicación detallada del contenido:
-
+## Medidas y probabilidades
 
 
 ### **Definición de Medida**
@@ -192,100 +184,94 @@ $$
 
 que cumple dos propiedades fundamentales:
 
-1. **Aditividad numerable ($\sigma$-aditividad):**  
-   Si $(A_n)$es una sucesión de conjuntos **disjuntos** en $\mathcal{A}$, entonces:
+1. **Aditividad numerable ($\sigma$-aditividad):** 
+  Si $(A_n)$es una sucesión dde conjuntos **disjuntos** en $\mathcal{A}$, entoncess:
 
-   $$
-   \mu\left( \bigcup_n A_n \right) = \sum_n \mu(A_n).
-   $$
+  $$
+  \mu\left( \bigcup_n A_n \right) = \sum_n \mu(A_n).
+  $$
 
-2. **Medida del conjunto vacío:**  
-   $$
-   \mu(\emptyset) = 0.
-   $$
+2. **Medida del conjunto vacío:** 
+  $$
+  \mu(\emptyset) = 0.
+  $$
 
-A  la $\sigma$-álgebra y su espacio de medida 
-$(\Omega,\mathcal{A},\mu)$ la llamaremos  **espacio de medida**.
+A la $\sigma$-álgebra y su espacio de medida 
+$(\Omega,\mathcal{A},\mu)$ la llamaremos **espacio de medida**.
 
 
 
 ### **Tipos de medidas**
 Según el comportamiento de $\mu $, podemos clasificar las medidas en:
 
-1. **Medida finita:**  
-   Si $\mu(\Omega)<+\infty$, es decir, la medida total del espacio es finita.
+1. **Medida finita:** 
+  Si $\mu(\Omega)<+\infty$, es decir, la medida total del espacio es finita.
 
-2. **Medida $\sigma$-finita:**  
-   Si $\Omega$ puede cubrirse con una colección **numerable** de conjuntos medibles de **medida finita**.  
-   
-3. **Medida de probabilidad:**  
-   Si $\mu(\Omega) = 1 $, se llama **probabilidad**, y el espacio medible $(\Omega, \mathcal{A}, \mu)$ se llama **espacio de probabilidad**.
+2. **Medida $\sigma$-finita:** 
+  Si $\Omega$ puede cubrirse con una colección **numerable** dde conjuntos medibles de **medida finita**. 
+  
+3. **Medida de probabilidad:** 
+  Si $\mu(\Omega) = 1 $, se llama **probabilidad**, y el espacio medible $(\Omega, \mathcal{A}, \mu)$ se llama **espacio de probabilidad**.
 
 
 
 ### **Ejemplos**
-1. **Medida de conteo:**  
-   Si $\mu(A)$ es simplemente el número de elementos de$A$ (cuando$A$ es finito o numerable), entonces es una medida finita si $\Omega$ es finito, pero puede ser infinita si $\Omega$es infinito.
+1. **Medida de conteo:** 
+  Si $\mu(A)$ es simplemente el número de elementos de$A$ (cuando$A$ es finito o numerable), entoncess es una medida finita si $\Omega$ es finito, pero puede ser infinita si $\Omega$es infinito.
 
 2. Medida de Lebesgue en $\mathbb{R}$: 
-   - Es la **medida estándar de la longitud** en $\mathbb{R}$.
-   - Es una **medida $\sigma$-finita** porque $\mathbb{R}$ puede cubrirse con intervalos de medida finita como 
-   $[-n,n]$.
+  - Es la **medida estándar de la longitud** en $\mathbb{R}$.
+  - Es una **medida $\sigma$-finita** porque $\mathbb{R}$ puede cubrirse con intervalos de medida finita como 
+  $[-n,n]$.
 
 3. Medida de probabilidad uniforme en $[0,1]$:
-   - Es una **medida de probabilidad** porque $\mu([0,1]) = 1$.
-   - La probabilidad de un subconjunto $A$ es simplemente la
-    longitud de $A$ en $[0,1]$.
-                
+  - Es una **medida de probabilidad** porque $\mu([0,1]) = 1$.
+  - La probabilidad de un subconjunto $A$ es simplemente la
+  longitud de $A$ en $[0,1]$.
+        
 4. **Medida de Dirac:**
-   - Es una **medida de probabilidad**.
-   - La probabilidad de un conjunto $A$ es 1 si $0\in A$ y 0 en caso contrario.
-
-La imagen muestra la **Proposición 3.1**, que establece propiedades 
-fundamentales de las medidas en espacios medibles. A continuación, 
-te resumo y explico cada una de las propiedades junto con su 
-demostración.
-
+  - Es una **medida de probabilidad**.
+  - La probabilidad de un conjunto $A$ es 1 si $0\in A$ y 0 en caso contrario.
 
 ## **Proposición 3.1: Propiedades fundamentales de la medida**
 
 Sea $\mu$ una medida definida en un espacio medible $(\Omega,\mathcal{A})$, se cumplen las siguientes propiedades:
 
 ### **(a) Monotonía**
-Si $A \subseteq B$, entonces:
+Si $A \subseteq B$, entoncess:
 $$
 \mu(A) \leq \mu(B).
 $$
-Si además $\mu(A) < +\infty$, entonces:
+Si además $\mu(A) < +\infty$, entoncess:
 $$
-\mu(B  -  A) = \mu(B) - \mu(A).
+\mu(B - A) = \mu(B) - \mu(A).
 $$
 
-**Demostración**:  
-Como $B$ puede descomponerse como $B = A \cup (B  -  A)$ con $A \cap (B  -  A) = \emptyset$, la propiedad de **aditividad de la medida** nos dice que:
+**Demostración**: 
+Como $B$ puede descomponerse como $B = A \cup (B - A)$ con $A \cap (B - A) = \emptyset$, la propiedad de **aditividad de la medida** nos dice que:
 $$
-\mu(B) = \mu(A) + \mu(B  -  A) \geq \mu(A).
+\mu(B) = \mu(A) + \mu(B - A) \geq \mu(A).
 $$
-Si $\mu(A) < +\infty$, despejando obtenemos $\mu(B  -  A) = \mu(B) - \mu(A)$.
+Si $\mu(A) < +\infty$, despejando obtenemos $\mu(B - A) = \mu(B) - \mu(A)$.
 
 
 
 ### **(b) Continuidad hacia arriba**
-Si $(A_n)$ es una sucesión creciente de conjuntos, es decir,
+Si $(A_n)$ es una sucesión creciente dde conjuntos, es decir,
 $$
 A_1 \subseteq A_2 \subseteq A_3 \subseteq \dots,
 $$
-entonces:
+entoncess:
 $$
 \mu\left(\bigcup_n A_n\right) = \lim_{n \to \infty} \mu(A_n).
 $$
 
-**Demostración**:  
-Sea $A = \bigcup_n A_n$. Si $\mu(A_n) = +\infty$ para algún $n$, entonces $\mu(A_k) = \infty$ para todo $k \geq n$ y el resultado es trivial.  
+**Demostración**: 
+Sea $A = \bigcup_n A_n$. Si $\mu(A_n) = +\infty$ para algún $n$, entoncess $\mu(A_k) = \infty$ para todo $k \geq n$ y el resultado es trivial. 
 Si todos los $A_n$ tienen **medida finita**, reescribimos la unión como:
 
 $$
-A = A_1 \cup (A_2  -  A_1) \cup (A_3  -  A_2) \cup \dots
+A = A_1 \cup (A_2 - A_1) \cup (A_3 - A_2) \cup \dots
 $$
 
 Dado que los términos son **disjuntos**, la aditividad numerable implica:
@@ -297,25 +283,25 @@ y esto converge a $\lim_{n} \mu(A_n)$.
 
 
 ### **(c) Continuidad hacia abajo**
-Si $(A_n)$ es una sucesión decreciente de conjuntos, es decir:
+Si $(A_n)$ es una sucesión decreciente dde conjuntos, es decir:
 $$
 A_1 \supseteq A_2 \supseteq A_3 \supseteq \dots,
 $$
-y al menos uno de los $A_n$ tiene medida finita, entonces:
+y al menos uno de los $A_n$ tiene medida finita, entoncess:
 $$
 \mu\left(\bigcap_n A_n\right) = \lim_{n \to \infty} \mu(A_n).
 $$
 
-**Demostración**:  
-Podemos suponer sin pérdida de generalidad que $A_1$ tiene medida finita. Definimos $A = \bigcap_n A_n$ y consideramos la sucesión creciente $B_n = A_1  -  A_n$, la cual satisface:
+**Demostración**: 
+Podemos suponer sin pérdida de generalidad que $A_1$ tiene medida finita. Definimos $A = \bigcap_n A_n$ y consideramos la sucesión creciente $B_n = A_1 - A_n$, la cual satisface:
 
 $$
-\bigcup_n B_n = A_1  -  A.
+\bigcup_n B_n = A_1 - A.
 $$
 
 Aplicando la **continuidad hacia arriba** al conjunto $B_n$, se obtiene:
 $$
-\mu(A_1  -  A) = \lim_n \mu(A_1  -  A_n).
+\mu(A_1 - A) = \lim_n \mu(A_1 - A_n).
 $$
 
 Restando de $\mu(A_1)$, se obtiene la ecuación deseada:
@@ -326,20 +312,20 @@ $$
 
 
 ### **(d) Subaditividad numerable (σ-subaditividad)**
-Si $(A_n)$ es una sucesión arbitraria de conjuntos, entonces:
+Si $(A_n)$ es una sucesión arbitraria dde conjuntos, entoncess:
 $$
 \mu\left(\bigcup_n A_n\right) \leq \sum_n \mu(A_n).
 $$
 
-**Demostración**:  
+**Demostración**: 
 Sea $A := \bigcup_{n=1}^{\infty} A_n$. Descomponemos $A$ en términos de las uniones de diferencias:
 $$
-A = \bigcup_{n=1}^{\infty} \left( A_n  -  \bigcup_{i=1}^{n-1} A_i \right).
+A = \bigcup_{n=1}^{\infty} \left( A_n - \bigcup_{i=1}^{n-1} A_i \right).
 $$
 
 Por **aditividad numerable** y el hecho de que la medida es no negativa:
 $$
-\mu(A) = \sum_n \mu(A_n  -  \bigcup_{i=1}^{n-1} A_i) \leq \sum_n \mu(A_n).
+\mu(A) = \sum_n \mu(A_n - \bigcup_{i=1}^{n-1} A_i) \leq \sum_n \mu(A_n).
 $$
 
 
@@ -348,6 +334,5 @@ $$
 Estas propiedades son fundamentales en la teoría de la medida y se aplican en muchas áreas como **análisis real, probabilidad y teoría de integración**. En particular:
 
 - La **monotonía** muestra que medidas más grandes contienen subconjuntos de medida más pequeña.
-- La **continuidad hacia arriba y hacia abajo** garantiza que la medida respeta límites de secuencias de conjuntos.
+- La **continuidad hacia arriba y hacia abajo** garantiza que la medida respeta límites de secuencias dde conjuntos.
 - La **σ-subaditividad** es una propiedad crucial para la construcción de medidas y prueba de teoremas como el **teorema de Carathéodory**.
-

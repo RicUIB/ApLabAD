@@ -19,14 +19,14 @@ Daremos nombres a distintos tipos de sucesos:
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book"> Definición: espacio muestral y tipos de sucesos</i> 
+<i class="bi bi-book"> Definición: espacio muestral y tipos de sucesos</i>
 :::
 ::: callout-body
 -   Llamaremos **suceso elemental** a cada uno de los posibles resultados del experimento aleatorio.
 -   Llamaremos **espacio muestral** ($\Omega$,$E$) al conjunto formado por todos los sucesos elementales del experimento aleatorio.
 -   Llamaremos **suceso** a cualquier subconjunto del espacio muestral.
--   **Suceso seguro o cierto** $A\subseteq \Omega$
--   **Suceso imposible o vació**: $\emptyset$
+-   **Suceso seguro o cierto**: \(\Omega\)
+-   **Suceso imposible o vacío**: \(\emptyset\)
 -   **Partes de un conjunto**: $\mathcal{P}(\Omega)$: conjunto de todos los sucesos del experimento aleatorio (es decir, el conjunto de todos los subconjuntos de $\Omega$)
 :::
 :::::
@@ -35,17 +35,16 @@ A continuación describimos el clásico experimento del lanzamiento de un dado.
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejemplo</i>      
+<i class="bi bi-list-task"> Ejemplo</i>
 :::
 ::: callout-body
 Consideremos el experimento aleatorio que consiste en lanzar un dado. El espacio muestral de este experimento es $\Omega=\{1,2,3,4,5,6\}$ o las figuras de las caras del dado.
 
 Si lo representamos gráficamente, tendríamos:
 
-
 ```{r  pepe, echo=FALSE, out.width="50%",fig.align='center'}
 #| fig-align: center
-#| 
+#|
 library(cowplot) # for ggdraw() & draw_image()
 library(ggpubr)
 library(ggplot2)
@@ -54,9 +53,8 @@ dice_path= paste0("Images/proba1dibujos/dice/",1:6,".png")
 dice=paste0("dice",1:6)
 scaling=0.65
 for(i in 1:6){
- assign(dice[i], ggdraw() + draw_image(dice_path[i], scale = scaling)) 
+ assign(dice[i], ggdraw() + draw_image(dice_path[i], scale = scaling))
 }
-
 
 ggarrange_plot <- ggarrange(dice1,dice2, dice3,dice4,dice5,dice6,
                             labels = NULL, # add tag label to each plot
@@ -115,7 +113,7 @@ Si tenemos dos sucesos $A,B\subseteq \Omega$, podemos definir:
 -   $A\cup B$: suceso *unión*; el que ocurre si sucede $A$ o $B$.
 -   $A\cap B$: suceso *intersección*; el que ocurre si sucede $A$ y $B$.
 -   $A^c$: suceso *complementario* el que sucede si NO sucede $A$.
--   $A- B=A\cap B^c$: suceso *diferencia*, que acontece si sucede $A$ y NO sucede $B$.
+-   $A\setminus B = A\cap B^c$: suceso *diferencia*, que acontece si sucede $A$ y NO sucede $B$.
 
 ::::: callout-definicion
 ::: callout-title
@@ -130,23 +128,25 @@ Otro ejemplo se observa el sexo y la lateralidad de los estudiantes de una clase
 
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejemplo</i> 
+<i class="bi bi-list-task"> Ejemplo</i>
 :::
 ::: callout-body
-Supongamos que el sexo se divide entre Mujeres y Hombres y la lateralirad en diestros y zurdos. Vamos a definir el espacio muestral, los sucesos elementales y a realizar algunas operaciones entre ellos.
+Supongamos que el sexo se divide entre Mujeres y Hombres y la lateralidad en diestros y zurdos. Vamos a definir el espacio muestral, los sucesos elementales y a realizar algunas operaciones entre ellos.
 
-Estudiantes de esta clase: $\Omega$. - Mujeres de esta clase: $A$. - Estudiantes que son zurdos $B$.
+-   Estudiantes de esta clase: \(\Omega\).
+-   Mujeres de esta clase: \(A\).
+-   Estudiantes que son zurdos: \(B\).
 :::
 :::::
 
 Algunas operaciones entre los sucesos anteriores serían:
 
--   $A\cup B$: Estudiantes . que son mujeres o que son zurdos.
+-   $A\cup B$: Estudiantes que son mujeres o que son zurdos.
 -   $A\cap B$: Mujeres de esta clase que son zurdas.
 -   $A^c$: Hombres de esta clase.
--   $A-B$: Mujeres de la clases que NO son zurdas.
--   $B-A$: Hombres de la clase que son zurdos.
--   <font color="red"> ¡Cuidado! </font> No son incompatibles.
+-   $A\setminus B$: Mujeres de la clases que NO son zurdas.
+-   $B\setminus A$: Hombres de la clase que son zurdos.
+-   **¡Cuidado!** No son incompatibles.
 
 ### Propiedades
 
@@ -161,17 +161,21 @@ $$A\cup B=B\cup A, \quad A\cap B=B\cap A$$
 
 **Asociativas**:
 
-\begin{align*}
+$$
+\begin{aligned}
 A\cup(B\cup C)=(A\cup B)\cup C, \\
 A\cap(B\cap C)=(A\cap B)\cap C.
-\end{align*}
+\end{aligned}
+$$
 
 **Distributivas**
 
-\begin{align*}
-A\cap & (B\cup C)=(A\cap B)\cup (A\cap C),\\ 
+$$
+\begin{aligned}
+A\cap & (B\cup C)=(A\cap B)\cup (A\cap C),\\
 A\cup & (B\cap C)=(A\cup B)\cap (A\cup C).
-\end{align*}
+\end{aligned}
+$$
 :::
 :::::
 
@@ -187,7 +191,7 @@ Veamos algunos diagramas que nos ayuda a demostrar las propiedades anteriores.
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check"> Complementario del complementario</i> 
+<i class="bi bi-clipboard-check"> Complementario del complementario</i>
 :::
 ::: callout-body
 $$(A^c)^c=A$$
@@ -216,7 +220,6 @@ $$(A\cup B)^c=A^c\cap B^c$$
 | ![](Images/venn1Ac_conB.jpeg){height="150px"} | ![](Images/venn1Bc_conA.jpeg){height="150px"} | ![](Images/venn1interseccioncomplementarios.jpeg){height="150px"} |
 
 $$(A\cap B)^c=A^c\cup B^c$$
-
 
 | $A\cap B$ | $(A\cap B)^c$ |
 |:----------------------------------:|:----------------------------------:|
@@ -247,7 +250,7 @@ Esta verosimilitud puede estar justificada por:
 
 ::::: callout-definicion
 ::: callout-title
-<i class="bi bi-book">Definición formal de probabilidad</i> 
+<i class="bi bi-book">Definición formal de probabilidad</i>
 :::
 ::: callout-body
 Sea $\Omega$ el espacio muestral de un experimento aleatorio. Supongamos que el número de posibles resultados, por el momento, es finito.
@@ -301,7 +304,7 @@ Necesitaremos tener propiedades y fórmulas prácticas para poder calcular proba
 ::: callout-body
 -   $P(\emptyset)=0$.
 
--   $\scriptsize{P(A-B)=P(A)-P(A\cap B)}$ porque $\scriptsize{P(A)=P(A-B)+P(A\cap B)}$.
+-   $\scriptsize{P(A\setminus B)=P(A)-P(A\cap B)}$ porque $\scriptsize{P(A)=P(A\setminus B)+P(A\cap B)}$.
 
 ```{r probunion0,fig.align='center',echo=FALSE,out.width="30%"}
 knitr::include_graphics("Images/proba1dibujos/A-B.jpg")
@@ -313,11 +316,11 @@ knitr::include_graphics("Images/proba1dibujos/A-B.jpg")
 :::
 :::::
 
-Una identidad muy utilizada es la   de la probabilidad de la unión de dos sucesos cualesquiera. 
+Una identidad muy utilizada es la   de la probabilidad de la unión de dos sucesos cualesquiera.
 
 ::::: callout-proposicion
 ::: callout-title
-<i class="bi bi-clipboard-check">La Probabilidad de la unión de dos sucesos</i> 
+Probabilidad de la unión de dos sucesos
 :::
 ::: callout-body
 $P(A\cup B)=P(A)+P(B)-P(A\cap B)$
@@ -330,12 +333,14 @@ knitr::include_graphics("Images/proba1dibujos/A-B.jpg")
 
 La demostración analítica de esta propiedad es la siguiente:
 
-\begin{eqnarray*}
-P(A)+P(B)-P(A\cap B) &=& P(A-B)+P(A\cap B)\\ 
-& & +P(B-A)+ P(A\cap  B)-P(A\cap  B)\\
-&=& P(A-B)+P(A\cap B)+ P(B-A) \\
-&=& P(A\cup B).\\
-\end{eqnarray*}
+$$
+\begin{aligned}
+P(A)+P(B)-P(A\cap B) &= P(A\setminus B)+P(A\cap B)\\
+& & +P(B\setminus A)+ P(A\cap  B)-P(A\cap  B)\\
+&= P(A\setminus B)+P(A\cap B)+ P(B\setminus A) \\
+&= P(A\cup B).\\
+\end{aligned}
+$$
 
 ::::: callout-proposicion
 ::: callout-title
@@ -352,18 +357,17 @@ $$
 :::
 :::::
 
-La demostración es sencilla mediante inducción: partimos del caso base de dos sucesos, suponemos que es cierta  para  $n$ sucesos y luego la extendemos al caso de 
+La demostración es sencilla mediante inducción: partimos del caso base de dos sucesos, suponemos que es cierta  para  $n$ sucesos y luego la extendemos al caso de
 $n+1$ sucesos.
 
 Como comprobación, consideremos un ejemplo genérico con tres sucesos.
 
-$A=\{1,4,5,6\}$, $B=\{2,4,6,7\}$ y $C=\{3,5,6,7\}$. En este caso la  fórmula nos da 
+$A=\{1,4,5,6\}$, $B=\{2,4,6,7\}$ y $C=\{3,5,6,7\}$. En este caso la  fórmula nos da
 
 $$
 P(A\cup B\cup C)=  P(A)+P(B)+P(C)-P(A\cap B)-P(A\cap C)
 -P(B\cap C)+P(A\cap B\cap C).
 $$
-
 
 Gráficamente tenemos esta situación:
 
@@ -371,13 +375,14 @@ Gráficamente tenemos esta situación:
 knitr::include_graphics("Images/proba1dibujos/tresconjunts.jpg")
 ```
 
-
 Ahora podemos comprobar la fórmula para este caso.
 
-\begin{eqnarray*}
-P(A\cup B\cup C)&=&P(A)+P(B)+P(C)-P(A\cap B) \\
+$$
+\begin{aligned}
+P(A\cup B\cup C)&=P(A)+P(B)+P(C)-P(A\cap B) \\
   & & - P(A\cap C)-P(B\cap C)+P(A\cap B\cap C).\\
-\end{eqnarray*}
+\end{aligned}
+$$
 
 Efectivamente tenemos que:
 
@@ -400,12 +405,9 @@ Una de  las formas más intuitiva de asignación de probabilidades  es hacer el 
 :::
 :::::
 
-
-En el procesamiento del lenguaje se suelen estudiar las frecuencias de palabras 
-o letras de un determinado idioma. 
+En el procesamiento del lenguaje se suelen estudiar las frecuencias de palabras
+o letras de un determinado idioma.
 Veamos un ejemplo sobre las frecuencias de las vocales en castellano.
-
-
 
 ::::: callout-ejemplo
 ::: callout-title
@@ -413,7 +415,7 @@ Veamos un ejemplo sobre las frecuencias de las vocales en castellano.
 :::
 
 ::: callout-body
-Los porcentajes de vocales de un determinado idioma (de alfabeto latino) 
+Los porcentajes de vocales de un determinado idioma (de alfabeto latino)
 según la [Wikipedia](https://es.wikipedia.org/wiki/Frecuencia_de_aparici%C3%B3n_de_letras)
 son:
 
@@ -432,10 +434,8 @@ $$P(\{E,O\})=P(E)+P(O)=0.261+0.244=0.505.$$
 :::
 :::::
 
-
-
 Otro ejemplo en este caso es  sobre un test de drogas en el que se analiza la
-presencia de cocaína y cannabis en la sangre de los conductores, inspirado 
+presencia de cocaína y cannabis en la sangre de los conductores, inspirado
 en un caso real.
 
 ::::: callout-ejemplo
@@ -443,14 +443,14 @@ en un caso real.
 <i class="bi bi-list-task"> Ejemplo: Consumo de drogas</i>
 :::
 ::: callout-body
-Según un artículo de 
-[El País](https://elpais.com/politica/2019/01/02/actualidad/1546426491_623324.html), 
-en un control especial de la policía el $0.1\%$ de todos los conductores 
-analizados en un control de tráfico dan positivo en un el test en cocaína, 
-y el $1\%$ da positivo en cannabis. Un $1.05\%$ da positivo en alguno de 
+Según un artículo de
+[El País](https://elpais.com/politica/2019/01/02/actualidad/1546426491_623324.html),
+en un control especial de la policía el $0.1\%$ de todos los conductores
+analizados en un control de tráfico dan positivo en un el test en cocaína,
+y el $1\%$ da positivo en cannabis. Un $1.05\%$ da positivo en alguno de
 los dos test.
 
-**Pregunta**: ¿Cuál es la probabilidad que un individuo analizado en el control de drogas 
+**Pregunta**: ¿Cuál es la probabilidad que un individuo analizado en el control de drogas
 escogido al azar no de positivo en ninguno de lo dos test?
 
 Los sucesos elementales del enunciado del problema son:
@@ -465,7 +465,7 @@ En este caso nos interesa estudiar los sucesos:
 
 $$P((A\cup B)^c)=1-P(A\cup B)=1-0.0105=0.9895.$$
 
-**Pregunta**: ¿Cuál es la probabilidad que un analizado al azar de positivo en los dos test 
+**Pregunta**: ¿Cuál es la probabilidad que un analizado al azar de positivo en los dos test
 en cocaína y cannabis?
 
 Los sucesos elementales son:
@@ -484,7 +484,7 @@ $$\begin{array}{rl}
 {P(A\cap B)} &{=P(A)+P(B)-P(A\cup B)}\\ &{=0.001+0.01-0.0105=0.0005}.
 \end{array}$$
 
-**Pregunta**: ¿Cuál es la probabilidad de que un conductor analizado 
+**Pregunta**: ¿Cuál es la probabilidad de que un conductor analizado
 de positivo en cocaína pero no en cannabis?
 
 Los sucesos elementales son:
@@ -495,10 +495,10 @@ Los sucesos elementales son:
 En este caso nos interesa estudiar los sucesos:
 
 -   $A\cap B$: dar positivo en los dos test; $P(A\cap B)=0.0005.$
--   $A-B$: dar positivo en cocaína pero no en cannabis, por lo tanto 
+-   $A\setminus B$: dar positivo en cocaína pero no en cannabis, por lo tanto
 tenemos que :
 
-$$P(A-B) =P(A)-P(A\cap B) =0.001-0.0005=0.0005.$$
+$$P(A\setminus B) =P(A)-P(A\cap B) =0.001-0.0005=0.0005.$$
 :::
 :::::
 
@@ -545,20 +545,18 @@ $$
 \frac{18}{50}
 $$
 
-
 ¿Cuál es la probabilidad de que un chica lleve gafas?
 
 $$
 \frac{18}{30}=\frac{18/50}{30/50}=\frac{P(\mbox{mujer  y gafas})}{P(\mbox{mujer})}.
 $$
 
-Si escogemos un estudiante al azar ¿Cuál es la probabilidad que si es mujer, 
+Si escogemos un estudiante al azar ¿Cuál es la probabilidad que si es mujer,
 entonces lleve gafas?
 
 $$
 \frac{18}{30}.
 $$
-
 
 ¿Cuál es la probabilidad de que un alumno que lleve gafas sea mujer?
 
@@ -566,13 +564,12 @@ $$
 \frac{18}{33}=\frac{18/50}{33/50}=\frac{P(\mbox{mujer y gafas})}{P(\mbox{gafas})}.
 $$
 
-Si escogemos un estudiante al azar ¿Cuál es la probabilidad de que si 
+Si escogemos un estudiante al azar ¿Cuál es la probabilidad de que si
 lleva gafas, entonces sea mujer? $$
     \frac{18}{33}
     $$
 :::
 :::::
-
 
 ::::: callout-advertencia
 ::: callout-title
@@ -585,24 +582,19 @@ Hay que distinguir bien entre
 
 *Probabilidad de que sea mujer y lleve gafas.*
 
--   $P(A|B)$: probabilidad de que $\color{red}{\text{si}}$ pasa $B$, 
+-   $P(A|B)$: probabilidad de que $\color{red}{\text{si}}$ pasa $B$,
 $\color{red}{\text{entonces}}$ pase $A$.
 
 *Probabilidad de que, si es mujer, lleve gafas.*
 
-Cuando utilizamos probabilidad condicional $P(A|B)$ estamos restringiendo el 
+Cuando utilizamos probabilidad condicional $P(A|B)$ estamos restringiendo el
 espacio muestral a $B$.
 :::
 :::::
 
-
-
-
-
 ### Probabilidad condicionada. Propiedades
 
-
-La probabilidad condicionada es una probabilidad, en el sentido de la siguiente 
+La probabilidad condicionada es una probabilidad, en el sentido de la siguiente
 propiedad.
 
 ::::: callout-proposicion
@@ -631,7 +623,6 @@ $$
 
 También se cumplirán el resto de propiedades mientras se condicionen cada una de las probabilidades al mismo suceso $A$.
 
-
 ::::: callout-ejercicio
 ::: callout-title
 <i class="bi bi-list-task"> Ejercicio</i>
@@ -641,10 +632,7 @@ Escribid el resto de propiedades que cumpliría una probabilidad condicionada al
 :::
 :::::
 
-
-
 Veamos un ejemplo donde se aplica la probabilidad condicionada, en este caso, para calcular la probabilidad de que un adulto sea hipertenso, dado que cree que lo es.
-
 
 ::::: callout-ejemplo
 ::: callout-title
@@ -668,7 +656,6 @@ Ahora podemos definir el suceso:
 
 $$\scriptsize P(A|B)=\dfrac{P(A\cap B)}{P(B)}=\dfrac{0.09}{0.25}=0.36.$$
 
-
 Otra pregunta es, si un adulto es hipertenso, ¿cuál es la probabilidad que crea que lo es?
 
 Si tenemos los sucesos:
@@ -687,14 +674,12 @@ $$
 :::
 :::::
 
-
 ::::: callout-ejemplo
 ::: callout-title
 <i class="bi bi-list-task"> Ejemplo</i>
 :::
 ::: callout-body
 Otro ejemplo de probabilidad condicionada en este caso un ejemplo simple de dígito de control de error.
-
 
 Un dígito de control de error toma el valor 0 en el 99% de los casos en que hay un error. Si la probabilidad de error en un mensaje es del $0.5\%$. ¿cuál es la probabilidad de que el mensaje sea erróneo y el código de error tenga valor 0?
 
@@ -707,7 +692,6 @@ entonces: $$P(A\cap B)=P(B)\cdot P(A|B)=0.005\cdot 0.99=0.00495.$$
 :::::
 
 La probabilidad condicional también es útil en la resolución de problemas de clasificación, como el siguiente ejemplo.
-
 
 ::::: callout-ejemplo
 ::: callout-title
@@ -726,7 +710,6 @@ Asignemos sucesos y probabilidades
 
 $$P(A|S)=\dfrac{P(A\cap S)}{P(S)}=?$$
 
-
 -   ¿Cuál es la probabilidad que un correo lleve adjunto si es SPAM?
 
 - $P(A)=0.5, P(S)=0.65, P(A^c\cap S^c)=P((A\cup S)^c)=0.15$,
@@ -736,7 +719,6 @@ $$P(A|S)=\dfrac{P(A\cap S)}{P(S)}=?$$
 -   $P(A\cap S)=P(A)+P(S)-P(A\cup S)=0.3$,
 
 $$P(A|S)=\dfrac{P(A\cap S)}{P(S)}=\dfrac{0.3}{0.65}\approx 0.46.$$
-
 
 -   Otra pregunta es ¿Cuál es la probabilidad de que un correo no lleve adjuntos si no es SPAM?
 
@@ -748,10 +730,9 @@ $$P(A^c|S^c)=\dfrac{P(A^c\cap S^c)}{P(S^c)}=\dfrac{P(A^c\cap S^c)}{1-P(S)}=\dfra
 
 ## Teorema de la probabilidad total
 
-
 ::::: callout-teorema
 ::: callout-title
-<i class="bi bi-lightbulb"> Teorema de la probabilidad total</i> 
+<i class="bi bi-lightbulb"> Teorema de la probabilidad total</i>
 :::
 ::: callout-body
 
@@ -768,7 +749,6 @@ $$
 
 Vamos a generalizar el resultado anterior a  una colección de sucesos $A_1,A_2,\ldots,A_n$ que forman una partición del espacio muestral $\Omega$.
 
-
 ::::: callout-definicion
 ::: callout-title
 <i class="bi bi-book"> Partición del espacio espacio muestral</i>
@@ -780,7 +760,6 @@ Los sucesos $A_1,A_2,\ldots, A_n$ son una **partición** del espacio muestral $\
 2.  $A_1,A_2,\ldots,A_n$ son incompatibles dos a dos ($A_i\cap A_j=\emptyset$).
 :::
 :::::
-
 
 Ahora podemos volver a enunciar el teorema anterior pero en esta ocasión  para particiones arbitrarias.
 
@@ -799,7 +778,6 @@ P(B)&= P(B\cap A_1)+\cdots +P(B\cap A_n)\\
 $$
 :::
 :::::
-
 
 Revisitemos el ejemplo de los mensajes con dígitos de control de error.
 
@@ -834,7 +812,7 @@ $$
 :::
 :::::
 
-## Clasificación o diagnostico caso binario
+## Clasificación o diagnóstico caso binario
 
 Consideremos alguna de las siguientes situaciones:
 
@@ -843,14 +821,14 @@ Consideremos alguna de las siguientes situaciones:
 -   Un prueba de embarazo.
 -   Una prueba médica para una enfermedad concreta.
 
-Nos ceñiremos a la casuística más elemental el algoritmo de clasificación o la 
-diagnosis solo da dos resultado **Positivo** (sí tienes la enfermedad, 
+Nos ceñiremos a la casuística más elemental el algoritmo de clasificación o la
+diagnosis solo da dos resultado **Positivo** (sí tienes la enfermedad,
 sí es un fraude) o **Negativo** (en caso contrario).
 
 SPAM continuación
 
-En todas estas situaciones podemos calcular lo que se llama 
-**matriz de confusión** que representa todas las situaciones posibles. 
+En todas estas situaciones podemos calcular lo que se llama
+**matriz de confusión** que representa todas las situaciones posibles.
 En el caso de estudiar una condición de tipo binario,
 
 |                    | El Test da Positivo | El Test da Negativo |
@@ -858,8 +836,8 @@ En el caso de estudiar una condición de tipo binario,
 | Condición Positiva |      Correcto       |        Error        |
 | Condición Negativa |        Error        |      Correcto       |
 
-En general los modelos y algoritmos de clasificación suelen aportar 
-puntuaciones (*scores*) que determinan el grado de pertenencia a una clase, 
+En general los modelos y algoritmos de clasificación suelen aportar
+puntuaciones (*scores*) que determinan el grado de pertenencia a una clase,
 o que miden si dos objetos están en la misma clase.
 
 Así el resultado del clasificador o del diagnóstico puede ser:
@@ -867,14 +845,13 @@ Así el resultado del clasificador o del diagnóstico puede ser:
 -   **un número real**, en cuyo caso debe clasificador entre cada clase debe determinarse por un valor umbral (*threshold*) por ejemplo para determinar si una persona está estresado podemos dar un *scores* entre 0 y 1 (1 máximo estrés 0 estrés nulo),
 -   **un resultado discreto** que indica directamente una de las clases (esto es necesario si es un algoritmo que debe decidir qué hacer con el objeto.
 
-
 ::::: callout-ejemplo
 ::: callout-title
 <i class="bi bi-list-task"> Falsos Positivos y Falsos Negativos</i>
 :::
 ::: callout-body
-Consideremos un problema de predicción de clases binario, en la que los 
-resultados se etiquetan positivos (P) o negativos (N). Hay cuatro posibles 
+Consideremos un problema de predicción de clases binario, en la que los
+resultados se etiquetan positivos (P) o negativos (N). Hay cuatro posibles
 resultados a partir de un clasificador binario como el propuesto.
 
 -   Si el resultado de una exploración es P y el valor dado es también P, entonces se conoce como un Verdadero Positivo (VP).
@@ -884,14 +861,7 @@ resultados a partir de un clasificador binario como el propuesto.
 :::
 :::::
 
-
-
-
-
-
-
 Veamos el siguiente ejemplo:
-
 
 ::::: callout-ejemplo
 ::: callout-title
@@ -910,10 +880,7 @@ En un diagnósticos de una cierta condición (por ejemplo, test embarazo, test d
 :::
 :::::
 
-
 Necesitamos  algunas denominaciones adicionales:
-
-
 
 ::::: callout-definicion
 ::: callout-title
@@ -927,21 +894,15 @@ Necesitamos  algunas denominaciones adicionales:
 :::
 :::::
 
-<br>
-<br>
-
-
-
-
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Falsos Positivos y Negativos</i> 
+<i class="bi bi-list-task"> Falsos Positivos y Negativos</i>
 :::
 ::: callout-body
 
-Un test diseñado para diagnosticar una determinada enfermedad tiene un 
-coeficiente de falsos negativos de 0.06, y un coeficiente de falsos positivos 
-de 0.04. En un estudio masivo se observa que un 15% de la población da 
+Un test diseñado para diagnosticar una determinada enfermedad tiene un
+coeficiente de falsos negativos de 0.06, y un coeficiente de falsos positivos
+de 0.04. En un estudio masivo se observa que un 15% de la población da
 positivo al test.
 
 ¿Cuál es la probabilidad que una persona escogida aleatoriamente tenga esta enfermedad?
@@ -952,7 +913,6 @@ Los datos del problema son:
 -   $M$: tener la enfermedad,
 -   $P(T)=0.15$, $P(T^c|M)=0.06$, $P(T|M^c)=0.04$,
 -   ¿$P(M)$?
-
 
 $$
 P(T) =P(M)\cdot P(T|M)+P(M^c)\cdot P(T|M^c).
@@ -979,14 +939,13 @@ $$
 :::
 :::::
 
-# Teorema de Bayes
+## Teorema de Bayes
 
 ::::: callout-teorema
 ::: callout-title
 <i class="bi bi-lightbulb"> Teorema de Bayes para dos sucesos</i>
 :::
 ::: callout-body
-
 
 Sean $A$ y $B$ dos sucesos. Si $P(B)>0$, entonces
 
@@ -995,9 +954,6 @@ P(A|B) =\dfrac{P(A)\cdot P(B|A)}{P(B)}=\dfrac{P(A)\cdot P(B|A)}{P(A)\cdot P(B|A)
 $$
 :::
 :::::
-
-<br>
-<br>
 
 ::::: callout-ejemplo
 ::: callout-title
@@ -1011,9 +967,7 @@ $$P(A|B) =\dfrac{P(A\cap B)}{P(B)}=\cdots$$
 :::
 :::::
 
-
 Generalicemos este resultado para una partición arbitraria del espacio muestral.
-
 
 ::::: callout-teorema
 ::: callout-title
@@ -1033,14 +987,9 @@ $$
 :::
 :::::
 
-
-
-
 Podéis demostrar el teorema de Bayes utilizando que
 
 $$P(A_i|B) =\dfrac{P(A_i\cap B)}{P(B)}=\cdots$$
-
-
 
 ::::: callout-ejemplo
 ::: callout-title
@@ -1048,7 +997,6 @@ $$P(A_i|B) =\dfrac{P(A_i\cap B)}{P(B)}=\cdots$$
 :::
 ::: callout-body
 Un test para detección de VIH da positivo un 99% de los casos en los que está presente y en un 5% de los casos en los que el virus está ausente. En una población con un $0.5\%$ de infectados por VIH, ¿cuál es la probabilidad que un individuo que haya dado positivo en el test esté infectado?
-
 
  Los sucesos del ejemplo son:
 
@@ -1062,7 +1010,6 @@ P(A|B) =\dfrac{P(B|A)\cdot P(A)}{P(B|A)\cdot P(A)+P(B|A^c)\cdot P(A^c)}=\dfrac{0
 $$
 
 Un test para detección de VIH da positivo un 99% de los casos en los que está presente y en un 5% de los casos en los que el virus está ausente. En una población con un $0.5\%$ de infectados por VIH, ¿cuál es la probabilidad de que un individuo que haya dado **negativo** en el test **no** esté infectado?
-
 
 Los sucesos del ejemplo son:
 
@@ -1078,16 +1025,9 @@ $$
 :::
 :::::
 
-
-
-
-
-<br>
-<br>
-
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejemplo: Tipos de clientes</i>  
+<i class="bi bi-list-task"> Ejemplo: Tipos de clientes</i>
 :::
 ::: callout-body
 
@@ -1107,13 +1047,9 @@ $$P(B|E)\!=\!\dfrac{P(E|B)\cdot P(B)}{P(E|A)\!\cdot\! P(A)\!+\!P(E|B)\!\cdot\! P
 :::
 :::::
 
-
-<br>
-<br>
-
 ::::: callout-ejemplo
 ::: callout-title
-<i class="bi bi-list-task"> Ejemplo: Fidelización de clientes</i> 
+<i class="bi bi-list-task"> Ejemplo: Fidelización de clientes</i>
 :::
 ::: callout-body
 Para fidelizar a sus clientes una empresa  implementa un test de detección precoz de abandono de clientes de una empresa de telefonía da positivo el 97.5% de las ocasiones en las que, posteriormente, el cliente se da de baja, y un 12% de las veces en que no se dio de baja. La probabilidad que un cliente escogido al azar se dé de baja es de un 2%.
@@ -1139,12 +1075,9 @@ P(T) = & P(B)\cdot P(T|B)+P(B^c)\cdot P(T|B^c)\\[1ex]
 \end{array}
 $$
 
-
-
 ¿Cuál es la probabilidad que un individuo escogido al azar se de de baja y dé positivo en el test?
 
 $$P(B\cap T)= P(B)\cdot P(T|B)=0.02\cdot 0.975=0.0195.$$
-
 
 $$P(B)=0.02, P(T|B)=0.975, P(T|B^c)=0.12.$$
 
@@ -1166,7 +1099,7 @@ donde $P(T^c|B)=1-P(T|B)=0.025$ y $P(T^c|B^c)=1-P(T|B^c)=0.88.$
 :::
 :::::
 
-# Independencia de sucesos
+## Independencia de sucesos
 
 ::::: callout-definicion
 ::: callout-title
@@ -1174,10 +1107,10 @@ donde $P(T^c|B)=1-P(T|B)=0.025$ y $P(T^c|B^c)=1-P(T|B^c)=0.88.$
 :::
 ::: callout-body
 
-Diremos que los sucesos $A$ y $B$ son **independientes** si 
+Diremos que los sucesos $A$ y $B$ son **independientes** si
 $P(A\cap B)=P(A)\cdot P(B)$.
 
-$A_1,\ldots, A_n$ son sucesos **independientes** cuando, para toda 
+$A_1,\ldots, A_n$ son sucesos **independientes** cuando, para toda
 subfamilia $A_{i_1},\ldots,A_{i_k}$, $$
 P(A_{i_1}\cap \cdots\cap A_{i_k})=P(A_{i_1})\cdots P(A_{i_k}).
 $$
@@ -1191,7 +1124,6 @@ $$
 :::
 ::: callout-body
 
-
 Dados dos sucesos $A$ y $B$ con $P(A),P(B)0$, las siguientes afirmaciones son equivalentes:
 
 1.  $A$ y $B$ son independientes.
@@ -1202,8 +1134,6 @@ Dados dos sucesos $A$ y $B$ con $P(A),P(B)0$, las siguientes afirmaciones son eq
 5.  $A^c$ y $B^c$ son independientes.
 :::
 :::::
-
-
 
 Veamos un sencillo ejemplo de compras de billetes de avión y alojamiento en hotel.
 
@@ -1222,12 +1152,11 @@ Los sucesos y datos del ejemplo son:
 
 por tanto, podemos calcular las probabilidades siguientes
 
-$P(A\cap B)=P(A)+P(B)-P(A\cup B)=0.55+0.2-0.6=0.15$ <font color="red"> y </font> $P(A)\cdot P(B) = 0.55\cdot 0.2=0.11.$
+$P(A\cap B)=P(A)+P(B)-P(A\cup B)=0.55+0.2-0.6=0.15$ y  $P(A)\cdot P(B) = 0.55\cdot 0.2=0.11.$
 
 Concluimos que son dependientes, ya que $P(A\cap B)\neq P(A)\cdot P(B)$.
 :::
 :::::
-
 
 ## Sucesos independientes vs disjuntos
 
