@@ -1,9 +1,5 @@
 name: Render Quarto Book
 
-
-with:
-  path: _book/
-  
 on:
   push:
     branches: [ main ]
